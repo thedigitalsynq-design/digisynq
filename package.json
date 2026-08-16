@@ -1,0 +1,19 @@
+{
+  "name": "digisynq-platform",
+  "version": "2.0.0",
+  "description": "DIGISYNQ — Creative Industry Intelligence & Orchestration Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "creative-industry",
+    "orchestration",
+    "intelligence",
+    "marketplace",
+    "talent-graph"
+  ],
+  "author": "DIGISYNQ Team",
+  "license": "ISC"
+}

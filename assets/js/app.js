@@ -692,8 +692,121 @@
           regSuccess.appendChild(document.createElement('br'));
           regSuccess.appendChild(waLinkBtn);
         }
+
+        // Add to client DB if available
+        if (window.DigisynqDB) {
+          window.DigisynqDB.addTalent({
+            name: regName.value,
+            role: regRole.value,
+            category: "Cinematography",
+            city: regCity.value,
+            specialty: regSpecialty.value || "General Craft",
+            gear: regGear ? regGear.value : "Standard Package",
+            availability: regAvail ? regAvail.value : "Immediate",
+            rate: regRate ? regRate.value : "Flexible"
+          });
+        }
       }, 600);
     });
+  }
+
+  /* ── 13. Live Interactive Talent Explorer Component ─────────────────────── */
+  const talentCardsGrid = document.getElementById('talent-cards-grid');
+  const searchInput     = document.getElementById('talent-search-input');
+  const filterChips     = document.querySelectorAll('.filter-chip');
+
+  function showToast(msg) {
+    let toast = document.getElementById('global-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'global-toast';
+      toast.className = 'toast-notice';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2800);
+  }
+
+  function renderTalentCards(category = 'All', search = '') {
+    if (!talentCardsGrid) return;
+    
+    let talents = [];
+    if (window.DigisynqDB) {
+      talents = window.DigisynqDB.getTalents(category, search);
+    }
+
+    if (!talents.length) {
+      talentCardsGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align:center; padding:3rem; background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-md);">
+          <p style="color:var(--text-muted); font-size:var(--fs-sm);">No verified profiles found matching &ldquo;${search}&rdquo;. Try another filter or search term.</p>
+        </div>
+      `;
+      return;
+    }
+
+    talentCardsGrid.innerHTML = talents.map(t => `
+      <div class="talent-dir-card" data-id="${t.id}">
+        <div>
+          <div class="dir-card-top">
+            <div>
+              <div class="dir-card-name">${t.name}</div>
+              <div class="dir-card-role">${t.role}</div>
+            </div>
+            <span class="dir-card-badge">${t.grade} &bull; ${t.rating}★</span>
+          </div>
+          <p class="dir-card-spec">${t.specialty}</p>
+        </div>
+
+        <div>
+          <div class="dir-card-meta">
+            <span>📍 ${t.city}</span>
+            <span>⚡ ${t.reliability}% Rel.</span>
+            <span>📅 ${t.availability}</span>
+          </div>
+
+          <div class="dir-card-actions">
+            <a href="contact.html?talent=${encodeURIComponent(t.id)}" class="btn btn--outline btn--sm">View Reel</a>
+            <button class="btn btn--primary btn--sm add-to-room-btn" data-name="${t.name}" data-role="${t.role}">+ Add to Project</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Attach Event Listeners to "Add to Project" buttons
+    talentCardsGrid.querySelectorAll('.add-to-room-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name');
+        const role = btn.getAttribute('data-role');
+        showToast(`✨ ${name} (${role}) added to active Project Room!`);
+      });
+    });
+  }
+
+  if (talentCardsGrid) {
+    renderTalentCards();
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const activeChip = document.querySelector('.filter-chip.active');
+        const cat = activeChip ? activeChip.getAttribute('data-cat') : 'All';
+        renderTalentCards(cat, e.target.value);
+      });
+    }
+
+    if (filterChips.length) {
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const cat = chip.getAttribute('data-cat');
+          const search = searchInput ? searchInput.value : '';
+          renderTalentCards(cat, search);
+        });
+      });
+    }
   }
 
 })();

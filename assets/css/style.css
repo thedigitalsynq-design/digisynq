@@ -519,12 +519,163 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-hairline);
-  color: var(--text-body);
+/* ── 13.1. Metrics Ribbon Strip ───────────────────────────────────────────── */
+.metrics-ribbon {
+  background: var(--bg-surface);
+  border-block: 1px solid var(--border-hairline);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
 }
-.id-badge--verified {
+.metrics-ribbon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+.metric-ribbon-item strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  color: var(--text-pure);
+  display: block;
+  line-height: 1.1;
+}
+.metric-ribbon-item span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ── 13.2. Live Interactive Talent & Resource Explorer ─────────────────────── */
+.explorer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.explorer-search-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.4rem;
+  color: #fff;
+  font-family: inherit;
+  font-size: var(--fs-xs);
+  min-width: 280px;
+  outline: none;
+  transition: all 0.25s;
+}
+.explorer-search-input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.2);
+}
+.explorer-filter-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.filter-chip:hover, .filter-chip.active {
   background: rgba(0, 240, 255, 0.08);
   border-color: var(--accent-cyan);
   color: #fff;
+}
+
+.talent-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.talent-dir-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s var(--ease-smooth);
+  position: relative;
+}
+.talent-dir-card:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 240, 255, 0.05);
+}
+.dir-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.dir-card-name { font-size: var(--fs-sm); font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+.dir-card-role { font-size: var(--fs-2xs); color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; }
+.dir-card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--accent-cyan);
+  color: #fff;
+}
+.dir-card-spec { font-size: var(--fs-2xs); color: var(--text-muted); line-height: 1.5; margin-block: 0.75rem; }
+.dir-card-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+.dir-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.dir-card-actions .btn { flex: 1; padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #0b0b14;
+  border: 1px solid var(--accent-cyan);
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px var(--accent-cyan-glow);
+  z-index: 1000;
+  transition: all 0.35s var(--ease-spring);
+  opacity: 0;
+  pointer-events: none;
+}
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 /* ── 14. Interactive Feature: THE PROJECT ROOM ────────────────────────────── */

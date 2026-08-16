@@ -89,8 +89,28 @@
         <a href="register.html" class="btn btn--outline btn--lg">Join the Talent Graph →</a>
       </div>
 
-      <div class="hero__quote-strip reveal">
-        <span>&ldquo;We don't need to own everything. <em>We need to connect, coordinate, and learn from everything that matters.</em>&rdquo;</span>
+  </section>
+
+  <!-- ===== 02.1: LIVE METRICS RIBBON STRIP ===== -->
+  <section class="metrics-ribbon" aria-label="Ecosystem KPIs">
+    <div class="container">
+      <div class="metrics-ribbon-grid reveal">
+        <div class="metric-ribbon-item">
+          <strong>₹48.6 Cr</strong>
+          <span>Orchestrated Capacity</span>
+        </div>
+        <div class="metric-ribbon-item">
+          <strong>1,240+</strong>
+          <span>Verified Creative Pros</span>
+        </div>
+        <div class="metric-ribbon-item">
+          <strong>84 Studios</strong>
+          <span>&bull; Soundstages &amp; LED Bays</span>
+        </div>
+        <div class="metric-ribbon-item">
+          <strong style="color:var(--accent-green);">96.4%</strong>
+          <span>Plan B Uptime Retention</span>
+        </div>
       </div>
     </div>
   </section>
@@ -436,6 +456,38 @@
             </div>
           </div>
         </div>
+      </div>
+  </section>
+
+  <!-- ===== 07.1: LIVE INTERACTIVE TALENT & RESOURCE EXPLORER ===== -->
+  <section class="section" id="explorer" aria-label="Talent and Resource Explorer">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge-tag"><span class="badge-dot"></span> Live Ecosystem Explorer</div>
+        <h2 class="section-title">SEARCH THE <span class="gradient-text">VERIFIED GRAPH.</span></h2>
+        <p class="section-sub">
+          Query verified crew, directors, soundstages, and camera packages in real time with instant capability benchmarks and direct project dispatch.
+        </p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="explorer-controls reveal">
+        <input type="text" id="talent-search-input" class="explorer-search-input" placeholder="🔍 Search by name, craft, gear, or city..." />
+
+        <div class="explorer-filter-chips">
+          <button class="filter-chip active" data-cat="All">All Disciplines</button>
+          <button class="filter-chip" data-cat="Cinematography">Cinematography</button>
+          <button class="filter-chip" data-cat="Direction">Direction</button>
+          <button class="filter-chip" data-cat="Post-Production">Post / DI</button>
+          <button class="filter-chip" data-cat="Lighting & Grip">Lighting &amp; Grip</button>
+          <button class="filter-chip" data-cat="Art & Production Design">Art &amp; Design</button>
+          <button class="filter-chip" data-cat="Sound">Sync Sound</button>
+        </div>
+      </div>
+
+      <!-- Live Cards Grid (Populated by db.js & app.js) -->
+      <div class="talent-cards-grid reveal" id="talent-cards-grid">
+        <!-- Rendered reactively via DigisynqDB -->
       </div>
     </div>
   </section>
@@ -1078,6 +1130,7 @@
     </button>
   </div>
 
+  <script src="assets/js/db.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
