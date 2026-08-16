@@ -249,6 +249,22 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   overflow-wrap: break-word;
 }
 
+/* Explicit type scale — every heading gets a guaranteed tier.
+   Page hero (h1) dominates, sections (h2) sit one step below,
+   card titles (h3/h4) are the next tier, labels/micro-text bottom out. */
+h1 { font-size: var(--f-4xl); line-height: 1.04; letter-spacing: -0.025em; }
+h2 { font-size: var(--f-3xl); line-height: 1.06; }
+h3 { font-size: var(--f-xl); }
+h4 { font-size: var(--f-lg); }
+h5 { font-size: var(--f-md); }
+h6 { font-size: var(--f-sm); }
+
+.sec-title {
+  font-size: var(--f-3xl);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
 .font-serif { font-family: var(--font-serif); }
 .font-sans  { font-family: var(--font-sans); }
 .font-mono  { font-family: var(--font-mono); }
@@ -256,7 +272,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 .display-hero {
   font-family: var(--font-serif);
   font-size: var(--f-4xl);
-  line-height: 0.96;
+  line-height: 1.02;
   letter-spacing: -0.025em;
   color: var(--t-pure);
 }
@@ -739,12 +755,12 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .hero-h1 {
   font-family: var(--font-serif);
-  font-size: var(--f-3xl);
+  font-size: var(--f-4xl);
   font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
-  max-width: 24ch;
+  max-width: 26ch;
   margin-inline: auto;
   animation: heroIn 0.9s var(--ease-cinematic) 0.2s both;
 }

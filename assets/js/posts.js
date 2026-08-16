@@ -74,21 +74,21 @@
   function getFallback() {
     return [
       {
-        id: '1', tag: 'Network Activity',
-        title: 'DOP × Studio Sync Confirmed',
+        id: '1', tag: 'Network activity',
+        title: 'DOP × studio sync confirmed',
         body: 'Aryan Sharma (Grade A DOP) successfully matched with Ciné Studio Block B for a 12-day feature shoot. Anamorphic package secured.',
         author: 'DIGISYNQ Ops', date: new Date().toISOString()
       },
       {
-        id: '2', tag: 'Capability Added',
-        title: 'ACES Color Suite Now Available',
+        id: '2', tag: 'Capability added',
+        title: 'ACES color suite now available',
         body: 'Vikramaditya Roy\'s post-production suite upgraded with DaVinci Resolve Advanced Panel. Theatrical HDR DI capacity now bookable.',
-        author: 'Network Registry', date: new Date(Date.now() - 86400000).toISOString()
+        author: 'Network registry', date: new Date(Date.now() - 86400000).toISOString()
       },
       {
-        id: '3', tag: 'Knowledge Event',
-        title: 'Workshop: Low-Light Cinematography',
-        body: 'Open masterclass by Karthik R. on LED-based lighting systems. 32 seats available. Register through the Capability Graph.',
+        id: '3', tag: 'Knowledge event',
+        title: 'Workshop: low-light cinematography',
+        body: 'Open masterclass by Karthik R. on LED-based lighting systems. 32 seats available. Register through the capability graph.',
         author: 'DIGISYNQ Events', date: new Date(Date.now() - 172800000).toISOString()
       }
     ];
