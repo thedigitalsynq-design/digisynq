@@ -237,6 +237,101 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // GET /api/posts
+  if (pathname === '/api/posts' && req.method === 'GET') {
+    if (!db.posts) {
+      db.posts = [
+        {
+          id: '1',
+          tag: 'Network Activity',
+          title: 'DOP × Studio Sync Confirmed',
+          body: 'Aryan Sharma (Grade A DOP) matched with Ciné Studio Block B for a 12-day feature film shoot. Cooke anamorphic package locked.',
+          author: 'DIGISYNQ Ops',
+          date: new Date().toISOString()
+        },
+        {
+          id: '2',
+          tag: 'Capability Added',
+          title: 'ACES HDR Color Suite Bookable',
+          body: 'Vikramaditya Roy\'s post-production suite upgraded with DaVinci Resolve Studio Advanced Panel and Flanders scientific OLED.',
+          author: 'Network Registry',
+          date: new Date(Date.now() - 86400000).toISOString()
+        },
+        {
+          id: '3',
+          tag: 'Knowledge Event',
+          title: 'Workshop: Low-Light Narrative Lighting',
+          body: 'Hands-on masterclass led by Karthik R. utilizing idle soundstage downtime in Bengaluru. 28 attendee seats confirmed.',
+          author: 'DIGISYNQ Events',
+          date: new Date(Date.now() - 172800000).toISOString()
+        }
+      ];
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(db.posts));
+    return;
+  }
+
+  // POST /api/posts
+  if (pathname === '/api/posts' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        if (!payload.title || !payload.body) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, error: 'Title and body required' }));
+          return;
+        }
+        if (!db.posts) db.posts = [];
+        const newPost = {
+          id: String(Date.now()),
+          tag: payload.tag || 'Network Update',
+          title: payload.title,
+          body: payload.body,
+          author: payload.author || 'DIGISYNQ Member',
+          date: new Date().toISOString()
+        };
+        db.posts.unshift(newPost);
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, post: newPost }));
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: 'Invalid JSON payload' }));
+      }
+    });
+    return;
+  }
+
+  // POST /api/feedback
+  if (pathname === '/api/feedback' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        if (!db.feedback) db.feedback = [];
+        const item = {
+          id: `FB-${Date.now()}`,
+          name: payload.name || 'Anonymous',
+          type: payload.type || 'General',
+          message: payload.message || '',
+          page: payload.page || '/',
+          timestamp: payload.ts || new Date().toISOString()
+        };
+        db.feedback.push(item);
+        console.log(`[FEEDBACK RECEIVED] [${item.type}] ${item.name}: ${item.message.slice(0, 60)}...`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, id: item.id }));
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: 'Invalid feedback data' }));
+      }
+    });
+    return;
+  }
+
   // POST /api/register
   if (pathname === '/api/register' && req.method === 'POST') {
     let body = '';
