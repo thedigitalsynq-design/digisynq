@@ -1,36 +1,37 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform
-   Design System: Editorial Dark, Minimal, High-Precision Technical Typography
+   Design System: Cinematic Editorial, Film Viewfinder UI, Holographic Tilt, 3D Mesh
    ========================================================================== */
 
 /* ── 1. Design Tokens ─────────────────────────────────────────────────────── */
 :root {
   /* Chromatic Foundation */
-  --bg-pitch:      #040406;
-  --bg-deep:       #08080c;
-  --bg-surface:    #0e0e14;
-  --bg-elevated:   #15151e;
-  --bg-glass:      rgba(14, 14, 20, 0.7);
+  --bg-pitch:      #030305;
+  --bg-deep:       #07070b;
+  --bg-surface:    #0c0c12;
+  --bg-elevated:   #13131c;
+  --bg-glass:      rgba(12, 12, 18, 0.75);
   --bg-card:       rgba(255, 255, 255, 0.02);
-  --bg-card-hover: rgba(255, 255, 255, 0.045);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
 
   /* Lines & Dividers */
-  --border-hairline: rgba(255, 255, 255, 0.06);
-  --border-subtle:   rgba(255, 255, 255, 0.1);
-  --border-medium:   rgba(255, 255, 255, 0.18);
+  --border-hairline: rgba(255, 255, 255, 0.05);
+  --border-subtle:   rgba(255, 255, 255, 0.09);
+  --border-medium:   rgba(255, 255, 255, 0.16);
   --border-active:   #ffffff;
 
   /* Typography */
-  --text-pure:     #f8f8fb;
-  --text-body:     #cbcbde;
-  --text-muted:    #828298;
-  --text-dim:      #4e4e62;
+  --text-pure:     #f8f8fc;
+  --text-body:     #c8c8dc;
+  --text-muted:    #7d7d94;
+  --text-dim:      #454558;
 
-  /* Restrained Accents */
-  --accent-cyan:   #00e5ff;
-  --accent-cyan-dim: rgba(0, 229, 255, 0.15);
-  --accent-amber:  #ffaa00;
-  --accent-green:  #10b981;
+  /* Cinema & Intelligence Accents */
+  --accent-cyan:      #00f0ff;
+  --accent-cyan-glow: rgba(0, 240, 255, 0.35);
+  --accent-amber:     #ffb300;
+  --accent-red:       #ff3b30;
+  --accent-green:     #00e676;
 
   /* Type Families */
   --font-display:  'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -38,25 +39,27 @@
   --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
 
   /* Fluid Type Scale */
-  --fs-2xs:  clamp(0.68rem, 1.1vw, 0.75rem);
-  --fs-xs:   clamp(0.75rem, 1.25vw, 0.84rem);
-  --fs-sm:   clamp(0.86rem, 1.45vw, 0.95rem);
-  --fs-base: clamp(0.96rem, 1.65vw, 1.05rem);
-  --fs-md:   clamp(1.1rem,  2vw,    1.25rem);
-  --fs-lg:   clamp(1.35rem, 2.5vw,  1.6rem);
-  --fs-xl:   clamp(1.75rem, 3.5vw,  2.25rem);
-  --fs-2xl:  clamp(2.35rem, 4.8vw,  3.2rem);
-  --fs-3xl:  clamp(3.2rem,  6.8vw,  4.8rem);
-  --fs-hero: clamp(3.6rem,  8.2vw,  6.2rem);
+  --fs-3xs:  0.62rem;
+  --fs-2xs:  clamp(0.68rem, 1vw, 0.74rem);
+  --fs-xs:   clamp(0.75rem, 1.2vw, 0.82rem);
+  --fs-sm:   clamp(0.85rem, 1.4vw, 0.94rem);
+  --fs-base: clamp(0.95rem, 1.6vw, 1.05rem);
+  --fs-md:   clamp(1.1rem,  2vw,   1.25rem);
+  --fs-lg:   clamp(1.35rem, 2.4vw, 1.6rem);
+  --fs-xl:   clamp(1.75rem, 3.4vw, 2.25rem);
+  --fs-2xl:  clamp(2.35rem, 4.6vw, 3.2rem);
+  --fs-3xl:  clamp(3.2rem,  6.5vw, 4.6rem);
+  --fs-hero: clamp(3.6rem,  8vw,   6.2rem);
 
   /* Layout */
-  --container-width: 84rem;
-  --section-pad:     clamp(5.5rem, 11vw, 9rem);
+  --container-width: 86rem;
+  --section-pad:     clamp(5.5rem, 10vw, 8.5rem);
   --nav-height:      4.6rem;
   --radius-xs:       4px;
   --radius-sm:       8px;
   --radius-md:       14px;
-  --radius-lg:       20px;
+  --radius-lg:       22px;
+  --radius-xl:       32px;
   --radius-full:     9999px;
 
   /* Motion */
@@ -65,11 +68,7 @@
 }
 
 /* ── 2. Reset & Global Aesthetics ─────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   scroll-behavior: smooth;
@@ -79,13 +78,25 @@ html {
   font-family: var(--font-body);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--bg-pitch);
   overflow-x: hidden;
   line-height: 1.65;
+  position: relative;
+}
+
+/* Cinematic Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -110,21 +121,68 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-bottom: 1px solid var(--border-hairline);
 }
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
-/* ── 4. Editorial Typography ──────────────────────────────────────────────── */
+/* ── 4. Cinematic Framing & Viewfinder HUD Elements ───────────────────────── */
+.viewfinder-hud {
+  position: absolute;
+  inset: 1.5rem;
+  pointer-events: none;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hud-top, .hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.hud-corner {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+.hud-corner--tl { border-right: none; border-bottom: none; }
+.hud-corner--tr { border-left: none; border-bottom: none; }
+.hud-corner--bl { border-right: none; border-top: none; }
+.hud-corner--br { border-left: none; border-top: none; }
+
+.rec-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 10px var(--accent-red);
+  animation: blinkRec 1.2s infinite;
+  margin-right: 0.35rem;
+}
+@keyframes blinkRec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* ── 5. Editorial Typography ──────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--text-pure);
-  line-height: 1.1;
+  line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.035em;
 }
 
 .gradient-text {
-  background: linear-gradient(180deg, #ffffff 10%, #a2a2ba 100%);
+  background: linear-gradient(180deg, #ffffff 15%, #9b9ba8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -151,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
 }
 .badge-dot {
   width: 6px;
@@ -161,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-header {
-  max-width: 52rem;
+  max-width: 54rem;
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 .section-header--center {
@@ -176,10 +235,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-sub {
   font-size: var(--fs-base);
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
-/* ── 5. Buttons ───────────────────────────────────────────────────────────── */
+/* ── 6. Buttons ───────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -193,17 +252,19 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.25s var(--ease-smooth);
   letter-spacing: 0.01em;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn--primary {
   background: #ffffff;
-  color: #040406;
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.18);
+  color: #030305;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.16);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
-  background: #eaeaf2;
+  box-shadow: 0 8px 36px rgba(255, 255, 255, 0.28);
+  background: #f0f0f6;
 }
 
 .btn--outline {
@@ -222,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn--lg { padding: 1.05rem 2.4rem; font-size: var(--fs-base); }
 .btn--full { width: 100%; }
 
-/* ── 6. Navigation Bar ────────────────────────────────────────────────────── */
+/* ── 7. Navigation Bar ────────────────────────────────────────────────────── */
 .nav-wrapper {
   position: fixed;
   top: 0;
@@ -232,14 +293,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
   display: flex;
   align-items: center;
-  background: rgba(4, 4, 6, 0.6);
+  background: rgba(3, 3, 5, 0.65);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border-hairline);
   transition: all 0.3s var(--ease-smooth);
 }
 .nav-wrapper.scrolled {
-  background: rgba(4, 4, 6, 0.92);
+  background: rgba(3, 3, 5, 0.94);
   border-bottom-color: var(--border-subtle);
 }
 
@@ -282,9 +343,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 1rem;
 }
-.nav__hamburger { display: none; }
 
-/* ── 7. Hero Section & Living Ecosystem Graph ─────────────────────────────── */
+/* ── 8. Hero Section & Living Ecosystem Graph ─────────────────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -292,8 +352,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: calc(var(--nav-height) + 3rem);
-  padding-bottom: 5rem;
+  padding-top: calc(var(--nav-height) + 3.5rem);
+  padding-bottom: 6rem;
   overflow: hidden;
   border-bottom: 1px solid var(--border-hairline);
 }
@@ -305,41 +365,35 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 58rem;
+  max-width: 62rem;
   margin-inline: auto;
 }
 
 .hero__title {
   font-size: var(--fs-hero);
   font-weight: 900;
-  line-height: 1.02;
+  line-height: 1;
   letter-spacing: -0.045em;
   margin-bottom: 1.5rem;
 }
 
-.hero__rotating-words {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+.hero__dynamic-tag {
+  display: inline-block;
   color: var(--accent-cyan);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  text-shadow: 0 0 25px var(--accent-cyan-glow);
+  min-width: 220px;
 }
 
 .hero__sub {
   font-size: var(--fs-base);
   color: var(--text-muted);
-  max-width: 44rem;
+  max-width: 46rem;
   margin-inline: auto;
   line-height: 1.75;
   margin-bottom: 2.5rem;
@@ -354,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__quote-strip {
-  padding: 1.25rem 2rem;
+  padding: 1.25rem 2.25rem;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-hairline);
@@ -365,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero__quote-strip em { font-style: normal; color: var(--text-pure); font-weight: 600; }
 
-/* ── 8. The Problem: Silos & Fragmentation ────────────────────────────────── */
+/* ── 9. The Problem: Silos & Fragmentation ────────────────────────────────── */
 .silos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -404,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* ── 9. Asset-Light Model: Comparison ─────────────────────────────────────── */
+/* ── 10. Asset-Light Model Comparison ─────────────────────────────────────── */
 .model-comparison {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -423,7 +477,7 @@ h1, h2, h3, h4, h5, h6 {
 .model-card--digisynq {
   background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
   border-color: var(--border-medium);
-  box-shadow: 0 0 40px rgba(0, 229, 255, 0.05);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.04);
 }
 .model-steps {
   display: flex;
@@ -451,11 +505,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
 }
 .model-card--digisynq .model-step span {
-  background: rgba(0, 229, 255, 0.12);
+  background: rgba(0, 240, 255, 0.12);
   color: var(--accent-cyan);
 }
 
-/* ── 10. ABCDEF Engine (Interactive Stepper) ──────────────────────────────── */
+/* ── 11. ABCDEF Engine Stepper ────────────────────────────────────────────── */
 .engine-stepper-nav {
   display: flex;
   gap: 0.75rem;
@@ -479,6 +533,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.06);
   border-color: #ffffff;
   transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 .engine-letter {
   font-family: var(--font-mono);
@@ -523,7 +578,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-mono);
 }
 
-/* ── 11. Six-Stage Creative Lifecycle ─────────────────────────────────────── */
+/* ── 12. Creative Lifecycle Loop ─────────────────────────────────────────── */
 .lifecycle-track {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -537,6 +592,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 1rem;
   text-align: center;
   position: relative;
+  transition: all 0.3s;
+}
+.lifecycle-node:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
 }
 .lifecycle-node span {
   font-family: var(--font-mono);
@@ -556,30 +617,48 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
   padding: 1.25rem 2rem;
   border-radius: var(--radius-full);
-  background: rgba(0, 229, 255, 0.04);
-  border: 1px dashed rgba(0, 229, 255, 0.25);
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px dashed rgba(0, 240, 255, 0.25);
   text-align: center;
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   color: var(--text-body);
 }
 
-/* ── 12. Talent Intelligence & Reputation ID Card ─────────────────────────── */
+/* ── 13. 3D Holographic Tilt ID Card (Talent Intelligence) ───────────────── */
 .talent-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: center;
 }
+
+.id-card-wrapper {
+  perspective: 1000px;
+}
+
 .id-card-preview {
-  background: #0b0b10;
+  background: #09090e;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 240, 255, 0.04);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s;
 }
+
+/* Holographic Glare Overlay */
+.id-card-glare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
 .id-card-header {
   display: flex;
   justify-content: space-between;
@@ -589,8 +668,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .id-card-badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  margin-block: 1rem;
+  margin-block: 1.25rem;
 }
 .id-badge {
   font-family: var(--font-mono);
@@ -601,62 +681,85 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-hairline);
 }
 .id-badge--verified {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(0, 230, 118, 0.1);
   color: var(--accent-green);
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(0, 230, 118, 0.3);
 }
 
-/* ── 13. Creator Sustainability, Plan A/B/C, Downside Protection ──────────── */
-.sustainability-box {
-  background: var(--bg-card);
+/* ── 14. Interactive Multi-Format Aspect Ratio Switcher (Nothing is Wasted) ── */
+.aspect-switcher-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.aspect-preview-viewport {
+  background: #040406;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
-  padding: 2rem;
-}
-.cycle-flow {
+  height: 280px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: var(--bg-surface);
-  border-radius: var(--radius-sm);
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aspect-frame {
+  border: 2px dashed var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--ease-spring);
+  position: relative;
+}
+.aspect-frame span {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
+  color: var(--accent-cyan);
+  font-weight: 700;
 }
 
-.plan-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.plan-card {
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-hairline);
-}
-.plan-card h4 { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--text-pure); margin-bottom: 0.5rem; }
+/* Aspect states */
+.aspect-frame[data-ratio="16-9"]  { width: 90%; height: 60%; }
+.aspect-frame[data-ratio="9-16"]  { width: 42%; height: 90%; }
+.aspect-frame[data-ratio="1-1"]   { width: 65%; height: 65%; }
+.aspect-frame[data-ratio="239-1"] { width: 95%; height: 44%; }
 
-.downside-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
+.aspect-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
-.downside-item {
-  padding: 1.25rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-hairline);
+.aspect-btn {
+  padding: 0.85rem 1.25rem;
   border-radius: var(--radius-sm);
-  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-body);
+  transition: all 0.25s;
 }
-.downside-item h5 { font-size: var(--fs-xs); color: var(--text-pure); margin-bottom: 0.25rem; }
-.downside-item p { font-size: var(--fs-2xs); color: var(--text-muted); }
+.aspect-btn:hover, .aspect-btn.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+  color: #ffffff;
+}
 
-/* ── 14. Real-Time & Seasonal Signals Dashboard ───────────────────────────── */
-.signals-dashboard {
+/* ── 15. Real-Time Radar & Market Intelligence ────────────────────────────── */
+.radar-signals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -670,7 +773,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  height: 125px;
+  transition: all 0.3s;
+}
+.signal-card:hover {
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
 }
 .signal-header {
   font-family: var(--font-mono);
@@ -693,7 +801,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-cyan);
 }
 
-/* ── 15. The Signature Intelligence Loop ─────────────────────────────────── */
+/* ── 16. The Signature Intelligence Loop ─────────────────────────────────── */
 .loop-banner {
   background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, var(--bg-pitch) 70%);
   border: 1px solid var(--border-subtle);
@@ -720,7 +828,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .loop-arrow { color: var(--text-dim); }
 
-/* ── 16. Interactive Project Simulator ────────────────────────────────────── */
+/* ── 17. Interactive Project Simulator ────────────────────────────────────── */
 .simulator-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-medium);
@@ -730,16 +838,8 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr 1.1fr;
   gap: 3rem;
 }
-.sim-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-.sim-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
+.sim-controls { display: flex; flex-direction: column; gap: 1.25rem; }
+.sim-group { display: flex; flex-direction: column; gap: 0.4rem; }
 .sim-group label {
   font-family: var(--font-mono);
   font-size: var(--fs-2xs);
@@ -760,7 +860,7 @@ h1, h2, h3, h4, h5, h6 {
 .sim-select option { background: #0b0b10; }
 
 .sim-output {
-  background: #08080c;
+  background: #07070b;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 2rem;
@@ -792,7 +892,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-pure);
 }
 
-/* ── 17. Who We Serve: 12 Audiences ───────────────────────────────────────── */
+/* ── 18. Who We Serve (12 Roles) ──────────────────────────────────────────── */
 .who-serve-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -824,7 +924,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.55;
 }
 
-/* ── 18. Verified Client Marquee ──────────────────────────────────────────── */
+/* ── 19. Client Marquee ───────────────────────────────────────────────────── */
 .marquee-container {
   overflow: hidden;
   position: relative;
@@ -861,7 +961,7 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
-/* ── 19. Footer & Signature Statement ─────────────────────────────────────── */
+/* ── 20. Footer & Signatures ──────────────────────────────────────────────── */
 .footer {
   background: var(--bg-pitch);
   border-top: 1px solid var(--border-hairline);
@@ -888,16 +988,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.1em;
   margin-bottom: 1.25rem;
 }
-.footer-links ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-.footer-links a {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
+.footer-links ul { display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-links a { font-size: var(--fs-xs); color: var(--text-muted); transition: color 0.2s; }
 .footer-links a:hover { color: var(--text-pure); }
 
 .founders-strip {
@@ -933,7 +1025,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.4rem;
 }
 
-/* ── 20. Floating Action Buttons ──────────────────────────────────────────── */
+/* ── 21. Floating Action Buttons ──────────────────────────────────────────── */
 .floating-actions {
   position: fixed;
   bottom: 2rem;
@@ -966,33 +1058,33 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(10px);
   transition: all 0.3s;
 }
-.fab--top svg { fill: #040406; }
+.fab--top svg { fill: #030305; }
 .fab--top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
-/* ── 21. Scroll Animation Utility ─────────────────────────────────────────── */
+/* ── 22. Scroll Reveal Animations ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* ── 22. Responsive Adaptations ───────────────────────────────────────────── */
+/* ── 23. Responsive Adaptations ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .simulator-card, .footer-top {
+  .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .aspect-switcher-box, .simulator-card, .footer-top {
     grid-template-columns: 1fr;
   }
-  .grid-3, .silos-grid, .signals-dashboard, .who-serve-grid, .lifecycle-track {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .grid-4, .downside-grid {
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .nav__links { display: none; }
-  .grid-3, .silos-grid, .signals-dashboard, .who-serve-grid, .lifecycle-track, .plan-cards, .grid-4, .downside-grid {
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track {
     grid-template-columns: 1fr;
   }
   .hero__title { font-size: clamp(2.4rem, 10vw, 3.8rem); }

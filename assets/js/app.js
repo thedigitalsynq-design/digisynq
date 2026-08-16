@@ -1,6 +1,6 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform Engine
-   Ecosystem Canvas, ABCDEF Engine, Real-Time Project Simulator & Navigation
+   Ecosystem Canvas, 3D Card Tilt, Kinetic Type, Aspect Ratio Switcher & Simulator
    ========================================================================== */
 
 (function () {
@@ -65,7 +65,24 @@
     revealEls.forEach(el => observer.observe(el));
   }
 
-  /* ── 3. Living Ecosystem Graph Canvas (Hero Section) ───────────────────── */
+  /* ── 3. Kinetic Title Word Rotator ─────────────────────────────────────── */
+  const dynamicTag = document.getElementById('hero-dynamic-tag');
+  if (dynamicTag) {
+    const words = ['CONNECTED.', 'ORCHESTRATED.', 'INTELLIGENT.', 'SYNCHRONIZED.'];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % words.length;
+      dynamicTag.style.opacity = '0';
+      dynamicTag.style.transform = 'translateY(8px)';
+      setTimeout(() => {
+        dynamicTag.textContent = words[idx];
+        dynamicTag.style.opacity = '1';
+        dynamicTag.style.transform = 'translateY(0)';
+      }, 300);
+    }, 2800);
+  }
+
+  /* ── 4. Living Ecosystem Graph Canvas (Hero Section) ───────────────────── */
   const canvas = document.getElementById('ecosystem-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -75,7 +92,7 @@
       'PEOPLE', 'SKILLS', 'EQUIPMENT', 'LOCATIONS',
       'STUDIOS', 'CAPITAL', 'CONTENT', 'MARKETS', 'AUDIENCES'
     ];
-    let mouse = { x: null, y: null, radius: 160 };
+    let mouse = { x: null, y: null, radius: 170 };
 
     function resize() {
       width = canvas.width = window.innerWidth;
@@ -97,9 +114,9 @@
           baseY: centerY + Math.sin(angle) * radius,
           x: centerX + Math.cos(angle) * radius,
           y: centerY + Math.sin(angle) * radius,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: 4,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: 3.5,
           pulse: Math.random() * Math.PI * 2
         });
       });
@@ -125,10 +142,10 @@
 
       // Draw Center Hub (DIGISYNQ Orchestration Core)
       ctx.beginPath();
-      ctx.arc(centerX, centerY, 8, 0, Math.PI * 2);
-      ctx.fillStyle = '#00e5ff';
-      ctx.shadowColor = '#00e5ff';
-      ctx.shadowBlur = 20;
+      ctx.arc(centerX, centerY, 7, 0, Math.PI * 2);
+      ctx.fillStyle = '#00f0ff';
+      ctx.shadowColor = '#00f0ff';
+      ctx.shadowBlur = 24;
       ctx.fill();
       ctx.shadowBlur = 0;
 
@@ -139,8 +156,8 @@
         node.y += node.vy;
 
         // Bounded oscillation
-        if (Math.abs(node.x - node.baseX) > 25) node.vx *= -1;
-        if (Math.abs(node.y - node.baseY) > 25) node.vy *= -1;
+        if (Math.abs(node.x - node.baseX) > 22) node.vx *= -1;
+        if (Math.abs(node.y - node.baseY) > 22) node.vy *= -1;
 
         // Mouse interaction
         if (mouse.x !== null && mouse.y !== null) {
@@ -158,7 +175,7 @@
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(node.x, node.y);
-        ctx.strokeStyle = `rgba(0, 229, 255, ${0.12 + Math.sin(node.pulse) * 0.05})`;
+        ctx.strokeStyle = `rgba(0, 240, 255, ${0.12 + Math.sin(node.pulse) * 0.06})`;
         ctx.lineWidth = 1;
         ctx.stroke();
 
@@ -189,7 +206,54 @@
     animate();
   }
 
-  /* ── 4. ABCDEF Engine Stepper ───────────────────────────────────────────── */
+  /* ── 5. 3D Holographic Tilt on ID Card ─────────────────────────────────── */
+  const idCard = document.querySelector('.id-card-preview');
+  if (idCard) {
+    idCard.addEventListener('mousemove', (e) => {
+      const rect = idCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      idCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+
+    idCard.addEventListener('mouseleave', () => {
+      idCard.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  }
+
+  /* ── 6. Multi-Format Aspect Ratio Switcher ─────────────────────────────── */
+  const aspectBtns = document.querySelectorAll('.aspect-btn');
+  const aspectFrame = document.getElementById('aspect-frame');
+  const aspectText  = document.getElementById('aspect-text');
+  const aspectRes   = document.getElementById('aspect-res');
+
+  const aspectInfo = {
+    '16-9':  { label: '16:9 CINEMA MASTER', res: '3840 &times; 2160 &bull; Theatrical &amp; OTT' },
+    '9-16':  { label: '9:16 VERTICAL REEL', res: '1080 &times; 1920 &bull; Mobile Discovery' },
+    '1-1':   { label: '1:1 SQUARE PROMO', res: '1080 &times; 1080 &bull; Social Feed' },
+    '239-1': { label: '2.39:1 ANAMORPHIC', res: '4096 &times; 1716 &bull; Widescreen Scope' }
+  };
+
+  if (aspectBtns.length && aspectFrame) {
+    aspectBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        aspectBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const ratio = btn.getAttribute('data-ratio');
+        aspectFrame.setAttribute('data-ratio', ratio);
+        if (aspectText && aspectInfo[ratio]) aspectText.innerHTML = aspectInfo[ratio].label;
+        if (aspectRes && aspectInfo[ratio]) aspectRes.innerHTML = aspectInfo[ratio].res;
+      });
+    });
+  }
+
+  /* ── 7. ABCDEF Engine Stepper ───────────────────────────────────────────── */
   const engineData = {
     A: {
       letter: "A",
@@ -305,7 +369,7 @@
     });
   }
 
-  /* ── 5. Interactive Project Simulator ──────────────────────────────────── */
+  /* ── 8. Interactive Project Simulator ──────────────────────────────────── */
   const simType = document.getElementById('sim-type');
   const simGenre = document.getElementById('sim-genre');
   const simBudget = document.getElementById('sim-budget');
@@ -322,7 +386,6 @@
 
     const type = simType.value;
     const budget = simBudget.value;
-    const genre = simGenre ? simGenre.value : '';
 
     let matchScore = 94;
     let utilScore = '78%';
@@ -370,7 +433,7 @@
     updateSimulation();
   }
 
-  /* ── 6. Contact & Interaction Handlers ──────────────────────────────────── */
+  /* ── 9. Contact Form Submissions & Fallback ────────────────────────────── */
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
   const submitBtn   = document.getElementById('submit-btn');
