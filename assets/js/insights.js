@@ -85,7 +85,7 @@
     ["Hit verified", "Namma Kade crossed the hit threshold. 11th hit of FY26."],
     ["House flagged", "Swarnalatha Cine Arts dormant — no activity for 24 months. Archive retained."],
     ["Capacity match", "Stage + camera + crew matched for a 34-day schedule."],
-    ["Screens added", "+12 multiplex screens across 3 Bengaluru centres. Regional total 404."]
+    ["Screens added", "+12 multiplex screens across 3 Bengaluru centers. Regional total 404."]
   ];
   var simIdx = 0;
   function pushSimulation() {

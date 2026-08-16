@@ -492,7 +492,7 @@
     '1': {
       num: '01 // Define',
       title: 'Define the Production Mandate',
-      desc: 'Input script parameters, technical specifications, camera preferences, schedule windows, and budget constraints into DIGISYNQ.',
+      desc: 'Enter script parameters, technical specifications, camera preferences, schedule windows, and budget constraints into DIGISYNQ.',
       example: 'Scenario: Period narrative thriller requires low-light anamorphic package, 14-person crew, and 12 soundstage shoot days in Bengaluru.',
       chain: ['Parse Technical Spec', 'Establish Budget Boundaries', 'Set Milestone Schedule']
     },
