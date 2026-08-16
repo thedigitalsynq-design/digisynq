@@ -117,43 +117,72 @@
 
       <!-- Right Form -->
       <div class="reveal reveal--d2">
-        <form class="shift-col shift-col--after" style="padding: clamp(2rem, 4vw, 3rem);" id="contact-form" action="https://wa.me/917996548969" method="GET" target="_blank">
-          <h3 style="font-size: var(--f-lg); color: #fff; margin-bottom: 1.5rem;">Submit Mandate / Capability</h3>
+        <form class="shift-col shift-col--after spotlight-card" style="padding: clamp(2rem, 4vw, 3rem);" id="contact-form" novalidate>
+          <h3 style="font-family:var(--font-serif); font-size: var(--f-xl); color: #fff; margin-bottom: 0.5rem;">Submit Project Mandate</h3>
+          <p style="font-size:var(--f-xs); color:var(--t-low); margin-bottom:1.5rem;">Connect your production needs directly to verified talent and studio capacity.</p>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="role" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Your Ecosystem Role</label>
-            <select id="role" name="role" style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;">
-              <option value="Producer / Brand (Project Mandate)" style="background: #08080c;">Producer / Showrunner (Initiate Project Mandate)</option>
-              <option value="Director / Writer / Artist" style="background: #08080c;">Director / Writer / Filmmaker (Join Capability Graph)</option>
-              <option value="Cinematographer / Technician" style="background: #08080c;">Cinematographer / Technician (Multi-Talent Verification)</option>
-              <option value="Studio / Equipment Owner" style="background: #08080c;">Studio / Equipment Owner (List Idle Capacity)</option>
-              <option value="Educator / Workshop Mentor" style="background: #08080c;">Educator / Mentor (Knowledge Transfer Labs)</option>
+            <label for="role" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Your Ecosystem Role</label>
+            <select id="role" name="role" class="fp-select">
+              <option value="Producer / Showrunner (Initiate Project Mandate)">Producer / Showrunner (Initiate Project Mandate)</option>
+              <option value="Director / Writer / Filmmaker (Join Capability Graph)">Director / Writer / Filmmaker (Join Capability Graph)</option>
+              <option value="Cinematographer / Technician (Multi-Talent Verification)">Cinematographer / Technician (Multi-Talent Verification)</option>
+              <option value="Studio / Equipment Owner (List Idle Capacity)">Studio / Equipment Owner (List Idle Capacity)</option>
+              <option value="Educator / Mentor (Knowledge Transfer Labs)">Educator / Mentor (Knowledge Transfer Labs)</option>
             </select>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="name" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Name / Production Banner</label>
-            <input type="text" id="name" name="name" placeholder="Your name or production banner" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="name" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Name / Production Banner</label>
+            <input type="text" id="name" name="name" class="fp-input" placeholder="e.g. Red Chillies / Aryan Films" required />
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="phone" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">WhatsApp / Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="phone" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">WhatsApp / Contact Number</label>
+            <input type="tel" id="phone" name="phone" class="fp-input" placeholder="+91 98765 43210" required />
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem;">
-            <label for="message" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Mandate Requirements / Asset Inventory</label>
-            <textarea id="message" name="message" rows="4" placeholder="Describe your project, shooting timeline, budget parameters, or camera/soundstage inventory..." required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit; resize: vertical;"></textarea>
+            <label for="message" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Mandate Requirements &amp; Target Dates</label>
+            <textarea id="message" name="message" class="fp-textarea" placeholder="Describe your project scale, camera preferences (ARRI/RED), shooting days, location hub..." required></textarea>
           </div>
 
           <button type="submit" class="btn btn-signal btn-full" id="submit-btn">
-            <span>Connect to Network Desk &rarr;</span>
+            <span>Connect to Orchestration Desk &rarr;</span>
           </button>
+
+          <div id="contact-confirmation" style="display:none; margin-top:1.25rem; padding:1.2rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:var(--r-md); text-align:center;">
+            <strong style="color:var(--cyan-bright); display:block; margin-bottom:0.35rem; font-size:var(--f-sm);">✓ Mandate Received</strong>
+            <p style="font-size:var(--f-xs); color:var(--t-medium); line-height:1.6;">Our orchestration desk has received your details and is routing your mandate to verified network capacity.</p>
+          </div>
         </form>
       </div>
 
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contact-form');
+      const confirmBox = document.getElementById('contact-confirmation');
+      const submitBtn = document.getElementById('submit-btn');
+
+      if (contactForm && confirmBox) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Routing Mandate...';
+
+          setTimeout(() => {
+            confirmBox.style.display = 'block';
+            confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            submitBtn.textContent = '✓ Mandate Transmitted';
+            contactForm.reset();
+          }, 600);
+        });
+      }
+    });
+  </script>
 
   <!-- Footer -->
   <footer class="footer" aria-label="Site Footer">

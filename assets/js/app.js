@@ -24,6 +24,55 @@
   }
   setTimeout(revealPage, 1000); // Safety fallback
 
+  /* ── Ambient Background Aurora Orbs ─────────────────────────────────────── */
+  const auroraContainer = document.createElement('div');
+  auroraContainer.className = 'aurora-mesh';
+  auroraContainer.setAttribute('aria-hidden', 'true');
+  auroraContainer.innerHTML = `
+    <div class="aurora-orb aurora-orb-1"></div>
+    <div class="aurora-orb aurora-orb-2"></div>
+    <div class="aurora-orb aurora-orb-3"></div>
+  `;
+  document.body.prepend(auroraContainer);
+
+  /* ── Fluid Interactive Magnetic Cursor (Pointer Devices Only) ──────────── */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const dot = document.createElement('div');
+    dot.className = 'custom-cursor-dot';
+
+    const follower = document.createElement('div');
+    follower.className = 'custom-cursor-follower';
+
+    document.body.appendChild(dot);
+    document.body.appendChild(follower);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let followerX = mouseX;
+    let followerY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    }, { passive: true });
+
+    function renderCursor() {
+      followerX += (mouseX - followerX) * 0.18;
+      followerY += (mouseY - followerY) * 0.18;
+      follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+      requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Magnetic hover trigger on interactive elements
+    const hoverTargets = 'a, button, .card, .spotlight-card, .sim-tab, .mech-step, .plan-tab, input, select, textarea';
+    document.querySelectorAll(hoverTargets).forEach((el) => {
+      el.addEventListener('mouseenter', () => follower.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => follower.classList.remove('hovering'));
+    });
+  }
+
   /* ── 1. Lenis Momentum Smooth Scroll ────────────────────────────────────── */
   let lenisInstance = null;
   if (typeof Lenis !== 'undefined') {
