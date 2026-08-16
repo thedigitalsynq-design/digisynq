@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ is a creative production network and intelligence platform. We connect verified talent, equipment, studios, locations, and production intelligence — without owning the assets." />
-  <meta property="og:title" content="DIGISYNQ — Creative Industry Intelligence &amp; Orchestration Platform" />
-  <meta property="og:description" content="Build the right production without owning everything. Discover, verify, match, coordinate, and measure creative-industry capacity." />
+  <meta name="description" content="DIGISYNQ — The Network Between the Dots. An open, asset-light, trusted and continuously learning operating network for the cinema ecosystem." />
+  <meta property="og:title" content="DIGISYNQ — The Network Between the Dots" />
+  <meta property="og:description" content="Cinema doesn't lack talent, resources, knowledge or opportunities. It loses value because they are fragmented. DIGISYNQ connects the dots." />
   <meta property="og:image" content="assets/img/logo.svg" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#030306" />
-  <title>DIGISYNQ — Creative Industry Intelligence &amp; Orchestration</title>
+  <meta name="theme-color" content="#050507" />
+  <title>DIGISYNQ — The Network Between the Dots</title>
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,404 +18,145 @@
 </head>
 <body>
 
-  <!-- Subtle Film Grain Atmosphere -->
-  <div class="film-grain" aria-hidden="true"></div>
-
-  <!-- ===== 00: MINIMAL STICKY NAVIGATION ===== -->
-  <header class="nav-wrapper" id="top">
-    <nav class="nav container" aria-label="Primary navigation">
-      <a href="index.html" class="nav__logo" aria-label="DIGISYNQ Home">
-        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
-        <span class="nav__logo-text">DIGISYNQ</span>
+  <!-- ===== 00: NAVIGATION ===== -->
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="DIGISYNQ Home">
+        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav-logo-img" />
+        <span class="nav-logo-name">DIGISYNQ</span>
       </a>
 
-      <div class="nav__links" role="list">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#graph">Ecosystem</a>
-        <a href="#professional-id">Professional ID</a>
-        <a href="#project-room">Project Room</a>
-        <a href="#trust">Trust</a>
-        <a href="#business-model">Business</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#why">Why</a>
+        <a href="#shift">The Shift</a>
+        <a href="#mechanism">Mechanism</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#talent">Talent</a>
+        <a href="#graph">Cinema Graph</a>
+        <a href="#business">Model</a>
         <a href="about.html">About</a>
-      </div>
+      </nav>
 
-      <div class="nav__actions">
-        <a href="register.html" class="btn btn--outline btn--sm">Join Ecosystem</a>
-        <a href="contact.html" class="btn btn--primary btn--sm" id="nav-get-started">Build a Project &rarr;</a>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-signal btn-sm">Join the Network &rarr;</a>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- ===== 01: HERO SECTION ===== -->
-  <section class="hero" id="hero" aria-label="Hero section">
-    <canvas id="ecosystem-canvas"></canvas>
-
-    <!-- Viewfinder Framing Reticles -->
-    <div class="viewfinder-hud" aria-hidden="true">
-      <div class="hud-top">
-        <div style="display:flex; align-items:center;">
-          <span class="rec-dot"></span>
-          <span>ORCHESTRATING // LIVE GRAPH</span>
-        </div>
-        <div class="hud-corner hud-corner--tr"></div>
-      </div>
-      <div class="hud-bottom">
-        <div class="hud-corner hud-corner--bl"></div>
-        <div>
-          <span>ISO 800 &bull; 24.000 FPS &bull; 2.39:1 SCOPE</span>
-        </div>
-      </div>
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile Navigation">
+    <a href="#why">Why</a>
+    <a href="#shift">The Shift</a>
+    <a href="#mechanism">Mechanism</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#talent">Talent &amp; Multi-Talent</a>
+    <a href="#graph">Cinema Graph</a>
+    <a href="#business">Business Model</a>
+    <a href="about.html">About</a>
+    <div class="nav-drawer-cta">
+      <a href="contact.html" class="btn btn-signal btn-full">Join the Network &rarr;</a>
     </div>
+  </div>
 
-    <div class="container hero__content">
-      <div class="badge-tag reveal">
-        <span class="badge-dot"></span>
-        Creative Industry Intelligence &amp; Orchestration
+  <!-- ===== 01: HERO SECTION ===== -->
+  <section class="hero" id="hero" aria-label="Hero Section">
+    <canvas id="dot-canvas"></canvas>
+
+    <div class="wrap hero-body">
+      <div class="hero-overline reveal">
+        <span class="hero-dot-live"></span>
+        <span>The Network Between the Dots</span>
       </div>
 
-      <h1 class="hero__title reveal">
-        THE CREATIVE ECOSYSTEM,<br />
-        <span class="gradient-text">ON DEMAND.</span>
+      <h1 class="hero-h1 reveal reveal--d1">
+        CINEMA IS FULL OF DOTS.<br />
+        <em>DIGISYNQ CONNECTS THEM.</em>
       </h1>
 
-      <p class="hero__sub reveal">
-        DIGISYNQ connects verified creative talent, equipment, studios, locations, and production intelligence into one coordinated ecosystem — <strong>without owning the assets.</strong>
+      <p class="hero-sub reveal reveal--d2">
+        An open, asset-light, trusted and continuously learning operating network that connects talent, resources, knowledge, opportunities and audiences across the cinema ecosystem.
       </p>
 
-      <div class="hero__actions reveal">
-        <a href="contact.html" class="btn btn--primary btn--lg">Build a Project &rarr;</a>
-        <a href="register.html" class="btn btn--outline btn--lg">Join the Ecosystem &rarr;</a>
+      <div class="hero-actions reveal reveal--d3">
+        <a href="#why" class="btn btn-signal btn-lg">Explore the Network &rarr;</a>
+        <a href="#mechanism" class="btn btn-ghost btn-lg">How DIGISYNQ Works</a>
       </div>
 
-      <!-- Compact Ecosystem Formula -->
-      <div class="hero-formula-strip reveal">
-        <span class="formula-item">TALENT</span>
-        <span class="formula-plus">+</span>
-        <span class="formula-item">EQUIPMENT</span>
-        <span class="formula-plus">+</span>
-        <span class="formula-item">STUDIOS</span>
-        <span class="formula-plus">+</span>
-        <span class="formula-item">LOCATIONS</span>
-        <span class="formula-plus">+</span>
-        <span class="formula-item">POST</span>
-        <span class="formula-plus">+</span>
-        <span class="formula-item">DISTRIBUTION</span>
-        <span class="formula-equals">=</span>
-        <span class="formula-result">PRODUCTION</span>
+      <!-- Interactive Dot Cluster Filters -->
+      <div class="hero-node-strip reveal reveal--d4" aria-label="Network Node Categories">
+        <button class="hero-node-pill active" data-cluster="all">
+          <span class="hero-node-pill-dot"></span> All Dots
+        </button>
+        <button class="hero-node-pill" data-cluster="people">
+          <span class="hero-node-pill-dot" style="color:var(--signal);"></span> Talent &amp; Mentors
+        </button>
+        <button class="hero-node-pill" data-cluster="assets">
+          <span class="hero-node-pill-dot" style="color:var(--signal);"></span> Cameras &amp; Studios
+        </button>
+        <button class="hero-node-pill" data-cluster="work">
+          <span class="hero-node-pill-dot" style="color:var(--net);"></span> Projects &amp; Mandates
+        </button>
+        <button class="hero-node-pill" data-cluster="intel">
+          <span class="hero-node-pill-dot" style="color:var(--net);"></span> Knowledge &amp; Audience
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ===== 02: THE PROBLEM ===== -->
-  <section class="section" id="problem" aria-label="The Fragmentation Problem">
-    <div class="container">
-      <div class="problem-card reveal">
-        <div class="section-header">
-          <div class="badge-tag"><span class="badge-dot"></span> The Structural Reality</div>
-          <h2 class="section-title">CREATIVE PRODUCTION IS <span class="gradient-text">FRAGMENTED.</span></h2>
-          <p class="section-sub">
-            The creative industry already has millions of cameras, soundstages, technicians, and scripts. The issue is severe operational friction between disconnected participants.
-          </p>
-        </div>
-
-        <div class="silos-tag-cloud">
-          <span class="silo-pill">⚠️ WhatsApp Groups</span>
-          <span class="silo-pill">⚠️ Phone Calls</span>
-          <span class="silo-pill">⚠️ Personal Networks</span>
-          <span class="silo-pill">⚠️ Unknown Availability</span>
-          <span class="silo-pill">⚠️ Unknown Reliability</span>
-          <span class="silo-pill">⚠️ Disconnected Vendors</span>
-          <span class="silo-pill">⚠️ Idle Equipment Packages</span>
-          <span class="silo-pill">⚠️ Unused Studio Capacity</span>
-          <span class="silo-pill">⚠️ Last-Minute Replacements</span>
-          <span class="silo-pill">⚠️ Zero Institutional Memory</span>
-        </div>
-
-        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-hairline);">
-          <h3 style="font-size: var(--fs-lg); color:#fff; font-weight:700;">
-            The problem isn't lack of talent. <span style="color:var(--accent-cyan);">The problem is coordination.</span>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 03: THE BIG IDEA ===== -->
-  <section class="section" id="big-idea" aria-label="The Core Operating Philosophy">
-    <div class="container">
-      <div class="big-idea-banner reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Operating Philosophy</div>
-        <h2 class="section-title" style="font-size: var(--fs-3xl);">
-          WE DON'T OWN THE ECOSYSTEM.<br />
-          <span class="gradient-text">WE ORCHESTRATE IT.</span>
-        </h2>
-        <p class="section-sub" style="max-width: 48rem; margin-inline: auto;">
-          DIGISYNQ does not need to own every camera, studio, technician, or production facility. It makes fragmented industry capacity:
-        </p>
-
-        <div class="pillars-5-grid">
-          <div class="pillar-card">
-            <strong>SEARCHABLE</strong>
-            <p>Know exactly what verified assets and craft exist.</p>
-          </div>
-          <div class="pillar-card">
-            <strong>VERIFIABLE</strong>
-            <p>Evidence-based capability and wrap performance history.</p>
-          </div>
-          <div class="pillar-card">
-            <strong>MATCHABLE</strong>
-            <p>Right-sized pairing based on genre, budget, and skills.</p>
-          </div>
-          <div class="pillar-card">
-            <strong>COORDINATED</strong>
-            <p>Unified capture protocols with active Plan A/B/C failovers.</p>
-          </div>
-          <div class="pillar-card">
-            <strong>MEASURABLE</strong>
-            <p>Every project wrap teaches and improves the next.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 04: HOW DIGISYNQ WORKS (01–08 PROGRESSIVE STEPPER & LOOP) ===== -->
-  <section class="section" id="how-it-works" aria-label="How DIGISYNQ Works">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> The 8-Stage Production Loop</div>
-        <h2 class="section-title">FROM REQUIREMENT <span class="gradient-text">TO REPUTATION.</span></h2>
-        <p class="section-sub">
-          One continuous, non-linear operating loop where every stage feeds evidence into the intelligence flywheel.
-        </p>
-      </div>
-
-      <!-- Progressive Timeline Stepper -->
-      <div class="stepper-timeline-nav reveal">
-        <button class="step-nav-btn active" data-step="1">
-          <span class="step-nav-num">01</span>
-          <span class="step-nav-name">Define</span>
-        </button>
-        <button class="step-nav-btn" data-step="2">
-          <span class="step-nav-num">02</span>
-          <span class="step-nav-name">Understand</span>
-        </button>
-        <button class="step-nav-btn" data-step="3">
-          <span class="step-nav-num">03</span>
-          <span class="step-nav-name">Match</span>
-        </button>
-        <button class="step-nav-btn" data-step="4">
-          <span class="step-nav-num">04</span>
-          <span class="step-nav-name">Compose</span>
-        </button>
-        <button class="step-nav-btn" data-step="5">
-          <span class="step-nav-num">05</span>
-          <span class="step-nav-name">Execute</span>
-        </button>
-        <button class="step-nav-btn" data-step="6">
-          <span class="step-nav-num">06</span>
-          <span class="step-nav-name">Measure</span>
-        </button>
-        <button class="step-nav-btn" data-step="7">
-          <span class="step-nav-num">07</span>
-          <span class="step-nav-name">Reputation</span>
-        </button>
-        <button class="step-nav-btn" data-step="8">
-          <span class="step-nav-num">08</span>
-          <span class="step-nav-name">Learn ↺</span>
-        </button>
-      </div>
-
-      <!-- Detail Panel for Selected Stage -->
-      <div class="stepper-detail-panel reveal">
-        <div>
-          <span class="mono-tag" style="color:var(--accent-cyan);" id="step-num">STAGE 01</span>
-          <h3 style="font-size: var(--fs-xl); color:#fff; margin-block: 0.5rem;" id="step-title">01 — Define the Requirement</h3>
-          <p style="color: var(--text-muted); font-size: var(--fs-base); line-height: 1.75;" id="step-desc">
-            The producer, director, or brand inputs project parameters: format, target geography, shooting timeline, budget parameters, and creative ambitions.
-          </p>
-          <div style="margin-top: 1.25rem; font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--text-dim);" id="step-example">
-            Mandate: “Kannada commercial, ₹25L budget, 3 shooting days, Bengaluru.”
-          </div>
-        </div>
-
-        <div style="background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-md); padding:1.75rem;">
-          <h4 style="font-family:var(--font-mono); font-size:var(--fs-xs); color:#fff; text-transform:uppercase; margin-bottom:1rem;">
-            Orchestration Protocols Active
-          </h4>
-          <div style="display:flex; flex-direction:column; gap:0.65rem;" id="step-details">
-            <span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ Format &amp; Genre Classification</span>
-            <span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ Budget Tier &amp; Timeline Window</span>
-            <span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ Specific Technical Requirements</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 05: THE CREATIVE INDUSTRY GRAPH ===== -->
-  <section class="section" id="graph" aria-label="The Creative Industry Graph">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> The Intelligence Map</div>
-        <h2 class="section-title">THE CREATIVE <span class="gradient-text">INDUSTRY GRAPH.</span></h2>
-        <p class="section-sub">
-          A living, multi-dimensional graph mapping who is available, what hardware is unutilized, and how compatible resources execute together.
-        </p>
-      </div>
-
-      <div class="graph-matrix-grid reveal">
-        <div class="graph-dim-card">
-          <div class="graph-dim-tag">DIMENSION 01</div>
-          <h4 class="graph-dim-title">WHO</h4>
-          <ul class="graph-dim-items">
-            <li>Cinematographers &amp; DOPs</li>
-            <li>Directors &amp; Showrunners</li>
-            <li>Technicians, Gaffers &amp; Grips</li>
-            <li>Editors, Colorists &amp; VFX</li>
-            <li>Specialty Rig Operators</li>
-          </ul>
-        </div>
-
-        <div class="graph-dim-card">
-          <div class="graph-dim-tag">DIMENSION 02</div>
-          <h4 class="graph-dim-title">WHAT</h4>
-          <ul class="graph-dim-items">
-            <li>ARRI, RED, Sony Cinema Bodies</li>
-            <li>Anamorphic &amp; Cine Prime Glass</li>
-            <li>Soundstages &amp; Virtual Bays</li>
-            <li>Lighting &amp; Grip Trucks</li>
-            <li>DI Suites &amp; Dubbing Studios</li>
-          </ul>
-        </div>
-
-        <div class="graph-dim-card">
-          <div class="graph-dim-tag">DIMENSION 03</div>
-          <h4 class="graph-dim-title">WHERE &amp; WHEN</h4>
-          <ul class="graph-dim-items">
-            <li>Bengaluru &bull; South Regional Hub</li>
-            <li>Mumbai &bull; Commercial Center</li>
-            <li>Hyderabad, Chennai, Kochi</li>
-            <li>Real-Time Availability Windows</li>
-            <li>Verified Travel Radius</li>
-          </ul>
-        </div>
-
-        <div class="graph-dim-card">
-          <div class="graph-dim-tag">DIMENSION 04</div>
-          <h4 class="graph-dim-title">HOW WELL &amp; WHAT WORKED</h4>
-          <ul class="graph-dim-items">
-            <li>Grade (Demonstrated Capability)</li>
-            <li>Rating (Project Performance)</li>
-            <li>On-Time &amp; Reliability Index</li>
-            <li>Verified Completed Wrap Logs</li>
-            <li>Co-Working Network Compatibility</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tangible Ecosystem Compatibility Lock Demo -->
-      <div class="compat-box reveal">
-        <div style="margin-bottom: 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-          <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">COMPATIBILITY PAIRING</span>
-            <h4 style="font-size:var(--fs-base); color:#fff; margin-top:0.2rem;">Live Ecosystem Compatibility Lock</h4>
-          </div>
-          <span class="demo-indicator">ILLUSTRATIVE ECOSYSTEM SPECIMEN</span>
-        </div>
-
-        <div class="compat-grid">
-          <div class="compat-item">
-            <span class="compat-item-type">TALENT</span>
-            <div class="compat-item-name">Director of Photography</div>
-            <div class="compat-item-meta">Grade A &bull; 4.8★ &bull; 94% Rel.<br /><strong style="color:#fff;">Avail: Sept 10–18</strong> &bull; BLR</div>
-          </div>
-
-          <div class="compat-item">
-            <span class="compat-item-type">HARDWARE</span>
-            <div class="compat-item-name">ARRI Alexa 35 Package</div>
-            <div class="compat-item-meta">Master Primes + Grip Kit<br /><strong style="color:#fff;">Avail: Sept 12–14</strong> &bull; BLR</div>
-          </div>
-
-          <div class="compat-item">
-            <span class="compat-item-type">STUDIO</span>
-            <div class="compat-item-name">Soundstage 02 (Acoustic)</div>
-            <div class="compat-item-meta">120 Crew &bull; 8000 sq.ft<br /><strong style="color:#fff;">Avail: Sept 11–13</strong> &bull; BLR</div>
-          </div>
-
-          <div class="compat-outcome">
-            <div style="font-family:var(--font-mono); font-size:var(--fs-2xs); color:var(--accent-green); font-weight:700; margin-bottom:0.25rem;">
-              ● 100% COMPATIBILITY LOCKED
-            </div>
-            <p style="font-size:var(--fs-2xs); color:var(--text-muted); line-height:1.4;">
-              Coordinated shoot window locked with zero scheduling conflict.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 06: DIGISYNQ PROFESSIONAL ID ===== -->
-  <section class="section" id="professional-id" aria-label="Professional Identity">
-    <div class="container">
-      <div class="talent-grid">
+  <!-- ===== 02: THE INDUSTRY PROBLEM ===== -->
+  <section class="section" id="why" aria-label="The Industry Problem">
+    <div class="wrap">
+      <div class="problem-layout">
         <div class="reveal">
-          <div class="badge-tag"><span class="badge-dot"></span> Flagship Product</div>
-          <h2 class="section-title">THE DIGISYNQ <span class="gradient-text">PROFESSIONAL ID.</span></h2>
-          <p class="section-sub">
-            Make capability discoverable beyond personal networks. Every technician, director, and facility receives a unique verified identity grounded in actual work evidence.
+          <div class="eyebrow"><span class="eyebrow-line"></span> The Industry Problem</div>
+          <h2 class="sec-title display-md">
+            ABUNDANCE EXISTS.<br />
+            <span class="signal-text">FRAGMENTATION WASTES IT.</span>
+          </h2>
+          <p class="body-text" style="margin-top:1.25rem;">
+            Cinema doesn't lack filmmakers, cameras, soundstages, knowledge or audiences. The tragedy is that useful resources remain invisible, disconnected, idle, underutilized, and trapped inside closed personal networks.
           </p>
-
-          <div class="grade-rating-diff">
-            <div class="diff-col">
-              <h5 style="color:var(--accent-cyan);">GRADE = Capability</h5>
-              <p>Demonstrated technical depth, mastery of advanced camera rigs, DI color science, or complex production design.</p>
-            </div>
-            <div class="diff-col">
-              <h5 style="color:var(--accent-green);">RATING = Performance</h5>
-              <p>Verified wrap feedback: on-time arrival, collaborative attitude, schedule discipline, and budget adherence.</p>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
-            <a href="register.html" class="btn btn--primary" style="background:var(--accent-cyan); color:#030306; font-weight:700;">Join the Ecosystem &rarr;</a>
-            <a href="contact.html" class="btn btn--outline">Query Talent Graph</a>
+          <div class="problem-quote" style="margin-top:2rem;">
+            &ldquo;Cinema loses value not from a lack of capability, but from the friction of disconnected coordination.&rdquo;
           </div>
         </div>
 
-        <!-- 3D Holographic ID Card Preview -->
-        <div class="id-card-wrapper reveal">
-          <div class="id-card-preview">
-            <div class="id-card-glare"></div>
-            <div class="id-card-header">
-              <div>
-                <span class="mono-tag" style="font-size:0.7rem;">DIGISYNQ VERIFIED ID</span>
-                <h4 style="font-size:var(--fs-md); font-weight:800; margin-top:0.2rem;">DS-TAL-004821</h4>
-              </div>
-              <div style="text-align:right;">
-                <span class="mono-tag" style="color:var(--accent-cyan); font-weight:700;">GRADE A</span>
-                <div style="font-family:var(--font-mono); font-size:var(--fs-sm); font-weight:700; color:#fff;">4.8 / 5.0</div>
-              </div>
+        <div class="reveal reveal--d2">
+          <div class="fragment-grid">
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Talent &rarr; Scattered &amp; Opaque</span>
             </div>
-
-            <div style="margin-bottom: 1rem;">
-              <h5 style="font-size:var(--fs-sm); text-transform:uppercase; letter-spacing:0.05em; color:#fff;">Director of Photography</h5>
-              <p style="font-size:var(--fs-xs); color:var(--text-muted);">Specialized in Low Light, Anamorphic &amp; Commercial High-Speed</p>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Resources &rarr; Idle &amp; Dormant</span>
             </div>
-
-            <div class="id-card-badges">
-              <span class="id-badge id-badge--verified">✓ 32 Verified Projects</span>
-              <span class="id-badge">94% Reliability</span>
-              <span class="id-badge">97% On-Time</span>
-              <span class="id-badge">81% Repeat Hire</span>
-              <span class="id-badge">12 Verified Skills</span>
-              <span class="id-badge" style="border-color:rgba(0,230,118,0.4); color:var(--accent-green);">● Avail: Sept 10–18</span>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Knowledge &rarr; Lost After Wraps</span>
             </div>
-
-            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-hairline); display:flex; justify-content:space-between; font-size:var(--fs-2xs); color:var(--text-dim); font-family:var(--font-mono);">
-              <span>EVIDENCE VERIFIED</span>
-              <span><span class="demo-indicator" style="margin:0;">DEMO SPECIMEN</span></span>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Relationships &rarr; Trapped in Silos</span>
+            </div>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Opportunities &rarr; Word-of-Mouth</span>
+            </div>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Content &rarr; Under-Harvested</span>
+            </div>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Budgets &rarr; Leaking in Rework</span>
+            </div>
+            <div class="fragment-item active">
+              <span class="fragment-item-state"></span>
+              <span>Memory &rarr; Zero Ecosystem Data</span>
             </div>
           </div>
         </div>
@@ -423,557 +164,993 @@
     </div>
   </section>
 
-  <!-- ===== 07: PROJECT ROOM (OPERATING SYSTEM INTERFACE) ===== -->
-  <section class="section" id="project-room" aria-label="Project Room Operating System">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Production Operating System</div>
-        <h2 class="section-title">THE DIGISYNQ <span class="gradient-text">PROJECT ROOM.</span></h2>
-        <p class="section-sub">
-          DIGISYNQ coordinates the entire production ecosystem after the match. Monitor crew readiness, equipment test logs, and standby resilience in one workspace.
+  <!-- ===== 03: THE SHIFT (OWNERSHIP TO ACTIVATION) ===== -->
+  <section class="section" id="shift" aria-label="The Paradigm Shift">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> The Paradigm Shift</div>
+        <h2 class="sec-title display-lg">FROM OWNERSHIP <span class="signal-text">TO ACTIVATION.</span></h2>
+        <p class="sec-sub">
+          We don't need to own every camera, soundstage, or crew roster. We activate and synchronize what already exists.
         </p>
       </div>
 
-      <div class="project-room-card reveal">
-        <div class="room-header">
-          <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">ACTIVE WORKSPACE // DS-PRJ-8820</span>
-            <h3 style="font-size:var(--fs-lg); color:#fff; margin-top:0.25rem;">Kannada Narrative Feature — &ldquo;Shadow Lines&rdquo; <span class="demo-indicator">DEMO WORKSPACE</span></h3>
-          </div>
-
-          <div class="plan-switch-group">
-            <button class="plan-btn active" data-plan="A">Plan A Primary</button>
-            <button class="plan-btn" data-plan="B">Plan B Standby</button>
-            <button class="plan-btn" data-plan="C">Plan C Contingency</button>
-          </div>
-        </div>
-
-        <div class="room-bars-grid">
-          <div class="room-bar-col">
-            <small>PEOPLE <strong>96%</strong></small>
-            <div class="progress-track"><div class="progress-fill" style="width: 96%;"></div></div>
-          </div>
-          <div class="room-bar-col">
-            <small>EQUIPMENT <strong>100%</strong></small>
-            <div class="progress-track"><div class="progress-fill" style="width: 100%;"></div></div>
-          </div>
-          <div class="room-bar-col">
-            <small>LOCATION <strong id="bar-loc-val">82%</strong></small>
-            <div class="progress-track"><div class="progress-fill" id="bar-loc" style="width: 82%;"></div></div>
-          </div>
-          <div class="room-bar-col">
-            <small>SCHEDULE <strong>91%</strong></small>
-            <div class="progress-track"><div class="progress-fill" style="width: 91%;"></div></div>
+      <div class="shift-grid reveal reveal--d1">
+        <div class="shift-col shift-col--before">
+          <span class="shift-col-label">TRADITIONAL MODEL</span>
+          <div class="shift-list">
+            <div class="shift-item shift-item--before">Own or rent at full markups</div>
+            <div class="shift-item shift-item--before">Hire through personal favors</div>
+            <div class="shift-item shift-item--before">Search through disconnected directories</div>
+            <div class="shift-item shift-item--before">Manage with single points of failure</div>
+            <div class="shift-item shift-item--before">Finish the wrap</div>
+            <div class="shift-item shift-item--before">Forget the learnings</div>
+            <div class="shift-item shift-item--before">Start from scratch next project</div>
           </div>
         </div>
 
-        <div class="room-body-grid">
-          <div>
-            <h4 style="font-family:var(--font-mono); font-size:var(--fs-xs); color:#fff; text-transform:uppercase; margin-bottom:0.75rem;">
-              Ecosystem Roster &amp; Resource Allocation
-            </h4>
-            <div class="room-checklist">
-              <div class="room-check-item"><span>Director / Showrunner</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>Director of Photography</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>Production Designer</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>Camera Package (RED V-Raptor)</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>Soundstage 02 Booking</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>DI Color Suite (DaVinci)</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>Sync Sound Recordist</span><span class="status-locked">✓ LOCKED</span></div>
-              <div class="room-check-item"><span>OTT Distribution Window</span><span class="status-pending">● IN SYNC</span></div>
-            </div>
-          </div>
+        <div class="shift-arrow">&rarr;</div>
 
-          <div style="background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-sm); padding:1.25rem;">
-            <h4 style="font-family:var(--font-mono); font-size:var(--fs-xs); color:#fff; text-transform:uppercase; margin-bottom:0.5rem;">
-              Resilience &amp; Failover Status
-            </h4>
-            <strong style="font-size:var(--fs-xs); color:#fff;" id="room-plan-title">PLAN A // Primary Unit Locked</strong>
-            <p style="font-size:var(--fs-2xs); color:var(--text-muted); margin-top:0.25rem; line-height:1.5;" id="room-plan-desc">
-              Scheduled Primary DOP, RED V-Raptor package, outdoor Mysuru forest location, and scheduled Stage 2 booking.
-            </p>
-            <div style="margin-top:1rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline); display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:var(--fs-2xs);">
-              <span style="color:var(--text-dim);">RISK PROFILE:</span>
-              <span style="color:var(--accent-green); font-weight:700;">LOW (RESILIENCE ACTIVE)</span>
-            </div>
+        <div class="shift-col shift-col--after">
+          <span class="shift-col-label">DIGISYNQ OPERATING NETWORK</span>
+          <div class="shift-list">
+            <div class="shift-item shift-item--after"><strong>Access</strong> unutilized capacity on demand</div>
+            <div class="shift-item shift-item--after"><strong>Connect</strong> verified cross-disciplinary dots</div>
+            <div class="shift-item shift-item--after"><strong>Compose</strong> tailored, right-sized production units</div>
+            <div class="shift-item shift-item--after"><strong>Synchronize</strong> dynamic Plan A/B/C failovers</div>
+            <div class="shift-item shift-item--after"><strong>Measure</strong> objective wrap logs and time flow</div>
+            <div class="shift-item shift-item--after"><strong>Learn</strong> blameless post-mortem insights</div>
+            <div class="shift-item shift-item--after"><strong>Reuse &amp; Redeploy</strong> value into next opportunity ↺</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 08: CONTENT TREE (ONE PRODUCTION → MANY OUTPUTS) ===== -->
-  <section class="section" id="content-tree" aria-label="Continuous Content Harvesting">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Multiplier Effect</div>
-        <h2 class="section-title">ONE PRODUCTION &rarr; <span class="gradient-text">MANY OUTPUTS.</span></h2>
-        <p class="section-sub">
-          DIGISYNQ doesn't just coordinate production. It helps maximize the value extracted from every shooting hour through structured asset harvesting.
+  <!-- ===== 04: PIPELINE → NETWORK ===== -->
+  <section class="section" id="pipeline" aria-label="Pipeline to Network Transformation">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Architectural Transformation</div>
+        <h2 class="sec-title display-lg">PIPELINE <span class="signal-text">&rarr; NETWORK.</span></h2>
+        <p class="sec-sub">
+          Linear pipelines discard value at the finish line. Connected networks keep value flowing and compounding.
         </p>
       </div>
 
-      <div class="content-tree-grid reveal">
-        <div class="tree-root-card">
-          <span class="mono-tag" style="color:var(--accent-cyan);">ROOT PRODUCTION</span>
-          <h3 style="font-size:var(--fs-xl); color:#fff; margin-block:0.5rem;">Master Capture</h3>
-          <p style="font-size:var(--fs-xs); color:var(--text-muted);">
-            High-fidelity master shoot capturing primary dialogue, action, and synchronized BTS channels concurrently.
-          </p>
-        </div>
-
-        <div class="tree-branches-grid">
-          <div class="branch-card">
-            <span class="branch-type">CORE DELIVERABLE</span>
-            <h5 class="branch-title">1 Master + Trailer + 3 Teasers</h5>
-            <p class="branch-desc">Theatrical / OTT master cut with graded cinema trailers and targeted digital teasers.</p>
-          </div>
-
-          <div class="branch-card">
-            <span class="branch-type">SHORT-FORM GROWTH</span>
-            <h5 class="branch-title">Vertical Reels &amp; Shorts Pack</h5>
-            <p class="branch-desc">Platform-native 9:16 vertical cuts optimized for algorithmic reach on social platforms.</p>
-          </div>
-
-          <div class="branch-card">
-            <span class="branch-type">AUDIENCE ENGAGEMENT</span>
-            <h5 class="branch-title">BTS &amp; Character Vignettes</h5>
-            <p class="branch-desc">Behind-the-scenes craft stories, director breakdown clips, and character teaser assets.</p>
-          </div>
-
-          <div class="branch-card">
-            <span class="branch-type">MARKET PENETRATION</span>
-            <h5 class="branch-title">Localized Regional Cuts</h5>
-            <p class="branch-desc">Multi-lingual social promotional edits tailored for regional distribution channels.</p>
+      <div class="pipeline-net-layout reveal reveal--d1">
+        <div class="pipeline-col">
+          <span class="pipeline-label">TRADITIONAL LINEAR PIPELINE (VALUE DIES)</span>
+          <div class="pipeline-steps">
+            <div class="p-step">Idea Conception</div>
+            <div class="p-step">Pre-Production Sourcing</div>
+            <div class="p-step">Physical Production</div>
+            <div class="p-step">Post-Production (DI / Sound)</div>
+            <div class="p-step">Distribution Window</div>
+            <div class="p-step" style="color:var(--signal); font-weight:700;">Wrap &amp; Disconnect (Zero Memory)</div>
           </div>
         </div>
+
+        <div class="transform-arrow">&harr;</div>
+
+        <div class="pipeline-col network-col">
+          <span class="pipeline-label network-label">DIGISYNQ LIVING NETWORK (VALUE RECYCLES)</span>
+          <div class="net-nodes">
+            <div class="n-node"><span class="n-node-dot"></span><span>IDEA</span><span class="n-node-connects">&harr; TALENT</span></div>
+            <div class="n-node"><span class="n-node-dot"></span><span>RESOURCES</span><span class="n-node-connects">&harr; PROJECT</span></div>
+            <div class="n-node"><span class="n-node-dot"></span><span>KNOWLEDGE</span><span class="n-node-connects">&harr; DISTRIBUTION</span></div>
+            <div class="n-node"><span class="n-node-dot"></span><span>AUDIENCE</span><span class="n-node-connects">&harr; LEARNING</span></div>
+            <div class="n-node" style="border-color:var(--signal);"><span class="n-node-dot" style="background:var(--net);"></span><strong style="color:var(--signal);">NEXT PROJECT FLYWHEEL ↺</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipeline-message reveal reveal--d2">
+        <p>THE PIPELINE DOESN'T HAVE TO END. <span class="highlight">THE VALUE CAN KEEP MOVING.</span></p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 09: TRUST & GOVERNANCE ===== -->
-  <section class="section" id="trust" aria-label="Trust and Governance Architecture">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Evidence-Based Trust</div>
-        <h2 class="section-title">TRUST GENERATED <span class="gradient-text">FROM EVIDENCE.</span></h2>
-        <p class="section-sub">
-          Recommendations and match credibility are calculated from verified track records, not unverified profile claims or paid ranking.
-        </p>
-      </div>
-
-      <div class="trust-pipeline-track reveal">
-        <div class="trust-node">
-          <span class="trust-node-num">01 // VERIFY</span>
-          <h5 class="trust-node-title">Identity &amp; Credentials</h5>
-          <p class="trust-node-desc">Government ID, portfolio evidence, and verified industry credits verified by desk.</p>
-        </div>
-        <div class="trust-node">
-          <span class="trust-node-num">02 // TRACK</span>
-          <h5 class="trust-node-title">Wrap Logs &amp; History</h5>
-          <p class="trust-node-desc">Actual project wrap logs record on-time arrival and technical reliability.</p>
-        </div>
-        <div class="trust-node">
-          <span class="trust-node-num">03 // PROTECT</span>
-          <h5 class="trust-node-title">Milestone Escrows</h5>
-          <p class="trust-node-desc">Standardized milestone agreements with secure payment release upon wrap.</p>
-        </div>
-        <div class="trust-node">
-          <span class="trust-node-num">04 // RESOLVE</span>
-          <h5 class="trust-node-title">Structured Disputes</h5>
-          <p class="trust-node-desc">Objective mediation framework for schedule cancellations and equipment damage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 10: LEGACY VS DIGISYNQ ===== -->
-  <section class="section" id="comparison" aria-label="Evolution Story">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Industry Evolution</div>
-        <h2 class="section-title">THE LEGACY INDUSTRY VS.<br /><span class="gradient-text">THE DIGISYNQ PLATFORM.</span></h2>
-        <p class="section-sub">
-          A natural evolution from fragmented word-of-mouth coordination toward an intelligent, verifiable production infrastructure.
-        </p>
-      </div>
-
-      <div class="comparison-table-wrapper reveal">
-        <table class="comp-table">
-          <thead>
-            <tr>
-              <th>Operational Dimension</th>
-              <th style="color:var(--text-muted);">Legacy Industry</th>
-              <th style="color:var(--accent-cyan);">With DIGISYNQ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Talent Sourcing</td>
-              <td class="legacy">WhatsApp groups, phone calls &amp; personal networks</td>
-              <td class="digisynq">Verified IDs, Grade &amp; Rating, evidence-based matching</td>
-            </tr>
-            <tr>
-              <td>Asset Booking</td>
-              <td class="legacy">Phone inquiries &amp; unmonetized idle capacity</td>
-              <td class="digisynq">Live availability graph &amp; transparent unutilized slot booking</td>
-            </tr>
-            <tr>
-              <td>Risk Management</td>
-              <td class="legacy">Single point of failure; reactive replacement</td>
-              <td class="digisynq">Pre-matched Plan A/B/C standby units &amp; failover bays</td>
-            </tr>
-            <tr>
-              <td>Content Output</td>
-              <td class="legacy">Single master delivered; promotional cuts ad-hoc</td>
-              <td class="digisynq">Structured content tree: master expanded into multiple platform cuts</td>
-            </tr>
-            <tr>
-              <td>Memory</td>
-              <td class="legacy">Zero data retained; every wrap closes the book</td>
-              <td class="digisynq">Institutional memory: every project makes the next project smarter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 11: NETWORK EFFECT ===== -->
-  <section class="section" id="network-effect" aria-label="The Compounding Moat">
-    <div class="container">
-      <div class="network-effect-card reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Compounding Advantage</div>
-        <h2 class="section-title" style="font-size: var(--fs-3xl);">
-          THE DIGISYNQ <span class="gradient-text">NETWORK EFFECT.</span>
+  <!-- ===== 05: NOTHING USEFUL SHOULD BE LEFT IDLE ===== -->
+  <section class="section" id="idle" aria-label="Resource State Machine">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Utilization Philosophy</div>
+        <h2 class="sec-title display-md">
+          NOTHING USEFUL SHOULD BE<br />
+          <span class="signal-text">LEFT UNNECESSARILY IDLE.</span>
         </h2>
-        <p class="section-sub" style="max-width: 46rem; margin-inline: auto;">
-          The platform becomes harder to replicate as network intelligence compounds with every completed project mandate.
-        </p>
-
-        <div class="network-loop-track">
-          <div class="net-node">More Verified Participants</div>
-          <span class="net-arrow">&rarr;</span>
-          <div class="net-node">Better Ecosystem Matching</div>
-          <span class="net-arrow">&rarr;</span>
-          <div class="net-node">More Production Mandates</div>
-          <span class="net-arrow">&rarr;</span>
-          <div class="net-node">More Performance Data</div>
-          <span class="net-arrow">&rarr;</span>
-          <div class="net-node" style="border-color:var(--accent-cyan); color:var(--accent-cyan);">Compounding Intelligence ↺</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 12: PROJECT SIMULATOR ===== -->
-  <section class="section" id="simulator" aria-label="Project Simulator">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Interactive Simulator</div>
-        <h2 class="section-title">SIMULATE A <span class="gradient-text">PRODUCTION UNIT.</span></h2>
-        <p class="section-sub">Configure your project parameters to preview estimated resource composition and resilience coverage.</p>
-      </div>
-
-      <div class="simulator-card reveal">
-        <div class="sim-controls">
-          <div class="sim-group">
-            <label for="sim-type">Project Format</label>
-            <select id="sim-type" class="sim-select">
-              <option value="creator">Creator Campaign / High-Velocity Short-Form</option>
-              <option value="commercial" selected>Commercial Brand Production (3-5 Days)</option>
-              <option value="ott">OTT Web Series / Multi-Episode</option>
-              <option value="feature">Narrative Feature Film</option>
-            </select>
-          </div>
-
-          <div class="sim-group">
-            <label for="sim-genre">Genre / Category</label>
-            <select id="sim-genre" class="sim-select">
-              <option value="thriller">Regional Thriller / Drama</option>
-              <option value="commercial" selected>Brand Commercial &amp; Product</option>
-              <option value="doc">Documentary &amp; Factual</option>
-              <option value="creator">Creator Lifestyle &amp; Tech</option>
-            </select>
-          </div>
-
-          <div class="sim-group">
-            <label for="sim-budget">Budget Tier</label>
-            <select id="sim-budget" class="sim-select">
-              <option value="tier1">₹5L – ₹15L (Micro / Creator Unit)</option>
-              <option value="tier2" selected>₹25L – ₹75L (Commercial Mid-Tier)</option>
-              <option value="tier3">₹1Cr – ₹3Cr (Studio Feature Scale)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="sim-output">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="mono-tag" style="color:var(--accent-cyan);">SIMULATED ECOSYSTEM PROJECTION</span>
-              <span class="demo-indicator" style="margin:0;">ILLUSTRATIVE PROJECTION</span>
-            </div>
-            <h4 style="font-size:var(--fs-base); margin-top:0.35rem; color:#fff;" id="out-summary">
-              Commercial Grade-A DOP + Anamorphic Package + Stage 1 Slot
-            </h4>
-          </div>
-
-          <div class="sim-metrics-grid">
-            <div class="sim-metric-box">
-              <small>Estimated Crew</small>
-              <strong id="out-crew">32 Pros</strong>
-            </div>
-            <div class="sim-metric-box">
-              <small>Hardware Packages</small>
-              <strong id="out-gear">14 Pkgs</strong>
-            </div>
-            <div class="sim-metric-box">
-              <small>Time Efficiency</small>
-              <strong id="out-eff" style="color:var(--accent-green);">+15%</strong>
-            </div>
-            <div class="sim-metric-box">
-              <small>Plan B Standby</small>
-              <strong id="out-planb">94% Cov.</strong>
-            </div>
-            <div class="sim-metric-box">
-              <small>Content Outputs</small>
-              <strong id="out-cuts">16 Cuts</strong>
-            </div>
-            <div class="sim-metric-box">
-              <small>Schedule Risk</small>
-              <strong style="color:var(--accent-green);">Low</strong>
-            </div>
-          </div>
-
-          <div style="margin-top: 1rem;">
-            <a href="contact.html" class="btn btn--primary btn--full btn--sm">Build a Project &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 13: BUSINESS MODEL ===== -->
-  <section class="section" id="business-model" aria-label="Business Model">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Business Model</div>
-        <h2 class="section-title">WE EARN WHEN THE <span class="gradient-text">ECOSYSTEM CREATES VALUE.</span></h2>
-        <p class="section-sub">
-          Production executes faster. Assets stay utilized. Waste decreases. DIGISYNQ participates in the economic value generated.
+        <p class="sec-sub">
+          Useful utilization, not forced utilization. Transform dormant industry capacity into active learning, production, or mentoring value.
         </p>
       </div>
 
-      <div class="revenue-grid reveal">
-        <div class="revenue-card">
-          <div>
-            <span class="revenue-num">01 // ORCHESTRATION</span>
-            <h4 class="revenue-title">Turnkey Mandate Margin</h4>
-            <p class="revenue-desc">Percentage orchestration fee on coordinated commercial shoots and brand film packages with guaranteed delivery and Plan A/B/C resilience.</p>
+      <div class="idle-states-grid reveal reveal--d1">
+        <div class="idle-card">
+          <span class="idle-card-type">TALENT</span>
+          <h4 class="idle-card-title">Between Projects &rarr; Mentoring</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Dormant between shoots</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>Assigned to Workshop Masterclass</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Mentoring Next-Gen Crew</span></div>
           </div>
         </div>
 
-        <div class="revenue-card">
-          <div>
-            <span class="revenue-num">02 // ASSET TAKE RATE</span>
-            <h4 class="revenue-title">Studio &amp; Gear Facilitation</h4>
-            <p class="revenue-desc">Transaction facilitation take rate on booked idle soundstage days and camera packages booked through the availability graph.</p>
+        <div class="idle-card">
+          <span class="idle-card-type">EQUIPMENT</span>
+          <h4 class="idle-card-title">Unused Package &rarr; Testing &amp; Education</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Camera Package sitting in case</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>Active for Pre-Viz Lens Tests</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Monetized Off-Peak Rental</span></div>
           </div>
         </div>
 
-        <div class="revenue-card">
-          <div>
-            <span class="revenue-num">03 // SaaS / API</span>
-            <h4 class="revenue-title">Intelligence Subscriptions</h4>
-            <p class="revenue-desc">B2B query tiers for production banners and agencies to access verified talent reliability scores and automated package builders.</p>
+        <div class="idle-card">
+          <span class="idle-card-type">SOUNDSTAGE</span>
+          <h4 class="idle-card-title">Open Days &rarr; Rehearsal &amp; Virtual Production</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Stage unbooked 4 days this week</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>Action Choreography &amp; Tech Rehearsal</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Discounted Slot Activated</span></div>
           </div>
         </div>
 
-        <div class="revenue-card">
-          <div>
-            <span class="revenue-num">04 // CONTENT INTELLIGENCE</span>
-            <h4 class="revenue-title">Multi-Format Deliverables</h4>
-            <p class="revenue-desc">Turnkey asset slicing pipelines expanding one master production into multiple platform cuts alongside regional audience trend data.</p>
+        <div class="idle-card">
+          <span class="idle-card-type">KNOWLEDGE</span>
+          <h4 class="idle-card-title">Wrap Experience &rarr; System Intelligence</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Learnings stuck in director's head</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>Blameless Post-Mortem Log</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Institutional Decision Memory</span></div>
+          </div>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">RELATIONSHIPS</span>
+          <h4 class="idle-card-title">High Synergy &rarr; Reusable Units</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Great director-DOP chemistry</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>Compatibility Verified in Graph</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Fast-Track Pairing for Next Script</span></div>
+          </div>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">CONTENT</span>
+          <h4 class="idle-card-title">Master Cut &rarr; 16 Sliced Formats</h4>
+          <div class="idle-chain">
+            <div class="idle-chain-step idle-chain-step--origin"><span class="idle-state-dot dot-idle"></span><span>Single cinema master delivered</span></div>
+            <div class="idle-chain-step idle-chain-step--mid"><span class="idle-state-dot dot-signal"></span><span>BTS &amp; Character Vignette Harvest</span></div>
+            <div class="idle-chain-step idle-chain-step--dest"><span class="idle-state-dot dot-active"></span><span>Organic Multi-Platform Reach</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 14: PROOF / WHAT WE ARE BUILDING ===== -->
-  <section class="section" id="proof" aria-label="What We Are Building">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Platform Progress</div>
-        <h2 class="section-title">WHAT WE ARE <span class="gradient-text">BUILDING.</span></h2>
-        <p class="section-sub">
-          Transparent ecosystem development milestones across regional creative hubs.
+  <!-- ===== 06: NEXT-BEST-USE CONCEPT ===== -->
+  <section class="section" id="next-best-use" aria-label="Next Best Use Concept">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> The Operating Principle</div>
+        <h2 class="sec-title display-lg">
+          WHAT IS IT DOING NOW?<br />
+          <span class="signal-text">WHAT COULD IT DO NEXT?</span>
+        </h2>
+        <p class="sec-sub">
+          When an asset, talent or knowledge finishes one cycle, the DIGISYNQ network immediately identifies its highest-value next deployment.
         </p>
       </div>
 
-      <div class="pillars-5-grid reveal">
-        <div class="pillar-card">
-          <strong style="color:var(--accent-green);">MAPPED</strong>
-          <p>South regional soundstages, camera rental fleets, and virtual production facilities.</p>
+      <div class="recycle-grid reveal reveal--d1">
+        <div class="recycle-card">
+          <span class="recycle-type">TALENT FLOW</span>
+          <h4 class="recycle-title">Aryan Sharma (Cinematographer)</h4>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Commercial Shoot</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Color Science Workshop</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Indie Pre-Viz</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Feature Narrative</span>
+          </div>
         </div>
-        <div class="pillar-card">
-          <strong style="color:var(--accent-green);">VERIFIED</strong>
-          <p>Cinematographers, directors, gaffers, and editors onboarded to the talent graph.</p>
+
+        <div class="recycle-card">
+          <span class="recycle-type">HARDWARE FLOW</span>
+          <h4 class="recycle-title">ARRI Alexa Mini LF + Cooke Set</h4>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Primary Feature Unit</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Off-Peak Rental</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Lighting Lab Test</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Music Video Package</span>
+          </div>
         </div>
-        <div class="pillar-card">
-          <strong style="color:var(--accent-cyan);">CONNECTED</strong>
-          <p>Active availability calendars and standardized handoff pipelines.</p>
-        </div>
-        <div class="pillar-card">
-          <strong style="color:var(--accent-amber);">IN DEVELOPMENT</strong>
-          <p>Automated escrow milestone smart contracts and mobile Project Room app.</p>
-        </div>
-        <div class="pillar-card">
-          <strong style="color:var(--accent-cyan);">PILOT</strong>
-          <p>Live commercial brand shoots and creator campaigns operating through the desk.</p>
+
+        <div class="recycle-card">
+          <span class="recycle-type">STUDIO FLOW</span>
+          <h4 class="recycle-title">Acoustic Soundstage 02 (BLR)</h4>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Ad Commercial Set</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Actor Table Read</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Stunt Rigging Rehearsal</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Virtual LED Session</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 15: AUDIENCE PATHWAYS ===== -->
-  <section class="section" id="pathways" aria-label="Audience Pathways">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="badge-tag"><span class="badge-dot"></span> Audience Pathways</div>
-        <h2 class="section-title">YOUR PATHWAY INTO <span class="gradient-text">DIGISYNQ.</span></h2>
-        <p class="section-sub">Built for every stakeholder across the creative and commercial production lifecycle.</p>
+  <!-- ===== 07: THE DIGISYNQ MECHANISM (10 STEPS) ===== -->
+  <section class="section" id="mechanism" aria-label="The 10-Step Mechanism">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> The 10-Step Mechanism</div>
+        <h2 class="sec-title display-lg">HOW DIGISYNQ <span class="signal-text">ACTIVATES VALUE.</span></h2>
+        <p class="sec-sub">
+          A continuous, non-linear operating loop where every step feeds verified evidence back into the ecosystem memory.
+        </p>
       </div>
 
-      <div class="pathways-grid reveal">
-        <div class="pathway-card">
-          <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">FOR CREATORS</span>
-            <h4 class="pathway-title">Turn Ideas into Productions</h4>
-            <p class="pathway-desc">Validate your narrative concept, match Grade-A crew packages, and protect your project execution.</p>
-          </div>
-          <a href="contact.html" class="btn btn--outline btn--sm">Build a Project &rarr;</a>
+      <div class="mechanism-wrapper reveal reveal--d1">
+        <div class="mechanism-steps" role="tablist">
+          <button class="mech-step active" data-step="1">
+            <span class="mech-num">01</span>
+            <span class="mech-name">Discover</span>
+          </button>
+          <button class="mech-step" data-step="2">
+            <span class="mech-num">02</span>
+            <span class="mech-name">Verify</span>
+          </button>
+          <button class="mech-step" data-step="3">
+            <span class="mech-num">03</span>
+            <span class="mech-name">Connect</span>
+          </button>
+          <button class="mech-step" data-step="4">
+            <span class="mech-num">04</span>
+            <span class="mech-name">Compose</span>
+          </button>
+          <button class="mech-step" data-step="5">
+            <span class="mech-num">05</span>
+            <span class="mech-name">Synchronize</span>
+          </button>
+          <button class="mech-step" data-step="6">
+            <span class="mech-num">06</span>
+            <span class="mech-name">Execute</span>
+          </button>
+          <button class="mech-step" data-step="7">
+            <span class="mech-num">07</span>
+            <span class="mech-name">Track</span>
+          </button>
+          <button class="mech-step" data-step="8">
+            <span class="mech-num">08</span>
+            <span class="mech-name">Learn</span>
+          </button>
+          <button class="mech-step" data-step="9">
+            <span class="mech-num">09</span>
+            <span class="mech-name">Reuse</span>
+          </button>
+          <button class="mech-step" data-step="10">
+            <span class="mech-num">10</span>
+            <span class="mech-name">Redeploy ↺</span>
+          </button>
         </div>
 
-        <div class="pathway-card">
+        <div class="mech-detail">
           <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">FOR PRODUCERS</span>
-            <h4 class="pathway-title">Build Production Units</h4>
-            <p class="pathway-desc">Assemble tailored crew, lock idle soundstage slots, and enforce Plan A/B/C standby resilience.</p>
+            <div class="mech-detail-num" id="mech-detail-num">01 // DISCOVER</div>
+            <h3 class="mech-detail-title" id="mech-detail-title">Discover What Exists</h3>
+            <p class="mech-detail-desc" id="mech-detail-desc">
+              Index hidden, idle, and distributed industry capacity. Map talent, unbooked soundstages, specialty camera packages, and verified skills across regional hubs.
+            </p>
           </div>
-          <a href="contact.html" class="btn btn--outline btn--sm">Build a Project &rarr;</a>
-        </div>
 
-        <div class="pathway-card">
-          <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">FOR CREATIVE PROS</span>
-            <h4 class="pathway-title">Verified Professional ID</h4>
-            <p class="pathway-desc">Build a verifiable track record, benchmark your capability score, and get booked on merit.</p>
+          <div class="mech-detail-example">
+            <span class="mech-detail-example-label">Live Flow Simulation</span>
+            <div class="body-text" style="font-size:var(--f-xs); margin-bottom:1rem;" id="mech-detail-ex">
+              Scenario: 3 Soundstages in Bengaluru have 14 open calendar days next month. 6 Cinematographers are between projects.
+            </div>
+            <div class="mech-chain" id="mech-chain">
+              <div class="mech-chain-step current">Map Raw Capacity</div>
+              <div class="mech-chain-step current">Index Hardware &amp; Spaces</div>
+              <div class="mech-chain-step current">Identify Availability Windows</div>
+            </div>
           </div>
-          <a href="register.html" class="btn btn--cyan btn--sm">Join the Ecosystem &rarr;</a>
-        </div>
-
-        <div class="pathway-card">
-          <div>
-            <span class="mono-tag" style="color:var(--accent-cyan);">FOR STUDIOS &amp; GEAR</span>
-            <h4 class="pathway-title">Monetize Idle Capacity</h4>
-            <p class="pathway-desc">Convert unutilized soundstage days and dormant camera packages into productive rental cash flow.</p>
-          </div>
-          <a href="register.html" class="btn btn--outline btn--sm">Join the Ecosystem &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 16: FINAL CALL TO ACTION & FOOTER ===== -->
-  <section class="section" style="text-align:center; padding-block: 6.5rem;" aria-label="Final Call to Action">
-    <div class="container" style="max-width: 50rem;">
-      <div class="badge-tag reveal"><span class="badge-dot"></span> The Next Step</div>
-      <h2 class="section-title reveal" style="font-size: var(--fs-3xl);">
-        BUILD YOUR NEXT PRODUCTION<br />
-        <span class="gradient-text">WITH DIGISYNQ.</span>
-      </h2>
+  <!-- ===== 08: ABCDEF PHILOSOPHY ===== -->
+  <section class="section" id="philosophy" aria-label="ABCDEF Philosophy">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Core Operating Framework</div>
+        <h2 class="sec-title display-lg">THE ABCDEF <span class="signal-text">PHILOSOPHY.</span></h2>
+        <p class="sec-sub">
+          Six foundational principles governing every decision, match, and protocol in the DIGISYNQ network.
+        </p>
+      </div>
 
-      <p class="section-sub reveal" style="margin-bottom: 2.5rem;">
-        Connect the people. Access the resources. Protect the downside. Extract more value from every shoot.
-      </p>
+      <div class="abcdef-grid reveal reveal--d1">
+        <div class="abc-card">
+          <div class="abc-letter">A</div>
+          <h4 class="abc-word">ACCESS</h4>
+          <p class="abc-desc">Use what already exists before creating unnecessary ownership. Access distributed capacity over heavy capital expenditure.</p>
+          <div class="abc-example">Example: Lock idle ARRI packages instead of buying depreciating hardware.</div>
+        </div>
 
-      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;" class="reveal">
-        <a href="contact.html" class="btn btn--primary btn--lg">Build a Project &rarr;</a>
-        <a href="register.html" class="btn btn--cyan btn--lg">Join the Ecosystem &rarr;</a>
+        <div class="abc-card">
+          <div class="abc-letter">B</div>
+          <h4 class="abc-word">BRIDGE</h4>
+          <p class="abc-desc">Connect people, resources, knowledge, opportunities and markets across historically siloed regional creative hubs.</p>
+          <div class="abc-example">Example: Connect emerging Kannada writers with seasoned Mumbai showrunners.</div>
+        </div>
+
+        <div class="abc-card">
+          <div class="abc-letter">C</div>
+          <h4 class="abc-word">COMPOSE</h4>
+          <p class="abc-desc">Create the right tailored combination instead of simply listing loose resources. Right-sized crews, hardware, and locations.</p>
+          <div class="abc-example">Example: Build lean 12-person agile units for micro-budget period narratives.</div>
+        </div>
+
+        <div class="abc-card">
+          <div class="abc-letter">D</div>
+          <h4 class="abc-word">DYNAMIC</h4>
+          <p class="abc-desc">Cinema is uncertain. Plan A, B and C. Protect the creative outcome, not the original rigid schedule.</p>
+          <div class="abc-example">Example: Rain contingency activates pre-matched virtual studio instantly.</div>
+        </div>
+
+        <div class="abc-card">
+          <div class="abc-letter">E</div>
+          <h4 class="abc-word">EFFICIENCY</h4>
+          <p class="abc-desc">Reduce unnecessary money, time, effort, duplication, rework and idle capacity across the production lifecycle.</p>
+          <div class="abc-example">Example: Eliminates 18% budget leakage through synchronized DIT pipelines.</div>
+        </div>
+
+        <div class="abc-card">
+          <div class="abc-letter">F</div>
+          <h4 class="abc-word">FLYWHEEL</h4>
+          <p class="abc-desc">Every project should improve the next project. Wrap data, performance logs, and learnings compound network intelligence.</p>
+          <div class="abc-example">Example: Next production matches 3x faster with higher reliability scores.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Site Footer -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="container footer-top">
-      <div class="footer-brand">
-        <a href="index.html" class="nav__logo">
-          <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
-          <span class="nav__logo-text">DIGISYNQ</span>
-        </a>
-        <p>Creative Industry Intelligence &amp; Orchestration. Connecting verified talent, equipment, studios, locations, and production intelligence.</p>
+  <!-- ===== 09: TALENT & MULTI-TALENT SYSTEM ===== -->
+  <section class="section" id="talent" aria-label="Talent and Multi-Talent System">
+    <div class="wrap">
+      <div class="talent-layout">
+        <div class="reveal">
+          <div class="eyebrow"><span class="eyebrow-line"></span> Capability Identity</div>
+          <h2 class="sec-title display-md">
+            CAPABILITY, NOT JUST<br />
+            <span class="signal-text">JOB TITLES.</span>
+          </h2>
+          <p class="body-text" style="margin-top:1.25rem;">
+            The industry is full of people who can do more than one thing. A cinematographer who excels in drone piloting; a director who edits; a gaffer who understands DMX programming.
+          </p>
+          <p class="body-text" style="margin-top:1rem;">
+            DIGISYNQ maps <strong>adjacent capabilities</strong> to enable smarter team composition, higher utilization, cross-functional collaboration, and verified career advancement.
+          </p>
 
-        <div class="founders-strip">
-          <span class="mono-tag" style="color:var(--text-pure);">Leadership &amp; Co-Founders</span>
-          <div class="founders-list">
-            <span class="founder-tag">Yathish kumar Nagaraj</span>
-            <span class="founder-tag">Varun S</span>
-            <span class="founder-tag">Rakshith</span>
-            <span class="founder-tag">Rubesh</span>
+          <div style="margin-top:2rem;">
+            <a href="contact.html" class="btn btn-signal">Query Capability Graph &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Capability Specimen Card -->
+        <div class="reveal reveal--d2">
+          <div class="capability-card">
+            <div class="cap-card-header">
+              <span class="cap-card-id">DS-CAP-00892 // VERIFIED SPECIMEN</span>
+              <span class="cap-card-badge">● Grade A &bull; 96% Rel.</span>
+            </div>
+
+            <h3 class="cap-card-role">Director of Photography</h3>
+
+            <div class="cap-pills">
+              <span class="cap-pill cap-pill--primary">Cinematography</span>
+              <span class="cap-pill">Low Light Narrative</span>
+              <span class="cap-pill">Anamorphic Prime Mastery</span>
+              <span class="cap-pill">Drone FPV Operation</span>
+              <span class="cap-pill">DaVinci ACES Color Science</span>
+              <span class="cap-pill">Workshop Mentoring</span>
+            </div>
+
+            <div class="cap-stats-row">
+              <div class="cap-stat">
+                <small>Verified Wraps</small>
+                <strong>34 Shoots</strong>
+              </div>
+              <div class="cap-stat">
+                <small>On-Time Rate</small>
+                <strong>98%</strong>
+              </div>
+              <div class="cap-stat">
+                <small>Repeat Hire</small>
+                <strong>84%</strong>
+              </div>
+              <div class="cap-stat">
+                <small>Calendar</small>
+                <strong style="color:var(--signal);">12 Days Open</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10: TALENT DEVELOPMENT & WORKSHOPS ===== -->
+  <section class="section" id="workshops" aria-label="Talent Development & Workshops">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Knowledge Transfer</div>
+        <h2 class="sec-title display-lg">
+          WORKSHOPS ARE NOT COURSES.<br />
+          <span class="signal-text">THEY ARE KNOWLEDGE TRANSFERS.</span>
+        </h2>
+        <p class="sec-sub">
+          When talent has a gap, DIGISYNQ connects them with experienced practitioners to mentor, review, challenge, and develop skills in real-world environments.
+        </p>
+      </div>
+
+      <div class="idle-states-grid reveal reveal--d1">
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 01 // DISCOVER</span>
+          <h4 class="idle-card-title">Identify the Exact Skill Gap</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">System identifies emerging DOP needs advanced multi-camera DMX studio lighting mastery.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 02 // DIAGNOSE</span>
+          <h4 class="idle-card-title">Match with Veteran Practitioner</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Paired with a veteran gaffer and DI colorist between their project production windows.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 03 // DEVELOP</span>
+          <h4 class="idle-card-title">Hands-On Studio Lab</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">2-day intensive workshop hosted on an unbooked soundstage with active lighting truck package.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 04 // EVIDENCE</span>
+          <h4 class="idle-card-title">Recorded Test Footage</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Completed technical tests and lookbook added as authenticated evidence to capability ID.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 05 // DEPLOY</span>
+          <h4 class="idle-card-title">Matched to Paid Production</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">DOP is now qualified and matched for a ₹40L commercial shoot requiring that exact skill.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">STEP 06 // FLYWHEEL</span>
+          <h4 class="idle-card-title">Mentor Next Generation ↺</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">After wrap, the technician passes on learnings to newer crew members through the platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11: PLAN A / B / C RESILIENCE ===== -->
+  <section class="section" id="resilience" aria-label="Plan A/B/C Resilience">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Dynamic Execution</div>
+        <h2 class="sec-title display-lg">
+          PROTECT THE OUTCOME.<br />
+          <span class="signal-text">NOT THE ORIGINAL PLAN.</span>
+        </h2>
+        <p class="sec-sub">
+          Cinema is uncertain. Weather turns, gear fails, actors get delayed. DIGISYNQ locks Plan A, B, and C before call sheet wrap so the production never halts.
+        </p>
+      </div>
+
+      <div class="reveal reveal--d1">
+        <div class="plan-tabs">
+          <button class="plan-tab active" data-plan="A">Plan A // Primary Target</button>
+          <button class="plan-tab" data-plan="B">Plan B // Alternate Standby</button>
+          <button class="plan-tab" data-plan="C">Plan C // Contingency Failover</button>
+        </div>
+
+        <div class="plan-panel active" id="panel-plan-a">
+          <h4 class="plan-panel-title">PLAN A // Best Intended Path</h4>
+          <p class="plan-panel-desc">Primary scheduled shoot at outdoor Mysuru forest location with booked drone unit and natural daylight lighting package.</p>
+          <div class="plan-steps">
+            <div class="plan-step"><span>Primary DOP &amp; Drone Operator on location</span><span class="plan-step-state step-state-ok">● LOCKED</span></div>
+            <div class="plan-step"><span>Outdoor Mysuru Forest Location Clearance</span><span class="plan-step-state step-state-ok">● PERMITTED</span></div>
+            <div class="plan-step"><span>Natural Daylight Sync Grid</span><span class="plan-step-state step-state-ok">● ACTIVE</span></div>
+          </div>
+        </div>
+
+        <div class="plan-panel" id="panel-plan-b">
+          <h4 class="plan-panel-title">PLAN B // Standby Alternate Activated</h4>
+          <p class="plan-panel-desc">Pre-screened standby soundstage slot in Bengaluru with matched virtual production LED bay locked at standby rates.</p>
+          <div class="plan-steps">
+            <div class="plan-step"><span>Virtual Production LED Wall Standby Slot</span><span class="plan-step-state step-state-alt">● READY IN 2H</span></div>
+            <div class="plan-step"><span>Unreal Engine 5 Forest Environment Pre-Loaded</span><span class="plan-step-state step-state-ok">● RENDERED</span></div>
+            <div class="plan-step"><span>Zero Rescheduling Fee Contract Clause</span><span class="plan-step-state step-state-ok">● ENFORCED</span></div>
+          </div>
+        </div>
+
+        <div class="plan-panel" id="panel-plan-c">
+          <h4 class="plan-panel-title">PLAN C // Modular Contingency</h4>
+          <p class="plan-panel-desc">Modular split unit activation: shift principal dialogue indoors while 2nd unit captures weather plates concurrently.</p>
+          <div class="plan-steps">
+            <div class="plan-step"><span>Second Unit Pickup Team Deployed</span><span class="plan-step-state step-state-cont">● CONTINGENCY</span></div>
+            <div class="plan-step"><span>Dialogue Interior Soundstage 01 Locked</span><span class="plan-step-state step-state-ok">● READY</span></div>
+            <div class="plan-step"><span>Zero Shooting Hours Lost</span><span class="plan-step-state step-state-ok">● 100% UPTIME</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12: BLAMELESS POST-MORTEM & MONEY LEAKAGE ===== -->
+  <section class="section" id="leakage" aria-label="Blameless Post-Mortem & Money Leakage">
+    <div class="wrap">
+      <div class="problem-layout">
+        <div class="reveal">
+          <div class="eyebrow"><span class="eyebrow-line"></span> Financial Intelligence</div>
+          <h2 class="sec-title display-md">
+            WHERE DOES THE<br />
+            <span class="signal-text">MONEY LEAK?</span>
+          </h2>
+          <p class="body-text" style="margin-top:1.25rem;">
+            Money doesn't leak because people want to waste it. It leaks through coordination friction: idle rentals, duplicate procurement, overtime delays, and last-minute panic sourcing.
+          </p>
+          <div class="problem-quote" style="margin-top:2rem;">
+            &ldquo;When something fails, learn before you blame. Turn operational friction into ecosystem memory.&rdquo;
+          </div>
+        </div>
+
+        <div class="reveal reveal--d2">
+          <div class="fragment-grid">
+            <div class="fragment-item"><span>💸 Idle Equipment Day Rates</span></div>
+            <div class="fragment-item"><span>💸 Duplicate Camera Accessories</span></div>
+            <div class="fragment-item"><span>💸 Unnecessary Overtime Hours</span></div>
+            <div class="fragment-item"><span>💸 Last-Minute Premium Sourcing</span></div>
+            <div class="fragment-item"><span>💸 Schedule Overlaps &amp; Dead Time</span></div>
+            <div class="fragment-item"><span>💸 Rework from Unaligned Color Science</span></div>
+            <div class="fragment-item"><span>💸 Unused Sliced Content Assets</span></div>
+            <div class="fragment-item"><span>💸 Lost Retainer &amp; Transit Logistics</span></div>
+          </div>
+
+          <div style="margin-top:1.5rem; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--b0); border-radius:var(--r-md); text-align:center;">
+            <span class="mono" style="font-size:var(--f-xs); color:var(--signal);">MEASURE &rarr; REDUCE &rarr; LEARN &rarr; IMPROVE ↺</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 13: CONTENT + KNOWLEDGE + RELATIONSHIP RECYCLING ===== -->
+  <section class="section" id="recycling" aria-label="Ecosystem Value Recycling">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Compounding Value</div>
+        <h2 class="sec-title display-lg">
+          THE PROJECT MAY END.<br />
+          <span class="signal-text">THE VALUE DOESN'T.</span>
+        </h2>
+        <p class="sec-sub">
+          Continuous value extraction across content, knowledge, and collaborative human relationships.
+        </p>
+      </div>
+
+      <div class="recycle-grid reveal reveal--d1">
+        <div class="recycle-card">
+          <span class="recycle-type">01 // CONTENT RECYCLING</span>
+          <h4 class="recycle-title">One Production &rarr; 16 Assets</h4>
+          <p class="body-text" style="font-size:var(--f-xs); line-height:1.6; margin-bottom:1rem;">
+            Master film expands into theatrical trailer, teasers, 9:16 vertical shorts, BTS documentaries, director commentary clips, and localized regional assets.
+          </p>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Master Shoot</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">BTS Clips</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Vertical Reels</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Regional Dubs</span>
+          </div>
+        </div>
+
+        <div class="recycle-card">
+          <span class="recycle-type">02 // KNOWLEDGE RECYCLING</span>
+          <h4 class="recycle-title">Experience &rarr; Ecosystem Memory</h4>
+          <p class="body-text" style="font-size:var(--f-xs); line-height:1.6; margin-bottom:1rem;">
+            Hard-won production solutions are documented in blameless post-mortems and immediately taught in workshops so future productions never repeat the error.
+          </p>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Wrap Insight</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Post-Mortem Log</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Mentoring Lab</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Next Shoot DNA</span>
+          </div>
+        </div>
+
+        <div class="recycle-card">
+          <span class="recycle-type">03 // RELATIONSHIP RECYCLING</span>
+          <h4 class="recycle-title">Synergies &rarr; Reusable Units</h4>
+          <p class="body-text" style="font-size:var(--f-xs); line-height:1.6; margin-bottom:1rem;">
+            When a director, DOP, sound mixer, and editor execute smoothly together, that high-compatibility unit becomes an easily deployable pre-composed team.
+          </p>
+          <div class="recycle-chain">
+            <span class="recycle-step recycle-step--origin">Shoot Synergy</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Compatibility Log</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step">Pre-Paired Unit</span>
+            <span class="recycle-step">&rarr;</span>
+            <span class="recycle-step recycle-step--end">Fast Deployment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 14: ORGANIC AUDIENCE ===== -->
+  <section class="section" id="audience" aria-label="Organic Audience Discovery">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Audience Strategy</div>
+        <h2 class="sec-title display-lg">
+          RELEVANCE BEFORE SPEND.<br />
+          <span class="signal-text">ORGANIC AUDIENCE NETWORKS.</span>
+        </h2>
+        <p class="sec-sub">
+          DIGISYNQ connects productions with existing niche communities, creator networks, and cultural signals instead of relying solely on expensive paid ad spend.
+        </p>
+      </div>
+
+      <div class="idle-states-grid reveal reveal--d1">
+        <div class="idle-card">
+          <span class="idle-card-type">SIGNAL 01</span>
+          <h4 class="idle-card-title">Creator &amp; Cultural Networks</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Connect storytelling with genuine cultural communities who already care about the theme.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">SIGNAL 02</span>
+          <h4 class="idle-card-title">Regional Multi-Hub Distribution</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Discover authentic regional audience clusters across Bengaluru, Hyderabad, Chennai, and Mumbai.</p>
+        </div>
+
+        <div class="idle-card">
+          <span class="idle-card-type">SIGNAL 03</span>
+          <h4 class="idle-card-title">Organic Content Signals</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Measure organic engagement on teasers and BTS clips to inform final theatrical release timing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 15: TRUSTED OPEN NETWORK ===== -->
+  <section class="section" id="trust" aria-label="Trusted Open Network">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Security &amp; Permissions</div>
+        <h2 class="sec-title display-lg">
+          OPEN WHERE APPROPRIATE.<br />
+          <span class="signal-text">PROTECTED WHERE NECESSARY.</span>
+        </h2>
+        <p class="sec-sub">
+          We maintain total transparency in capability matching while rigorously protecting confidential IP, commercial terms, and personal data.
+        </p>
+      </div>
+
+      <div class="not-grid reveal reveal--d1">
+        <div class="not-col">
+          <span class="not-col-label" style="color:var(--signal);">WHAT IS OPEN &amp; DISCOVERABLE</span>
+          <div class="not-list">
+            <div class="not-item not-item--yes">Verified capability scores &amp; technical craft</div>
+            <div class="not-item not-item--yes">Real-time calendar availability windows</div>
+            <div class="not-item not-item--yes">Hardware inventory &amp; soundstage dimensions</div>
+            <div class="not-item not-item--yes">Authenticated wrap logs &amp; reliability index</div>
+            <div class="not-item not-item--yes">Open workshop knowledge and post-mortem insights</div>
+          </div>
+        </div>
+
+        <div class="not-col not-col--is">
+          <span class="not-col-label" style="color:var(--net);">WHAT IS STRICTLY PROTECTED</span>
+          <div class="not-list">
+            <div class="not-item not-item--yes">Confidential scripts, treatments &amp; unreleased IP</div>
+            <div class="not-item not-item--yes">Negotiated commercial rates &amp; budget sheets</div>
+            <div class="not-item not-item--yes">Private contact details &amp; personal data</div>
+            <div class="not-item not-item--yes">Unreleased footage and sensitive dailies</div>
+            <div class="not-item not-item--yes">Proprietary production contract terms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 16: THE CINEMA GRAPH ===== -->
+  <section class="section" id="graph" aria-label="The Cinema Graph">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Network Intelligence</div>
+        <h2 class="sec-title display-lg">
+          THE CINEMA GRAPH.<br />
+          <span class="signal-text">MULTIDIMENSIONAL CAPACITY.</span>
+        </h2>
+        <p class="sec-sub">
+          Eight interconnected graph layers converging to make the cinema ecosystem searchable, matchable, and continuously smarter.
+        </p>
+      </div>
+
+      <div class="idle-states-grid reveal reveal--d1">
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 01</span>
+          <h4 class="idle-card-title">Capability Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Detailed mapping of technical skills, lenses, color pipelines, and specialized rigs.</p>
+        </div>
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 02</span>
+          <h4 class="idle-card-title">Resource Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Live inventory of cameras, lighting trucks, soundstages, and DI post facilities.</p>
+        </div>
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 03</span>
+          <h4 class="idle-card-title">Availability Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Real-time synchronized calendars for talent, spaces, and equipment packages.</p>
+        </div>
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 04</span>
+          <h4 class="idle-card-title">Relationship Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Verified co-working synergy logs showing which combinations produce the best wraps.</p>
+        </div>
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 05</span>
+          <h4 class="idle-card-title">Knowledge Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Accumulated post-mortem insights, lighting ratios, and production workarounds.</p>
+        </div>
+        <div class="idle-card">
+          <span class="idle-card-type">GRAPH 06</span>
+          <h4 class="idle-card-title">Trust Graph</h4>
+          <p class="body-text" style="font-size:var(--f-xs);">Evidence-based reputation tracking: on-time rate, reliability, and repeat hire metric.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 17: THE FLYWHEEL ===== -->
+  <section class="section" id="flywheel" aria-label="The Compounding Flywheel">
+    <div class="wrap">
+      <div class="flywheel-card reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Compounding Moat</div>
+        <h2 class="sec-title display-lg">
+          THE DIGISYNQ <span class="signal-text">FLYWHEEL.</span>
+        </h2>
+        <p class="sec-sub" style="margin-inline:auto;">
+          A living, compounding system where every project executed makes the entire network more valuable for the next participant.
+        </p>
+
+        <div class="flywheel-loop">
+          <span class="fw-node">More Participants</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node">More Capability</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node">Better Discovery</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node">Better Composition</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node">Better Execution</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node">More Evidence &amp; Trust</span>
+          <span class="fw-arrow">&rarr;</span>
+          <span class="fw-node fw-node--apex">More Opportunity ↺</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 18: BUSINESS MODEL ===== -->
+  <section class="section" id="business" aria-label="Business Model">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Economic Engine</div>
+        <h2 class="sec-title display-lg">
+          HOW DIGISYNQ <span class="signal-text">CREATES &amp; CAPTURES VALUE.</span>
+        </h2>
+        <p class="sec-sub">
+          DIGISYNQ monetizes the value of coordination, access, intelligence, and asset utilization without needing to own every underlying camera or studio.
+        </p>
+      </div>
+
+      <div class="bm-grid reveal reveal--d1">
+        <div class="bm-card">
+          <span class="bm-num">01 // ORCHESTRATION</span>
+          <h4 class="bm-title">Turnkey Mandates</h4>
+          <p class="bm-desc">Orchestration margin on coordinated commercial shoots and narrative productions delivered with Plan A/B/C resilience.</p>
+        </div>
+
+        <div class="bm-card">
+          <span class="bm-num">02 // ASSET UTILIZATION</span>
+          <h4 class="bm-title">Take Rate on Idle Capacity</h4>
+          <p class="bm-desc">Transaction facilitation take rate when unbooked soundstage days and dormant camera packages find profitable bookings.</p>
+        </div>
+
+        <div class="bm-card">
+          <span class="bm-num">03 // ENTERPRISE INTELLIGENCE</span>
+          <h4 class="bm-title">SaaS &amp; Graph Subscriptions</h4>
+          <p class="bm-desc">B2B query tiers for production houses, OTT platforms, and agencies to access verified capability and availability graphs.</p>
+        </div>
+
+        <div class="bm-card">
+          <span class="bm-num">04 // KNOWLEDGE WORKSHOPS</span>
+          <h4 class="bm-title">Practitioner Masterclasses</h4>
+          <p class="bm-desc">Monetized high-intensity industry training workshops turning idle studio hours into premium hands-on skill development.</p>
+        </div>
+
+        <div class="bm-card">
+          <span class="bm-num">05 // CONTENT HARVESTING</span>
+          <h4 class="bm-title">Multi-Format Deliverables</h4>
+          <p class="bm-desc">Asset slicing pipelines expanding 1 master production into multiple platform cuts alongside regional audience trend data.</p>
+        </div>
+
+        <div class="bm-card">
+          <span class="bm-num">06 // SHARED SAVINGS</span>
+          <h4 class="bm-title">Budget Efficiency Margin</h4>
+          <p class="bm-desc">Success fees tied directly to measurable budget savings achieved through eliminated money leakage and synchronized post.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 19: DIFFERENTIATION (NOT SECTION) ===== -->
+  <section class="section" id="differentiation" aria-label="Category Differentiation">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Category Definition</div>
+        <h2 class="sec-title display-lg">
+          DIGISYNQ IS <span class="signal-text">A NEW CATEGORY.</span>
+        </h2>
+        <p class="sec-sub">
+          We are not an agency, marketplace, or production house. We are the operating network between them.
+        </p>
+      </div>
+
+      <div class="not-grid reveal reveal--d1">
+        <div class="not-col not-col--not">
+          <span class="not-col-label">DIGISYNQ IS NOT</span>
+          <div class="not-list">
+            <div class="not-item not-item--no">Another digital or advertising agency</div>
+            <div class="not-item not-item--no">Another crowded freelancer marketplace</div>
+            <div class="not-item not-item--no">Another traditional production house</div>
+            <div class="not-item not-item--no">Another equipment rental listing board</div>
+            <div class="not-item not-item--no">Another generic resume / job portal</div>
+            <div class="not-item not-item--no">Another standalone SaaS dashboard</div>
+          </div>
+        </div>
+
+        <div class="not-col not-col--is">
+          <span class="not-col-label">DIGISYNQ IS</span>
+          <div class="not-list">
+            <div class="not-item not-item--yes">An asset-light cinema operating network</div>
+            <div class="not-item not-item--yes">An evidence-based capability identity graph</div>
+            <div class="not-item not-item--yes">A dynamic Plan A/B/C resilience coordinator</div>
+            <div class="not-item not-item--yes">A continuous content &amp; knowledge recycling engine</div>
+            <div class="not-item not-item--yes">A blameless post-mortem learning flywheel</div>
+            <div class="not-item not-item--yes">The operating layer connecting the dots</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 20: FINAL STATEMENT & CTA ===== -->
+  <section class="final-cta" aria-label="Final Call to Action">
+    <div class="wrap final-cta-body">
+      <div class="final-wordmark reveal">DIGISYNQ</div>
+      <div class="final-tagline reveal reveal--d1">THE NETWORK BETWEEN THE DOTS.</div>
+
+      <div class="final-manifesto reveal reveal--d2">
+        Use what exists.<br />
+        Connect what is disconnected.<br />
+        Activate what is underused.<br />
+        Reduce what is wasted.<br />
+        Learn from every project.<br />
+        Reuse what works.<br />
+        Keep value moving.
+      </div>
+
+      <div class="reveal reveal--d3" style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-signal btn-lg">Connect the Dots &rarr;</a>
+        <a href="about.html" class="btn btn-ghost btn-lg">Explore DIGISYNQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 21: SITE FOOTER ===== -->
+  <footer class="footer" aria-label="Site Footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand-name">DIGISYNQ</div>
+        <div class="footer-brand-tag">The Network Between the Dots</div>
+        <p class="footer-brand-desc">
+          An open, asset-light, trusted and continuously learning operating network for the cinema ecosystem.
+        </p>
+
+        <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--b0);">
+          <span class="mono" style="font-size:var(--f-3xs); color:var(--t4); display:block; margin-bottom:0.4rem; letter-spacing:0.1em; text-transform:uppercase;">Co-Founders &amp; Leadership</span>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem; font-family:var(--font-m); font-size:var(--f-3xs); color:var(--t3);">
+            <span>Yathish kumar Nagaraj</span> &bull;
+            <span>Varun S</span> &bull;
+            <span>Rakshith</span> &bull;
+            <span>Rubesh</span>
           </div>
         </div>
       </div>
 
-      <div class="footer-links">
-        <h4>Ecosystem</h4>
-        <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#graph">Ecosystem Graph</a></li>
-          <li><a href="#professional-id">Professional ID</a></li>
-          <li><a href="#project-room">Project Room</a></li>
-          <li><a href="#content-tree">Content Tree</a></li>
-          <li><a href="register.html" style="color:var(--accent-cyan);">Join the Ecosystem &rarr;</a></li>
-        </ul>
+      <div>
+        <h4 class="footer-col-title">Network</h4>
+        <div class="footer-links">
+          <a href="#why">Why It Exists</a>
+          <a href="#shift">The Shift</a>
+          <a href="#mechanism">10-Step Mechanism</a>
+          <a href="#philosophy">ABCDEF Philosophy</a>
+          <a href="#talent">Capability Graph</a>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="#trust">Trust &amp; Governance</a></li>
-          <li><a href="#comparison">Legacy vs DIGISYNQ</a></li>
-          <li><a href="#network-effect">Network Effect</a></li>
-          <li><a href="#simulator">Project Simulator</a></li>
-          <li><a href="#business-model">Business Model</a></li>
-          <li><a href="#proof">What We Are Building</a></li>
-        </ul>
+      <div>
+        <h4 class="footer-col-title">Architecture</h4>
+        <div class="footer-links">
+          <a href="#workshops">Workshops</a>
+          <a href="#resilience">Plan A/B/C</a>
+          <a href="#recycling">Recycling Engine</a>
+          <a href="#trust">Security &amp; Trust</a>
+          <a href="#business">Business Model</a>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a></li>
-          <li><a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a></li>
-          <li><a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-          <li><a href="contact.html">Build a Project &rarr;</a></li>
-        </ul>
+      <div>
+        <h4 class="footer-col-title">Connect</h4>
+        <div class="footer-links">
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="contact.html" style="color:var(--signal);">Join DIGISYNQ &rarr;</a>
+        </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p style="color:var(--text-body);">WE DON'T OWN THE ASSETS. WE CONNECT THE ECOSYSTEM.</p>
-      <p>&copy; 2025 DIGISYNQ. All rights reserved. Where Digital Opportunities Connect.</p>
+    <div class="wrap footer-bottom">
+      <span>THE PROJECT MAY END. THE VALUE DOESN'T.</span>
+      <span>&copy; 2026 DIGISYNQ. All rights reserved. Where Digital Opportunities Connect.</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating Actions -->
-  <div class="floating-actions" aria-label="Quick Actions">
-    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab--wa" id="floating-wa-btn" aria-label="Chat on WhatsApp">
+  <!-- Floating Action Buttons -->
+  <div class="fab-cluster" aria-label="Quick Actions">
+    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
     </a>
-    <button class="fab fab--top" id="back-to-top-btn" aria-label="Back to top">
+    <button class="fab fab-top" id="fab-top" aria-label="Back to top">
       <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
     </button>
   </div>
