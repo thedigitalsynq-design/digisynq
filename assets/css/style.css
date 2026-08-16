@@ -66,13 +66,13 @@
   --warn: #a1a1aa;
   --idle: #3f3f46;
 
-  /* ── Google Sans Typography Stack (M3 Type System) */
-  --font-brand:    'Google Sans', 'Syne', system-ui, sans-serif;
-  --font-d:        'Google Sans', 'Syne', system-ui, sans-serif;
+  /* ── Typography Stack — Barlow Condensed (Display Bold) + Google Sans (UI) */
+  --font-brand:    'Barlow Condensed', 'Google Sans', system-ui, sans-serif;
+  --font-d:        'Barlow Condensed', 'Google Sans', system-ui, sans-serif;
   --font-sub:      'Google Sans', system-ui, sans-serif;
   --font-b:        'Google Sans', system-ui, sans-serif;
   --font-m:        'JetBrains Mono', 'Space Mono', monospace;
-  --font-logo:     'Google Sans', system-ui, sans-serif;
+  --font-logo:     'Barlow Condensed', 'Google Sans', system-ui, sans-serif;
 
   /* ── M3 Fluid Type Scale */
   --f-3xs: 0.625rem;   /* 10px */
@@ -230,15 +230,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-d);
   color: var(--t1);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
-.display-xl  { font-size: var(--f-4xl); letter-spacing: -0.02em; line-height: 0.95; font-weight: 700; }
-.display-lg  { font-size: var(--f-3xl); letter-spacing: -0.02em; line-height: 0.97; font-weight: 700; }
-.display-md  { font-size: var(--f-2xl); letter-spacing: -0.01em; line-height: 1.0;  font-weight: 600; }
-.display-sm  { font-size: var(--f-xl);  letter-spacing: -0.01em; font-weight: 600; }
+.display-xl  { font-size: var(--f-4xl); letter-spacing: 0.01em; line-height: 0.92; font-weight: 900; text-transform: uppercase; }
+.display-lg  { font-size: var(--f-3xl); letter-spacing: 0.01em; line-height: 0.94; font-weight: 900; text-transform: uppercase; }
+.display-md  { font-size: var(--f-2xl); letter-spacing: 0.01em; line-height: 0.96; font-weight: 800; text-transform: uppercase; }
+.display-sm  { font-size: var(--f-xl);  letter-spacing: 0.01em; font-weight: 800; text-transform: uppercase; }
 
 /* M3 Text Roles */
 .title-large  { font-size: var(--f-lg); font-weight: 500; font-family: var(--font-b); }
