@@ -30,6 +30,8 @@ const PUBLIC_DIR = __dirname;
 const INSIGHTS_PROVIDER = (process.env.INSIGHTS_PROVIDER || 'gemini').toLowerCase();
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
+const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
 const INSIGHTS_CACHE_TTL_MS = 5 * 60 * 1000; // 5-minute cache — keeps free-tier Gemini usage well under daily limits
 
 // In-Memory Database (seeded with verified ecosystem records)
@@ -296,6 +298,28 @@ async function httpsJsonWithRetry(hostname, pathname, headers, body, attempts = 
  * Supports gemini (default) and openai.
  */
 async function aiGenerate(systemPrompt, userPrompt, temperature) {
+  if (INSIGHTS_PROVIDER === 'groq' && GROQ_API_KEY) {
+    const out = await httpsJsonWithRetry(
+      'api.groq.com',
+      '/openai/v1/chat/completions',
+      {
+        Authorization: `Bearer ${GROQ_API_KEY}`,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
+        Accept: 'application/json'
+      },
+      {
+        model: GROQ_MODEL,
+        temperature: temperature || 0.6,
+        response_format: { type: 'json_object' },
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ]
+      }
+    );
+    return out.choices && out.choices[0] && out.choices[0].message && out.choices[0].message.content;
+  }
+
   if (INSIGHTS_PROVIDER === 'openai' && OPENAI_API_KEY) {
     const out = await httpsJsonWithRetry(
       'api.openai.com',
