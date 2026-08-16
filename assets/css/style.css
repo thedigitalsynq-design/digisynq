@@ -753,3 +753,133 @@ h1, h2, h3, h4 {
   .btn--lg { text-align: center; }
   .services__grid { grid-template-columns: 1fr; }
 }
+
+/* ── 17. Clients Marquee ──────────────────────────────────── */
+.clients {
+  background: var(--clr-bg-2);
+  padding-block: var(--space-20);
+  overflow: hidden;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.clients__header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.clients__label {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.clients__title {
+  font-size: var(--fs-2xl);
+  font-weight: 900;
+  color: var(--clr-white);
+}
+
+.clients__subtitle {
+  font-size: var(--fs-md);
+  color: var(--clr-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* Marquee track */
+.clients__marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Fade edges */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.clients__marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  width: max-content;
+  /* Infinite scroll left-to-right visual: content moves right */
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.clients__marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Individual client logo card */
+.client-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6);
+  height: 120px;
+  min-width: 180px;
+  transition: border-color var(--t-base), background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.03);
+  opacity: 0;
+  transition: opacity var(--t-base);
+}
+.client-logo:hover::before { opacity: 1; }
+
+.client-logo:hover {
+  border-color: var(--clr-border-hov);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6), var(--shadow-glow);
+}
+
+.client-logo img {
+  max-height: 80px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1) contrast(1);
+  transition: filter var(--t-base);
+}
+
+.client-logo:hover img {
+  filter: brightness(1.15) contrast(1.05);
+}
+
+/* Divider dots between logos */
+.marquee-divider {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-border);
+}
