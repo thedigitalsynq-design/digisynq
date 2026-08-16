@@ -1618,7 +1618,9 @@ h6 { font-size: var(--f-sm); }
 
 /* ── 26. Multi-Device Responsive Breakpoints ──────────────────────────────── */
 @media (max-width: 1100px) {
-  .nav-links { gap: 1.35rem; }
+  .nav-links { display: none; }
+  .nav-cta > .btn:first-child { display: none; }
+  .nav-menu-btn { display: flex; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 }
 
@@ -2093,10 +2095,113 @@ h6 { font-size: var(--f-sm); }
   margin: 0;
 }
 
+/* ── 29. Network Flow Diagram (flowchart.html) ───────────────────────────── */
+.sec-header--center {
+  text-align: center;
+}
+.sec-header--center .sec-sub {
+  margin-inline: auto;
+}
+
+.flow-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.flow-node {
+  flex: 1 1 200px;
+  max-width: 230px;
+  background: var(--bg-surface);
+  border: 1px solid var(--b0);
+  border-radius: var(--r-lg);
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  transition: border-color var(--dur-base) var(--ease-spring), transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base) var(--ease-cinematic);
+}
+
+.flow-node:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.16);
+}
+
+.flow-node--registry {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: linear-gradient(150deg, rgba(56, 189, 248, 0.06) 0%, var(--bg-surface) 70%);
+}
+
+.flow-node-num {
+  font-family: var(--font-mono);
+  font-size: var(--f-3xs);
+  letter-spacing: 0.18em;
+  color: var(--t-dim);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.flow-node-icon {
+  font-size: 1.7rem;
+  color: var(--cyan);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.flow-node-title {
+  font-family: var(--font-serif);
+  font-size: var(--f-md);
+  color: var(--t-pure);
+  margin-bottom: 0.5rem;
+}
+
+.flow-node-desc {
+  font-size: var(--f-xs);
+  color: var(--t-low);
+  line-height: 1.7;
+}
+
+.flow-arrow {
+  align-self: center;
+  color: var(--t-dim);
+  font-size: 1.4rem;
+}
+
+.flow-loop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.75rem;
+}
+
+.flow-loop-item {
+  font-family: var(--font-mono);
+  font-size: var(--f-3xs);
+  letter-spacing: 0.1em;
+  color: var(--t-low);
+  background: var(--bg-card);
+  border: 1px solid var(--b0);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--r-pill);
+}
+
+.flow-loop-arrow { color: var(--t-dim); }
+
+.flow-loop-item--end {
+  color: var(--cyan-bright);
+  border-color: rgba(56, 189, 248, 0.45);
+  font-weight: 600;
+}
+
 /* ── Responsive Tweaks ─────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .cap-stats-row { grid-template-columns: repeat(2, 1fr); }
   .shift-grid { gap: 1rem; }
   .lifecycle-track::before { display: none; }
   .lifecycle-step { grid-template-columns: 1fr; gap: 0.75rem; }
+  .flow-track { flex-direction: column; align-items: stretch; }
+  .flow-arrow { transform: rotate(90deg); align-self: center; padding: 0.25rem 0; }
 }
