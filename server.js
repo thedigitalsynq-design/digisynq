@@ -7,9 +7,30 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
+const https = require('https');
+
+// Load .env (zero-dependency) — secrets stay server-side, never shipped to the client
+(function loadEnv() {
+  try {
+    const envFile = path.join(__dirname, '.env');
+    if (!fs.existsSync(envFile)) return;
+    for (const line of fs.readFileSync(envFile, 'utf-8').split(/\r?\n/)) {
+      const m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)\s*$/);
+      if (m && process.env[m[1]] === undefined) {
+        process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+      }
+    }
+  } catch { /* .env is optional */ }
+})();
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = __dirname;
+
+// AI provider config for the insights dashboard (keys read from env only)
+const INSIGHTS_PROVIDER = (process.env.INSIGHTS_PROVIDER || 'gemini').toLowerCase();
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+const INSIGHTS_CACHE_TTL_MS = 60 * 1000; // 1-minute cache to avoid rate limits
 
 // In-Memory Database (seeded with verified ecosystem records)
 const db = {
@@ -209,6 +230,181 @@ function readJsonBody(req) {
     });
     req.on('error', () => resolve(null));
   });
+}
+
+/**
+ * Minimal HTTPS JSON POST helper (zero-dependency).
+ * Resolves with the parsed JSON body on 2xx, rejects otherwise.
+ */
+function httpsJson(hostname, pathname, headers, body) {
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify(body);
+    const req = https.request({
+      hostname,
+      path: pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(payload),
+        ...headers
+      }
+    }, (res) => {
+      let data = '';
+      res.on('data', (c) => { data += c; });
+      res.on('end', () => {
+        let parsed = null;
+        try { parsed = JSON.parse(data); } catch { /* non-JSON */ }
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve(parsed);
+        } else {
+          reject(new Error(`API ${res.statusCode}: ${(parsed && (parsed.error && (parsed.error.message || JSON.stringify(parsed.error)))) || data.slice(0, 200)}`));
+        }
+      });
+    });
+    req.on('error', reject);
+    req.setTimeout(25000, () => req.destroy(new Error('API request timed out')));
+    req.end(payload);
+  });
+}
+
+/**
+ * Calls the configured AI provider and returns a raw text answer.
+ * Supports gemini (default) and openai.
+ */
+async function aiGenerate(systemPrompt, userPrompt, temperature) {
+  if (INSIGHTS_PROVIDER === 'openai' && OPENAI_API_KEY) {
+    const out = await httpsJson(
+      'api.openai.com',
+      '/v1/chat/completions',
+      { Authorization: `Bearer ${OPENAI_API_KEY}` },
+      {
+        model: 'gpt-4o-mini',
+        temperature: temperature || 0.6,
+        response_format: { type: 'json_object' },
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ]
+      }
+    );
+    return out.choices && out.choices[0] && out.choices[0].message && out.choices[0].message.content;
+  }
+
+  if (GEMINI_API_KEY) {
+    const models = ['gemini-3.7-flash', 'gemini-3.6-flash', 'gemini-3.5-flash'];
+    let lastErr = null;
+    for (const model of models) {
+      try {
+        const out = await httpsJson(
+          'generativelanguage.googleapis.com',
+          `/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+          {},
+          {
+            systemInstruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+            generationConfig: {
+              temperature: temperature || 0.6,
+              responseMimeType: 'application/json'
+            }
+          }
+        );
+        const text = out && out.candidates && out.candidates[0] &&
+          out.candidates[0].content && out.candidates[0].content.parts &&
+          out.candidates[0].content.parts.map(p => p.text || '').join('');
+        if (text) return text;
+      } catch (err) {
+        lastErr = err;
+      }
+    }
+    throw lastErr || new Error('All Gemini models failed');
+  }
+
+  throw new Error('No AI provider configured — set INSIGHTS_PROVIDER, GEMINI_API_KEY, or OPENAI_API_KEY in .env');
+}
+
+/**
+ * Insight snapshot cache: { at: ms, payload }
+ */
+let insightsCache = { at: 0, payload: null };
+
+const INSIGHTS_SYSTEM = [
+  'You are the data engine of DIGISYNQ, an operating network for the Kannada film industry.',
+  'You generate realistic, internally consistent, illustrative market snapshots.',
+  'Always answer with ONLY valid JSON. Never add markdown fences, never add commentary outside the JSON.',
+  'All monetary values in Indian Rupees crores (₹ Cr). Use fiscal years FY22–FY26.',
+  'Every number must be internally consistent (hits + average + flops = releases).'
+].join(' ');
+
+const INSIGHTS_USER = `
+Generate a live Kannada film industry dashboard snapshot. Return JSON with exactly this schema:
+
+{
+  "asOf": "ISO 8601 timestamp of this snapshot",
+  "kpis": {
+    "releases": <total releases over FY22-FY26>,
+    "boxOfficeCr": <cumulative box office in ₹ Cr>,
+    "hits": <total hits>,
+    "average": <total average movies>,
+    "flops": <total flops>,
+    "screens": <total active screens>,
+    "multiplex": <multiplex screens>,
+    "single": <single-screen theatres>
+  },
+  "years": [
+    {"year":"FY22","releases":214,"boxOfficeCr":412,"hits":14,"average":86,"flops":114},
+    ... one object per fiscal year FY22..FY26 (5 objects). FY26 is the current partial year.
+  ],
+  "talent": {
+    "heroes": [{"name":"...","status":"Active|Breakout|On hiatus|Retired","films":n,"hits":n,"boxOfficeCr":n} ... 4-6 entries],
+    "heroines": [same shape, 4-6 entries]
+  },
+  "houses": {
+    "active": [{"name":"...","releases":n,"hits":n,"boxOfficeCr":n,"lastActivity":"FY26 Q2","pipeline":n} ... 5 entries],
+    "lost": [{"name":"...","status":"Dormant|Closed","lastRelease":"FY23","flagged":"FY24"} ... 4 entries]
+  },
+  "industry": {
+    "screensByRegion": [{"region":"Bengaluru","count":404}, ...],
+    "releaseMix": [{"label":"Theatrical","pct":68}, {"label":"OTT direct","pct":22}, {"label":"Hybrid","pct":7}, {"label":"Direct / low reach","pct":3}],
+    "avgShootDays": 38,
+    "avgBudgetCr": 4.2,
+    "recoveryPct": 58,
+    "verifiedArtists": 1120,
+    "cameraPackages": 212,
+    "postSuites": 58,
+    "utilisation": [{"label":"Stage occupancy","pct":61}, {"label":"Gear utilisation","pct":47}, {"label":"Crew between projects","pct":39}, {"label":"Idle capacity recovered","pct":22}]
+  },
+  "feed": [
+    {"title":"...","text":"...","time":"..."} ... 5-7 recent activity entries, newest first
+  ]
+}
+`;
+
+/**
+ * Builds a fresh dashboard snapshot through the AI provider, or the built-in
+ * seeded snapshot when the provider is unavailable.
+ */
+async function buildInsightsSnapshot() {
+  const now = Date.now();
+  if (insightsCache.payload && now - insightsCache.at < INSIGHTS_CACHE_TTL_MS) {
+    return insightsCache.payload;
+  }
+
+  try {
+    const raw = await aiGenerate(INSIGHTS_SYSTEM, INSIGHTS_USER, 0.6);
+    const parsed = JSON.parse(raw.replace(/^```(?:json)?\s*|\s*```$/g, ''));
+    if (!parsed.kpis || !parsed.years || !parsed.feed) throw new Error('Malformed AI response');
+    parsed.source = 'live';
+    parsed.provider = INSIGHTS_PROVIDER;
+    insightsCache = { at: now, payload: parsed };
+    return parsed;
+  } catch (err) {
+    const fallback = require('./insights-seed.json');
+    fallback.source = 'seed';
+    fallback.asOf = new Date().toISOString();
+    fallback.providerError = err.message;
+    insightsCache = { at: now, payload: fallback };
+    return fallback;
+  }
 }
 
 const server = http.createServer(async (req, res) => {
@@ -437,6 +633,30 @@ const server = http.createServer(async (req, res) => {
         derivedDeliverables: `${derivedCuts} Assets`,
         scheduleRisk: "Low"
       }
+    }));
+    return;
+  }
+
+  // GET /api/insights — AI-driven live industry snapshot (cached 60s, seed fallback)
+  if (pathname === '/api/insights' && req.method === 'GET') {
+    try {
+      const snapshot = await buildInsightsSnapshot();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, snapshot }));
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: err.message }));
+    }
+    return;
+  }
+
+  // GET /api/insights/provider — which AI provider is wired up (no secrets exposed)
+  if (pathname === '/api/insights/provider' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: true,
+      provider: INSIGHTS_PROVIDER,
+      configured: INSIGHTS_PROVIDER === 'openai' ? !!OPENAI_API_KEY : !!GEMINI_API_KEY
     }));
     return;
   }
