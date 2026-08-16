@@ -98,11 +98,65 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
 body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
   background-color: var(--bg-base);
+}
+
+/* Lucide Icon Styling */
+.lucide {
+  width: 1.15em;
+  height: 1.15em;
+  stroke-width: 1.8;
+  vertical-align: -0.18em;
+  display: inline-block;
+  stroke: currentColor;
+}
+.icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  background: var(--signal-dim);
+  border: 1px solid rgba(232, 184, 75, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--signal);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 16px var(--signal-glow-lg);
+  transition: all var(--dur-base) var(--ease-spring);
+}
+.icon-box:hover {
+  transform: scale(1.08);
+  border-color: var(--signal);
+  box-shadow: 0 0 24px var(--signal-glow);
+}
+
+/* Glass & Ambient Utility Components */
+.glass-panel {
+  background: rgba(12, 12, 16, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--b1);
+  border-radius: var(--r-md);
+}
+.ambient-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--signal-glow) 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Cinematic subtle scanline overlay */

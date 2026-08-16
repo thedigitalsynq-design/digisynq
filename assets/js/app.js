@@ -1,10 +1,64 @@
 /* ==========================================================================
    DIGISYNQ — THE NETWORK BETWEEN THE DOTS.
    Cinema Operating Network — High-Kinetic Interaction Engine
+   Plugins: Lenis (Smooth Scroll), Lucide (Icons), Vanilla-Tilt (3D Physics)
    ========================================================================== */
 
 (function () {
   'use strict';
+
+  /* ── 0. Open-Source Plugin Initializations ──────────────────────────────── */
+  // 1. Lenis Smooth Momentum Scroll
+  let lenisInstance = null;
+  if (typeof Lenis !== 'undefined') {
+    lenisInstance = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.8
+    });
+
+    function raf(time) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // 2. Lucide Open-Source Icons
+  function initIcons() {
+    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIcons);
+  } else {
+    initIcons();
+  }
+
+  // 3. Vanilla-Tilt 3D Physics Glare
+  function initTilt() {
+    if (typeof VanillaTilt !== 'undefined') {
+      const tiltCards = document.querySelectorAll('.spotlight-card, .idle-card, .capability-card, .abc-card, .bm-card');
+      VanillaTilt.init(tiltCards, {
+        max: 5,
+        speed: 500,
+        glare: true,
+        'max-glare': 0.12,
+        scale: 1.01,
+        perspective: 1200
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTilt);
+  } else {
+    initTilt();
+  }
 
   /* ── 1. Sticky Navigation & Scroll Spy ─────────────────────────────────── */
   const nav = document.querySelector('.nav');
@@ -38,7 +92,11 @@
 
   if (fabTop) {
     fabTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (lenisInstance) {
+        lenisInstance.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -95,7 +153,7 @@
     let W, H;
     let dots = [];
     let pulses = [];
-    let mouse = { x: null, y: null, radius: 200 };
+    let mouse = { x: null, y: null, radius: 220 };
     let activeCluster = 'all';
 
     const DOT_TYPES = [
@@ -186,7 +244,7 @@
           const dist = Math.hypot(dx, dy);
 
           const isMatchingCluster = (activeCluster === 'all' || d1.cluster === activeCluster || d2.cluster === activeCluster);
-          const maxDist = isMatchingCluster ? 150 : 100;
+          const maxDist = isMatchingCluster ? 155 : 100;
 
           if (dist < maxDist) {
             const alpha = (1 - dist / maxDist) * (isMatchingCluster ? 0.25 : 0.06);
@@ -400,13 +458,21 @@
       const targetId = this.getAttribute('href');
       if (targetId === '#' || targetId === '#top') {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (lenisInstance) {
+          lenisInstance.scrollTo(0, { duration: 1.2 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         return;
       }
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (lenisInstance) {
+          lenisInstance.scrollTo(targetEl, { duration: 1.2, offset: -80 });
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
