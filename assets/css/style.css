@@ -57,18 +57,18 @@ html.ready {
   --font-sans:   'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono:   'JetBrains Mono', 'Courier New', monospace;
 
-  /* Fluid Type Scale */
+  /* Balanced, Reduced Fluid Type Scale */
   --f-3xs: clamp(0.625rem, 0.7vw, 0.72rem);
   --f-2xs: clamp(0.72rem, 0.85vw, 0.82rem);
   --f-xs:  clamp(0.82rem, 1.0vw, 0.92rem);
-  --f-sm:  clamp(0.92rem, 1.2vw, 1.02rem);
-  --f-md:  clamp(1.05rem, 1.45vw, 1.18rem);
-  --f-lg:  clamp(1.25rem, 1.9vw, 1.55rem);
-  --f-xl:  clamp(1.6rem, 2.6vw, 2.2rem);
-  --f-2xl: clamp(2.1rem, 3.8vw, 3.2rem);
-  --f-3xl: clamp(2.8rem, 5.5vw, 4.4rem);
-  --f-4xl: clamp(3.6rem, 7.8vw, 6.2rem);
-  --f-5xl: clamp(4.6rem, 11vw, 8.5rem);
+  --f-sm:  clamp(0.92rem, 1.15vw, 1.02rem);
+  --f-md:  clamp(1.02rem, 1.35vw, 1.15rem);
+  --f-lg:  clamp(1.2rem, 1.7vw, 1.45rem);
+  --f-xl:  clamp(1.45rem, 2.2vw, 1.9rem);
+  --f-2xl: clamp(1.8rem, 3.0vw, 2.5rem);
+  --f-3xl: clamp(2.2rem, 4.2vw, 3.3rem);
+  --f-4xl: clamp(2.6rem, 5.4vw, 4.2rem);
+  --f-5xl: clamp(3.4rem, 7.5vw, 5.8rem);
 
   /* Shape & Radii */
   --r-xs:   4px;
@@ -239,11 +239,12 @@ html.lenis, html.lenis body { height: auto; }
   contain-intrinsic-size: 0 650px;
 }
 
-/* ── 4. High-End Typography Classes ───────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
+/* ── 4. High-End Typography Classes (Uniform DM Serif Display) ────────────── */
+h1, h2, h3, h4, h5, h6, .sec-title {
+  font-family: var(--font-serif);
   color: var(--t-pure);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.015em;
   overflow-wrap: break-word;
 }
@@ -741,23 +742,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-h1 {
   font-family: var(--font-serif);
-  font-size: var(--f-4xl);
+  font-size: var(--f-3xl);
   font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.85rem;
-  max-width: 16ch;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  max-width: 24ch;
   margin-inline: auto;
   animation: heroIn 0.9s var(--ease-cinematic) 0.2s both;
 }
 
 .hero-h1 em {
   font-style: italic;
+  font-family: var(--font-serif);
   background: linear-gradient(135deg, #ffffff 20%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 45px rgba(56, 189, 248, 0.3);
+  text-shadow: 0 0 35px rgba(56, 189, 248, 0.3);
 }
 
 .hero-sub {
