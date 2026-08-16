@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGISYNQ Platform — Capability graph, verification stack, 10-step visual mechanism, and Plan A/B/C resilience engine." />
+  <meta property="og:title" content="DIGISYNQ Platform — How it Works" />
+  <meta property="og:description" content="Deep dive into the technology graph, verified grading protocols, and operational redundancy." />
+  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#030305" />
+  <title>Platform Architecture — DIGISYNQ</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <!-- Font Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Editorial Typography Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Material Symbols Outlined Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="DIGISYNQ Home">
+        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav-logo-img" />
+        <span class="nav-logo-name">DIGISYNQ</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="platform.html" class="active">Platform</a>
+        <a href="business.html">Business</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Join Network</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-signal btn-sm">Produce a Project &rarr;</a>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="platform.html">Platform Architecture</a>
+    <a href="business.html">Business Model</a>
+    <a href="about.html">About DIGISYNQ</a>
+    <a href="register.html">Join Network</a>
+    <div class="nav-drawer-cta" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+      <a href="contact.html" class="btn btn-signal btn-full">Produce a Project &rarr;</a>
+      <a href="register.html" class="btn btn-ghost btn-full">Join the Network</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO HEADER ===== -->
+  <section class="section" style="padding-top: calc(var(--nav-h) + 4rem); text-align: center;">
+    <div class="wrap" style="max-width: 52rem;">
+      <div class="eyebrow reveal"><span class="eyebrow-line"></span> System Architecture</div>
+      <h1 class="sec-title display-lg reveal reveal--d1">
+        THE PLATFORM <span class="glow-text">OPERATING ENGINE.</span>
+      </h1>
+      <p class="sec-sub" style="margin-inline: auto; margin-top: 1.5rem;">
+        An engineering breakdown of how DIGISYNQ indexes, verifies, matches, executes, and redeploys cinema production capacity.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== THE 10-STEP VISUAL MECHANISM ===== -->
+  <section class="section" id="mechanism-detail" aria-label="10-Step Mechanism Visual Journey">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Core Engine</div>
+        <h2 class="sec-title display-md">
+          THE 10-STEP LIFECYCLE <span class="glow-text">IN ACTION.</span>
+        </h2>
+        <p class="sec-sub">
+          Click any step below to see how the orchestration network operates at each stage of a production's timeline.
+        </p>
+      </div>
+
+      <div class="mechanism-wrapper reveal reveal--d1">
+        <div class="mechanism-steps" role="tablist">
+          <button class="mech-step active" data-step="1" role="tab" aria-selected="true">
+            <span class="mech-num">01</span>
+            <span class="mech-name">Define</span>
+          </button>
+          <button class="mech-step" data-step="2" role="tab" aria-selected="false">
+            <span class="mech-num">02</span>
+            <span class="mech-name">Discover</span>
+          </button>
+          <button class="mech-step" data-step="3" role="tab" aria-selected="false">
+            <span class="mech-num">03</span>
+            <span class="mech-name">Match</span>
+          </button>
+          <button class="mech-step" data-step="4" role="tab" aria-selected="false">
+            <span class="mech-num">04</span>
+            <span class="mech-name">Assemble</span>
+          </button>
+          <button class="mech-step" data-step="5" role="tab" aria-selected="false">
+            <span class="mech-num">05</span>
+            <span class="mech-name">Execute</span>
+          </button>
+          <button class="mech-step" data-step="6" role="tab" aria-selected="false">
+            <span class="mech-num">06</span>
+            <span class="mech-name">Track</span>
+          </button>
+          <button class="mech-step" data-step="7" role="tab" aria-selected="false">
+            <span class="mech-num">07</span>
+            <span class="mech-name">Wrap</span>
+          </button>
+          <button class="mech-step" data-step="8" role="tab" aria-selected="false">
+            <span class="mech-num">08</span>
+            <span class="mech-name">Verify</span>
+          </button>
+          <button class="mech-step" data-step="9" role="tab" aria-selected="false">
+            <span class="mech-num">09</span>
+            <span class="mech-name">Learn</span>
+          </button>
+          <button class="mech-step" data-step="10" role="tab" aria-selected="false">
+            <span class="mech-num">10</span>
+            <span class="mech-name">Reuse ↺</span>
+          </button>
+        </div>
+
+        <div class="mech-detail">
+          <div>
+            <div class="mech-detail-num" id="mech-detail-num">01 // DEFINE</div>
+            <h3 class="mech-detail-title" id="mech-detail-title">Define the Production Mandate</h3>
+            <p class="mech-detail-desc" id="mech-detail-desc">
+              Input script parameters, technical specifications, camera preferences, schedule windows, and budget constraints into DIGISYNQ.
+            </p>
+          </div>
+
+          <div class="mech-detail-example">
+            <span class="mech-detail-example-label">Active Scenario Execution</span>
+            <p id="mech-detail-ex" style="font-size:var(--f-xs); color:var(--t-medium); line-height:1.75; margin-bottom:1rem;">
+              Scenario: Period narrative thriller requires low-light anamorphic package, 14-person crew, and 12 soundstage shoot days in Bengaluru.
+            </p>
+            <div class="mech-chain" id="mech-chain">
+              <div class="mech-chain-step current">Parse Technical Spec</div>
+              <div class="mech-chain-step current">Establish Budget Boundaries</div>
+              <div class="mech-chain-step current">Set Milestone Schedule</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VERIFICATION PIPELINE ===== -->
+  <section class="section" id="verification-detail" aria-label="Ecosystem Onboarding Verification">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Verification Protocol</div>
+        <h2 class="sec-title display-lg">
+          THE 6-LAYER <span class="glow-text">VERIFICATION PROTOCOL.</span>
+        </h2>
+        <p class="sec-sub">
+          We maintain absolute network trust by verifying skill, reliability, and past execution logs objectively.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;" class="reveal reveal--d1">
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">fingerprint</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">01 // Identity Authentication</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Guild numbers, government registry, and operational references are checked before registry entry.</p>
+        </div>
+
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">collections</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">02 // Shot-by-Shot Portfolio Audit</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Not just generic reels. We audit specific shot breakdowns, lens packs, and camera set logs.</p>
+        </div>
+
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">analytics</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">03 // Production Tier Mapping</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Talent is graded by active complexity: high-budget commercial, indie short, theatrical feature.</p>
+        </div>
+
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">reviews</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">04 // Peer Confirmation Logs</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Independent confirmations from previously verified colorists, directors, and gaffers.</p>
+        </div>
+
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">receipt_long</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">05 // Wrap Sheet Verification</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Evidence verified from daily call sheets, digital slate logs, and final wrap declarations.</p>
+        </div>
+
+        <div class="card spotlight-card">
+          <div class="icon-box"><span class="material-symbols-outlined">rule</span></div>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:#fff; margin-bottom:0.5rem;">06 // Post-Wrap Performance Ledger</h4>
+          <p style="font-size:var(--f-xs); color:var(--t-low); line-height:1.7;">Objective statistics logged: call-sheet punctuality, camera upkeep, and repeat hire rating.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAN A/B/C RESILIENCE ENGINE ===== -->
+  <section class="section" id="resilience-detail" aria-label="Operational Redundancy details">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Resilience Protocol</div>
+        <h2 class="sec-title display-md">
+          PLAN A/B/C REDUNDANCY: <span class="glow-text">ELIMINATING DOWNTIME.</span>
+        </h2>
+        <p class="sec-sub">
+          When weather, hardware failures, or calendar shifts threaten production, the operating network automatically hot-swaps assets.
+        </p>
+      </div>
+
+      <div class="plan-tabs reveal reveal--d1" role="tablist">
+        <button class="plan-tab active" data-plan="a" role="tab" aria-selected="true">Plan A &bull; Primary Production</button>
+        <button class="plan-tab" data-plan="b" role="tab" aria-selected="false">Plan B &bull; Standby Failover</button>
+        <button class="plan-tab" data-plan="c" role="tab" aria-selected="false">Plan C &bull; Adaptive Hot-Swap</button>
+      </div>
+
+      <div class="plan-panel active spotlight-card" id="panel-plan-a">
+        <div class="plan-panel-title">Plan A &mdash; Synchronized Primary Execution</div>
+        <p class="plan-panel-desc">Primary scheduled unit operating on verified parameters locked in graph.</p>
+        <div class="plan-steps">
+          <div class="plan-step"><span>DOP Aryan Sharma + ARRI Alexa Mini LF Package</span><span class="plan-step-state step-state-ok">LOCKED</span></div>
+          <div class="plan-step"><span>Ciné Studio Stage 02 (12 Days Shoot Window)</span><span class="plan-step-state step-state-ok">LOCKED</span></div>
+          <div class="plan-step"><span>Live ACES Daily Color DIT Sync Pipeline</span><span class="plan-step-state step-state-ok">ONLINE</span></div>
+        </div>
+      </div>
+
+      <div class="plan-panel spotlight-card" id="panel-plan-b">
+        <div class="plan-panel-title">Plan B &mdash; Automated Weather &amp; Schedule Failover</div>
+        <p class="plan-panel-desc">Pre-negotiated fallback parameters deployable within 4 hours of disruption.</p>
+        <div class="plan-steps">
+          <div class="plan-step"><span>Rain Halts Outdoor Shoot &rarr; Virtual LED Bay Activates</span><span class="plan-step-state step-state-ok">HOT STANDBY</span></div>
+          <div class="plan-step"><span>Backup Camera Body (ARRI Alexa 35) On-Call within 15km</span><span class="plan-step-state step-state-ok">STANDBY</span></div>
+          <div class="plan-step"><span>Alternate Soundstage Slot Reserved under SLA Terms</span><span class="plan-step-state step-state-ok">RESERVED</span></div>
+        </div>
+      </div>
+
+      <div class="plan-panel spotlight-card" id="panel-plan-c">
+        <div class="plan-panel-title">Plan C &mdash; Extreme Emergency &amp; Asset Slicing Contingency</div>
+        <p class="plan-panel-desc">Unscheduled major disruption contingency protocol ensuring zero lost budget.</p>
+        <div class="plan-steps">
+          <div class="plan-step"><span>Key Lead Unavailability &rarr; B-Roll &amp; Masterclass Unit Shift</span><span class="plan-step-state step-state-alt">ADAPTIVE</span></div>
+          <div class="plan-step"><span>Remote DI &amp; Pre-Viz Simulation Session Activated</span><span class="plan-step-state step-state-alt">READY</span></div>
+          <div class="plan-step"><span>Milestone Escrow Contract Freezes Clock Automatically</span><span class="plan-step-state step-state-ok">PROTECTED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CALL TO ACTION ===== -->
+  <section class="final-cta" aria-label="Final Call to Action">
+    <div class="wrap final-cta-body">
+      <div class="final-wordmark reveal">DIGISYNQ</div>
+      <div class="final-tagline reveal reveal--d1">THE OPERATING NETWORK FOR CINEMA.</div>
+      <div class="reveal reveal--d3" style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; margin-top:2rem;">
+        <a href="contact.html" class="btn btn-signal btn-lg">Produce a Project &rarr;</a>
+        <a href="register.html" class="btn btn-ghost btn-lg">Join the Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Site Footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand-name">DIGISYNQ</div>
+        <div class="footer-brand-tag">The Operating Network for Cinema</div>
+        <p class="footer-brand-desc">
+          An open, asset-light, trusted and continuously learning operating network connecting verified talent, studios, hardware, and production capacity.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <div class="footer-links">
+          <a href="platform.html#mechanism-detail">10-Step Mechanism</a>
+          <a href="platform.html#verification-detail">Verification Protocol</a>
+          <a href="platform.html#resilience-detail">Plan A/B/C</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Network &amp; Model</h4>
+        <div class="footer-links">
+          <a href="index.html#network">Verified Profiles</a>
+          <a href="business.html">Business Model</a>
+          <a href="about.html">Leadership</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact &amp; Legal</h4>
+        <div class="footer-links">
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
+          <a href="contact.html">Terms of Use</a>
+          <a href="contact.html">Privacy &amp; Data Verification Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>THE PROJECT MAY END. THE VALUE DOESN'T.</span>
+      <span>&copy; 2026 DIGISYNQ Inc. All rights reserved. Where Digital Cinema Opportunities Connect.</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-cluster" aria-label="Quick Actions">
+    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+    <button class="fab fab-top" id="fab-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+    </button>
+  </div>
+
+  <!-- Open-Source Plugins & Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/feedback.js" defer></script>
+</body>
+</html>
