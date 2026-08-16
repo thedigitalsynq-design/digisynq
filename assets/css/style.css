@@ -769,6 +769,48 @@ h1, h2, h3, h4, h5, h6 {
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ── 23. Form Controls & Talent Registration Workspace ────────────────────── */
+.reg-form {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.form-control {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-pure);
+  font-size: var(--fs-sm);
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.25s var(--ease-smooth);
+}
+.form-control:focus {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.025);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+}
+.form-control option {
+  background: #08080c;
+  color: #ffffff;
+}
+
 @media (max-width: 1024px) {
   .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .aspect-switcher-box, .simulator-card, .footer-top, .scenario-flow { grid-template-columns: 1fr; }
   .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track { grid-template-columns: repeat(2, 1fr); }

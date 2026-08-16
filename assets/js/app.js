@@ -550,4 +550,97 @@
     });
   }
 
+  /* ── 9. Talent & Technician Live Registration Card Engine ───────────────── */
+  const talentForm = document.getElementById('talent-reg-form');
+  if (talentForm) {
+    const regName       = document.getElementById('reg-name');
+    const regRole       = document.getElementById('reg-role');
+    const regCity       = document.getElementById('reg-city');
+    const regEmail      = document.getElementById('reg-email');
+    const regPhone      = document.getElementById('reg-phone');
+    const regSpecialty  = document.getElementById('reg-specialty');
+    const regExp        = document.getElementById('reg-exp');
+    const regGear       = document.getElementById('reg-gear');
+    const regPortfolio  = document.getElementById('reg-portfolio');
+    const regAvail      = document.getElementById('reg-avail');
+    const regRate       = document.getElementById('reg-rate');
+
+    const cardName      = document.getElementById('card-name');
+    const cardRole      = document.getElementById('card-role');
+    const cardSpecialty = document.getElementById('card-specialty');
+    const cardExpBadge  = document.getElementById('card-exp-badge');
+    const cardCityBadge = document.getElementById('card-city-badge');
+    const cardAvailBadge= document.getElementById('card-avail-badge');
+    const regSuccess    = document.getElementById('reg-success');
+    const regSubmitBtn  = document.getElementById('reg-submit-btn');
+
+    function updateCardPreview() {
+      if (cardName && regName) {
+        cardName.textContent = regName.value.trim() ? regName.value.trim() : 'Your Full Name';
+      }
+      if (cardRole && regRole) {
+        cardRole.textContent = regRole.value;
+      }
+      if (cardSpecialty && regSpecialty) {
+        cardSpecialty.textContent = regSpecialty.value.trim() ? regSpecialty.value.trim() : 'Specialized Craft & Technical Proficiency';
+      }
+      if (cardExpBadge && regExp) {
+        cardExpBadge.textContent = regExp.value;
+      }
+      if (cardCityBadge && regCity) {
+        cardCityBadge.textContent = regCity.value.trim() ? regCity.value.trim() : 'Bangalore';
+      }
+      if (cardAvailBadge && regAvail) {
+        cardAvailBadge.textContent = `● ${regAvail.value}`;
+      }
+    }
+
+    [regName, regRole, regCity, regSpecialty, regExp, regAvail].forEach(el => {
+      if (el) el.addEventListener('input', updateCardPreview);
+      if (el) el.addEventListener('change', updateCardPreview);
+    });
+
+    talentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!regName.value.trim() || !regEmail.value.trim() || !regPhone.value.trim() || !regPortfolio.value.trim()) {
+        alert('Please fill in all mandatory fields (Name, Email, WhatsApp, and Portfolio/Reel link).');
+        return;
+      }
+
+      if (regSubmitBtn) {
+        regSubmitBtn.disabled = true;
+        regSubmitBtn.innerHTML = '<span>Registering Profile…</span>';
+      }
+
+      setTimeout(() => {
+        if (regSuccess) {
+          regSuccess.hidden = false;
+          regSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (regSubmitBtn) {
+          regSubmitBtn.disabled = false;
+          regSubmitBtn.innerHTML = '<span>Profile Registered ✓</span>';
+          regSubmitBtn.style.background = 'var(--accent-green)';
+          regSubmitBtn.style.color = '#030305';
+        }
+
+        // WhatsApp Direct Sync Option
+        const summary = `*DIGISYNQ Talent Registration*\nName: ${regName.value}\nCraft: ${regRole.value}\nCity: ${regCity.value}\nPhone: ${regPhone.value}\nEmail: ${regEmail.value}\nExperience: ${regExp.value}\nGear: ${regGear ? regGear.value : 'N/A'}\nSpecialty: ${regSpecialty.value}\nReel: ${regPortfolio.value}\nAvailability: ${regAvail.value}\nRate: ${regRate ? regRate.value : 'Flexible'}`;
+        const waUrl = `https://wa.me/917996548969?text=${encodeURIComponent(summary)}`;
+        
+        const waLinkBtn = document.createElement('a');
+        waLinkBtn.href = waUrl;
+        waLinkBtn.target = '_blank';
+        waLinkBtn.className = 'btn btn--outline btn--sm';
+        waLinkBtn.style.marginTop = '1rem';
+        waLinkBtn.style.display = 'inline-block';
+        waLinkBtn.textContent = '💬 Confirm via WhatsApp Desk →';
+        if (regSuccess && !regSuccess.querySelector('a')) {
+          regSuccess.appendChild(document.createElement('br'));
+          regSuccess.appendChild(waLinkBtn);
+        }
+      }, 600);
+    });
+  }
+
 })();
