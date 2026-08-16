@@ -1,6 +1,6 @@
 /* ==========================================================================
    DIGISYNQ — THE NETWORK BETWEEN THE DOTS.
-   Cinema Operating Network — Master Interaction Engine
+   Cinema Operating Network — High-Kinetic Interaction Engine
    ========================================================================== */
 
 (function () {
@@ -42,7 +42,7 @@
     });
   }
 
-  /* ── 2. Mobile Menu Toggle ─────────────────────────────────────────────── */
+  /* ── 2. Mobile Menu Drawer ─────────────────────────────────────────────── */
   const menuBtn = document.getElementById('menu-btn');
   const drawer = document.getElementById('nav-drawer');
 
@@ -75,26 +75,40 @@
     reveals.forEach(el => observer.observe(el));
   }
 
-  /* ── 4. Interactive Hero Dot Network Canvas ────────────────────────────── */
+  /* ── 4. Mouse-Following Spotlight Physics on Cards ─────────────────────── */
+  const spotlightCards = document.querySelectorAll('.spotlight-card, .idle-card, .abc-card, .bm-card, .recycle-card, .shift-col, .not-col');
+  spotlightCards.forEach(card => {
+    card.classList.add('spotlight-card');
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--spot-x', `${x}px`);
+      card.style.setProperty('--spot-y', `${y}px`);
+    });
+  });
+
+  /* ── 5. Living Kinetic Dot Canvas (Hero Network) ────────────────────────── */
   const canvas = document.getElementById('dot-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let W, H;
     let dots = [];
-    let mouse = { x: null, y: null, radius: 180 };
-    let activeCluster = null;
+    let pulses = [];
+    let mouse = { x: null, y: null, radius: 200 };
+    let activeCluster = 'all';
 
     const DOT_TYPES = [
       { label: 'TALENT', color: '#e8b84b', cluster: 'people' },
-      { label: 'PROJECT', color: '#4be8c8', cluster: 'work' },
+      { label: 'PROJECT', color: '#3ee0c0', cluster: 'work' },
       { label: 'EQUIPMENT', color: '#e8b84b', cluster: 'assets' },
       { label: 'STUDIO', color: '#e8b84b', cluster: 'assets' },
       { label: 'LOCATION', color: '#e8b84b', cluster: 'assets' },
-      { label: 'KNOWLEDGE', color: '#4be8c8', cluster: 'intel' },
+      { label: 'KNOWLEDGE', color: '#3ee0c0', cluster: 'intel' },
       { label: 'MENTOR', color: '#e8b84b', cluster: 'people' },
-      { label: 'AUDIENCE', color: '#4be8c8', cluster: 'intel' },
-      { label: 'DISTRIBUTION', color: '#4be8c8', cluster: 'work' },
-      { label: 'OPPORTUNITY', color: '#e8b84b', cluster: 'work' }
+      { label: 'AUDIENCE', color: '#3ee0c0', cluster: 'intel' },
+      { label: 'DISTRIBUTION', color: '#3ee0c0', cluster: 'work' },
+      { label: 'OPPORTUNITY', color: '#ffd066', cluster: 'work' }
     ];
 
     function resize() {
@@ -105,21 +119,33 @@
 
     function initDots() {
       dots = [];
-      const numDots = Math.min(Math.floor((W * H) / 14000), 55);
+      pulses = [];
+      const numDots = Math.min(Math.floor((W * H) / 12000), 55);
 
       for (let i = 0; i < numDots; i++) {
         const typeObj = DOT_TYPES[i % DOT_TYPES.length];
         dots.push({
+          id: i,
           x: Math.random() * W,
           y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.45,
-          baseRadius: 3 + Math.random() * 2,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          baseRadius: 2.8 + Math.random() * 2,
           radius: 3,
           label: typeObj.label,
           color: typeObj.color,
           cluster: typeObj.cluster,
           pulse: Math.random() * Math.PI * 2
+        });
+      }
+
+      // Traveling photonic packet pulses
+      for (let p = 0; p < 8; p++) {
+        pulses.push({
+          sourceIndex: Math.floor(Math.random() * numDots),
+          targetIndex: Math.floor(Math.random() * numDots),
+          progress: Math.random(),
+          speed: 0.004 + Math.random() * 0.006
         });
       }
     }
@@ -159,15 +185,16 @@
           const dy = d1.y - d2.y;
           const dist = Math.hypot(dx, dy);
 
-          const maxDist = (activeCluster && (d1.cluster === activeCluster || d2.cluster === activeCluster)) ? 170 : 120;
+          const isMatchingCluster = (activeCluster === 'all' || d1.cluster === activeCluster || d2.cluster === activeCluster);
+          const maxDist = isMatchingCluster ? 150 : 100;
 
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.22;
+            const alpha = (1 - dist / maxDist) * (isMatchingCluster ? 0.25 : 0.06);
             ctx.beginPath();
             ctx.moveTo(d1.x, d1.y);
             ctx.lineTo(d2.x, d2.y);
             ctx.strokeStyle = `rgba(232, 184, 75, ${alpha})`;
-            ctx.lineWidth = (d1.cluster === d2.cluster) ? 1.2 : 0.6;
+            ctx.lineWidth = (d1.cluster === d2.cluster && isMatchingCluster) ? 1.2 : 0.6;
             ctx.stroke();
           }
         }
@@ -179,40 +206,63 @@
         d.x += d.vx;
         d.y += d.vy;
 
-        if (d.x < 10 || d.x > W - 10) d.vx *= -1;
-        if (d.y < 10 || d.y > H - 10) d.vy *= -1;
+        if (d.x < 15 || d.x > W - 15) d.vx *= -1;
+        if (d.y < 15 || d.y > H - 15) d.vy *= -1;
 
-        // Mouse interaction
+        // Mouse repulsion physics
         if (mouse.x !== null) {
           const dx = mouse.x - d.x;
           const dy = mouse.y - d.y;
           const dist = Math.hypot(dx, dy);
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            d.x -= (dx / dist) * force * 2.5;
-            d.y -= (dy / dist) * force * 2.5;
+            d.x -= (dx / dist) * force * 2.8;
+            d.y -= (dy / dist) * force * 2.8;
           }
         }
 
-        const isHighlighted = !activeCluster || d.cluster === activeCluster;
+        const isHighlighted = (activeCluster === 'all' || d.cluster === activeCluster);
         const currentRadius = isHighlighted ? (d.baseRadius + Math.sin(d.pulse) * 1.2) : 2;
 
         ctx.beginPath();
         ctx.arc(d.x, d.y, currentRadius, 0, Math.PI * 2);
-        ctx.fillStyle = isHighlighted ? d.color : 'rgba(255,255,255,0.15)';
+        ctx.fillStyle = isHighlighted ? d.color : 'rgba(255,255,255,0.12)';
         if (isHighlighted) {
-          ctx.shadowBlur = 10;
+          ctx.shadowBlur = 12;
           ctx.shadowColor = d.color;
         }
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // Label on larger screens
+        // Label on desktop
         if (W > 768 && isHighlighted) {
           ctx.font = '9px "JetBrains Mono", monospace';
-          ctx.fillStyle = 'rgba(242, 242, 245, 0.45)';
+          ctx.fillStyle = 'rgba(251, 251, 254, 0.55)';
           ctx.textAlign = 'center';
           ctx.fillText(d.label, d.x, d.y + 14);
+        }
+      });
+
+      // Traveling Photonic Packets
+      pulses.forEach(pkt => {
+        pkt.progress += pkt.speed;
+        if (pkt.progress > 1) {
+          pkt.progress = 0;
+          pkt.sourceIndex = Math.floor(Math.random() * dots.length);
+          pkt.targetIndex = Math.floor(Math.random() * dots.length);
+        }
+        const s = dots[pkt.sourceIndex];
+        const t = dots[pkt.targetIndex];
+        if (s && t) {
+          const px = s.x + (t.x - s.x) * pkt.progress;
+          const py = s.y + (t.y - s.y) * pkt.progress;
+          ctx.beginPath();
+          ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffd066';
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#ffd066';
+          ctx.fill();
+          ctx.shadowBlur = 0;
         }
       });
 
@@ -221,7 +271,7 @@
     draw();
   }
 
-  /* ── 5. Mechanism: 10 Steps Interactive Engine ─────────────────────────── */
+  /* ── 6. 10-Step Mechanism Interactive Engine ───────────────────────────── */
   const mechData = {
     '1': {
       num: "01 // DISCOVER",
@@ -324,7 +374,7 @@
     });
   }
 
-  /* ── 6. Plan A/B/C Interactive Switcher ────────────────────────────────── */
+  /* ── 7. Plan A/B/C Interactive Switcher ────────────────────────────────── */
   const planTabs = document.querySelectorAll('.plan-tab');
   const planPanels = document.querySelectorAll('.plan-panel');
 
@@ -344,7 +394,7 @@
     });
   }
 
-  /* ── 7. Smooth Internal Anchor Scrolling ───────────────────────────────── */
+  /* ── 8. Smooth Internal Anchor Navigation ──────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
