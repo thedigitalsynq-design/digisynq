@@ -14,8 +14,10 @@
   <!-- Critical font preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- DM Serif Display (Headlines) + Lora (Body) + JetBrains Mono (HUD) -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Stack: DM Serif Display (Headlines) + Plus Jakarta Sans (UI/Body) + JetBrains Mono (HUD) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -270,6 +272,41 @@
 
       <div class="pipeline-message reveal reveal--d2">
         <p>THE PIPELINE DOESN'T HAVE TO END. <span class="highlight">THE VALUE CAN KEEP MOVING.</span></p>
+      </div>
+
+      <!-- Interactive Live Unit Orchestration Simulator -->
+      <div class="simulator-card reveal reveal--d3" style="margin-top:2.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+          <div>
+            <div class="eyebrow" style="margin-bottom:0.5rem;"><span class="eyebrow-line"></span> Interactive Unit Composer</div>
+            <h3 style="font-family:var(--font-serif); font-size:var(--f-xl); color:var(--t-pure);">Simulate Project Right-Sizing</h3>
+          </div>
+          <div class="sim-scale-tabs" role="tablist">
+            <button class="sim-tab active" data-scale="feature" role="tab" aria-selected="true">Feature Film</button>
+            <button class="sim-tab" data-scale="indie" role="tab" aria-selected="false">Indie Narrative</button>
+            <button class="sim-tab" data-scale="commercial" role="tab" aria-selected="false">Brand Commercial</button>
+            <button class="sim-tab" data-scale="creator" role="tab" aria-selected="false">Creator Short</button>
+          </div>
+        </div>
+
+        <div class="sim-grid">
+          <div class="sim-metric">
+            <div class="sim-metric-val" id="sim-crew">68 Units</div>
+            <div class="sim-metric-lbl">Orchestrated Crew</div>
+          </div>
+          <div class="sim-metric">
+            <div class="sim-metric-val" id="sim-gear">26 Pkgs</div>
+            <div class="sim-metric-lbl">Hardware Packages</div>
+          </div>
+          <div class="sim-metric">
+            <div class="sim-metric-val" id="sim-efficiency">+18%</div>
+            <div class="sim-metric-lbl">Budget Efficiency</div>
+          </div>
+          <div class="sim-metric">
+            <div class="sim-metric-val" id="sim-coverage">96%</div>
+            <div class="sim-metric-lbl">Plan B Failover Coverage</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
