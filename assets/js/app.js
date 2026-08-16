@@ -211,16 +211,16 @@
     let animFrame;
 
     const DOT_TYPES = [
-      { label: 'TALENT',       color: '#f5f5f5', cluster: 'people' },
-      { label: 'PROJECT',      color: '#cccccc', cluster: 'work'   },
-      { label: 'EQUIPMENT',    color: '#e8e8e8', cluster: 'assets' },
-      { label: 'STUDIO',       color: '#d4d4d4', cluster: 'assets' },
-      { label: 'LOCATION',     color: '#bbbbb0', cluster: 'assets' },
-      { label: 'KNOWLEDGE',    color: '#dddddd', cluster: 'intel'  },
-      { label: 'MENTOR',       color: '#eeeeee', cluster: 'people' },
-      { label: 'AUDIENCE',     color: '#c8c8c8', cluster: 'intel'  },
-      { label: 'DISTRIBUTION', color: '#d8d8d8', cluster: 'work'   },
-      { label: 'OPPORTUNITY',  color: '#ffffff', cluster: 'work'   }
+      { label: 'TALENT',       color: '#7dd3fc', cluster: 'people' },
+      { label: 'PROJECT',      color: '#38bdf8', cluster: 'work'   },
+      { label: 'EQUIPMENT',    color: '#bae6fd', cluster: 'assets' },
+      { label: 'STUDIO',       color: '#60c8f0', cluster: 'assets' },
+      { label: 'LOCATION',     color: '#93c5fd', cluster: 'assets' },
+      { label: 'KNOWLEDGE',    color: '#a5d8f5', cluster: 'intel'  },
+      { label: 'MENTOR',       color: '#7dd3fc', cluster: 'people' },
+      { label: 'AUDIENCE',     color: '#38bdf8', cluster: 'intel'  },
+      { label: 'DISTRIBUTION', color: '#bae6fd', cluster: 'work'   },
+      { label: 'OPPORTUNITY',  color: '#e0f2fe', cluster: 'work'   }
     ];
 
     function resize() {
@@ -293,11 +293,13 @@
           const maxDist = isMatch ? 165 : 90;
 
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * (isMatch ? 0.22 : 0.04);
+            const alpha = (1 - dist / maxDist) * (isMatch ? 0.2 : 0.04);
             ctx.beginPath();
             ctx.moveTo(d1.x, d1.y);
             ctx.lineTo(d2.x, d2.y);
-            ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+            ctx.strokeStyle = isMatch
+              ? `rgba(56,189,248,${alpha})`
+              : `rgba(255,255,255,${alpha})`;
             ctx.lineWidth = (d1.cluster === d2.cluster && isMatch) ? 1.1 : 0.5;
             ctx.stroke();
           }
@@ -329,15 +331,15 @@
         ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
         ctx.fillStyle = isHighlighted ? d.color : 'rgba(255,255,255,0.08)';
         if (isHighlighted) {
-          ctx.shadowBlur = 14;
-          ctx.shadowColor = 'rgba(255,255,255,0.8)';
+          ctx.shadowBlur = 16;
+          ctx.shadowColor = 'rgba(56,189,248,0.7)';
         }
         ctx.fill();
         ctx.shadowBlur = 0;
 
         if (W > 768 && isHighlighted) {
           ctx.font = '9px "JetBrains Mono", monospace';
-          ctx.fillStyle = 'rgba(255,255,255,0.4)';
+          ctx.fillStyle = 'rgba(125,211,252,0.5)';
           ctx.textAlign = 'center';
           ctx.fillText(d.label, d.x, d.y + 15);
         }
@@ -359,9 +361,9 @@
           const fadeAlpha = Math.sin(pkt.progress * Math.PI);
           ctx.beginPath();
           ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${fadeAlpha})`;
-          ctx.shadowBlur = 16;
-          ctx.shadowColor = `rgba(255,255,255,${fadeAlpha * 0.7})`;
+          ctx.fillStyle = `rgba(56,189,248,${fadeAlpha})`;
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = `rgba(56,189,248,${fadeAlpha * 0.8})`;
           ctx.fill();
           ctx.shadowBlur = 0;
         }
@@ -531,7 +533,7 @@
   progressBar.style.cssText = `
     position:fixed; top:0; left:0; z-index:9999;
     height:1.5px; width:0%;
-    background:rgba(255,255,255,0.7);
+    background:linear-gradient(90deg,#38bdf8,#7dd3fc);
     transition:width 100ms linear;
     pointer-events:none;
   `;
