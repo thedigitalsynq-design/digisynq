@@ -174,7 +174,44 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon'
 };
 
-const server = http.createServer((req, res) => {
+// Safety limits & baseline security headers
+const MAX_BODY_BYTES = 100 * 1024; // 100 KB JSON payload cap
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+};
+
+/**
+ * Reads and JSON-parses a request body with a hard size cap.
+ * Resolves to the parsed object, or `null` on invalid/oversized payloads.
+ */
+function readJsonBody(req) {
+  return new Promise((resolve) => {
+    let body = '';
+    let size = 0;
+    req.on('data', (chunk) => {
+      size += chunk.length;
+      if (size > MAX_BODY_BYTES) {
+        req.destroy();
+        resolve(null);
+        return;
+      }
+      body += chunk;
+    });
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(body || '{}'));
+      } catch {
+        resolve(null);
+      }
+    });
+    req.on('error', () => resolve(null));
+  });
+}
+
+const server = http.createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
 
@@ -237,6 +274,19 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // GET /api/health
+  if (pathname === '/api/health' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: true,
+      service: 'digisynq-platform',
+      version: '2.0.0',
+      uptimeSeconds: Math.round(process.uptime()),
+      timestamp: new Date().toISOString()
+    }));
+    return;
+  }
+
   // GET /api/posts
   if (pathname === '/api/posts' && req.method === 'GET') {
     if (!db.posts) {
@@ -274,180 +324,178 @@ const server = http.createServer((req, res) => {
 
   // POST /api/posts
   if (pathname === '/api/posts' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const payload = JSON.parse(body || '{}');
-        if (!payload.title || !payload.body) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ success: false, error: 'Title and body required' }));
-          return;
-        }
-        if (!db.posts) db.posts = [];
-        const newPost = {
-          id: String(Date.now()),
-          tag: payload.tag || 'Network Update',
-          title: payload.title,
-          body: payload.body,
-          author: payload.author || 'DIGISYNQ Member',
-          date: new Date().toISOString()
-        };
-        db.posts.unshift(newPost);
-        res.writeHead(201, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, post: newPost }));
-      } catch {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, error: 'Invalid JSON payload' }));
-      }
-    });
+    const payload = await readJsonBody(req);
+    if (!payload || !payload.title || !payload.body) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: 'Valid title and body required' }));
+      return;
+    }
+    if (!db.posts) db.posts = [];
+    const newPost = {
+      id: String(Date.now()),
+      tag: payload.tag || 'Network Update',
+      title: payload.title,
+      body: payload.body,
+      author: payload.author || 'DIGISYNQ Member',
+      date: new Date().toISOString()
+    };
+    db.posts.unshift(newPost);
+    res.writeHead(201, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true, post: newPost }));
     return;
   }
 
   // POST /api/feedback
   if (pathname === '/api/feedback' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const payload = JSON.parse(body || '{}');
-        if (!db.feedback) db.feedback = [];
-        const item = {
-          id: `FB-${Date.now()}`,
-          name: payload.name || 'Anonymous',
-          type: payload.type || 'General',
-          message: payload.message || '',
-          page: payload.page || '/',
-          timestamp: payload.ts || new Date().toISOString()
-        };
-        db.feedback.push(item);
-        console.log(`[FEEDBACK RECEIVED] [${item.type}] ${item.name}: ${item.message.slice(0, 60)}...`);
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ ok: true, id: item.id }));
-      } catch {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ ok: false, error: 'Invalid feedback data' }));
-      }
-    });
+    const payload = await readJsonBody(req);
+    if (!payload) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: 'Invalid feedback data' }));
+      return;
+    }
+    if (!db.feedback) db.feedback = [];
+    const item = {
+      id: `FB-${Date.now()}`,
+      name: payload.name || 'Anonymous',
+      type: payload.type || 'General',
+      message: payload.message || '',
+      page: payload.page || '/',
+      timestamp: payload.ts || new Date().toISOString()
+    };
+    db.feedback.push(item);
+    console.log(`[FEEDBACK RECEIVED] [${item.type}] ${item.name}: ${item.message.slice(0, 60)}...`);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: true, id: item.id }));
     return;
   }
 
   // POST /api/register
   if (pathname === '/api/register' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const payload = JSON.parse(body || '{}');
-        const newId = `DS-TAL-${String(Math.floor(1000 + Math.random() * 9000))}`;
-        const newTalent = {
-          id: newId,
-          name: payload.name || 'Anonymous Creator',
-          role: payload.role || 'Cinematographer',
-          category: payload.category || 'Cinematography',
-          grade: 'Grade A',
-          rating: 5.0,
-          reliability: 100,
-          onTime: 100,
-          repeatHire: 100,
-          projects: 1,
-          city: payload.city || 'Bengaluru',
-          specialty: payload.specialty || 'General Craft',
-          gear: payload.gear || 'Standard Package',
-          availability: payload.availability || 'Immediate',
-          rate: payload.rate || 'Flexible',
-          verified: true
-        };
-        db.talents.unshift(newTalent);
+    const payload = await readJsonBody(req);
+    if (!payload) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: 'Invalid JSON payload' }));
+      return;
+    }
+    const newId = `DS-TAL-${String(Math.floor(1000 + Math.random() * 9000))}`;
+    const newTalent = {
+      id: newId,
+      name: payload.name || 'Anonymous Creator',
+      role: payload.role || 'Cinematographer',
+      category: payload.category || 'Cinematography',
+      grade: 'Grade A',
+      rating: 5.0,
+      reliability: 100,
+      onTime: 100,
+      repeatHire: 100,
+      projects: 1,
+      city: payload.city || 'Bengaluru',
+      specialty: payload.specialty || 'General Craft',
+      gear: payload.gear || 'Standard Package',
+      availability: payload.availability || 'Immediate',
+      rate: payload.rate || 'Flexible',
+      verified: true
+    };
+    db.talents.unshift(newTalent);
 
-        res.writeHead(201, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: 'Profile registered successfully', data: newTalent }));
-      } catch (err) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, error: 'Invalid JSON payload' }));
-      }
-    });
+    res.writeHead(201, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true, message: 'Profile registered successfully', data: newTalent }));
     return;
   }
 
   // POST /api/calculate
   if (pathname === '/api/calculate' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const payload = JSON.parse(body || '{}');
-        const budget = payload.budget || 'tier2';
-        const format = payload.format || 'commercial';
+    const payload = await readJsonBody(req);
+    const budget = (payload && payload.budget) || 'tier2';
+    const format = (payload && payload.format) || 'commercial';
 
-        let crewCount = 32;
-        let gearPkgs = 14;
-        let efficiency = "+15%";
-        let derivedCuts = 16;
+    let crewCount = 32;
+    let gearPkgs = 14;
+    let efficiency = "+15%";
+    let derivedCuts = 16;
 
-        if (format === 'feature') {
-          crewCount = 68;
-          gearPkgs = 26;
-          efficiency = "+18%";
-          derivedCuts = 40;
-        } else if (format === 'creator') {
-          crewCount = 8;
-          gearPkgs = 4;
-          efficiency = "+22%";
-          derivedCuts = 24;
-        }
+    if (format === 'feature') {
+      crewCount = 68;
+      gearPkgs = 26;
+      efficiency = "+18%";
+      derivedCuts = 40;
+    } else if (format === 'creator') {
+      crewCount = 8;
+      gearPkgs = 4;
+      efficiency = "+22%";
+      derivedCuts = 24;
+    }
 
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({
-          success: true,
-          estimate: {
-            crew: crewCount,
-            gear: `${gearPkgs} Packages`,
-            budgetEfficiency: efficiency,
-            planBCoverage: "94%",
-            derivedDeliverables: `${derivedCuts} Assets`,
-            scheduleRisk: "Low"
-          }
-        }));
-      } catch {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, error: 'Calculation error' }));
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: true,
+      estimate: {
+        crew: crewCount,
+        gear: `${gearPkgs} Packages`,
+        budgetEfficiency: efficiency,
+        planBCoverage: "94%",
+        derivedDeliverables: `${derivedCuts} Assets`,
+        scheduleRisk: "Low"
       }
-    });
+    }));
+    return;
+  }
+
+  // 404 for unknown API routes — always JSON, never silently fall back to HTML
+  if (pathname.startsWith('/api/')) {
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, error: 'Endpoint not found' }));
     return;
   }
 
   // ── STATIC FILE SERVER ──────────────────────────────────────────────────
-  let filePath = path.join(PUBLIC_DIR, pathname === '/' ? 'index.html' : pathname);
-
-  // Normalize path security
-  if (!filePath.startsWith(PUBLIC_DIR)) {
-    res.writeHead(403);
-    res.end('Access Denied');
+  let requestPath;
+  try {
+    requestPath = decodeURIComponent(pathname);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, error: 'Malformed URL encoding' }));
     return;
   }
 
-  fs.stat(filePath, (err, stats) => {
+  // Resolve and verify the path stays inside the public directory
+  const resolved = path.join(PUBLIC_DIR, requestPath === '/' ? 'index.html' : requestPath);
+  const rel = path.relative(PUBLIC_DIR, resolved);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
+    res.writeHead(403, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, error: 'Access denied' }));
+    return;
+  }
+
+  fs.stat(resolved, (err, stats) => {
+    let target = resolved;
+    let status = 200;
+
     if (err || !stats.isFile()) {
-      // Try appending .html
-      if (fs.existsSync(filePath + '.html')) {
-        filePath = filePath + '.html';
+      if (fs.existsSync(resolved + '.html')) {
+        target = resolved + '.html';
+      } else if (stats && stats.isDirectory() && fs.existsSync(path.join(resolved, 'index.html'))) {
+        target = path.join(resolved, 'index.html');
       } else {
-        // Fallback to index.html
-        filePath = path.join(PUBLIC_DIR, 'index.html');
+        target = path.join(PUBLIC_DIR, '404.html');
+        status = 404;
       }
     }
 
-    const ext = path.extname(filePath).toLowerCase();
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-
-    fs.readFile(filePath, (readErr, content) => {
+    fs.readFile(target, (readErr, content) => {
       if (readErr) {
-        res.writeHead(500);
-        res.end('Server Error');
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: 'Server error' }));
         return;
       }
-      res.writeHead(200, { 'Content-Type': contentType });
+
+      const ext = path.extname(target).toLowerCase();
+      const headers = {
+        'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
+        ...SECURITY_HEADERS,
+        'Cache-Control': status === 200 && ext !== '.html' ? 'public, max-age=3600' : 'no-store'
+      };
+      res.writeHead(status, headers);
       res.end(content);
     });
   });

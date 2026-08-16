@@ -18,6 +18,7 @@
   <!-- Material Symbols Outlined -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <noscript><style>html{visibility:visible;opacity:1}</style></noscript>
 </head>
 <body>
 
@@ -69,7 +70,7 @@
     <div class="wrap" style="max-width: 52rem;">
       <div class="eyebrow reveal"><span class="eyebrow-line"></span> Capability Registration</div>
       <h1 class="sec-title display-lg reveal reveal--d1">
-        JOIN THE <span class="signal-text">CAPABILITY GRAPH.</span>
+        Join the <span class="glow-text"><em>Capability Graph.</em></span>
       </h1>
       <p class="sec-sub reveal reveal--d2" style="margin-inline: auto;">
         For Cinematographers, Directors, Editors, Sound Engineers, Gaffers, Technicians, and Facility Owners.
@@ -206,17 +207,55 @@
       const submitBtn = document.getElementById('reg-submit-btn');
 
       if (form && confirmBox) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
+
+          const payload = {
+            name: form.querySelector('#reg-name').value.trim(),
+            role: form.querySelector('#reg-role').value,
+            specialty: form.querySelector('#reg-spec').value.trim(),
+            phone: form.querySelector('#reg-phone').value.trim(),
+            reel: form.querySelector('#reg-reel').value.trim()
+          };
+
           submitBtn.disabled = true;
           submitBtn.textContent = 'Submitting Application...';
 
-          setTimeout(() => {
-            confirmBox.style.display = 'block';
-            confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            submitBtn.textContent = '✓ Application Submitted';
-            form.reset();
-          }, 600);
+          let saved = false;
+          try {
+            const res = await fetch('/api/register', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              signal: AbortSignal.timeout(6000)
+            });
+            saved = res.ok;
+          } catch (e) {
+            saved = false;
+          }
+
+          // Offline / static-host fallback: persist to the local capability graph
+          if (!saved && window.DigisynqDB) {
+            try {
+              window.DigisynqDB.addTalent({
+                name: payload.name,
+                role: payload.role,
+                specialty: payload.specialty,
+                badge: 'Newly Verified'
+              });
+              saved = true;
+            } catch (e) { saved = false; }
+          }
+
+          confirmBox.style.display = 'block';
+          confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          submitBtn.textContent = saved ? '✓ Application Received' : '✓ Saved Locally';
+          if (!saved) {
+            confirmBox.querySelector('strong').textContent = '✓ Application Saved Locally';
+            confirmBox.querySelector('p').textContent = 'We could not reach the network right now, so your profile was saved in this browser. Contact the orchestration desk directly to complete verification.';
+          }
+          form.reset();
+          submitBtn.disabled = false;
         });
       }
     });
@@ -236,19 +275,19 @@
       <div>
         <h4 class="footer-col-title">Network</h4>
         <div class="footer-links">
-          <a href="index.html#why">Why It Exists</a>
-          <a href="index.html#shift">The Shift</a>
-          <a href="index.html#mechanism">Mechanism</a>
-          <a href="index.html#philosophy">ABCDEF Framework</a>
+          <a href="index.html#problem">The Problem</a>
+          <a href="index.html#comparison">The Shift</a>
+          <a href="index.html#how-it-works">Mechanism</a>
+          <a href="platform.html#verification-detail">Verification Protocol</a>
         </div>
       </div>
 
       <div>
         <h4 class="footer-col-title">Architecture</h4>
         <div class="footer-links">
-          <a href="index.html#talent">Capability Graph</a>
+          <a href="network.html">Verified Network</a>
           <a href="index.html#resilience">Plan A/B/C</a>
-          <a href="index.html#graph">Cinema Graph</a>
+          <a href="platform.html#mechanism-detail">Platform Engine</a>
           <a href="about.html">About Us</a>
         </div>
       </div>
@@ -281,8 +320,7 @@
 
   <!-- Open-Source Plugins -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/db.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/feedback.js" defer></script>
 </body>

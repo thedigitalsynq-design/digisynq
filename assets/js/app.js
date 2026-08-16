@@ -463,8 +463,12 @@
   if (simTabs.length && simCrew) {
     simTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        simTabs.forEach((t) => t.classList.remove('active'));
+        simTabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
 
         const preset = simPresets[tab.getAttribute('data-scale')];
         if (preset) {
@@ -595,8 +599,12 @@
   if (mechBtns.length) {
     mechBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        mechBtns.forEach((b) => b.classList.remove('active'));
+        mechBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
         const data = mechData[btn.getAttribute('data-step')];
         if (data) updateMechanismView(data);
       });
@@ -611,10 +619,14 @@
     planTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const plan = tab.getAttribute('data-plan');
-        planTabs.forEach((t) => t.classList.remove('active'));
+        planTabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         planPanels.forEach((p) => p.classList.remove('active'));
 
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         const targetPanel = document.getElementById(`panel-plan-${plan.toLowerCase()}`);
         if (targetPanel) targetPanel.classList.add('active');
       });

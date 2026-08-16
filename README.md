@@ -1,31 +1,23 @@
-# DIGISYNQ — Digital Ecosystem Website
+# DIGISYNQ — The Operating Network for Cinema
 
-> A premium, GitHub Pages–ready static website for **DIGISYNQ** — a digital ecosystem where brands, creators, businesses, influencers, studios, and professionals connect, collaborate, promote, and grow.
+> A GitHub Pages–ready marketing site for **DIGISYNQ** — an open, asset-light, trusted and continuously learning operating network that coordinates verified cinema talent, studios, gear, and production capacity.
 
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=flat&logo=github)](https://pages.github.com/)
-[![License](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
-
----
-
-## 🌐 Live Site
-
-After deployment: `https://<your-username>.github.io/<repo-name>/`
+[![Zero Dependencies](https://img.shields.io/badge/Zero%20Dependencies-Vanilla%20JS-success)](#)
 
 ---
 
 ## ✨ Features
 
-- **Dark-mode first** design with vibrant purple-blue gradients
-- **Glassmorphism** service cards with hover animations
-- **Fully responsive** — mobile, tablet, and desktop layouts
-- **16 service cards** with icons, descriptions, and category tags
-- **Animated hero** with floating background orbs and grid lines
-- **Ecosystem nodes** section with DIGISYNQ positioning statement
-- **Contact page** with form validation + Formspree / mailto fallback
-- **Scroll reveal animations** powered by IntersectionObserver
-- **Sticky navigation** with mobile hamburger menu
-- **SEO-ready** — title tags, meta descriptions, semantic HTML5, Open Graph
-- **Zero dependencies** — pure HTML, CSS, and vanilla JavaScript
+- **9-page architecture** spanning the full narrative: problem, platform, verified network, business model, production stories, infographic, about, contact, and capability registration
+- **Obsidian design system** — DM Serif Display × Plus Jakarta Sans × JetBrains Mono, liquid glassmorphism, electric cyan accent
+- **Interactive capability graph** hero, orchestration simulator, 10-step mechanism carousel, and Plan A/B/C resilience switcher
+- **Live forms** — register/contact POST to the Node API and gracefully fall back to `localStorage` when offline
+- **Verified network page** wired to `GET /api/talents` (category + search filters)
+- **Zero-dependency Node server** with hardened static serving, JSON API, security headers, and a styled 404
+- **A11y** — ARIA tab state, labelled canvas, noscript FOUC fallback
+- **Scroll reveal** animations via IntersectionObserver, sticky nav with mobile drawer
+- **GitHub Actions workflow** for automatic Pages deployment
 
 ---
 
@@ -33,124 +25,95 @@ After deployment: `https://<your-username>.github.io/<repo-name>/`
 
 ```
 digisynq-website/
-├── index.html              # Landing page (Hero, About, Services, Ecosystem, CTA)
-├── contact.html            # Contact page with form
+├── index.html           # Landing — problem, paradigm shift, simulator, capability specimens
+├── platform.html        # Capability graph, verification stack, 10-step mechanism, Plan A/B/C
+├── network.html         # Verified network registry (talent / studio browsing)
+├── business.html        # Business model & monetization
+├── stories.html         # Production stories & use cases
+├── infographic.html     # Full visual overview
+├── about.html           # Mission & philosophy
+├── contact.html         # Produce a project / mandate intake (POST /api/feedback)
+├── register.html        # Join the capability graph (POST /api/register)
+├── 404.html             # Styled not-found page
+├── server.js            # Zero-dependency Node HTTP server + REST API (port 3000)
 ├── assets/
 │   ├── css/
-│   │   └── style.css       # Complete design system
+│   │   └── style.css    # Master design system v11
 │   └── js/
-│       └── app.js          # Navigation, animations, form logic
+│       ├── app.js       # Navigation, reveal, tabs, simulator, parallax
+│       ├── db.js        # DigisynqDB localStorage fallback (register)
+│       ├── feedback.js  # Offline feedback/mandate fallback
+│       └── posts.js     # Network activity feed
 ├── .github/
 │   └── workflows/
-│       └── gh-pages.yml    # CI/CD for GitHub Pages
-└── README.md               # This file
+│       └── gh-pages.yml # CI/CD for GitHub Pages
+└── README.md
 ```
 
 ---
 
 ## 🚀 Local Development
 
-No build tools required — just open the HTML file!
+Requires **Node.js 14+** for the API server:
 
-**Option 1: Open directly**
 ```bash
-start index.html   # Windows
-open index.html    # macOS
+npm start        # or: node server.js
+# Then visit: http://localhost:3000
 ```
 
-**Option 2: Serve locally (recommended)**
-```bash
-# Using npx
-npx serve .
+> Static-only hosting (e.g. GitHub Pages): forms gracefully fall back to `localStorage`, so the site works without the server.
 
-# Using Python
-python -m http.server 8080
-# Then visit: http://localhost:8080
-```
+---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint          | Description                                   |
+|--------|-------------------|-----------------------------------------------|
+| GET    | `/api/health`     | Service health + uptime                       |
+| GET    | `/api/talents`    | Verified talent registry (`?category=&q=`)    |
+| GET    | `/api/studios`    | Studio / stage registry                       |
+| GET    | `/api/stats`      | Network-wide operating stats                  |
+| GET    | `/api/posts`      | Network activity feed                         |
+| POST   | `/api/posts`      | Create a feed post                            |
+| POST   | `/api/feedback`   | Mandate / feedback intake                     |
+| POST   | `/api/register`   | Register capability into the graph            |
+| POST   | `/api/calculate`  | Production orchestration estimate             |
+
+All POST bodies are JSON, capped at 100 KB (`MAX_BODY_BYTES` in `server.js`). Unknown `/api/*` routes return JSON 404; malformed or oversized bodies return 400.
 
 ---
 
 ## 📦 Deploy to GitHub Pages
 
-### Method 1: Manual (Simple)
-
-1. Create a new GitHub repository  
-   ```
-   https://github.com/new
-   ```
-2. Initialize Git in this folder:
+1. Push this folder to a new repository:
    ```bash
    git init
    git add .
    git commit -m "Initial commit — DIGISYNQ website"
-   ```
-3. Add your remote and push:
-   ```bash
    git remote add origin https://github.com/<username>/<repo>.git
    git branch -M main
    git push -u origin main
    ```
-4. Go to **Settings → Pages** in your repository  
-5. Set **Source** to `Deploy from a branch → main → / (root)`  
-6. Click **Save** — your site will be live in ~60 seconds!
-
----
-
-### Method 2: GitHub Actions (Automatic CI/CD)
-
-The `.github/workflows/gh-pages.yml` workflow is included and will **automatically deploy** every time you push to `main`. No extra setup needed.
-
----
-
-## 📬 Contact Form Setup (Formspree)
-
-1. Sign up free at [formspree.io](https://formspree.io)
-2. Create a new form and copy your **Form ID**
-3. Open `contact.html` and replace `YOUR_FORM_ID`:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" ...>
-   ```
-4. Commit and push — the form is now live!
-
-> If Formspree is not configured, the form falls back to opening the user's email client.
+2. Go to **Settings → Pages → Source: Deploy from a branch → main → / (root)**.
+3. The included `.github/workflows/gh-pages.yml` also auto-deploys on every push to `main`.
 
 ---
 
 ## 🎨 Customisation
 
-All design tokens live in the `:root` block in `assets/css/style.css`:
+All design tokens live in the `:root` block at the top of `assets/css/style.css`:
 
 ```css
 :root {
-  --clr-primary:  hsl(270, 80%, 65%);  /* Purple  — change to your brand colour */
-  --clr-primary-2: hsl(210, 90%, 60%); /* Blue    — change to your brand accent */
-  --clr-accent:   hsl(35, 95%, 60%);   /* Amber   — used for highlights         */
-  ...
+  --bg: #030305;            /* Obsidian base   */
+  --cyan: #38bdf8;          /* Signal accent   */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 ```
 
----
-
-## 📄 Services Covered
-
-| Service | Category |
-|---|---|
-| Content Strategy | Strategy |
-| Content Creation | Creative |
-| Video Editing | Creative |
-| Graphic Design | Design |
-| Influencer Marketing | Marketing |
-| Campaign Management | Marketing |
-| Brand Identity | Branding |
-| Digital PR & Promotion | PR |
-| Lead Generation | Growth |
-| Community Management | Engagement |
-| Creator & Talent Management | Talent |
-| Collaboration Management | Network |
-| Event & Launch Promotion | Events |
-| Social Media Optimization | Optimization |
-| Analytics & Growth Tracking | Analytics |
-| Digital Consultancy | Consulting |
+Canonical component styles (`.shift-*`, `.cap-*`, `.problem-*`) are consolidated under sections §28–§29 of `style.css`.
 
 ---
 
@@ -160,4 +123,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-*Built with ❤️ for DIGISYNQ — where brands and creators sync, grow, and thrive.*
+*Built for DIGISYNQ — the network between the dots.*
