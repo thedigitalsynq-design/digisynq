@@ -628,13 +628,72 @@ h1, h2, h3, h4 {
 
 .social-icon svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
 
+.footer__founders {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.footer__founders-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.footer__founders-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.founder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  color: var(--clr-text);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: border-color var(--t-base), transform var(--t-base), background var(--t-base);
+}
+.founder-badge:hover {
+  border-color: var(--clr-border-hov);
+  background: var(--clr-surface-hov);
+  transform: translateY(-2px);
+  color: var(--clr-white);
+}
+.founder-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-white);
+}
+
 .footer__bottom {
   border-top: 1px solid var(--clr-border);
   padding-block: var(--space-6);
   text-align: center;
   color: var(--clr-text-muted);
   font-size: var(--fs-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
+.footer__bottom-founders {
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
 
 /* ── 14. Contact Page ─────────────────────────────────────── */
 .page-hero {
@@ -883,3 +942,99 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   background: var(--clr-border);
 }
+
+/* ── 18. Floating Buttons (WhatsApp + Back-to-Top) ─────────── */
+.floating-buttons {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-6);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Shared fab styles */
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform var(--t-base), box-shadow var(--t-base), opacity var(--t-base);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.fab:hover { transform: translateY(-4px) scale(1.08); }
+.fab:active { transform: scale(0.95); }
+.fab svg { width: 26px; height: 26px; fill: #fff; flex-shrink: 0; }
+
+/* WhatsApp FAB */
+.fab--wa {
+  background: #25d366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+}
+.fab--wa:hover { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.65); }
+
+/* WhatsApp tooltip label */
+.fab--wa::before {
+  content: 'Chat on WhatsApp';
+  position: absolute;
+  right: calc(100% + 14px);
+  background: #25d366;
+  color: #fff;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition: opacity var(--t-base), transform var(--t-base);
+}
+.fab--wa:hover::before { opacity: 1; transform: translateX(0); }
+
+/* Pulse ring on WhatsApp button */
+.fab--wa::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.5);
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+@keyframes wa-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50%       { transform: scale(1.3); opacity: 0; }
+}
+
+/* Back-to-Top FAB */
+.fab--top {
+  background: var(--clr-white);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity var(--t-slow), transform var(--t-slow), box-shadow var(--t-base);
+}
+.fab--top svg { fill: var(--clr-black); }
+.fab--top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.fab--top:hover { box-shadow: 0 8px 32px rgba(255,255,255,0.28); }
+
+@media (max-width: 480px) {
+  .floating-buttons { right: var(--space-4); bottom: var(--space-6); }
+  .fab { width: 50px; height: 50px; }
+  .fab--wa::before { display: none; }
+}
+
