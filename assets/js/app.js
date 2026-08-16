@@ -1,6 +1,6 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform Engine
-   Living Photonic Canvas, Silo Circuitry, 3D Card Tilt, Aspect Morph & Simulator
+   Ecosystem Canvas, Role Switcher, Project Room, Holographic Tilt & Simulator
    ========================================================================== */
 
 (function () {
@@ -68,7 +68,7 @@
   /* ── 3. Kinetic Title Word Rotator ─────────────────────────────────────── */
   const dynamicTag = document.getElementById('hero-dynamic-tag');
   if (dynamicTag) {
-    const words = ['CONNECTED.', 'ORCHESTRATED.', 'INTELLIGENT.', 'SYNCHRONIZED.'];
+    const words = ['SEARCHABLE.', 'MATCHABLE.', 'COORDINATED.', 'SMARTER.', 'CONNECTED.'];
     let idx = 0;
     setInterval(() => {
       idx = (idx + 1) % words.length;
@@ -79,7 +79,7 @@
         dynamicTag.style.opacity = '1';
         dynamicTag.style.transform = 'translateY(0)';
       }, 300);
-    }, 2800);
+    }, 2600);
   }
 
   /* ── 4. Living Photonic Ecosystem Canvas (Hero Section) ─────────────────── */
@@ -150,70 +150,72 @@
       const centerX = width / 2;
       const centerY = height / 2;
 
-      // Draw Center Hub (DIGISYNQ Orchestration Core)
+      // Draw Center DIGISYNQ Intelligence Hub
       ctx.beginPath();
-      ctx.arc(centerX, centerY, 7, 0, Math.PI * 2);
+      ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
       ctx.fillStyle = '#00f0ff';
+      ctx.shadowBlur = 18;
       ctx.shadowColor = '#00f0ff';
-      ctx.shadowBlur = 24;
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Draw Connection Lines & Nodes
+      // Update and draw nodes
       nodes.forEach((node, i) => {
-        node.pulse += 0.025;
+        node.pulse += 0.03;
         node.x += node.vx;
         node.y += node.vy;
 
-        if (Math.abs(node.x - node.baseX) > 22) node.vx *= -1;
-        if (Math.abs(node.y - node.baseY) > 22) node.vy *= -1;
+        if (Math.abs(node.x - node.baseX) > 25) node.vx *= -1;
+        if (Math.abs(node.y - node.baseY) > 25) node.vy *= -1;
 
-        if (mouse.x !== null && mouse.y !== null) {
+        if (mouse.x !== null) {
           const dx = mouse.x - node.x;
           const dy = mouse.y - node.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const dist = Math.hypot(dx, dy);
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            node.x -= (dx / dist) * force * 2;
-            node.y -= (dy / dist) * force * 2;
+            node.x -= (dx / dist) * force * 4;
+            node.y -= (dy / dist) * force * 4;
           }
         }
 
-        // Line to Center Hub
+        // Radiating laser link to center hub
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(node.x, node.y);
-        ctx.strokeStyle = `rgba(0, 240, 255, ${0.12 + Math.sin(node.pulse) * 0.06})`;
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.12)';
         ctx.lineWidth = 1;
         ctx.stroke();
 
-        // Line to Next Node
+        // Polygon perimeter link to next node
         const nextNode = nodes[(i + 1) % nodes.length];
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
         ctx.lineTo(nextNode.x, nextNode.y);
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
-        ctx.lineWidth = 0.8;
         ctx.stroke();
 
-        // Node Point
+        // Node circle
+        const currentRadius = node.radius + Math.sin(node.pulse) * 1.2;
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
         ctx.fillStyle = '#ffffff';
         ctx.fill();
 
-        // Node Label
+        // Label typography
         ctx.font = '10px "JetBrains Mono", monospace';
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
         ctx.textAlign = 'center';
-        ctx.fillText(node.label, node.x, node.y - 10);
+        ctx.fillText(node.label, node.x, node.y + 16);
       });
 
-      // Animate Flowing Photonic Packets
+      // Draw Photonic Data Packets travelling between Center and Nodes
       packets.forEach(pkt => {
         pkt.progress += pkt.speed;
-        if (pkt.progress > 1) pkt.progress = 0;
-
+        if (pkt.progress > 1) {
+          pkt.progress = 0;
+          pkt.nodeIndex = Math.floor(Math.random() * nodes.length);
+        }
         const targetNode = nodes[pkt.nodeIndex];
         const px = centerX + (targetNode.x - centerX) * pkt.progress;
         const py = centerY + (targetNode.y - centerY) * pkt.progress;
@@ -221,8 +223,8 @@
         ctx.beginPath();
         ctx.arc(px, py, 2.2, 0, Math.PI * 2);
         ctx.fillStyle = '#00f0ff';
-        ctx.shadowColor = '#00f0ff';
         ctx.shadowBlur = 8;
+        ctx.shadowColor = '#00f0ff';
         ctx.fill();
         ctx.shadowBlur = 0;
       });
@@ -232,67 +234,267 @@
     animate();
   }
 
-  /* ── 5. Interactive Silos-to-Connected Circuit Visualizer ───────────────── */
-  const siloSwitchBtns = document.querySelectorAll('.silo-switch-btn');
-  const siloBoxes      = document.querySelectorAll('.silo-box');
-  const siloStatusText = document.getElementById('silo-status-text');
+  /* ── 5. Role-Based Entry Portal Switcher (I'M A...) ────────────────────── */
+  const roleData = {
+    creator: {
+      tag: "FOR CREATORS & DIRECTORS",
+      title: "Validate, Package, and Execute Your Project on Merit.",
+      desc: "Turn your creative vision into an orchestrated production. Access validated genre demand data, assemble Grade-A crew packages, and secure pre-screened locations without agency middlemen.",
+      cta: "Explore Creator Opportunities →",
+      link: "contact.html",
+      metrics: ["Verified Market Demand", "Talent Match Engine", "Downside Protection"]
+    },
+    producer: {
+      tag: "FOR PRODUCERS & SHOWRUNNERS",
+      title: "Build Scalable Production Units with Zero Idle Overhead.",
+      desc: "Coordinate end-to-end commercial shoots and feature pipelines. Access real-time availability calendars for Grade-A talent, lock idle studio slots, and enforce Plan A/B/C operational resilience.",
+      cta: "Initiate Production Mandate →",
+      link: "contact.html",
+      metrics: ["Real-Time Availability", "Plan A/B/C Standby", "Multi-Format Repurposing"]
+    },
+    technician: {
+      tag: "FOR TECHNICIANS & CREW",
+      title: "Turn Verified Skills & Calendar Availability into Recurring Work.",
+      desc: "Stop relying on word-of-mouth and favoritism. Get your digital professional ID, benchmark your capability score, and get booked directly for high-value production mandates.",
+      cta: "Register Talent Profile →",
+      link: "register.html",
+      metrics: ["Merit-Based Grade", "Automated Wrap Payouts", "Calendar Monetization"]
+    },
+    resource: {
+      tag: "FOR SOUNDSTAGES, CAMERAS & RENTALS",
+      title: "Monetize Idle Soundstage Slots and Camera Bodies.",
+      desc: "Convert dormant soundstage days and idle camera/lighting packages into productive utilization. List verified technical specifications and receive pre-screened production bookings.",
+      cta: "List Asset Capacity →",
+      link: "register.html",
+      metrics: ["Zero Balance Sheet Debt", "Verified Client Screenings", "Guaranteed Milestone Payouts"]
+    },
+    brand: {
+      tag: "FOR BRANDS & ADVERTISING AGENCIES",
+      title: "High-Impact Commercials with Guaranteed Timelines & 12+ Cuts.",
+      desc: "Commission high-velocity brand films and creator campaigns. One orchestrated shoot yields 12+ derived vertical reels, BTS cutdowns, and localized social assets with guaranteed wrap delivery.",
+      cta: "Commission Brand Campaign →",
+      link: "contact.html",
+      metrics: ["12+ Derived Assets", "Guaranteed Delivery Dates", "Audience Trend Matching"]
+    }
+  };
 
-  if (siloSwitchBtns.length) {
-    siloSwitchBtns.forEach(btn => {
+  const roleTabBtns = document.querySelectorAll('.role-tab-btn');
+  const roleTagEl   = document.getElementById('role-tag');
+  const roleTitleEl = document.getElementById('role-title');
+  const roleDescEl  = document.getElementById('role-desc');
+  const roleCtaEl   = document.getElementById('role-cta');
+  const roleMetricsEl = document.getElementById('role-metrics');
+
+  if (roleTabBtns.length && roleTagEl) {
+    roleTabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        siloSwitchBtns.forEach(b => b.classList.remove('active'));
+        roleTabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const mode = btn.getAttribute('data-mode');
-
-        if (mode === 'orchestrated') {
-          siloBoxes.forEach(box => box.classList.add('connected'));
-          if (siloStatusText) {
-            siloStatusText.textContent = '✨ DIGISYNQ SYNCHRONIZED: Information, verified assets, and learning flow seamlessly across every division.';
-            siloStatusText.style.color = 'var(--accent-cyan)';
-          }
-        } else {
-          siloBoxes.forEach(box => box.classList.remove('connected'));
-          if (siloStatusText) {
-            siloStatusText.textContent = '⚠️ FRAGMENTED STATE: Broken lines of communication create delayed schedules, idle assets, and wasted budget.';
-            siloStatusText.style.color = 'var(--text-muted)';
+        const key = btn.getAttribute('data-role');
+        const data = roleData[key];
+        if (data) {
+          roleTagEl.textContent = data.tag;
+          roleTitleEl.textContent = data.title;
+          roleDescEl.textContent = data.desc;
+          roleCtaEl.textContent = data.cta;
+          roleCtaEl.setAttribute('href', data.link);
+          if (roleMetricsEl) {
+            roleMetricsEl.innerHTML = data.metrics.map(m => `<span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ ${m}</span>`).join('');
           }
         }
       });
     });
   }
 
-  /* ── 6. 3D Holographic Tilt on ID Card ─────────────────────────────────── */
-  const idCard = document.querySelector('.id-card-preview');
-  if (idCard) {
-    idCard.addEventListener('mousemove', (e) => {
-      const rect = idCard.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+  /* ── 6. Interactive Silo Connectivity Visualizer ─────────────────────────── */
+  const siloBtns = document.querySelectorAll('.silo-switch-btn');
+  const siloBoxes = document.querySelectorAll('.silo-box');
+  const siloStatusText = document.getElementById('silo-status-text');
 
-      const rotateX = ((y - centerY) / centerY) * -10;
-      const rotateY = ((x - centerX) / centerX) * 10;
+  if (siloBtns.length && siloBoxes.length) {
+    siloBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        siloBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.getAttribute('data-mode');
 
-      idCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    });
-
-    idCard.addEventListener('mouseleave', () => {
-      idCard.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        if (mode === 'orchestrated') {
+          siloBoxes.forEach(box => box.classList.add('connected'));
+          if (siloStatusText) {
+            siloStatusText.innerHTML = '✨ <strong style="color:var(--accent-cyan);">DIGISYNQ ORCHESTRATED:</strong> Real-time connected intelligence removes friction, aligns calendar availability, and coordinates execution.';
+          }
+        } else {
+          siloBoxes.forEach(box => box.classList.remove('connected'));
+          if (siloStatusText) {
+            siloStatusText.innerHTML = '⚠️ <strong style="color:var(--accent-amber);">FRAGMENTED STATE:</strong> Disconnected silos cause idle gear, scheduling conflicts, delayed deliverables, and blown budgets.';
+          }
+        }
+      });
     });
   }
 
-  /* ── 7. Multi-Format Aspect Ratio Switcher ─────────────────────────────── */
+  /* ── 7. ABCDEF Engine Stepper ────────────────────────────────────────────── */
+  const engineStages = {
+    A: {
+      tagline: '“Know what exists.”',
+      title: 'A — ACCESS',
+      desc: 'Instant continuous visibility across verified ecosystem assets without unnecessary ownership overhead.',
+      items: [
+        'People & Verified Specialized Skills',
+        'Camera, Lighting & Grip Equipment Pools',
+        'Soundstages, Virtual Production & Location Inventories',
+        'Post-Production Facilities & Color Suites',
+        'Emerging Technologies & Production Toolsets'
+      ]
+    },
+    B: {
+      tagline: '“Deploy without ownership liability.”',
+      title: 'B — BANDWIDTH',
+      desc: 'Flexible, elastic capacity that scales with project demands and contracts when inactive.',
+      items: [
+        'Zero fixed balance sheet debt or depreciation',
+        'Rapid crew scaling from 3-person unit to 120-person feature',
+        'Peak capacity absorption without ongoing payroll',
+        'Dynamic regional multi-unit deployment'
+      ]
+    },
+    C: {
+      tagline: '“Assemble the exact right unit.”',
+      title: 'C — COMPOSE',
+      desc: 'Intelligent pairing of verified talent, hardware, locations, and vendors based on project parameters.',
+      items: [
+        'Evidence-based talent matching (Grade + Rating)',
+        'Budget-proportional camera and lighting pairing',
+        'Geography-optimized location and studio routing',
+        'Co-working compatibility graph pairing'
+      ]
+    },
+    D: {
+      tagline: '“Execute with synchronized precision.”',
+      title: 'D — ORCHESTRATE',
+      desc: 'End-to-end coordinated workflow management from development through master release.',
+      items: [
+        'Unified production communication protocols',
+        'Standardized daily capture handoff pipelines',
+        'Concurrent BTS & vertical promo harvesting',
+        'Integrated milestone escrow payments'
+      ]
+    },
+    E: {
+      tagline: '“Decide with real-time evidence.”',
+      title: 'E — INTELLIGENCE',
+      desc: 'Continuous market signals, genre performance trends, and risk management algorithms.',
+      items: [
+        'Real-time genre sentiment & release window indexing',
+        'Predictive schedule risk mitigation (Plan A/B/C)',
+        'Regional studio capacity & ad CPM forecasting',
+        'Audience response & retention analytics'
+      ]
+    },
+    F: {
+      tagline: '“Every project teaches the next.”',
+      title: 'F — FLYWHEEL ↺',
+      desc: 'A compounding knowledge graph where every wrap refines matching accuracy, pricing, and outcomes.',
+      items: [
+        'Automatic talent performance & reliability rating updates',
+        'Hardware reliability and maintenance feedback logs',
+        'Budget-to-actual efficiency learning loops',
+        'Compounding ecosystem network effects'
+      ]
+    }
+  };
+
+  const engineBtns = document.querySelectorAll('.engine-step-btn');
+  const engineTitle = document.getElementById('engine-title');
+  const engineTagline = document.getElementById('engine-tagline');
+  const engineDesc = document.getElementById('engine-desc');
+  const engineList = document.getElementById('engine-list');
+
+  if (engineBtns.length && engineTitle) {
+    engineBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        engineBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const stage = btn.getAttribute('data-stage');
+        const data = engineStages[stage];
+        if (data) {
+          engineTitle.textContent = data.title;
+          engineTagline.textContent = data.tagline;
+          engineDesc.textContent = data.desc;
+          engineList.innerHTML = data.items.map(item => `<li class="engine-list-item">${item}</li>`).join('');
+        }
+      });
+    });
+  }
+
+  /* ── 8. Interactive Feature: Project Room Plan Switcher ─────────────────── */
+  const planBtns = document.querySelectorAll('.plan-toggle-btn');
+  const planStatusTitle = document.getElementById('room-plan-title');
+  const planStatusDesc = document.getElementById('room-plan-desc');
+  const riskWeatherPill = document.getElementById('risk-weather');
+  const riskStudioPill = document.getElementById('risk-studio');
+
+  const planConfigs = {
+    A: {
+      title: "PLAN A // Primary Unit Locked",
+      desc: "Scheduled Primary DOP, RED V-Raptor package, outdoor Mysuru forest location, and scheduled Stage 2 booking.",
+      weather: "🟡 Weather Advisory (Standby)",
+      weatherClass: "risk-pill--amber",
+      studio: "🟢 Stage 2 Booked",
+      studioClass: "risk-pill--green"
+    },
+    B: {
+      title: "PLAN B // Standby Alternate Activated",
+      desc: "Verified backup DOP confirmed on standby rate. Virtual production bay locked for rain fallback with zero rescheduling fee.",
+      weather: "🟢 Virtual Stage Ready",
+      weatherClass: "risk-pill--green",
+      studio: "🟢 VP Bay Swapped",
+      studioClass: "risk-pill--green"
+    },
+    C: {
+      title: "PLAN C // Modular Contingency",
+      desc: "Emergency modular unit shift. Second unit shoot concurrent execution with localized crew package in Bengaluru hub.",
+      weather: "🟢 Studio Protected",
+      weatherClass: "risk-pill--green",
+      studio: "🟢 Indoor Unit Active",
+      studioClass: "risk-pill--green"
+    }
+  };
+
+  if (planBtns.length && planStatusTitle) {
+    planBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        planBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const plan = btn.getAttribute('data-plan');
+        const cfg = planConfigs[plan];
+        if (cfg) {
+          planStatusTitle.textContent = cfg.title;
+          planStatusDesc.textContent = cfg.desc;
+          if (riskWeatherPill) {
+            riskWeatherPill.textContent = cfg.weather;
+            riskWeatherPill.className = `risk-pill ${cfg.weatherClass}`;
+          }
+          if (riskStudioPill) {
+            riskStudioPill.textContent = cfg.studio;
+            riskStudioPill.className = `risk-pill ${cfg.studioClass}`;
+          }
+        }
+      });
+    });
+  }
+
+  /* ── 9. Multi-Format Aspect Ratio Switcher ──────────────────────────────── */
   const aspectBtns = document.querySelectorAll('.aspect-btn');
   const aspectFrame = document.getElementById('aspect-frame');
-  const aspectText  = document.getElementById('aspect-text');
-  const aspectRes   = document.getElementById('aspect-res');
+  const aspectText = document.getElementById('aspect-text');
+  const aspectRes = document.getElementById('aspect-res');
 
-  const aspectInfo = {
-    '16-9':  { label: '16:9 CINEMA MASTER', res: '3840 &times; 2160 &bull; Theatrical &amp; OTT' },
-    '9-16':  { label: '9:16 VERTICAL REEL', res: '1080 &times; 1920 &bull; Mobile Discovery' },
-    '1-1':   { label: '1:1 SQUARE PROMO', res: '1080 &times; 1080 &bull; Social Feed' },
-    '239-1': { label: '2.39:1 ANAMORPHIC', res: '4096 &times; 1716 &bull; Widescreen Scope' }
+  const aspectData = {
+    '16-9':  { label: '16:9 CINEMA MASTER', res: '3840 × 2160 • OTT & Theatrical' },
+    '9-16':  { label: '9:16 VERTICAL REEL', res: '1080 × 1920 • Instagram & Shorts' },
+    '1-1':   { label: '1:1 SOCIAL PROMO', res: '1080 × 1080 • Square Feed Cut' },
+    '239-1': { label: '2.39:1 THEATRICAL SCOPE', res: '4096 × 1716 • Anamorphic Master' }
   };
 
   if (aspectBtns.length && aspectFrame) {
@@ -302,255 +504,107 @@
         btn.classList.add('active');
         const ratio = btn.getAttribute('data-ratio');
         aspectFrame.setAttribute('data-ratio', ratio);
-        if (aspectText && aspectInfo[ratio]) aspectText.innerHTML = aspectInfo[ratio].label;
-        if (aspectRes && aspectInfo[ratio]) aspectRes.innerHTML = aspectInfo[ratio].res;
+        const data = aspectData[ratio];
+        if (data) {
+          aspectText.textContent = data.label;
+          aspectRes.textContent = data.res;
+        }
       });
     });
   }
 
-  /* ── 8. ABCDEF Engine Stepper ───────────────────────────────────────────── */
-  const engineData = {
-    A: {
-      letter: "A",
-      name: "ACCESS",
-      tagline: "Know what exists.",
-      desc: "Instant continuous visibility across verified ecosystem assets without unnecessary ownership overhead.",
-      items: [
-        "People & Verified Specialized Skills",
-        "Camera, Lighting & Grip Equipment Pools",
-        "Soundstages, Virtual Production & Location Inventories",
-        "Post-Production Facilities & Color Suites",
-        "Emerging Technologies & Production Toolsets"
-      ]
-    },
-    B: {
-      letter: "B",
-      name: "BANDWIDTH",
-      tagline: "Know what is available.",
-      desc: "Real-time verification of capacity, timing, geo-location, verified day rates, and operational readiness.",
-      items: [
-        "Verified Crew Calendar Availability",
-        "Studio Slot & Stage Utilization Windows",
-        "Gear Transit Times & Location Readiness",
-        "Transparent Budgetary & Rate Parameters",
-        "Production Shift & Overtime Management"
-      ]
-    },
-    C: {
-      letter: "C",
-      name: "COMPOSE",
-      tagline: "Build the right combination.",
-      desc: "Algorithmically matching requirements with suitability, budget, reliability, and creative intent.",
-      items: [
-        "Merit-Based Talent & Crew Assembly",
-        "Right-Sized Camera & Technical Packages",
-        "Schedule-Budget-Location Optimization",
-        "Collaborative Resource Bundling",
-        "Pre-Emptive Plan A / B / C Resilience Paths"
-      ]
-    },
-    D: {
-      letter: "D",
-      name: "ORCHESTRATE",
-      tagline: "Make it work in reality.",
-      desc: "Synchronized project workflow coordination from pre-pro call sheets to daily rushes and final master handoff.",
-      items: [
-        "Multi-Party Timeline & Milestone Tracking",
-        "On-Set Resource & Vendor Coordination",
-        "Post-Production Pipeline Asset Hand-off",
-        "Multi-Format Content Delivery Automation",
-        "Downside Risk & Bottleneck Mitigation"
-      ]
-    },
-    E: {
-      letter: "E",
-      name: "INTELLIGENCE",
-      tagline: "Understand what is happening.",
-      desc: "Real-time and post-project analytics across costs, production efficiency, content engagement, and market signals.",
-      items: [
-        "Granular Budget & Cost Variance Tracking",
-        "Audience Cluster Response & Engagement Signals",
-        "Seasonal & Competitive Market Trends",
-        "Multi-Format Content Performance & Retention",
-        "Verified Professional Reliability Metrics"
-      ]
-    },
-    F: {
-      letter: "F",
-      name: "FLYWHEEL",
-      tagline: "Make the next project smarter.",
-      desc: "Project → Data → Intelligence → Better Decision → Lower Waste → Next Project. A compounding advantage.",
-      items: [
-        "Historical Workflow Benchmark Ingestion",
-        "Reputation System Credit & Performance Ledger",
-        "Reusable Content & Production Asset Catalog",
-        "Tighter Budget Forecasting on Next Mandate",
-        "Continuous Flywheel Loop Restarts at Stage A ↺"
-      ]
-    }
-  };
+  /* ── 10. 3D Holographic Tilt Physics ────────────────────────────────────── */
+  const idCards = document.querySelectorAll('.id-card-preview');
+  idCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -12;
+      const rotateY = ((x - centerX) / centerX) * 12;
 
-  const stepBtns = document.querySelectorAll('.engine-step-btn');
-  const engineTitle = document.getElementById('engine-title');
-  const engineTagline = document.getElementById('engine-tagline');
-  const engineDesc = document.getElementById('engine-desc');
-  const engineList = document.getElementById('engine-list');
-
-  function renderEngineStep(key) {
-    const data = engineData[key];
-    if (!data) return;
-
-    stepBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-stage') === key);
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.setProperty('--glare-x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--glare-y', `${(y / rect.height) * 100}%`);
     });
 
-    if (engineTitle) engineTitle.textContent = `${data.letter} — ${data.name}`;
-    if (engineTagline) engineTagline.textContent = `"${data.tagline}"`;
-    if (engineDesc) engineDesc.textContent = data.desc;
-
-    if (engineList) {
-      engineList.innerHTML = data.items.map(item => `
-        <li class="engine-list-item">${item}</li>
-      `).join('');
-    }
-  }
-
-  if (stepBtns.length) {
-    stepBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const stage = btn.getAttribute('data-stage');
-        renderEngineStep(stage);
-      });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     });
-  }
+  });
 
-  /* ── 9. Interactive Project Simulator ──────────────────────────────────── */
-  const simType = document.getElementById('sim-type');
-  const simGenre = document.getElementById('sim-genre');
-  const simBudget = document.getElementById('sim-budget');
+  /* ── 11. Upgraded Real-World Project Simulator ─────────────────────────── */
+  const simType     = document.getElementById('sim-type');
+  const simGenre    = document.getElementById('sim-genre');
+  const simBudget   = document.getElementById('sim-budget');
   const simLocation = document.getElementById('sim-location');
 
-  const outMatch = document.getElementById('out-match');
-  const outUtilization = document.getElementById('out-utilization');
-  const outResilience = document.getElementById('out-resilience');
-  const outRepurposing = document.getElementById('out-repurposing');
-  const outRecommendation = document.getElementById('out-recommendation');
+  const outCrew        = document.getElementById('out-crew');
+  const outGear        = document.getElementById('out-gear');
+  const outEfficiency  = document.getElementById('out-efficiency');
+  const outPlanB       = document.getElementById('out-planb');
+  const outDerived     = document.getElementById('out-derived');
+  const outSummary     = document.getElementById('out-summary');
 
-  function updateSimulation() {
+  function calculateSimulation() {
     if (!simType || !simBudget) return;
+    const typeVal = simType.value;
+    const budgetVal = simBudget.value;
 
-    const type = simType.value;
-    const budget = simBudget.value;
+    let crew = 18;
+    let gear = 6;
+    let eff = "+11%";
+    let planB = "90%";
+    let derived = "12 Assets";
+    let summary = "Local Hybrid Crew + Studio Slot";
 
-    let matchScore = 94;
-    let utilScore = '78%';
-    let resilience = 'High (Plan A/B Active)';
-    let repurposing = '8 Derived Assets';
-    let recommendation = 'Orchestrated Local Hybrid Crew + Tier-1 Studio Slot';
-
-    if (type === 'feature') {
-      matchScore = 96;
-      utilScore = '91%';
-      resilience = 'Robust (Plan A/B/C Multi-unit)';
-      repurposing = '14 Multi-Format Assets';
-      recommendation = 'Compose verified Cinematographer (Grade A) with pre-matched soundstage booking and regional location permits.';
-    } else if (type === 'ott') {
-      matchScore = 95;
-      utilScore = '88%';
-      resilience = 'Continuous Pipeline';
-      repurposing = '24 Social/Trailer Cuts';
-      recommendation = 'Deploy modular production pods with parallel post-production editing pipelines.';
-    } else if (type === 'creator') {
-      matchScore = 98;
-      utilScore = '95%';
-      resilience = 'Rapid Swap';
-      repurposing = '12 Reels / Shorts / Stills';
-      recommendation = 'Zero fixed asset overhead. Connect creator audience with pre-lit virtual production studio for 1-day multi-asset capture.';
-    } else if (type === 'commercial') {
-      matchScore = 97;
-      utilScore = '89%';
-      resilience = 'Tight Delivery Buffer';
-      repurposing = '10 Platform Cutdowns';
-      recommendation = 'High-velocity commercial crew pairing with real-time rights-cleared music and same-day color pass.';
+    if (typeVal === 'creator') {
+      crew = budgetVal === 'tier1' ? 6 : (budgetVal === 'tier2' ? 12 : 20);
+      gear = 4;
+      eff = "+18%";
+      planB = "96%";
+      derived = "24 Derived Cuts";
+      summary = "High-Velocity Creator Unit + Rapid Multi-Format Pipeline";
+    } else if (typeVal === 'commercial') {
+      crew = budgetVal === 'tier1' ? 18 : (budgetVal === 'tier2' ? 32 : 48);
+      gear = budgetVal === 'tier1' ? 8 : 14;
+      eff = "+15%";
+      planB = "94%";
+      derived = "16 Derived Cuts";
+      summary = "Commercial Grade-A DOP + Anamorphic Package + Stage 1";
+    } else if (typeVal === 'ott') {
+      crew = budgetVal === 'tier1' ? 28 : (budgetVal === 'tier2' ? 52 : 78);
+      gear = 18;
+      eff = "+14%";
+      planB = "92%";
+      derived = "32 Multi-Platform Deliverables";
+      summary = "Multi-Episode Production Grid + DI Suite + Local Units";
+    } else if (typeVal === 'feature') {
+      crew = budgetVal === 'tier1' ? 36 : (budgetVal === 'tier2' ? 64 : 110);
+      gear = 24;
+      eff = "+16%";
+      planB = "95%";
+      derived = "40+ Theatrical & Social Packages";
+      summary = "Feature Unit Orchestration + Dual Camera + Standby Contingency";
     }
 
-    if (outMatch) outMatch.textContent = `${matchScore}%`;
-    if (outUtilization) outUtilization.textContent = utilScore;
-    if (outResilience) outResilience.textContent = resilience;
-    if (outRepurposing) outRepurposing.textContent = repurposing;
-    if (outRecommendation) outRecommendation.textContent = recommendation;
+    if (outCrew) outCrew.textContent = crew;
+    if (outGear) outGear.textContent = `${gear} Pkgs`;
+    if (outEfficiency) outEfficiency.textContent = eff;
+    if (outPlanB) outPlanB.textContent = planB;
+    if (outDerived) outDerived.textContent = derived;
+    if (outSummary) outSummary.textContent = summary;
   }
 
-  if (simType) {
-    [simType, simGenre, simBudget, simLocation].forEach(ctrl => {
-      if (ctrl) ctrl.addEventListener('change', updateSimulation);
-    });
-    updateSimulation();
-  }
+  [simType, simGenre, simBudget, simLocation].forEach(el => {
+    if (el) {
+      el.addEventListener('change', calculateSimulation);
+    }
+  });
 
-  /* ── 10. Contact Form Submissions & Fallback ───────────────────────────── */
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
-  const submitBtn   = document.getElementById('submit-btn');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const nameInput = document.getElementById('name');
-      const emailInput = document.getElementById('email');
-      const messageInput = document.getElementById('message');
-      const roleInput = document.getElementById('role');
-
-      if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        const btnText = submitBtn.querySelector('.btn-text');
-        if (btnText) btnText.textContent = 'Connecting…';
-      }
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' },
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          if (formSuccess) {
-            formSuccess.hidden = false;
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-        } else {
-          throw new Error('Server returned error');
-        }
-      } catch {
-        const name = nameInput.value;
-        const email = emailInput.value;
-        const role = roleInput ? roleInput.value : 'Creative Ecosystem Participant';
-        const msg = messageInput.value;
-        const subject = encodeURIComponent(`DIGISYNQ Ecosystem Connection — ${role}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nRole/Category: ${role}\n\nMessage/Mandate:\n${msg}`);
-        window.open(`mailto:thedigitalsynq@gmail.com?subject=${subject}&body=${body}`, '_blank');
-        if (formSuccess) {
-          formSuccess.textContent = '✅ Opening your email client to complete the connection…';
-          formSuccess.hidden = false;
-        }
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          const btnText = submitBtn.querySelector('.btn-text');
-          if (btnText) btnText.textContent = 'Join the Ecosystem →';
-        }
-      }
-    });
-  }
-
-  /* ── 9. Talent & Technician Live Registration Card Engine ───────────────── */
+  /* ── 12. Talent Live Registration Card Engine ───────────────────────────── */
   const talentForm = document.getElementById('talent-reg-form');
   if (talentForm) {
     const regName       = document.getElementById('reg-name');
@@ -624,7 +678,6 @@
           regSubmitBtn.style.color = '#030305';
         }
 
-        // WhatsApp Direct Sync Option
         const summary = `*DIGISYNQ Talent Registration*\nName: ${regName.value}\nCraft: ${regRole.value}\nCity: ${regCity.value}\nPhone: ${regPhone.value}\nEmail: ${regEmail.value}\nExperience: ${regExp.value}\nGear: ${regGear ? regGear.value : 'N/A'}\nSpecialty: ${regSpecialty.value}\nReel: ${regPortfolio.value}\nAvailability: ${regAvail.value}\nRate: ${regRate ? regRate.value : 'Flexible'}`;
         const waUrl = `https://wa.me/917996548969?text=${encodeURIComponent(summary)}`;
         
