@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGISYNQ Insights — live dashboard of the Kannada film industry: 5-year releases, box office, hit/flop/average splits, active talent status, production houses, and the operating network flow." />
+  <meta property="og:title" content="Industry Insights — DIGISYNQ" />
+  <meta property="og:description" content="A live, data-first dashboard of the Kannada film industry — 5-year trends, talent status, production houses, and the operating network behind every project." />
+  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#030305" />
+  <title>Industry insights — DIGISYNQ</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <noscript><style>html{visibility:visible;opacity:1}</style></noscript>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="DIGISYNQ home">
+        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav-logo-img" />
+        <span class="nav-logo-name">DIGISYNQ</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="network.html">Network</a>
+        <a href="business.html">Business</a>
+        <a href="stories.html">Stories</a>
+        <a href="insights.html" class="active">Insights</a>
+        <a href="expansion.html">Expansion</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-signal btn-sm">Coordinate a project &rarr;</a>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="platform.html">Platform</a>
+    <a href="network.html">Verified network</a>
+    <a href="business.html">Business model</a>
+    <a href="stories.html">Production stories</a>
+    <a href="insights.html">Industry insights</a>
+    <a href="expansion.html">Expansion plan</a>
+    <a href="about.html">About DIGISYNQ</a>
+    <a href="register.html">Join network</a>
+    <div class="nav-drawer-cta" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+      <a href="contact.html" class="btn btn-signal btn-full">Coordinate a project &rarr;</a>
+      <a href="register.html" class="btn btn-ghost btn-full">Join the network</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="section" style="padding-top: calc(var(--nav-h) + 4rem); text-align: center;">
+    <div class="wrap" style="max-width: 56rem;">
+      <div class="eyebrow reveal"><span class="eyebrow-line"></span> Industry intelligence dashboard</div>
+      <h1 class="sec-title display-hero reveal reveal--d1">
+        Kannada film industry, <em>live.</em>
+      </h1>
+      <p class="sec-sub" style="margin-inline: auto; margin-top: 1.5rem;">
+        Five years of release data, box office flow, hit/flop/average splits, active talent status, and production house health — one dashboard, refreshed in real time.
+      </p>
+      <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;" class="reveal reveal--d2">
+        <span class="ins-clock" id="ins-clock"><span class="ins-clock-dot"></span><span id="ins-clock-time">--:--:-- Ist</span></span>
+        <span class="ins-chip ins-chip--live"><span class="ins-chip-dot"></span> feed live</span>
+        <span class="ins-chip"><span class="ins-chip-dot"></span> FY 2022&ndash;2026</span>
+        <span class="ins-chip"><span class="ins-chip-dot"></span> illustrative benchmark data</span>
+      </div>
+      <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-top:2rem; font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.1em;" class="reveal reveal--d3">
+        <a href="#kpis" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">01 The 5-year picture</a>
+        <a href="#years" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">02 Year comparison</a>
+        <a href="#talent" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">03 Talent status</a>
+        <a href="#houses" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">04 Production houses</a>
+        <a href="#industry" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">05 Industry details</a>
+        <a href="#feed" style="color:inherit; text-decoration:none; padding:0.4rem 1rem; border:1px solid var(--b0); border-radius:99px;">06 Live updates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVE TICKER ===== -->
+  <div class="ticker-strip" aria-label="Live industry activity ticker">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Release 217</strong> // Kannada film industry &bull; 8 films opened this week</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Box office</strong> // &#8377;3.2 Cr weekend &bull; 42% occupancy Bengaluru</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Hit verified</strong> // new entry in the 5-year hit ledger</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Production house</strong> // 3 active, 1 flagged dormant this month</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>New screens</strong> // +12 multiplex screens &bull; FY2026</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Wrap log</strong> // 41 projects wrapped &bull; data written back</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Release 217</strong> // Kannada film industry &bull; 8 films opened this week</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Box office</strong> // &#8377;3.2 Cr weekend &bull; 42% occupancy Bengaluru</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Hit verified</strong> // new entry in the 5-year hit ledger</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Production house</strong> // 3 active, 1 flagged dormant this month</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>New screens</strong> // +12 multiplex screens &bull; FY2026</span></div>
+      <div class="ticker-item"><span class="ticker-pulse"></span><span><strong>Wrap log</strong> // 41 projects wrapped &bull; data written back</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 5-YEAR PICTURE ===== -->
+  <section class="section" id="kpis" aria-label="Five-year industry picture">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> The 5-year picture</div>
+        <h2 class="sec-title display-lg">
+          FY 2022&ndash;2026 <em>in one row.</em>
+        </h2>
+        <p class="sec-sub">Every KPI below is derived from verified wrap data and release ledgers indexed into the operating graph.</p>
+      </div>
+
+      <div class="ins-kpi-row reveal reveal--d1">
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Total releases</div>
+          <div class="ins-kpi-value" data-count="1152">0</div>
+          <div class="ins-kpi-note">Avg 230 / year</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Box office (&#8377; Cr)</div>
+          <div class="ins-kpi-value" data-count="2685">0</div>
+          <div class="ins-kpi-note">5-year Cumulative</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Verified hits</div>
+          <div class="ins-kpi-value" data-count="94">0</div>
+          <div class="ins-kpi-note">8.2% Of releases</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Average movies</div>
+          <div class="ins-kpi-value" data-count="454">0</div>
+          <div class="ins-kpi-note">39.4% Of releases</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Flops</div>
+          <div class="ins-kpi-value" data-count="604">0</div>
+          <div class="ins-kpi-note">52.4% Of releases</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Active screens</div>
+          <div class="ins-kpi-value" data-count="986">0</div>
+          <div class="ins-kpi-note">342 Multiplex / 644 single</div>
+        </div>
+      </div>
+
+      <div class="ins-stack reveal reveal--d2" style="margin-top:2.25rem; max-width: 720px; margin-inline:auto;">
+        <div class="ins-stack-row">
+          <span class="ins-stack-label">5-year Split</span>
+          <div class="ins-stack-track">
+            <div class="ins-stack-fill ins-stack-fill--hit" style="width:8.2%;"></div>
+          </div>
+          <span class="ins-stack-pct">Hits 8.2%</span>
+        </div>
+        <div class="ins-stack-row">
+          <span class="ins-stack-label"></span>
+          <div class="ins-stack-track">
+            <div class="ins-stack-fill ins-stack-fill--avg" style="width:39.4%;"></div>
+          </div>
+          <span class="ins-stack-pct">Average 39.4%</span>
+        </div>
+        <div class="ins-stack-row">
+          <span class="ins-stack-label"></span>
+          <div class="ins-stack-track">
+            <div class="ins-stack-fill ins-stack-fill--flop" style="width:52.4%;"></div>
+          </div>
+          <span class="ins-stack-pct">Flops 52.4%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+
+  <!-- ===== YEAR COMPARISON ===== -->
+  <section class="section" id="years" aria-label="Year-by-year comparison">
+    <div class="wrap">
+      <div class="sec-header reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Year comparison</div>
+        <h2 class="sec-title display-lg">
+          Five years, <em>side by side.</em>
+        </h2>
+        <p class="sec-sub">Releases and cumulative box office per fiscal year — with the hit/average/flop split that defined each cycle.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:end;" class="reveal reveal--d1">
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Releases per year</h3>
+          <div class="ins-bar-chart">
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">214</span>
+              <div class="ins-bar" style="height:72%;"></div>
+              <span class="ins-bar-year">FY22</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">236</span>
+              <div class="ins-bar" style="height:80%;"></div>
+              <span class="ins-bar-year">FY23</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">251</span>
+              <div class="ins-bar" style="height:85%;"></div>
+              <span class="ins-bar-year">FY24</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">268</span>
+              <div class="ins-bar" style="height:91%;"></div>
+              <span class="ins-bar-year">FY25</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">183</span>
+              <div class="ins-bar" style="height:62%;"></div>
+              <span class="ins-bar-year">FY26*</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.08em; margin-top:0.75rem;">* FY26 partial &mdash; year in progress</p>
+        </div>
+
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Box office &#8377; Cr per year</h3>
+          <div class="ins-bar-chart">
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">412</span>
+              <div class="ins-bar" style="height:44%;"></div>
+              <span class="ins-bar-year">FY22</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">585</span>
+              <div class="ins-bar" style="height:62%;"></div>
+              <span class="ins-bar-year">FY23</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">640</span>
+              <div class="ins-bar" style="height:68%;"></div>
+              <span class="ins-bar-year">FY24</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">712</span>
+              <div class="ins-bar" style="height:76%;"></div>
+              <span class="ins-bar-year">FY25</span>
+            </div>
+            <div class="ins-bar-col">
+              <span class="ins-bar-val">336</span>
+              <div class="ins-bar" style="height:36%;"></div>
+              <span class="ins-bar-year">FY26*</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.08em; margin-top:0.75rem;">Cumulative &#8377;2,685 Cr across five years</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:1.25rem; margin-top:3rem;" class="reveal reveal--d2">
+        <div class="card spotlight-card" style="padding:1.5rem 1.25rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">FY22</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-top:1rem;">
+            <div><strong style="color:#34d399; font-family:var(--font-mono);">14</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Hits</p></div>
+            <div><strong style="color:#fbbf24; font-family:var(--font-mono);">86</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Avg</p></div>
+            <div><strong style="color:#f87171; font-family:var(--font-mono);">114</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Flops</p></div>
+          </div>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem 1.25rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">FY23</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-top:1rem;">
+            <div><strong style="color:#34d399; font-family:var(--font-mono);">19</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Hits</p></div>
+            <div><strong style="color:#fbbf24; font-family:var(--font-mono);">94</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Avg</p></div>
+            <div><strong style="color:#f87171; font-family:var(--font-mono);">123</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Flops</p></div>
+          </div>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem 1.25rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">FY24</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-top:1rem;">
+            <div><strong style="color:#34d399; font-family:var(--font-mono);">22</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Hits</p></div>
+            <div><strong style="color:#fbbf24; font-family:var(--font-mono);">101</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Avg</p></div>
+            <div><strong style="color:#f87171; font-family:var(--font-mono);">128</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Flops</p></div>
+          </div>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem 1.25rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">FY25</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-top:1rem;">
+            <div><strong style="color:#34d399; font-family:var(--font-mono);">28</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Hits</p></div>
+            <div><strong style="color:#fbbf24; font-family:var(--font-mono);">109</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Avg</p></div>
+            <div><strong style="color:#f87171; font-family:var(--font-mono);">131</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Flops</p></div>
+          </div>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem 1.25rem; border-color:rgba(56,189,248,0.3);">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.12em;">FY26*</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-top:1rem;">
+            <div><strong style="color:#34d399; font-family:var(--font-mono);">11</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Hits</p></div>
+            <div><strong style="color:#fbbf24; font-family:var(--font-mono);">64</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Avg</p></div>
+            <div><strong style="color:#f87171; font-family:var(--font-mono);">108</strong><p style="font-size:var(--f-3xs); color:var(--t-low);">Flops</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+
+  <!-- ===== TALENT STATUS ===== -->
+  <section class="section" id="talent" aria-label="Active talent status">
+    <div class="wrap">
+      <div class="sec-header reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Talent directory</div>
+        <h2 class="sec-title display-lg">
+          Who is active — <em>and who is not.</em>
+        </h2>
+        <p class="sec-sub">Status is derived from wrap logs, release cadence, and calendar availability indexed in the operating graph. Illustrative benchmark profiles.</p>
+      </div>
+
+      <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Leading heroes</h3>
+      <div class="ins-talent-grid reveal reveal--d1">
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Raghav urs</div>
+              <div class="ins-talent-role">Leading hero</div>
+            </div>
+            <span class="ins-status ins-status--active">Active</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">11</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">3</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;412</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Devraj kini</div>
+              <div class="ins-talent-role">Leading hero</div>
+            </div>
+            <span class="ins-status ins-status--active">Active</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">9</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">2</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;338</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Santhosh hegde</div>
+              <div class="ins-talent-role">Hero &mdash; breakout</div>
+            </div>
+            <span class="ins-status ins-status--breakout">Breakout</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">6</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">2</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;296</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Vijay ponnappa</div>
+              <div class="ins-talent-role">Hero &mdash; hiatus</div>
+            </div>
+            <span class="ins-status ins-status--hiatus">On hiatus</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">3</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">0</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;64</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin:2.5rem 0 1.25rem;">Leading heroines</h3>
+      <div class="ins-talent-grid reveal reveal--d1">
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Ananya rao</div>
+              <div class="ins-talent-role">Leading heroine</div>
+            </div>
+            <span class="ins-status ins-status--active">Active</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">10</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">3</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;356</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Meghana shenoy</div>
+              <div class="ins-talent-role">Leading heroine</div>
+            </div>
+            <span class="ins-status ins-status--active">Active</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">8</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">2</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;284</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Poorvi desai</div>
+              <div class="ins-talent-role">Heroine &mdash; breakout</div>
+            </div>
+            <span class="ins-status ins-status--breakout">Breakout</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">5</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">1</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;172</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+        <div class="ins-talent-card">
+          <div class="ins-talent-head">
+            <div>
+              <div class="ins-talent-name">Lakshmi bolar</div>
+              <div class="ins-talent-role">Heroine &mdash; retired</div>
+            </div>
+            <span class="ins-status ins-status--retired">Retired</span>
+          </div>
+          <div class="ins-talent-metrics">
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">2</div><div class="ins-talent-metric-lbl">Films / 5yr</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">0</div><div class="ins-talent-metric-lbl">Hits</div></div>
+            <div class="ins-talent-metric"><div class="ins-talent-metric-val">&#8377;41</div><div class="ins-talent-metric-lbl">Cr share</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+
+  <!-- ===== PRODUCTION HOUSES ===== -->
+  <section class="section" id="houses" aria-label="Production house health">
+    <div class="wrap">
+      <div class="sec-header reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Production house health</div>
+        <h2 class="sec-title display-lg">
+          Active vs <em>lost.</em>
+        </h2>
+        <p class="sec-sub">Active houses are indexed with release cadence and wrap data. Lost houses are flagged dormant or closed — the operating graph keeps the record either way.</p>
+      </div>
+
+      <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Active production houses</h3>
+      <div class="ins-house-grid reveal reveal--d1">
+        <div class="ins-house-card">
+          <div class="ins-house-name">Namma Talkies <span class="ins-house-tag ins-house-tag--active">active</span></div>
+          <div class="ins-house-line">18 Releases &bull; 4 hits &bull; &#8377;486 Cr 5-yr box office</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Last activity: FY26 Q2 &bull; pipeline 3</div>
+        </div>
+        <div class="ins-house-card">
+          <div class="ins-house-name">Chandanavana films <span class="ins-house-tag ins-house-tag--active">active</span></div>
+          <div class="ins-house-line">14 Releases &bull; 3 hits &bull; &#8377;412 Cr 5-yr box office</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Last activity: FY26 Q3 &bull; pipeline 2</div>
+        </div>
+        <div class="ins-house-card">
+          <div class="ins-house-name">Mysuru motion works <span class="ins-house-tag ins-house-tag--active">active</span></div>
+          <div class="ins-house-line">11 Releases &bull; 2 hits &bull; &#8377;298 Cr 5-yr box office</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Last activity: FY26 Q3 &bull; pipeline 2</div>
+        </div>
+        <div class="ins-house-card">
+          <div class="ins-house-name">Coastal cinemas <span class="ins-house-tag ins-house-tag--active">active</span></div>
+          <div class="ins-house-line">9 Releases &bull; 2 hits &bull; &#8377;241 Cr 5-yr box office</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Last activity: FY26 Q2 &bull; pipeline 1</div>
+        </div>
+        <div class="ins-house-card">
+          <div class="ins-house-name">Kadamba Productions <span class="ins-house-tag ins-house-tag--active">active</span></div>
+          <div class="ins-house-line">7 Releases &bull; 1 hit &bull; &#8377;184 Cr 5-yr box office</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Last activity: FY26 Q1 &bull; pipeline 1</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.14em; margin:2.5rem 0 1.25rem;">Lost / dormant production houses</h3>
+      <div class="ins-house-grid reveal reveal--d1">
+        <div class="ins-house-card" style="opacity:0.7;">
+          <div class="ins-house-name">Swarnalatha Cine Arts <span class="ins-house-tag ins-house-tag--lost">dormant</span></div>
+          <div class="ins-house-line">Last release FY23 &bull; flagged dormant FY24</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Status: no activity in 2 years</div>
+        </div>
+        <div class="ins-house-card" style="opacity:0.7;">
+          <div class="ins-house-name">Rangoli Pictures <span class="ins-house-tag ins-house-tag--lost">dormant</span></div>
+          <div class="ins-house-line">Last release FY21 &bull; flagged dormant FY22</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Status: no activity in 4 years</div>
+        </div>
+        <div class="ins-house-card" style="opacity:0.7;">
+          <div class="ins-house-name">Vijaya Combines <span class="ins-house-tag ins-house-tag--lost">closed</span></div>
+          <div class="ins-house-line">Last release FY18 &bull; closed FY18</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Status: wound down &bull; archive kept</div>
+        </div>
+        <div class="ins-house-card" style="opacity:0.7;">
+          <div class="ins-house-name">Srinivas Combines <span class="ins-house-tag ins-house-tag--lost">closed</span></div>
+          <div class="ins-house-line">Last release FY16 &bull; closed FY16</div>
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); margin-top:0.5rem;">Status: wound down &bull; archive kept</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+
+  <!-- ===== INDUSTRY DETAILS ===== -->
+  <section class="section" id="industry" aria-label="Industry details in numbers">
+    <div class="wrap">
+      <div class="sec-header reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Industry details</div>
+        <h2 class="sec-title display-lg">
+          The industry in <em>numbers.</em>
+        </h2>
+        <p class="sec-sub">Screens, studios, distribution, budgets, and utilisation — the full operating picture behind the releases.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.25rem;" class="reveal reveal--d1">
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Screens</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">986</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">342 Multiplex / 644 single-screen</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Sound stages</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">18</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Across 6 districts</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Distributors</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">46</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Active in the graph</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Exhibition chains</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">31</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Partnered for bookings</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:3rem;" class="reveal reveal--d1">
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Screens by region</h3>
+          <div class="ins-stack">
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Bengaluru</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--hit" style="width:41%;"></div>
+              </div>
+              <span class="ins-stack-pct">404</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Coastal</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:19%;"></div>
+              </div>
+              <span class="ins-stack-pct">187</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">N. Karnataka</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:17%;"></div>
+              </div>
+              <span class="ins-stack-pct">168</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Mysuru</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:14%;"></div>
+              </div>
+              <span class="ins-stack-pct">138</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Others</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--flop" style="width:9%;"></div>
+              </div>
+              <span class="ins-stack-pct">89</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Release mix</h3>
+          <div class="ins-stack">
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Theatrical</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--hit" style="width:68%;"></div>
+              </div>
+              <span class="ins-stack-pct">68%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Ott direct</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:22%;"></div>
+              </div>
+              <span class="ins-stack-pct">22%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Hybrid</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:7%;"></div>
+              </div>
+              <span class="ins-stack-pct">7%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Direct / low reach</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--flop" style="width:3%;"></div>
+              </div>
+              <span class="ins-stack-pct">3%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.25rem; margin-top:3rem;" class="reveal reveal--d2">
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Avg shoot days</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">38<span style="font-size:var(--f-sm); color:var(--t-low);"> Days</span></div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Per feature, FY26 pace</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Avg budget</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">&#8377;4.2<span style="font-size:var(--f-sm); color:var(--t-low);"> Cr</span></div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Across theatrical releases</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Recovery rate</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">58<span style="font-size:var(--f-sm); color:var(--t-low);">%</span></div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Budget recovered at box office</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Verified artists</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">1,120</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">In the operating graph</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Camera packages</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">212</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Registered &amp; insured</p>
+        </div>
+        <div class="card spotlight-card" style="padding:1.5rem;">
+          <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Post suites</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">58</div>
+          <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">DI / mix / vfx ready</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:3rem;" class="reveal reveal--d1">
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Network utilisation</h3>
+          <div class="ins-stack">
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Stage occupancy</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--hit" style="width:61%;"></div>
+              </div>
+              <span class="ins-stack-pct">61%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Gear utilisation</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:47%;"></div>
+              </div>
+              <span class="ins-stack-pct">47%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Crew between projects</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--flop" style="width:39%;"></div>
+              </div>
+              <span class="ins-stack-pct">39%</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Idle capacity recovered</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:22%;"></div>
+              </div>
+              <span class="ins-stack-pct">22%</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.14em; margin-bottom:1.25rem;">Capacity pool</h3>
+          <div class="ins-stack">
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Technicians</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--hit" style="width:100%;"></div>
+              </div>
+              <span class="ins-stack-pct">3,400+</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Verified artists</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:33%;"></div>
+              </div>
+              <span class="ins-stack-pct">1,120</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Camera packages</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--avg" style="width:6%;"></div>
+              </div>
+              <span class="ins-stack-pct">212</span>
+            </div>
+            <div class="ins-stack-row">
+              <span class="ins-stack-label">Post suites</span>
+              <div class="ins-stack-track">
+                <div class="ins-stack-fill ins-stack-fill--flop" style="width:2%;"></div>
+              </div>
+              <span class="ins-stack-pct">58</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.08em; margin-top:2.5rem; text-align:center;">Illustrative benchmark data &bull; updated in real time from the operating graph</p>
+    </div>
+  </section>
+
+  <hr class="info-divider" />  <!-- ===== LIVE UPDATES FEED ===== -->
+  <section class="section" id="feed" aria-label="Live updates feed">
+    <div class="wrap" style="max-width: 52rem;">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> Live updates</div>
+        <h2 class="sec-title display-lg">
+          What the graph is <em>reporting right now.</em>
+        </h2>
+        <p class="sec-sub">Wraps, opens, verifications, and status changes — streamed as they happen.</p>
+      </div>
+
+      <div class="ins-feed reveal reveal--d1" id="ins-feed" aria-live="polite">
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Wrap verified &mdash; Namma Talkies</div>
+            <div class="ins-feed-text">Project &#8220;Mallige Lane&#8221; wrapped in 41 shoot days. Wrap log written to the operating graph.</div>
+            <div class="ins-feed-time">Just now</div>
+          </div>
+        </div>
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Status change &mdash; Vijay Ponnappa</div>
+            <div class="ins-feed-text">Hero flagged &#8220;on hiatus&#8221;. no project in the active pipeline for 14 months.</div>
+            <div class="ins-feed-time">12 Min ago</div>
+          </div>
+        </div>
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Hit verified &mdash; FY26 ledger</div>
+            <div class="ins-feed-text">Weekend box office pushed &#8220;Namma Kade&#8221; past the hit threshold. 11th Hit of FY26.</div>
+            <div class="ins-feed-time">47 Min ago</div>
+          </div>
+        </div>
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Production house flagged &mdash; Swarnalatha Cine Arts</div>
+            <div class="ins-feed-text">No release or wrap activity for 24 months. Status set to dormant; archive retained.</div>
+            <div class="ins-feed-time">2 H ago</div>
+          </div>
+        </div>
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Capacity match &mdash; Mysuru Motion Works</div>
+            <div class="ins-feed-text">Stage + camera + crew matched for a 34-day schedule starting next month.</div>
+            <div class="ins-feed-time">3 H ago</div>
+          </div>
+        </div>
+        <div class="ins-feed-item">
+          <span class="ins-feed-dot"></span>
+          <div class="ins-feed-body">
+            <div class="ins-feed-title">Screens added &mdash; Bengaluru</div>
+            <div class="ins-feed-text">+12 Multiplex screens opened across 3 centres. Regional total now 404.</div>
+            <div class="ins-feed-time">5 H ago</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.08em; margin-top:1.5rem; text-align:center;">Demonstration feed &bull; timestamps illustrative</p>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+  <!-- ===== THE OPERATING FLOW (merged flowchart) ===== -->
+  <section class="section" id="flow" aria-label="The operating flow">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> The operating flow</div>
+        <h2 class="sec-title display-lg">
+          Every project runs through <em>seven nodes.</em>
+        </h2>
+        <p class="sec-sub">From mandate to intelligence — the same verified pipeline moves every film through the network.</p>
+      </div>
+
+      <div class="flow-track reveal reveal--d1" style="grid-template-columns:repeat(7, 1fr);" aria-label="Project flow through seven nodes">
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">task_alt</span>
+          <span style="display:block;">Mandate in</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">manage_search</span>
+          <span style="display:block;">Registry match</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">verified_user</span>
+          <span style="display:block;">Verification</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">group_work</span>
+          <span style="display:block;">Unit assembly</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">play_circle</span>
+          <span style="display:block;">Execution</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">flag</span>
+          <span style="display:block;">Wrap</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">psychology</span>
+          <span style="display:block;">Intelligence</span>
+        </div>
+      </div>
+
+      <div class="flow-loop reveal reveal--d2" style="margin-top:3rem;" id="loop" aria-label="Intelligence loop">
+        <div class="flow-node flow-node--loop">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">hub</span>
+          <span style="display:block;">Registry</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">manage_search</span>
+          <span style="display:block;">Match</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">verified_user</span>
+          <span style="display:block;">Verify</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">group_work</span>
+          <span style="display:block;">Assemble</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">play_circle</span>
+          <span style="display:block;">Execute</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">flag</span>
+          <span style="display:block;">Wrap</span>
+        </div>
+        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-node flow-node--loop">
+          <span class="flow-node-ic material-symbols-outlined" style="display:block;">psychology</span>
+          <span style="display:block;">Intelligence &#8635;</span>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:3rem;" class="reveal reveal--d1" id="rules">
+        <div class="not-grid" aria-label="What the flow is not">
+          <span class="not-grid-ic material-symbols-outlined" style="display:block;">close</span>
+          <div>
+            <p class="not-grid-title">The flow is <em>not</em> a waterfall</p>
+            <p style="font-size:var(--f-sm); color:var(--t-low);">Nodes re-enter the loop at any point. A failed verification returns the project to registry match — not to the back of the line.</p>
+          </div>
+        </div>
+        <div class="not-grid" aria-label="What the flow is">
+          <span class="not-grid-ic material-symbols-outlined" style="display:block;">check</span>
+          <div>
+            <p class="not-grid-title">The flow <em>is</em> a live graph</p>
+            <p style="font-size:var(--f-sm); color:var(--t-low);">Every node reads from the same verified registry. Status changes propagate to every connected unit in real time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="info-divider" />
+  <!-- ===== VERIFICATION LAYERS (merged infographic) ===== -->
+  <section class="section" id="verification" aria-label="The verification stack">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> The verification stack</div>
+        <h2 class="sec-title display-lg">
+          Six layers between <em>mandate and wrap.</em>
+        </h2>
+        <p class="sec-sub">Every unit that touches a project passes the same stack — nothing moves on trust alone.</p>
+      </div>
+
+      <div class="verify-stack reveal reveal--d1" style="max-width: 42rem; margin-inline:auto;">
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">badge</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L1 &mdash; identity &amp; pedigree</h3>
+            <p class="verify-layer-text">Verified identity, filmography, and references against the registry.</p>
+          </div>
+        </div>
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">account_balance_wallet</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L2 &mdash; financial standing</h3>
+            <p class="verify-layer-text">Clean payment history and credit score indexed from ledger records.</p>
+          </div>
+        </div>
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">gavel</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L3 &mdash; legal &amp; compliance</h3>
+            <p class="verify-layer-text">Contracts, licenses, and clearances checked before any unit is locked.</p>
+          </div>
+        </div>
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">shield</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L4 &mdash; risk profile</h3>
+            <p class="verify-layer-text">Historical slip rate and failure pattern scored against project type.</p>
+          </div>
+        </div>
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">link</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L5 &mdash; network coupling</h3>
+            <p class="verify-layer-text">Past collaboration graph read — units that have run clean together are rated higher.</p>
+          </div>
+        </div>
+        <div class="verify-layer">
+          <span class="verify-layer-ic material-symbols-outlined" style="display:block;">monitoring</span>
+          <div class="verify-layer-body">
+            <h3 class="verify-layer-title">L6 &mdash; live performance</h3>
+            <p class="verify-layer-text">Real-time wrap data, attendance, and slippage re-score the unit continuously.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAILOVER PLANS ===== -->
+  <section class="section" aria-label="Failover plans">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> Failover plans</div>
+        <h2 class="sec-title display-lg">
+          Plan A, B, and C — <em>locked before day one.</em>
+        </h2>
+        <p class="sec-sub">Every schedule reserves alternate capacity so a slip never becomes a stall.</p>
+      </div>
+
+      <div class="plan-tabs reveal reveal--d1" role="tablist" aria-label="Failover plans">
+        <button class="plan-tab plan-tab--active" data-plan="a" role="tab" aria-selected="true">Plan A</button>
+        <button class="plan-tab" data-plan="b" role="tab" aria-selected="false">Plan B</button>
+        <button class="plan-tab" data-plan="c" role="tab" aria-selected="false">Plan C</button>
+      </div>
+
+      <div class="plan-panels reveal reveal--d2">
+        <div class="plan-panel" data-panel="a" style="display:grid;">
+          <div class="plan-steps">
+            <div class="plan-step"><span class="plan-step-n">01</span><p class="plan-step-text">Mandate signed and indexed in the registry.</p></div>
+            <div class="plan-step"><span class="plan-step-n">02</span><p class="plan-step-text">Units matched from verified capacity; failover slots reserved.</p></div>
+            <div class="plan-step"><span class="plan-step-n">03</span><p class="plan-step-text">All six verification layers pass on every locked unit.</p></div>
+            <div class="plan-step"><span class="plan-step-n">04</span><p class="plan-step-text">Wrap log written; intelligence loop updates the graph.</p></div>
+          </div>
+        </div>
+        <div class="plan-panel" data-panel="b" style="display:none;">
+          <div class="plan-steps">
+            <div class="plan-step"><span class="plan-step-n">01</span><p class="plan-step-text">A locked unit slips — the graph flags it within hours, not weeks.</p></div>
+            <div class="plan-step"><span class="plan-step-n">02</span><p class="plan-step-text">Reserved failover unit is activated from the pre-negotiated slot.</p></div>
+            <div class="plan-step"><span class="plan-step-n">03</span><p class="plan-step-text">Schedule re-balances around the swap; dates hold where possible.</p></div>
+            <div class="plan-step"><span class="plan-step-n">04</span><p class="plan-step-text">The slip is logged — the unit&#8217;s risk score updates for next time.</p></div>
+          </div>
+        </div>
+        <div class="plan-panel" data-panel="c" style="display:none;">
+          <div class="plan-steps">
+            <div class="plan-step"><span class="plan-step-n">01</span><p class="plan-step-text">Failover slot also unavailable — the graph broadcasts to the open registry.</p></div>
+            <div class="plan-step"><span class="plan-step-n">02</span><p class="plan-step-text">Multiple verified alternatives bid in hours; no unit is forced.</p></div>
+            <div class="plan-step"><span class="plan-step-n">03</span><p class="plan-step-text">Project owner approves the best match from the shortlist.</p></div>
+            <div class="plan-step"><span class="plan-step-n">04</span><p class="plan-step-text">Execution continues; plan C becomes the new plan A for the remainder.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVENUE FLOW (merged infographic) ===== -->
+  <section class="section" aria-label="How the network earns">
+    <div class="wrap">
+      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> Revenue flow</div>
+        <h2 class="sec-title display-lg">
+          How the network <em>earns.</em>
+        </h2>
+        <p class="sec-sub">Coordination fees on matched projects, not ownership of the assets that make them.</p>
+      </div>
+
+      <div class="revenue-flow reveal reveal--d1" style="grid-template-columns:repeat(4, 1fr);">
+        <div class="revenue-flow-card">
+          <span class="revenue-flow-ic material-symbols-outlined" style="display:block;">tune</span>
+          <h3 class="revenue-flow-title">Coordination fee</h3>
+          <p class="revenue-flow-text">A percentage of matched project budgets — paid for the coordination, not the content.</p>
+        </div>
+        <div class="revenue-flow-card">
+          <span class="revenue-flow-ic material-symbols-outlined" style="display:block;">verified</span>
+          <h3 class="revenue-flow-title">Verification credits</h3>
+          <p class="revenue-flow-text">Credits for units re-scored against the verification stack at each project gate.</p>
+        </div>
+        <div class="revenue-flow-card">
+          <span class="revenue-flow-ic material-symbols-outlined" style="display:block;">insights</span>
+          <h3 class="revenue-flow-title">Intelligence access</h3>
+          <p class="revenue-flow-text">Benchmark and capacity analytics for financiers, exhibitors, and distributors.</p>
+        </div>
+        <div class="revenue-flow-card">
+          <span class="revenue-flow-ic material-symbols-outlined" style="display:block;">local_movies</span>
+          <h3 class="revenue-flow-title">Marketplace match</h3>
+          <p class="revenue-flow-text">Small match fees on releases, screens, and post-production windows booked through the graph.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ===== FINAL CTA ===== -->
+  <section class="final-cta" aria-label="Final call to action">
+    <div class="wrap final-cta-body">
+      <div class="final-wordmark reveal">DIGISYNQ</div>
+      <div class="final-tagline reveal reveal--d1"><em>See the industry that moves it.</em></div>
+      <div class="reveal reveal--d3" style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; margin-top:2rem;">
+        <a href="contact.html" class="btn btn-signal btn-lg">Coordinate a project &rarr;</a>
+        <a href="register.html" class="btn btn-ghost btn-lg">Join the network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand-name">DIGISYNQ</div>
+        <div class="footer-brand-tag">The operating network for cinema</div>
+        <p class="footer-brand-desc">An open, asset-light, trusted and continuously learning operating network for the cinema ecosystem.</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Insights</h4>
+        <div class="footer-links">
+          <a href="insights.html#kpis">The 5-year picture</a>
+          <a href="insights.html#years">Year comparison</a>
+          <a href="insights.html#talent">Talent status</a>
+          <a href="insights.html#houses">Production houses</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Flow</h4>
+        <div class="footer-links">
+          <a href="insights.html#flow">The flow diagram</a>
+          <a href="insights.html#loop">Intelligence loop</a>
+          <a href="insights.html#rules">Connection rules</a>
+          <a href="platform.html#mechanism-detail">10-Step Mechanism</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact &amp; legal</h4>
+        <div class="footer-links">
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
+          <a href="contact.html">Terms of use</a>
+          <a href="contact.html">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>The project may end. The value doesn't.</span>
+      <span>&copy; 2026 DIGISYNQ Inc. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fab-cluster" aria-label="Quick actions">
+    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+    <button class="fab fab-top" id="fab-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/insights.js" defer></script>
+  <script src="assets/js/feedback.js" defer></script>
+</body>
+</html>
