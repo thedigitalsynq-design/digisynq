@@ -1,6 +1,6 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform Engine
-   Ecosystem Canvas, Role Switcher, Project Room, Holographic Tilt & Simulator
+   Progressive Stepper, Living Graph Canvas, Project Room OS, and Simulator
    ========================================================================== */
 
 (function () {
@@ -65,24 +65,7 @@
     revealEls.forEach(el => observer.observe(el));
   }
 
-  /* ── 3. Kinetic Title Word Rotator ─────────────────────────────────────── */
-  const dynamicTag = document.getElementById('hero-dynamic-tag');
-  if (dynamicTag) {
-    const words = ['SEARCHABLE.', 'MATCHABLE.', 'COORDINATED.', 'SMARTER.', 'CONNECTED.'];
-    let idx = 0;
-    setInterval(() => {
-      idx = (idx + 1) % words.length;
-      dynamicTag.style.opacity = '0';
-      dynamicTag.style.transform = 'translateY(8px)';
-      setTimeout(() => {
-        dynamicTag.textContent = words[idx];
-        dynamicTag.style.opacity = '1';
-        dynamicTag.style.transform = 'translateY(0)';
-      }, 300);
-    }, 2600);
-  }
-
-  /* ── 4. Living Photonic Ecosystem Canvas (Hero Section) ─────────────────── */
+  /* ── 3. Living Photonic Ecosystem Canvas (Hero Section) ─────────────────── */
   const canvas = document.getElementById('ecosystem-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -90,10 +73,10 @@
     let nodes = [];
     let packets = [];
     const labels = [
-      'PEOPLE', 'SKILLS', 'EQUIPMENT', 'LOCATIONS',
-      'STUDIOS', 'CAPITAL', 'CONTENT', 'MARKETS', 'AUDIENCES'
+      'PEOPLE', 'EQUIPMENT', 'STUDIOS', 'LOCATIONS',
+      'POST', 'DISTRIBUTION', 'DATA'
     ];
-    let mouse = { x: null, y: null, radius: 170 };
+    let mouse = { x: null, y: null, radius: 160 };
 
     function resize() {
       width = canvas.width = window.innerWidth;
@@ -116,18 +99,16 @@
           baseY: centerY + Math.sin(angle) * radius,
           x: centerX + Math.cos(angle) * radius,
           y: centerY + Math.sin(angle) * radius,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
           radius: 3.5,
           pulse: Math.random() * Math.PI * 2
         });
 
-        // Initialize traveling photonic packet
         packets.push({
           nodeIndex: i,
           progress: Math.random(),
-          speed: 0.003 + Math.random() * 0.004,
-          direction: Math.random() > 0.5 ? 1 : -1
+          speed: 0.003 + Math.random() * 0.004
         });
       });
     }
@@ -150,23 +131,22 @@
       const centerX = width / 2;
       const centerY = height / 2;
 
-      // Draw Center DIGISYNQ Intelligence Hub
+      // Draw Center Hub
       ctx.beginPath();
-      ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
+      ctx.arc(centerX, centerY, 4.5, 0, Math.PI * 2);
       ctx.fillStyle = '#00f0ff';
-      ctx.shadowBlur = 18;
+      ctx.shadowBlur = 16;
       ctx.shadowColor = '#00f0ff';
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Update and draw nodes
       nodes.forEach((node, i) => {
         node.pulse += 0.03;
         node.x += node.vx;
         node.y += node.vy;
 
-        if (Math.abs(node.x - node.baseX) > 25) node.vx *= -1;
-        if (Math.abs(node.y - node.baseY) > 25) node.vy *= -1;
+        if (Math.abs(node.x - node.baseX) > 20) node.vx *= -1;
+        if (Math.abs(node.y - node.baseY) > 20) node.vy *= -1;
 
         if (mouse.x !== null) {
           const dx = mouse.x - node.x;
@@ -174,12 +154,12 @@
           const dist = Math.hypot(dx, dy);
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            node.x -= (dx / dist) * force * 4;
-            node.y -= (dy / dist) * force * 4;
+            node.x -= (dx / dist) * force * 3;
+            node.y -= (dy / dist) * force * 3;
           }
         }
 
-        // Radiating laser link to center hub
+        // Ray to center hub
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(node.x, node.y);
@@ -187,7 +167,7 @@
         ctx.lineWidth = 1;
         ctx.stroke();
 
-        // Polygon perimeter link to next node
+        // Polygon perimeter link
         const nextNode = nodes[(i + 1) % nodes.length];
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
@@ -195,21 +175,19 @@
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
         ctx.stroke();
 
-        // Node circle
-        const currentRadius = node.radius + Math.sin(node.pulse) * 1.2;
+        // Draw node
         ctx.beginPath();
-        ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, node.radius + Math.sin(node.pulse) * 1.1, 0, Math.PI * 2);
         ctx.fillStyle = '#ffffff';
         ctx.fill();
 
-        // Label typography
         ctx.font = '10px "JetBrains Mono", monospace';
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
         ctx.textAlign = 'center';
         ctx.fillText(node.label, node.x, node.y + 16);
       });
 
-      // Draw Photonic Data Packets travelling between Center and Nodes
+      // Traveling Photonic Packets
       packets.forEach(pkt => {
         pkt.progress += pkt.speed;
         if (pkt.progress > 1) {
@@ -234,286 +212,139 @@
     animate();
   }
 
-  /* ── 5. Role-Based Entry Portal Switcher (I'M A...) ────────────────────── */
-  const roleData = {
-    creator: {
-      tag: "FOR CREATORS & DIRECTORS",
-      title: "Validate, Package, and Execute Your Project on Merit.",
-      desc: "Turn your creative vision into an orchestrated production. Access validated genre demand data, assemble Grade-A crew packages, and secure pre-screened locations without agency middlemen.",
-      cta: "Explore Creator Opportunities →",
-      link: "contact.html",
-      metrics: ["Verified Market Demand", "Talent Match Engine", "Downside Protection"]
+  /* ── 4. How DIGISYNQ Works (01–08 Progressive Stepper) ─────────────────── */
+  const stepperData = {
+    '1': {
+      num: "STAGE 01",
+      title: "01 — Define the Requirement",
+      desc: "The producer, director, or brand inputs project parameters: format, target geography, shooting timeline, budget parameters, and creative ambitions.",
+      example: "Mandate: “Kannada commercial, ₹25L budget, 3 shooting days, Bengaluru.”",
+      details: ["Format & Genre Classification", "Budget Tier & Timeline Window", "Specific Technical Requirements"]
     },
-    producer: {
-      tag: "FOR PRODUCERS & SHOWRUNNERS",
-      title: "Build Scalable Production Units with Zero Idle Overhead.",
-      desc: "Coordinate end-to-end commercial shoots and feature pipelines. Access real-time availability calendars for Grade-A talent, lock idle studio slots, and enforce Plan A/B/C operational resilience.",
-      cta: "Initiate Production Mandate →",
-      link: "contact.html",
-      metrics: ["Real-Time Availability", "Plan A/B/C Standby", "Multi-Format Repurposing"]
+    '2': {
+      num: "STAGE 02",
+      title: "02 — Understand Scope & Risk Points",
+      desc: "DIGISYNQ analyzes the mandate to calculate required crew size, camera packages, lighting rigs, soundstages, post schedule, and potential operational bottlenecks.",
+      example: "System isolates: Grade-A Low-Light DOP needed, 8000 sq.ft Soundstage, rain risk fallback.",
+      details: ["Crew & Hardware Tiering", "Geography & Location Logistics", "Weather & Schedule Risk Analysis"]
     },
-    technician: {
-      tag: "FOR TECHNICIANS & CREW",
-      title: "Turn Verified Skills & Calendar Availability into Recurring Work.",
-      desc: "Stop relying on word-of-mouth and favoritism. Get your digital professional ID, benchmark your capability score, and get booked directly for high-value production mandates.",
-      cta: "Register Talent Profile →",
-      link: "register.html",
-      metrics: ["Merit-Based Grade", "Automated Wrap Payouts", "Calendar Monetization"]
+    '3': {
+      num: "STAGE 03",
+      title: "03 — Match via Verified Graph",
+      desc: "The system queries the active ecosystem graph based on demonstrated capability (Grade), wrap performance (Rating), real-time calendar availability, and reliability.",
+      example: "Queries verified DOPs in Bengaluru with open 3-day window and 90%+ reliability score.",
+      details: ["Grade (Capability) + Rating (Performance)", "Real-Time Calendar Availability", "Past Project Reliability Index"]
     },
-    resource: {
-      tag: "FOR SOUNDSTAGES, CAMERAS & RENTALS",
-      title: "Monetize Idle Soundstage Slots and Camera Bodies.",
-      desc: "Convert dormant soundstage days and idle camera/lighting packages into productive utilization. List verified technical specifications and receive pre-screened production bookings.",
-      cta: "List Asset Capacity →",
-      link: "register.html",
-      metrics: ["Zero Balance Sheet Debt", "Verified Client Screenings", "Guaranteed Milestone Payouts"]
+    '4': {
+      num: "STAGE 04",
+      title: "04 — Compose the Production Unit",
+      desc: "Assembles right-sized talent, hardware packages, and unutilized studio slots with pre-screened rates and guaranteed co-working compatibility.",
+      example: "Primary unit composed: DOP, RED V-Raptor package, Soundstage 02 booked during off-peak slot.",
+      details: ["Right-Sized Resource Sizing", "Idle Capacity Discount Locking", "Co-Working Network Compatibility"]
     },
-    brand: {
-      tag: "FOR BRANDS & ADVERTISING AGENCIES",
-      title: "High-Impact Commercials with Guaranteed Timelines & 12+ Cuts.",
-      desc: "Commission high-velocity brand films and creator campaigns. One orchestrated shoot yields 12+ derived vertical reels, BTS cutdowns, and localized social assets with guaranteed wrap delivery.",
-      cta: "Commission Brand Campaign →",
-      link: "contact.html",
-      metrics: ["12+ Derived Assets", "Guaranteed Delivery Dates", "Audience Trend Matching"]
+    '5': {
+      num: "STAGE 05",
+      title: "05 — Execute with Plan A/B/C Resilience",
+      desc: "Production runs on synchronized capture protocols with hot-swap standby units and virtual stage failovers locked before call sheet wrap.",
+      example: "Plan B standby camera package and alternate lighting unit confirmed on standby.",
+      details: ["Synchronized Daily Capture Hand-off", "Pre-Matched Standby Crew / Gear", "Concurrent Vertical Promo Harvesting"]
+    },
+    '6': {
+      num: "STAGE 06",
+      title: "06 — Measure Performance & Delivery",
+      desc: "Wrap logs, milestone deliveries, budget-to-actual variances, and equipment handoff checklists are recorded upon shoot completion.",
+      example: "Master wrapped on schedule, 16 derived assets delivered, zero equipment damage.",
+      details: ["Wrap Log & Delivery Verification", "Budget Variance Benchmarking", "Escrow Milestone Payout Release"]
+    },
+    '7': {
+      num: "STAGE 07",
+      title: "07 — Update Professional Reputation",
+      desc: "Verified credits and performance ratings update on each participant's DIGISYNQ Professional ID based on evidence, not personal favors.",
+      example: "DOP receives verified wrap credit, updating reliability to 95% and on-time score to 98%.",
+      details: ["Evidence-Based Reputation Update", "Verified Wrap Credit Inscription", "Repeat Hire Metric Increment"]
+    },
+    '8': {
+      num: "STAGE 08",
+      title: "08 — Learn & Feed the Flywheel ↺",
+      desc: "Every completed project feeds data back into the network, refining matching algorithms, pricing models, and scheduling predictions for the next project.",
+      example: "Flywheel feeds back: Future Kannada commercials in Bengaluru match 3x faster with tighter cost efficiency.",
+      details: ["Algorithmic Pricing Calibration", "Compounding Network Intelligence", "Next Project Recommendations"]
     }
   };
 
-  const roleTabBtns = document.querySelectorAll('.role-tab-btn');
-  const roleTagEl   = document.getElementById('role-tag');
-  const roleTitleEl = document.getElementById('role-title');
-  const roleDescEl  = document.getElementById('role-desc');
-  const roleCtaEl   = document.getElementById('role-cta');
-  const roleMetricsEl = document.getElementById('role-metrics');
+  const stepBtns = document.querySelectorAll('.step-nav-btn');
+  const stepNumEl = document.getElementById('step-num');
+  const stepTitleEl = document.getElementById('step-title');
+  const stepDescEl = document.getElementById('step-desc');
+  const stepExampleEl = document.getElementById('step-example');
+  const stepDetailsEl = document.getElementById('step-details');
 
-  if (roleTabBtns.length && roleTagEl) {
-    roleTabBtns.forEach(btn => {
+  if (stepBtns.length && stepTitleEl) {
+    stepBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        roleTabBtns.forEach(b => b.classList.remove('active'));
+        stepBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const key = btn.getAttribute('data-role');
-        const data = roleData[key];
+        const step = btn.getAttribute('data-step');
+        const data = stepperData[step];
         if (data) {
-          roleTagEl.textContent = data.tag;
-          roleTitleEl.textContent = data.title;
-          roleDescEl.textContent = data.desc;
-          roleCtaEl.textContent = data.cta;
-          roleCtaEl.setAttribute('href', data.link);
-          if (roleMetricsEl) {
-            roleMetricsEl.innerHTML = data.metrics.map(m => `<span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ ${m}</span>`).join('');
+          stepNumEl.textContent = data.num;
+          stepTitleEl.textContent = data.title;
+          stepDescEl.textContent = data.desc;
+          stepExampleEl.textContent = data.example;
+          if (stepDetailsEl) {
+            stepDetailsEl.innerHTML = data.details.map(d => `<span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">✓ ${d}</span>`).join('');
           }
         }
       });
     });
   }
 
-  /* ── 6. Interactive Silo Connectivity Visualizer ─────────────────────────── */
-  const siloBtns = document.querySelectorAll('.silo-switch-btn');
-  const siloBoxes = document.querySelectorAll('.silo-box');
-  const siloStatusText = document.getElementById('silo-status-text');
+  /* ── 5. Project Room Plan A/B/C Switcher ────────────────────────────────── */
+  const planBtns = document.querySelectorAll('.plan-btn');
+  const planTitle = document.getElementById('room-plan-title');
+  const planDesc = document.getElementById('room-plan-desc');
+  const barLocation = document.getElementById('bar-loc');
+  const barLocVal = document.getElementById('bar-loc-val');
 
-  if (siloBtns.length && siloBoxes.length) {
-    siloBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        siloBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const mode = btn.getAttribute('data-mode');
-
-        if (mode === 'orchestrated') {
-          siloBoxes.forEach(box => box.classList.add('connected'));
-          if (siloStatusText) {
-            siloStatusText.innerHTML = '✨ <strong style="color:var(--accent-cyan);">DIGISYNQ ORCHESTRATED:</strong> Real-time connected intelligence removes friction, aligns calendar availability, and coordinates execution.';
-          }
-        } else {
-          siloBoxes.forEach(box => box.classList.remove('connected'));
-          if (siloStatusText) {
-            siloStatusText.innerHTML = '⚠️ <strong style="color:var(--accent-amber);">FRAGMENTED STATE:</strong> Disconnected silos cause idle gear, scheduling conflicts, delayed deliverables, and blown budgets.';
-          }
-        }
-      });
-    });
-  }
-
-  /* ── 7. ABCDEF Engine Stepper ────────────────────────────────────────────── */
-  const engineStages = {
-    A: {
-      tagline: '“Know what exists.”',
-      title: 'A — ACCESS',
-      desc: 'Instant continuous visibility across verified ecosystem assets without unnecessary ownership overhead.',
-      items: [
-        'People & Verified Specialized Skills',
-        'Camera, Lighting & Grip Equipment Pools',
-        'Soundstages, Virtual Production & Location Inventories',
-        'Post-Production Facilities & Color Suites',
-        'Emerging Technologies & Production Toolsets'
-      ]
-    },
-    B: {
-      tagline: '“Deploy without ownership liability.”',
-      title: 'B — BANDWIDTH',
-      desc: 'Flexible, elastic capacity that scales with project demands and contracts when inactive.',
-      items: [
-        'Zero fixed balance sheet debt or depreciation',
-        'Rapid crew scaling from 3-person unit to 120-person feature',
-        'Peak capacity absorption without ongoing payroll',
-        'Dynamic regional multi-unit deployment'
-      ]
-    },
-    C: {
-      tagline: '“Assemble the exact right unit.”',
-      title: 'C — COMPOSE',
-      desc: 'Intelligent pairing of verified talent, hardware, locations, and vendors based on project parameters.',
-      items: [
-        'Evidence-based talent matching (Grade + Rating)',
-        'Budget-proportional camera and lighting pairing',
-        'Geography-optimized location and studio routing',
-        'Co-working compatibility graph pairing'
-      ]
-    },
-    D: {
-      tagline: '“Execute with synchronized precision.”',
-      title: 'D — ORCHESTRATE',
-      desc: 'End-to-end coordinated workflow management from development through master release.',
-      items: [
-        'Unified production communication protocols',
-        'Standardized daily capture handoff pipelines',
-        'Concurrent BTS & vertical promo harvesting',
-        'Integrated milestone escrow payments'
-      ]
-    },
-    E: {
-      tagline: '“Decide with real-time evidence.”',
-      title: 'E — INTELLIGENCE',
-      desc: 'Continuous market signals, genre performance trends, and risk management algorithms.',
-      items: [
-        'Real-time genre sentiment & release window indexing',
-        'Predictive schedule risk mitigation (Plan A/B/C)',
-        'Regional studio capacity & ad CPM forecasting',
-        'Audience response & retention analytics'
-      ]
-    },
-    F: {
-      tagline: '“Every project teaches the next.”',
-      title: 'F — FLYWHEEL ↺',
-      desc: 'A compounding knowledge graph where every wrap refines matching accuracy, pricing, and outcomes.',
-      items: [
-        'Automatic talent performance & reliability rating updates',
-        'Hardware reliability and maintenance feedback logs',
-        'Budget-to-actual efficiency learning loops',
-        'Compounding ecosystem network effects'
-      ]
-    }
-  };
-
-  const engineBtns = document.querySelectorAll('.engine-step-btn');
-  const engineTitle = document.getElementById('engine-title');
-  const engineTagline = document.getElementById('engine-tagline');
-  const engineDesc = document.getElementById('engine-desc');
-  const engineList = document.getElementById('engine-list');
-
-  if (engineBtns.length && engineTitle) {
-    engineBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        engineBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const stage = btn.getAttribute('data-stage');
-        const data = engineStages[stage];
-        if (data) {
-          engineTitle.textContent = data.title;
-          engineTagline.textContent = data.tagline;
-          engineDesc.textContent = data.desc;
-          engineList.innerHTML = data.items.map(item => `<li class="engine-list-item">${item}</li>`).join('');
-        }
-      });
-    });
-  }
-
-  /* ── 8. Interactive Feature: Project Room Plan Switcher ─────────────────── */
-  const planBtns = document.querySelectorAll('.plan-toggle-btn');
-  const planStatusTitle = document.getElementById('room-plan-title');
-  const planStatusDesc = document.getElementById('room-plan-desc');
-  const riskWeatherPill = document.getElementById('risk-weather');
-  const riskStudioPill = document.getElementById('risk-studio');
-
-  const planConfigs = {
+  const planMatrix = {
     A: {
       title: "PLAN A // Primary Unit Locked",
       desc: "Scheduled Primary DOP, RED V-Raptor package, outdoor Mysuru forest location, and scheduled Stage 2 booking.",
-      weather: "🟡 Weather Advisory (Standby)",
-      weatherClass: "risk-pill--amber",
-      studio: "🟢 Stage 2 Booked",
-      studioClass: "risk-pill--green"
+      locPct: "82%",
+      locStatus: "82% (Weather Dependent)"
     },
     B: {
       title: "PLAN B // Standby Alternate Activated",
-      desc: "Verified backup DOP confirmed on standby rate. Virtual production bay locked for rain fallback with zero rescheduling fee.",
-      weather: "🟢 Virtual Stage Ready",
-      weatherClass: "risk-pill--green",
-      studio: "🟢 VP Bay Swapped",
-      studioClass: "risk-pill--green"
+      desc: "Pre-matched backup DOP confirmed on standby. Virtual Production LED Bay swapped for rain fallback with zero rescheduling fee.",
+      locPct: "100%",
+      locStatus: "100% (Virtual Bay Locked)"
     },
     C: {
       title: "PLAN C // Modular Contingency",
-      desc: "Emergency modular unit shift. Second unit shoot concurrent execution with localized crew package in Bengaluru hub.",
-      weather: "🟢 Studio Protected",
-      weatherClass: "risk-pill--green",
-      studio: "🟢 Indoor Unit Active",
-      studioClass: "risk-pill--green"
+      desc: "Emergency modular unit shift. Second unit shoot concurrent execution in Bengaluru studio hub.",
+      locPct: "95%",
+      locStatus: "95% (Indoor Unit Active)"
     }
   };
 
-  if (planBtns.length && planStatusTitle) {
+  if (planBtns.length && planTitle) {
     planBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         planBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const plan = btn.getAttribute('data-plan');
-        const cfg = planConfigs[plan];
-        if (cfg) {
-          planStatusTitle.textContent = cfg.title;
-          planStatusDesc.textContent = cfg.desc;
-          if (riskWeatherPill) {
-            riskWeatherPill.textContent = cfg.weather;
-            riskWeatherPill.className = `risk-pill ${cfg.weatherClass}`;
-          }
-          if (riskStudioPill) {
-            riskStudioPill.textContent = cfg.studio;
-            riskStudioPill.className = `risk-pill ${cfg.studioClass}`;
-          }
-        }
-      });
-    });
-  }
-
-  /* ── 9. Multi-Format Aspect Ratio Switcher ──────────────────────────────── */
-  const aspectBtns = document.querySelectorAll('.aspect-btn');
-  const aspectFrame = document.getElementById('aspect-frame');
-  const aspectText = document.getElementById('aspect-text');
-  const aspectRes = document.getElementById('aspect-res');
-
-  const aspectData = {
-    '16-9':  { label: '16:9 CINEMA MASTER', res: '3840 × 2160 • OTT & Theatrical' },
-    '9-16':  { label: '9:16 VERTICAL REEL', res: '1080 × 1920 • Instagram & Shorts' },
-    '1-1':   { label: '1:1 SOCIAL PROMO', res: '1080 × 1080 • Square Feed Cut' },
-    '239-1': { label: '2.39:1 THEATRICAL SCOPE', res: '4096 × 1716 • Anamorphic Master' }
-  };
-
-  if (aspectBtns.length && aspectFrame) {
-    aspectBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        aspectBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const ratio = btn.getAttribute('data-ratio');
-        aspectFrame.setAttribute('data-ratio', ratio);
-        const data = aspectData[ratio];
+        const data = planMatrix[plan];
         if (data) {
-          aspectText.textContent = data.label;
-          aspectRes.textContent = data.res;
+          planTitle.textContent = data.title;
+          planDesc.textContent = data.desc;
+          if (barLocation) barLocation.style.width = data.locPct;
+          if (barLocVal) barLocVal.textContent = data.locStatus;
         }
       });
     });
   }
 
-  /* ── 10. 3D Holographic Tilt Physics ────────────────────────────────────── */
+  /* ── 6. 3D Holographic ID Card Tilt ─────────────────────────────────────── */
   const idCards = document.querySelectorAll('.id-card-preview');
   idCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -522,8 +353,8 @@
       const y = e.clientY - rect.top;
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -12;
-      const rotateY = ((x - centerX) / centerX) * 12;
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       card.style.setProperty('--glare-x', `${(x / rect.width) * 100}%`);
@@ -535,278 +366,63 @@
     });
   });
 
-  /* ── 11. Upgraded Real-World Project Simulator ─────────────────────────── */
-  const simType     = document.getElementById('sim-type');
-  const simGenre    = document.getElementById('sim-genre');
-  const simBudget   = document.getElementById('sim-budget');
-  const simLocation = document.getElementById('sim-location');
+  /* ── 7. Upgraded Real-World Project Simulator ─────────────────────────── */
+  const simType   = document.getElementById('sim-type');
+  const simGenre  = document.getElementById('sim-genre');
+  const simBudget = document.getElementById('sim-budget');
 
-  const outCrew        = document.getElementById('out-crew');
-  const outGear        = document.getElementById('out-gear');
-  const outEfficiency  = document.getElementById('out-efficiency');
-  const outPlanB       = document.getElementById('out-planb');
-  const outDerived     = document.getElementById('out-derived');
-  const outSummary     = document.getElementById('out-summary');
+  const outCrew   = document.getElementById('out-crew');
+  const outGear   = document.getElementById('out-gear');
+  const outPlanB  = document.getElementById('out-planb');
+  const outCuts   = document.getElementById('out-cuts');
+  const outEff    = document.getElementById('out-eff');
+  const outSum    = document.getElementById('out-summary');
 
   function calculateSimulation() {
     if (!simType || !simBudget) return;
-    const typeVal = simType.value;
-    const budgetVal = simBudget.value;
+    const type = simType.value;
+    const budget = simBudget.value;
 
-    let crew = 18;
-    let gear = 6;
-    let eff = "+11%";
-    let planB = "90%";
-    let derived = "12 Assets";
-    let summary = "Local Hybrid Crew + Studio Slot";
+    let crew = 32;
+    let gear = 14;
+    let planB = "94%";
+    let cuts = "16 Cuts";
+    let eff = "+15%";
+    let summary = "Commercial Grade-A DOP + Anamorphic Package + Stage 1 Slot";
 
-    if (typeVal === 'creator') {
-      crew = budgetVal === 'tier1' ? 6 : (budgetVal === 'tier2' ? 12 : 20);
+    if (type === 'creator') {
+      crew = budget === 'tier1' ? 6 : 14;
       gear = 4;
-      eff = "+18%";
       planB = "96%";
-      derived = "24 Derived Cuts";
+      cuts = "24 Cuts";
+      eff = "+22%";
       summary = "High-Velocity Creator Unit + Rapid Multi-Format Pipeline";
-    } else if (typeVal === 'commercial') {
-      crew = budgetVal === 'tier1' ? 18 : (budgetVal === 'tier2' ? 32 : 48);
-      gear = budgetVal === 'tier1' ? 8 : 14;
-      eff = "+15%";
-      planB = "94%";
-      derived = "16 Derived Cuts";
-      summary = "Commercial Grade-A DOP + Anamorphic Package + Stage 1";
-    } else if (typeVal === 'ott') {
-      crew = budgetVal === 'tier1' ? 28 : (budgetVal === 'tier2' ? 52 : 78);
-      gear = 18;
-      eff = "+14%";
-      planB = "92%";
-      derived = "32 Multi-Platform Deliverables";
-      summary = "Multi-Episode Production Grid + DI Suite + Local Units";
-    } else if (typeVal === 'feature') {
-      crew = budgetVal === 'tier1' ? 36 : (budgetVal === 'tier2' ? 64 : 110);
-      gear = 24;
-      eff = "+16%";
+    } else if (type === 'feature') {
+      crew = budget === 'tier1' ? 38 : (budget === 'tier2' ? 64 : 110);
+      gear = 26;
       planB = "95%";
-      derived = "40+ Theatrical & Social Packages";
+      cuts = "40+ Cuts";
+      eff = "+18%";
       summary = "Feature Unit Orchestration + Dual Camera + Standby Contingency";
+    } else if (type === 'ott') {
+      crew = budget === 'tier1' ? 28 : 56;
+      gear = 18;
+      planB = "92%";
+      cuts = "32 Cuts";
+      eff = "+14%";
+      summary = "Multi-Episode Production Grid + DI Suite + Local Units";
     }
 
-    if (outCrew) outCrew.textContent = crew;
+    if (outCrew) outCrew.textContent = `${crew} Pros`;
     if (outGear) outGear.textContent = `${gear} Pkgs`;
-    if (outEfficiency) outEfficiency.textContent = eff;
     if (outPlanB) outPlanB.textContent = planB;
-    if (outDerived) outDerived.textContent = derived;
-    if (outSummary) outSummary.textContent = summary;
+    if (outCuts) outCuts.textContent = cuts;
+    if (outEff) outEff.textContent = eff;
+    if (outSum) outSum.textContent = summary;
   }
 
-  [simType, simGenre, simBudget, simLocation].forEach(el => {
-    if (el) {
-      el.addEventListener('change', calculateSimulation);
-    }
+  [simType, simGenre, simBudget].forEach(el => {
+    if (el) el.addEventListener('change', calculateSimulation);
   });
-
-  /* ── 12. Talent Live Registration Card Engine ───────────────────────────── */
-  const talentForm = document.getElementById('talent-reg-form');
-  if (talentForm) {
-    const regName       = document.getElementById('reg-name');
-    const regRole       = document.getElementById('reg-role');
-    const regCity       = document.getElementById('reg-city');
-    const regEmail      = document.getElementById('reg-email');
-    const regPhone      = document.getElementById('reg-phone');
-    const regSpecialty  = document.getElementById('reg-specialty');
-    const regExp        = document.getElementById('reg-exp');
-    const regGear       = document.getElementById('reg-gear');
-    const regPortfolio  = document.getElementById('reg-portfolio');
-    const regAvail      = document.getElementById('reg-avail');
-    const regRate       = document.getElementById('reg-rate');
-
-    const cardName      = document.getElementById('card-name');
-    const cardRole      = document.getElementById('card-role');
-    const cardSpecialty = document.getElementById('card-specialty');
-    const cardExpBadge  = document.getElementById('card-exp-badge');
-    const cardCityBadge = document.getElementById('card-city-badge');
-    const cardAvailBadge= document.getElementById('card-avail-badge');
-    const regSuccess    = document.getElementById('reg-success');
-    const regSubmitBtn  = document.getElementById('reg-submit-btn');
-
-    function updateCardPreview() {
-      if (cardName && regName) {
-        cardName.textContent = regName.value.trim() ? regName.value.trim() : 'Your Full Name';
-      }
-      if (cardRole && regRole) {
-        cardRole.textContent = regRole.value;
-      }
-      if (cardSpecialty && regSpecialty) {
-        cardSpecialty.textContent = regSpecialty.value.trim() ? regSpecialty.value.trim() : 'Specialized Craft & Technical Proficiency';
-      }
-      if (cardExpBadge && regExp) {
-        cardExpBadge.textContent = regExp.value;
-      }
-      if (cardCityBadge && regCity) {
-        cardCityBadge.textContent = regCity.value.trim() ? regCity.value.trim() : 'Bangalore';
-      }
-      if (cardAvailBadge && regAvail) {
-        cardAvailBadge.textContent = `● ${regAvail.value}`;
-      }
-    }
-
-    [regName, regRole, regCity, regSpecialty, regExp, regAvail].forEach(el => {
-      if (el) el.addEventListener('input', updateCardPreview);
-      if (el) el.addEventListener('change', updateCardPreview);
-    });
-
-    talentForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!regName.value.trim() || !regEmail.value.trim() || !regPhone.value.trim() || !regPortfolio.value.trim()) {
-        alert('Please fill in all mandatory fields (Name, Email, WhatsApp, and Portfolio/Reel link).');
-        return;
-      }
-
-      if (regSubmitBtn) {
-        regSubmitBtn.disabled = true;
-        regSubmitBtn.innerHTML = '<span>Registering Profile…</span>';
-      }
-
-      setTimeout(() => {
-        if (regSuccess) {
-          regSuccess.hidden = false;
-          regSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        if (regSubmitBtn) {
-          regSubmitBtn.disabled = false;
-          regSubmitBtn.innerHTML = '<span>Profile Registered ✓</span>';
-          regSubmitBtn.style.background = 'var(--accent-green)';
-          regSubmitBtn.style.color = '#030305';
-        }
-
-        const summary = `*DIGISYNQ Talent Registration*\nName: ${regName.value}\nCraft: ${regRole.value}\nCity: ${regCity.value}\nPhone: ${regPhone.value}\nEmail: ${regEmail.value}\nExperience: ${regExp.value}\nGear: ${regGear ? regGear.value : 'N/A'}\nSpecialty: ${regSpecialty.value}\nReel: ${regPortfolio.value}\nAvailability: ${regAvail.value}\nRate: ${regRate ? regRate.value : 'Flexible'}`;
-        const waUrl = `https://wa.me/917996548969?text=${encodeURIComponent(summary)}`;
-        
-        const waLinkBtn = document.createElement('a');
-        waLinkBtn.href = waUrl;
-        waLinkBtn.target = '_blank';
-        waLinkBtn.className = 'btn btn--outline btn--sm';
-        waLinkBtn.style.marginTop = '1rem';
-        waLinkBtn.style.display = 'inline-block';
-        waLinkBtn.textContent = '💬 Confirm via WhatsApp Desk →';
-        if (regSuccess && !regSuccess.querySelector('a')) {
-          regSuccess.appendChild(document.createElement('br'));
-          regSuccess.appendChild(waLinkBtn);
-        }
-
-        // Add to client DB if available
-        if (window.DigisynqDB) {
-          window.DigisynqDB.addTalent({
-            name: regName.value,
-            role: regRole.value,
-            category: "Cinematography",
-            city: regCity.value,
-            specialty: regSpecialty.value || "General Craft",
-            gear: regGear ? regGear.value : "Standard Package",
-            availability: regAvail ? regAvail.value : "Immediate",
-            rate: regRate ? regRate.value : "Flexible"
-          });
-        }
-      }, 600);
-    });
-  }
-
-  /* ── 13. Live Interactive Talent Explorer Component ─────────────────────── */
-  const talentCardsGrid = document.getElementById('talent-cards-grid');
-  const searchInput     = document.getElementById('talent-search-input');
-  const filterChips     = document.querySelectorAll('.filter-chip');
-
-  function showToast(msg) {
-    let toast = document.getElementById('global-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'global-toast';
-      toast.className = 'toast-notice';
-      document.body.appendChild(toast);
-    }
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2800);
-  }
-
-  function renderTalentCards(category = 'All', search = '') {
-    if (!talentCardsGrid) return;
-    
-    let talents = [];
-    if (window.DigisynqDB) {
-      talents = window.DigisynqDB.getTalents(category, search);
-    }
-
-    if (!talents.length) {
-      talentCardsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align:center; padding:3rem; background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-md);">
-          <p style="color:var(--text-muted); font-size:var(--fs-sm);">No verified profiles found matching &ldquo;${search}&rdquo;. Try another filter or search term.</p>
-        </div>
-      `;
-      return;
-    }
-
-    talentCardsGrid.innerHTML = talents.map(t => `
-      <div class="talent-dir-card" data-id="${t.id}">
-        <div>
-          <div class="dir-card-top">
-            <div>
-              <div class="dir-card-name">${t.name}</div>
-              <div class="dir-card-role">${t.role}</div>
-            </div>
-            <span class="dir-card-badge">${t.grade} &bull; ${t.rating}★</span>
-          </div>
-          <p class="dir-card-spec">${t.specialty}</p>
-        </div>
-
-        <div>
-          <div class="dir-card-meta">
-            <span>📍 ${t.city}</span>
-            <span>⚡ ${t.reliability}% Rel.</span>
-            <span>📅 ${t.availability}</span>
-          </div>
-
-          <div class="dir-card-actions">
-            <a href="contact.html?talent=${encodeURIComponent(t.id)}" class="btn btn--outline btn--sm">View Reel</a>
-            <button class="btn btn--primary btn--sm add-to-room-btn" data-name="${t.name}" data-role="${t.role}">+ Add to Project</button>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    // Attach Event Listeners to "Add to Project" buttons
-    talentCardsGrid.querySelectorAll('.add-to-room-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const name = btn.getAttribute('data-name');
-        const role = btn.getAttribute('data-role');
-        showToast(`✨ ${name} (${role}) added to active Project Room!`);
-      });
-    });
-  }
-
-  if (talentCardsGrid) {
-    renderTalentCards();
-
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const activeChip = document.querySelector('.filter-chip.active');
-        const cat = activeChip ? activeChip.getAttribute('data-cat') : 'All';
-        renderTalentCards(cat, e.target.value);
-      });
-    }
-
-    if (filterChips.length) {
-      filterChips.forEach(chip => {
-        chip.addEventListener('click', () => {
-          filterChips.forEach(c => c.classList.remove('active'));
-          chip.classList.add('active');
-          const cat = chip.getAttribute('data-cat');
-          const search = searchInput ? searchInput.value : '';
-          renderTalentCards(cat, search);
-        });
-      });
-    }
-  }
 
 })();
