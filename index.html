@@ -6,9 +6,11 @@
   <meta name="description" content="DIGISYNQ is a digital ecosystem where brands, creators, businesses, influencers, studios, and professionals connect, collaborate, promote, and grow." />
   <meta property="og:title" content="DIGISYNQ — Digital Ecosystem for Brands & Creators" />
   <meta property="og:description" content="From content strategy to influencer marketing — DIGISYNQ is the digital ecosystem that powers your growth." />
+  <meta property="og:image" content="assets/img/logo.svg" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0d1117" />
+  <meta name="theme-color" content="#080808" />
   <title>DIGISYNQ — Digital Ecosystem for Brands & Creators</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -20,7 +22,8 @@
   <header class="nav-wrapper" id="top">
     <nav class="nav container" aria-label="Primary navigation">
       <a href="index.html" class="nav__logo" aria-label="DIGISYNQ home">
-        <span class="logo-ds">DIGI</span><span class="logo-synq">SYNQ</span>
+        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
+        <span class="nav__logo-wordmark">DIGISYNQ</span>
       </a>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -58,18 +61,9 @@
         <a href="contact.html" class="btn btn--ghost btn--lg" id="hero-started-btn">Get Started →</a>
       </div>
       <div class="hero__stats reveal">
-        <div class="stat">
-          <span class="stat__num">16+</span>
-          <span class="stat__label">Services</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num">360°</span>
-          <span class="stat__label">Digital Coverage</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num">∞</span>
-          <span class="stat__label">Growth Potential</span>
-        </div>
+        <div class="stat"><span class="stat__num">16+</span><span class="stat__label">Services</span></div>
+        <div class="stat"><span class="stat__num">360°</span><span class="stat__label">Digital Coverage</span></div>
+        <div class="stat"><span class="stat__num">∞</span><span class="stat__label">Growth Potential</span></div>
       </div>
     </div>
     <div class="hero__scroll-hint" aria-hidden="true">
@@ -95,22 +89,22 @@
         </div>
         <div class="about__cards reveal">
           <div class="glass-card about__card">
-            <div class="about__card-icon" aria-hidden="true">🎯</div>
+            <div class="about__card-icon">🎯</div>
             <h3>Strategy First</h3>
             <p>Every campaign and creative begins with a plan rooted in data and tailored to your audience.</p>
           </div>
           <div class="glass-card about__card">
-            <div class="about__card-icon" aria-hidden="true">🔗</div>
+            <div class="about__card-icon">🔗</div>
             <h3>Connected Ecosystem</h3>
             <p>Brands, creators, influencers, and studios — all working in sync under one digital roof.</p>
           </div>
           <div class="glass-card about__card">
-            <div class="about__card-icon" aria-hidden="true">📈</div>
+            <div class="about__card-icon">📈</div>
             <h3>Growth Focused</h3>
             <p>We measure success in real growth — followers, leads, conversions, and community.</p>
           </div>
           <div class="glass-card about__card">
-            <div class="about__card-icon" aria-hidden="true">✨</div>
+            <div class="about__card-icon">✨</div>
             <h3>Premium Creative</h3>
             <p>From reels to brand identities, our creative output is built to stand out and leave an impression.</p>
           </div>
@@ -184,8 +178,32 @@
   <footer class="footer" aria-label="Site footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo"><span class="logo-ds">DIGI</span><span class="logo-synq">SYNQ</span></a>
-        <p>A digital ecosystem where brands, creators &amp; professionals grow together.</p>
+        <a href="index.html" class="nav__logo">
+          <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
+          <span class="nav__logo-wordmark">DIGISYNQ</span>
+        </a>
+        <p>A digital ecosystem where brands, creators &amp; professionals sync, grow &amp; thrive.</p>
+        <!-- Social icons -->
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Instagram" class="social-icon social-icon--ig" id="footer-ig">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Threads" class="social-icon social-icon--threads" id="footer-threads">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.702 6.826 2.023 1.738 1.287 2.697 3.018 2.851 5.145l.012.162h-3.2l-.01-.121c-.143-1.36-.795-2.466-1.932-3.283-1.127-.815-2.61-1.246-4.403-1.258-2.713.019-4.848.9-6.346 2.618C4.546 7.065 3.78 9.432 3.757 12c.023 2.566.789 4.931 2.237 6.712 1.498 1.716 3.635 2.597 6.35 2.617 2.29-.016 3.785-.526 4.861-1.647.817-.853 1.303-2.14 1.447-3.826H15.9c-.138.913-.527 1.704-1.162 2.357-.843.873-2.02 1.308-3.572 1.327l-.014-.012zm.952-12.226c-1.27-.304-2.237-.164-2.876.422-.556.508-.78 1.31-.59 2.165.175.787.693 1.348 1.476 1.585.883.265 1.8.12 2.588-.406.682-.465 1.118-1.198 1.187-2.022v-.114a5.08 5.08 0 0 0-.077-.65c-.065-.358-.177-.694-.332-.98h.002zm4.167 5.543c-.4.818-1.001 1.516-1.789 2.08l-.113.08.113-.073c.788-.564 1.388-1.259 1.789-2.087z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on YouTube" class="social-icon social-icon--yt" id="footer-yt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Facebook" class="social-icon social-icon--fb" id="footer-fb">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on WhatsApp" class="social-icon social-icon--wa" id="footer-wa">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </a>
+          <a href="mailto:thedigitalsynq@gmail.com" aria-label="Email DIGISYNQ" class="social-icon social-icon--mail" id="footer-mail">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
       </div>
       <nav class="footer__links" aria-label="Footer navigation">
         <h3 class="footer__heading">Navigate</h3>
@@ -204,14 +222,9 @@
         </ul>
       </nav>
       <div class="footer__contact">
-        <h3 class="footer__heading">Connect</h3>
-        <a href="contact.html" class="btn btn--outline btn--sm" id="footer-contact-btn">Contact Us</a>
-        <div class="footer__socials">
-          <a href="#" aria-label="Instagram" class="social-icon" id="footer-ig">IG</a>
-          <a href="#" aria-label="LinkedIn" class="social-icon" id="footer-li">LI</a>
-          <a href="#" aria-label="YouTube" class="social-icon" id="footer-yt">YT</a>
-          <a href="#" aria-label="Twitter X" class="social-icon" id="footer-x">𝕏</a>
-        </div>
+        <h3 class="footer__heading">Contact</h3>
+        <a href="mailto:thedigitalsynq@gmail.com" class="btn btn--outline btn--sm" id="footer-email-btn">thedigitalsynq@gmail.com</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm" id="footer-wa-btn">WhatsApp Us</a>
       </div>
     </div>
     <div class="footer__bottom"><p>© 2025 DIGISYNQ. All rights reserved.</p></div>
