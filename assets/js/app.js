@@ -437,74 +437,74 @@
   /* ── 10. 10-Step Mechanism Carousel Controller ──────────────────────────── */
   const mechData = {
     '1': {
-      num: '01 // DISCOVER',
-      title: 'Discover What Exists',
+      num: '01 // DEFINE',
+      title: 'Define the Production Mandate',
+      desc: 'Input script parameters, technical specifications, camera preferences, schedule windows, and budget constraints into DIGISYNQ.',
+      example: 'Scenario: Period narrative thriller requires low-light anamorphic package, 14-person crew, and 12 soundstage shoot days in Bengaluru.',
+      chain: ['Parse Technical Spec', 'Establish Budget Boundaries', 'Set Milestone Schedule']
+    },
+    '2': {
+      num: '02 // DISCOVER',
+      title: 'Discover Available Ecosystem Capacity',
       desc: 'Index hidden, idle, and distributed industry capacity. Map talent, unbooked soundstages, specialty camera packages, and verified skills across regional hubs.',
       example: 'Scenario: 3 Soundstages in Bengaluru have 14 open calendar days next month. 6 Cinematographers are between projects.',
       chain: ['Map Raw Capacity', 'Index Hardware & Spaces', 'Identify Availability Windows']
     },
-    '2': {
-      num: '02 // VERIFY',
-      title: 'Verify Evidence, Not Claims',
-      desc: 'Authenticate capability through actual wrap logs, portfolio breakdowns, peer confirmations, and equipment maintenance history.',
-      example: 'Scenario: DOP low-light narrative competency authenticated via 4 verified feature film wrap logs and colorist feedback.',
-      chain: ['Review Project Wraps', 'Validate Equipment Handoffs', 'Certify Capability Profile']
-    },
     '3': {
-      num: '03 // CONNECT',
-      title: 'Connect the Disconnected',
-      desc: 'Bridge resources that rarely talk across traditional silos: emerging directors with veteran gaffers, idle RED packages with indie shorts.',
+      num: '03 // MATCH',
+      title: 'Match Compatible Talent & Hardware',
+      desc: 'Traverse the capability graph to match creative chemistry, equipment compatibility, and calendar availability across traditional industry silos.',
       example: 'Scenario: Producer seeking specialized anamorphic lenses connects directly to an owner whose package is sitting idle.',
-      chain: ['Traverse Network Graph', 'Bridge Siloed Vendors', 'Establish Direct Communication']
+      chain: ['Traverse Network Graph', 'Match Compatibility Score', 'Confirm Calendar Sync']
     },
     '4': {
-      num: '04 // COMPOSE',
-      title: 'Compose the Right Unit',
+      num: '04 // ASSEMBLE',
+      title: 'Assemble the Right-Sized Unit',
       desc: 'Build the precise combination tailored for the mandate instead of standard bloated packages. Right-sized crews, hardware, and locations.',
       example: 'Scenario: Low-budget period thriller composed with agile 14-person crew, vintage prime set, and negotiated off-peak stage rate.',
       chain: ['Assess Mandate Needs', 'Right-Size Crew & Gear', 'Calculate Synergies']
     },
     '5': {
-      num: '05 // SYNCHRONIZE',
-      title: 'Synchronize Calendars & Protocols',
-      desc: 'Align shooting schedules, daily handoffs, data pipelines, and standby failovers into one synchronized production pulse.',
-      example: 'Scenario: Dual unit shoot synchronized with daily DaVinci raw color sync and real-time audio log handoffs.',
-      chain: ['Lock Calendar Windows', 'Synchronize DIT & Post', 'Align Standby Failovers']
-    },
-    '6': {
-      num: '06 // EXECUTE',
-      title: 'Execute with Resilience (Plan A/B/C)',
-      desc: 'Run active shoots with real-time operational support and pre-matched backup options ready to deploy without stopping the clock.',
+      num: '05 // EXECUTE',
+      title: 'Execute with Plan A/B/C Resilience',
+      desc: 'Run active shoots with real-time operational support and pre-matched backup options ready to deploy without stopping the production clock.',
       example: 'Scenario: Rain halts outdoor shoot. Virtual production LED bay activates under pre-negotiated Plan B terms seamlessly.',
       chain: ['Monitor Live Milestones', 'Deploy Hot-Swap Standbys', 'Maintain Production Rhythm']
     },
-    '7': {
-      num: '07 // TRACK',
-      title: 'Track Performance & Flow',
+    '6': {
+      num: '06 // TRACK',
+      title: 'Track Performance & Flow in Real Time',
       desc: 'Capture wrap logs, time efficiency, equipment integrity, and budget adherence objectively at every stage.',
-      example: 'Scenario: Wrap sheet logs: 100% on-time call sheets, zero gear damage, +16% schedule time savings achieved.',
-      chain: ['Record Wrap Logs', 'Audit Budget-to-Actual', 'Release Milestone Contracts']
+      example: 'Scenario: Wrap sheet logs: 100% on-time call sheets, zero gear damage, +18% schedule time savings achieved.',
+      chain: ['Record Wrap Logs', 'Audit Budget-to-Actual', 'Monitor Daily Handoffs']
+    },
+    '7': {
+      num: '07 // WRAP',
+      title: 'Wrap with Integrity & Milestone Escrow',
+      desc: 'Close shoot cycles with verified asset handoffs, equipment check-in inspections, and automated milestone fund releases.',
+      example: 'Scenario: All camera packages returned undamaged, raw footage checksums verified, post-production escrow released.',
+      chain: ['Inspect Equipment Integrity', 'Verify Data Checksums', 'Release Milestone Contracts']
     },
     '8': {
-      num: '08 // LEARN',
-      title: 'Learn Before You Blame',
+      num: '08 // VERIFY',
+      title: 'Verify Project Evidence & Logs',
+      desc: 'Authenticate capability through actual wrap sheets, portfolio breakdowns, peer confirmations, and equipment maintenance history.',
+      example: 'Scenario: DOP low-light narrative competency authenticated via verified feature film wrap logs and colorist feedback.',
+      chain: ['Review Project Wraps', 'Validate Equipment Handoffs', 'Certify Capability Profile']
+    },
+    '9': {
+      num: '09 // LEARN',
+      title: 'Learn Before You Blame (Post-Mortem)',
       desc: 'Conduct blameless post-mortems on delays and successes. Translate every production friction point into institutional network memory.',
       example: 'Scenario: Post-wrap analysis uncovers audio interference pattern in location X, automatically flagging it for future productions.',
       chain: ['Conduct Blameless Review', 'Extract Operational Insights', 'Update Matching Algorithms']
     },
-    '9': {
-      num: '09 // REUSE',
-      title: 'Reuse Content, Knowledge & Relationships',
-      desc: 'Extract continuous value: master footage recycled into 16 derived assets; successful crew pairings bookmarked for future projects.',
-      example: 'Scenario: Feature shoot B-roll and rehearsals recycled into masterclass educational workshops and localized trailer cuts.',
-      chain: ['Harvest Content Multipliers', 'Document Workshop Knowledge', 'Bookmark High-Synergy Units']
-    },
     '10': {
-      num: '10 // REDEPLOY',
-      title: 'Redeploy for Next Best Use ↺',
-      desc: 'Resources immediately flow to their next highest value activity — talent to mentoring, idle gear to rental, studios to rehearsals.',
+      num: '10 // REUSE',
+      title: 'Reuse & Redeploy for Next Best Use ↺',
+      desc: 'Resources and content immediately flow to their next highest value activity — talent to mentoring, idle gear to rental, master footage to platform cuts.',
       example: 'Scenario: DOP completes shoot and immediately leads a 2-day lighting workshop while camera package moves to commercial shoot.',
-      chain: ['Identify Next-Best-Use', 'Activate New Mandates', 'Compound Network Value ↺']
+      chain: ['Harvest Content Formats', 'Identify Next-Best-Use', 'Compound Network Value ↺']
     }
   };
 

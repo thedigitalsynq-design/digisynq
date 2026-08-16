@@ -76,104 +76,149 @@
     </div>
   </section>
 
-  <!-- Registration Interactive Form -->
+  <!-- Registration Interactive Form & Transparent Process -->
   <section class="section" style="padding-top: 1rem; padding-bottom: 6rem;">
-    <div class="wrap problem-layout">
+    <div class="wrap" style="display:grid; grid-template-columns:1.15fr 1fr; gap:2.5rem; align-items:start;">
 
       <!-- Registration Form -->
       <div class="reveal">
-        <form class="shift-col" style="padding: clamp(2rem, 4vw, 3rem);" id="talent-form" action="https://wa.me/917996548969" method="GET" target="_blank">
-          <h3 style="font-size: var(--f-lg); color: #fff; margin-bottom: 1.5rem;">Register Your Capability</h3>
+        <form class="shift-col spotlight-card" style="padding: clamp(2rem, 4vw, 3rem);" id="talent-form" novalidate>
+          <h3 style="font-family:var(--font-serif); font-size: var(--f-xl); color: #fff; margin-bottom: 0.5rem;">Register Your Capability</h3>
+          <p style="font-size:var(--f-xs); color:var(--t-low); margin-bottom:1.5rem;">Join verified cinematography, post, sound, lighting, and studio capacity.</p>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="reg-role" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Primary Discipline</label>
-            <select id="reg-role" name="role" style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;">
-              <option value="Director of Photography / Cinematographer" style="background: #08080c;">Director of Photography / Cinematographer</option>
-              <option value="Director / Showrunner / Writer" style="background: #08080c;">Director / Showrunner / Writer</option>
-              <option value="Gaffer / Chief Lighting Technician" style="background: #08080c;">Gaffer / Chief Lighting Technician</option>
-              <option value="Colorist (DI) / Post Supervisor" style="background: #08080c;">Colorist (DI) / Post Supervisor</option>
-              <option value="Sound Recordist / Audio Engineer" style="background: #08080c;">Sound Recordist / Audio Engineer</option>
-              <option value="Production Designer / Art Director" style="background: #08080c;">Production Designer / Art Director</option>
-              <option value="Studio Owner / Camera Package Owner" style="background: #08080c;">Studio Owner / Camera Package Owner</option>
+            <label for="reg-role" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Primary Discipline</label>
+            <select id="reg-role" name="role" class="fp-select">
+              <option value="Director of Photography / Cinematographer">Director of Photography / Cinematographer</option>
+              <option value="Director / Showrunner / Writer">Director / Showrunner / Writer</option>
+              <option value="Gaffer / Chief Lighting Technician">Gaffer / Chief Lighting Technician</option>
+              <option value="Colorist (DI) / Post Supervisor">Colorist (DI) / Post Supervisor</option>
+              <option value="Sound Recordist / Audio Engineer">Sound Recordist / Audio Engineer</option>
+              <option value="Production Designer / Art Director">Production Designer / Art Director</option>
+              <option value="Studio Owner / Camera Package Owner">Studio Owner / Camera Package Owner</option>
             </select>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="reg-name" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Full Name / Craft Alias</label>
-            <input type="text" id="reg-name" name="name" placeholder="e.g. Aryan Sharma" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="reg-name" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Full Name / Craft Alias</label>
+            <input type="text" id="reg-name" name="name" class="fp-input" placeholder="e.g. Aryan Sharma" required />
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="reg-phone" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">WhatsApp Phone Number</label>
-            <input type="tel" id="reg-phone" name="phone" placeholder="+91 98765 43210" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="reg-phone" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">WhatsApp / Contact Number</label>
+            <input type="tel" id="reg-phone" name="phone" class="fp-input" placeholder="+91 98765 43210" required />
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="reg-spec" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Adjacent Capabilities / Equipment Mastery</label>
-            <input type="text" id="reg-spec" name="specialty" placeholder="e.g. Low Light, Drone FPV, ACES Color Science" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="reg-spec" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Adjacent Capabilities / Equipment Packages</label>
+            <input type="text" id="reg-spec" name="specialty" class="fp-input" placeholder="e.g. Low Light, ARRI Alexa LF, ACES Color Science" required />
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem;">
-            <label for="reg-reel" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--t3);">Showreel Link / Vimeo / Drive</label>
-            <input type="url" id="reg-reel" name="reel" placeholder="https://vimeo.com/... or portfolio URL" required style="background: rgba(255,255,255,0.03); border: 1px solid var(--b1); border-radius: var(--r-sm); color: #fff; font-size: var(--f-sm); padding: 0.75rem 1rem; outline: none; font-family:inherit;" />
+            <label for="reg-reel" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--cyan);">Showreel / Portfolio / Vimeo Link</label>
+            <input type="url" id="reg-reel" name="reel" class="fp-input" placeholder="https://vimeo.com/... or portfolio URL" required />
           </div>
 
           <button type="submit" class="btn btn-signal btn-full" id="reg-submit-btn">
-            <span>Submit to Capability Graph &rarr;</span>
+            <span>Submit Application to Network &rarr;</span>
           </button>
+
+          <div id="reg-confirmation" style="display:none; margin-top:1.25rem; padding:1.2rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:var(--r-md); text-align:center;">
+            <strong style="color:var(--cyan-bright); display:block; margin-bottom:0.35rem; font-size:var(--f-sm);">✓ Application Received</strong>
+            <p style="font-size:var(--f-xs); color:var(--t-medium); line-height:1.6;">We will review your capability evidence and contact you shortly for onboarding verification.</p>
+          </div>
         </form>
       </div>
 
-      <!-- Live Capability Preview -->
-      <div class="reveal reveal--d2">
-        <div class="capability-card">
-          <div class="cap-card-header">
-            <span class="cap-card-id">DS-CAP-PREVIEW // LIVE SPECIMEN</span>
-            <span class="cap-card-badge">● Verified Signal</span>
-          </div>
-
-          <h3 class="cap-card-role" id="card-role-preview">Director of Photography</h3>
-
-          <div class="cap-pills" id="card-pills-preview">
-            <span class="cap-pill cap-pill--primary">Cinematography</span>
-            <span class="cap-pill">Low Light Narrative</span>
-            <span class="cap-pill">Anamorphic Prime Mastery</span>
-            <span class="cap-pill">Drone FPV Operation</span>
-            <span class="cap-pill">DaVinci ACES Color Science</span>
-          </div>
-
-          <div class="cap-stats-row">
-            <div class="cap-stat">
-              <small>Reliability</small>
-              <strong style="color:var(--ok);">96% Rel.</strong>
+      <!-- What Happens Next & Checklist -->
+      <div class="reveal reveal--d2" style="display:flex; flex-direction:column; gap:1.5rem;">
+        
+        <!-- 5-Step Transparent Process -->
+        <div class="card spotlight-card">
+          <span style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.16em; text-transform:uppercase; display:block; margin-bottom:0.75rem;">THE ONBOARDING JOURNEY</span>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-lg); color:var(--t-pure); margin-bottom:1.25rem;">What Happens Next?</h4>
+          
+          <div style="display:flex; flex-direction:column; gap:0.9rem;">
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <span style="font-family:var(--font-mono); font-size:var(--f-xs); color:var(--cyan); font-weight:700;">01</span>
+              <div>
+                <strong style="color:var(--t-pure); font-size:var(--f-xs); display:block;">Submit Your Profile</strong>
+                <span style="font-size:var(--f-3xs); color:var(--t-low);">Provide your discipline, hardware packages, and verified reel.</span>
+              </div>
             </div>
-            <div class="cap-stat">
-              <small>On-Time Rate</small>
-              <strong>98%</strong>
+
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <span style="font-family:var(--font-mono); font-size:var(--f-xs); color:var(--cyan); font-weight:700;">02</span>
+              <div>
+                <strong style="color:var(--t-pure); font-size:var(--f-xs); display:block;">Evidence &amp; Identity Verification</strong>
+                <span style="font-size:var(--f-3xs); color:var(--t-low);">Our registry team checks wrap log history, peer auth, and equipment maintenance.</span>
+              </div>
             </div>
-            <div class="cap-stat">
-              <small>Repeat Hire</small>
-              <strong>84%</strong>
+
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <span style="font-family:var(--font-mono); font-size:var(--f-xs); color:var(--cyan); font-weight:700;">03</span>
+              <div>
+                <strong style="color:var(--t-pure); font-size:var(--f-xs); display:block;">Capability Profile Created</strong>
+                <span style="font-size:var(--f-3xs); color:var(--t-low);">Assigned objective Capability Grade and indexed into the network graph.</span>
+              </div>
             </div>
-            <div class="cap-stat">
-              <small>Calendar</small>
-              <strong style="color:var(--signal);">Active</strong>
+
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <span style="font-family:var(--font-mono); font-size:var(--f-xs); color:var(--cyan); font-weight:700;">04</span>
+              <div>
+                <strong style="color:var(--t-pure); font-size:var(--f-xs); display:block;">Discoverable for Relevant Projects</strong>
+                <span style="font-size:var(--f-3xs); color:var(--t-low);">Producers searching for your exact skill and gear can compose your unit.</span>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <span style="font-family:var(--font-mono); font-size:var(--f-xs); color:var(--cyan); font-weight:700;">05</span>
+              <div>
+                <strong style="color:var(--t-pure); font-size:var(--f-xs); display:block;">Receive Matching Opportunities</strong>
+                <span style="font-size:var(--f-3xs); color:var(--t-low);">Get confirmed booking requests matching your open calendar availability.</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="shift-col shift-col--after" style="margin-top:1.5rem; padding:1.5rem;">
-          <span class="shift-col-label" style="color:var(--signal);">Why Join the Capability Graph?</span>
-          <ul class="shift-list">
-            <li class="shift-item shift-item--after"><strong>Discoverability Beyond Favors:</strong> Get hired on verified capability rather than who you know.</li>
-            <li class="shift-item shift-item--after"><strong>Monetize Idle Days:</strong> Turn open calendar gaps into masterclasses, rentals, and commercial gigs.</li>
-            <li class="shift-item shift-item--after"><strong>Continuous Learning:</strong> Access veteran mentors and workshops to expand adjacent skills.</li>
+        <!-- What You Will Need Checklist -->
+        <div class="card spotlight-card" style="padding:1.75rem;">
+          <span style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--cyan); letter-spacing:0.16em; text-transform:uppercase; display:block; margin-bottom:0.75rem;">CHECKLIST</span>
+          <h4 style="font-family:var(--font-serif); font-size:var(--f-md); color:var(--t-pure); margin-bottom:0.9rem;">What You'll Need</h4>
+          <ul style="font-size:var(--f-xs); color:var(--t-low); display:flex; flex-direction:column; gap:0.4rem;">
+            <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--cyan);">✓</span> Basic professional identity &amp; WhatsApp contact</li>
+            <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--cyan);">✓</span> Primary discipline &amp; technical craft</li>
+            <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--cyan);">✓</span> Verified showreel / portfolio link</li>
+            <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--cyan);">✓</span> Location hubs &amp; open calendar windows</li>
           </ul>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('talent-form');
+      const confirmBox = document.getElementById('reg-confirmation');
+      const submitBtn = document.getElementById('reg-submit-btn');
+
+      if (form && confirmBox) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting Application...';
+
+          setTimeout(() => {
+            confirmBox.style.display = 'block';
+            confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            submitBtn.textContent = '✓ Application Submitted';
+            form.reset();
+          }, 600);
+        });
+      }
+    });
+  </script>
 
   <!-- Footer -->
   <footer class="footer" aria-label="Site Footer">
