@@ -707,6 +707,74 @@ h1, h2, h3, h4, h5, h6 {
 .serve-role { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 700; text-transform: uppercase; color: var(--text-pure); margin-bottom: 0.4rem; }
 .serve-desc { font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.55; }
 
+/* ── 19.1. Revenue & Value Capture Architecture ──────────────────────────── */
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.revenue-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  position: relative;
+  transition: all 0.3s var(--ease-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.revenue-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.06);
+}
+.revenue-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.revenue-num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+.revenue-type {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-full);
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.revenue-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 0.6rem;
+}
+.revenue-desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.revenue-target {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 0.85rem;
+}
+.revenue-target strong {
+  color: var(--text-body);
+}
+
 /* ── 20. Client Marquee ───────────────────────────────────────────────────── */
 .marquee-container {
   overflow: hidden;
@@ -813,10 +881,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1024px) {
   .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .aspect-switcher-box, .simulator-card, .footer-top, .scenario-flow { grid-template-columns: 1fr; }
-  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track { grid-template-columns: repeat(2, 1fr); }
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .revenue-grid, .lifecycle-track { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .nav__links { display: none; }
-  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track { grid-template-columns: 1fr; }
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .revenue-grid, .lifecycle-track { grid-template-columns: 1fr; }
   .hero__title { font-size: clamp(2.4rem, 10vw, 3.8rem); }
 }
