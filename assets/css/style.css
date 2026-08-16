@@ -1,59 +1,53 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform
-   Design System: Cinematic Editorial, Film Viewfinder UI, Holographic Tilt, 3D Mesh
+   High-Motion CSS System: Data Packets, Pulse Beams, Holograms, Magnetic Spotlights
    ========================================================================== */
 
 /* ── 1. Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  /* Chromatic Foundation */
   --bg-pitch:      #030305;
-  --bg-deep:       #07070b;
-  --bg-surface:    #0c0c12;
-  --bg-elevated:   #13131c;
-  --bg-glass:      rgba(12, 12, 18, 0.75);
+  --bg-deep:       #06060a;
+  --bg-surface:    #0b0b12;
+  --bg-elevated:   #12121c;
+  --bg-glass:      rgba(11, 11, 18, 0.78);
   --bg-card:       rgba(255, 255, 255, 0.02);
   --bg-card-hover: rgba(255, 255, 255, 0.05);
 
-  /* Lines & Dividers */
   --border-hairline: rgba(255, 255, 255, 0.05);
   --border-subtle:   rgba(255, 255, 255, 0.09);
-  --border-medium:   rgba(255, 255, 255, 0.16);
+  --border-medium:   rgba(255, 255, 255, 0.18);
   --border-active:   #ffffff;
 
-  /* Typography */
-  --text-pure:     #f8f8fc;
-  --text-body:     #c8c8dc;
-  --text-muted:    #7d7d94;
-  --text-dim:      #454558;
+  --text-pure:     #fbfbfe;
+  --text-body:     #cacae0;
+  --text-muted:    #82829b;
+  --text-dim:      #4c4c62;
 
-  /* Cinema & Intelligence Accents */
   --accent-cyan:      #00f0ff;
-  --accent-cyan-glow: rgba(0, 240, 255, 0.35);
+  --accent-cyan-dim:  rgba(0, 240, 255, 0.15);
+  --accent-cyan-glow: rgba(0, 240, 255, 0.4);
   --accent-amber:     #ffb300;
   --accent-red:       #ff3b30;
   --accent-green:     #00e676;
 
-  /* Type Families */
   --font-display:  'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Fluid Type Scale */
   --fs-3xs:  0.62rem;
   --fs-2xs:  clamp(0.68rem, 1vw, 0.74rem);
-  --fs-xs:   clamp(0.75rem, 1.2vw, 0.82rem);
-  --fs-sm:   clamp(0.85rem, 1.4vw, 0.94rem);
-  --fs-base: clamp(0.95rem, 1.6vw, 1.05rem);
+  --fs-xs:   clamp(0.76rem, 1.2vw, 0.84rem);
+  --fs-sm:   clamp(0.86rem, 1.4vw, 0.96rem);
+  --fs-base: clamp(0.96rem, 1.6vw, 1.06rem);
   --fs-md:   clamp(1.1rem,  2vw,   1.25rem);
-  --fs-lg:   clamp(1.35rem, 2.4vw, 1.6rem);
-  --fs-xl:   clamp(1.75rem, 3.4vw, 2.25rem);
-  --fs-2xl:  clamp(2.35rem, 4.6vw, 3.2rem);
-  --fs-3xl:  clamp(3.2rem,  6.5vw, 4.6rem);
-  --fs-hero: clamp(3.6rem,  8vw,   6.2rem);
+  --fs-lg:   clamp(1.35rem, 2.4vw, 1.65rem);
+  --fs-xl:   clamp(1.8rem,  3.5vw, 2.35rem);
+  --fs-2xl:  clamp(2.4rem,  4.8vw, 3.4rem);
+  --fs-3xl:  clamp(3.2rem,  6.8vw, 4.8rem);
+  --fs-hero: clamp(3.6rem,  8.2vw, 6.4rem);
 
-  /* Layout */
   --container-width: 86rem;
-  --section-pad:     clamp(5.5rem, 10vw, 8.5rem);
+  --section-pad:     clamp(5.5rem, 10vw, 9rem);
   --nav-height:      4.6rem;
   --radius-xs:       4px;
   --radius-sm:       8px;
@@ -62,7 +56,6 @@
   --radius-xl:       32px;
   --radius-full:     9999px;
 
-  /* Motion */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -87,7 +80,6 @@ body {
   position: relative;
 }
 
-/* Cinematic Film Grain Overlay */
 .film-grain {
   position: fixed;
   inset: 0;
@@ -99,33 +91,21 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-::selection {
-  background: var(--text-pure);
-  color: var(--bg-pitch);
-}
-
+::selection { background: var(--text-pure); color: var(--bg-pitch); }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
 /* ── 3. Layout Grid & Containers ──────────────────────────────────────────── */
-.container {
-  width: min(var(--container-width), 100% - 3rem);
-  margin-inline: auto;
-}
-
-.section {
-  padding-block: var(--section-pad);
-  position: relative;
-  border-bottom: 1px solid var(--border-hairline);
-}
+.container { width: min(var(--container-width), 100% - 3rem); margin-inline: auto; }
+.section { padding-block: var(--section-pad); position: relative; border-bottom: 1px solid var(--border-hairline); }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
-/* ── 4. Cinematic Framing & Viewfinder HUD Elements ───────────────────────── */
+/* ── 4. Viewfinder HUD Elements ───────────────────────────────────────────── */
 .viewfinder-hud {
   position: absolute;
   inset: 1.5rem;
@@ -135,7 +115,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-direction: column;
   justify-content: space-between;
 }
-
 .hud-top, .hud-bottom {
   display: flex;
   justify-content: space-between;
@@ -146,12 +125,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--text-dim);
   text-transform: uppercase;
 }
-
-.hud-corner {
-  width: 14px;
-  height: 14px;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-}
+.hud-corner { width: 14px; height: 14px; border: 1.5px solid rgba(255, 255, 255, 0.18); }
 .hud-corner--tl { border-right: none; border-bottom: none; }
 .hud-corner--tr { border-left: none; border-bottom: none; }
 .hud-corner--bl { border-right: none; border-top: none; }
@@ -167,12 +141,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   animation: blinkRec 1.2s infinite;
   margin-right: 0.35rem;
 }
-@keyframes blinkRec {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
+@keyframes blinkRec { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
-/* ── 5. Editorial Typography ──────────────────────────────────────────────── */
+/* ── 5. Typography ────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--text-pure);
@@ -219,24 +190,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 10px var(--accent-cyan);
 }
 
-.section-header {
-  max-width: 54rem;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
-}
-.section-header--center {
-  text-align: center;
-  margin-inline: auto;
-}
-
-.section-title {
-  font-size: var(--fs-2xl);
-  margin-bottom: 1.25rem;
-}
-.section-sub {
-  font-size: var(--fs-base);
-  color: var(--text-muted);
-  line-height: 1.75;
-}
+.section-header { max-width: 54rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
+.section-header--center { text-align: center; margin-inline: auto; }
+.section-title { font-size: var(--fs-2xl); margin-bottom: 1.25rem; }
+.section-sub { font-size: var(--fs-base); color: var(--text-muted); line-height: 1.75; }
 
 /* ── 6. Buttons ───────────────────────────────────────────────────────────── */
 .btn {
@@ -252,10 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.25s var(--ease-smooth);
   letter-spacing: 0.01em;
   white-space: nowrap;
-  position: relative;
-  overflow: hidden;
 }
-
 .btn--primary {
   background: #ffffff;
   color: #030305;
@@ -266,7 +220,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 36px rgba(255, 255, 255, 0.28);
   background: #f0f0f6;
 }
-
 .btn--outline {
   background: rgba(255, 255, 255, 0.025);
   color: var(--text-pure);
@@ -278,7 +231,6 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
-
 .btn--sm { padding: 0.45rem 1.15rem; font-size: var(--fs-xs); }
 .btn--lg { padding: 1.05rem 2.4rem; font-size: var(--fs-base); }
 .btn--full { width: 100%; }
@@ -286,9 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── 7. Navigation Bar ────────────────────────────────────────────────────── */
 .nav-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: var(--nav-height);
   z-index: 100;
   display: flex;
@@ -303,48 +253,16 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(3, 3, 5, 0.94);
   border-bottom-color: var(--border-subtle);
 }
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
+.nav { display: flex; align-items: center; justify-content: space-between; }
+.nav__logo { display: flex; align-items: center; gap: 0.75rem; }
 .nav__logo-img { width: 30px; height: 30px; }
-.nav__logo-text {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: var(--text-pure);
-}
-
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-.nav__links a {
-  font-size: var(--fs-xs);
-  font-family: var(--font-mono);
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
+.nav__logo-text { font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text-pure); }
+.nav__links { display: flex; align-items: center; gap: 1.75rem; }
+.nav__links a { font-size: var(--fs-xs); font-family: var(--font-mono); color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
 .nav__links a:hover, .nav__links a.active { color: var(--text-pure); }
+.nav__actions { display: flex; align-items: center; gap: 1rem; }
 
-.nav__actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* ── 8. Hero Section & Living Ecosystem Graph ─────────────────────────────── */
+/* ── 8. Hero Section ──────────────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -357,7 +275,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   border-bottom: 1px solid var(--border-hairline);
 }
-
 #ecosystem-canvas {
   position: absolute;
   inset: 0;
@@ -367,46 +284,11 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   opacity: 0.85;
 }
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 62rem;
-  margin-inline: auto;
-}
-
-.hero__title {
-  font-size: var(--fs-hero);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.045em;
-  margin-bottom: 1.5rem;
-}
-
-.hero__dynamic-tag {
-  display: inline-block;
-  color: var(--accent-cyan);
-  text-shadow: 0 0 25px var(--accent-cyan-glow);
-  min-width: 220px;
-}
-
-.hero__sub {
-  font-size: var(--fs-base);
-  color: var(--text-muted);
-  max-width: 46rem;
-  margin-inline: auto;
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
-}
-
-.hero__actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 4rem;
-}
-
+.hero__content { position: relative; z-index: 2; max-width: 64rem; margin-inline: auto; }
+.hero__title { font-size: var(--fs-hero); font-weight: 900; line-height: 1; letter-spacing: -0.045em; margin-bottom: 1.5rem; }
+.hero__dynamic-tag { display: inline-block; color: var(--accent-cyan); text-shadow: 0 0 25px var(--accent-cyan-glow); min-width: 220px; transition: opacity 0.3s, transform 0.3s; }
+.hero__sub { font-size: var(--fs-base); color: var(--text-muted); max-width: 46rem; margin-inline: auto; line-height: 1.75; margin-bottom: 2.5rem; }
+.hero__actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
 .hero__quote-strip {
   padding: 1.25rem 2.25rem;
   border-radius: var(--radius-full);
@@ -419,12 +301,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero__quote-strip em { font-style: normal; color: var(--text-pure); font-weight: 600; }
 
-/* ── 9. The Problem: Silos & Fragmentation ────────────────────────────────── */
+/* ── 9. Interactive Silo Connectivity Visualizer ──────────────────────────── */
+.silo-interactive-switch {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.silo-switch-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  transition: all 0.25s;
+}
+.silo-switch-btn.active {
+  background: rgba(0, 240, 255, 0.08);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
 .silos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  margin-top: 3rem;
+  position: relative;
 }
 .silo-box {
   background: var(--bg-card);
@@ -432,33 +337,50 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-md);
   padding: 1.75rem;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.4s var(--ease-spring);
 }
-.silo-box:hover {
-  border-color: var(--border-subtle);
-  background: var(--bg-card-hover);
-  transform: translateY(-3px);
+.silo-box.connected {
+  border-color: rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(0, 240, 255, 0.05);
 }
-.silo-status {
-  font-family: var(--font-mono);
-  font-size: var(--fs-2xs);
-  color: var(--text-dim);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-.silo-title {
-  font-size: var(--fs-md);
-  font-weight: 700;
-  color: var(--text-pure);
-  margin-bottom: 0.5rem;
-}
-.silo-desc {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-  line-height: 1.6;
-}
+.silo-status { font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.5rem; }
+.silo-box.connected .silo-status { color: var(--accent-cyan); }
+.silo-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-pure); margin-bottom: 0.5rem; }
+.silo-desc { font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.6; }
 
-/* ── 10. Asset-Light Model Comparison ─────────────────────────────────────── */
+/* ── 10. Real-World Execution Scenarios Box ───────────────────────────────── */
+.scenario-box {
+  margin-top: 3.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3rem);
+}
+.scenario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.scenario-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.scenario-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+.scenario-step small { font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-cyan); display: block; margin-bottom: 0.35rem; }
+.scenario-step h5 { font-size: var(--fs-xs); color: var(--text-pure); margin-bottom: 0.4rem; }
+.scenario-step p { font-size: var(--fs-2xs); color: var(--text-muted); line-height: 1.55; }
+
+/* ── 11. Asset-Light Model Comparison ─────────────────────────────────────── */
 .model-comparison {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -509,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-cyan);
 }
 
-/* ── 11. ABCDEF Engine Stepper ────────────────────────────────────────────── */
+/* ── 12. ABCDEF Engine Stepper ────────────────────────────────────────────── */
 .engine-stepper-nav {
   display: flex;
   gap: 0.75rem;
@@ -535,20 +457,8 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
-.engine-letter {
-  font-family: var(--font-mono);
-  font-size: var(--fs-md);
-  font-weight: 800;
-  color: var(--text-pure);
-}
-.engine-label {
-  font-family: var(--font-display);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-}
+.engine-letter { font-family: var(--font-mono); font-size: var(--fs-md); font-weight: 800; color: var(--text-pure); }
+.engine-label { font-family: var(--font-display); font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
 .engine-step-btn.active .engine-label { color: var(--text-pure); }
 
 .engine-display-panel {
@@ -560,25 +470,11 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
 }
-.engine-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.engine-list-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-}
-.engine-list-item::before {
-  content: '→';
-  color: var(--accent-cyan);
-  font-family: var(--font-mono);
-}
+.engine-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.engine-list-item { display: flex; align-items: center; gap: 0.75rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.engine-list-item::before { content: '→'; color: var(--accent-cyan); font-family: var(--font-mono); }
 
-/* ── 12. Creative Lifecycle Loop ─────────────────────────────────────────── */
+/* ── 13. Creative Lifecycle Track ─────────────────────────────────────────── */
 .lifecycle-track {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -599,19 +495,8 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--border-subtle);
   transform: translateY(-2px);
 }
-.lifecycle-node span {
-  font-family: var(--font-mono);
-  font-size: var(--fs-2xs);
-  color: var(--accent-cyan);
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.lifecycle-node h4 {
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
+.lifecycle-node span { font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--accent-cyan); display: block; margin-bottom: 0.5rem; }
+.lifecycle-node h4 { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 
 .lifecycle-feedback-loop {
   margin-top: 1.5rem;
@@ -625,18 +510,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-body);
 }
 
-/* ── 13. 3D Holographic Tilt ID Card (Talent Intelligence) ───────────────── */
+/* ── 14. 3D Holographic Tilt Card (Talent Intelligence) ───────────────────── */
 .talent-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 3.5rem;
   align-items: center;
 }
-
-.id-card-wrapper {
-  perspective: 1000px;
-}
-
+.id-card-wrapper { perspective: 1000px; }
 .id-card-preview {
   background: #09090e;
   border: 1px solid var(--border-medium);
@@ -648,8 +529,6 @@ h1, h2, h3, h4, h5, h6 {
   transform-style: preserve-3d;
   transition: transform 0.15s ease-out, box-shadow 0.3s;
 }
-
-/* Holographic Glare Overlay */
 .id-card-glare {
   position: absolute;
   inset: 0;
@@ -658,7 +537,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.6;
   mix-blend-mode: overlay;
 }
-
 .id-card-header {
   display: flex;
   justify-content: space-between;
@@ -666,12 +544,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
   margin-bottom: 1.25rem;
 }
-.id-card-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-block: 1.25rem;
-}
+.id-card-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block: 1.25rem; }
 .id-badge {
   font-family: var(--font-mono);
   font-size: var(--fs-2xs);
@@ -686,7 +559,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(0, 230, 118, 0.3);
 }
 
-/* ── 14. Interactive Multi-Format Aspect Ratio Switcher (Nothing is Wasted) ── */
+/* ── 15. Aspect Ratio Preview Switcher ────────────────────────────────────── */
 .aspect-switcher-box {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -698,7 +571,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   margin-top: 3rem;
 }
-
 .aspect-preview-viewport {
   background: #040406;
   border: 1px solid var(--border-hairline);
@@ -710,7 +582,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
 }
-
 .aspect-frame {
   border: 2px dashed var(--accent-cyan);
   background: rgba(0, 240, 255, 0.04);
@@ -721,24 +592,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s var(--ease-spring);
   position: relative;
 }
-.aspect-frame span {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--accent-cyan);
-  font-weight: 700;
-}
-
-/* Aspect states */
+.aspect-frame span { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent-cyan); font-weight: 700; }
 .aspect-frame[data-ratio="16-9"]  { width: 90%; height: 60%; }
 .aspect-frame[data-ratio="9-16"]  { width: 42%; height: 90%; }
 .aspect-frame[data-ratio="1-1"]   { width: 65%; height: 65%; }
 .aspect-frame[data-ratio="239-1"] { width: 95%; height: 44%; }
 
-.aspect-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+.aspect-buttons { display: flex; flex-direction: column; gap: 0.75rem; }
 .aspect-btn {
   padding: 0.85rem 1.25rem;
   border-radius: var(--radius-sm);
@@ -758,7 +618,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
-/* ── 15. Real-Time Radar & Market Intelligence ────────────────────────────── */
+/* ── 16. Real-Time Radar & Signals ────────────────────────────────────────── */
 .radar-signals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -776,32 +636,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 125px;
   transition: all 0.3s;
 }
-.signal-card:hover {
-  border-color: var(--border-subtle);
-  transform: translateY(-2px);
-}
-.signal-header {
-  font-family: var(--font-mono);
-  font-size: var(--fs-2xs);
-  color: var(--text-dim);
-  text-transform: uppercase;
-}
-.signal-value {
-  font-family: var(--font-display);
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  color: var(--text-pure);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.signal-indicator {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--accent-cyan);
-}
+.signal-card:hover { border-color: var(--border-subtle); transform: translateY(-2px); }
+.signal-header { font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--text-dim); text-transform: uppercase; }
+.signal-value { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 700; color: var(--text-pure); display: flex; align-items: center; gap: 0.5rem; }
+.signal-indicator { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent-cyan); }
 
-/* ── 16. The Signature Intelligence Loop ─────────────────────────────────── */
+/* ── 17. The Signature Intelligence Loop ─────────────────────────────────── */
 .loop-banner {
   background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, var(--bg-pitch) 70%);
   border: 1px solid var(--border-subtle);
@@ -819,16 +659,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
 }
-.loop-step {
-  padding: 0.5rem 1.1rem;
-  border-radius: var(--radius-full);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-pure);
-}
+.loop-step { padding: 0.5rem 1.1rem; border-radius: var(--radius-full); background: var(--bg-elevated); border: 1px solid var(--border-subtle); color: var(--text-pure); }
 .loop-arrow { color: var(--text-dim); }
 
-/* ── 17. Interactive Project Simulator ────────────────────────────────────── */
+/* ── 18. Interactive Project Simulator ────────────────────────────────────── */
 .simulator-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-medium);
@@ -840,13 +674,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sim-controls { display: flex; flex-direction: column; gap: 1.25rem; }
 .sim-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.sim-group label {
-  font-family: var(--font-mono);
-  font-size: var(--fs-2xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
+.sim-group label { font-family: var(--font-mono); font-size: var(--fs-2xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 .sim-select, .sim-input {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-subtle);
@@ -858,7 +686,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: inherit;
 }
 .sim-select option { background: #0b0b10; }
-
 .sim-output {
   background: #07070b;
   border: 1px solid var(--border-subtle);
@@ -868,81 +695,28 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
 }
-.sim-metrics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-.sim-metric-box {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-hairline);
-  padding: 1rem;
-  border-radius: var(--radius-sm);
-}
-.sim-metric-box small {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  display: block;
-}
-.sim-metric-box strong {
-  font-size: var(--fs-md);
-  color: var(--text-pure);
-}
+.sim-metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.sim-metric-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-hairline); padding: 1rem; border-radius: var(--radius-sm); }
+.sim-metric-box small { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; display: block; }
+.sim-metric-box strong { font-size: var(--fs-md); color: var(--text-pure); }
 
-/* ── 18. Who We Serve (12 Roles) ──────────────────────────────────────────── */
-.who-serve-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-}
-.serve-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  transition: all 0.25s;
-}
-.serve-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-subtle);
-  transform: translateY(-2px);
-}
-.serve-role {
-  font-family: var(--font-display);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text-pure);
-  margin-bottom: 0.4rem;
-}
-.serve-desc {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-  line-height: 1.55;
-}
+/* ── 19. Who We Serve ─────────────────────────────────────────────────────── */
+.who-serve-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.serve-card { background: var(--bg-card); border: 1px solid var(--border-hairline); border-radius: var(--radius-md); padding: 1.5rem; transition: all 0.25s; }
+.serve-card:hover { background: var(--bg-card-hover); border-color: var(--border-subtle); transform: translateY(-2px); }
+.serve-role { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 700; text-transform: uppercase; color: var(--text-pure); margin-bottom: 0.4rem; }
+.serve-desc { font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.55; }
 
-/* ── 19. Client Marquee ───────────────────────────────────────────────────── */
+/* ── 20. Client Marquee ───────────────────────────────────────────────────── */
 .marquee-container {
   overflow: hidden;
   position: relative;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
 }
-.marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  width: max-content;
-  animation: marquee 25s linear infinite;
-}
+.marquee-track { display: flex; align-items: center; gap: 3rem; width: max-content; animation: marquee 25s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee-item {
   flex-shrink: 0;
   height: 85px;
@@ -955,63 +729,20 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
 }
-.marquee-item img {
-  max-height: 55px;
-  max-width: 130px;
-  object-fit: contain;
-}
+.marquee-item img { max-height: 55px; max-width: 130px; object-fit: contain; }
 
-/* ── 20. Footer & Signatures ──────────────────────────────────────────────── */
-.footer {
-  background: var(--bg-pitch);
-  border-top: 1px solid var(--border-hairline);
-  padding-top: 5rem;
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding-bottom: 4rem;
-}
-.footer-brand p {
-  color: var(--text-muted);
-  font-size: var(--fs-sm);
-  margin-top: 1rem;
-  max-width: 32ch;
-  line-height: 1.6;
-}
-.footer-links h4 {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--text-pure);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1.25rem;
-}
+/* ── 21. Footer & Signatures ──────────────────────────────────────────────── */
+.footer { background: var(--bg-pitch); border-top: 1px solid var(--border-hairline); padding-top: 5rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 4rem; }
+.footer-brand p { color: var(--text-muted); font-size: var(--fs-sm); margin-top: 1rem; max-width: 32ch; line-height: 1.6; }
+.footer-links h4 { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-pure); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; }
 .footer-links ul { display: flex; flex-direction: column; gap: 0.65rem; }
 .footer-links a { font-size: var(--fs-xs); color: var(--text-muted); transition: color 0.2s; }
 .footer-links a:hover { color: var(--text-pure); }
 
-.founders-strip {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-hairline);
-}
-.founders-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-.founder-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
-  background: var(--bg-card);
-  border: 1px solid var(--border-hairline);
-  color: var(--text-body);
-}
+.founders-strip { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-hairline); }
+.founders-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.founder-tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: var(--radius-full); background: var(--bg-card); border: 1px solid var(--border-hairline); color: var(--text-body); }
 
 .footer-bottom {
   border-top: 1px solid var(--border-hairline);
@@ -1025,67 +756,25 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.4rem;
 }
 
-/* ── 21. Floating Action Buttons ──────────────────────────────────────────── */
-.floating-actions {
-  position: fixed;
-  bottom: 2rem;
-  right: 1.75rem;
-  z-index: 200;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-.fab {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
-  transition: all 0.25s;
-}
+/* ── 22. Floating Actions ─────────────────────────────────────────────────── */
+.floating-actions { position: fixed; bottom: 2rem; right: 1.75rem; z-index: 200; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.fab { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7); transition: all 0.25s; }
 .fab:hover { transform: translateY(-3px); }
 .fab svg { width: 22px; height: 22px; fill: #ffffff; }
 .fab--wa { background: #25d366; }
-.fab--top {
-  background: #ffffff;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: all 0.3s;
-}
+.fab--top { background: #ffffff; opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.3s; }
 .fab--top svg { fill: #030305; }
 .fab--top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
-/* ── 22. Scroll Reveal Animations ─────────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── 23. Responsive Adaptations ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .aspect-switcher-box, .simulator-card, .footer-top {
-    grid-template-columns: 1fr;
-  }
-  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .grid-2, .model-comparison, .talent-grid, .engine-display-panel, .aspect-switcher-box, .simulator-card, .footer-top, .scenario-flow { grid-template-columns: 1fr; }
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 768px) {
   .nav__links { display: none; }
-  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track {
-    grid-template-columns: 1fr;
-  }
+  .grid-3, .silos-grid, .radar-signals-grid, .who-serve-grid, .lifecycle-track { grid-template-columns: 1fr; }
   .hero__title { font-size: clamp(2.4rem, 10vw, 3.8rem); }
 }

@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- Subtle Film Grain Overlay -->
+  <!-- Subtle Film Grain Atmosphere -->
   <div class="film-grain" aria-hidden="true"></div>
 
   <!-- ===== 03: MINIMAL STICKY NAVIGATION ===== -->
@@ -47,11 +47,11 @@
     </nav>
   </header>
 
-  <!-- ===== 04: HERO SECTION WITH VIEWFINDER HUD & CONSTELLATION GRAPH ===== -->
+  <!-- ===== 04: HERO SECTION WITH VIEWFINDER HUD & LIVING PHOTONIC CANVAS ===== -->
   <section class="hero" id="hero" aria-label="Hero section">
     <canvas id="ecosystem-canvas"></canvas>
 
-    <!-- Viewfinder HUD Framing Marks -->
+    <!-- Viewfinder Framing Reticles -->
     <div class="viewfinder-hud" aria-hidden="true">
       <div class="hud-top">
         <div style="display:flex; align-items:center;">
@@ -94,15 +94,21 @@
     </div>
   </section>
 
-  <!-- ===== 05: THE PROBLEM: FRAGMENTATION & SILOS ===== -->
+  <!-- ===== 05: THE PROBLEM: INTERACTIVE SILOS & FRAGMENTATION ===== -->
   <section class="section" id="problem" aria-label="The Fragmentation Problem">
     <div class="container">
       <div class="section-header reveal">
         <div class="badge-tag"><span class="badge-dot"></span> The Structural Challenge</div>
         <h2 class="section-title">THE INDUSTRY IS FULL OF TALENT.<br /><span class="gradient-text">THE SYSTEM IS FULL OF SILOS.</span></h2>
         <p class="section-sub">
-          The creative industry has enormous resources, but they are fragmented across isolated companies, gear owners, vendors, studios, and disconnected workflows.
+          The creative industry already has millions of cameras, soundstages, technicians, and scripts. The issue is severe friction between disconnected participants.
         </p>
+      </div>
+
+      <!-- Interactive Silo State Switcher -->
+      <div class="silo-interactive-switch reveal">
+        <button class="silo-switch-btn active" data-mode="fragmented">⚠️ View Fragmented Silos</button>
+        <button class="silo-switch-btn" data-mode="orchestrated">✨ Connect with DIGISYNQ</button>
       </div>
 
       <div class="silos-grid reveal">
@@ -138,11 +144,46 @@
         </div>
       </div>
 
-      <div style="margin-top: 2.5rem; text-align: center;" class="reveal">
-        <p class="mono-tag" style="color: var(--text-body); font-size: var(--fs-sm);">
-          Fragmentation creates waste. Disconnected information creates uncertainty. Lost learning creates repeated mistakes.
+      <div style="margin-top: 2rem; text-align: center;" class="reveal">
+        <p class="mono-tag" id="silo-status-text" style="font-size: var(--fs-xs); color: var(--text-muted);">
+          ⚠️ FRAGMENTED STATE: Broken lines of communication create delayed schedules, idle assets, and wasted budget.
         </p>
       </div>
+
+      <!-- Real-World Concrete Scenario Breakdown -->
+      <div class="scenario-box reveal">
+        <div class="scenario-header">
+          <div>
+            <span class="mono-tag" style="color:var(--accent-cyan);">PRACTICAL ORCHESTRATION IN ACTION</span>
+            <h4 style="font-size:var(--fs-base); color:#fff; margin-top:0.25rem;">Scenario: ₹25L Commercial Shoot in 72 Hours</h4>
+          </div>
+          <span class="badge-tag" style="margin-bottom:0; font-size:0.68rem;">Zero Ownership Friction</span>
+        </div>
+
+        <div class="scenario-flow">
+          <div class="scenario-step">
+            <small>STEP 01 // COMPOSE</small>
+            <h5>Instant Talent Matching</h5>
+            <p>Director matches verified Grade A Cinematographer with 94% reliability and open 3-day calendar window.</p>
+          </div>
+          <div class="scenario-step">
+            <small>STEP 02 // ACCESS</small>
+            <h5>Lock Idle Studio Slots</h5>
+            <p>Soundstage booked during unutilized weekday window at 28% below standard peak rate.</p>
+          </div>
+          <div class="scenario-step">
+            <small>STEP 03 // RESILIENCE</small>
+            <h5>Plan B Body Provisioned</h5>
+            <p>Hot-swap standby camera body and alternate lighting vendor confirmed on standby with zero upfront penalty.</p>
+          </div>
+          <div class="scenario-step">
+            <small>STEP 04 // HARVEST</small>
+            <h5>12 Derived Assets</h5>
+            <p>Vertical reels and BTS captured concurrently on-set, delivering 12 platform cuts on master wrap.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

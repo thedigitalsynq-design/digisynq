@@ -1,6 +1,6 @@
 /* ==========================================================================
    DIGISYNQ — Creative Industry Intelligence & Orchestration Platform Engine
-   Ecosystem Canvas, 3D Card Tilt, Kinetic Type, Aspect Ratio Switcher & Simulator
+   Living Photonic Canvas, Silo Circuitry, 3D Card Tilt, Aspect Morph & Simulator
    ========================================================================== */
 
 (function () {
@@ -50,7 +50,7 @@
     });
   }
 
-  /* ── 2. Scroll Reveal Animations ───────────────────────────────────────── */
+  /* ── 2. Scroll Reveal Observer ─────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
     const observer = new IntersectionObserver((entries) => {
@@ -82,12 +82,13 @@
     }, 2800);
   }
 
-  /* ── 4. Living Ecosystem Graph Canvas (Hero Section) ───────────────────── */
+  /* ── 4. Living Photonic Ecosystem Canvas (Hero Section) ─────────────────── */
   const canvas = document.getElementById('ecosystem-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width, height;
     let nodes = [];
+    let packets = [];
     const labels = [
       'PEOPLE', 'SKILLS', 'EQUIPMENT', 'LOCATIONS',
       'STUDIOS', 'CAPITAL', 'CONTENT', 'MARKETS', 'AUDIENCES'
@@ -102,6 +103,7 @@
 
     function initNodes() {
       nodes = [];
+      packets = [];
       const centerX = width / 2;
       const centerY = height / 2;
       const radius = Math.min(width, height) * 0.38;
@@ -118,6 +120,14 @@
           vy: (Math.random() - 0.5) * 0.35,
           radius: 3.5,
           pulse: Math.random() * Math.PI * 2
+        });
+
+        // Initialize traveling photonic packet
+        packets.push({
+          nodeIndex: i,
+          progress: Math.random(),
+          speed: 0.003 + Math.random() * 0.004,
+          direction: Math.random() > 0.5 ? 1 : -1
         });
       });
     }
@@ -149,17 +159,15 @@
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Draw connection lines to center and adjacent nodes
+      // Draw Connection Lines & Nodes
       nodes.forEach((node, i) => {
         node.pulse += 0.025;
         node.x += node.vx;
         node.y += node.vy;
 
-        // Bounded oscillation
         if (Math.abs(node.x - node.baseX) > 22) node.vx *= -1;
         if (Math.abs(node.y - node.baseY) > 22) node.vy *= -1;
 
-        // Mouse interaction
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - node.x;
           const dy = mouse.y - node.y;
@@ -171,7 +179,7 @@
           }
         }
 
-        // Line to DIGISYNQ center
+        // Line to Center Hub
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(node.x, node.y);
@@ -179,7 +187,7 @@
         ctx.lineWidth = 1;
         ctx.stroke();
 
-        // Line to next node in ring
+        // Line to Next Node
         const nextNode = nodes[(i + 1) % nodes.length];
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
@@ -188,17 +196,35 @@
         ctx.lineWidth = 0.8;
         ctx.stroke();
 
-        // Draw node point
+        // Node Point
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fillStyle = '#ffffff';
         ctx.fill();
 
-        // Draw node label
+        // Node Label
         ctx.font = '10px "JetBrains Mono", monospace';
         ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
         ctx.textAlign = 'center';
         ctx.fillText(node.label, node.x, node.y - 10);
+      });
+
+      // Animate Flowing Photonic Packets
+      packets.forEach(pkt => {
+        pkt.progress += pkt.speed;
+        if (pkt.progress > 1) pkt.progress = 0;
+
+        const targetNode = nodes[pkt.nodeIndex];
+        const px = centerX + (targetNode.x - centerX) * pkt.progress;
+        const py = centerY + (targetNode.y - centerY) * pkt.progress;
+
+        ctx.beginPath();
+        ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = '#00f0ff';
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
       });
 
       requestAnimationFrame(animate);
@@ -206,7 +232,36 @@
     animate();
   }
 
-  /* ── 5. 3D Holographic Tilt on ID Card ─────────────────────────────────── */
+  /* ── 5. Interactive Silos-to-Connected Circuit Visualizer ───────────────── */
+  const siloSwitchBtns = document.querySelectorAll('.silo-switch-btn');
+  const siloBoxes      = document.querySelectorAll('.silo-box');
+  const siloStatusText = document.getElementById('silo-status-text');
+
+  if (siloSwitchBtns.length) {
+    siloSwitchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        siloSwitchBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.getAttribute('data-mode');
+
+        if (mode === 'orchestrated') {
+          siloBoxes.forEach(box => box.classList.add('connected'));
+          if (siloStatusText) {
+            siloStatusText.textContent = '✨ DIGISYNQ SYNCHRONIZED: Information, verified assets, and learning flow seamlessly across every division.';
+            siloStatusText.style.color = 'var(--accent-cyan)';
+          }
+        } else {
+          siloBoxes.forEach(box => box.classList.remove('connected'));
+          if (siloStatusText) {
+            siloStatusText.textContent = '⚠️ FRAGMENTED STATE: Broken lines of communication create delayed schedules, idle assets, and wasted budget.';
+            siloStatusText.style.color = 'var(--text-muted)';
+          }
+        }
+      });
+    });
+  }
+
+  /* ── 6. 3D Holographic Tilt on ID Card ─────────────────────────────────── */
   const idCard = document.querySelector('.id-card-preview');
   if (idCard) {
     idCard.addEventListener('mousemove', (e) => {
@@ -227,7 +282,7 @@
     });
   }
 
-  /* ── 6. Multi-Format Aspect Ratio Switcher ─────────────────────────────── */
+  /* ── 7. Multi-Format Aspect Ratio Switcher ─────────────────────────────── */
   const aspectBtns = document.querySelectorAll('.aspect-btn');
   const aspectFrame = document.getElementById('aspect-frame');
   const aspectText  = document.getElementById('aspect-text');
@@ -253,7 +308,7 @@
     });
   }
 
-  /* ── 7. ABCDEF Engine Stepper ───────────────────────────────────────────── */
+  /* ── 8. ABCDEF Engine Stepper ───────────────────────────────────────────── */
   const engineData = {
     A: {
       letter: "A",
@@ -369,7 +424,7 @@
     });
   }
 
-  /* ── 8. Interactive Project Simulator ──────────────────────────────────── */
+  /* ── 9. Interactive Project Simulator ──────────────────────────────────── */
   const simType = document.getElementById('sim-type');
   const simGenre = document.getElementById('sim-genre');
   const simBudget = document.getElementById('sim-budget');
@@ -433,7 +488,7 @@
     updateSimulation();
   }
 
-  /* ── 9. Contact Form Submissions & Fallback ────────────────────────────── */
+  /* ── 10. Contact Form Submissions & Fallback ───────────────────────────── */
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
   const submitBtn   = document.getElementById('submit-btn');
