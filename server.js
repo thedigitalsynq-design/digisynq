@@ -30,7 +30,7 @@ const PUBLIC_DIR = __dirname;
 const INSIGHTS_PROVIDER = (process.env.INSIGHTS_PROVIDER || 'gemini').toLowerCase();
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
-const INSIGHTS_CACHE_TTL_MS = 60 * 1000; // 1-minute cache to avoid rate limits
+const INSIGHTS_CACHE_TTL_MS = 5 * 60 * 1000; // 5-minute cache — keeps free-tier Gemini usage well under daily limits
 
 // In-Memory Database (seeded with verified ecosystem records)
 const db = {
@@ -267,13 +267,37 @@ function httpsJson(hostname, pathname, headers, body) {
   });
 }
 
+const RETRYABLE_CODES = new Set([429, 500, 503]);
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * httpsJson with backoff retries for transient overload/quota codes (429/500/503).
+ */
+async function httpsJsonWithRetry(hostname, pathname, headers, body, attempts = 3) {
+  let lastErr = null;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      return await httpsJson(hostname, pathname, headers, body);
+    } catch (err) {
+      lastErr = err;
+      const m = /API (\d{3})/.exec(err.message);
+      const code = m ? Number(m[1]) : 0;
+      if (!RETRYABLE_CODES.has(code) || attempt === attempts - 1) break;
+      await sleep(1000 * Math.pow(2, attempt)); // 1s, 2s backoff
+    }
+  }
+  throw lastErr;
+}
+
 /**
  * Calls the configured AI provider and returns a raw text answer.
  * Supports gemini (default) and openai.
  */
 async function aiGenerate(systemPrompt, userPrompt, temperature) {
   if (INSIGHTS_PROVIDER === 'openai' && OPENAI_API_KEY) {
-    const out = await httpsJson(
+    const out = await httpsJsonWithRetry(
       'api.openai.com',
       '/v1/chat/completions',
       { Authorization: `Bearer ${OPENAI_API_KEY}` },
@@ -295,7 +319,7 @@ async function aiGenerate(systemPrompt, userPrompt, temperature) {
     let lastErr = null;
     for (const model of models) {
       try {
-        const out = await httpsJson(
+        const out = await httpsJsonWithRetry(
           'generativelanguage.googleapis.com',
           `/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
           {},
