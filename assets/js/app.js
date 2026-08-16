@@ -1,26 +1,26 @@
 /* ==========================================================================
    DIGISYNQ — THE NETWORK BETWEEN THE DOTS.
-   Cinema Operating Network — High-Kinetic Interaction Engine
-   Plugins: Lenis (Smooth Scroll), Lucide (Icons), Vanilla-Tilt (3D Physics)
+   Interaction Engine v9.0 — Material Design 3 × High-Kinetic Motion
+   Plugins: Lenis (Smooth Scroll) · Lucide (Icons) · VanillaTilt (3D Physics)
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  /* ── 0. Open-Source Plugin Initializations ──────────────────────────────── */
-  // 1. Lenis Smooth Momentum Scroll
+  /* ── 0. Open-Source Plugin Init ─────────────────────────────────────────── */
+
+  // 1. Lenis Momentum Scroll
   let lenisInstance = null;
   if (typeof Lenis !== 'undefined') {
     lenisInstance = new Lenis({
-      duration: 1.15,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.8
+      wheelMultiplier: 0.85,
+      touchMultiplier: 1.75
     });
-
     function raf(time) {
       lenisInstance.raf(time);
       requestAnimationFrame(raf);
@@ -28,7 +28,7 @@
     requestAnimationFrame(raf);
   }
 
-  // 2. Lucide Open-Source Icons
+  // 2. Lucide Icons
   function initIcons() {
     if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
       lucide.createIcons();
@@ -40,17 +40,19 @@
     initIcons();
   }
 
-  // 3. Vanilla-Tilt 3D Physics Glare
+  // 3. VanillaTilt 3D Physics
   function initTilt() {
     if (typeof VanillaTilt !== 'undefined') {
-      const tiltCards = document.querySelectorAll('.spotlight-card, .idle-card, .capability-card, .abc-card, .bm-card');
-      VanillaTilt.init(tiltCards, {
-        max: 5,
-        speed: 500,
+      const tiltEls = document.querySelectorAll(
+        '.spotlight-card, .idle-card, .capability-card, .abc-card, .bm-card'
+      );
+      VanillaTilt.init(tiltEls, {
+        max: 4,
+        speed: 600,
         glare: true,
-        'max-glare': 0.12,
-        scale: 1.01,
-        perspective: 1200
+        'max-glare': 0.10,
+        scale: 1.012,
+        perspective: 1400
       });
     }
   }
@@ -60,7 +62,38 @@
     initTilt();
   }
 
-  /* ── 1. Sticky Navigation & Scroll Spy ─────────────────────────────────── */
+  /* ── 1. M3 Ripple Effect on Buttons ───────────────────────────────────── */
+  function createRipple(btn, e) {
+    const rect = btn.getBoundingClientRect();
+    const x = e ? e.clientX - rect.left : rect.width / 2;
+    const y = e ? e.clientY - rect.top  : rect.height / 2;
+    const size = Math.max(rect.width, rect.height) * 2;
+
+    const ripple = document.createElement('span');
+    ripple.style.cssText = `
+      position:absolute; border-radius:50%; pointer-events:none;
+      width:${size}px; height:${size}px;
+      top:${y - size/2}px; left:${x - size/2}px;
+      background: rgba(255,255,255,0.15);
+      transform:scale(0); animation:md-ripple 500ms cubic-bezier(0.2,0,0,1) forwards;
+    `;
+    if (!document.getElementById('md-ripple-style')) {
+      const style = document.createElement('style');
+      style.id = 'md-ripple-style';
+      style.textContent = '@keyframes md-ripple { to { transform:scale(1); opacity:0; } }';
+      document.head.appendChild(style);
+    }
+    btn.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  }
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.style.position = 'relative';
+    btn.style.overflow = 'hidden';
+    btn.addEventListener('click', (e) => createRipple(btn, e));
+  });
+
+  /* ── 2. Sticky Navigation & Scroll Spy ──────────────────────────────────── */
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
@@ -68,105 +101,126 @@
 
   function handleScroll() {
     const y = window.scrollY;
-    if (nav) {
-      nav.classList.toggle('scrolled', y > 40);
-    }
-    if (fabTop) {
-      fabTop.classList.toggle('visible', y > 450);
-    }
+    if (nav) nav.classList.toggle('scrolled', y > 40);
+    if (fabTop) fabTop.classList.toggle('visible', y > 500);
 
     let current = '';
     sections.forEach(sec => {
-      if (y >= sec.offsetTop - 140) {
-        current = sec.id;
-      }
+      if (y >= sec.offsetTop - 150) current = sec.id;
     });
-
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
   }
-
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
   if (fabTop) {
     fabTop.addEventListener('click', () => {
-      if (lenisInstance) {
-        lenisInstance.scrollTo(0, { duration: 1.2 });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.1 });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  /* ── 2. Mobile Menu Drawer ─────────────────────────────────────────────── */
+  /* ── 3. Mobile Menu Drawer ────────────────────────────────────────────── */
   const menuBtn = document.getElementById('menu-btn');
-  const drawer = document.getElementById('nav-drawer');
+  const drawer  = document.getElementById('nav-drawer');
 
   if (menuBtn && drawer) {
     menuBtn.addEventListener('click', () => {
       const open = drawer.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', open);
+      menuBtn.classList.toggle('open', open);
     });
-
     drawer.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         drawer.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.classList.remove('open');
       });
     });
   }
 
-  /* ── 3. Scroll Reveal Observer ─────────────────────────────────────────── */
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && reveals.length) {
-    const observer = new IntersectionObserver((entries) => {
+  /* ── 4. M3 Scroll Reveal — Stagger Groups ─────────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in');
-          observer.unobserve(entry.target);
+          revealObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    reveals.forEach(el => observer.observe(el));
+    }, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
   }
 
-  /* ── 4. Mouse-Following Spotlight Physics on Cards ─────────────────────── */
-  const spotlightCards = document.querySelectorAll('.spotlight-card, .idle-card, .abc-card, .bm-card, .recycle-card, .shift-col, .not-col');
+  /* ── 5. Mouse-Following Spotlight Physics ─────────────────────────────── */
+  const spotlightCards = document.querySelectorAll(
+    '.spotlight-card, .idle-card, .abc-card, .bm-card, .recycle-card, .shift-col, .not-col'
+  );
   spotlightCards.forEach(card => {
     card.classList.add('spotlight-card');
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--spot-x', `${x}px`);
-      card.style.setProperty('--spot-y', `${y}px`);
+      card.style.setProperty('--spot-x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--spot-y', `${e.clientY - rect.top}px`);
     });
   });
 
-  /* ── 5. Living Kinetic Dot Canvas (Hero Network) ────────────────────────── */
+  /* ── 6. Number Counter Animation (Stats) ─────────────────────────────── */
+  function animateCount(el) {
+    const target = parseFloat(el.dataset.count || el.textContent.replace(/[^\d.]/g, ''));
+    const suffix = el.textContent.replace(/[\d.]/g, '');
+    const dur = 1200;
+    const start = performance.now();
+    const isInt = Number.isInteger(target);
+
+    function step(now) {
+      const progress = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = target * ease;
+      el.textContent = (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const countEls = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window && countEls.length) {
+    const countObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(el => countObs.observe(el));
+  }
+
+  /* ── 7. Living Kinetic Dot Canvas (Hero Network) ─────────────────────── */
   const canvas = document.getElementById('dot-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let W, H;
     let dots = [];
     let pulses = [];
-    let mouse = { x: null, y: null, radius: 220 };
+    let mouse = { x: null, y: null, radius: 230 };
     let activeCluster = 'all';
+    let animFrame;
 
     const DOT_TYPES = [
-      { label: 'TALENT', color: '#e8b84b', cluster: 'people' },
-      { label: 'PROJECT', color: '#3ee0c0', cluster: 'work' },
-      { label: 'EQUIPMENT', color: '#e8b84b', cluster: 'assets' },
-      { label: 'STUDIO', color: '#e8b84b', cluster: 'assets' },
-      { label: 'LOCATION', color: '#e8b84b', cluster: 'assets' },
-      { label: 'KNOWLEDGE', color: '#3ee0c0', cluster: 'intel' },
-      { label: 'MENTOR', color: '#e8b84b', cluster: 'people' },
-      { label: 'AUDIENCE', color: '#3ee0c0', cluster: 'intel' },
-      { label: 'DISTRIBUTION', color: '#3ee0c0', cluster: 'work' },
-      { label: 'OPPORTUNITY', color: '#ffd066', cluster: 'work' }
+      { label: 'TALENT',       color: '#f5f5f5', cluster: 'people' },
+      { label: 'PROJECT',      color: '#cccccc', cluster: 'work'   },
+      { label: 'EQUIPMENT',    color: '#e8e8e8', cluster: 'assets' },
+      { label: 'STUDIO',       color: '#d4d4d4', cluster: 'assets' },
+      { label: 'LOCATION',     color: '#bbbbb0', cluster: 'assets' },
+      { label: 'KNOWLEDGE',    color: '#dddddd', cluster: 'intel'  },
+      { label: 'MENTOR',       color: '#eeeeee', cluster: 'people' },
+      { label: 'AUDIENCE',     color: '#c8c8c8', cluster: 'intel'  },
+      { label: 'DISTRIBUTION', color: '#d8d8d8', cluster: 'work'   },
+      { label: 'OPPORTUNITY',  color: '#ffffff', cluster: 'work'   }
     ];
 
     function resize() {
@@ -176,34 +230,33 @@
     }
 
     function initDots() {
-      dots = [];
-      pulses = [];
-      const numDots = Math.min(Math.floor((W * H) / 12000), 55);
+      dots = []; pulses = [];
+      const numDots = Math.min(Math.floor((W * H) / 11000), 60);
 
       for (let i = 0; i < numDots; i++) {
-        const typeObj = DOT_TYPES[i % DOT_TYPES.length];
+        const t = DOT_TYPES[i % DOT_TYPES.length];
         dots.push({
           id: i,
           x: Math.random() * W,
           y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          baseRadius: 2.8 + Math.random() * 2,
+          vx: (Math.random() - 0.5) * 0.38,
+          vy: (Math.random() - 0.5) * 0.38,
+          baseRadius: 2.5 + Math.random() * 2.2,
           radius: 3,
-          label: typeObj.label,
-          color: typeObj.color,
-          cluster: typeObj.cluster,
-          pulse: Math.random() * Math.PI * 2
+          label: t.label,
+          color: t.color,
+          cluster: t.cluster,
+          pulse: Math.random() * Math.PI * 2,
+          opacity: 0.6 + Math.random() * 0.4
         });
       }
 
-      // Traveling photonic packet pulses
-      for (let p = 0; p < 8; p++) {
+      for (let p = 0; p < 10; p++) {
         pulses.push({
           sourceIndex: Math.floor(Math.random() * numDots),
           targetIndex: Math.floor(Math.random() * numDots),
           progress: Math.random(),
-          speed: 0.004 + Math.random() * 0.006
+          speed: 0.003 + Math.random() * 0.005
         });
       }
     }
@@ -211,17 +264,13 @@
     window.addEventListener('resize', resize);
     resize();
 
-    window.addEventListener('mousemove', (e) => {
+    canvas.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     });
-    window.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
+    canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
-    // Handle filter pills
     const pills = document.querySelectorAll('.hero-node-pill');
     pills.forEach(pill => {
       pill.addEventListener('click', () => {
@@ -234,74 +283,67 @@
     function draw() {
       ctx.clearRect(0, 0, W, H);
 
-      // Draw Connections
+      // Draw connections
       for (let i = 0; i < dots.length; i++) {
         for (let j = i + 1; j < dots.length; j++) {
-          const d1 = dots[i];
-          const d2 = dots[j];
-          const dx = d1.x - d2.x;
-          const dy = d1.y - d2.y;
+          const d1 = dots[i], d2 = dots[j];
+          const dx = d1.x - d2.x, dy = d1.y - d2.y;
           const dist = Math.hypot(dx, dy);
-
-          const isMatchingCluster = (activeCluster === 'all' || d1.cluster === activeCluster || d2.cluster === activeCluster);
-          const maxDist = isMatchingCluster ? 155 : 100;
+          const isMatch = (activeCluster === 'all' || d1.cluster === activeCluster || d2.cluster === activeCluster);
+          const maxDist = isMatch ? 165 : 90;
 
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * (isMatchingCluster ? 0.25 : 0.06);
+            const alpha = (1 - dist / maxDist) * (isMatch ? 0.22 : 0.04);
             ctx.beginPath();
             ctx.moveTo(d1.x, d1.y);
             ctx.lineTo(d2.x, d2.y);
-            ctx.strokeStyle = `rgba(232, 184, 75, ${alpha})`;
-            ctx.lineWidth = (d1.cluster === d2.cluster && isMatchingCluster) ? 1.2 : 0.6;
+            ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+            ctx.lineWidth = (d1.cluster === d2.cluster && isMatch) ? 1.1 : 0.5;
             ctx.stroke();
           }
         }
       }
 
-      // Draw and update Dots
+      // Draw dots
       dots.forEach(d => {
-        d.pulse += 0.035;
+        d.pulse += 0.03;
         d.x += d.vx;
         d.y += d.vy;
+        if (d.x < 12 || d.x > W - 12) d.vx *= -1;
+        if (d.y < 12 || d.y > H - 12) d.vy *= -1;
 
-        if (d.x < 15 || d.x > W - 15) d.vx *= -1;
-        if (d.y < 15 || d.y > H - 15) d.vy *= -1;
-
-        // Mouse repulsion physics
         if (mouse.x !== null) {
-          const dx = mouse.x - d.x;
-          const dy = mouse.y - d.y;
+          const dx = mouse.x - d.x, dy = mouse.y - d.y;
           const dist = Math.hypot(dx, dy);
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            d.x -= (dx / dist) * force * 2.8;
-            d.y -= (dy / dist) * force * 2.8;
+            d.x -= (dx / dist) * force * 3.2;
+            d.y -= (dy / dist) * force * 3.2;
           }
         }
 
         const isHighlighted = (activeCluster === 'all' || d.cluster === activeCluster);
-        const currentRadius = isHighlighted ? (d.baseRadius + Math.sin(d.pulse) * 1.2) : 2;
+        const r = isHighlighted ? (d.baseRadius + Math.sin(d.pulse) * 1.1) : 1.8;
 
         ctx.beginPath();
-        ctx.arc(d.x, d.y, currentRadius, 0, Math.PI * 2);
-        ctx.fillStyle = isHighlighted ? d.color : 'rgba(255,255,255,0.12)';
+        ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = isHighlighted ? d.color : 'rgba(255,255,255,0.08)';
         if (isHighlighted) {
-          ctx.shadowBlur = 12;
-          ctx.shadowColor = d.color;
+          ctx.shadowBlur = 14;
+          ctx.shadowColor = 'rgba(255,255,255,0.8)';
         }
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // Label on desktop
         if (W > 768 && isHighlighted) {
           ctx.font = '9px "JetBrains Mono", monospace';
-          ctx.fillStyle = 'rgba(251, 251, 254, 0.55)';
+          ctx.fillStyle = 'rgba(255,255,255,0.4)';
           ctx.textAlign = 'center';
-          ctx.fillText(d.label, d.x, d.y + 14);
+          ctx.fillText(d.label, d.x, d.y + 15);
         }
       });
 
-      // Traveling Photonic Packets
+      // Traveling photon packets
       pulses.forEach(pkt => {
         pkt.progress += pkt.speed;
         if (pkt.progress > 1) {
@@ -309,27 +351,28 @@
           pkt.sourceIndex = Math.floor(Math.random() * dots.length);
           pkt.targetIndex = Math.floor(Math.random() * dots.length);
         }
-        const s = dots[pkt.sourceIndex];
-        const t = dots[pkt.targetIndex];
+        const s = dots[pkt.sourceIndex], t = dots[pkt.targetIndex];
         if (s && t) {
           const px = s.x + (t.x - s.x) * pkt.progress;
           const py = s.y + (t.y - s.y) * pkt.progress;
+          // Fade in/out at edges of travel
+          const fadeAlpha = Math.sin(pkt.progress * Math.PI);
           ctx.beginPath();
-          ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#ffd066';
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = '#ffd066';
+          ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${fadeAlpha})`;
+          ctx.shadowBlur = 16;
+          ctx.shadowColor = `rgba(255,255,255,${fadeAlpha * 0.7})`;
           ctx.fill();
           ctx.shadowBlur = 0;
         }
       });
 
-      requestAnimationFrame(draw);
+      animFrame = requestAnimationFrame(draw);
     }
     draw();
   }
 
-  /* ── 6. 10-Step Mechanism Interactive Engine ───────────────────────────── */
+  /* ── 8. 10-Step Mechanism Interactive Engine ─────────────────────────── */
   const mechData = {
     '1': {
       num: "01 // DISCOVER",
@@ -342,7 +385,7 @@
       num: "02 // VERIFY",
       title: "Verify Evidence, Not Claims",
       desc: "Authenticate capability through actual wrap logs, portfolio breakdowns, peer confirmations, and equipment maintenance history.",
-      example: "Scenario: DOP's low-light narrative competency is authenticated via 4 verified feature film wrap logs and colorist feedback.",
+      example: "Scenario: DOP's low-light narrative competency authenticated via 4 verified feature film wrap logs and colorist feedback.",
       chain: ["Review Project Wraps", "Validate Equipment Handoffs", "Certify Capability Profile"]
     },
     '3': {
@@ -403,37 +446,52 @@
     }
   };
 
-  const mechBtns = document.querySelectorAll('.mech-step');
-  const mechDetailNum = document.getElementById('mech-detail-num');
-  const mechDetailTitle = document.getElementById('mech-detail-title');
+  const mechBtns       = document.querySelectorAll('.mech-step');
+  const mechDetailNum  = document.getElementById('mech-detail-num');
+  const mechDetailTitle= document.getElementById('mech-detail-title');
   const mechDetailDesc = document.getElementById('mech-detail-desc');
-  const mechDetailEx = document.getElementById('mech-detail-ex');
-  const mechChainEl = document.getElementById('mech-chain');
+  const mechDetailEx   = document.getElementById('mech-detail-ex');
+  const mechChainEl    = document.getElementById('mech-chain');
+  const mechDetail     = document.querySelector('.mech-detail');
+
+  function updateMechDetail(data) {
+    if (!mechDetailTitle) return;
+    // Animate out
+    if (mechDetail) {
+      mechDetail.style.opacity = '0';
+      mechDetail.style.transform = 'translateY(8px)';
+    }
+    setTimeout(() => {
+      if (mechDetailNum)   mechDetailNum.textContent   = data.num;
+      if (mechDetailTitle) mechDetailTitle.textContent = data.title;
+      if (mechDetailDesc)  mechDetailDesc.textContent  = data.desc;
+      if (mechDetailEx)    mechDetailEx.textContent    = data.example;
+      if (mechChainEl) {
+        mechChainEl.innerHTML = data.chain.map(c =>
+          `<div class="mech-chain-step current">${c}</div>`
+        ).join('');
+      }
+      if (mechDetail) {
+        mechDetail.style.transition = 'opacity 300ms, transform 300ms cubic-bezier(0.05,0.7,0.1,1)';
+        mechDetail.style.opacity = '1';
+        mechDetail.style.transform = 'translateY(0)';
+      }
+    }, 150);
+  }
 
   if (mechBtns.length && mechDetailTitle) {
     mechBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         mechBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const step = btn.getAttribute('data-step');
-        const data = mechData[step];
-        if (data) {
-          mechDetailNum.textContent = data.num;
-          mechDetailTitle.textContent = data.title;
-          mechDetailDesc.textContent = data.desc;
-          mechDetailEx.textContent = data.example;
-          if (mechChainEl) {
-            mechChainEl.innerHTML = data.chain.map(c => `
-              <div class="mech-chain-step current">${c}</div>
-            `).join('');
-          }
-        }
+        const data = mechData[btn.getAttribute('data-step')];
+        if (data) updateMechDetail(data);
       });
     });
   }
 
-  /* ── 7. Plan A/B/C Interactive Switcher ────────────────────────────────── */
-  const planTabs = document.querySelectorAll('.plan-tab');
+  /* ── 9. Plan A/B/C Switcher ──────────────────────────────────────────── */
+  const planTabs   = document.querySelectorAll('.plan-tab');
   const planPanels = document.querySelectorAll('.plan-panel');
 
   if (planTabs.length && planPanels.length) {
@@ -442,39 +500,62 @@
         const plan = tab.getAttribute('data-plan');
         planTabs.forEach(t => t.classList.remove('active'));
         planPanels.forEach(p => p.classList.remove('active'));
-
         tab.classList.add('active');
-        const targetPanel = document.getElementById(`panel-plan-${plan.toLowerCase()}`);
-        if (targetPanel) {
-          targetPanel.classList.add('active');
-        }
+        const panel = document.getElementById(`panel-plan-${plan.toLowerCase()}`);
+        if (panel) panel.classList.add('active');
       });
     });
   }
 
-  /* ── 8. Smooth Internal Anchor Navigation ──────────────────────────────── */
+  /* ── 10. Smooth Internal Anchor Navigation ───────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#' || targetId === '#top') {
         e.preventDefault();
-        if (lenisInstance) {
-          lenisInstance.scrollTo(0, { duration: 1.2 });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.1 });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        if (lenisInstance) {
-          lenisInstance.scrollTo(targetEl, { duration: 1.2, offset: -80 });
-        } else {
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (lenisInstance) lenisInstance.scrollTo(targetEl, { duration: 1.1, offset: -82 });
+        else targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
+
+  /* ── 11. Section Progress Indicator ─────────────────────────────────── */
+  const progressBar = document.createElement('div');
+  progressBar.style.cssText = `
+    position:fixed; top:0; left:0; z-index:9999;
+    height:1.5px; width:0%;
+    background:rgba(255,255,255,0.7);
+    transition:width 100ms linear;
+    pointer-events:none;
+  `;
+  document.body.appendChild(progressBar);
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress  = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* ── 12. Parallax Depth on Hero Text ────────────────────────────────── */
+  const heroPara = document.querySelector('.hero-h1');
+  const heroSub  = document.querySelector('.hero-sub');
+
+  function onScrollParallax() {
+    if (!heroPara) return;
+    const y = window.scrollY;
+    heroPara.style.transform = `translateY(${y * 0.12}px)`;
+    if (heroSub) heroSub.style.transform = `translateY(${y * 0.07}px)`;
+  }
+  window.addEventListener('scroll', onScrollParallax, { passive: true });
 
 })();
