@@ -1,33 +1,32 @@
 /* ============================================================
    DIGISYNQ — app.js
-   Handles: Sticky nav, mobile menu, scroll reveals, form
+   Interactive Ecosystem, Node Network, ABCDEF & Navigation Logic
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ── Sticky Nav ──────────────────────────────────────────── */
+  /* ── 1. Sticky Navigation ─────────────────────────────────── */
   const navWrapper = document.querySelector('.nav-wrapper');
   const NAV_SCROLL_THRESHOLD = 40;
 
   function handleNavScroll() {
+    if (!navWrapper) return;
     if (window.scrollY > NAV_SCROLL_THRESHOLD) {
       navWrapper.classList.add('scrolled');
     } else {
       navWrapper.classList.remove('scrolled');
     }
   }
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll();
 
-  if (navWrapper) {
-    window.addEventListener('scroll', handleNavScroll, { passive: true });
-    handleNavScroll();
-  }
-
-  /* ── Mobile Menu ─────────────────────────────────────────── */
+  /* ── 2. Mobile Menu ────────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
 
   function toggleMenu(open) {
+    if (!hamburger || !navLinks) return;
     const isOpen = open !== undefined ? open : !hamburger.classList.contains('open');
     hamburger.classList.toggle('open', isOpen);
     navLinks.classList.toggle('open', isOpen);
@@ -37,50 +36,23 @@
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => toggleMenu());
-
-    // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => toggleMenu(false));
     });
-
-    // Close menu on outside click
     document.addEventListener('click', (e) => {
       if (!navWrapper.contains(e.target)) toggleMenu(false);
     });
-
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') toggleMenu(false);
     });
   }
 
-  /* ── Scroll Reveal (IntersectionObserver) ─────────────────── */
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if (revealEls.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            // Stagger cards in a grid
-            const delay = entry.target.closest('.services__grid, .about__cards, .ecosystem__nodes')
-              ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 60
-              : 0;
-            setTimeout(() => entry.target.classList.add('visible'), delay);
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    revealEls.forEach(el => revealObserver.observe(el));
-  }
-
-  /* ── Smooth Scroll for anchor links ──────────────────────── */
+  /* ── 3. Smooth Scrolling ───────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -88,139 +60,124 @@
     });
   });
 
-  /* ── Active Nav Link on Scroll ───────────────────────────── */
-  const sections   = document.querySelectorAll('section[id]');
+  /* ── 4. Scroll Reveal Animations ───────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  /* ── 5. Active Nav Link on Scroll ──────────────────────────── */
+  const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav__links a[href*="#"]');
 
   function updateActiveLink() {
     let current = '';
     sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
     });
     navAnchors.forEach(a => {
       a.classList.toggle('active', a.getAttribute('href').includes(current));
     });
   }
-
   if (sections.length && navAnchors.length) {
     window.addEventListener('scroll', updateActiveLink, { passive: true });
     updateActiveLink();
   }
 
-  /* ── Contact Form Validation & UX ────────────────────────── */
-  const contactForm  = document.getElementById('contact-form');
-  const formSuccess  = document.getElementById('form-success');
-  const submitBtn    = document.getElementById('submit-btn');
-
-  if (contactForm) {
-    const fields = {
-      name:    { el: document.getElementById('name'),    err: document.getElementById('name-error')    },
-      email:   { el: document.getElementById('email'),   err: document.getElementById('email-error')   },
-      message: { el: document.getElementById('message'), err: document.getElementById('message-error') },
-    };
-
-    function validateField(name) {
-      const { el, err } = fields[name];
-      let msg = '';
-      if (name === 'name'    && !el.value.trim())              msg = 'Name is required.';
-      if (name === 'email'   && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) msg = 'Enter a valid email.';
-      if (name === 'message' && el.value.trim().length < 20)  msg = 'Message must be at least 20 characters.';
-      err.textContent = msg;
-      el.classList.toggle('input-error', !!msg);
-      return !msg;
+  /* ── 6. Interactive Ecosystem Node Switcher ────────────────── */
+  const ecoData = {
+    brands: {
+      title: "BRANDS",
+      desc: "Connects with creators for product storytelling, studios for high-end production, influencers for niche reach, photographers for catalog shoots, and campaign teams for full digital launches."
+    },
+    creators: {
+      title: "CREATORS & TALENT",
+      desc: "Connects with relevant brands for paid collaborations, studios for professional equipment & space, video editors for post-production speed, and campaign managers for scale."
+    },
+    studios: {
+      title: "STUDIOS & SPACES",
+      desc: "Connects with brands requiring product shoots, creators looking for rental sets, production crews needing soundstages, and technicians ready to operate gear."
+    },
+    technicians: {
+      title: "TECHNICIANS & OPERATORS",
+      desc: "Connects with high-production studio bookings, brand commercial shoots, creative directors, and independent agencies needing specialized execution skills."
+    },
+    editors: {
+      title: "EDITORS & POST-PRODUCTION",
+      desc: "Connects with creators needing high-velocity short-form reels, agencies running multi-platform campaigns, and brands wanting broadcast-quality promotional cuts."
+    },
+    photographers: {
+      title: "PHOTOGRAPHERS & DESIGNERS",
+      desc: "Connects with brands needing visual identity & e-commerce catalogs, creators needing thumbnail & cover art, and businesses launching promotional campaigns."
+    },
+    businesses: {
+      title: "BUSINESSES & STARTUPS",
+      desc: "Connects with end-to-end digital launch teams, content strategists, performance marketers, and creator networks to gain market presence without overhead."
+    },
+    professionals: {
+      title: "DIGITAL PROFESSIONALS",
+      desc: "Connects with high-impact collaborative projects, consultancy mandates, client campaigns, and cross-functional teams looking for specialized problem solving."
     }
+  };
 
-    Object.keys(fields).forEach(name => {
-      fields[name].el.addEventListener('blur', () => validateField(name));
-      fields[name].el.addEventListener('input', () => {
-        if (fields[name].err.textContent) validateField(name);
+  const ecoPills = document.querySelectorAll('.eco-pill');
+  const previewTitle = document.getElementById('eco-preview-title');
+  const previewDesc = document.getElementById('eco-preview-desc');
+
+  if (ecoPills.length && previewTitle && previewDesc) {
+    ecoPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        ecoPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const key = pill.getAttribute('data-node');
+        if (ecoData[key]) {
+          previewTitle.textContent = ecoData[key].title;
+          previewDesc.textContent = ecoData[key].desc;
+        }
+      });
+
+      pill.addEventListener('mouseenter', () => {
+        const key = pill.getAttribute('data-node');
+        if (ecoData[key]) {
+          previewTitle.textContent = ecoData[key].title;
+          previewDesc.textContent = ecoData[key].desc;
+        }
       });
     });
+  }
 
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const valid = Object.keys(fields).every(validateField);
-      if (!valid) return;
+  /* ── 7. Interactive Hub Nodes Hover (The Gap Visualizer) ───── */
+  const hubNodes = document.querySelectorAll('.hub-node');
+  const hubCenter = document.querySelector('.hub-center');
 
-      const btnText = submitBtn.querySelector('.btn-text');
-      btnText.textContent = 'Sending…';
-      submitBtn.disabled = true;
-
-      // Try Formspree or simulate success
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' },
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          formSuccess.hidden = false;
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
-          throw new Error('Server error');
-        }
-      } catch {
-        // Fallback: open mailto
-        const name    = fields.name.el.value;
-        const email   = fields.email.el.value;
-        const msg     = fields.message.el.value;
-        const service = document.getElementById('service')?.value || '';
-        const subject = encodeURIComponent(`DIGISYNQ Inquiry — ${service || 'General'}`);
-        const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${msg}`);
-        window.open(`mailto:hello@digisynq.com?subject=${subject}&body=${body}`, '_blank');
-        formSuccess.textContent = '✅ Opening your email client…';
-        formSuccess.hidden = false;
-      } finally {
-        btnText.textContent = 'Send Message';
-        submitBtn.disabled = false;
-      }
+  if (hubNodes.length && hubCenter) {
+    hubNodes.forEach(node => {
+      node.addEventListener('mouseenter', () => {
+        const text = node.textContent.trim();
+        hubCenter.innerHTML = `<span style="font-size:0.75rem; color:#050507; font-weight:800;">CONNECT</span><small style="font-size:0.6rem; color:#444;">${text}</small>`;
+      });
+      node.addEventListener('mouseleave', () => {
+        hubCenter.innerHTML = `DIGISYNQ<small>Connection Layer</small>`;
+      });
     });
   }
 
-  /* ── Ecosystem Nodes Micro-animation ──────────────────────── */
-  const ecoNodes = document.querySelectorAll('.eco-node:not(.eco-node--center)');
-  ecoNodes.forEach((node, i) => {
-    node.style.animationDelay = `${i * 0.15}s`;
-    node.style.animation = `float ${4 + (i % 3)}s ease-in-out infinite`;
-    node.style.animationDelay = `${i * -0.8}s`;
-  });
-
-  /* ── Stats Counter Animation ──────────────────────────────── */
-  function animateCounter(el, target, duration = 1800) {
-    const isSpecial = ['∞', '°', '+'].some(c => target.includes(c));
-    if (isSpecial) { el.textContent = target; return; }
-    const num = parseFloat(target);
-    const suffix = target.replace(/[\d.]/g, '');
-    let start = null;
-    function step(ts) {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(num * ease) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  const statNums = document.querySelectorAll('.stat__num');
-  const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target, entry.target.textContent);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNums.forEach(el => counterObserver.observe(el));
-
-  /* ── Back to Top Button ───────────────────────────────────── */
+  /* ── 8. Back to Top Button ─────────────────────────────────── */
   const backToTopBtn = document.getElementById('back-to-top-btn');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 350) {
         backToTopBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
@@ -232,5 +189,67 @@
     });
   }
 
-})();
+  /* ── 9. Contact Form Handling ──────────────────────────────── */
+  const contactForm = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+  const submitBtn   = document.getElementById('submit-btn');
 
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const intentInput = document.getElementById('intent');
+
+      if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const btnText = submitBtn.querySelector('.btn-text');
+        if (btnText) btnText.textContent = 'Sending…';
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' },
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          if (formSuccess) {
+            formSuccess.hidden = false;
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          throw new Error('Server response was not ok');
+        }
+      } catch {
+        // Fallback to mailto
+        const name = nameInput.value;
+        const email = emailInput.value;
+        const intent = intentInput ? intentInput.value : 'General Inquiry';
+        const msg = messageInput.value;
+        const subject = encodeURIComponent(`DIGISYNQ Connection — ${intent}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPathway: ${intent}\n\nMessage:\n${msg}`);
+        window.open(`mailto:thedigitalsynq@gmail.com?subject=${subject}&body=${body}`, '_blank');
+        if (formSuccess) {
+          formSuccess.textContent = '✅ Opening your email client to complete the connection…';
+          formSuccess.hidden = false;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const btnText = submitBtn.querySelector('.btn-text');
+          if (btnText) btnText.textContent = 'Start a Conversation';
+        }
+      }
+    });
+  }
+
+})();

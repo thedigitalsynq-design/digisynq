@@ -3,275 +3,745 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ is a digital ecosystem where brands, creators, businesses, influencers, studios, and professionals connect, collaborate, promote, and grow." />
-  <meta property="og:title" content="DIGISYNQ — Digital Ecosystem for Brands & Creators" />
-  <meta property="og:description" content="From content strategy to influencer marketing — DIGISYNQ is the digital ecosystem that powers your growth." />
+  <meta name="description" content="DIGISYNQ is a digital connection and collaboration ecosystem that connects brands, creators, studios, and professionals to make digital growth happen." />
+  <meta property="og:title" content="DIGISYNQ — The Connection Layer for the Digital Ecosystem" />
+  <meta property="og:description" content="The right connection can change everything. DIGISYNQ brings together brands, creators, studios, and professionals into high-impact collaborations." />
   <meta property="og:image" content="assets/img/logo.svg" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#080808" />
-  <title>DIGISYNQ — Digital Ecosystem for Brands & Creators</title>
+  <meta name="theme-color" content="#050507" />
+  <title>DIGISYNQ — The Connection Layer for the Digital Ecosystem</title>
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- ===== NAV ===== -->
+  <!-- ===== NAVIGATION ===== -->
   <header class="nav-wrapper" id="top">
     <nav class="nav container" aria-label="Primary navigation">
-      <a href="index.html" class="nav__logo" aria-label="DIGISYNQ home">
+      <a href="index.html" class="nav__logo" aria-label="DIGISYNQ Home">
         <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
         <span class="nav__logo-wordmark">DIGISYNQ</span>
       </a>
-      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#framework">ABCDEF</a></li>
         <li><a href="#ecosystem">Ecosystem</a></li>
-        <li><a href="contact.html" class="btn btn--outline btn--sm">Contact Us</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#collaborate">Collaborate</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="contact.html" class="btn btn--outline btn--sm" id="nav-cta-btn">Start a Conversation</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== 01 & 02: HERO SECTION ===== -->
   <section class="hero" id="hero" aria-label="Hero section">
     <div class="hero__bg-orbs" aria-hidden="true">
       <div class="orb orb--1"></div>
       <div class="orb orb--2"></div>
-      <div class="orb orb--3"></div>
     </div>
     <div class="hero__grid-lines" aria-hidden="true"></div>
     <div class="container hero__content">
-      <div class="hero__badge reveal">
-        <span class="badge-dot"></span> Digital Ecosystem
+      
+      <!-- Micro-premise -->
+      <div class="hero__micro-premise reveal">
+        <span>Brands have products</span>
+        <span>Creators have audiences</span>
+        <span>Studios have resources</span>
+        <span>Professionals have skills</span>
       </div>
+
+      <!-- Core Headline -->
       <h1 class="hero__title reveal">
-        Where Brands &amp; Creators<br />
-        <span class="gradient-text">Sync, Grow &amp; Thrive</span>
+        THE RIGHT CONNECTION<br />
+        <span class="gradient-text">CAN CHANGE EVERYTHING.</span>
       </h1>
-      <p class="hero__subtitle reveal">
-        DIGISYNQ isn't just a social media management service. It's a <strong>digital ecosystem</strong> where brands, creators, businesses, influencers, studios, and professionals connect, collaborate, promote, and grow.
+
+      <!-- Core Statement -->
+      <p class="hero__core-statement reveal">
+        The problem isn't always what's missing.<br />
+        Sometimes it's <em>what's disconnected</em>.
       </p>
+
+      <!-- Subtitle -->
+      <p class="hero__subtitle reveal">
+        <strong>DIGISYNQ</strong> is the connection layer. We connect brands, creators, businesses, influencers, studios, technicians, and digital professionals to turn problems, ideas, and opportunities into real collaborations.
+      </p>
+
+      <!-- CTAs -->
       <div class="hero__cta reveal">
-        <a href="#services" class="btn btn--primary btn--lg" id="hero-explore-btn">Explore Services</a>
-        <a href="contact.html" class="btn btn--ghost btn--lg" id="hero-started-btn">Get Started →</a>
+        <a href="contact.html" class="btn btn--primary btn--lg" id="hero-primary-cta">Start a Conversation →</a>
+        <a href="#ecosystem" class="btn btn--ghost btn--lg" id="hero-secondary-cta">Explore the Ecosystem</a>
       </div>
-      <div class="hero__stats reveal">
-        <div class="stat"><span class="stat__num">16+</span><span class="stat__label">Services</span></div>
-        <div class="stat"><span class="stat__num">360°</span><span class="stat__label">Digital Coverage</span></div>
-        <div class="stat"><span class="stat__num">∞</span><span class="stat__label">Growth Potential</span></div>
+
+      <!-- 03: Conceptual Metrics (No Fake Stats) -->
+      <div class="hero__conceptual-metrics reveal">
+        <div class="c-metric">
+          <span class="c-metric__tag">PEOPLE</span>
+          <p class="c-metric__items">Brands &bull; Creators &bull; Studios &bull; Professionals</p>
+        </div>
+        <div class="c-metric">
+          <span class="c-metric__tag">CONNECTIONS</span>
+          <p class="c-metric__items">Collaborations &bull; Campaigns &bull; Projects</p>
+        </div>
+        <div class="c-metric">
+          <span class="c-metric__tag">OUTCOMES</span>
+          <p class="c-metric__items">Content &bull; Growth &bull; Opportunities</p>
+        </div>
       </div>
-    </div>
-    <div class="hero__scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about section" id="about" aria-label="About DIGISYNQ">
-    <div class="container">
-      <div class="about__inner">
-        <div class="about__text reveal">
-          <div class="section-label">Who We Are</div>
-          <h2 class="section-title">A Stronger Way to <span class="gradient-text">Position Your Brand</span></h2>
-          <p class="about__body">
-            DIGISYNQ isn't just another agency — it's the convergence point for every digital ambition. We believe in synergy: when the right strategy, the right content, and the right people come together, growth becomes inevitable.
-          </p>
-          <p class="about__body">
-            Whether you're a startup finding your voice, a creator scaling your influence, or an established brand evolving your identity — DIGISYNQ is the partner that brings it all together.
-          </p>
-          <a href="contact.html" class="btn btn--primary" id="about-cta-btn">Work With Us</a>
-        </div>
-        <div class="about__cards reveal">
-          <div class="glass-card about__card">
-            <div class="about__card-icon">🎯</div>
-            <h3>Strategy First</h3>
-            <p>Every campaign and creative begins with a plan rooted in data and tailored to your audience.</p>
-          </div>
-          <div class="glass-card about__card">
-            <div class="about__card-icon">🔗</div>
-            <h3>Connected Ecosystem</h3>
-            <p>Brands, creators, influencers, and studios — all working in sync under one digital roof.</p>
-          </div>
-          <div class="glass-card about__card">
-            <div class="about__card-icon">📈</div>
-            <h3>Growth Focused</h3>
-            <p>We measure success in real growth — followers, leads, conversions, and community.</p>
-          </div>
-          <div class="glass-card about__card">
-            <div class="about__card-icon">✨</div>
-            <h3>Premium Creative</h3>
-            <p>From reels to brand identities, our creative output is built to stand out and leave an impression.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section class="services section" id="services" aria-label="Our services">
+  <!-- ===== 04: THE GAP ===== -->
+  <section class="section gap-section" id="gap" aria-label="The Digital Connection Gap">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-title">A Complete Digital <span class="gradient-text">Service Suite</span></h2>
-        <p class="section-sub">From strategy to execution — everything your brand needs to thrive in the digital world.</p>
+        <div class="section-label">The Fundamental Problem</div>
+        <h2 class="section-title">THE DIGITAL WORLD IS FULL OF TALENT.<br /><span class="gradient-text">THE REAL GAP IS CONNECTION.</span></h2>
+        <p class="section-sub">Every piece needed for digital growth already exists. The challenge is they operate in complete isolation.</p>
       </div>
-      <div class="services__grid" id="services-grid">
-        <article class="glass-card service-card reveal" id="svc-content-strategy"><div class="service-card__icon">🗓️</div><h3 class="service-card__title">Content Strategy</h3><p class="service-card__desc">Planning what to post, when to post, and how to reach the right audience with precision.</p><div class="service-card__tag">Strategy</div></article>
-        <article class="glass-card service-card reveal" id="svc-content-creation"><div class="service-card__icon">🎨</div><h3 class="service-card__title">Content Creation</h3><p class="service-card__desc">Reels, posts, promotional videos, graphics, and other digital content tailored to your brand voice.</p><div class="service-card__tag">Creative</div></article>
-        <article class="glass-card service-card reveal" id="svc-video-editing"><div class="service-card__icon">🎬</div><h3 class="service-card__title">Video Editing</h3><p class="service-card__desc">Short-form videos, reels, ads, promotional edits, and social media content — cut to perfection.</p><div class="service-card__tag">Creative</div></article>
-        <article class="glass-card service-card reveal" id="svc-graphic-design"><div class="service-card__icon">🖌️</div><h3 class="service-card__title">Graphic Design</h3><p class="service-card__desc">Logos, posters, banners, thumbnails, social media creatives, and promotional material that command attention.</p><div class="service-card__tag">Design</div></article>
-        <article class="glass-card service-card reveal" id="svc-influencer-marketing"><div class="service-card__icon">🤝</div><h3 class="service-card__title">Influencer Marketing</h3><p class="service-card__desc">Finding and coordinating with influencers matched to your brand identity and campaign goals.</p><div class="service-card__tag">Marketing</div></article>
-        <article class="glass-card service-card reveal" id="svc-campaign-management"><div class="service-card__icon">🚀</div><h3 class="service-card__title">Campaign Management</h3><p class="service-card__desc">Planning and managing complete digital promotional campaigns from start to finish.</p><div class="service-card__tag">Marketing</div></article>
-        <article class="glass-card service-card reveal" id="svc-brand-identity"><div class="service-card__icon">💎</div><h3 class="service-card__title">Brand Identity</h3><p class="service-card__desc">Helping businesses establish a consistent visual and digital identity that resonates and endures.</p><div class="service-card__tag">Branding</div></article>
-        <article class="glass-card service-card reveal" id="svc-digital-pr"><div class="service-card__icon">📣</div><h3 class="service-card__title">Digital PR &amp; Promotion</h3><p class="service-card__desc">Getting brands, products, creators, and services more visibility online through targeted PR strategies.</p><div class="service-card__tag">PR</div></article>
-        <article class="glass-card service-card reveal" id="svc-lead-gen"><div class="service-card__icon">🎯</div><h3 class="service-card__title">Lead Generation</h3><p class="service-card__desc">Helping businesses attract potential customers through intelligent digital funnels and campaigns.</p><div class="service-card__tag">Growth</div></article>
-        <article class="glass-card service-card reveal" id="svc-community"><div class="service-card__icon">💬</div><h3 class="service-card__title">Community Management</h3><p class="service-card__desc">Managing comments, messages, audience interaction, and online communities to build loyalty.</p><div class="service-card__tag">Engagement</div></article>
-        <article class="glass-card service-card reveal" id="svc-talent"><div class="service-card__icon">⭐</div><h3 class="service-card__title">Creator &amp; Talent Management</h3><p class="service-card__desc">Connecting and coordinating creators, influencers, technicians, and other digital talent for projects.</p><div class="service-card__tag">Talent</div></article>
-        <article class="glass-card service-card reveal" id="svc-collab"><div class="service-card__icon">🔄</div><h3 class="service-card__title">Collaboration Management</h3><p class="service-card__desc">Finding the right people or businesses for mutually beneficial collaborations that create win-win results.</p><div class="service-card__tag">Network</div></article>
-        <article class="glass-card service-card reveal" id="svc-events"><div class="service-card__icon">🎉</div><h3 class="service-card__title">Event &amp; Launch Promotion</h3><p class="service-card__desc">Promoting product launches, events, studio releases, campaigns, and announcements for maximum reach.</p><div class="service-card__tag">Events</div></article>
-        <article class="glass-card service-card reveal" id="svc-smo"><div class="service-card__icon">📊</div><h3 class="service-card__title">Social Media Optimization</h3><p class="service-card__desc">Improving profiles, content strategy, discoverability, and overall page performance across platforms.</p><div class="service-card__tag">Optimization</div></article>
-        <article class="glass-card service-card reveal" id="svc-analytics"><div class="service-card__icon">📈</div><h3 class="service-card__title">Analytics &amp; Growth Tracking</h3><p class="service-card__desc">Monitoring performance and using data-driven insights to improve and refine future campaigns.</p><div class="service-card__tag">Analytics</div></article>
-        <article class="glass-card service-card reveal" id="svc-consultancy"><div class="service-card__icon">🧠</div><h3 class="service-card__title">Digital Consultancy</h3><p class="service-card__desc">Helping businesses and creators figure out exactly what they should do next in the digital space.</p><div class="service-card__tag">Consulting</div></article>
+
+      <div class="gap-grid">
+        <div class="gap-statements reveal">
+          <div class="gap-item">
+            <span class="gap-item__bullet">01</span>
+            <p>A <strong>brand</strong> can have a great product without knowing who can authentically tell its story.</p>
+          </div>
+          <div class="gap-item">
+            <span class="gap-item__bullet">02</span>
+            <p>A <strong>creator</strong> can have an engaged audience without knowing which brands truly need them.</p>
+          </div>
+          <div class="gap-item">
+            <span class="gap-item__bullet">03</span>
+            <p>A <strong>studio</strong> can have state-of-the-art tools and space without having enough continuous projects.</p>
+          </div>
+          <div class="gap-item">
+            <span class="gap-item__bullet">04</span>
+            <p>A <strong>technician or editor</strong> can have exceptional skill without finding the right high-impact opportunity.</p>
+          </div>
+          <div class="gap-item">
+            <span class="gap-item__bullet">05</span>
+            <p>A <strong>business</strong> can have an ambitious vision without knowing how to assemble the team to execute it.</p>
+          </div>
+
+          <div class="gap-punchline">
+            <h3>DIGISYNQ CLOSES THE GAP.</h3>
+          </div>
+        </div>
+
+        <!-- Interactive Node Visualizer -->
+        <div class="gap-visualizer reveal">
+          <div class="network-hub">
+            <div class="hub-center">
+              DIGISYNQ
+              <small>Connection Layer</small>
+            </div>
+            
+            <div class="hub-node hub-node--1">BRANDS</div>
+            <div class="hub-node hub-node--2">CREATORS</div>
+            <div class="hub-node hub-node--3">STUDIOS</div>
+            <div class="hub-node hub-node--4">INFLUENCERS</div>
+            <div class="hub-node hub-node--5">TECHNICIANS</div>
+            <div class="hub-node hub-node--6">EDITORS</div>
+            <div class="hub-node hub-node--7">PHOTOGRAPHERS</div>
+            <div class="hub-node hub-node--8">BUSINESSES</div>
+
+            <svg class="hub-svg-lines" viewBox="0 0 400 340">
+              <line x1="200" y1="170" x2="200" y2="25"></line>
+              <line x1="200" y1="170" x2="330" y2="55"></line>
+              <line x1="200" y1="170" x2="350" y2="150"></line>
+              <line x1="200" y1="170" x2="320" y2="280"></line>
+              <line x1="200" y1="170" x2="200" y2="315"></line>
+              <line x1="200" y1="170" x2="80" y2="280"></line>
+              <line x1="200" y1="170" x2="50" y2="150"></line>
+              <line x1="200" y1="170" x2="70" y2="55"></line>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== ECOSYSTEM BANNER ===== -->
-  <section class="ecosystem section" id="ecosystem" aria-label="DIGISYNQ ecosystem">
+  <!-- ===== 05: WHO WE ARE (REPOSITIONED) ===== -->
+  <section class="section about-section" id="about" aria-label="About DIGISYNQ">
     <div class="container">
-      <div class="ecosystem__inner reveal">
-        <div class="ecosystem__label">The Bigger Picture</div>
-        <h2 class="ecosystem__title">One Ecosystem.<br /><span class="gradient-text">Infinite Possibilities.</span></h2>
-        <p class="ecosystem__body">DIGISYNQ isn't just a social media management service. It's a <strong>digital ecosystem</strong> where brands, creators, businesses, influencers, studios, and professionals connect, collaborate, promote, and grow.</p>
-        <div class="ecosystem__nodes" aria-hidden="true">
-          <div class="eco-node eco-node--center">DIGISYNQ</div>
-          <div class="eco-node">Brands</div>
-          <div class="eco-node">Creators</div>
-          <div class="eco-node">Influencers</div>
-          <div class="eco-node">Studios</div>
-          <div class="eco-node">Businesses</div>
-          <div class="eco-node">Professionals</div>
+      <div class="who-we-are__grid">
+        <div class="who-we-are__text reveal">
+          <div class="section-label">Our Purpose</div>
+          <h2>WE'RE BUILDING THE <span class="gradient-text">CONNECTION LAYER</span> FOR THE DIGITAL ECOSYSTEM.</h2>
+          <p>
+            DIGISYNQ brings together the people, spaces, skills, and resources that normally operate separately.
+          </p>
+          <div class="network-tags">
+            <span class="net-tag">Brands</span>
+            <span class="net-tag">Businesses</span>
+            <span class="net-tag">Creators</span>
+            <span class="net-tag">Influencers</span>
+            <span class="net-tag">Studios</span>
+            <span class="net-tag">Technicians</span>
+            <span class="net-tag">Editors</span>
+            <span class="net-tag">Photographers</span>
+            <span class="net-tag">Designers</span>
+            <span class="net-tag">Digital Professionals</span>
+          </div>
+          <p>
+            Sometimes the solution is a service. Sometimes it's a person. Sometimes it's a collaboration. Sometimes it's an entire team.
+          </p>
+          <p>
+            <strong>Our job is to figure out what the problem needs — and connect the right pieces.</strong>
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <a href="contact.html" class="btn btn--primary">Start a Conversation</a>
+          </div>
         </div>
-        <a href="contact.html" class="btn btn--primary btn--lg" id="ecosystem-join-btn">Join the Ecosystem</a>
+
+        <div class="who-we-are__highlights reveal">
+          <div class="highlight-box">
+            <h4>Not a Generic Agency</h4>
+            <p>We don't force rigid retainers or sell pre-packaged plans. We dissect your actual bottleneck and orchestrate the solution.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Value-First Matching</h4>
+            <p>We evaluate audience alignment, production capability, and project goals so every partnership produces measurable results.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Execution Grounding</h4>
+            <p>Ideas without execution are noise. We coordinate cameras, editors, studios, and strategies so vision turns into reality.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Continuous Ecosystem</h4>
+            <p>Every project creates data, relationships, and assets that fuel the next opportunity in an compounding cycle of growth.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA STRIP ===== -->
-  <section class="cta-strip section" aria-label="Call to action">
-    <div class="container cta-strip__inner reveal">
-      <div class="cta-strip__text">
-        <h2>Ready to grow with DIGISYNQ?</h2>
-        <p>Let's build your digital presence together — reach out today.</p>
+  <!-- ===== 06: THE ABCDEF FRAMEWORK™ (HERO OPERATING SYSTEM) ===== -->
+  <section class="section framework-section" id="framework" aria-label="The ABCDEF Framework">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Operating System</div>
+        <h2 class="section-title">THE DIGISYNQ <span class="gradient-text">ABCDEF FRAMEWORK™</span></h2>
+        <p class="section-sub">From problem to possibility. A continuous, non-linear operating system engineered to turn digital ambiguity into concrete momentum.</p>
       </div>
-      <a href="contact.html" class="btn btn--primary btn--lg" id="cta-strip-btn">Get In Touch</a>
-    </div>
-  </section>
 
-  <!-- ===== OUR CLIENTS ===== -->
-  <section class="clients" id="clients" aria-label="Our clients">
-    <div class="clients__header reveal">
-      <div class="clients__label">Trusted By</div>
-      <h2 class="clients__title">Our <span class="gradient-text">Clients</span></h2>
-      <p class="clients__subtitle">Brands and creators who trust DIGISYNQ to power their digital growth.</p>
-    </div>
-
-    <!-- Marquee wrapper — logos scroll from left to right infinitely -->
-    <div class="clients__marquee-wrapper" aria-label="Client logos carousel">
-      <div class="clients__marquee-track" id="clients-track">
-
-        <!-- === SET 1 (original) === -->
-        <div class="client-logo" id="cl-cinema-commons-1">
-          <img src="assets/img/client-cinema-commons.svg" alt="Cinema Commons" loading="lazy" />
+      <div class="framework-flow reveal">
+        <!-- A -->
+        <div class="framework-card">
+          <div class="framework-card__step">A</div>
+          <h3 class="framework-card__title">ANALYZE</h3>
+          <p class="framework-card__desc">Understand the true problem before prescribing a solution. We evaluate brand, product, audience, market, resources, and strategic objective.</p>
+          <div class="framework-card__keywords">Problem &bull; Market &bull; Objective</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
 
-        <div class="client-logo" id="cl-buzzing-mafia-1">
-          <img src="assets/img/client-buzzing-mafia.svg" alt="Buzzing Mafia" loading="lazy" />
+        <!-- B -->
+        <div class="framework-card">
+          <div class="framework-card__step">B</div>
+          <h3 class="framework-card__title">BUILD</h3>
+          <p class="framework-card__desc">Construct the digital foundation. Strategy, visual identity, content architecture, positioning, and promotional campaign infrastructure.</p>
+          <div class="framework-card__keywords">Foundation &bull; Strategy &bull; Identity</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
 
-        <div class="client-logo" id="cl-snacks-panditha-1">
-          <img src="assets/img/client-snacks-panditha.svg" alt="Snacks Panditha" loading="lazy" />
+        <!-- C -->
+        <div class="framework-card">
+          <div class="framework-card__step">C</div>
+          <h3 class="framework-card__title">CONNECT</h3>
+          <p class="framework-card__desc">Connect the right people. Match brands with creators, influencers with campaigns, studios with shoots, and technicians with mandates.</p>
+          <div class="framework-card__keywords">Talent &bull; Studios &bull; People</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
 
-        <div class="client-logo" id="cl-extra-saga-1">
-          <img src="assets/img/client-extra-saga.svg" alt="Extra Saga" loading="lazy" />
+        <!-- D -->
+        <div class="framework-card">
+          <div class="framework-card__step">D</div>
+          <h3 class="framework-card__title">DEVELOP</h3>
+          <p class="framework-card__desc">Turn the opportunity into something executable. Scripting, storyboarding, collaboration agreements, launch schedules, and creative concepts.</p>
+          <div class="framework-card__keywords">Concepts &bull; Content &bull; Partnerships</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
 
-        <div class="client-logo" id="cl-buzz-xtra-1">
-          <img src="assets/img/client-the-buzz-xtra.svg" alt="The Buzz Xtra" loading="lazy" />
+        <!-- E -->
+        <div class="framework-card">
+          <div class="framework-card__step">E</div>
+          <h3 class="framework-card__title">EXECUTE</h3>
+          <p class="framework-card__desc">Make it happen in the real world. Video production, editing, publishing, advertising, community engagement, and end-to-end delivery.</p>
+          <div class="framework-card__keywords">Production &bull; Distribution &bull; Launch</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
 
-        <!-- === SET 2 (duplicate for seamless loop) === -->
-        <div class="client-logo" id="cl-cinema-commons-2">
-          <img src="assets/img/client-cinema-commons.svg" alt="Cinema Commons" loading="lazy" />
+        <!-- F -->
+        <div class="framework-card framework-card--loop">
+          <div class="framework-card__step">F</div>
+          <h3 class="framework-card__title">FEEDBACK &amp; FORWARD</h3>
+          <p class="framework-card__desc">Measure. Learn. Improve. Loop back to <strong>A</strong>. We analyze performance data, extract insights, and feed them into the next growth cycle.</p>
+          <div class="framework-card__keywords">Insights &bull; Optimization &bull; Next Opportunity ↺</div>
         </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
+      </div>
 
-        <div class="client-logo" id="cl-buzzing-mafia-2">
-          <img src="assets/img/client-buzzing-mafia.svg" alt="Buzzing Mafia" loading="lazy" />
-        </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
-
-        <div class="client-logo" id="cl-snacks-panditha-2">
-          <img src="assets/img/client-snacks-panditha.svg" alt="Snacks Panditha" loading="lazy" />
-        </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
-
-        <div class="client-logo" id="cl-extra-saga-2">
-          <img src="assets/img/client-extra-saga.svg" alt="Extra Saga" loading="lazy" />
-        </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
-
-        <div class="client-logo" id="cl-buzz-xtra-2">
-          <img src="assets/img/client-the-buzz-xtra.svg" alt="The Buzz Xtra" loading="lazy" />
-        </div>
-        <div class="marquee-divider" aria-hidden="true"></div>
-
+      <div class="framework-loop-banner reveal">
+        <span>Continuous Engine: <strong>Problem → Understanding → Foundation → Connection → Development → Execution → Learning → New Opportunity</strong></span>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== 07: PROBLEMS WE SOLVE ===== -->
+  <section class="section problems-section" id="solutions" aria-label="Problems We Solve">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Tailored Solutions</div>
+        <h2 class="section-title">WHAT ARE YOU <span class="gradient-text">TRYING TO SOLVE?</span></h2>
+        <p class="section-sub">We don't start with rigid packages. We start with your specific digital bottleneck.</p>
+      </div>
+
+      <div class="problems-grid reveal">
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I have a product."</h3>
+            <p class="problem-sub">"But nobody knows about it, and I don't know how to get it in front of the right buyers."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ builds the launch &amp; distribution ecosystem</div>
+        </div>
+
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I need the right creator."</h3>
+            <p class="problem-sub">"Not just someone with vanity follower numbers, but someone relevant who converts."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ identifies &amp; manages verified creator matches</div>
+        </div>
+
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I need content."</h3>
+            <p class="problem-sub">"I lack the camera crew, lighting, editing pipeline, or studio space to produce it."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ connects the complete production setup</div>
+        </div>
+
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I'm a creator."</h3>
+            <p class="problem-sub">"I have an audience that trusts me, but I need consistent, high-paying brand collaborations."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ connects you with meaningful brand campaigns</div>
+        </div>
+
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I have a studio &amp; gear."</h3>
+            <p class="problem-sub">"We have high-end spaces and equipment, but we need more recurring bookings and shoots."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ connects production demand to your space</div>
+        </div>
+
+        <div class="problem-card">
+          <div>
+            <h3 class="problem-quote">"I have a specialized skill."</h3>
+            <p class="problem-sub">"Video editor, drone operator, 3D designer, photographer — looking for serious projects."</p>
+          </div>
+          <div class="problem-solution">DIGISYNQ connects talent with executing teams</div>
+        </div>
+
+        <div class="problem-card problem-card--cta">
+          <div>
+            <h3 class="problem-quote">"I don't know what I need."</h3>
+            <p class="problem-sub" style="margin-top:0.5rem;">That's completely fine. <strong>Start with the problem.</strong> We'll design the connection.</p>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm" style="margin-top:1rem;">Talk to DIGISYNQ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 08: CAPABILITIES ===== -->
+  <section class="section capabilities-section" id="capabilities" aria-label="Our Capabilities">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Execution Depth</div>
+        <h2 class="section-title">OUR CORE <span class="gradient-text">CAPABILITIES</span></h2>
+        <p class="section-sub">Integrated capabilities organized to support any phase of your digital growth.</p>
+      </div>
+
+      <div class="capabilities-grid reveal">
+        <!-- 01 Presence -->
+        <div class="capability-column">
+          <div class="capability-column__header">
+            <span class="capability-column__icon">📱</span>
+            <h3 class="capability-column__title">Digital Presence</h3>
+          </div>
+          <ul class="capability-list">
+            <li class="capability-item">Social Media Management</li>
+            <li class="capability-item">Content &amp; Channel Strategy</li>
+            <li class="capability-item">Profile Optimization</li>
+            <li class="capability-item">Community Management</li>
+            <li class="capability-item">Brand Identity &amp; Positioning</li>
+          </ul>
+        </div>
+
+        <!-- 02 Content -->
+        <div class="capability-column">
+          <div class="capability-column__header">
+            <span class="capability-column__icon">🎬</span>
+            <h3 class="capability-column__title">Content &amp; Production</h3>
+          </div>
+          <ul class="capability-list">
+            <li class="capability-item">Reels &amp; Short-Form Content</li>
+            <li class="capability-item">Commercial Video Production</li>
+            <li class="capability-item">Video Editing &amp; Color Grading</li>
+            <li class="capability-item">Product &amp; Brand Photography</li>
+            <li class="capability-item">Graphic &amp; Thumbnail Design</li>
+            <li class="capability-item">Studio &amp; Set Coordination</li>
+          </ul>
+        </div>
+
+        <!-- 03 Promotion -->
+        <div class="capability-column">
+          <div class="capability-column__header">
+            <span class="capability-column__icon">🚀</span>
+            <h3 class="capability-column__title">Promotion &amp; Growth</h3>
+          </div>
+          <ul class="capability-list">
+            <li class="capability-item">Product &amp; Event Launches</li>
+            <li class="capability-item">Influencer Campaign Strategy</li>
+            <li class="capability-item">Digital Advertising &amp; Funnels</li>
+            <li class="capability-item">Digital PR &amp; Media Coverage</li>
+            <li class="capability-item">Lead Generation Systems</li>
+            <li class="capability-item">Campaign Analytics &amp; Tracking</li>
+          </ul>
+        </div>
+
+        <!-- 04 Connection -->
+        <div class="capability-column">
+          <div class="capability-column__header">
+            <span class="capability-column__icon">🔗</span>
+            <h3 class="capability-column__title">Connection &amp; Network</h3>
+          </div>
+          <ul class="capability-list">
+            <li class="capability-item">Creator Discovery &amp; Matching</li>
+            <li class="capability-item">Brand Collaboration Brokerage</li>
+            <li class="capability-item">Studio &amp; Location Sourcing</li>
+            <li class="capability-item">Technical Crew Assembly</li>
+            <li class="capability-item">Cross-Brand Promotional Synergy</li>
+            <li class="capability-item">Consultancy &amp; Strategic Advisory</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 09: INTERACTIVE ECOSYSTEM ===== -->
+  <section class="section ecosystem-interactive" id="ecosystem" aria-label="Interactive Ecosystem">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Live Network</div>
+        <h2 class="section-title">ONE ECOSYSTEM.<br /><span class="gradient-text">MANY POSSIBILITIES.</span></h2>
+        <p class="section-sub">Click or hover over any node in the network to see how DIGISYNQ unlocks multi-directional collaborations.</p>
+      </div>
+
+      <div class="eco-interactive-card reveal">
+        <div class="eco-pills">
+          <button class="eco-pill active" data-node="brands">Brands</button>
+          <button class="eco-pill" data-node="creators">Creators</button>
+          <button class="eco-pill" data-node="studios">Studios</button>
+          <button class="eco-pill" data-node="influencers">Influencers</button>
+          <button class="eco-pill" data-node="technicians">Technicians</button>
+          <button class="eco-pill" data-node="editors">Editors</button>
+          <button class="eco-pill" data-node="photographers">Photographers</button>
+          <button class="eco-pill" data-node="businesses">Businesses</button>
+          <button class="eco-pill" data-node="professionals">Professionals</button>
+        </div>
+
+        <div class="eco-preview-box">
+          <h4 class="eco-preview-title" id="eco-preview-title">BRANDS</h4>
+          <p class="eco-preview-desc" id="eco-preview-desc">
+            Connects with creators for product storytelling, studios for high-end production, influencers for niche reach, photographers for catalog shoots, and campaign teams for full digital launches.
+          </p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="contact.html" class="btn btn--primary">Join the Ecosystem</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10: COLLABORATION ENGINE ===== -->
+  <section class="section collab-section" id="collaborate" aria-label="Collaboration Engine">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Collaboration Engine</div>
+        <h2 class="section-title">DON'T JUST FIND PEOPLE.<br /><span class="gradient-text">CREATE THE RIGHT COLLABORATIONS.</span></h2>
+        <p class="section-sub">A collaboration works when both sides bring real value. DIGISYNQ structures partnerships where everyone contributes something valuable.</p>
+      </div>
+
+      <div class="collab-grid reveal">
+        <div class="collab-card">
+          <div class="collab-equation">
+            <span>BRAND</span>
+            <span class="collab-plus">+</span>
+            <span>CREATOR</span>
+          </div>
+          <p class="collab-result">Authentic product storytelling and audience trust that traditional ads cannot buy.</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-equation">
+            <span>CREATOR</span>
+            <span class="collab-plus">+</span>
+            <span>STUDIO</span>
+          </div>
+          <p class="collab-result">Cinema-grade production environments that instantly elevate content perceived value.</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-equation">
+            <span>STUDIO</span>
+            <span class="collab-plus">+</span>
+            <span>TECHNICIAN</span>
+          </div>
+          <p class="collab-result">Fully-crewed, turnkey production capacity ready to take on larger commercial mandates.</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-equation">
+            <span>BRAND</span>
+            <span class="collab-plus">+</span>
+            <span>INFLUENCER</span>
+          </div>
+          <p class="collab-result">Targeted geo-located and niche-specific reach that converts interest into buyers.</p>
+        </div>
+
+        <div class="collab-card" style="grid-column: 1 / -1; background: rgba(255,255,255,0.06); border-color: var(--clr-border-glow);">
+          <div class="collab-equation">
+            <span>PRODUCT</span>
+            <span class="collab-plus">+</span>
+            <span>CREATOR</span>
+            <span class="collab-plus">+</span>
+            <span>STUDIO</span>
+            <span class="collab-plus">+</span>
+            <span>DIGISYNQ</span>
+          </div>
+          <p class="collab-result">Complete, high-velocity digital launch campaign orchestrated from concept to measurement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11: TWO SIDES OF THE NETWORK ===== -->
+  <section class="section two-sides-section" aria-label="Two Sides of the Network">
+    <div class="container">
+      <div class="two-sides-grid reveal">
+        
+        <!-- Need Something -->
+        <div class="side-card">
+          <div>
+            <div class="section-label">Demand Side</div>
+            <h3>I NEED SOMETHING</h3>
+            <p>You have a brand, product, event, or business that needs attention, content, creators, or a full launch campaign.</p>
+            <ul>
+              <li>Brands</li>
+              <li>Businesses &amp; Startups</li>
+              <li>Product Owners</li>
+              <li>Marketing Heads</li>
+              <li>Event Organizers</li>
+            </ul>
+          </div>
+          <a href="contact.html?intent=solution" class="btn btn--primary btn--full">Find a Solution →</a>
+        </div>
+
+        <!-- Can Offer Something -->
+        <div class="side-card">
+          <div>
+            <div class="section-label">Supply Side</div>
+            <h3>I CAN OFFER SOMETHING</h3>
+            <p>You have an audience, specialized skill, studio space, or production capability and want meaningful, paid project opportunities.</p>
+            <ul>
+              <li>Creators &amp; Influencers</li>
+              <li>Studios &amp; Soundstages</li>
+              <li>Video Editors &amp; Animators</li>
+              <li>Photographers</li>
+              <li>Technical Crews</li>
+            </ul>
+          </div>
+          <a href="contact.html?intent=network" class="btn btn--outline btn--full">Join the Network →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12: FROM PROBLEM TO OUTCOME (CLIENTS SHOWCASE) ===== -->
+  <section class="section clients" id="clients" aria-label="Our Clients and Partners">
+    <div class="container">
+      <div class="clients__header reveal">
+        <div class="clients__label">Proven Connections</div>
+        <h2 class="clients__title">FROM PROBLEM <span class="gradient-text">TO OUTCOME.</span></h2>
+        <p class="section-sub" style="margin-top: 0.5rem;">Brands and creators who trust DIGISYNQ to bridge the connection gap.</p>
+      </div>
+
+      <!-- Marquee track — logos scroll smoothly from left to right infinitely -->
+      <div class="clients__marquee-wrapper" aria-label="Client logos carousel">
+        <div class="clients__marquee-track" id="clients-track">
+
+          <!-- SET 1 -->
+          <div class="client-logo" id="cl-cinema-commons-1">
+            <img src="assets/img/client-cinema-commons.svg" alt="Cinema Commons" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-buzzing-mafia-1">
+            <img src="assets/img/client-buzzing-mafia.svg" alt="Buzzing Mafia" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-snacks-panditha-1">
+            <img src="assets/img/client-snacks-panditha.svg" alt="Snacks Panditha" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-extra-saga-1">
+            <img src="assets/img/client-extra-saga.svg" alt="Extra Saga" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-buzz-xtra-1">
+            <img src="assets/img/client-the-buzz-xtra.svg" alt="The Buzz Xtra" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <!-- SET 2 (Loop) -->
+          <div class="client-logo" id="cl-cinema-commons-2">
+            <img src="assets/img/client-cinema-commons.svg" alt="Cinema Commons" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-buzzing-mafia-2">
+            <img src="assets/img/client-buzzing-mafia.svg" alt="Buzzing Mafia" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-snacks-panditha-2">
+            <img src="assets/img/client-snacks-panditha.svg" alt="Snacks Panditha" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-extra-saga-2">
+            <img src="assets/img/client-extra-saga.svg" alt="Extra Saga" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+          <div class="client-logo" id="cl-buzz-xtra-2">
+            <img src="assets/img/client-the-buzz-xtra.svg" alt="The Buzz Xtra" loading="lazy" />
+          </div>
+          <div class="marquee-divider" aria-hidden="true"></div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 13: WHY DIGISYNQ PRINCIPLES ===== -->
+  <section class="section principles-section" aria-label="Why DIGISYNQ Principles">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Core Philosophy</div>
+        <h2 class="section-title">WHY <span class="gradient-text">DIGISYNQ?</span></h2>
+        <p class="section-sub">We don't follow generic agency templates. We operate by distinct convictions.</p>
+      </div>
+
+      <div class="principles-grid reveal">
+        <div class="principle-item">
+          <h4>Packages</h4>
+          <p>We don't sell one-size-fits-all packages. We start with the problem.</p>
+        </div>
+        <div class="principle-item">
+          <h4>Influencers</h4>
+          <p>We don't just find influencers. We engineer relevant connections.</p>
+        </div>
+        <div class="principle-item">
+          <h4>Campaigns</h4>
+          <p>We don't just run ads. We build the ecosystem behind them.</p>
+        </div>
+        <div class="principle-item">
+          <h4>Content</h4>
+          <p>We don't just create content. We connect the people &amp; gear needed to produce it.</p>
+        </div>
+        <div class="principle-item">
+          <h4>Problem Solving</h4>
+          <p>We don't believe every problem needs the same solution. We build around what's required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 14: FUTURE VISION ===== -->
+  <section class="section vision-section" aria-label="Future Vision">
+    <div class="container">
+      <div class="vision-box reveal">
+        <div class="section-label">The Long-Term Roadmap</div>
+        <h2>TODAY, WE CONNECT PEOPLE.<br /><span class="gradient-text">TOMORROW, WE CONNECT AN ECOSYSTEM.</span></h2>
+        <p>
+          DIGISYNQ starts with specialized services and direct relationships, but our horizon is larger. We are building toward a comprehensive digital infrastructure where brands, creators, businesses, studios, technicians, and professionals can discover opportunities, collaborate seamlessly, and execute projects at scale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 15: FINAL CTA ===== -->
+  <section class="section final-cta" aria-label="Call to Action">
+    <div class="container final-cta__content reveal">
+      <div class="section-label">Ready To Move?</div>
+      <h2>HAVE A PROBLEM?<br /><span class="gradient-text">BRING IT TO DIGISYNQ.</span></h2>
+      <p>
+        A product to launch? A brand to build? A creator to find? A studio to fill? A skill to offer?
+        <br /><strong>Start with the problem. We'll find the connection.</strong>
+      </p>
+      <div class="final-cta__buttons">
+        <a href="contact.html" class="btn btn--primary btn--lg" id="final-primary-btn">Start a Conversation →</a>
+        <a href="contact.html?intent=network" class="btn btn--outline btn--lg" id="final-secondary-btn">Join the Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 17: FOOTER ===== -->
   <footer class="footer" aria-label="Site footer">
     <div class="container footer__inner">
+      
+      <!-- Brand column -->
       <div class="footer__brand">
         <a href="index.html" class="nav__logo">
           <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav__logo-img" />
           <span class="nav__logo-wordmark">DIGISYNQ</span>
         </a>
-        <p>A digital ecosystem where brands, creators &amp; professionals sync, grow &amp; thrive.</p>
-        <!-- Social icons -->
+        <p>The connection layer for the digital ecosystem. Turning problems, ideas, and talent into real collaborations.</p>
+        
+        <!-- Socials -->
         <div class="footer__socials">
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Instagram" class="social-icon social-icon--ig" id="footer-ig">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
           <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Threads" class="social-icon social-icon--threads" id="footer-threads">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.702 6.826 2.023 1.738 1.287 2.697 3.018 2.851 5.145l.012.162h-3.2l-.01-.121c-.143-1.36-.795-2.466-1.932-3.283-1.127-.815-2.61-1.246-4.403-1.258-2.713.019-4.848.9-6.346 2.618C4.546 7.065 3.78 9.432 3.757 12c.023 2.566.789 4.931 2.237 6.712 1.498 1.716 3.635 2.597 6.35 2.617 2.29-.016 3.785-.526 4.861-1.647.817-.853 1.303-2.14 1.447-3.826H15.9c-.138.913-.527 1.704-1.162 2.357-.843.873-2.02 1.308-3.572 1.327l-.014-.012zm.952-12.226c-1.27-.304-2.237-.164-2.876.422-.556.508-.78 1.31-.59 2.165.175.787.693 1.348 1.476 1.585.883.265 1.8.12 2.588-.406.682-.465 1.118-1.198 1.187-2.022v-.114a5.08 5.08 0 0 0-.077-.65c-.065-.358-.177-.694-.332-.98h.002zm4.167 5.543c-.4.818-1.001 1.516-1.789 2.08l-.113.08.113-.073c.788-.564 1.388-1.259 1.789-2.087z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.702 6.826 2.023 1.738 1.287 2.697 3.018 2.851 5.145l.012.162h-3.2l-.01-.121c-.143-1.36-.795-2.466-1.932-3.283-1.127-.815-2.61-1.246-4.403-1.258-2.713.019-4.848.9-6.346 2.618C4.546 7.065 3.78 9.432 3.757 12c.023 2.566.789 4.931 2.237 6.712 1.498 1.716 3.635 2.597 6.35 2.617 2.29-.016 3.785-.526 4.861-1.647.817-.853 1.303-2.14 1.447-3.826H15.9c-.138.913-.527 1.704-1.162 2.357-.843.873-2.02 1.308-3.572 1.327l-.014-.012zm.952-12.226c-1.27-.304-2.237-.164-2.876.422-.556.508-.78 1.31-.59 2.165.175.787.693 1.348 1.476 1.585.883.265 1.8.12 2.588-.406.682-.465 1.118-1.198 1.187-2.022v-.114a5.08 5.08 0 0 0-.077-.65c-.065-.358-.177-.694-.332-.98h.002z"/></svg>
           </a>
           <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on YouTube" class="social-icon social-icon--yt" id="footer-yt">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
           </a>
           <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on Facebook" class="social-icon social-icon--fb" id="footer-fb">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" aria-label="DIGISYNQ on WhatsApp" class="social-icon social-icon--wa" id="footer-wa">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
           </a>
           <a href="mailto:thedigitalsynq@gmail.com" aria-label="Email DIGISYNQ" class="social-icon social-icon--mail" id="footer-mail">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
+
         <div class="footer__founders">
           <span class="footer__founders-title"><span class="founder-badge-dot"></span> Leadership &amp; Co-Founders</span>
           <div class="footer__founders-list">
@@ -282,36 +752,51 @@
           </div>
         </div>
       </div>
-      <nav class="footer__links" aria-label="Footer navigation">
-        <h3 class="footer__heading">Navigate</h3>
+
+      <!-- Explore -->
+      <nav class="footer__links" aria-label="Explore DIGISYNQ">
+        <h3 class="footer__heading">Explore</h3>
         <ul role="list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#ecosystem">Ecosystem</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#gap">The Gap</a></li>
+          <li><a href="#framework">ABCDEF Framework</a></li>
+          <li><a href="#ecosystem">Live Ecosystem</a></li>
+          <li><a href="#solutions">Problems We Solve</a></li>
+          <li><a href="#collaborate">Collaboration Engine</a></li>
+          <li><a href="#about">About DIGISYNQ</a></li>
         </ul>
       </nav>
-      <nav class="footer__services-list" aria-label="Services quick links">
-        <h3 class="footer__heading">Services</h3>
+
+      <!-- Opportunities -->
+      <div class="footer__links">
+        <h3 class="footer__heading">For Opportunities</h3>
         <ul role="list">
-          <li>Content Strategy</li><li>Video Editing</li><li>Graphic Design</li>
-          <li>Influencer Marketing</li><li>Brand Identity</li><li>Digital PR</li>
+          <li><a href="contact.html?intent=solution">Start a Project</a></li>
+          <li><a href="contact.html?intent=solution">Product Launches</a></li>
+          <li><a href="contact.html?intent=solution">Creator Sourcing</a></li>
+          <li><a href="contact.html?intent=solution">Consultancy</a></li>
         </ul>
-      </nav>
-      <div class="footer__contact">
-        <h3 class="footer__heading">Contact</h3>
-        <a href="mailto:thedigitalsynq@gmail.com" class="btn btn--outline btn--sm" id="footer-email-btn">thedigitalsynq@gmail.com</a>
-        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm" id="footer-wa-btn">WhatsApp Us</a>
       </div>
+
+      <!-- Network -->
+      <div class="footer__links">
+        <h3 class="footer__heading">For Network Members</h3>
+        <ul role="list">
+          <li><a href="contact.html?intent=network">Join as Creator</a></li>
+          <li><a href="contact.html?intent=network">Join as Studio</a></li>
+          <li><a href="contact.html?intent=network">Join as Technician</a></li>
+          <li><a href="contact.html?intent=network">Join as Editor</a></li>
+        </ul>
+      </div>
+
     </div>
+
     <div class="footer__bottom">
       <p class="footer__bottom-founders">Co-Founders: Yathish kumar Nagaraj &bull; Varun S &bull; Rakshith &bull; Rubesh</p>
-      <p>© 2025 DIGISYNQ. All rights reserved.</p>
+      <p>© 2025 DIGISYNQ. All rights reserved. Where Digital Opportunities Connect.</p>
     </div>
   </footer>
 
-  <!-- ===== FLOATING BUTTONS (WhatsApp + Back to Top) ===== -->
+  <!-- ===== FLOATING BUTTONS ===== -->
   <div class="floating-buttons" aria-label="Quick Actions">
     <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab--wa" id="floating-wa-btn" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
