@@ -326,7 +326,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--cyan-bright);
   background: var(--cyan-ultra);
   border: 1px solid rgba(56, 189, 248, 0.18);
@@ -372,7 +371,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-size: var(--f-3xs);
   color: var(--t-dim);
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 .hud-corner {
   position: absolute;
@@ -714,7 +712,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--t-high);
   border: 1px solid var(--b1);
   background: rgba(255, 255, 255, 0.035);
@@ -797,7 +794,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--t-low);
   background: var(--bg-surface);
   border: 1px solid var(--b0);
@@ -857,7 +853,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--t-low);
   white-space: nowrap;
 }
@@ -977,7 +972,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--t-low);
 }
 
@@ -1087,7 +1081,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-size: var(--f-3xs);
   color: var(--t-low);
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   margin-bottom: 0.95rem;
   display: block;
 }
@@ -1279,7 +1272,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .idle-card-type, .recycle-type, .bm-num {
   font-family: var(--font-mono); font-size: var(--f-3xs);
-  letter-spacing: 0.18em; text-transform: uppercase;
+  letter-spacing: 0.18em; 
   color: var(--cyan-bright); margin-bottom: 0.65rem; display: block;
 }
 
@@ -1359,7 +1352,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .not-col-label {
   font-family: var(--font-mono); font-size: var(--f-3xs);
-  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.85rem; display: block;
+  letter-spacing: 0.2em;  margin-bottom: 1.85rem; display: block;
 }
 
 .not-col--not .not-col-label { color: var(--t-dim); }
@@ -1395,7 +1388,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .post-card-tag {
   font-family: var(--font-mono); font-size: var(--f-3xs);
-  letter-spacing: 0.16em; text-transform: uppercase;
+  letter-spacing: 0.16em; 
   color: var(--cyan); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.95rem;
 }
 
@@ -1416,7 +1409,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 .posts-loading {
   text-align: center; padding: 4rem;
   font-family: var(--font-mono); font-size: var(--f-xs);
-  color: var(--t-dim); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--t-dim); letter-spacing: 0.14em; 
 }
 
 /* ── 22. Final Call to Action ─────────────────────────────────────────────── */
@@ -1440,7 +1433,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .final-tagline {
   font-family: var(--font-mono); font-size: var(--f-xs);
-  letter-spacing: 0.26em; text-transform: uppercase;
+  letter-spacing: 0.26em; 
   color: var(--cyan-bright); margin-bottom: 2.25rem;
 }
 
@@ -1467,7 +1460,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .footer-brand-tag {
   font-family: var(--font-mono); font-size: var(--f-3xs);
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.1rem; display: block;
+  letter-spacing: 0.18em;  color: var(--cyan); margin-bottom: 1.1rem; display: block;
 }
 
 .footer-brand-desc {
@@ -1476,7 +1469,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 
 .footer-col-title {
   font-family: var(--font-mono); font-size: var(--f-3xs);
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--t-pure); margin-bottom: 1.45rem; display: block;
+  letter-spacing: 0.2em;  color: var(--t-pure); margin-bottom: 1.45rem; display: block;
 }
 
 .footer-links {
@@ -1572,7 +1565,7 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 .fp-close:hover { background: rgba(255, 255, 255, 0.14); color: var(--t-pure); }
 .fp-form { padding: 1.25rem 1.4rem 1.6rem; }
 .fp-field { margin-bottom: 0.9rem; }
-.fp-label { display: block; font-family: var(--font-mono); font-size: var(--f-3xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--t-dim); margin-bottom: 0.4rem; }
+.fp-label { display: block; font-family: var(--font-mono); font-size: var(--f-3xs); letter-spacing: 0.16em;  color: var(--t-dim); margin-bottom: 0.4rem; }
 .fp-input, .fp-textarea, .fp-select {
   width: 100%; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--b1);
   border-radius: var(--r-md); color: var(--t-pure);
@@ -1743,7 +1736,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: calc(var(--f-3xs) - 0.1rem);
   color: var(--t-dim);
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   display: block;
   margin-bottom: 0.3rem;
@@ -1806,7 +1798,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   display: block;
   margin-bottom: 1.25rem;
 }
@@ -1871,7 +1862,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   z-index: 2;
   box-shadow: 0 0 40px var(--cyan-glow);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 .eco-ring {
   position: absolute;
@@ -1902,7 +1892,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   cursor: default;
   transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 .eco-node:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 20px var(--cyan-glow); }
 .eco-node .material-symbols-outlined { font-size: 22px; color: inherit; }
@@ -2036,7 +2025,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
 .revenue-stream-name {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
-  text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--t-low);
   margin-bottom: 0.5rem;
@@ -2078,7 +2066,6 @@ h1, h2, h3, h4, h5, h6, .sec-title {
   font-family: var(--font-mono);
   font-size: var(--f-3xs);
   color: var(--t-dim);
-  text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 

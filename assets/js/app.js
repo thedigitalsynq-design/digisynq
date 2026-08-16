@@ -243,16 +243,16 @@
     let isCanvasActive = true;
 
     const NODE_TYPES = [
-      { label: 'DOP GRADE A',   color: '#7dd3fc', cluster: 'people' },
-      { label: 'ARRI ALEXA 35', color: '#38bdf8', cluster: 'assets' },
-      { label: 'STAGE 02 (8K)', color: '#bae6fd', cluster: 'assets' },
-      { label: 'ACES COLOR DI', color: '#60c8f0', cluster: 'work'   },
-      { label: 'DIRECTOR',      color: '#93c5fd', cluster: 'people' },
-      { label: 'PLAN B LED',    color: '#a5d8f5', cluster: 'assets' },
-      { label: 'MANDATE 04',    color: '#7dd3fc', cluster: 'work'   },
-      { label: 'GAFFER',        color: '#38bdf8', cluster: 'people' },
-      { label: 'LOCATION',      color: '#bae6fd', cluster: 'assets' },
-      { label: 'DISTRIBUTION',  color: '#e0f2fe', cluster: 'intel'  }
+      { label: 'DOP Grade A',   color: '#7dd3fc', cluster: 'people' },
+      { label: 'ARRI Alexa 35', color: '#38bdf8', cluster: 'assets' },
+      { label: 'Stage 02 (8K)',  color: '#bae6fd', cluster: 'assets' },
+      { label: 'ACES Color DI',  color: '#60c8f0', cluster: 'work'   },
+      { label: 'Director',       color: '#93c5fd', cluster: 'people' },
+      { label: 'Plan B LED',     color: '#a5d8f5', cluster: 'assets' },
+      { label: 'Mandate 04',     color: '#7dd3fc', cluster: 'work'   },
+      { label: 'Gaffer',         color: '#38bdf8', cluster: 'people' },
+      { label: 'Location',       color: '#bae6fd', cluster: 'assets' },
+      { label: 'Distribution',   color: '#e0f2fe', cluster: 'intel'  }
     ];
 
     function resizeCanvas() {
@@ -490,70 +490,70 @@
   /* ── 10. 10-Step Mechanism Carousel Controller ──────────────────────────── */
   const mechData = {
     '1': {
-      num: '01 // DEFINE',
+      num: '01 // Define',
       title: 'Define the Production Mandate',
       desc: 'Input script parameters, technical specifications, camera preferences, schedule windows, and budget constraints into DIGISYNQ.',
       example: 'Scenario: Period narrative thriller requires low-light anamorphic package, 14-person crew, and 12 soundstage shoot days in Bengaluru.',
       chain: ['Parse Technical Spec', 'Establish Budget Boundaries', 'Set Milestone Schedule']
     },
     '2': {
-      num: '02 // DISCOVER',
+      num: '02 // Discover',
       title: 'Discover Available Ecosystem Capacity',
       desc: 'Index hidden, idle, and distributed industry capacity. Map talent, unbooked soundstages, specialty camera packages, and verified skills across regional hubs.',
       example: 'Scenario: 3 Soundstages in Bengaluru have 14 open calendar days next month. 6 Cinematographers are between projects.',
       chain: ['Map Raw Capacity', 'Index Hardware & Spaces', 'Identify Availability Windows']
     },
     '3': {
-      num: '03 // MATCH',
+      num: '03 // Match',
       title: 'Match Compatible Talent & Hardware',
       desc: 'Traverse the capability graph to match creative chemistry, equipment compatibility, and calendar availability across traditional industry silos.',
       example: 'Scenario: Producer seeking specialized anamorphic lenses connects directly to an owner whose package is sitting idle.',
       chain: ['Traverse Network Graph', 'Match Compatibility Score', 'Confirm Calendar Sync']
     },
     '4': {
-      num: '04 // ASSEMBLE',
+      num: '04 // Assemble',
       title: 'Assemble the Right-Sized Unit',
       desc: 'Build the precise combination tailored for the mandate instead of standard bloated packages. Right-sized crews, hardware, and locations.',
       example: 'Scenario: Low-budget period thriller composed with agile 14-person crew, vintage prime set, and negotiated off-peak stage rate.',
       chain: ['Assess Mandate Needs', 'Right-Size Crew & Gear', 'Calculate Synergies']
     },
     '5': {
-      num: '05 // EXECUTE',
+      num: '05 // Execute',
       title: 'Execute with Plan A/B/C Resilience',
       desc: 'Run active shoots with real-time operational support and pre-matched backup options ready to deploy without stopping the production clock.',
       example: 'Scenario: Rain halts outdoor shoot. Virtual production LED bay activates under pre-negotiated Plan B terms seamlessly.',
       chain: ['Monitor Live Milestones', 'Deploy Hot-Swap Standbys', 'Maintain Production Rhythm']
     },
     '6': {
-      num: '06 // TRACK',
+      num: '06 // Track',
       title: 'Track Performance & Flow in Real Time',
       desc: 'Capture wrap logs, time efficiency, equipment integrity, and budget adherence objectively at every stage.',
       example: 'Scenario: Wrap sheet logs: 100% on-time call sheets, zero gear damage, +18% schedule time savings achieved.',
       chain: ['Record Wrap Logs', 'Audit Budget-to-Actual', 'Monitor Daily Handoffs']
     },
     '7': {
-      num: '07 // WRAP',
+      num: '07 // Wrap',
       title: 'Wrap with Integrity & Milestone Escrow',
       desc: 'Close shoot cycles with verified asset handoffs, equipment check-in inspections, and automated milestone fund releases.',
       example: 'Scenario: All camera packages returned undamaged, raw footage checksums verified, post-production escrow released.',
       chain: ['Inspect Equipment Integrity', 'Verify Data Checksums', 'Release Milestone Contracts']
     },
     '8': {
-      num: '08 // VERIFY',
+      num: '08 // Verify',
       title: 'Verify Project Evidence & Logs',
       desc: 'Authenticate capability through actual wrap sheets, portfolio breakdowns, peer confirmations, and equipment maintenance history.',
       example: 'Scenario: DOP low-light narrative competency authenticated via verified feature film wrap logs and colorist feedback.',
       chain: ['Review Project Wraps', 'Validate Equipment Handoffs', 'Certify Capability Profile']
     },
     '9': {
-      num: '09 // LEARN',
+      num: '09 // Learn',
       title: 'Learn Before You Blame (Post-Mortem)',
       desc: 'Conduct blameless post-mortems on delays and successes. Translate every production friction point into institutional network memory.',
       example: 'Scenario: Post-wrap analysis uncovers audio interference pattern in location X, automatically flagging it for future productions.',
       chain: ['Conduct Blameless Review', 'Extract Operational Insights', 'Update Matching Algorithms']
     },
     '10': {
-      num: '10 // REUSE',
+      num: '10 // Reuse',
       title: 'Reuse & Redeploy for Next Best Use ↺',
       desc: 'Resources and content immediately flow to their next highest value activity — talent to mentoring, idle gear to rental, master footage to platform cuts.',
       example: 'Scenario: DOP completes shoot and immediately leads a 2-day lighting workshop while camera package moves to commercial shoot.',
