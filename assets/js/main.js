@@ -898,6 +898,30 @@ function initModals() {
       }, 800);
     });
   }
+
+  // Main Contact Page Form Handler
+  const contactPageForm = document.getElementById('coordination-intake-form');
+  if (contactPageForm) {
+    contactPageForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactPageForm.querySelector('#form-submit-btn') || contactPageForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Transmitting coordination signal...';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        contactPageForm.innerHTML = `
+          <div style="text-align: center; padding: 3rem 1.5rem; background: rgba(52, 211, 153, 0.06); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 12px;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #34d399; font-size: 1.75rem; box-shadow: 0 0 25px rgba(52, 211, 153, 0.35);">✓</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Coordination Request Received</h3>
+            <p style="font-size: 1.05rem; color: #f1f5f9; max-width: 480px; margin: 0 auto 2rem; line-height: 1.65;">Your request has been logged into the DIGISYNQ network. A coordination lead will review your requirements and reach out within 24 hours.</p>
+            <a href="index.html" class="btn btn-secondary btn-sm">Return to homepage</a>
+          </div>
+        `;
+      }, 750);
+    });
+  }
 }
 
 /* ==========================================================================
