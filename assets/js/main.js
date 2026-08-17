@@ -383,16 +383,16 @@ function initSystemLoop() {
   const inspectorBadge = document.getElementById('inspector-stage-badge');
 
   const stageData = [
-    { title: "01 — DISCOVER", badge: "VISIBILITY LAYER", desc: "Make assets, talent, specialized craft, capabilities, facilities and project opportunities universally searchable and contextually discoverable across the entertainment spectrum." },
-    { title: "02 — REGISTER", badge: "INGESTION LAYER", desc: "Bring participants into a structured ecosystem with standardized metadata, capability vectors, portfolio assets, and technical specifications that the system can reason over." },
-    { title: "03 — VERIFY", badge: "TRUST PROTOCOL", desc: "Establish baseline trust and credentials through track-record audit, verified screen credits, peer validation, and operational capability vetting before any connection is made." },
-    { title: "04 — CLASSIFY", badge: "TAG 1–10 MATRIX", desc: "Use functional TAG 1–10 classification to define operational capability, discipline, and specialization. TAG defines function, not hierarchy — TAG 10 is not superior to TAG 01." },
-    { title: "05 — PROFILE", badge: "IDENTITY LAYER", desc: "Create structured professional identities capturing dynamic availability windows, geographic proximity, technical toolchains, stylistic range, and multi-project collaborative context." },
-    { title: "06 — CONNECT", badge: "SYNCHRONIZATION", desc: "Connect complementary participants across production layers, bridging creators with producers, infrastructure with projects, brands with narrative architects, and communities with creators." },
-    { title: "07 — MATCH", badge: "PRECISION SIGNALS", desc: "Apply multi-dimensional matching signals including availability, budget constraints, stylistic synergy, geographic proximity, collaboration history, and verified execution records." },
-    { title: "08 — EXECUTE", badge: "COLLABORATION FLOW", desc: "Transition digital connections into streamlined real-world production workflows with synchronized milestones, frictionless communications, and zero economic leakage." },
-    { title: "09 — RECORD", badge: "SIGNAL CAPTURE", desc: "Capture verified execution outputs, performance signals, timeline adherence, milestone completion, and community feedback to enrich ecosystem intelligence for future matching." },
-    { title: "10 — RECONNECT", badge: "COMPOUNDING LOOP", desc: "Feed accumulated project intelligence back into the network to generate faster, higher-conviction matches for future initiatives — making every collaboration smarter than the last." }
+    { title: "01 — Discover", badge: "Visibility layer", desc: "Make assets, talent, specialized craft, capabilities, facilities and project opportunities universally searchable and contextually discoverable across the entertainment spectrum." },
+    { title: "02 — Register", badge: "Ingestion layer", desc: "Bring participants into a structured ecosystem with standardized metadata, capability vectors, portfolio assets, and technical specifications that the system can reason over." },
+    { title: "03 — Verify", badge: "Trust protocol", desc: "Establish baseline trust and credentials through track-record audit, verified screen credits, peer validation, and operational capability vetting before any connection is made." },
+    { title: "04 — Classify", badge: "TAG 1–10 matrix", desc: "Use functional TAG 1–10 classification to define operational capability, discipline, and specialization. TAG defines function, not hierarchy — TAG 10 is not superior to TAG 01." },
+    { title: "05 — Profile", badge: "Identity layer", desc: "Create structured professional identities capturing dynamic availability windows, geographic proximity, technical toolchains, stylistic range, and multi-project collaborative context." },
+    { title: "06 — Connect", badge: "Synchronization", desc: "Connect complementary participants across production layers, bridging creators with producers, infrastructure with projects, brands with narrative architects, and communities with creators." },
+    { title: "07 — Match", badge: "Precision signals", desc: "Apply multi-dimensional matching signals including availability, budget constraints, stylistic synergy, geographic proximity, collaboration history, and verified execution records." },
+    { title: "08 — Execute", badge: "Collaboration flow", desc: "Transition digital connections into streamlined real-world production workflows with synchronized milestones, frictionless communications, and zero economic leakage." },
+    { title: "09 — Record", badge: "Signal capture", desc: "Capture verified execution outputs, performance signals, timeline adherence, milestone completion, and community feedback to enrich ecosystem intelligence for future matching." },
+    { title: "10 — Reconnect", badge: "Compounding loop", desc: "Feed accumulated project intelligence back into the network to generate faster, higher-conviction matches for future initiatives — making every collaboration smarter than the last." }
   ];
 
   stageCards.forEach((card, index) => {
@@ -401,16 +401,15 @@ function initSystemLoop() {
       card.classList.add('active');
 
       if (stageData[index] && inspectorTitle && inspectorDesc && inspectorBadge) {
-        // Fade transition
         const inspector = inspectorTitle.closest('.loop-inspector-box');
-        if (inspector) { inspector.style.opacity = '0.5'; }
+        if (inspector) { inspector.style.opacity = '0.4'; }
 
         setTimeout(() => {
           inspectorTitle.textContent = stageData[index].title;
           inspectorDesc.textContent = stageData[index].desc;
           inspectorBadge.textContent = stageData[index].badge;
-          if (inspector) { inspector.style.opacity = '1'; inspector.style.transition = 'opacity 0.3s ease'; }
-        }, 120);
+          if (inspector) { inspector.style.opacity = '1'; }
+        }, 150);
       }
     });
   });
@@ -456,7 +455,6 @@ function initFlywheel() {
   let activeIndex = 0;
   let lastSwitch = Date.now();
 
-  // Segment labels & colors
   const segmentColors = [
     'rgba(0, 240, 255, 0.6)',
     'rgba(56, 189, 248, 0.5)',
@@ -479,7 +477,6 @@ function initFlywheel() {
 
     angle += 0.006;
 
-    // Draw arc segments
     for (let i = 0; i < total; i++) {
       const startAngle = angle + (i / total) * Math.PI * 2 + gap;
       const endAngle = angle + ((i + 1) / total) * Math.PI * 2 - gap;
@@ -504,7 +501,6 @@ function initFlywheel() {
       ctx.stroke();
       ctx.shadowBlur = 0;
 
-      // Dot at the midpoint of the outer arc
       const midAngle = angle + ((i + 0.5) / total) * Math.PI * 2;
       const dotX = cx + Math.cos(midAngle) * ((outerR + innerR) / 2);
       const dotY = cy + Math.sin(midAngle) * ((outerR + innerR) / 2);
@@ -517,8 +513,7 @@ function initFlywheel() {
       ctx.shadowBlur = 0;
     }
 
-    // Auto-advance active step
-    if (Date.now() - lastSwitch > 2200) {
+    if (Date.now() - lastSwitch > 2400) {
       activeIndex = (activeIndex + 1) % total;
       flywheelItems.forEach((item, idx) => {
         item.classList.toggle('active', idx === activeIndex);
@@ -531,7 +526,6 @@ function initFlywheel() {
 
   animateFlywheel();
 
-  // Manual control via list items
   flywheelItems.forEach((item, idx) => {
     item.addEventListener('click', () => {
       activeIndex = idx;
@@ -552,7 +546,7 @@ function initStakeholderTabs() {
 
   const stakeholderData = {
     talent: {
-      title: "TALENT & CREATORS",
+      title: "Talent & Creators",
       desc: "Artists, technicians, cinematographers, writers, sound engineers, editors, VFX specialists, and directors. DIGISYNQ gives verified talent structured identity and direct access to high-conviction productions without opaque middlemen.",
       benefits: [
         "Verified credit graph and immutable track-record portfolio",
@@ -562,7 +556,7 @@ function initStakeholderTabs() {
       ]
     },
     producers: {
-      title: "PRODUCERS & STUDIOS",
+      title: "Producers & Studios",
       desc: "Production companies, showrunners, and project owners. DIGISYNQ eliminates weeks of fragmented crew assembly, stage booking, and logistical friction through instant capability matching.",
       benefits: [
         "Instant assembly of verified, pre-vetted multi-disciplinary crews",
@@ -572,7 +566,7 @@ function initStakeholderTabs() {
       ]
     },
     brands: {
-      title: "BRANDS & PARTNERS",
+      title: "Brands & Partners",
       desc: "Forward-thinking enterprises seeking authentic cultural participation and narrative integration rather than superficial product placement.",
       benefits: [
         "Contextual alignment with culturally resonant narrative projects",
@@ -582,7 +576,7 @@ function initStakeholderTabs() {
       ]
     },
     media: {
-      title: "MEDIA & CHANNELS",
+      title: "Media & Channels",
       desc: "Publishers, streaming services, broadcast networks, and digital communication ecosystems seeking verified content pipelines.",
       benefits: [
         "Predictable, high-quality content supply chains at scale",
@@ -592,7 +586,7 @@ function initStakeholderTabs() {
       ]
     },
     audiences: {
-      title: "AUDIENCES & COMMUNITIES",
+      title: "Audiences & Communities",
       desc: "Fan communities, cultural tastemakers, and engaged audiences who amplify, participate in, and sustain creative universes.",
       benefits: [
         "Direct connection to project evolutions and creator universes",
@@ -602,7 +596,7 @@ function initStakeholderTabs() {
       ]
     },
     infrastructure: {
-      title: "INFRASTRUCTURE & FACILITIES",
+      title: "Infrastructure & Facilities",
       desc: "Soundstages, post-production suites, virtual production volumes, camera rental houses, and equipment facilities seeking smarter capacity utilization.",
       benefits: [
         "Maximized stage and gear utilization between project cycles",
@@ -612,7 +606,7 @@ function initStakeholderTabs() {
       ]
     },
     technology: {
-      title: "TECHNOLOGY & PLATFORMS",
+      title: "Technology & Platforms",
       desc: "Rendering engines, virtual production toolchains, workflow platforms, and post software suites seeking deeper integration into active productions.",
       benefits: [
         "Native integration into verified production workflows",
@@ -622,7 +616,7 @@ function initStakeholderTabs() {
       ]
     },
     associations: {
-      title: "ASSOCIATIONS & GUILDS",
+      title: "Associations & Guilds",
       desc: "Professional guilds, unions, industry councils, and creative federations protecting craft standards and career sustainability.",
       benefits: [
         "Transparent craft standards and fair operational protocols",
