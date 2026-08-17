@@ -9,39 +9,39 @@
    Warm accent palette · Generous whitespace · Form follows function
    ========================================================================== */
 :root {
-  /* Backgrounds — deep ink, not pure black */
-  --bg-primary: #080909;
-  --bg-secondary: #0d0f10;
-  --bg-tertiary: #141618;
-  --bg-card: rgba(20, 22, 24, 0.6);
-  --bg-card-hover: rgba(28, 31, 34, 0.8);
-  --bg-glass: rgba(8, 9, 9, 0.72);
-  --bg-glass-card: rgba(255, 255, 255, 0.015);
+  /* Backgrounds — deep rich contrast */
+  --bg-primary: #060709;
+  --bg-secondary: #0c0e12;
+  --bg-tertiary: #13171e;
+  --bg-card: rgba(18, 23, 30, 0.88);
+  --bg-card-hover: rgba(28, 35, 46, 0.96);
+  --bg-glass: rgba(10, 13, 18, 0.85);
+  --bg-glass-card: rgba(255, 255, 255, 0.04);
 
-  /* Borders — hairline restraint */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-medium: rgba(255, 255, 255, 0.11);
-  --border-active: rgba(52, 211, 153, 0.5);
-  --border-glow: rgba(52, 211, 153, 0.18);
+  /* Borders — high visibility crisp lines */
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --border-medium: rgba(255, 255, 255, 0.25);
+  --border-active: rgba(52, 211, 153, 0.75);
+  --border-glow: rgba(52, 211, 153, 0.35);
 
-  /* Text — warm whites & cooled secondaries */
-  --text-primary: #f8f9fa;
-  --text-secondary: #8b9aaa;
-  --text-muted: #5a6675;
-  --text-dim: #3d4855;
+  /* Text — maximum brightness and legibility */
+  --text-primary: #ffffff;
+  --text-secondary: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
 
-  /* Accent — warm editorial emerald (not harsh cyan) */
+  /* Accent — vibrant emerald pop */
   --accent-cyan: #34d399;
   --accent-blue: #6366f1;
-  --accent-sky: #a78bfa;
-  --accent-glow: rgba(52, 211, 153, 0.25);
-  --accent-subtle: rgba(52, 211, 153, 0.07);
+  --accent-sky: #38bdf8;
+  --accent-glow: rgba(52, 211, 153, 0.45);
+  --accent-subtle: rgba(52, 211, 153, 0.14);
 
   /* Semantic states */
-  --danger-subtle: rgba(239, 68, 68, 0.12);
-  --danger-border: rgba(239, 68, 68, 0.35);
+  --danger-subtle: rgba(239, 68, 68, 0.18);
+  --danger-border: rgba(239, 68, 68, 0.55);
   --danger-text: #f87171;
-  --success-subtle: rgba(52, 211, 153, 0.12);
+  --success-subtle: rgba(52, 211, 153, 0.18);
   --success-text: #34d399;
 
   /* Typography — 100% DM Serif Display Across Complete Website */
@@ -725,33 +725,35 @@ a {
 }
 
 .asset-node-title {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .asset-node-desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
 }
 
 .problem-conclusion-banner {
   text-align: center;
-  padding: 2rem;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  max-width: 760px;
-  margin: 3rem auto 0;
+  padding: 2.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 12px;
+  max-width: 820px;
+  margin: 3.5rem auto 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .problem-conclusion-banner p {
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -759,7 +761,7 @@ a {
 .breakdowns-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.2rem;
   margin-top: 3rem;
 }
 
@@ -776,9 +778,10 @@ a {
 }
 
 .breakdown-card:hover {
-  border-color: var(--border-medium);
+  border-color: var(--accent-cyan);
   transform: translateY(-4px);
   background: var(--bg-card-hover);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
 .breakdown-num {
@@ -790,25 +793,29 @@ a {
 }
 
 .breakdown-title {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .breakdown-body {
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
   color: var(--text-secondary);
-  margin-bottom: 1.75rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
 }
 
 .breakdown-punchline {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-subtle);
-  line-height: 1.4;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--accent-cyan);
 }
 
 /* ==========================================================================
