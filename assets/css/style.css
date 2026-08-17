@@ -2055,38 +2055,147 @@ a {
 }
 
 /* ==========================================================================
-   18. RESPONSIVE BREAKPOINTS
+/* ==========================================================================
+   18. UNIFIED FLUID GRIDS & RESPONSIVE ADAPTABILITY
    ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Fluid responsive grids */
+.asset-nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+  align-items: stretch;
+}
+
+.breakdowns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.5rem, 2.5vw, 2.2rem);
+  align-items: stretch;
+}
+
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+.tag-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  align-items: stretch;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  align-items: stretch;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+
+.value-multiplier-diagram {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  align-items: stretch;
+}
+
+.loop-stages-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  align-items: stretch;
+}
+
+.founders-grid, .founder-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: stretch;
+}
+
+/* Card Uniformity & Hardware Acceleration */
+.asset-node-card,
+.breakdown-card,
+.pipeline-stage-card,
+.tag-card,
+.signal-card,
+.model-step-card,
+.founder-card,
+.founder-profile-card,
+.loop-stage-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(18, 23, 30, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+}
+
+.asset-node-card:hover,
+.breakdown-card:hover,
+.pipeline-stage-card:hover,
+.tag-card:hover,
+.signal-card:hover,
+.model-step-card:hover,
+.founder-card:hover,
+.founder-profile-card:hover,
+.loop-stage-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(52, 211, 153, 0.2);
+}
+
+/* Off-screen Render Performance Optimization */
+.problem-section,
+.connective-layer-section,
+.system-loop-section,
+.pipeline-section,
+.tag-matrix-section,
+.signals-section,
+.flywheel-section,
+.comparison-section,
+.stakeholders-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
-  .breakdowns-grid {
-    grid-template-columns: 1fr;
-  }
-  .pipeline-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .pipeline-stage-card::after {
     display: none;
-  }
-  .tag-matrix-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .signals-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   .flywheel-container {
     grid-template-columns: 1fr;
   }
-  .comparison-grid {
-    grid-template-columns: 1fr;
-  }
   .stakeholder-detail-card {
     grid-template-columns: 1fr;
-  }
-  .value-multiplier-diagram {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .loop-stages-timeline {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2096,21 +2205,6 @@ a {
   }
   .mobile-menu-toggle {
     display: flex;
-  }
-  .pipeline-grid {
-    grid-template-columns: 1fr;
-  }
-  .tag-matrix-grid {
-    grid-template-columns: 1fr;
-  }
-  .signals-grid {
-    grid-template-columns: 1fr;
-  }
-  .value-multiplier-diagram {
-    grid-template-columns: 1fr;
-  }
-  .loop-stages-timeline {
-    grid-template-columns: 1fr;
   }
   .footer-top {
     grid-template-columns: 1fr;
@@ -2123,33 +2217,35 @@ a {
 }
 
 /* ==========================================================================
-   19. SCROLL-REVEAL ANIMATION SYSTEM
+   19. LUXURY SCROLL-REVEAL ANIMATION SYSTEM (60/120FPS GPU ACCELERATED)
    ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px) translateZ(0);
+  backface-visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.reveal-left {
-  transform: translateX(-40px);
+  transform: translateX(-35px) translateZ(0);
 }
 
 .reveal.reveal-right {
-  transform: translateX(40px);
+  transform: translateX(35px) translateZ(0);
 }
 
 .reveal.revealed {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
 
 /* ==========================================================================
    20. SCROLL PROGRESS INDICATOR

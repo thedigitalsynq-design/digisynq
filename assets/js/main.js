@@ -302,10 +302,30 @@ function initHeroNetwork() {
       ctx.fillText(node.label, node.x + 8, node.y + 3);
     });
 
-    requestAnimationFrame(render);
+    if (isCanvasVisible) {
+      animFrameId = requestAnimationFrame(render);
+    }
   }
 
-  render();
+  let animFrameId = null;
+  let isCanvasVisible = true;
+
+  if ('IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isCanvasVisible = entry.isIntersecting;
+        if (isCanvasVisible) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = requestAnimationFrame(render);
+        } else {
+          cancelAnimationFrame(animFrameId);
+        }
+      });
+    }, { threshold: 0.05 });
+    heroObserver.observe(canvas.parentElement || canvas);
+  }
+
+  animFrameId = requestAnimationFrame(render);
 }
 
 /* ==========================================================================
