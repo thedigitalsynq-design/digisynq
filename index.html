@@ -6,13 +6,54 @@
   <meta name="description" content="DIGISYNQ — The network between the dots. An asset-light coordination operating system for an asset-rich but fragmented entertainment industry." />
   <title>DIGISYNQ — The Network Between the Dots</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Newsreader, Instrument Serif, DM Serif Display, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* Editorial serif overrides for homepage hero & big statements */
+    .hero-headline {
+      font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+    .hero-supporting-title {
+      font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+    .big-idea-text-1, .big-idea-text-2 {
+      font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .final-cta-title {
+      font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .final-cta-sub, .final-cta-manifesto {
+      font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-style: italic;
+    }
+    .section-title em, h2 em, h1 em {
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,25 +62,24 @@
        ======================================================================== -->
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="#hero" class="brand-logo" aria-label="DIGISYNQ Home">
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ Home">
         <img src="assets/img/logo.svg" alt="DIGISYNQ Logo" class="brand-logo-img" width="36" height="36" />
         <span>DIGISYNQ</span>
       </a>
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="#problem" class="nav-link">The problem</a></li>
-          <li><a href="#mechanism" class="nav-link">The system</a></li>
-          <li><a href="#pipeline" class="nav-link">ABCDEF</a></li>
-          <li><a href="#tag-system" class="nav-link">TAG matrix</a></li>
-          <li><a href="#flywheel" class="nav-link">Flywheel</a></li>
-          <li><a href="#stakeholders" class="nav-link">Ecosystem</a></li>
-          <li><a href="#asset-light" class="nav-link">Asset-light</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="business.html" class="nav-link">Business model</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-secondary btn-sm open-connect-modal" id="nav-connect-btn">Connect with us</button>
+        <a href="contact.html" class="btn btn-secondary btn-sm" id="nav-connect-btn">Coordinate a project</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -51,15 +91,13 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
-    <a href="#problem" class="mobile-nav-link">The problem</a>
-    <a href="#mechanism" class="mobile-nav-link">The system</a>
-    <a href="#connective-layer" class="mobile-nav-link">Connective layer</a>
-    <a href="#pipeline" class="mobile-nav-link">ABCDEF pipeline</a>
-    <a href="#tag-system" class="mobile-nav-link">TAG 1–10 matrix</a>
-    <a href="#flywheel" class="mobile-nav-link">Coordination flywheel</a>
-    <a href="#stakeholders" class="mobile-nav-link">Stakeholder ecosystem</a>
-    <a href="#asset-light" class="mobile-nav-link">Asset-light model</a>
-    <button class="btn btn-primary open-connect-modal" style="width: 100%; margin-top: 1rem;">Connect with us</button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="platform.html" class="mobile-nav-link">Platform architecture</a>
+    <a href="network.html" class="mobile-nav-link">TAG matrix & network</a>
+    <a href="business.html" class="mobile-nav-link">Asset-light business model</a>
+    <a href="about.html" class="mobile-nav-link">About & leadership</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & intake</a>
+    <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Coordinate a project</a>
   </div>
 
   <!-- ========================================================================

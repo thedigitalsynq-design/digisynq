@@ -3,291 +3,465 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Connect with DIGISYNQ — syncing the filmmaking ecosystem. Initiate a production mandate, register capacity, or join the cinema operating network." />
-  <meta property="og:title" content="Connect — DIGISYNQ" />
-  <meta property="og:description" content="Cinema doesn't lack resources. It lacks coordination. Connect with DIGISYNQ." />
-  <meta property="og:image" content="assets/img/logo.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#f3efea" />
-  <title>Connect — DIGISYNQ</title>
-  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <meta name="description" content="Contact DIGISYNQ — Coordinate a project, register for the ecosystem, or initiate an institutional partnership inquiry." />
+  <title>Contact & Coordinate — DIGISYNQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Font Stack: DM Serif Display (Headlines) + Plus Jakarta Sans (UI/Body) + JetBrains Mono (HUD) -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <!-- Material Symbols Outlined -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <noscript><style>html{visibility:visible;opacity:1}</style></noscript>
+  <style>
+    .contact-page-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 5rem;
+    }
+
+    .intake-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: 16px;
+      padding: 3rem;
+    }
+
+    .intake-form-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .intake-form-sub {
+      font-size: 0.975rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .form-field {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-medium);
+      border-radius: 8px;
+      padding: 0.85rem 1.1rem;
+      font-family: var(--font-body);
+      font-size: 0.975rem;
+      color: var(--text-primary);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.08);
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-select option {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .direct-channels-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .channels-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .channels-sub {
+      font-size: 0.975rem;
+      color: var(--text-secondary);
+    }
+
+    .direct-channel-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all var(--transition-smooth);
+    }
+
+    .direct-channel-card:hover {
+      border-color: var(--accent-cyan);
+      background: var(--bg-card-hover);
+      transform: translateX(6px);
+    }
+
+    .channel-icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-glow);
+    }
+
+    .channel-icon-circle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .channel-icon-circle.whatsapp {
+      background: rgba(37, 211, 102, 0.1);
+      border-color: rgba(37, 211, 102, 0.4);
+      color: #25d366;
+    }
+
+    .channel-icon-circle.email {
+      background: rgba(0, 240, 255, 0.08);
+      border-color: var(--border-glow);
+      color: var(--accent-cyan);
+    }
+
+    .channel-icon-circle.instagram {
+      background: rgba(225, 48, 108, 0.1);
+      border-color: rgba(225, 48, 108, 0.3);
+      color: #e1306c;
+    }
+
+    .channel-icon-circle.youtube {
+      background: rgba(255, 0, 0, 0.1);
+      border-color: rgba(255, 0, 0, 0.3);
+      color: #ff0000;
+    }
+
+    .channel-icon-circle.threads {
+      background: rgba(255,255,255, 0.05);
+      border-color: rgba(255,255,255, 0.15);
+      color: var(--text-secondary);
+    }
+
+    .channel-icon-circle.facebook {
+      background: rgba(24, 119, 242, 0.1);
+      border-color: rgba(24, 119, 242, 0.3);
+      color: #1877f2;
+    }
+
+    .channel-info h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .channel-info p {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    @media (max-width: 960px) {
+      .contact-page-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="DIGISYNQ home">
-        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav-logo-img" />
-        <span class="nav-logo-name">DIGISYNQ</span>
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ Home">
+        <img src="assets/img/logo.svg" alt="DIGISYNQ Logo" class="brand-logo-img" width="36" height="36" />
+        <span>DIGISYNQ</span>
       </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="platform.html">Platform</a>
-        <a href="network.html">Network</a>
-        <a href="business.html">Business</a>
-        <a href="stories.html">Stories</a>
-        <a href="insights.html">Insights</a>
-        <a href="expansion.html">Expansion</a>
-        <a href="about.html">About</a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="business.html" class="nav-link">Business model</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
       </nav>
-
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-signal btn-sm">Coordinate a project &rarr;</a>
-        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span><span></span><span></span>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Coordinate a project</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="platform.html">Platform</a>
-    <a href="network.html">Verified network</a>
-    <a href="business.html">Business model</a>
-    <a href="stories.html">Production stories</a>
-    <a href="insights.html">Industry insights</a>
-    <a href="expansion.html">Expansion plan</a>
-    <a href="about.html">About DIGISYNQ</a>
-    <a href="register.html">Join network</a>
-    <div class="nav-drawer-cta">
-      <a href="contact.html" class="btn btn-signal btn-full">Coordinate a project &rarr;</a>
-      <a href="register.html" class="btn btn-ghost btn-full">Join the network</a>
-    </div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="platform.html" class="mobile-nav-link">Platform architecture</a>
+    <a href="network.html" class="mobile-nav-link">TAG matrix & network</a>
+    <a href="business.html" class="mobile-nav-link">Asset-light business model</a>
+    <a href="about.html" class="mobile-nav-link">About & leadership</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & intake</a>
   </div>
 
-  <!-- Hero Header -->
-  <section class="page-hero" aria-label="Network gateway">
-    <div class="wrap">
-      <div class="eyebrow reveal"><span class="eyebrow-line"></span> Network gateway</div>
-      <h1 class="sec-title display-hero reveal reveal--d1">
-        Connect the dots.<br />
-        <em>We coordinate the rest.</em>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="pulse-dot"></span><span>COORDINATION CONSOLE &bull; DIRECT TRANSMISSION</span></div>
+      <h1 class="page-title">
+        Initiate <span class="highlight-gradient"><em><strong>coordination.</strong></em></span>
       </h1>
-      <p class="sec-sub reveal reveal--d2">
-        Initiate a production mandate, register unutilized equipment or studio capacity, or join the capability graph.
+      <p class="page-subtitle">
+        Whether you are registering talent, sourcing production capability, proposing a brand integration, or exploring an institutional partnership — this is where it begins.
       </p>
     </div>
   </section>
 
-  <!-- Desk Channels & Contact Form -->
-  <section class="section" style="padding-top: 1rem; padding-bottom: 6rem;">
-    <div class="wrap problem-layout">
+  <!-- MAIN CONTACT SECTION -->
+  <section class="page-content-section" id="intake" style="padding-top:5rem;">
+    <div class="container">
+      <div class="contact-page-grid">
 
-      <!-- Left Desk Information -->
-      <div class="reveal">
-        <span class="eyebrow"><span class="eyebrow-line"></span> Direct desk</span>
-        <h3 style="font-size: var(--f-xl); margin-block: 0.5rem; color:var(--t-pure);">Orchestration desk</h3>
-        <p class="body-text" style="margin-bottom: 2rem; font-size:var(--f-sm);">
-          Our orchestration desk reviews project mandates, hardware availability windows, and capability profiles within 24 hours.
-        </p>
+        <!-- INTAKE FORM -->
+        <div class="intake-form-wrap">
+          <h2 class="intake-form-title">Project intake form.</h2>
+          <p class="intake-form-sub">Fill in the details below and the DIGISYNQ coordination team will respond within 24 hours.</p>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem;">
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-            <span style="font-size: 1.35rem;">💬</span>
-            <div>
-              <strong style="display: block; color: var(--t-pure); font-size: var(--f-sm);">Direct WhatsApp desk</strong>
-              <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); font-size: var(--f-xs); font-family:var(--font-mono);">+91 7996548969</a>
+          <form id="coordination-intake-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="full-name">Full name</label>
+                <input class="form-input" type="text" id="full-name" name="full_name" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="org-name">Organisation / project</label>
+                <input class="form-input" type="text" id="org-name" name="org_name" placeholder="Studio, company or project title" />
+              </div>
             </div>
-          </div>
 
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-            <span style="font-size: 1.35rem;">📧</span>
-            <div>
-              <strong style="display: block; color: var(--t-pure); font-size: var(--f-sm);">Platform email</strong>
-              <a href="mailto:thedigitalsynq@gmail.com" style="color: var(--cyan); font-size: var(--f-xs); font-family:var(--font-mono);">thedigitalsynq@gmail.com</a>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="email-field">Email address</label>
+                <input class="form-input" type="email" id="email-field" name="email" placeholder="you@domain.com" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="phone-field">Phone / WhatsApp</label>
+                <input class="form-input" type="tel" id="phone-field" name="phone" placeholder="+91 XXXXX XXXXX" />
+              </div>
             </div>
-          </div>
+
+            <div class="form-field">
+              <label class="form-label" for="role-type">I am registering as</label>
+              <select class="form-select" id="role-type" name="role_type" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="talent">Talent / creative professional (TAG 01–10)</option>
+                <option value="producer">Producer / production company</option>
+                <option value="brand">Brand / commercial partner</option>
+                <option value="infrastructure">Infrastructure / facility provider</option>
+                <option value="technology">Technology / platform provider</option>
+                <option value="media">Media / distribution partner</option>
+                <option value="association">Industry association / guild</option>
+                <option value="investor">Investor / capital partner</option>
+                <option value="other">Other institutional inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="project-brief">Coordination brief</label>
+              <textarea class="form-textarea" id="project-brief" name="project_brief" placeholder="Describe your project, requirement, or coordination objective. Include scale, timeline, and key capability needs."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit-btn" id="form-submit-btn">
+              Submit coordination request →
+            </button>
+          </form>
         </div>
 
-        <div class="shift-col" style="padding:1.5rem;">
-          <span class="shift-col-label" style="color:var(--cyan);">Network participation modes</span>
-          <p class="body-text" style="font-size: var(--f-xs); line-height: 1.7;">
-            <strong>Producers &amp; showrunners:</strong> commission right-sized crew units, lock idle soundstage slots, or enforce Plan A/B/C resilience.<br /><br />
-            <strong>Filmmakers &amp; technicians:</strong> verify capabilities beyond personal networks and monetize open calendar windows.<br /><br />
-            <strong>Studios &amp; gear owners:</strong> list dormant camera bodies, lighting trucks, and soundstages for verified bookings.<br /><br />
-            <strong>Media &amp; marketing partners:</strong> coordinate launch campaigns, brand marketing, and promotion through the network — without owning the machinery.<br /><br />
-            <strong>Workshop participants &amp; educators:</strong> join industry workshops and knowledge-transfer sessions coordinated with partner specialists.
-          </p>
+        <!-- DIRECT CHANNELS PANEL -->
+        <div class="direct-channels-panel">
+          <div>
+            <h2 class="channels-heading">Direct channels.</h2>
+            <p class="channels-sub">Reach the DIGISYNQ coordination team directly via any of the channels below. All inquiries are treated with institutional confidentiality.</p>
+          </div>
+
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="direct-channel-card">
+            <div class="channel-icon-circle whatsapp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>WhatsApp direct</h4>
+              <p>+91 79965 48969 · Instant coordination</p>
+            </div>
+          </a>
+
+          <a href="mailto:thedigitalsynq@gmail.com" class="direct-channel-card">
+            <div class="channel-icon-circle email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>Email coordination</h4>
+              <p>thedigitalsynq@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer" class="direct-channel-card">
+            <div class="channel-icon-circle instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>Instagram</h4>
+              <p>@digisynq</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer" class="direct-channel-card">
+            <div class="channel-icon-circle youtube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>YouTube</h4>
+              <p>@digisynq</p>
+            </div>
+          </a>
+
+          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener noreferrer" class="direct-channel-card">
+            <div class="channel-icon-circle threads">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.068c0-3.73.912-6.685 2.712-8.787C6.075 1.116 8.737 0 12.068 0c2.904 0 5.475.862 7.44 2.49 1.931 1.601 3.104 3.857 3.488 6.702l-2.388.327c-.298-2.215-1.202-3.977-2.689-5.238-1.445-1.228-3.387-1.85-5.762-1.85-2.723 0-4.828.892-6.255 2.65C4.504 6.88 3.9 9.26 3.9 12.068c0 3.107.65 5.54 1.934 7.233 1.23 1.625 3.17 2.459 5.768 2.477 2.248.016 4.106-.55 5.374-1.645.888-.762 1.476-1.818 1.732-3.066l2.37.46c-.356 1.752-1.175 3.218-2.436 4.307-1.654 1.414-3.934 2.161-6.456 2.166zm3.57-11.284a7.32 7.32 0 00-.338-1.434c-.395-1.088-1.22-2.083-2.347-2.795-.67-.42-1.405-.68-2.18-.757a5.267 5.267 0 00-.603-.035c-.92 0-1.736.24-2.42.714-.857.594-1.338 1.527-1.338 2.624 0 2.283 1.723 3.64 4.622 3.64.318 0 .636-.016.951-.049v-1.908zm0 0c.02.153.028.31.028.47a5.37 5.37 0 01-.1 1.005"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>Threads</h4>
+              <p>@digisynq</p>
+            </div>
+          </a>
+
+          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener noreferrer" class="direct-channel-card">
+            <div class="channel-icon-circle facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div class="channel-info">
+              <h4>Facebook</h4>
+              <p>/digisynq</p>
+            </div>
+          </a>
         </div>
       </div>
-
-      <!-- Right Form -->
-      <div class="reveal reveal--d2">
-        <form class="shift-col shift-col--after spotlight-card" style="padding: clamp(2rem, 4vw, 3rem);" id="contact-form" novalidate>
-          <h3 style="font-family:var(--font-serif); font-size: var(--f-xl); color: var(--t-pure); margin-bottom: 0.5rem;">Submit project mandate</h3>
-          <p style="font-size:var(--f-xs); color:var(--t-low); margin-bottom:1.5rem;">Connect your production needs directly to verified talent and studio capacity.</p>
-
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="role" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em;  color: var(--cyan);">Your ecosystem role</label>
-            <select id="role" name="role" class="fp-select">
-              <option value="Producer / Showrunner (Initiate Project Mandate)">Producer / showrunner (initiate project mandate)</option>
-              <option value="Director / Writer / Filmmaker (Join Capability Graph)">Director / writer / filmmaker (join capability graph)</option>
-              <option value="Cinematographer / Technician (Multi-Talent Verification)">Cinematographer / technician (multi-talent verification)</option>
-              <option value="Studio / Equipment Owner (List Idle Capacity)">Studio / equipment owner (list idle capacity)</option>
-              <option value="Educator / Mentor (Knowledge Transfer Labs)">Educator / mentor (knowledge transfer labs)</option>
-            </select>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="name" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em;  color: var(--cyan);">Name / production banner</label>
-            <input type="text" id="name" name="name" class="fp-input" placeholder="e.g. Red Chillies / Aryan Films" required />
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;">
-            <label for="phone" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em;  color: var(--cyan);">WhatsApp / contact number</label>
-            <input type="tel" id="phone" name="phone" class="fp-input" placeholder="+91 98765 43210" required />
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem;">
-            <label for="message" class="mono" style="font-size: var(--f-3xs); letter-spacing:0.1em;  color: var(--cyan);">Mandate requirements &amp; target dates</label>
-            <textarea id="message" name="message" class="fp-textarea" placeholder="Describe your project scale, camera preferences (ARRI/RED), shooting days, location hub..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-signal btn-full" id="submit-btn">
-            <span>Connect to orchestration desk &rarr;</span>
-          </button>
-
-          <div id="contact-confirmation" style="display:none; margin-top:1.25rem; padding:1.2rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:var(--r-md); text-align:center;">
-            <strong style="color:var(--cyan); display:block; margin-bottom:0.35rem; font-size:var(--f-sm);">✓ Mandate received</strong>
-            <p style="font-size:var(--f-xs); color:var(--t-medium); line-height:1.6;">Our orchestration desk has received your details and is routing your mandate to verified network capacity.</p>
-          </div>
-        </form>
-      </div>
-
     </div>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const contactForm = document.getElementById('contact-form');
-      const confirmBox = document.getElementById('contact-confirmation');
-      const submitBtn = document.getElementById('submit-btn');
-
-      if (contactForm && confirmBox) {
-        contactForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          const payload = {
-            name: contactForm.querySelector('#name').value.trim(),
-            type: contactForm.querySelector('#role').value,
-            message: contactForm.querySelector('#message').value.trim(),
-            page: window.location.pathname,
-            ts: new Date().toISOString()
-          };
-
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Routing Mandate...';
-
-          let sent = false;
-          try {
-            const res = await fetch('/api/feedback', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-              signal: AbortSignal.timeout(6000)
-            });
-            sent = res.ok;
-          } catch (err) {
-            sent = false;
-          }
-
-          // Offline fallback: save locally so nothing is lost
-          if (!sent) {
-            try {
-              const saved = JSON.parse(localStorage.getItem('dsynq_mandates') || '[]');
-              saved.push(payload);
-              localStorage.setItem('dsynq_mandates', JSON.stringify(saved));
-            } catch (err) {}
-          }
-
-          confirmBox.style.display = 'block';
-          confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          submitBtn.textContent = sent ? '✓ Mandate Transmitted' : '✓ Saved Locally';
-          if (!sent) {
-            confirmBox.querySelector('strong').textContent = '✓ Mandate Saved Locally';
-            confirmBox.querySelector('p').textContent = 'We could not reach the network right now, so your mandate was saved in this browser. Contact the orchestration desk directly to route it to verified capacity.';
-          }
-          contactForm.reset();
-          submitBtn.disabled = false;
-        });
-      }
-    });
-  </script>
-
-  <!-- Footer -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="wrap footer-grid">
-      <div>
-        <div class="footer-brand-name">DIGISYNQ</div>
-        <div class="footer-brand-tag">Syncing the filmmaking ecosystem</div>
-        <p class="footer-brand-desc">
-          An open, asset-light, trusted and continuously learning operating network for the cinema ecosystem.
-        </p>
-      </div>
-
-      <div>
-        <h4 class="footer-col-title">Network</h4>
-        <div class="footer-links">
-          <a href="index.html#problem">The problem</a>
-          <a href="index.html#comparison">The shift</a>
-          <a href="platform.html#mechanism-detail">Mechanism</a>
-          <a href="platform.html#verification-detail">Verification protocol</a>
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/img/logo.svg" alt="DIGISYNQ Logo" class="brand-logo-img" width="36" height="36" />
+            <span>DIGISYNQ</span>
+          </div>
+          <p>An asset-light coordination operating system for an asset-rich but fragmented entertainment industry.</p>
+          <div class="footer-direct-contact">
+            <a href="mailto:thedigitalsynq@gmail.com" class="contact-item-link"><span>thedigitalsynq@gmail.com</span></a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="contact-item-link"><span>+91 79965 48969</span></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="network.html">Network</a></li>
+            <li><a href="business.html">Business model</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; leadership</a></li>
+            <li><a href="contact.html">Contact &amp; intake</a></li>
+          </ul>
         </div>
       </div>
-
-      <div>
-        <h4 class="footer-col-title">Architecture</h4>
-        <div class="footer-links">
-          <a href="insights.html">Industry insights</a>
-          <a href="expansion.html">Expansion plan</a>
-          <a href="network.html">Verified network</a>
-          <a href="platform.html#resilience-detail">Plan A/B/C</a>
-          <a href="platform.html#mechanism-detail">Platform engine</a>
-          <a href="about.html">About us</a>
+      <div class="footer-founders-strip">
+        <div class="founders-heading">
+          <span class="eyebrow-mini">LEADERSHIP</span>
+          <h4>Co-founders</h4>
+        </div>
+        <div class="founders-grid">
+          <div class="founder-card"><span class="founder-role">Co-founder</span><span class="founder-name">Yathish Kumar Nagaraj</span></div>
+          <div class="founder-card"><span class="founder-role">Co-founder</span><span class="founder-name">Varun S</span></div>
+          <div class="founder-card"><span class="founder-role">Co-founder</span><span class="founder-name">Rakshith</span></div>
+          <div class="founder-card"><span class="founder-role">Co-founder</span><span class="founder-name">Rubesh</span></div>
         </div>
       </div>
-
-      <div>
-        <h4 class="footer-col-title">Connect</h4>
-        <div class="footer-links">
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
-          <a href="index.html">Back to home &rarr;</a>
+      <div class="footer-bottom">
+        <div>&copy; DIGISYNQ Systems. All rights reserved.</div>
+        <div style="display:flex;gap:1.5rem;">
+          <span>System status: <span style="color:#4ade80;">Online</span></span>
+          <span>Protocol: <span style="color:var(--accent-cyan);">DIGISYNQ-OS v2.4</span></span>
         </div>
       </div>
-    </div>
-
-    <div class="wrap footer-bottom">
-      <span>The project may end. The value doesn't.</span>
-      <span>&copy; 2026 DIGISYNQ. All rights reserved.</span>
     </div>
   </footer>
 
-  <!-- FAB -->
-  <div class="fab-cluster" aria-label="Quick actions">
-    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    </a>
-    <button class="fab fab-top" id="fab-top" aria-label="Back to top">
-      <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
-    </button>
-  </div>
-
-  <!-- Open-Source Plugins -->
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/feedback.js" defer></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Contact form submission handler
+    document.getElementById('coordination-intake-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('form-submit-btn');
+      btn.textContent = 'Coordination request submitted ✓';
+      btn.style.background = 'var(--success-text)';
+      btn.style.color = '#050608';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Submit coordination request →';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+        this.reset();
+      }, 4000);
+    });
+  </script>
 </body>
 </html>

@@ -3,210 +3,402 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Syncing the filmmaking ecosystem — DIGISYNQ asset-light operating network connecting verified talent, studios, hardware, and production capacity across the cinema lifecycle." />
-  <meta property="og:title" content="Syncing the filmmaking ecosystem — DIGISYNQ" />
-  <meta property="og:description" content="Cinema does not lack resources. It loses value in fragmentation. DIGISYNQ builds the operating network that connects them." />
-  <meta property="og:image" content="assets/img/logo.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#f3efea" />
-  <title>Syncing the filmmaking ecosystem — DIGISYNQ</title>
-  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <meta name="description" content="About DIGISYNQ — The institutional thesis, the network manifesto, core principles, and the founding team behind the entertainment coordination operating system." />
+  <title>About — DIGISYNQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Font Stack: DM Serif Display (Headlines) + Plus Jakarta Sans (UI/Body) + JetBrains Mono (HUD) -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <!-- Material Symbols Outlined -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <noscript><style>html{visibility:visible;opacity:1}</style></noscript>
+  <style>
+    /* About-page specific styles */
+    .manifesto-section {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .manifesto-pull-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--text-primary);
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .manifesto-pull-quote em {
+      color: var(--accent-cyan);
+      font-style: italic;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .principle-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all var(--transition-smooth);
+    }
+
+    .principle-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+    }
+
+    .principle-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .principle-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .principle-card p {
+      font-size: 0.975rem;
+      color: var(--text-secondary);
+    }
+
+    .thesis-block {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .thesis-block p {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      line-height: 1.7;
+      color: var(--text-primary);
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .thesis-block p.body-prose {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .founder-profile-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .founder-profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all var(--transition-smooth);
+    }
+
+    .founder-profile-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+      transform: translateY(-5px);
+    }
+
+    .founder-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(10, 132, 255, 0.15) 100%);
+      border: 2px solid var(--border-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--accent-cyan);
+    }
+
+    .founder-profile-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .founder-profile-role {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    @media (max-width: 900px) {
+      .principles-grid { grid-template-columns: 1fr; }
+      .founder-profile-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .founder-profile-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="DIGISYNQ home">
-        <img src="assets/img/logo.svg" alt="DIGISYNQ logo" class="nav-logo-img" />
-        <span class="nav-logo-name">DIGISYNQ</span>
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ Home">
+        <img src="assets/img/logo.svg" alt="DIGISYNQ Logo" class="brand-logo-img" width="36" height="36" />
+        <span>DIGISYNQ</span>
       </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="platform.html">Platform</a>
-        <a href="network.html">Network</a>
-        <a href="business.html">Business</a>
-        <a href="stories.html">Stories</a>
-        <a href="insights.html">Insights</a>
-        <a href="expansion.html">Expansion</a>
-        <a href="about.html" class="active">About</a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="business.html" class="nav-link">Business model</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
-
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-signal btn-sm">Coordinate a project &rarr;</a>
-        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span><span></span><span></span>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-secondary btn-sm">Coordinate a project</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="platform.html">Platform</a>
-    <a href="network.html">Verified network</a>
-    <a href="business.html">Business model</a>
-    <a href="stories.html">Production stories</a>
-    <a href="insights.html">Industry insights</a>
-    <a href="expansion.html">Expansion plan</a>
-    <a href="about.html">About DIGISYNQ</a>
-    <a href="register.html">Join network</a>
-    <div class="nav-drawer-cta">
-      <a href="contact.html" class="btn btn-signal btn-full">Coordinate a project &rarr;</a>
-      <a href="register.html" class="btn btn-ghost btn-full">Join the network</a>
-    </div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="platform.html" class="mobile-nav-link">Platform architecture</a>
+    <a href="network.html" class="mobile-nav-link">TAG matrix & network</a>
+    <a href="business.html" class="mobile-nav-link">Asset-light business model</a>
+    <a href="about.html" class="mobile-nav-link">About & leadership</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & intake</a>
+    <a href="contact.html" class="btn btn-primary" style="width:100%;margin-top:1rem;text-align:center;">Coordinate a project</a>
   </div>
 
-  <!-- Hero Section -->
-  <section class="page-hero" aria-label="About DIGISYNQ">
-    <div class="wrap">
-      <div class="eyebrow reveal"><span class="eyebrow-line"></span> The network story</div>
-      <h1 class="sec-title display-hero reveal reveal--d1">
-        Cinema does not lack resources.<br />
-        <span class="glow-text"><em>It loses value in fragmentation.</em></span>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="pulse-dot"></span><span>THESIS &bull; MANIFESTO &bull; LEADERSHIP</span></div>
+      <h1 class="page-title">
+        Why <span class="highlight-gradient"><em><strong>DIGISYNQ</strong></em></span> exists.
       </h1>
-      <p class="sec-sub reveal reveal--d2">
-        DIGISYNQ was created to solve a fundamental truth: filmmakers, technicians, cameras, soundstages, knowledge, and audiences already exist in abundance. We build the operating network that connects them.
+      <p class="page-subtitle">
+        An honest assessment of a broken structure — and a deliberate institutional answer to it. Not a company built on ambition alone, but one built on a precise diagnosis of where entertainment value is lost.
       </p>
     </div>
   </section>
 
-  <!-- Core Operating Axioms -->
-  <section class="section" aria-label="Operating axioms">
-    <div class="wrap">
-      <div class="not-grid reveal">
-        <div class="not-col" style="padding:2.5rem;">
-          <span class="eyebrow"><span class="eyebrow-line"></span> Our purpose</span>
-          <h3 style="font-size:var(--f-xl); margin-block:0.75rem; color:var(--t-pure);">Connect the dots and make the cinema ecosystem reusable.</h3>
-          <p class="body-text" style="font-size:var(--f-sm);">
-            To eliminate dead capital, idle hardware packages, unbooked studio days, and isolated talent by creating an open, evidence-based coordination layer for the creative industry.
-          </p>
-        </div>
+  <!-- THE INSTITUTIONAL THESIS -->
+  <section class="page-content-section" id="thesis">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">The founding thesis</div>
+        <h2 class="section-title">The problem is not scarcity. It is fragmentation.</h2>
+      </div>
 
-        <div class="not-col not-col--is" style="padding:2.5rem;">
-          <span class="eyebrow"><span class="eyebrow-line"></span> The operating vision</span>
-          <h3 style="font-size:var(--f-xl); margin-block:0.75rem; color:var(--t-pure);">An asset-light, intelligent and continuously learning industry.</h3>
-          <p class="body-text" style="font-size:var(--f-sm);">
-            Where capability is authenticated by actual work evidence, productions are protected by Plan A/B/C resilience, and every wrap teaches the next project.
-          </p>
+      <div class="thesis-block">
+        <p>
+          "Entertainment possesses everything it needs to generate extraordinary value.
+          The talent exists. The stories exist. The audiences exist. The infrastructure, technology, capital and creative ambition — they all exist, in abundance."
+        </p>
+        <p class="body-prose">
+          The challenge is not a shortage of resources. Every major entertainment market across the world is rich with creative capability, institutional infrastructure, technical specialization, and cultural ambition.
+        </p>
+        <p>
+          "What does not exist — what has never been systematically built — is the mechanism that <em><strong>connects these assets to each other.</strong></em>"
+        </p>
+        <p class="body-prose">
+          The consequence of this fragmentation is immense and systemic: talent that cannot be discovered, projects that cannot find their teams, infrastructure that sits idle between productions, brands that cannot find authentic integration, and audiences that cannot access the stories they would love.
+        </p>
+        <p>
+          "DIGISYNQ was built to be that mechanism. Not another piece of the puzzle — but the <em><strong>connective architecture between all of them.</strong></em>"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MANIFESTO -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">The network manifesto</div>
+        <h2 class="section-title">The network between the dots.</h2>
+      </div>
+
+      <p class="manifesto-pull-quote">
+        "Entertainment doesn't need more creation.<br />
+        It needs <em>better coordination.</em><br />
+        The dots already exist.<br />
+        We are <em>the network between them.</em>"
+      </p>
+
+      <div class="problem-conclusion-banner" style="text-align:center;">
+        <p>DIGISYNQ — <em><strong>The asset-light coordination operating system for entertainment.</strong></em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE PRINCIPLES -->
+  <section class="page-content-section" id="principles">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Operating principles</div>
+        <h2 class="section-title">How we operate.</h2>
+        <p class="section-subtitle">Six foundational commitments that define every design decision, product choice, and partnership we make.</p>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-num">01</div>
+          <h3>Functional equality</h3>
+          <p>The TAG 1–10 taxonomy is a classification system — not a hierarchy. TAG 10 is not superior to TAG 01. Every function is essential. Every specialist is valued by capability, not prestige.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">02</div>
+          <h3>Structural discovery</h3>
+          <p>Discovery within DIGISYNQ is engineered, not accidental. High-value capability should be visible by design — not by luck, geography, or who you happen to know.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">03</div>
+          <h3>Verified trust</h3>
+          <p>Trust within this network is built on evidence — credits, execution records, peer evaluations — not on reputation alone. Structural trust compounds with every successful collaboration.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">04</div>
+          <h3>Asset-light discipline</h3>
+          <p>DIGISYNQ does not seek to own what already exists. The coordination layer — not the asset — is where sustainable economic value is created and compounded at scale.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">05</div>
+          <h3>Compounding intelligence</h3>
+          <p>Every match, every collaboration, every post-wrap evaluation makes the network smarter. DIGISYNQ is designed to improve with use — not just at launch, but over decades.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">06</div>
+          <h3>Shared upside</h3>
+          <p>The value that DIGISYNQ creates flows to the participants — the talent, the producers, the brands, the communities — not just to the platform. Coordination creates shared value.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Co-Founders & Leadership -->
-  <section class="section" aria-label="Leadership team">
-    <div class="wrap">
-      <div class="sec-header reveal">
-        <div class="eyebrow"><span class="eyebrow-line"></span> Leadership</div>
-        <h2 class="sec-title display-lg">Co-founders &amp; <span class="glow-text"><em>stewards.</em></span></h2>
-        <p class="sec-sub">Building the operating infrastructure for the next generation of creative production.</p>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.5rem;" class="reveal reveal--d1">
-        <div class="card spotlight-card">
-          <div class="icon-box"><span class="material-symbols-outlined">architecture</span></div>
-          <span class="idle-card-type">Co-founder</span>
-          <h4 class="idle-card-title">Yathish Kumar Nagaraj</h4>
-          <p class="body-text" style="font-size:var(--f-xs); color:var(--t-low);">Strategy, ecosystem architecture &amp; platform direction.</p>
-        </div>
-
-        <div class="card spotlight-card">
-          <div class="icon-box"><span class="material-symbols-outlined">movie_edit</span></div>
-          <span class="idle-card-type">Co-founder</span>
-          <h4 class="idle-card-title">Varun S</h4>
-          <p class="body-text" style="font-size:var(--f-xs); color:var(--t-low);">Creative production, talent graph &amp; industry operations.</p>
-        </div>
-
-        <div class="card spotlight-card">
-          <div class="icon-box"><span class="material-symbols-outlined">hub</span></div>
-          <span class="idle-card-type">Co-founder</span>
-          <h4 class="idle-card-title">Rakshith</h4>
-          <p class="body-text" style="font-size:var(--f-xs); color:var(--t-low);">Media properties, content systems &amp; partner networks.</p>
-        </div>
-
-        <div class="card spotlight-card">
-          <div class="icon-box"><span class="material-symbols-outlined">terminal</span></div>
-          <span class="idle-card-type">Co-founder</span>
-          <h4 class="idle-card-title">Rubesh</h4>
-          <p class="body-text" style="font-size:var(--f-xs); color:var(--t-low);">Technology infrastructure, data systems &amp; graph intelligence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="wrap footer-grid">
-      <div>
-        <div class="footer-brand-name">DIGISYNQ</div>
-        <div class="footer-brand-tag">Syncing the filmmaking ecosystem</div>
-        <p class="footer-brand-desc">
-          An asset-light, open, trusted and continuously learning operating network connecting verified talent, studios, hardware, and production capacity.
+  <!-- LEADERSHIP -->
+  <section class="page-content-section" id="leadership">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Founding team</div>
+        <h2 class="section-title">The co-founders.</h2>
+        <p class="section-subtitle">
+          Built by a founding team with a shared conviction — that the entertainment industry's greatest opportunity lies not in making more, but in connecting better.
         </p>
       </div>
 
-      <div>
-        <h4 class="footer-col-title">Network</h4>
-        <div class="footer-links">
-          <a href="index.html#problem">The problem</a>
-          <a href="index.html#comparison">The shift</a>
-          <a href="platform.html#mechanism-detail">Mechanism</a>
-          <a href="platform.html#verification-detail">Verification protocol</a>
+      <div class="founder-profile-grid">
+        <div class="founder-profile-card">
+          <div class="founder-avatar">Y</div>
+          <div class="founder-profile-name">Yathish Kumar Nagaraj</div>
+          <div class="founder-profile-role">Co-founder</div>
         </div>
-      </div>
-
-      <div>
-        <h4 class="footer-col-title">Architecture</h4>
-        <div class="footer-links">
-          <a href="insights.html">Industry insights</a>
-          <a href="expansion.html">Expansion plan</a>
-          <a href="network.html">Verified network</a>
-          <a href="platform.html#resilience-detail">Plan A/B/C</a>
-          <a href="platform.html#mechanism-detail">Platform engine</a>
-          <a href="business.html">Business model</a>
+        <div class="founder-profile-card">
+          <div class="founder-avatar">V</div>
+          <div class="founder-profile-name">Varun S</div>
+          <div class="founder-profile-role">Co-founder</div>
         </div>
-      </div>
-
-      <div>
-        <h4 class="footer-col-title">Connect</h4>
-        <div class="footer-links">
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
-          <a href="contact.html" style="color:var(--cyan);">Join DIGISYNQ &rarr;</a>
+        <div class="founder-profile-card">
+          <div class="founder-avatar">R</div>
+          <div class="founder-profile-name">Rakshith</div>
+          <div class="founder-profile-role">Co-founder</div>
+        </div>
+        <div class="founder-profile-card">
+          <div class="founder-avatar">R</div>
+          <div class="founder-profile-name">Rubesh</div>
+          <div class="founder-profile-role">Co-founder</div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="wrap footer-bottom">
-      <span>The project may end. The value doesn't.</span>
-      <span>&copy; 2026 DIGISYNQ. All rights reserved.</span>
+  <!-- FINAL CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <h2 class="final-cta-title">Connect with the founding team.</h2>
+      <p class="final-cta-sub">DIGISYNQ — <em><strong>The network between the dots.</strong></em></p>
+      <div class="btn-group" style="justify-content:center;margin-top:2rem;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Initiate coordination</a>
+        <a href="network.html" class="btn btn-secondary btn-lg">Explore the network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/img/logo.svg" alt="DIGISYNQ Logo" class="brand-logo-img" width="36" height="36" />
+            <span>DIGISYNQ</span>
+          </div>
+          <p>An asset-light coordination operating system for an asset-rich but fragmented entertainment industry.</p>
+          <div class="footer-direct-contact">
+            <a href="mailto:thedigitalsynq@gmail.com" class="contact-item-link"><span>thedigitalsynq@gmail.com</span></a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="contact-item-link"><span>+91 79965 48969</span></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="network.html">Network</a></li>
+            <li><a href="business.html">Business model</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; leadership</a></li>
+            <li><a href="contact.html">Contact &amp; intake</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; DIGISYNQ Systems. All rights reserved.</div>
+        <div style="display:flex;gap:1.5rem;">
+          <span>System status: <span style="color:#4ade80;">Online</span></span>
+          <span>Protocol: <span style="color:var(--accent-cyan);">DIGISYNQ-OS v2.4</span></span>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- FAB -->
-  <div class="fab-cluster" aria-label="Quick actions">
-    <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    </a>
-    <button class="fab fab-top" id="fab-top" aria-label="Back to top">
-      <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
-    </button>
-  </div>
-
-  <!-- Open-Source Plugins -->
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/feedback.js" defer></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
