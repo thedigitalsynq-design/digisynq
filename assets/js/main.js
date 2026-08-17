@@ -1,6 +1,6 @@
 /**
  * DIGISYNQ — THE NETWORK BETWEEN THE DOTS
- * Interactive Systems Engine v2.0
+ * Interactive Systems Engine v3.0
  * Institutional Operating System Core JS
  */
 
@@ -9,13 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initHeader();
   initMobileDrawer();
+  initSmoothNavScroll();
   initHeroNetwork();
   initProblemMatrix();
   initOrbitEcosystem();
   initSystemLoop();
   initPipeline();
+  initTagMatrix();
   initFlywheel();
   initStakeholderTabs();
+  initModelSteps();
   initModals();
   initScrollReveal();
   initScrollSpy();
@@ -26,36 +29,49 @@ document.addEventListener('DOMContentLoaded', () => {
    1. SCROLL PROGRESS BAR
    ========================================================================== */
 function initScrollProgress() {
-  const bar = document.createElement('div');
-  bar.className = 'scroll-progress-bar';
-  bar.id = 'scroll-progress-bar';
-  document.body.prepend(bar);
+  let bar = document.getElementById('scroll-progress-bar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.className = 'scroll-progress-bar';
+    bar.id = 'scroll-progress-bar';
+    document.body.prepend(bar);
+  }
 
-  window.addEventListener('scroll', () => {
+  function updateProgress() {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
     const scrolled = (window.scrollY / docHeight) * 100;
-    bar.style.width = `${Math.min(scrolled, 100)}%`;
-  }, { passive: true });
+    bar.style.width = `${Math.min(Math.max(scrolled, 0), 100)}%`;
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
 }
 
 /* ==========================================================================
-   2. BACK-TO-TOP BUTTON
+   2. FLOATING BACK-TO-TOP BUTTON
    ========================================================================== */
 function initBackToTop() {
-  const btn = document.createElement('button');
-  btn.className = 'back-to-top-btn';
-  btn.setAttribute('aria-label', 'Back to top');
-  btn.id = 'back-to-top-btn';
-  btn.innerHTML = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  `;
-  document.body.appendChild(btn);
+  let btn = document.getElementById('back-to-top-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.className = 'back-to-top-btn';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.id = 'back-to-top-btn';
+    btn.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    `;
+    document.body.appendChild(btn);
+  }
 
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 500);
-  }, { passive: true });
+  function toggleBtn() {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }
+
+  window.addEventListener('scroll', toggleBtn, { passive: true });
+  toggleBtn();
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -63,36 +79,56 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   3. HEADER & NAVIGATION (SCROLL STATE)
+   3. HEADER & NAVIGATION
    ========================================================================== */
 function initHeader() {
   const header = document.getElementById('site-header');
+  if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 /* ==========================================================================
-   4. MOBILE DRAWER (WITH HAMBURGER ANIMATION & OVERLAY)
+   4. SMOOTH SCROLL WITH HEADER OFFSET
+   ========================================================================== */
+function initSmoothNavScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerHeight = document.getElementById('site-header')?.offsetHeight || 80;
+        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight + 10;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   5. MOBILE DRAWER WITH ANIMATED HAMBURGER
    ========================================================================== */
 function initMobileDrawer() {
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
+  if (!menuToggle || !mobileDrawer) return;
 
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.className = 'drawer-overlay';
-  overlay.id = 'drawer-overlay';
-  document.body.appendChild(overlay);
-
-  // Replace the SVG icon inside toggle with animated bars
-  if (menuToggle) {
-    menuToggle.innerHTML = `
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    `;
+  let overlay = document.getElementById('drawer-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'drawer-overlay';
+    overlay.id = 'drawer-overlay';
+    document.body.appendChild(overlay);
   }
 
   function openDrawer() {
@@ -111,83 +147,114 @@ function initMobileDrawer() {
     document.body.style.overflow = '';
   }
 
-  if (menuToggle && mobileDrawer) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.contains('open');
-      isOpen ? closeDrawer() : openDrawer();
-    });
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileDrawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
 
-    overlay.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
 
-    mobileDrawer.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', closeDrawer);
-    });
-  }
+  mobileDrawer.querySelectorAll('.mobile-nav-link, .btn').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
 }
 
 /* ==========================================================================
-   5. HERO NETWORK CANVAS (FRAGMENTED -> CONNECTED STATE)
+   6. HERO NETWORK CANVAS (DPI-SCALED & INTERACTIVE)
    ========================================================================== */
 function initHeroNetwork() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  let width, height;
+  let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
 
   function setSize() {
     if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.parentElement.offsetHeight;
+    dpr = window.devicePixelRatio || 1;
+    width = canvas.parentElement.offsetWidth;
+    height = canvas.parentElement.offsetHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
   }
 
   setSize();
   window.addEventListener('resize', setSize, { passive: true });
 
   const nodeLabels = [
-    'TALENT', 'CONTENT', 'BRANDS', 'MEDIA',
-    'AUDIENCES', 'TECHNOLOGY', 'INFRASTRUCTURE', 'OPPORTUNITIES',
-    'STORIES', 'DATA', 'CAPITAL', 'PLATFORMS'
+    'Talent', 'Content', 'Brands', 'Media',
+    'Audiences', 'Technology', 'Infrastructure', 'Opportunities',
+    'Stories', 'Data', 'Capital', 'Platforms'
   ];
 
-  const nodes = nodeLabels.map(label => ({
-    x: Math.random() * (window.innerWidth - 200) + 100,
-    y: Math.random() * (window.innerHeight - 200) + 100,
-    vx: (Math.random() - 0.5) * 0.55,
-    vy: (Math.random() - 0.5) * 0.55,
-    radius: 4.5,
+  const nodes = nodeLabels.map((label, idx) => ({
+    x: Math.random() * (window.innerWidth > 800 ? window.innerWidth - 200 : 300) + 50,
+    y: Math.random() * 500 + 100,
+    vx: (Math.random() - 0.5) * 0.45,
+    vy: (Math.random() - 0.5) * 0.45,
+    radius: 4,
     label,
-    pulse: Math.random() * Math.PI * 2
+    pulse: Math.random() * Math.PI * 2,
+    id: idx
   }));
 
-  const mouse = { x: null, y: null, radius: 150 };
+  const ripples = [];
+  const mouse = { x: null, y: null, radius: 160 };
 
-  canvas.addEventListener('mousemove', (e) => {
+  canvas.parentElement.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top;
   }, { passive: true });
 
-  canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
 
-  let frame = 0;
+  // Click energy ripple
+  canvas.parentElement.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+    ripples.push({ x: clickX, y: clickY, r: 5, maxR: 180, alpha: 0.9 });
+  });
 
   function render() {
-    if (!width || !height) { requestAnimationFrame(render); return; }
+    if (!width || !height) {
+      requestAnimationFrame(render);
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
-    frame++;
 
-    // Scroll-responsive connection threshold — expands as user scrolls into hero
-    const connectionDist = 200 + Math.min(window.scrollY / 3, 60);
+    // Draw ripples
+    for (let r = ripples.length - 1; r >= 0; r--) {
+      const rip = ripples[r];
+      rip.r += 3.5;
+      rip.alpha -= 0.018;
+      if (rip.alpha <= 0 || rip.r >= rip.maxR) {
+        ripples.splice(r, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(0, 240, 255, ${rip.alpha})`;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
 
-    // Draw connections
+    const connectionDist = Math.min(width * 0.35, 220) + Math.min(window.scrollY / 4, 40);
+
+    // Draw connection lines
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x;
         const dy = nodes[i].y - nodes[j].y;
         const dist = Math.hypot(dx, dy);
         if (dist < connectionDist) {
-          const alpha = (1 - dist / connectionDist) * 0.3;
+          const alpha = (1 - dist / connectionDist) * 0.32;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -202,37 +269,36 @@ function initHeroNetwork() {
     nodes.forEach((node) => {
       node.x += node.vx;
       node.y += node.vy;
-      node.pulse += 0.04;
+      node.pulse += 0.035;
 
-      if (node.x < 40 || node.x > width - 40) node.vx *= -1;
-      if (node.y < 40 || node.y > height - 40) node.vy *= -1;
+      if (node.x < 30 || node.x > width - 30) node.vx *= -1;
+      if (node.y < 30 || node.y > height - 30) node.vy *= -1;
 
-      // Mouse repulsion
+      // Mouse interaction
       if (mouse.x !== null) {
         const dx = mouse.x - node.x;
         const dy = mouse.y - node.y;
         const dist = Math.hypot(dx, dy);
         if (dist < mouse.radius && dist > 0) {
           const force = (mouse.radius - dist) / mouse.radius;
-          node.x -= (dx / dist) * force * 2;
-          node.y -= (dy / dist) * force * 2;
+          node.x -= (dx / dist) * force * 1.8;
+          node.y -= (dy / dist) * force * 1.8;
         }
       }
 
-      // Pulsing glow radius
-      const glowSize = 12 + Math.sin(node.pulse) * 4;
-
+      // Draw node glow
+      const glow = 8 + Math.sin(node.pulse) * 3;
       ctx.shadowColor = '#00F0FF';
-      ctx.shadowBlur = glowSize;
+      ctx.shadowBlur = glow;
       ctx.beginPath();
       ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
       ctx.fillStyle = '#00F0FF';
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Label
+      // Label text
       ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
       ctx.fillText(node.label, node.x + 8, node.y + 3);
     });
 
@@ -243,68 +309,71 @@ function initHeroNetwork() {
 }
 
 /* ==========================================================================
-   6. PROBLEM SECTION 10-NODE MATRIX TOGGLE
+   7. PROBLEM MATRIX (TOGGLE & INDIVIDUAL CARD CLICKS)
    ========================================================================== */
 function initProblemMatrix() {
   const cards = document.querySelectorAll('.asset-node-card');
   const btnFragmented = document.getElementById('btn-view-fragmented');
   const btnConnected = document.getElementById('btn-view-connected');
 
-  if (!btnFragmented || !btnConnected) return;
-
   function setMode(mode) {
     if (mode === 'connected') {
-      btnConnected.classList.add('active');
-      btnFragmented.classList.remove('active');
+      btnConnected?.classList.add('active');
+      btnFragmented?.classList.remove('active');
       cards.forEach((card, idx) => {
         setTimeout(() => {
           card.classList.remove('disconnected');
           card.classList.add('connected');
-        }, idx * 50);
+        }, idx * 45);
       });
     } else {
-      btnFragmented.classList.add('active');
-      btnConnected.classList.remove('active');
+      btnFragmented?.classList.add('active');
+      btnConnected?.classList.remove('active');
       cards.forEach((card, idx) => {
         setTimeout(() => {
           card.classList.remove('connected');
           card.classList.add('disconnected');
-        }, idx * 40);
+        }, idx * 35);
       });
     }
   }
 
-  btnFragmented.addEventListener('click', () => setMode('fragmented'));
-  btnConnected.addEventListener('click', () => setMode('connected'));
+  btnFragmented?.addEventListener('click', () => setMode('fragmented'));
+  btnConnected?.addEventListener('click', () => setMode('connected'));
+
+  // Allow clicking any individual card to toggle its status
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('disconnected')) {
+        card.classList.remove('disconnected');
+        card.classList.add('connected');
+      } else {
+        card.classList.remove('connected');
+        card.classList.add('disconnected');
+      }
+    });
+  });
 }
 
 /* ==========================================================================
-   7. CENTRAL CONNECTIVE LAYER (ORBIT ECOSYSTEM CANVAS)
+   8. CENTRAL CONNECTIVE LAYER (ORBIT CANVAS & SATELLITES)
    ========================================================================== */
 function initOrbitEcosystem() {
   const canvas = document.getElementById('orbit-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  let width, height;
-
-  function setSize() {
-    if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.parentElement.offsetHeight;
-    positionSatellites();
-  }
-
-  setSize();
-  window.addEventListener('resize', setSize, { passive: true });
-
+  let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
   const satelliteNodes = document.querySelectorAll('.orbit-satellite-node');
+  const centerNode = document.querySelector('.orbit-center-node');
   const total = satelliteNodes.length;
 
   function positionSatellites() {
     if (!width || !height) return;
-    const rx = Math.min(width * 0.40, 360);
-    const ry = Math.min(height * 0.38, 240);
+    const isMobile = width < 600;
+    const maxPillHalf = isMobile ? 50 : 80;
+    const rx = Math.min(width * 0.42, (width / 2) - maxPillHalf, 360);
+    const ry = Math.min(height * 0.40, (height / 2) - 35, 230);
     const cx = width / 2;
     const cy = height / 2;
 
@@ -319,62 +388,104 @@ function initOrbitEcosystem() {
     });
   }
 
-  // Signal pulse positions (one per connection, traveling along line)
-  const pulseOffsets = Array.from({ length: total }, (_, i) => (i / total));
+  function setSize() {
+    if (!canvas.parentElement) return;
+    dpr = window.devicePixelRatio || 1;
+    width = canvas.parentElement.offsetWidth;
+    height = canvas.parentElement.offsetHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+    positionSatellites();
+  }
 
-  let step = 0;
-  function drawOrbitLines() {
-    if (!width || !height) { requestAnimationFrame(drawOrbitLines); return; }
+  setSize();
+  window.addEventListener('resize', setSize, { passive: true });
+
+  const pulseOffsets = Array.from({ length: total }, (_, i) => i / total);
+  let orbitRotation = 0;
+
+  function drawOrbit() {
+    if (!width || !height) {
+      requestAnimationFrame(drawOrbit);
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
     const cx = width / 2;
     const cy = height / 2;
-    step += 0.015;
+    orbitRotation += 0.003;
 
+    // Draw dashed orbit ring
+    const rx = Math.min(width * 0.42, 360);
+    const ry = Math.min(height * 0.40, 230);
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0, 240, 255, 0.1)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 8]);
+    ctx.stroke();
+    ctx.restore();
+
+    // Draw lines to satellites + energy packets
     satelliteNodes.forEach((node, i) => {
       const x = parseFloat(node.dataset.x || cx);
       const y = parseFloat(node.dataset.y || cy);
+      const isActive = node.classList.contains('active');
 
-      // Draw subtle background line
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(x, y);
-      ctx.strokeStyle = node.classList.contains('active')
-        ? 'rgba(0, 240, 255, 0.25)'
-        : 'rgba(255, 255, 255, 0.06)';
-      ctx.lineWidth = node.classList.contains('active') ? 1.5 : 1;
+      ctx.strokeStyle = isActive ? 'rgba(0, 240, 255, 0.35)' : 'rgba(255, 255, 255, 0.05)';
+      ctx.lineWidth = isActive ? 1.5 : 1;
       ctx.stroke();
 
-      // Pulsing signal dot
-      pulseOffsets[i] = (pulseOffsets[i] + 0.007) % 1;
-      const progress = pulseOffsets[i];
-      const px = cx + (x - cx) * progress;
-      const py = cy + (y - cy) * progress;
+      // Traveling signal pulse
+      pulseOffsets[i] = (pulseOffsets[i] + 0.006) % 1;
+      const prog = pulseOffsets[i];
+      const px = cx + (x - cx) * prog;
+      const py = cy + (y - cy) * prog;
 
-      const glowAlpha = node.classList.contains('active') ? 1 : 0.6;
       ctx.beginPath();
-      ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 240, 255, ${glowAlpha})`;
-      ctx.shadowColor = '#00F0FF';
-      ctx.shadowBlur = node.classList.contains('active') ? 10 : 5;
+      ctx.arc(px, py, isActive ? 3.5 : 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = isActive ? '#00F0FF' : 'rgba(0, 240, 255, 0.7)';
+      if (isActive) {
+        ctx.shadowColor = '#00F0FF';
+        ctx.shadowBlur = 10;
+      }
       ctx.fill();
       ctx.shadowBlur = 0;
     });
 
-    requestAnimationFrame(drawOrbitLines);
+    requestAnimationFrame(drawOrbit);
   }
 
-  drawOrbitLines();
+  drawOrbit();
 
+  // Satellite clicks & hover
   satelliteNodes.forEach((node) => {
-    node.addEventListener('mouseenter', () => {
+    function activate() {
       satelliteNodes.forEach(n => n.classList.remove('active'));
       node.classList.add('active');
+    }
+    node.addEventListener('mouseenter', activate);
+    node.addEventListener('click', activate);
+  });
+
+  // Center node pulse click
+  centerNode?.addEventListener('click', () => {
+    satelliteNodes.forEach((node, idx) => {
+      setTimeout(() => {
+        node.classList.add('active');
+        setTimeout(() => node.classList.remove('active'), 600);
+      }, idx * 60);
     });
   });
 }
 
 /* ==========================================================================
-   8. HOW THE SYSTEM WORKS (10-STAGE LOOP STEPPER)
+   9. HOW THE SYSTEM WORKS (10-STAGE INTERACTIVE STEPPER)
    ========================================================================== */
 function initSystemLoop() {
   const stageCards = document.querySelectorAll('.loop-stage-card');
@@ -395,112 +506,141 @@ function initSystemLoop() {
     { title: "10 — Reconnect", badge: "Compounding loop", desc: "Feed accumulated project intelligence back into the network to generate faster, higher-conviction matches for future initiatives — making every collaboration smarter than the last." }
   ];
 
+  function selectStage(index) {
+    stageCards.forEach((c, i) => c.classList.toggle('active', i === index));
+
+    if (stageData[index] && inspectorTitle && inspectorDesc && inspectorBadge) {
+      const inspector = inspectorTitle.closest('.loop-inspector-box');
+      if (inspector) inspector.style.opacity = '0.35';
+
+      setTimeout(() => {
+        inspectorTitle.textContent = stageData[index].title;
+        inspectorDesc.textContent = stageData[index].desc;
+        inspectorBadge.textContent = stageData[index].badge;
+        if (inspector) inspector.style.opacity = '1';
+      }, 120);
+    }
+  }
+
   stageCards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-      stageCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-
-      if (stageData[index] && inspectorTitle && inspectorDesc && inspectorBadge) {
-        const inspector = inspectorTitle.closest('.loop-inspector-box');
-        if (inspector) { inspector.style.opacity = '0.4'; }
-
-        setTimeout(() => {
-          inspectorTitle.textContent = stageData[index].title;
-          inspectorDesc.textContent = stageData[index].desc;
-          inspectorBadge.textContent = stageData[index].badge;
-          if (inspector) { inspector.style.opacity = '1'; }
-        }, 150);
-      }
-    });
+    card.addEventListener('click', () => selectStage(index));
   });
 }
 
 /* ==========================================================================
-   9. ABCDEF PIPELINE (HOVER HIGHLIGHT CHAIN)
+   10. ABCDEF PIPELINE (HOVER & CLICK FOCUS)
    ========================================================================== */
 function initPipeline() {
-  const pipelineCards = document.querySelectorAll('.pipeline-stage-card');
-  pipelineCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      pipelineCards.forEach(c => { c.style.opacity = '0.5'; c.style.borderColor = ''; });
-      card.style.opacity = '1';
-      card.style.borderColor = 'var(--accent-cyan)';
-    });
-    card.addEventListener('mouseleave', () => {
-      pipelineCards.forEach(c => { c.style.opacity = '1'; c.style.borderColor = ''; });
+  const cards = document.querySelectorAll('.pipeline-stage-card');
+  cards.forEach((card) => {
+    function highlight() {
+      cards.forEach(c => {
+        c.style.opacity = (c === card) ? '1' : '0.45';
+        c.style.borderColor = (c === card) ? 'var(--accent-cyan)' : '';
+      });
+    }
+    function reset() {
+      cards.forEach(c => {
+        c.style.opacity = '1';
+        c.style.borderColor = '';
+      });
+    }
+    card.addEventListener('mouseenter', highlight);
+    card.addEventListener('mouseleave', reset);
+    card.addEventListener('click', highlight);
+  });
+}
+
+/* ==========================================================================
+   11. TAG 1–10 MATRIX CLICKS
+   ========================================================================== */
+function initTagMatrix() {
+  const cards = document.querySelectorAll('.tag-card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('active-tag'));
+      card.classList.add('active-tag');
     });
   });
 }
 
 /* ==========================================================================
-   10. COMPOUNDING FLYWHEEL ENGINE
+   12. COMPOUNDING FLYWHEEL ENGINE (ROTATING CANVAS + CLICKABLE NODES)
    ========================================================================== */
 function initFlywheel() {
   const canvas = document.getElementById('flywheel-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  let width, height;
+  let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
+  const items = document.querySelectorAll('.flywheel-node-item');
+  const total = items.length;
+  let angle = 0;
+  let activeIndex = 0;
+  let lastAutoSwitch = Date.now();
+  let isHovered = false;
+
   function setSize() {
     if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.parentElement.offsetHeight;
+    dpr = window.devicePixelRatio || 1;
+    width = canvas.parentElement.offsetWidth;
+    height = canvas.parentElement.offsetHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
   }
+
   setSize();
   window.addEventListener('resize', setSize, { passive: true });
 
-  const flywheelItems = document.querySelectorAll('.flywheel-node-item');
-  const total = flywheelItems.length;
-  let angle = 0;
-  let activeIndex = 0;
-  let lastSwitch = Date.now();
-
-  const segmentColors = [
-    'rgba(0, 240, 255, 0.6)',
-    'rgba(56, 189, 248, 0.5)',
-    'rgba(14, 165, 233, 0.4)',
-    'rgba(0, 240, 255, 0.35)',
-    'rgba(56, 189, 248, 0.3)',
-    'rgba(14, 165, 233, 0.25)',
+  const colors = [
+    'rgba(0, 240, 255, 0.65)',
+    'rgba(56, 189, 248, 0.55)',
+    'rgba(14, 165, 233, 0.45)',
     'rgba(0, 240, 255, 0.4)',
+    'rgba(56, 189, 248, 0.35)',
+    'rgba(14, 165, 233, 0.3)',
+    'rgba(0, 240, 255, 0.5)'
   ];
 
   function animateFlywheel() {
-    if (!width || !height) { requestAnimationFrame(animateFlywheel); return; }
-    ctx.clearRect(0, 0, width, height);
+    if (!width || !height) {
+      requestAnimationFrame(animateFlywheel);
+      return;
+    }
 
+    ctx.clearRect(0, 0, width, height);
     const cx = width / 2;
     const cy = height / 2;
     const outerR = Math.min(width, height) * 0.44;
-    const innerR = outerR * 0.45;
+    const innerR = outerR * 0.48;
     const gap = 0.025;
 
-    angle += 0.006;
+    angle += 0.007;
 
     for (let i = 0; i < total; i++) {
       const startAngle = angle + (i / total) * Math.PI * 2 + gap;
       const endAngle = angle + ((i + 1) / total) * Math.PI * 2 - gap;
+      const isActive = i === activeIndex;
 
       ctx.beginPath();
       ctx.arc(cx, cy, outerR, startAngle, endAngle);
       ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
       ctx.closePath();
 
-      const isActive = i === activeIndex;
-      ctx.fillStyle = isActive
-        ? 'rgba(0, 240, 255, 0.18)'
-        : segmentColors[i] || 'rgba(0, 240, 255, 0.08)';
-      ctx.strokeStyle = isActive ? 'rgba(0, 240, 255, 0.8)' : 'rgba(0, 240, 255, 0.15)';
-      ctx.lineWidth = isActive ? 1.5 : 0.5;
+      ctx.fillStyle = isActive ? 'rgba(0, 240, 255, 0.22)' : colors[i] || 'rgba(0, 240, 255, 0.06)';
+      ctx.strokeStyle = isActive ? '#00F0FF' : 'rgba(0, 240, 255, 0.15)';
+      ctx.lineWidth = isActive ? 2 : 0.6;
 
       if (isActive) {
         ctx.shadowColor = '#00F0FF';
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = 15;
       }
       ctx.fill();
       ctx.stroke();
       ctx.shadowBlur = 0;
 
+      // Outer dot
       const midAngle = angle + ((i + 0.5) / total) * Math.PI * 2;
       const dotX = cx + Math.cos(midAngle) * ((outerR + innerR) / 2);
       const dotY = cy + Math.sin(midAngle) * ((outerR + innerR) / 2);
@@ -508,17 +648,19 @@ function initFlywheel() {
       ctx.beginPath();
       ctx.arc(dotX, dotY, isActive ? 5 : 2.5, 0, Math.PI * 2);
       ctx.fillStyle = isActive ? '#00F0FF' : 'rgba(255, 255, 255, 0.4)';
-      if (isActive) { ctx.shadowColor = '#00F0FF'; ctx.shadowBlur = 10; }
+      if (isActive) {
+        ctx.shadowColor = '#00F0FF';
+        ctx.shadowBlur = 10;
+      }
       ctx.fill();
       ctx.shadowBlur = 0;
     }
 
-    if (Date.now() - lastSwitch > 2400) {
+    // Auto advance when not hovered
+    if (!isHovered && Date.now() - lastAutoSwitch > 2400) {
       activeIndex = (activeIndex + 1) % total;
-      flywheelItems.forEach((item, idx) => {
-        item.classList.toggle('active', idx === activeIndex);
-      });
-      lastSwitch = Date.now();
+      items.forEach((it, idx) => it.classList.toggle('active', idx === activeIndex));
+      lastAutoSwitch = Date.now();
     }
 
     requestAnimationFrame(animateFlywheel);
@@ -526,17 +668,19 @@ function initFlywheel() {
 
   animateFlywheel();
 
-  flywheelItems.forEach((item, idx) => {
+  items.forEach((item, idx) => {
     item.addEventListener('click', () => {
       activeIndex = idx;
-      flywheelItems.forEach((it, i) => it.classList.toggle('active', i === idx));
-      lastSwitch = Date.now();
+      items.forEach((it, i) => it.classList.toggle('active', i === idx));
+      lastAutoSwitch = Date.now();
     });
+    item.addEventListener('mouseenter', () => { isHovered = true; });
+    item.addEventListener('mouseleave', () => { isHovered = false; });
   });
 }
 
 /* ==========================================================================
-   11. STAKEHOLDER SECTION TABS
+   13. STAKEHOLDER SECTION TABS
    ========================================================================== */
 function initStakeholderTabs() {
   const tabs = document.querySelectorAll('.stakeholder-tab-btn');
@@ -546,7 +690,7 @@ function initStakeholderTabs() {
 
   const stakeholderData = {
     talent: {
-      title: "Talent & Creators",
+      title: "Talent & creators",
       desc: "Artists, technicians, cinematographers, writers, sound engineers, editors, VFX specialists, and directors. DIGISYNQ gives verified talent structured identity and direct access to high-conviction productions without opaque middlemen.",
       benefits: [
         "Verified credit graph and immutable track-record portfolio",
@@ -556,7 +700,7 @@ function initStakeholderTabs() {
       ]
     },
     producers: {
-      title: "Producers & Studios",
+      title: "Producers & studios",
       desc: "Production companies, showrunners, and project owners. DIGISYNQ eliminates weeks of fragmented crew assembly, stage booking, and logistical friction through instant capability matching.",
       benefits: [
         "Instant assembly of verified, pre-vetted multi-disciplinary crews",
@@ -566,7 +710,7 @@ function initStakeholderTabs() {
       ]
     },
     brands: {
-      title: "Brands & Partners",
+      title: "Brands & partners",
       desc: "Forward-thinking enterprises seeking authentic cultural participation and narrative integration rather than superficial product placement.",
       benefits: [
         "Contextual alignment with culturally resonant narrative projects",
@@ -576,7 +720,7 @@ function initStakeholderTabs() {
       ]
     },
     media: {
-      title: "Media & Channels",
+      title: "Media & channels",
       desc: "Publishers, streaming services, broadcast networks, and digital communication ecosystems seeking verified content pipelines.",
       benefits: [
         "Predictable, high-quality content supply chains at scale",
@@ -586,7 +730,7 @@ function initStakeholderTabs() {
       ]
     },
     audiences: {
-      title: "Audiences & Communities",
+      title: "Audiences & communities",
       desc: "Fan communities, cultural tastemakers, and engaged audiences who amplify, participate in, and sustain creative universes.",
       benefits: [
         "Direct connection to project evolutions and creator universes",
@@ -596,7 +740,7 @@ function initStakeholderTabs() {
       ]
     },
     infrastructure: {
-      title: "Infrastructure & Facilities",
+      title: "Infrastructure & facilities",
       desc: "Soundstages, post-production suites, virtual production volumes, camera rental houses, and equipment facilities seeking smarter capacity utilization.",
       benefits: [
         "Maximized stage and gear utilization between project cycles",
@@ -606,7 +750,7 @@ function initStakeholderTabs() {
       ]
     },
     technology: {
-      title: "Technology & Platforms",
+      title: "Technology & platforms",
       desc: "Rendering engines, virtual production toolchains, workflow platforms, and post software suites seeking deeper integration into active productions.",
       benefits: [
         "Native integration into verified production workflows",
@@ -616,7 +760,7 @@ function initStakeholderTabs() {
       ]
     },
     associations: {
-      title: "Associations & Guilds",
+      title: "Associations & guilds",
       desc: "Professional guilds, unions, industry councils, and creative federations protecting craft standards and career sustainability.",
       benefits: [
         "Transparent craft standards and fair operational protocols",
@@ -631,9 +775,12 @@ function initStakeholderTabs() {
     const data = stakeholderData[key];
     if (!data || !titleEl || !descEl || !listEl) return;
 
-    // Transition effect
     const card = listEl.closest('.stakeholder-detail-card');
-    if (card) { card.style.opacity = '0.5'; card.style.transition = 'opacity 0.2s ease'; }
+    if (card) {
+      card.style.opacity = '0.4';
+      card.style.transform = 'translateY(8px)';
+      card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+    }
 
     setTimeout(() => {
       titleEl.textContent = data.title;
@@ -644,8 +791,11 @@ function initStakeholderTabs() {
           <span>${b}</span>
         </div>
       `).join('');
-      if (card) { card.style.opacity = '1'; }
-    }, 180);
+      if (card) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    }, 140);
   }
 
   tabs.forEach(tab => {
@@ -658,7 +808,20 @@ function initStakeholderTabs() {
 }
 
 /* ==========================================================================
-   12. MODALS & COORDINATION INTAKE
+   14. ASSET-LIGHT MODEL STEP CLICKS
+   ========================================================================== */
+function initModelSteps() {
+  const cards = document.querySelectorAll('.model-step-card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('active-layer'));
+      card.classList.add('active-layer');
+    });
+  });
+}
+
+/* ==========================================================================
+   15. MODALS & COORDINATION INTAKE
    ========================================================================== */
 function initModals() {
   const modalBackdrop = document.getElementById('connect-modal');
@@ -697,29 +860,30 @@ function initModals() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.textContent = 'Transmitting to Coordination Layer...';
-      submitBtn.disabled = true;
+      if (submitBtn) {
+        submitBtn.textContent = 'Transmitting coordination signal...';
+        submitBtn.disabled = true;
+      }
 
       setTimeout(() => {
         form.innerHTML = `
           <div style="text-align: center; padding: 2.5rem 0;">
             <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(0,240,255,0.08); border: 1px solid #00F0FF; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #00F0FF; font-size: 1.5rem; box-shadow: 0 0 20px rgba(0,240,255,0.3);">✓</div>
-            <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Signal Registered</h3>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Signal registered</h3>
             <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Your profile has been ingested into the DIGISYNQ coordination pipeline. Our system orchestrators will synchronize with you within 24 hours.</p>
-            <button type="button" class="btn btn-secondary btn-sm" id="modal-done-btn">Close Console</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="modal-done-btn">Close console</button>
           </div>
         `;
         document.getElementById('modal-done-btn')?.addEventListener('click', closeModal);
-      }, 900);
+      }, 800);
     });
   }
 }
 
 /* ==========================================================================
-   13. SCROLL REVEAL (IntersectionObserver)
+   16. SCROLL REVEAL (FAIL-SAFE OBSERVER)
    ========================================================================== */
 function initScrollReveal() {
-  // Add reveal classes to major elements
   const revealSelectors = [
     '.section-header',
     '.asset-node-card',
@@ -742,13 +906,15 @@ function initScrollReveal() {
     '.intel-flow-bar'
   ];
 
+  const elements = [];
   revealSelectors.forEach(sel => {
     document.querySelectorAll(sel).forEach(el => {
       el.classList.add('reveal');
+      elements.push(el);
     });
   });
 
-  // Stagger children inside grids
+  // Stagger grid elements
   ['asset-nodes-grid', 'breakdowns-grid', 'pipeline-grid', 'tag-matrix-grid', 'signals-grid', 'comparison-grid', 'value-multiplier-diagram', 'loop-stages-timeline'].forEach(gridClass => {
     const grid = document.querySelector(`.${gridClass}`);
     if (!grid) return;
@@ -757,31 +923,56 @@ function initScrollReveal() {
     });
   });
 
+  function revealElement(el) {
+    el.classList.add('revealed');
+  }
+
+  // Check initial viewport
+  function checkInitialVisibility() {
+    const winHeight = window.innerHeight;
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < winHeight - 30) {
+        revealElement(el);
+      }
+    });
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
+        revealElement(entry.target);
         observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -20px 0px'
   });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  elements.forEach(el => observer.observe(el));
+
+  // Run initial check
+  checkInitialVisibility();
+  window.addEventListener('scroll', checkInitialVisibility, { passive: true });
+
+  // Fail-safe: ensure all elements become visible after 1.2s regardless of viewport
+  setTimeout(() => {
+    elements.forEach(el => revealElement(el));
+  }, 1200);
 }
 
 /* ==========================================================================
-   14. SCROLL SPY & ACTIVE NAV LINKS
+   17. SCROLL SPY
    ========================================================================== */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
 
-  window.addEventListener('scroll', () => {
+  function updateSpy() {
     let current = '';
-    const scrollPos = window.scrollY + 200;
+    const scrollPos = window.scrollY + 220;
 
     sections.forEach(section => {
       if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
@@ -795,11 +986,14 @@ function initScrollSpy() {
         link.classList.add('active');
       }
     });
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', updateSpy, { passive: true });
+  updateSpy();
 }
 
 /* ==========================================================================
-   15. STATS COUNTER ANIMATION
+   18. STATS COUNTER ANIMATION
    ========================================================================== */
 function initStatsCounter() {
   const counters = document.querySelectorAll('.stat-value[data-target]');
@@ -811,7 +1005,7 @@ function initStatsCounter() {
       const el = entry.target;
       const target = parseInt(el.dataset.target, 10);
       const suffix = el.dataset.suffix || '';
-      const duration = 1800;
+      const duration = 1600;
       const start = Date.now();
 
       function tick() {
@@ -825,7 +1019,7 @@ function initStatsCounter() {
       requestAnimationFrame(tick);
       observer.unobserve(el);
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
   counters.forEach(c => observer.observe(c));
 }
