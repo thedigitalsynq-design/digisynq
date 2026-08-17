@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Insights — operating flow through seven nodes, verified pipeline, and intelligence loop across the filmmaking ecosystem." />
+  <meta name="description" content="DIGISYNQ Insights — live industry dashboard: KPI snapshot, seven-node operating flow, network utilization, and live updates across the filmmaking ecosystem." />
   <meta property="og:title" content="Insights — DIGISYNQ" />
   <meta property="og:description" content="Every project runs through seven nodes: mandate in, registry match, verification, unit assembly, execution, and intelligence back to the registry." />
   <meta property="og:image" content="assets/img/logo.svg" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#030305" />
+  <meta name="theme-color" content="#f3efea" />
   <title>Insights — DIGISYNQ</title>
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <noscript><style>html{visibility:visible;opacity:1}</style></noscript>
 </head>
-
 <body>
 
   <!-- ===== NAVIGATION ===== -->
@@ -60,74 +59,155 @@
     <a href="expansion.html">Expansion plan</a>
     <a href="about.html">About DIGISYNQ</a>
     <a href="register.html">Join network</a>
-    <div class="nav-drawer-cta" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-      <a href="contact.html" class="btn btn-signal btn-full">Produce a project &rarr;</a>
+    <div class="nav-drawer-cta">
+      <a href="contact.html" class="btn btn-signal btn-full">Coordinate a project &rarr;</a>
       <a href="register.html" class="btn btn-ghost btn-full">Join the network</a>
     </div>
   </div>
 
   <!-- ===== HERO ===== -->
-  <section class="section" style="padding-top: calc(var(--nav-h) + 4rem); text-align: center;">
-    <div class="wrap" style="max-width: 56rem;">
+  <section class="page-hero" aria-label="Industry insights overview">
+    <div class="wrap">
       <div class="eyebrow reveal"><span class="eyebrow-line"></span> The operating flow</div>
       <h1 class="sec-title display-hero reveal reveal--d1">
         Every project runs through <em>seven nodes.</em>
       </h1>
-      <p class="sec-sub" style="margin-inline: auto; margin-top: 1.5rem;">
+      <p class="sec-sub reveal reveal--d2">
         From mandate to intelligence — the same verified pipeline moves every film through the network.
       </p>
+
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:2.25rem;" class="reveal reveal--d3">
+        <span class="ins-clock" id="ins-clock-wrap">
+          <span class="ins-clock-dot"></span>
+          <span id="ins-clock-time">--:--:-- IST</span>
+        </span>
+        <span class="ins-chip ins-chip--live">
+          <span class="ins-chip-dot"></span>
+          <span id="ins-live-status">live data</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KPI DASHBOARD ===== -->
+  <section class="section" id="dashboard" aria-label="Industry KPI dashboard">
+    <div class="wrap">
+      <div class="sec-header reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Industry snapshot</div>
+        <h2 class="sec-title display-lg">
+          The graph, <span class="glow-text">in numbers.</span>
+        </h2>
+        <p class="sec-sub">
+          Benchmarks streamed from the operating graph — releases, box office, hits, and reach across the ecosystem.
+        </p>
+      </div>
+
+      <div class="ins-kpi-row reveal reveal--d1">
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Feature releases</div>
+          <div class="ins-kpi-value" data-count="1152" data-kpi="releases">1152</div>
+          <div class="ins-kpi-note">Calendar year pipeline</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Box office (&#8377; Cr)</div>
+          <div class="ins-kpi-value" data-count="2685" data-kpi="boxOfficeCr">2685</div>
+          <div class="ins-kpi-note">Gross across releases</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Hits</div>
+          <div class="ins-kpi-value" data-count="94" data-kpi="hits">94</div>
+          <div class="ins-kpi-note">Above hit threshold</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Avg gross (&#8377; Cr)</div>
+          <div class="ins-kpi-value" data-count="454" data-kpi="average">454</div>
+          <div class="ins-kpi-note">Per release, multiplex</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Flops</div>
+          <div class="ins-kpi-value" data-count="604" data-kpi="flops">604</div>
+          <div class="ins-kpi-note">Below recovery rate</div>
+        </div>
+        <div class="ins-kpi">
+          <div class="ins-kpi-label">Screens</div>
+          <div class="ins-kpi-value" data-count="986" data-kpi="screens">986</div>
+          <div class="ins-kpi-note">342 multiplex / 644 single</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== THE OPERATING FLOW ===== -->
   <section class="section" id="flow" aria-label="The operating flow">
     <div class="wrap">
-      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
-        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> The operating flow</div>
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> The operating flow</div>
         <h2 class="sec-title display-lg">
           Every project runs through <em>seven nodes.</em>
         </h2>
         <p class="sec-sub">From mandate to intelligence — the same verified pipeline moves every film through the network.</p>
       </div>
 
-      <div class="flow-track reveal reveal--d1" style="grid-template-columns:repeat(7, 1fr);" aria-label="Project flow through seven nodes">
+      <div class="flow-track reveal reveal--d1" aria-label="Project flow through seven nodes">
         <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">task_alt</span>
-          <span style="display:block;">Mandate in</span>
+          <span class="flow-node-num">01</span>
+          <span class="flow-node-ic material-symbols-outlined">task_alt</span>
+          <span class="flow-node-title">Mandate in</span>
+          <span class="flow-node-desc">project brief enters the graph</span>
         </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
         <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">manage_search</span>
-          <span style="display:block;">Registry match</span>
+          <span class="flow-node-num">02</span>
+          <span class="flow-node-ic material-symbols-outlined">manage_search</span>
+          <span class="flow-node-title">Registry match</span>
+          <span class="flow-node-desc">verified capacity indexed by skill</span>
         </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
         <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">verified_user</span>
-          <span style="display:block;">Verification</span>
+          <span class="flow-node-num">03</span>
+          <span class="flow-node-ic material-symbols-outlined">verified_user</span>
+          <span class="flow-node-title">Verification</span>
+          <span class="flow-node-desc">evidence stack checked on entry</span>
         </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
         <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">group_work</span>
-          <span style="display:block;">Unit assembly</span>
+          <span class="flow-node-num">04</span>
+          <span class="flow-node-ic material-symbols-outlined">group_work</span>
+          <span class="flow-node-title">Unit assembly</span>
+          <span class="flow-node-desc">right-sized unit + Plan A/B/C</span>
         </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
+        <div class="flow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
         <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">play_circle</span>
-          <span style="display:block;">Execution</span>
+          <span class="flow-node-num">05</span>
+          <span class="flow-node-ic material-symbols-outlined">play_circle</span>
+          <span class="flow-node-title">Execution</span>
+          <span class="flow-node-desc">milestones tracked on schedule</span>
         </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">sync</span>
-          <span style="display:block;">Intelligence loop</span>
+        <div class="flow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+        <div class="flow-node flow-node--registry">
+          <span class="flow-node-num">06</span>
+          <span class="flow-node-ic material-symbols-outlined">sync</span>
+          <span class="flow-node-title">Intelligence loop</span>
+          <span class="flow-node-desc">wrap evidence back to registry</span>
         </div>
+      </div>
+
+      <div class="flow-loop reveal reveal--d2" aria-label="Intelligence loop">
+        <span class="flow-loop-item">Wrap logs</span>
+        <span class="flow-loop-arrow">&#8594;</span>
+        <span class="flow-loop-item">compatibility scores</span>
+        <span class="flow-loop-arrow">&#8594;</span>
+        <span class="flow-loop-item">availability windows</span>
+        <span class="flow-loop-arrow">&#8594;</span>
+        <span class="flow-loop-item flow-loop-item--end">registry upgrade &#8635;</span>
       </div>
     </div>
   </section>
 
-  <hr class="info-divider" />  <!-- ===== NETWORK UTILIZATION ===== -->
+  <!-- ===== NETWORK UTILIZATION ===== -->
   <section class="section" id="utilization" aria-label="Network utilization">
     <div class="wrap">
-      <div class="sec-header reveal" style="margin-bottom:2.5rem;">
+      <div class="sec-header reveal">
         <div class="eyebrow"><span class="eyebrow-line"></span> Network utilization</div>
         <h2 class="sec-title display-lg">
           <span class="glow-text">Capacity in motion.</span>
@@ -138,22 +218,22 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.25rem;" class="reveal reveal--d1">
         <div class="card spotlight-card" style="padding:1.5rem;">
           <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Stage occupancy</div>
-          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">61%</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-serif); color:var(--t-pure); margin-top:0.5rem;">61%</div>
           <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Stage occupancy</p>
         </div>
         <div class="card spotlight-card" style="padding:1.5rem;">
           <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Gear utilization</div>
-          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">47%</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-serif); color:var(--t-pure); margin-top:0.5rem;">47%</div>
           <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Gear utilization</p>
         </div>
         <div class="card spotlight-card" style="padding:1.5rem;">
           <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Crew between projects</div>
-          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">39%</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-serif); color:var(--t-pure); margin-top:0.5rem;">39%</div>
           <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Crew between projects</p>
         </div>
         <div class="card spotlight-card" style="padding:1.5rem;">
           <div style="font-family:var(--font-mono); font-size:var(--f-3xs); color:var(--t-dim); letter-spacing:0.12em;">Idle capacity recovered</div>
-          <div style="font-size:var(--f-xl); font-family:var(--font-display); color:var(--t1); margin-top:0.5rem;">22%</div>
+          <div style="font-size:var(--f-xl); font-family:var(--font-serif); color:var(--t-pure); margin-top:0.5rem;">22%</div>
           <p style="font-size:var(--f-3xs); color:var(--t-low); margin-top:0.25rem;">Idle capacity recovered</p>
         </div>
       </div>
@@ -232,11 +312,11 @@
     </div>
   </section>
 
-  <hr class="info-divider" />  <!-- ===== FEED INDICATOR ===== -->
+  <!-- ===== LIVE UPDATES FEED ===== -->
   <section class="section" id="feed" aria-label="Live updates feed">
     <div class="wrap" style="max-width: 52rem;">
-      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
-        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> Live updates</div>
+      <div class="sec-header sec-header--center reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Live updates</div>
         <h2 class="sec-title display-lg">
           What the graph is <em>reporting right now.</em>
         </h2>
@@ -298,51 +378,72 @@
     </div>
   </section>
 
-  <hr class="info-divider" />  <!-- ===== THE OPERATING FLOW ===== -->
-  <section class="section" id="flow" aria-label="The operating flow">
-    <div class="wrap">
-      <div class="sec-header sec-header--center reveal" style="margin-bottom:2.5rem;">
-        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-line"></span> The operating flow</div>
-        <h2 class="sec-title display-lg">
-          Every project runs through <em>seven nodes.</em>
-        </h2>
-        <p class="sec-sub">From mandate to intelligence — the same verified pipeline moves every film through the network.</p>
-      </div>
-
-      <div class="flow-track reveal reveal--d1" style="grid-template-columns:repeat(7, 1fr);" aria-label="Project flow through seven nodes">
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">task_alt</span>
-          <span style="display:block;">Mandate in</span>
-        </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">manage_search</span>
-          <span style="display:block;">Registry match</span>
-        </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">verified_user</span>
-          <span style="display:block;">Verification</span>
-        </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">group_work</span>
-          <span style="display:block;">Unit assembly</span>
-        </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">play_circle</span>
-          <span style="display:block;">Execution</span>
-        </div>
-        <div class="flow-arrow"><span class="material-symbols-outlined" style="display:block;">arrow_forward</span></div>
-        <div class="flow-node">
-          <span class="flow-node-ic material-symbols-outlined" style="display:block;">sync</span>
-          <span style="display:block;">Intelligence loop</span>
-        </div>
+  <!-- ===== FINAL CALL TO ACTION ===== -->
+  <section class="final-cta" aria-label="Final call to action">
+    <div class="wrap final-cta-body">
+      <div class="final-wordmark reveal">DIGISYNQ</div>
+      <div class="final-tagline reveal reveal--d1"><em>Syncing the filmmaking ecosystem.</em></div>
+      <div class="reveal reveal--d3" style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; margin-top:2rem;">
+        <a href="contact.html" class="btn btn-signal btn-lg">Coordinate a project &rarr;</a>
+        <a href="register.html" class="btn btn-ghost btn-lg">Join the network</a>
       </div>
     </div>
   </section>
 
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand-name">DIGISYNQ</div>
+        <div class="footer-brand-tag">Syncing the filmmaking ecosystem</div>
+        <p class="footer-brand-desc">
+          An asset-light, open, trusted and continuously learning operating network connecting verified talent, studios, hardware, and production capacity across the filmmaking lifecycle.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Insights</h4>
+        <div class="footer-links">
+          <a href="insights.html#dashboard">Industry snapshot</a>
+          <a href="insights.html#flow">Seven-node flow</a>
+          <a href="insights.html#utilization">Network utilization</a>
+          <a href="insights.html#feed">Live updates</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform &amp; model</h4>
+        <div class="footer-links">
+          <a href="platform.html#mechanism-detail">Operating mechanism</a>
+          <a href="platform.html#verification-detail">Verification protocol</a>
+          <a href="platform.html#resilience-detail">Plan A/B/C</a>
+          <a href="business.html">Business model</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact &amp; legal</h4>
+        <div class="footer-links">
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">+91 7996548969</a>
+          <a href="contact.html">Terms of use</a>
+          <a href="contact.html">Privacy &amp; data verification policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>The project may end. The value doesn't.</span>
+      <span>&copy; 2026 DIGISYNQ Inc. All rights reserved. Where the filmmaking ecosystem syncs.</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
   <div class="fab-cluster" aria-label="Quick actions">
     <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="fab fab-wa" id="fab-wa" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -355,6 +456,7 @@
   <!-- Open-Source Plugins & Scripts -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
   <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/insights.js" defer></script>
   <script src="assets/js/feedback.js" defer></script>
 </body>
 </html>
