@@ -426,6 +426,7 @@ a {
   gap: 0.8rem;
   font-family: 'DM Serif Display', Georgia, serif;
   font-weight: 400;
+  font-style: normal !important;
   font-size: 2.6rem;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -437,6 +438,11 @@ a {
     1px 1px 0 rgba(255,255,255,0.15),
     2px 2px 0 rgba(0,0,0,0.4);
   transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.brand-logo span {
+  font-style: normal !important;
+  font-family: 'DM Serif Display', Georgia, serif;
 }
 
 .brand-logo:hover {
