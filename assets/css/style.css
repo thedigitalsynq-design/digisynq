@@ -44,10 +44,11 @@
   --success-subtle: rgba(52, 211, 153, 0.18);
   --success-text: #34d399;
 
-  /* Typography — Premium Apple/Tech Typography System (Outfit + Plus Jakarta Sans + Inter) */
-  --font-serif: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  /* Typography — Premium Apple/Tech Typography System (Sabapia Bold + Outfit + Plus Jakarta Sans + Inter) */
+  --font-highlight: 'Sabapia', 'Sabapia Bold', 'Outfit', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-serif: 'Sabapia', 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-display: 'Sabapia', 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
@@ -286,12 +287,16 @@ a {
 }
 
 .highlight-cyan {
+  font-family: var(--font-highlight);
+  font-weight: 700;
   color: #34d399;
   text-shadow: 0 0 25px rgba(52, 211, 153, 0.45);
 }
 
-/* Gradient highlight — bulletproof transparent text fill */
+/* Gradient highlight — Sabapia Bold font stack */
 .highlight-gradient {
+  font-family: var(--font-highlight) !important;
+  font-weight: 800 !important;
   background: linear-gradient(135deg, #ffffff 20%, #34d399 90%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -301,6 +306,8 @@ a {
 }
 
 .highlight-gradient * {
+  font-family: var(--font-highlight) !important;
+  font-weight: 800 !important;
   background: inherit !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -313,7 +320,9 @@ a {
 .highlight-gradient strong,
 .highlight-gradient em strong,
 .highlight-gradient strong em {
-  font-style: italic;
+  font-family: var(--font-highlight) !important;
+  font-weight: 800 !important;
+  font-style: normal;
   -webkit-text-fill-color: transparent !important;
 }
 
@@ -651,12 +660,14 @@ a {
 }
 
 .headline-bold {
+  font-family: var(--font-highlight);
   font-weight: 700;
   color: #ffffff;
   display: inline-block;
 }
 
 .headline-extrabold {
+  font-family: var(--font-highlight);
   font-weight: 800;
   color: #34d399;
   text-shadow: 0 0 35px rgba(52, 211, 153, 0.4), 0 4px 25px rgba(0, 0, 0, 0.9);
