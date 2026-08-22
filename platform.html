@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Platform Architecture — The 10-stage continuous coordination loop, ABCDEF pipeline, and institutional intelligence layer." />
-  <title>Platform Architecture — DIGISYNQ</title>
+  <meta name="description" content="How DIGISYNQ Works — The Five Operating Engines and the future Project OS operating architecture for cinema and digital production." />
+  <title>How It Works &amp; Operating Engines — DIGISYNQ</title>
 
   <!-- Google Fonts: DM Serif Display, Playfair Display, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,16 +26,20 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link active">Platform</a></li>
+          <li><a href="platform.html" class="nav-link active">How it works</a></li>
           <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
+          <li><a href="flowchart.html" class="nav-link">ABCDEF</a></li>
           <li><a href="business.html" class="nav-link">Business model</a></li>
+          <li><a href="network.html#talent-lab" class="nav-link">Talent lab</a></li>
+          <li><a href="about.html#insights" class="nav-link">Insights</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="contact.html" class="btn btn-secondary btn-sm" id="nav-connect-btn">Coordinate a project</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Discuss a project</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join the network</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -48,341 +52,275 @@
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
     <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="platform.html" class="mobile-nav-link">Platform architecture</a>
-    <a href="network.html" class="mobile-nav-link">TAG matrix & network</a>
-    <a href="business.html" class="mobile-nav-link">Asset-light business model</a>
-    <a href="about.html" class="mobile-nav-link">About & leadership</a>
-    <a href="contact.html" class="mobile-nav-link">Contact & intake</a>
-    <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Coordinate a project</a>
+    <a href="platform.html" class="mobile-nav-link">How it works</a>
+    <a href="network.html" class="mobile-nav-link">Network</a>
+    <a href="platform.html#engines" class="mobile-nav-link">Solutions</a>
+    <a href="flowchart.html" class="mobile-nav-link">ABCDEF Model</a>
+    <a href="business.html" class="mobile-nav-link">Business model</a>
+    <a href="network.html#talent-lab" class="mobile-nav-link">Talent lab</a>
+    <a href="about.html#insights" class="mobile-nav-link">Insights</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="contact.html?type=discuss" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Discuss a project</a>
   </div>
 
   <!-- 2. PAGE HERO -->
   <section class="page-hero">
-    <div class="container">
+    <div class="container text-center">
       <div class="eyebrow">
         <span class="pulse-dot"></span>
-        <span>OS ARCHITECTURE &bull; PIPELINE ENGINE</span>
+        <span>OPERATING ARCHITECTURE &bull; 5 ENGINES</span>
       </div>
       <h1 class="page-title">
-        The operating architecture for <span class="highlight-gradient"><em><strong>modern entertainment.</strong></em></span>
+        The operating system for <span class="highlight-gradient"><em><strong>connected cinema.</strong></em></span>
       </h1>
-      <p class="page-subtitle">
-        A deterministic coordination protocol turning fragmented industry interactions into synchronized production pipelines. From initial signal ingestion to compounding post-wrap feedback.
+      <p class="page-subtitle" style="margin: 0 auto; max-width: 860px;">
+        DIGISYNQ organizes capabilities into five integrated engines that activate what already exists, builds pathways for talent, extends content value, and learns from every project.
       </p>
     </div>
   </section>
 
-  <!-- 3. HOW THE SYSTEM WORKS (10-STAGE LOOP) -->
-  <section class="system-loop-section" id="system-loop">
+  <!-- 3. THE 5 ENGINES -->
+  <section class="engines-section" id="engines">
     <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Continuous orchestration</div>
-        <h2 class="section-title">The 10-stage coordination loop.</h2>
+      <div class="section-header text-center">
+        <div class="eyebrow">Core Capabilities</div>
+        <h2 class="section-title">The Five Connected Engines.</h2>
         <p class="section-subtitle">
-          Each collaboration moves through ten standardized phases, compounding trust and dataset fidelity at every transition.
+          Each engine solves a specific point of fragmentation across the production lifecycle.
         </p>
       </div>
 
-      <div class="loop-stages-timeline">
-        <div class="loop-stage-card active" data-step="0">
-          <div class="stage-num">01 / Discover</div>
-          <div class="stage-name">Discover</div>
-          <div class="stage-brief">Make assets & capabilities visible</div>
-        </div>
-        <div class="loop-stage-card" data-step="1">
-          <div class="stage-num">02 / Register</div>
-          <div class="stage-name">Register</div>
-          <div class="stage-brief">Structured ingestion & taxonomy</div>
-        </div>
-        <div class="loop-stage-card" data-step="2">
-          <div class="stage-num">03 / Verify</div>
-          <div class="stage-name">Verify</div>
-          <div class="stage-brief">Baseline trust & credentials</div>
-        </div>
-        <div class="loop-stage-card" data-step="3">
-          <div class="stage-num">04 / Classify</div>
-          <div class="stage-name">Classify</div>
-          <div class="stage-brief">TAG 1–10 functional mapping</div>
-        </div>
-        <div class="loop-stage-card" data-step="4">
-          <div class="stage-num">05 / Profile</div>
-          <div class="stage-name">Profile</div>
-          <div class="stage-brief">Standardized professional identities</div>
-        </div>
-        <div class="loop-stage-card" data-step="5">
-          <div class="stage-num">06 / Connect</div>
-          <div class="stage-name">Connect</div>
-          <div class="stage-brief">Link complementary participants</div>
-        </div>
-        <div class="loop-stage-card" data-step="6">
-          <div class="stage-num">07 / Match</div>
-          <div class="stage-name">Match</div>
-          <div class="stage-brief">Multi-signal contextual fit</div>
-        </div>
-        <div class="loop-stage-card" data-step="7">
-          <div class="stage-num">08 / Execute</div>
-          <div class="stage-name">Execute</div>
-          <div class="stage-brief">Real-world production delivery</div>
-        </div>
-        <div class="loop-stage-card" data-step="8">
-          <div class="stage-num">09 / Record</div>
-          <div class="stage-name">Record</div>
-          <div class="stage-brief">Capture verified performance</div>
-        </div>
-        <div class="loop-stage-card" data-step="9">
-          <div class="stage-num">10 / Reconnect</div>
-          <div class="stage-name">Reconnect</div>
-          <div class="stage-brief">Compounding system intelligence</div>
-        </div>
-      </div>
-
-      <div class="loop-inspector-box">
-        <div class="inspector-info">
-          <h4 id="inspector-stage-title">01 — Discover</h4>
-          <p id="inspector-stage-desc">
-            Make assets, talent, specialized craft, capabilities, facilities and project opportunities universally searchable and contextually discoverable across the entertainment spectrum.
+      <div class="engines-grid">
+        <!-- Engine 01: CAPACITY -->
+        <div class="engine-card">
+          <div class="engine-id-badge">ENGINE 01</div>
+          <h3 class="engine-title">CAPACITY</h3>
+          <div class="engine-core-msg">&ldquo;USE WHAT ALREADY EXISTS.&rdquo;</div>
+          <p class="engine-desc">
+            Activate existing production capability. Connect technicians, creative professionals, physical studios, equipment partners, and post-production facilities around project schedules.
           </p>
+          <ul class="engine-list">
+            <li class="engine-list-item">Cinematographers, gaffers &amp; technical crew</li>
+            <li class="engine-list-item">Creative department artisans</li>
+            <li class="engine-list-item">Studio floors and soundstage availability</li>
+            <li class="engine-list-item">Optical, grip and lighting rental partners</li>
+            <li class="engine-list-item">Post-production, sound and DI pipelines</li>
+          </ul>
+          <div class="engine-disclaimer">
+            Focus: High-efficiency utilization of existing industry capital and human expertise.
+          </div>
         </div>
-        <div class="loop-indicator-badge" id="inspector-stage-badge">
-          Visibility layer
+
+        <!-- Engine 02: TALENT -->
+        <div class="engine-card">
+          <div class="engine-id-badge">ENGINE 02</div>
+          <h3 class="engine-title">TALENT</h3>
+          <div class="engine-core-msg">&ldquo;BUILD A CONTINUOUS TALENT PIPELINE.&rdquo;</div>
+          <p class="engine-desc">
+            Connect practical training directly to real production sets. Develop newcomer and technician capabilities through workshops and verified field experience.
+          </p>
+          <ul class="engine-list">
+            <li class="engine-list-item">Hands-on technical workshops</li>
+            <li class="engine-list-item">Departmental workflow training</li>
+            <li class="engine-list-item">Newcomer development pathways</li>
+            <li class="engine-list-item">Project-based crew deployment</li>
+            <li class="engine-list-item">Structured performance feedback</li>
+          </ul>
+          <div class="engine-disclaimer">
+            Important Notice: DIGISYNQ organizes practical workshops and develops talent for real production environments. Training or network participation does not guarantee employment or projects.
+          </div>
+        </div>
+
+        <!-- Engine 03: CONTENT -->
+        <div class="engine-card">
+          <div class="engine-id-badge">ENGINE 03</div>
+          <h3 class="engine-title">CONTENT</h3>
+          <div class="engine-core-msg">&ldquo;ONE PRODUCTION. MULTIPLE CONTENT OPPORTUNITIES.&rdquo;</div>
+          <p class="engine-desc">
+            Increase the useful life and reach of film and serial content. Turn a single production into an expansive ecosystem of short-form, archival, and creator assets.
+          </p>
+          <ul class="engine-list">
+            <li class="engine-list-item">BTS and production documentation</li>
+            <li class="engine-list-item">Interviews and narrative deep dives</li>
+            <li class="engine-list-item">Shorts, Reels and character capsules</li>
+            <li class="engine-list-item">Creator co-developed content</li>
+            <li class="engine-list-item">Regional and community variations</li>
+          </ul>
+          <div class="engine-disclaimer">
+            Important Notice: Where rights, audience and commercial conditions allow, DIGISYNQ explores additional content and monetization opportunities.
+          </div>
+        </div>
+
+        <!-- Engine 04: AMPLIFICATION -->
+        <div class="engine-card">
+          <div class="engine-id-badge">ENGINE 04</div>
+          <h3 class="engine-title">AMPLIFICATION</h3>
+          <div class="engine-core-msg">&ldquo;CONNECT PRODUCTION WITH THE ECOSYSTEM.&rdquo;</div>
+          <p class="engine-desc">
+            Connect productions with cinema creators, specialized communities, organic PR, and digital publishers to build organic audience momentum.
+          </p>
+          <ul class="engine-list">
+            <li class="engine-list-item">Cinema creators and tastemakers</li>
+            <li class="engine-list-item">Dedicated cinema communities</li>
+            <li class="engine-list-item">Organic PR and cultural moments</li>
+            <li class="engine-list-item">Digital media and social publishers</li>
+            <li class="engine-list-item">Audience conversation steering</li>
+          </ul>
+          <div class="engine-disclaimer">
+            Important Notice: DIGISYNQ is not a cinema marketing agency. We collaborate with specialized media, creators, agencies and partners where their expertise is better suited to the project.
+          </div>
+        </div>
+
+        <!-- Engine 05: INTELLIGENCE -->
+        <div class="engine-card">
+          <div class="engine-id-badge">ENGINE 05</div>
+          <h3 class="engine-title">INTELLIGENCE</h3>
+          <div class="engine-core-msg">&ldquo;EVERY PROJECT SHOULD MAKE THE NEXT PROJECT SMARTER.&rdquo;</div>
+          <p class="engine-desc">
+            Capture operational data, resource utilization, and campaign performance to compound institutional memory across production cycles.
+          </p>
+          <ul class="engine-list">
+            <li class="engine-list-item">Resource utilization metrics</li>
+            <li class="engine-list-item">Cost patterns and leakage audits</li>
+            <li class="engine-list-item">Content performance tracking</li>
+            <li class="engine-list-item">Creator and audience response data</li>
+            <li class="engine-list-item">Post-wrap project learnings</li>
+          </ul>
+          <div class="engine-disclaimer">
+            Focus: Retaining operational learnings so subsequent productions operate faster, leaner, and more effectively.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. ABCDEF PIPELINE -->
-  <section class="pipeline-section" id="pipeline">
+  <!-- 4. PROJECT OS — BUILDING TOWARD -->
+  <section class="project-os-section" id="project-os" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Operating pipeline</div>
-        <h2 class="section-title">The ABCDEF execution model.</h2>
+      <div class="section-header text-center">
+        <div class="building-toward-badge">
+          <span class="pulse-dot" style="background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
+          <span>BUILDING TOWARD &bull; FUTURE PRODUCT DIRECTION</span>
+        </div>
+        <h2 class="section-title">
+          DIGISYNQ<br />
+          <span class="highlight-gradient"><em><strong>PROJECT OS.</strong></em></span>
+        </h2>
         <p class="section-subtitle">
-          Six clear, accountable transitions bridging digital discovery into verified on-ground production output.
+          &ldquo;Today, DIGISYNQ operates through people, processes and relationships. Over time, we are building toward a technology-enabled operating layer that can help coordinate projects, people, capacity, content and intelligence.&rdquo;
         </p>
       </div>
 
-      <div class="pipeline-grid">
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">A</div>
-          <div class="pipeline-stage-title">Discover</div>
-          <p class="pipeline-stage-desc">
-            Uncovering dormant capacity, specialized craft, facilities and verified creative identities across the landscape.
-          </p>
+      <div class="project-os-grid">
+        <div class="project-os-card">
+          <h4 class="os-func-name">01 &bull; Project Intake</h4>
+          <p class="os-func-desc">Structured onboarding of project briefs, scope parameters, timelines, and budget envelopes.</p>
         </div>
-
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">B</div>
-          <div class="pipeline-stage-title">Connect</div>
-          <p class="pipeline-stage-desc">
-            Dynamic linkage of multi-disciplinary assets — bridging talent with producers and infrastructure with projects.
-          </p>
+        <div class="project-os-card">
+          <h4 class="os-func-name">02 &bull; Requirement Mapping</h4>
+          <p class="os-func-desc">Deconstruction of production needs across cameras, technical crew, stages, and post.</p>
         </div>
-
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">C</div>
-          <div class="pipeline-stage-title">Opportunity</div>
-          <p class="pipeline-stage-desc">
-            Converting idle capacity into verified commercial briefs, greenlit slates, and high-conviction co-productions.
-          </p>
+        <div class="project-os-card">
+          <h4 class="os-func-name">03 &bull; Talent Matching</h4>
+          <p class="os-func-desc">Contextual matching of verified crew based on technical skill, experience, and project genre.</p>
         </div>
-
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">D</div>
-          <div class="pipeline-stage-title">Collaboration</div>
-          <p class="pipeline-stage-desc">
-            Synchronized workflows with trusted accountability, clear deliverables, and standardized milestones.
-          </p>
+        <div class="project-os-card">
+          <h4 class="os-func-name">04 &bull; Availability Windows</h4>
+          <p class="os-func-desc">Tracking technician and studio schedule windows between major production engagements.</p>
         </div>
-
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">E</div>
-          <div class="pipeline-stage-title">Execution</div>
-          <p class="pipeline-stage-desc">
-            Frictionless on-ground production and post delivery with zero economic leakage and live progress telemetry.
-          </p>
+        <div class="project-os-card">
+          <h4 class="os-func-name">05 &bull; Resource Utilization</h4>
+          <p class="os-func-desc">Optimizing equipment and studio days to prevent unnecessary downtime and duplication.</p>
         </div>
-
-        <div class="pipeline-stage-card">
-          <div class="pipeline-letter">F</div>
-          <div class="pipeline-stage-title">Value creation</div>
-          <p class="pipeline-stage-desc">
-            Shared upside, compounding dataset signals, and multiplied economic output for all participants.
-          </p>
+        <div class="project-os-card">
+          <h4 class="os-func-name">06 &bull; Content Planning</h4>
+          <p class="os-func-desc">Mapping on-set BTS, interviews, and promotional capture schedules alongside primary shooting.</p>
+        </div>
+        <div class="project-os-card">
+          <h4 class="os-func-name">07 &bull; Creator Matching</h4>
+          <p class="os-func-desc">Pairing contextual digital creators with specific narrative themes, characters, and audiences.</p>
+        </div>
+        <div class="project-os-card">
+          <h4 class="os-func-name">08 &bull; Campaign Coordination</h4>
+          <p class="os-func-desc">Synchronizing multi-channel release windows, PR moments, and community activations.</p>
+        </div>
+        <div class="project-os-card">
+          <h4 class="os-func-name">09 &bull; Analytics &amp; Reporting</h4>
+          <p class="os-func-desc">Aggregating reach, engagement, and operational metrics into post-wrap data dashboards.</p>
+        </div>
+        <div class="project-os-card">
+          <h4 class="os-func-name">10 &bull; Project Memory</h4>
+          <p class="os-func-desc">Retaining cost efficiencies and operational learnings for subsequent project slates.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 5. THE INTELLIGENCE LAYER -->
-  <section class="intelligence-section" id="intelligence">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Structured signals</div>
-        <h2 class="section-title">The intelligence layer.</h2>
-        <p class="section-subtitle">
-          DIGISYNQ transforms disparate industry facts into structured, multi-dimensional coordination signals.
+      <div style="margin-top: 3.5rem; text-align: center; padding: 2rem; background: rgba(56, 189, 248, 0.04); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px;">
+        <p style="font-family: var(--font-serif); font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">
+          Credible by Design &bull; Transparent by Default
+        </p>
+        <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin: 0;">
+          We do not claim automated live AI platforms before they exist. DIGISYNQ is operated today through rigorous human coordination and verified workflows, building systematically toward the software layer.
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="intel-flow-bar">
-        <span class="intel-step">Data</span>
-        <span class="intel-arrow">→</span>
-        <span class="intel-step">Signal</span>
-        <span class="intel-arrow">→</span>
-        <span class="intel-step">Match</span>
-        <span class="intel-arrow">→</span>
-        <span class="intel-step">Action</span>
-        <span class="intel-arrow">→</span>
-        <span class="intel-step">Outcome</span>
-        <span class="intel-arrow">→</span>
-        <span class="intel-step">Learning</span>
-      </div>
-
-      <div class="signals-grid">
-        <div class="signal-card">
-          <div class="signal-icon">01</div>
-          <div class="signal-content">
-            <h4>Skills & craft taxonomy</h4>
-            <p>Granular capability mapping across technical tools, genres, and specialized techniques.</p>
-          </div>
-        </div>
-
-        <div class="signal-card">
-          <div class="signal-icon">02</div>
-          <div class="signal-content">
-            <h4>Verified credits & track record</h4>
-            <p>Immutable screen credits verified against studio releases and peer validation.</p>
-          </div>
-        </div>
-
-        <div class="signal-card">
-          <div class="signal-icon">03</div>
-          <div class="signal-content">
-            <h4>Specialization vectors</h4>
-            <p>High-resolution focus parameters: low-light, high-speed, action, documentary, CGI-heavy.</p>
-          </div>
-        </div>
-
-        <div class="signal-card">
-          <div class="signal-icon">04</div>
-          <div class="signal-content">
-            <h4>Dynamic availability</h4>
-            <p>Real-time schedule telemetry to match active project windows with dormant capacity.</p>
-          </div>
-        </div>
-
-        <div class="signal-card">
-          <div class="signal-icon">05</div>
-          <div class="signal-content">
-            <h4>Project constraints & scale</h4>
-            <p>Budget architectures, union parameters, turnaround times, and delivery standards.</p>
-          </div>
-        </div>
-
-        <div class="signal-card">
-          <div class="signal-icon">06</div>
-          <div class="signal-content">
-            <h4>Geography & stage proximity</h4>
-            <p>Location intelligence for physical proximity to soundstages, tax-incentive zones, and gear.</p>
-          </div>
-        </div>
+  <!-- 5. CTA SECTION -->
+  <section class="final-cta-section" style="padding: 8rem 0;">
+    <div class="container text-center">
+      <div class="eyebrow">Engage The Operating System</div>
+      <h2 class="section-title">
+        HAVE A PRODUCTION?<br />
+        <span class="highlight-gradient"><em><strong>LET'S MAP THE REQUIREMENTS.</strong></em></span>
+      </h2>
+      <p class="section-subtitle" style="margin: 0 auto 2.5rem;">
+        Tell us what you are producing and where you are facing friction.
+      </p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">DISCUSS YOUR PROJECT &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-lg">JOIN THE NETWORK &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- 6. FINAL CTA & FOOTER -->
-  <section class="final-cta-section">
+  <!-- FOOTER -->
+  <footer class="site-footer" style="background: var(--bg-primary); border-top: 1px solid var(--border-subtle); padding: 5rem 0 3rem;">
     <div class="container">
-      <h2 class="final-cta-title">Integrate with the platform.</h2>
-      <p class="final-cta-sub">DIGISYNQ — <em><strong>The network between the dots.</strong></em></p>
-      <div class="btn-group" style="justify-content: center; margin-top: 2rem;">
-        <a href="contact.html" class="btn btn-primary btn-lg">Coordinate a project</a>
-        <a href="network.html" class="btn btn-secondary btn-lg">Explore the TAG network</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. SITE FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; margin-bottom: 4rem;">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.25rem;">
             <span>DIGISYNQ</span>
           </a>
-          <p>An asset-light coordination operating system for an asset-rich but fragmented entertainment industry.</p>
-          <div class="footer-direct-contact">
-            <a href="mailto:thedigitalsynq@gmail.com" class="contact-item-link"><span>thedigitalsynq@gmail.com</span></a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="contact-item-link"><span>+91 79965 48969</span></a>
-          </div>
-          <div class="footer-social-links" style="margin-top: 1.25rem;">
-            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://www.threads.net/@digisynq" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Threads">
-              <svg viewBox="0 0 24 24"><path d="M12.186 24C5.457 24 0 18.625 0 12.012 0 5.438 5.372 0 12.186 0c6.702 0 11.968 5.174 11.968 11.758 0 .805-.078 1.62-.236 2.428-.158.809-.96 1.341-1.77 1.183-.809-.158-1.341-.96-1.183-1.77.126-.644.189-1.295.189-1.841 0-5.32-4.182-9.558-9.968-9.558-5.787 0-9.986 4.238-9.986 9.812 0 5.574 4.199 9.812 9.986 9.812 3.125 0 5.922-1.286 7.876-3.621.57-.682 1.583-.772 2.266-.201.682.57.772 1.583.201 2.266C18.896 22.257 15.688 24 12.186 24zm4.185-11.988c0-3.328-2.227-5.46-5.421-5.46-3.238 0-5.698 2.378-5.698 5.518 0 3.238 2.428 5.518 5.867 5.518 1.83 0 3.227-.478 4.272-1.46.643-.604 1.658-.564 2.262.079.604.643.564 1.658-.079 2.262-1.571 1.474-3.668 2.119-6.455 2.119-5.184 0-8.867-3.488-8.867-8.518 0-4.922 3.863-8.518 8.698-8.518 4.887 0 8.421 3.298 8.421 8.46 0 .551-.044 1.1-.131 1.642-.239 1.493-1.047 2.684-2.274 3.354-1.228.67-2.697.77-4.137.283-.497-.168-.962-.42-1.373-.746-.729.805-1.748 1.263-2.836 1.263-2.158 0-3.698-1.578-3.698-3.785 0-2.207 1.54-3.785 3.698-3.785 1.088 0 2.107.458 2.836 1.263.265-.21.572-.375.908-.488.665-.225 1.341-.179 1.905.129.564.308.937.854 1.05 1.538.04.246.06.495.06.746zm-5.421 2.204c1.077 0 1.846-.783 1.846-1.785 0-1.002-.769-1.785-1.846-1.785s-1.846.783-1.846 1.785c0 1.002.769 1.785 1.846 1.785z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
-              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            </a>
-          </div>
+          <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; max-width: 380px;">
+            Cinema &amp; Digital Production Operating Network
+          </p>
         </div>
         <div>
-          <div class="footer-col-title">Navigation</div>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="platform.html">Platform</a></li>
-            <li><a href="network.html">Network</a></li>
-            <li><a href="business.html">Business model</a></li>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff; margin-bottom: 1.25rem;">SYSTEM</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-family: var(--font-serif);">
+            <li><a href="platform.html" style="color: var(--text-muted);">How It Works</a></li>
+            <li><a href="network.html" style="color: var(--text-muted);">Network</a></li>
+            <li><a href="flowchart.html" style="color: var(--text-muted);">ABCDEF Model</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Company</div>
-          <ul class="footer-links">
-            <li><a href="about.html">About & leadership</a></li>
-            <li><a href="contact.html">Contact & intake</a></li>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff; margin-bottom: 1.25rem;">FOUNDATION</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-family: var(--font-serif);">
+            <li><a href="business.html" style="color: var(--text-muted);">Business Model</a></li>
+            <li><a href="network.html#talent-lab" style="color: var(--text-muted);">Talent Lab</a></li>
+            <li><a href="about.html" style="color: var(--text-muted);">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff; margin-bottom: 1.25rem;">CONTACT</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-family: var(--font-serif);">
+            <li><a href="contact.html?type=discuss" style="color: var(--text-muted);">Discuss a Project</a></li>
+            <li><a href="contact.html?type=join" style="color: var(--text-muted);">Join the Network</a></li>
           </ul>
         </div>
       </div>
-
-      <!-- Co-founders Leadership Section -->
-      <div class="footer-founders-strip">
-        <div class="founders-heading">
-          <span class="eyebrow-mini">LEADERSHIP</span>
-          <h4>Co-founders</h4>
-        </div>
-        <div class="founders-grid">
-          <div class="founder-card">
-            <span class="founder-role">Co-founder</span>
-            <span class="founder-name">Yathish Kumar Nagaraj</span>
-          </div>
-          <div class="founder-card">
-            <span class="founder-role">Co-founder</span>
-            <span class="founder-name">Varun S</span>
-          </div>
-          <div class="founder-card">
-            <span class="founder-role">Co-founder</span>
-            <span class="founder-name">Rakshith</span>
-          </div>
-          <div class="founder-card">
-            <span class="founder-role">Co-founder</span>
-            <span class="founder-name">Rubesh</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>&copy; DIGISYNQ Systems. All rights reserved. Institutional network layer.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <span>System status: <span style="color: #4ade80;">Online</span></span>
-          <span>Protocol: <span style="color: var(--accent-cyan);">DIGISYNQ-OS v2.4</span></span>
-        </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 2rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
+        &copy; DIGISYNQ &bull; Asset-light &bull; Collaboration-driven &bull; Continuously learning.
       </div>
     </div>
   </footer>

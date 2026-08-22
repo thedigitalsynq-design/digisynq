@@ -1,32 +1,26 @@
-# DIGISYNQ — The Network Between the Dots
+# DIGISYNQ — Cinema & Digital Production Operating Network
 
-> A pure static, high-performance GitHub Pages marketing site for **DIGISYNQ** — an asset-light coordination operating system for an asset-rich but fragmented entertainment industry.
+> **"Don't own everything. Connect everything."**  
+> An asset-light operating network for cinema and digital production, connecting talent, production resources, content, audiences and commercial opportunities to improve utilization and create more value across projects.
 
-[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=flat&logo=github)](https://thedigitalsynq-design.github.io/digisynq/)
-[![Zero Dependencies](https://img.shields.io/badge/Zero%20Dependencies-Vanilla%20JS%20%26%20CSS-success)](#)
+[![Hosted on GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=flat&logo=github)](https://thedigitalsynq-design.github.io/digisynq/)
+[![Zero Runtime Dependencies](https://img.shields.io/badge/Zero%20Dependencies-Vanilla%20JS%20%26%20CSS-success)](#)
 
 ---
 
-## ✨ Architecture & Features
+## 🏛️ Core Architecture & Positioning
 
-- **6-Page Multi-Page Architecture**:
-  - `index.html` — Homepage: Problem matrix, 10-node asset simulation, connective layer orbit, 10-stage loop, ABCDEF pipeline, TAG matrix, intelligence layer, flywheel, and comparison.
-  - `platform.html` — Architecture: 10-stage continuous loop deep dive, 6-phase pipeline, intelligence signals.
-  - `network.html` — Network: TAG 01–10 taxonomy, stakeholder ecosystem, and trust protocol.
-  - `business.html` — Economics: Coordination thesis, 4x value multiplier, and asset-light contrast.
-  - `about.html` — Manifesto: Founding thesis, network manifesto, 6 operating principles, and co-founder profiles.
-  - `contact.html` — Coordination Console: Intake form and direct channels (WhatsApp, Email, Socials).
-  - `404.html` — Custom 404 error page.
-
-- **Design System & Typography**:
-  - DM Serif Display typography with bold ink weights and clean non-italic wordmarks.
-  - Dark glassmorphism cards with emerald green (`#34d399`) and cyan (`#00F0FF`) accents.
-  - Fluid clamp scaling across all devices from 320px mobile to 4K displays.
-
-- **Performance & Hardware Acceleration**:
-  - Canvas loop pauses automatically when off-screen via IntersectionObserver.
-  - Off-screen sections use `content-visibility: auto` to maintain high frame rates on 120Hz/144Hz displays.
-  - Zero third-party runtime frameworks.
+- **Core Business Model**: Asset-light Operating Network (Capacity Utilization + Talent Pipeline + Content Economy + Amplification + Project Intelligence)
+- **Primary Proposition**: "Make the Cinema Ecosystem Work Harder."
+- **Five Operating Engines**:
+  1. **Capacity** — Activate existing production capability without capital expenditure.
+  2. **Talent** — Practical workshops & technical development for real production environments.
+  3. **Content** — Increase the useful lifespan and reach of film & serial content.
+  4. **Amplification** — Connect productions with cinema creators, communities, and digital media.
+  5. **Intelligence** — Every project should make the next project smarter.
+- **The ABCDEF Operating Model**: Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract Value &rarr; Feed Forward.
+- **The DIGISYNQ Continuity Model**: Transforming linear production dispersal into a closed compounding loop.
+- **DIGISYNQ Project OS**: Building toward a future technology-enabled operating layer.
 
 ---
 
@@ -34,23 +28,23 @@
 
 ```
 digisynq-website/
-├── index.html           # Home page
-├── platform.html        # Platform architecture
-├── network.html         # TAG matrix & verified network
-├── business.html        # Asset-light business model
-├── about.html           # Manifesto & leadership
-├── contact.html         # Coordination intake console
-├── 404.html             # Styled 404 page
+├── index.html           # Master Homepage (14-stage positioning flow)
+├── platform.html        # How It Works & The 5 Operating Engines
+├── network.html         # Cinema Capacity Network & DIGISYNQ Talent Lab
+├── flowchart.html       # ABCDEF Operating Model & Continuity Flowchart
+├── business.html        # Asset-Light Operating Model & Clean Collaboration
+├── about.html           # Operating Philosophy & Non-Agency Manifesto
+├── contact.html         # "Start with your problem" Client Intake
+├── 404.html             # Node not connected 404 page
 ├── assets/
 │   ├── css/
-│   │   └── style.css    # Master stylesheet
+│   │   └── style.css    # Master design system & components
 │   ├── js/
-│   │   └── main.js      # Core interactive engine
-│   └── img/
-│       └── logo.svg     # Favicon & assets
+│   │   └── main.js      # Interactive hero network & flow engine
+│   └── img/             # Brand logos & icons
 └── README.md
 ```
 
 ---
 
-*Built for DIGISYNQ — The Network Between the Dots.*
+*DIGISYNQ — We don't want to own the cinema ecosystem. We want to make it work better.*

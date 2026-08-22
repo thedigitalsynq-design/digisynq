@@ -160,7 +160,7 @@ function initMobileDrawer() {
 }
 
 /* ==========================================================================
-   6. HERO NETWORK CANVAS (DPI-SCALED & INTERACTIVE)
+   6. HERO NETWORK CANVAS (CENTRAL PROJECT NODE + 12 CONNECTED RESOURCES)
    ========================================================================== */
 function initHeroNetwork() {
   const canvas = document.getElementById('hero-canvas');
@@ -182,25 +182,15 @@ function initHeroNetwork() {
   setSize();
   window.addEventListener('resize', setSize, { passive: true });
 
-  const nodeLabels = [
-    'Talent', 'Content', 'Brands', 'Media',
-    'Audiences', 'Technology', 'Infrastructure', 'Opportunities',
-    'Stories', 'Data', 'Capital', 'Platforms'
+  // 12 Connected Resource Nodes around Central Project Node
+  const resourceNames = [
+    'TALENT', 'TECHNICIANS', 'STUDIOS', 'CONTENT',
+    'CREATORS', 'SOCIAL', 'PR', 'MEDIA',
+    'BRANDS', 'AUDIENCE', 'ANALYTICS', 'MONETIZATION'
   ];
 
-  const nodes = nodeLabels.map((label, idx) => ({
-    x: Math.random() * (window.innerWidth > 800 ? window.innerWidth - 200 : 300) + 50,
-    y: Math.random() * 500 + 100,
-    vx: (Math.random() - 0.5) * 0.45,
-    vy: (Math.random() - 0.5) * 0.45,
-    radius: 4,
-    label,
-    pulse: Math.random() * Math.PI * 2,
-    id: idx
-  }));
-
   const ripples = [];
-  const mouse = { x: null, y: null, radius: 160 };
+  const mouse = { x: null, y: null, radius: 180 };
 
   canvas.parentElement.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -218,8 +208,10 @@ function initHeroNetwork() {
     const rect = canvas.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const clickY = e.clientY - rect.top;
-    ripples.push({ x: clickX, y: clickY, r: 5, maxR: 180, alpha: 0.9 });
+    ripples.push({ x: clickX, y: clickY, r: 5, maxR: 220, alpha: 0.9 });
   });
+
+  let time = 0;
 
   function render() {
     if (!width || !height) {
@@ -228,6 +220,11 @@ function initHeroNetwork() {
     }
 
     ctx.clearRect(0, 0, width, height);
+    time += 0.015;
+
+    // Central Project Coordinates
+    const cx = width / 2;
+    const cy = height * 0.44;
 
     // Draw ripples
     for (let r = ripples.length - 1; r >= 0; r--) {
@@ -240,67 +237,118 @@ function initHeroNetwork() {
       }
       ctx.beginPath();
       ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(0, 240, 255, ${rip.alpha})`;
+      ctx.strokeStyle = `rgba(52, 211, 153, ${rip.alpha})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
     }
 
-    const connectionDist = Math.min(width * 0.35, 220) + Math.min(window.scrollY / 4, 40);
+    // Dynamic radius for satellite orbit
+    const rx = Math.min(width * 0.42, 480);
+    const ry = Math.min(height * 0.36, 260);
 
-    // Draw connection lines
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < connectionDist) {
-          const alpha = (1 - dist / connectionDist) * 0.32;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
+    // Draw elliptical orbit guide
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.08)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 8]);
+    ctx.stroke();
+    ctx.restore();
 
-    // Update & draw nodes
-    nodes.forEach((node) => {
-      node.x += node.vx;
-      node.y += node.vy;
-      node.pulse += 0.035;
+    // Resource Nodes positions & connections
+    const nodePositions = [];
+    const count = resourceNames.length;
 
-      if (node.x < 30 || node.x > width - 30) node.vx *= -1;
-      if (node.y < 30 || node.y > height - 30) node.vy *= -1;
+    for (let i = 0; i < count; i++) {
+      const baseAngle = (i / count) * Math.PI * 2 + time * 0.15;
+      // Slight floating motion
+      const floatOffset = Math.sin(time * 2 + i) * 6;
+      const nx = cx + Math.cos(baseAngle) * (rx + floatOffset);
+      const ny = cy + Math.sin(baseAngle) * (ry + floatOffset);
 
-      // Mouse interaction
-      if (mouse.x !== null) {
-        const dx = mouse.x - node.x;
-        const dy = mouse.y - node.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < mouse.radius && dist > 0) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          node.x -= (dx / dist) * force * 1.8;
-          node.y -= (dy / dist) * force * 1.8;
-        }
-      }
+      nodePositions.push({ x: nx, y: ny, label: resourceNames[i], index: i });
 
-      // Draw node glow
-      const glow = 8 + Math.sin(node.pulse) * 3;
-      ctx.shadowColor = '#00F0FF';
-      ctx.shadowBlur = glow;
+      // Connecting line between Central Project Node and Resource
       ctx.beginPath();
-      ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-      ctx.fillStyle = '#00F0FF';
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(nx, ny);
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.14)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Flowing energy pulses (inward and outward)
+      const pulsePhaseIn = (time * 0.6 + i * 0.12) % 1;
+      const pxIn = nx + (cx - nx) * pulsePhaseIn;
+      const pyIn = ny + (cy - ny) * pulsePhaseIn;
+
+      ctx.beginPath();
+      ctx.arc(pxIn, pyIn, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#34d399';
+      ctx.shadowColor = '#34d399';
+      ctx.shadowBlur = 8;
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Label text
+      const pulsePhaseOut = (time * 0.5 + i * 0.18 + 0.5) % 1;
+      const pxOut = cx + (nx - cx) * pulsePhaseOut;
+      const pyOut = cy + (ny - cy) * pulsePhaseOut;
+
+      ctx.beginPath();
+      ctx.arc(pxOut, pyOut, 2, 0, Math.PI * 2);
+      ctx.fillStyle = '#38bdf8';
+      ctx.shadowColor = '#38bdf8';
+      ctx.shadowBlur = 6;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      // Draw Satellite Node
+      ctx.beginPath();
+      ctx.arc(nx, ny, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#34d399';
+      ctx.fill();
+
+      // Satellite Label
       ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
-      ctx.fillText(node.label, node.x + 8, node.y + 3);
-    });
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+      ctx.textAlign = nx > cx ? 'left' : 'right';
+      const labelOffset = nx > cx ? 10 : -10;
+      ctx.fillText(resourceNames[i], nx + labelOffset, ny + 3);
+    }
+
+    // Connect adjacent resources to create network mesh
+    for (let i = 0; i < count; i++) {
+      const nextIdx = (i + 1) % count;
+      ctx.beginPath();
+      ctx.moveTo(nodePositions[i].x, nodePositions[i].y);
+      ctx.lineTo(nodePositions[nextIdx].x, nodePositions[nextIdx].y);
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.06)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Draw Central Project Node
+    const centerPulse = Math.sin(time * 3) * 4;
+    ctx.save();
+    ctx.shadowColor = 'rgba(52, 211, 153, 0.6)';
+    ctx.shadowBlur = 24 + centerPulse;
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, 14, 0, Math.PI * 2);
+    ctx.fillStyle = '#34d399';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+    ctx.fillStyle = '#060709';
+    ctx.fill();
+    ctx.restore();
+
+    // Central Label Badge
+    ctx.font = '700 11px "JetBrains Mono", monospace';
+    ctx.fillStyle = '#34d399';
+    ctx.textAlign = 'center';
+    ctx.fillText('FILM / SERIAL / DIGITAL PROJECT', cx, cy + 30);
 
     if (isCanvasVisible) {
       animFrameId = requestAnimationFrame(render);
