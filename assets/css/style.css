@@ -4233,3 +4233,304 @@ section::after {
   }
 }
 
+/* ==========================================================================
+   ADVANCED INTERACTIVE SUITE STYLES (V4.5 ENHANCEMENT)
+   ========================================================================== */
+
+/* 1. Continuity Mode Toggle Switcher */
+.continuity-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(18, 23, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  margin: 0 auto 3rem;
+  max-width: 580px;
+  backdrop-filter: blur(16px);
+}
+
+.continuity-toggle-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.continuity-toggle-btn.active {
+  background: rgba(52, 211, 153, 0.18);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
+}
+
+/* 2. Interactive ABCDEF Stepper */
+.abcdef-stepper-wrap {
+  margin-top: 3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  padding: 3rem;
+}
+
+.abcdef-stepper-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.abcdef-stepper-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.abcdef-stepper-btn:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.04);
+}
+
+.abcdef-stepper-btn.active {
+  background: rgba(52, 211, 153, 0.14);
+  border-color: #34d399;
+  box-shadow: 0 0 25px rgba(52, 211, 153, 0.2);
+}
+
+.abcdef-stepper-btn .btn-letter {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.abcdef-stepper-btn.active .btn-letter {
+  color: #34d399;
+}
+
+.abcdef-stepper-btn .btn-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.abcdef-stepper-btn.active .btn-label {
+  color: #ffffff;
+}
+
+.abcdef-live-detail-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.abcdef-checklist-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+.abcdef-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.abcdef-checklist li {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.abcdef-checklist li::before {
+  content: '✓';
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+/* 3. Producer Interactive Blueprint Builder */
+.blueprint-builder-wrap {
+  margin-top: 3.5rem;
+  background: rgba(10, 13, 18, 0.9);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.blueprint-step-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+.blueprint-pills-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.blueprint-pill-opt {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.blueprint-pill-opt:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.blueprint-pill-opt.selected {
+  background: rgba(52, 211, 153, 0.16);
+  border-color: #34d399;
+  color: #34d399;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
+}
+
+.blueprint-output-box {
+  background: rgba(52, 211, 153, 0.04);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-top: 1rem;
+}
+
+.blueprint-res-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.blueprint-res-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.blueprint-engine-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.engine-chip {
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid #34d399;
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* 4. Interactive Problem Diagnosis Drawer */
+.problem-diagnosis-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 7, 9, 0.85);
+  backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.problem-diagnosis-modal.active {
+  display: flex;
+}
+
+.problem-diag-content {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 16px;
+  max-width: 720px;
+  width: 100%;
+  padding: 3rem;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(52, 211, 153, 0.15);
+  position: relative;
+  animation: modalScaleIn 0.28s var(--ease-out-smooth);
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.problem-diag-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.problem-diag-close:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .abcdef-stepper-nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .abcdef-live-detail-box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .blueprint-builder-wrap {
+    padding: 2rem 1.25rem;
+  }
+}
+
+

@@ -404,6 +404,16 @@
         </p>
       </div>
 
+      <!-- Interactive Toggle Bar -->
+      <div class="continuity-toggle-bar">
+        <button class="continuity-toggle-btn" id="toggle-continuity-trad">
+          Traditional Dispersal
+        </button>
+        <button class="continuity-toggle-btn active" id="toggle-continuity-loop">
+          DIGISYNQ Continuity Loop
+        </button>
+      </div>
+
       <div class="continuity-grid">
         <!-- Traditional Linear Breakdown -->
         <div class="continuity-card traditional">
@@ -626,6 +636,45 @@
         </div>
       </div>
 
+      <!-- Interactive Step Explorer -->
+      <div class="abcdef-stepper-wrap">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="eyebrow" style="margin-bottom: 0.75rem;">Interactive Phase Inspector</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff;">Click any stage to inspect execution mechanics</h3>
+        </div>
+
+        <div class="abcdef-stepper-nav">
+          <button class="abcdef-stepper-btn active" data-step="A">
+            <div class="btn-letter">A</div>
+            <div class="btn-label">Audit</div>
+          </button>
+          <button class="abcdef-stepper-btn" data-step="B">
+            <div class="btn-letter">B</div>
+            <div class="btn-label">Build</div>
+          </button>
+          <button class="abcdef-stepper-btn" data-step="C">
+            <div class="btn-letter">C</div>
+            <div class="btn-label">Connect</div>
+          </button>
+          <button class="abcdef-stepper-btn" data-step="D">
+            <div class="btn-letter">D</div>
+            <div class="btn-label">Deploy</div>
+          </button>
+          <button class="abcdef-stepper-btn" data-step="E">
+            <div class="btn-letter">E</div>
+            <div class="btn-label">Extract</div>
+          </button>
+          <button class="abcdef-stepper-btn" data-step="F">
+            <div class="btn-letter">F</div>
+            <div class="btn-label">Feed Fwd</div>
+          </button>
+        </div>
+
+        <div class="abcdef-live-detail-box" id="abcdef-live-detail-box">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
       <div class="abcdef-loop-bar">
         <div class="abcdef-loop-text">
           A &rarr; B &rarr; C &rarr; D &rarr; E &rarr; F &rarr; Back to A &bull; &ldquo;The loop gets smarter with every project.&rdquo;
@@ -780,47 +829,47 @@
       </div>
 
       <div class="problem-selector-grid">
-        <a href="contact.html?problem=technicians" class="problem-prompt-card">
+        <a href="contact.html?problem=technicians" class="problem-prompt-card" data-problem="technicians">
           <div class="problem-prompt-text">&ldquo;I need technicians for my project.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=content-utilization" class="problem-prompt-card">
+        <a href="contact.html?problem=content-utilization" class="problem-prompt-card" data-problem="content-utilization">
           <div class="problem-prompt-text">&ldquo;We have a film but our digital content isn't being fully utilized.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=audience-building" class="problem-prompt-card">
+        <a href="contact.html?problem=audience-building" class="problem-prompt-card" data-problem="audience-building">
           <div class="problem-prompt-text">&ldquo;We need help building an audience around our project.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=creators" class="problem-prompt-card">
+        <a href="contact.html?problem=creators" class="problem-prompt-card" data-problem="creators">
           <div class="problem-prompt-text">&ldquo;We want creator collaborations.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=production-support" class="problem-prompt-card">
+        <a href="contact.html?problem=production-support" class="problem-prompt-card" data-problem="production-support">
           <div class="problem-prompt-text">&ldquo;We need production support.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=brand-integration" class="problem-prompt-card">
+        <a href="contact.html?problem=brand-integration" class="problem-prompt-card" data-problem="brand-integration">
           <div class="problem-prompt-text">&ldquo;We want to explore brand integration.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=unused-capacity" class="problem-prompt-card">
+        <a href="contact.html?problem=unused-capacity" class="problem-prompt-card" data-problem="unused-capacity">
           <div class="problem-prompt-text">&ldquo;We have unused capacity.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=leakage-audit" class="problem-prompt-card">
+        <a href="contact.html?problem=leakage-audit" class="problem-prompt-card" data-problem="leakage-audit">
           <div class="problem-prompt-text">&ldquo;We don't know where the leakage is.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
 
-        <a href="contact.html?problem=consultation" class="problem-prompt-card">
+        <a href="contact.html?problem=consultation" class="problem-prompt-card" data-problem="consultation">
           <div class="problem-prompt-text">&ldquo;We aren't sure what we need.&rdquo;</div>
           <div class="problem-prompt-arrow">&rarr;</div>
         </a>
@@ -868,6 +917,35 @@
           <div class="producer-q-card">
             <div class="q-num">QUESTION 05</div>
             <div class="q-text">What are you trying to achieve?</div>
+          </div>
+        </div>
+
+        <!-- Interactive Blueprint Builder -->
+        <div class="blueprint-builder-wrap" id="blueprint-builder-wrap">
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <div class="eyebrow" style="margin-bottom: 0.5rem;">Interactive Operating Calculator</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff;">Synthesize Your Project Blueprint</h3>
+          </div>
+
+          <div class="blueprint-step-title">01. Select Project Format</div>
+          <div class="blueprint-pills-row">
+            <button class="blueprint-pill-opt format-pill selected" data-format="Feature Film">Feature Film</button>
+            <button class="blueprint-pill-opt format-pill" data-format="OTT Series">OTT / Web Series</button>
+            <button class="blueprint-pill-opt format-pill" data-format="Digital Production">Digital / Short-Form</button>
+            <button class="blueprint-pill-opt format-pill" data-format="Commercial">Commercial / Brand Shoot</button>
+          </div>
+
+          <div class="blueprint-step-title">02. Select Primary Friction / Bottleneck</div>
+          <div class="blueprint-pills-row">
+            <button class="blueprint-pill-opt friction-pill selected" data-friction="Crew Gap">Technical Crew Gap</button>
+            <button class="blueprint-pill-opt friction-pill" data-friction="Studio Downtime">Studio / Post Availability</button>
+            <button class="blueprint-pill-opt friction-pill" data-friction="Content Wastage">Unused Content / Multiplier</button>
+            <button class="blueprint-pill-opt friction-pill" data-friction="Audience Building">Audience &amp; Creator Reach</button>
+            <button class="blueprint-pill-opt friction-pill" data-friction="Brand Alignment">Brand / Commercial Integration</button>
+          </div>
+
+          <div class="blueprint-output-box" id="blueprint-output-box">
+            <!-- Dynamically populated via JS -->
           </div>
         </div>
 
@@ -1298,6 +1376,39 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========================================================================
+       PROBLEM DIAGNOSIS MODAL
+       ======================================================================== -->
+  <div class="problem-diagnosis-modal" id="problem-diagnosis-modal">
+    <div class="problem-diag-content">
+      <button class="problem-diag-close" aria-label="Close modal">&times;</button>
+      <div class="eyebrow" style="margin-bottom: 0.75rem;">OPERATIONAL DIAGNOSIS</div>
+      <div id="diag-quote" style="font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: #34d399; margin-bottom: 1.25rem;"></div>
+      <h3 id="diag-title" style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin-bottom: 1rem;"></h3>
+      
+      <div style="margin-bottom: 1.25rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-cyan); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.25rem;">ROOT CAUSE OF FRICTION</div>
+        <p id="diag-root" style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-secondary); line-height: 1.5;"></p>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-cyan); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.25rem;">DIGISYNQ OPERATING SOLUTION</div>
+        <p id="diag-sol" style="font-family: var(--font-serif); font-size: 1.05rem; color: #ffffff; line-height: 1.5;"></p>
+      </div>
+
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;" id="diag-engines"></div>
+
+      <div style="padding: 1rem; background: rgba(52, 211, 153, 0.06); border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 8px; margin-bottom: 1.75rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #34d399; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.2rem;">EXPECTED EFFICIENCY GAIN</div>
+        <div id="diag-gain" style="font-family: var(--font-serif); font-size: 1.05rem; color: #ffffff;"></div>
+      </div>
+
+      <a href="contact.html" id="diag-action-btn" class="btn btn-primary" style="width: 100%; text-align: center;">
+        START INTAKE FOR THIS PROBLEM &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- Core Scripts -->
   <script src="assets/js/main.js"></script>
