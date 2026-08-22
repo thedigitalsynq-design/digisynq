@@ -1124,8 +1124,8 @@ function initInteractiveContinuityToggle() {
 const abcdefData = {
   A: {
     letter: 'A',
-    name: 'AUDIT',
-    subtitle: 'Pre-Production Forensic Analysis',
+    name: 'Audit',
+    subtitle: 'Pre-production forensic analysis',
     desc: 'Identify requirements, gaps, duplication, underutilization and potential economic leakage before capital is committed.',
     checklist: [
       'Deconstruct script and technical requirements across departments',
@@ -1133,13 +1133,13 @@ const abcdefData = {
       'Identify equipment and studio facility overlap',
       'Quantify potential leakage and downtime risks'
     ],
-    metric: 'Estimated Leakage Prevention: Up to 22%',
+    metric: 'Estimated leakage prevention: Up to 22%',
     engine: 'Engine 01 Capacity + Engine 05 Intelligence'
   },
   B: {
     letter: 'B',
-    name: 'BUILD',
-    subtitle: 'Asset-Light Architecture Synthesis',
+    name: 'Build',
+    subtitle: 'Asset-light architecture synthesis',
     desc: 'Assemble the required resources, people, content workflows, and execution structure without capital-intensive ownership.',
     checklist: [
       'Structure specialized crew pods and workshop talent',
@@ -1147,13 +1147,13 @@ const abcdefData = {
       'Establish cloud workflows and dailies turnaround protocols',
       'Formulate transparent risk-sharing or fee models'
     ],
-    metric: 'Setup Velocity: 3x Faster Deployment',
+    metric: 'Setup velocity: 3x faster deployment',
     engine: 'Engine 01 Capacity + Engine 02 Talent'
   },
   C: {
     letter: 'C',
-    name: 'CONNECT',
-    subtitle: 'Ecosystem & Partner Synchronization',
+    name: 'Connect',
+    subtitle: 'Ecosystem & partner synchronization',
     desc: 'Connect the right technicians, creators, studios, production teams, brands, and specialized media partners.',
     checklist: [
       'Pair contextual creators with specific character narratives',
@@ -1161,13 +1161,13 @@ const abcdefData = {
       'Align co-branded brand integration parameters',
       'Harmonize distributor and PR release timelines'
     ],
-    metric: 'Connected Reach: 100% Contextual',
+    metric: 'Connected reach: 100% contextual',
     engine: 'Engine 04 Amplification + Capacity Network'
   },
   D: {
     letter: 'D',
-    name: 'DEPLOY',
-    subtitle: 'Real-Time Set & Production Execution',
+    name: 'Deploy',
+    subtitle: 'Real-time set & production execution',
     desc: 'Put the right people, resources, and collaborations into action across live shooting schedules.',
     checklist: [
       'Embed verified Talent Lab assistants with senior department heads',
@@ -1175,13 +1175,13 @@ const abcdefData = {
       'Monitor optical and camera package utilization in real time',
       'Manage creator set visits and organic BTS moments'
     ],
-    metric: 'Execution Fidelity: Zero Idle Days',
+    metric: 'Execution fidelity: Zero idle days',
     engine: 'Engine 01 Capacity + Engine 03 Content'
   },
   E: {
     letter: 'E',
-    name: 'EXTRACT VALUE',
-    subtitle: 'Content Multiplication & Distribution',
+    name: 'Extract value',
+    subtitle: 'Content multiplication & distribution',
     desc: 'Increase useful output from people, content, resources, audiences, and commercial relationships.',
     checklist: [
       'Publish dozens of micro-assets, character capsules, and reels',
@@ -1189,13 +1189,13 @@ const abcdefData = {
       'Monetize secondary assets and licensing where rights allow',
       'Convert campaign momentum into durable follower networks'
     ],
-    metric: 'Content Multiplication: 4x–7x Asset Output',
+    metric: 'Content multiplication: 4x–7x asset output',
     engine: 'Engine 03 Content + Engine 04 Amplification'
   },
   F: {
     letter: 'F',
-    name: 'FEED FORWARD',
-    subtitle: 'Compounding Institutional Memory',
+    name: 'Feed forward',
+    subtitle: 'Compounding institutional memory',
     desc: 'Measure, learn, document, and feed operational intelligence back to make the next project smarter.',
     checklist: [
       'Aggregate post-wrap budget vs actual utilization data',
@@ -1203,7 +1203,7 @@ const abcdefData = {
       'Archive content performance benchmarks for sequels/slates',
       'Retain warm audience cohorts for subsequent releases'
     ],
-    metric: 'Network Compound Rate: Smarter Every Cycle',
+    metric: 'Network compound rate: Smarter every cycle',
     engine: 'Engine 05 Intelligence + Project OS'
   }
 };
@@ -1221,13 +1221,13 @@ function initInteractiveABCDEF() {
 
     displayBox.innerHTML = `
       <div>
-        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem;">
-          STAGE ${data.letter} &bull; ${data.subtitle}
+        <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.5rem;">
+          Stage ${data.letter} &bull; ${data.subtitle}
         </div>
-        <h3 style="font-family: var(--font-serif); font-size: 2.2rem; color: #ffffff; margin-bottom: 0.75rem;">
+        <h3 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.6rem); color: #ffffff; margin-bottom: 0.75rem;">
           ${data.letter} — ${data.name}
         </h3>
-        <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
           ${data.desc}
         </p>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
@@ -1236,7 +1236,7 @@ function initInteractiveABCDEF() {
         </div>
       </div>
       <div>
-        <div class="abcdef-checklist-title">Core Execution Deliverables</div>
+        <div class="abcdef-checklist-title">Core execution deliverables</div>
         <ul class="abcdef-checklist">
           ${data.checklist.map(item => `<li>${item}</li>`).join('')}
         </ul>
@@ -1270,49 +1270,49 @@ function initProducerScopeMapper() {
 
   const blueprints = {
     'Feature Film_Crew Gap': {
-      title: 'Feature Film: Technical Pod Integration',
+      title: 'Feature Film: Technical pod integration',
       engines: ['Engine 01 Capacity', 'Engine 02 Talent'],
       desc: 'Deploy verified department technicians (camera, lighting, audio) and Talent Lab assistant pods, reducing sourcing overhead by 60%.',
       actionUrl: 'contact.html?problem=technicians&format=feature'
     },
     'Feature Film_Studio Downtime': {
-      title: 'Feature Film: Facility Capacity Matching',
+      title: 'Feature Film: Facility capacity matching',
       engines: ['Engine 01 Capacity'],
       desc: 'Audit upcoming studio schedules to secure soundstage and DI post-pipeline windows with flexible commercial terms.',
       actionUrl: 'contact.html?problem=unused-capacity&format=feature'
     },
     'Feature Film_Content Wastage': {
-      title: 'Feature Film: Content Multiplier Protocol',
+      title: 'Feature Film: Content multiplier protocol',
       engines: ['Engine 03 Content', 'Engine 04 Amplification'],
       desc: 'Deploy a dedicated secondary unit on set to generate 30+ short-form capsules, character BTS, and creator collaborations.',
       actionUrl: 'contact.html?problem=content-utilization&format=feature'
     },
     'Feature Film_Audience Building': {
-      title: 'Feature Film: Creator & Community Amplification',
+      title: 'Feature Film: Creator & community amplification',
       engines: ['Engine 04 Amplification'],
       desc: 'Synchronize 8+ contextual cinema creators and regional fan communities 6 weeks prior to theatrical release.',
       actionUrl: 'contact.html?problem=audience-building&format=feature'
     },
     'Feature Film_Brand Alignment': {
-      title: 'Feature Film: Organic Commercial Integration',
+      title: 'Feature Film: Organic commercial integration',
       engines: ['Engine 01 Capacity', 'Engine 04 Amplification'],
       desc: 'Structure authentic narrative product placements and co-branded digital distribution without compromising story integrity.',
       actionUrl: 'contact.html?problem=brand-integration&format=feature'
     },
     'OTT Series_Crew Gap': {
-      title: 'OTT Series: Slate Talent Pipeline',
+      title: 'OTT Series: Slate talent pipeline',
       engines: ['Engine 01 Capacity', 'Engine 02 Talent'],
       desc: 'Build dedicated multi-episode technical crew rotations with standardized workflows across shooting blocks.',
       actionUrl: 'contact.html?problem=technicians&format=series'
     },
     'OTT Series_Content Wastage': {
-      title: 'OTT Series: Episodic Digital Campaign',
+      title: 'OTT Series: Episodic digital campaign',
       engines: ['Engine 03 Content'],
       desc: 'Convert episodic footage and cast interviews into recurring weekly digital content drops.',
       actionUrl: 'contact.html?problem=content-utilization&format=series'
     },
     'Digital Production_Content Wastage': {
-      title: 'Digital Production: Multi-Platform Scale',
+      title: 'Digital Production: Multi-platform scale',
       engines: ['Engine 03 Content', 'Engine 04 Amplification'],
       desc: 'Systematic vertical and horizontal content mapping with creator co-distribution.',
       actionUrl: 'contact.html?problem=content-utilization&format=digital'
@@ -1322,7 +1322,7 @@ function initProducerScopeMapper() {
   function updateBlueprint() {
     const key = `${selectedFormat}_${selectedFriction}`;
     const bp = blueprints[key] || {
-      title: `${selectedFormat}: Custom Operating Architecture`,
+      title: `${selectedFormat}: Custom operating architecture`,
       engines: ['Engine 01 Capacity', 'Engine 03 Content', 'Engine 05 Intelligence'],
       desc: `Comprehensive coordination audit mapping ${selectedFriction.toLowerCase()} across our asset-light network.`,
       actionUrl: `contact.html?format=${encodeURIComponent(selectedFormat)}&friction=${encodeURIComponent(selectedFriction)}`
@@ -1332,8 +1332,8 @@ function initProducerScopeMapper() {
       outputBox.innerHTML = `
         <div class="blueprint-res-header">
           <div>
-            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.25rem;">
-              RECOMMENDED BLUEPRINT
+            <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.25rem;">
+              Recommended blueprint
             </div>
             <div class="blueprint-res-title">${bp.title}</div>
           </div>
@@ -1341,11 +1341,11 @@ function initProducerScopeMapper() {
             ${bp.engines.map(e => `<span class="engine-chip">${e}</span>`).join('')}
           </div>
         </div>
-        <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
           ${bp.desc}
         </p>
         <a href="${bp.actionUrl}" class="btn btn-primary">
-          DISCUSS THIS BLUEPRINT WITH DIGISYNQ &rarr;
+          Discuss this blueprint with Digisynq &rarr;
         </a>
       `;
     }
@@ -1377,50 +1377,50 @@ function initProducerScopeMapper() {
    ========================================================================== */
 const problemDiagData = {
   'technicians': {
-    title: 'Technician Sourcing & Availability Friction',
+    title: 'Technician sourcing & availability friction',
     quote: '“I need technicians for my project.”',
     rootCause: 'Crew scheduling operates on word-of-mouth without structured visibility into technician windows between productions.',
-    digisynqSolution: 'DIGISYNQ activates our verified technician network and Talent Lab practitioners to assemble project-ready crew pods within 48 hours.',
+    digisynqSolution: 'Digisynq activates our verified technician network and Talent Lab practitioners to assemble project-ready crew pods within 48 hours.',
     activatedEngines: ['Engine 01 Capacity', 'Engine 02 Talent'],
     expectedGain: '40% reduction in staffing turnaround time; verified technical competence.'
   },
   'content-utilization': {
-    title: 'Underutilized Production Content',
+    title: 'Underutilized production content',
     quote: '“We have a film but our digital content isn’t being fully utilized.”',
     rootCause: 'Productions allocate 95% of focus to the master cut, treating BTS and ancillary assets as an afterthought.',
-    digisynqSolution: 'DIGISYNQ audits the shoot inventory and deploys a secondary capture/editing pipeline to create 30+ short-form, creator, and archival assets.',
+    digisynqSolution: 'Digisynq audits the shoot inventory and deploys a secondary capture/editing pipeline to create 30+ short-form, creator, and archival assets.',
     activatedEngines: ['Engine 03 Content', 'Engine 04 Amplification'],
     expectedGain: '3x–5x expansion in organic impressions without increasing principal production budget.'
   },
   'audience-building': {
-    title: 'Disconnected Pre-Release Community Building',
+    title: 'Disconnected pre-release community building',
     quote: '“We need help building an audience around our project.”',
     rootCause: 'Marketing campaigns launch 3 weeks before release without warm, invested cinema communities.',
-    digisynqSolution: 'DIGISYNQ engages dedicated film communities and tastemakers early in production to foster genuine organic word-of-mouth.',
+    digisynqSolution: 'Digisynq engages dedicated film communities and tastemakers early in production to foster genuine organic word-of-mouth.',
     activatedEngines: ['Engine 04 Amplification'],
     expectedGain: 'Higher organic opening-weekend conversion and enduring audience retention.'
   },
   'creators': {
-    title: 'Cinema & Digital Creator Collaboration',
+    title: 'Cinema & digital creator collaboration',
     quote: '“We want creator collaborations.”',
     rootCause: 'Traditional agencies treat creators as ad banners instead of creative co-distributors.',
-    digisynqSolution: 'DIGISYNQ pairs creators contextual to the film’s genre with on-set access and exclusive story elements.',
+    digisynqSolution: 'Digisynq pairs creators contextual to the film’s genre with on-set access and exclusive story elements.',
     activatedEngines: ['Engine 04 Amplification', 'Engine 03 Content'],
     expectedGain: 'Authentic engagement with zero commercial cringe.'
   },
   'unused-capacity': {
-    title: 'Studio & Facility Downtime Leakage',
+    title: 'Studio & facility downtime leakage',
     quote: '“We have unused capacity.”',
     rootCause: 'Physical floors and post suites sit empty during lull periods between major client bookings.',
-    digisynqSolution: 'DIGISYNQ routes matching upcoming independent films and serials to fill available studio days.',
+    digisynqSolution: 'Digisynq routes matching upcoming independent films and serials to fill available studio days.',
     activatedEngines: ['Engine 01 Capacity'],
     expectedGain: 'Monetized downtime and higher annual facility return on investment.'
   },
   'leakage-audit': {
-    title: 'Economic Leakage & Coordination Inefficiency',
+    title: 'Economic leakage & coordination inefficiency',
     quote: '“We don’t know where the leakage is.”',
     rootCause: 'Redundant sourcing, excessive markups, and uncoordinated workflows siphon up to 20% of project budgets.',
-    digisynqSolution: 'DIGISYNQ conducts a forensic Stage A (Audit) across all departments to pinpoint duplication before shooting starts.',
+    digisynqSolution: 'Digisynq conducts a forensic Stage A (Audit) across all departments to pinpoint duplication before shooting starts.',
     activatedEngines: ['Engine 01 Capacity', 'Engine 05 Intelligence'],
     expectedGain: 'Clear cost reduction and streamlined resource allocation.'
   }
@@ -1442,10 +1442,10 @@ function initProblemDiagnosticModal() {
 
   function openDiag(problemKey) {
     const data = problemDiagData[problemKey] || {
-      title: 'Operational Project Consultation',
+      title: 'Operational project consultation',
       quote: '“Tell us the project.”',
       rootCause: 'Custom bottlenecks requiring coordinated diagnostic mapping.',
-      digisynqSolution: 'DIGISYNQ maps the requirement across our 5 connected operating engines.',
+      digisynqSolution: 'Digisynq maps the requirement across our 5 connected operating engines.',
       activatedEngines: ['Engine 01 Capacity', 'Engine 05 Intelligence'],
       expectedGain: 'Customized operating blueprint.'
     };
@@ -1483,4 +1483,5 @@ function initProblemDiagnosticModal() {
     if (e.target === modal) closeDiag();
   });
 }
+
 
