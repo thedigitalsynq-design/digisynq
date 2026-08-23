@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Digisynq — An asset-light operating network for the entertainment industry, connecting talent, resources, content, audiences and commercial opportunities." />
+  <meta name="description" content="DIGISYNQ — The Operating Network for the Entertainment Industry. We connect talent, production capacity, content, media and commercial opportunities across projects, reducing fragmentation and creating more value from what already exists." />
   <meta name="theme-color" content="#0a0a0b" />
-  <meta property="og:title" content="Digisynq — Make the Entertainment Ecosystem Work Smarter" />
-  <meta property="og:description" content="An asset-light operating network connecting talent, production resources, content, audiences and commercial opportunities." />
+  <meta property="og:title" content="DIGISYNQ — The Operating Network for the Entertainment Industry" />
+  <meta property="og:description" content="DIGISYNQ connects talent, production capacity, content, media and commercial opportunities across the entertainment ecosystem — reducing fragmentation and unlocking underutilized resources." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
-  <title>Digisynq — Make the Entertainment Ecosystem Work Smarter</title>
+  <title>DIGISYNQ — The Operating Network for the Entertainment Industry</title>
 
   <!-- Google Fonts: Momo Trust Display, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,50 +23,37 @@
   <style>
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(1.7rem, 6.4vw, 6.2rem);
+      font-size: clamp(2.1rem, 6.4vw, 6.2rem);
       font-weight: 800;
-      line-height: 1.08;
+      line-height: 1.05;
       letter-spacing: -0.03em;
     }
-    .hero-headline .headline-bold,
-    .hero-headline .headline-extrabold {
-      white-space: nowrap;
-    }
-    .hero-headline .headline-red,
-    .hero-headline .headline-red em,
-    .hero-headline .headline-red strong {
-      color: #38bdf8;
-    }
-    .hero-supporting-title {
+    .hero-headline .headline-accent { color: #38bdf8; }
+    .hero-tagline {
       font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.5;
+      font-size: clamp(1.3rem, 2.4vw, 2rem);
+      font-weight: 500;
       letter-spacing: -0.01em;
-      color: var(--text-apple-gray);
-      max-width: 780px;
-      margin: 1.5rem auto;
+      color: #ffffff;
+      margin: 1.25rem auto 0;
     }
+    .hero-tagline .hl { color: #38bdf8; }
+    .hero-sub-line {
+      font-family: var(--font-mono);
+      font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+      letter-spacing: 0.02em;
+      color: var(--text-apple-gray);
+      margin: 1.5rem auto 0;
+      max-width: 760px;
+    }
+    .hero-sub-line .dot { color: #38bdf8; margin: 0 0.4rem; }
     .hero-copy {
       font-family: var(--font-display);
       font-size: clamp(1.05rem, 1.6vw, 1.25rem);
       line-height: 1.65;
       color: var(--text-apple-gray);
       max-width: 720px;
-      margin: 0 auto 2.5rem;
-    }
-    .hero-status-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      color: var(--text-apple-gray);
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
+      margin: 1.5rem auto 2.5rem;
     }
   </style>
 </head>
@@ -74,9 +61,7 @@
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- ========================================================================
-       1. NAVIGATION & SITE HEADER (APPLE HIG FROSTED PILL)
-       ======================================================================== -->
+  <!-- ===================== NAVIGATION ===================== -->
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo" aria-label="Digisynq home">
@@ -85,20 +70,18 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="platform.html" class="nav-link">How it works</a></li>
           <li><a href="network.html" class="nav-link">Network</a></li>
           <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="flowchart.html" class="nav-link">ABCDEF</a></li>
-          <li><a href="business.html" class="nav-link">Business model</a></li>
-          <li><a href="network.html#talent-lab" class="nav-link">Talent lab</a></li>
+          <li><a href="index.html#proof" class="nav-link">Proof</a></li>
           <li><a href="about.html#insights" class="nav-link">Insights</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm" id="nav-discuss-btn">Discuss a project</a>
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm" id="nav-join-btn">Join the network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm" id="nav-discuss-btn">Bring us a project</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -114,250 +97,211 @@
     <a href="platform.html" class="mobile-nav-link">How it works</a>
     <a href="network.html" class="mobile-nav-link">Network</a>
     <a href="platform.html#engines" class="mobile-nav-link">Solutions</a>
-    <a href="flowchart.html" class="mobile-nav-link">ABCDEF model</a>
-    <a href="business.html" class="mobile-nav-link">Business model</a>
-    <a href="network.html#talent-lab" class="mobile-nav-link">Talent lab</a>
+    <a href="index.html#proof" class="mobile-nav-link">Proof</a>
     <a href="about.html#insights" class="mobile-nav-link">Insights</a>
     <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="contact.html?type=discuss" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Discuss a project</a>
+    <a href="contact.html?type=discuss" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Bring us a project</a>
     <a href="contact.html?type=join" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem; text-align: center;">Join the network</a>
   </div>
 
   <main id="main-content">
 
-  <!-- ========================================================================
-       2. HERO SECTION
-       ======================================================================== -->
+  <!-- ===================== 1. HERO ===================== -->
   <section class="hero-section" id="hero">
-
     <div class="container hero-content text-center">
       <div class="eyebrow">
         <span class="pulse-dot"></span>
-        <span>The operating network for the entertainment industry</span>
+        <span>Entertainment &times; Technology &times; Network &times; Intelligence</span>
       </div>
 
       <h1 class="hero-headline">
-        <span class="headline-bold">Make the Entertainment</span><br />
-        <span class="headline-extrabold headline-red"><em><strong>Ecosystem Work Smarter.</strong></em></span>
+        The Operating Network<br />
+        <span class="headline-accent">for Entertainment.</span>
       </h1>
 
-      <h2 class="hero-supporting-title">
-        Give Every Asset <span class="highlight-gradient"><em><strong>More Life.</strong></em></span>
-      </h2>
+      <p class="hero-tagline">Give Every Asset <span class="hl">More Life.</span></p>
+
+      <p class="hero-sub-line">
+        Talent<span class="dot">&bull;</span>Capacity<span class="dot">&bull;</span>Content<span class="dot">&bull;</span>Media<span class="dot">&bull;</span>Intelligence
+        <br />connected around the project.
+      </p>
 
       <p class="hero-copy">
-        We connect the crews, studios, content and audiences that already exist — so every project does more, without owning more.
+        DIGISYNQ helps entertainment projects identify resources, connect the right people, deploy talent and capacity, activate content, and learn from every project — reducing fragmentation and economic leakage across the ecosystem.
       </p>
 
       <div class="hero-actions btn-group" style="justify-content: center;">
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Discuss your project &rarr;</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring us a project &rarr;</a>
         <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network &rarr;</a>
+        <a href="index.html#problem" class="btn btn-ghost btn-lg">Find the leakage</a>
       </div>
 
       <div class="hero-status-strip">
-        <span>Asset-light</span>
-        <span>&bull;</span>
-        <span>Collaboration-driven</span>
-        <span>&bull;</span>
-        <span>Project-based</span>
-        <span>&bull;</span>
-        <span>Continuously learning</span>
+        <span>Connect</span><span>&bull;</span>
+        <span>Deploy</span><span>&bull;</span>
+        <span>Activate</span><span>&bull;</span>
+        <span>Measure</span><span>&bull;</span>
+        <span>Learn</span>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================
-       2b. PROOF STRIP — TOPOLOGY & NUMBERS (moved out of hero for clarity)
-       ======================================================================== -->
-  <section class="hero-proof-section" id="proof" style="padding-top: 0;">
-    <div class="container hero-content text-center">
-
-      <div class="section-header" style="margin-bottom: 3rem;">
-        <div class="eyebrow">Why Digisynq</div>
-        <h2 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.6rem);">The network effect,<br /><span class="highlight-gradient"><em><strong>by the numbers.</strong></em></span></h2>
-      </div>
-
-      <!-- Bento stat grid -->
-      <div class="apple-bento-grid">
-        <div class="bento-stat-card">
-          <div>
-            <div class="bento-stat-val">+45%</div>
-            <div class="bento-stat-label">Capacity utilization</div>
-            <div class="bento-stat-sub">Active studio floor &amp; camera package uptime</div>
-          </div>
-          <div class="bento-progress-track">
-            <div class="bento-progress-fill" style="width: 85%;"></div>
-          </div>
-          <div class="bento-badge">
-            <span class="dot"></span>
-            <span>Active network match</span>
-          </div>
-        </div>
-
-        <div class="bento-stat-card">
-          <div>
-            <div class="bento-stat-val">4x–7x</div>
-            <div class="bento-stat-label">Content multiplication</div>
-            <div class="bento-stat-sub">Short-form micro-assets created per principal shoot</div>
-          </div>
-          <div class="bento-progress-track">
-            <div class="bento-progress-fill" style="width: 92%;"></div>
-          </div>
-          <div class="bento-badge">
-            <span class="dot"></span>
-            <span>Synchronized capture</span>
-          </div>
-        </div>
-
-        <div class="bento-stat-card">
-          <div>
-            <div class="bento-stat-val">48h</div>
-            <div class="bento-stat-label">Staffing velocity</div>
-            <div class="bento-stat-sub">Verified department technician &amp; assistant pod assembly</div>
-          </div>
-          <div class="bento-progress-track">
-            <div class="bento-progress-fill" style="width: 78%;"></div>
-          </div>
-          <div class="bento-badge">
-            <span class="dot"></span>
-            <span>Talent lab ready</span>
-          </div>
-        </div>
-
-        <div class="bento-stat-card">
-          <div>
-            <div class="bento-stat-val">0</div>
-            <div class="bento-stat-label">Physical asset debt</div>
-            <div class="bento-stat-sub">100% asset-light coordination without capital ownership</div>
-          </div>
-          <div class="bento-progress-track">
-            <div class="bento-progress-fill" style="width: 100%;"></div>
-          </div>
-          <div class="bento-badge">
-            <span class="dot"></span>
-            <span>Asset-light model</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       3. THE BIG PROBLEM: FRAGMENTATION & ECONOMIC LEAKAGE
-       ======================================================================== -->
+  <!-- ===================== 2. THE PROBLEM ===================== -->
   <section class="problem-section" id="problem">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow" style="color: #f87171;">
-          The structural challenge
-        </div>
+        <div class="eyebrow" style="color: #f87171;">The structural challenge</div>
         <h2 class="section-title">
-          The industry doesn't lack capability.<br />
-          <span class="highlight-gradient"><em><strong>It loses value through fragmentation.</strong></em></span>
+          Entertainment doesn't lack resources.<br />
+          <span class="highlight-gradient"><em><strong>It lacks synchronization.</strong></em></span>
         </h2>
+        <p class="section-subtitle">
+          The ecosystem already holds skilled technicians, studios, facilities, creators, content, media, audiences, brands, knowledge and relationships. They are simply fragmented.
+        </p>
       </div>
 
       <div class="problem-grid-v2">
         <div class="problem-card-v2">
-          <div>
-            <div class="prob-num">01 / Talent</div>
-            <h3 class="prob-title">Idle between gigs</h3>
-            <p class="prob-desc">Skilled technicians lose weeks between projects — while other productions search for exactly their skills.</p>
-          </div>
+          <div class="prob-num">01 / Talent</div>
+          <h3 class="prob-title">Idle between gigs</h3>
+          <p class="prob-desc">Good technicians sit idle between projects while other productions search for exactly their skills.</p>
         </div>
-
         <div class="problem-card-v2">
-          <div>
-            <div class="prob-num">02 / Capacity</div>
-            <h3 class="prob-title">Studios sit dark</h3>
-            <p class="prob-desc">Studios and post facilities have unused days while someone else hunts for space and gear.</p>
-          </div>
+          <div class="prob-num">02 / Capacity</div>
+          <h3 class="prob-title">Studios sit dark</h3>
+          <p class="prob-desc">Studios, equipment and production infrastructure stay underutilized while someone else hunts for space and gear.</p>
         </div>
-
         <div class="problem-card-v2">
-          <div>
-            <div class="prob-num">03 / Content</div>
-            <h3 class="prob-title">Footage gets wasted</h3>
-            <p class="prob-desc">A production generates mountains of BTS and story moments — then uses a fraction of them.</p>
-          </div>
+          <div class="prob-num">03 / Content</div>
+          <h3 class="prob-title">Footage gets wasted</h3>
+          <p class="prob-desc">Large amounts of content are produced, then only a fraction is activated.</p>
         </div>
-
         <div class="problem-card-v2">
-          <div>
-            <div class="prob-num">04 / Memory</div>
-            <h3 class="prob-title">Learnings evaporate</h3>
-            <p class="prob-desc">Every wrap disperses the team, the audience momentum, and the lessons. The next project starts from zero.</p>
-          </div>
+          <div class="prob-num">04 / Connections</div>
+          <h3 class="prob-title">Relationships expire</h3>
+          <p class="prob-desc">Relationships and opportunities disappear the moment a project wraps.</p>
+        </div>
+        <div class="problem-card-v2">
+          <div class="prob-num">05 / Knowledge</div>
+          <h3 class="prob-title">Lessons evaporate</h3>
+          <p class="prob-desc">Every project relearns many of the same lessons from scratch.</p>
+        </div>
+        <div class="problem-card-v2">
+          <div class="prob-num">06 / Leakage</div>
+          <h3 class="prob-title">Value drains out</h3>
+          <p class="prob-desc">Money, time, capacity and opportunity are lost through fragmentation.</p>
         </div>
       </div>
 
       <div class="problem-solution-callout">
         <div class="eyebrow">The core mission</div>
-        <h3>Digisynq builds the connections that stop the leaks.</h3>
+        <h3>DIGISYNQ exists to connect these fragmented pieces.</h3>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================
-       4. THE DIGISYNQ ANSWER: WHAT WE ARE & WHAT WE ARE NOT
-       ======================================================================== -->
-  <section class="positioning-section" id="positioning" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <!-- ===================== 3. WHAT DIGISYNQ ACTUALLY DOES ===================== -->
+  <section class="what-section" id="what">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow">Category definition</div>
-        <h2 class="section-title">
-          An operating network.<br />
-          <span class="highlight-gradient"><em><strong>Not another agency.</strong></em></span>
-        </h2>
-        <p class="section-subtitle">
-          To build an enduring operating layer for the entertainment industry, we are clear about what we do not do and what we exclusively focus on.
-        </p>
-      </div>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <span class="core-asset-tag" style="border-color: rgba(248, 113, 113, 0.45); color: #f87171;">&cross; &nbsp;Not another agency</span>
-        <span class="core-asset-tag" style="border-color: rgba(56, 189, 248, 0.45); color: #38bdf8;">&check; &nbsp;An operating network</span>
+        <div class="eyebrow">What DIGISYNQ actually does</div>
+        <h2 class="section-title">Six moves.<br /><span class="highlight-gradient"><em><strong>One loop.</strong></em></span></h2>
+        <p class="section-subtitle">Visitors should never have to interpret the business. Here is exactly what we do on a project.</p>
       </div>
 
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="about.html#not-agency" class="btn btn-secondary">See the full breakdown &rarr;</a>
+      <div class="action-grid">
+        <div class="action-card">
+          <div class="action-num">01</div>
+          <h3 class="action-title">Audit</h3>
+          <p class="action-desc">Identify resources, bottlenecks, duplication and potential leakage.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num">02</div>
+          <h3 class="action-title">Build</h3>
+          <p class="action-desc">Structure the required people, capacity, content and workflows around the project.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num">03</div>
+          <h3 class="action-title">Connect</h3>
+          <p class="action-desc">Match projects with relevant technicians, creators, studios, media and commercial partners.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num">04</div>
+          <h3 class="action-title">Deploy</h3>
+          <p class="action-desc">Put the right resources into action at the right stage of the project.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num">05</div>
+          <h3 class="action-title">Extract</h3>
+          <p class="action-desc">Find additional value in content, relationships, capacity and knowledge already created.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num">06</div>
+          <h3 class="action-title">Feed forward</h3>
+          <p class="action-desc">Capture learnings and data so the next project becomes smarter and more efficient.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================
-       6. ENGINES TEASER - full details live on platform.html#engines
-       ======================================================================== -->
-  <section class="engines-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+  <!-- ===================== NETWORK DIAGRAM ===================== -->
+  <section class="net-vis-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">The coordination layer</div>
+        <h2 class="section-title">DIGISYNQ sits <span class="highlight-gradient"><em><strong>between</strong></em></span> the pieces — it does not own them.</h2>
+      </div>
+      <div class="net-diagram">
+        <span class="net-node">Talent</span>
+        <span class="net-node">Production</span>
+        <span class="net-node">Studios</span>
+        <span class="net-node">Content</span>
+        <span class="net-node">Media</span>
+        <span class="net-node">Audience</span>
+        <span class="net-node">Brands</span>
+      </div>
+      <div class="net-core">DIGISYNQ — connect &amp; coordinate</div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. FIVE ENGINES ===================== -->
+  <section class="engines-section" id="engines">
     <div class="container">
       <div class="section-header text-center">
         <div class="eyebrow">Operating capabilities</div>
-        <h2 class="section-title">
-          Five engines.<br />
-          <span class="highlight-gradient"><em><strong>One system.</strong></em></span>
-        </h2>
+        <h2 class="section-title">Five engines.<br /><span class="highlight-gradient"><em><strong>One system.</strong></em></span></h2>
       </div>
 
-      <div class="engine-topology-steps">
-        <div class="hero-step-node active-core">
-          <div class="step-tag">Engine 01</div>
-          <div class="step-label">Capacity</div>
+      <div class="engine-detail-grid">
+        <div class="engine-detail-card">
+          <div class="engine-index">Engine 01</div>
+          <h3 class="engine-name">Capacity</h3>
+          <p class="engine-goal">Turn idle capacity into productive capacity.</p>
+          <p class="engine-desc">Unlock underutilized studios, equipment, facilities and production infrastructure.</p>
         </div>
-        <div class="hero-step-node active-core">
-          <div class="step-tag">Engine 02</div>
-          <div class="step-label">Talent</div>
+        <div class="engine-detail-card">
+          <div class="engine-index">Engine 02</div>
+          <h3 class="engine-name">Talent</h3>
+          <p class="engine-goal">Discover &rarr; Train &rarr; Assess &rarr; Profile &rarr; Deploy &rarr; Track &rarr; Improve.</p>
+          <p class="engine-desc">Identify, develop, profile and deploy technicians and emerging talent. Not a conventional film school.</p>
         </div>
-        <div class="hero-step-node active-core">
-          <div class="step-tag">Engine 03</div>
-          <div class="step-label">Content</div>
+        <div class="engine-detail-card">
+          <div class="engine-index">Engine 03</div>
+          <h3 class="engine-name">Content</h3>
+          <p class="engine-goal">Increase the value extracted from content already created.</p>
+          <p class="engine-desc">One production can generate main content, short-form, social assets, BTS, creator collaborations and community content.</p>
         </div>
-        <div class="hero-step-node active-core">
-          <div class="step-tag">Engine 04</div>
-          <div class="step-label">Amplification</div>
+        <div class="engine-detail-card">
+          <div class="engine-index">Engine 04</div>
+          <h3 class="engine-name">Amplification</h3>
+          <p class="engine-goal">Stronger promotion — without being a generic agency.</p>
+          <p class="engine-desc">We coordinate with specialist media, PR, creators, communities and distribution partners. DIGISYNQ is the connector, not the channel.</p>
         </div>
-        <div class="hero-step-node active-core">
-          <div class="step-tag">Engine 05</div>
-          <div class="step-label">Intelligence</div>
+        <div class="engine-detail-card">
+          <div class="engine-index">Engine 05</div>
+          <h3 class="engine-name">Intelligence</h3>
+          <p class="engine-goal">Every project creates intelligence for the next project.</p>
+          <p class="engine-desc">Capture learnings on talent, utilization, bottlenecks, content, audience, capacity and leakage — a compounding long-term advantage.</p>
         </div>
       </div>
 
@@ -367,105 +311,266 @@
     </div>
   </section>
 
-  <!-- ========================================================================
-       7. ABCDEF TEASER - full model lives on flowchart.html
-       ======================================================================== -->
-  <section class="abcdef-section">
+  <!-- ===================== 5. ABCDEF ===================== -->
+  <section class="abcdef-section" id="abcdef">
     <div class="container text-center">
       <div class="eyebrow">Execution methodology</div>
       <h2 class="section-title" style="font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.25rem;">
-        Audit &rarr; Build &rarr; Connect &rarr; Deploy<br />
-        <span class="highlight-gradient"><em><strong>&rarr; Extract &rarr; Feed forward.</strong></em></span>
+        A Audit &rarr; B Build &rarr; C Connect &rarr; D Deploy<br />
+        <span class="highlight-gradient"><em><strong>&rarr; E Extract &rarr; F Feed forward.</strong></em></span>
       </h2>
-      <p class="section-subtitle" style="margin-bottom: 2.5rem;">
-        Every project runs the loop — and feeds the next one.
-      </p>
+      <p class="section-subtitle" style="margin-bottom: 2.5rem;">The signature DIGISYNQ framework. Every project runs the loop — and feeds the next one.</p>
       <a href="flowchart.html" class="btn btn-secondary btn-lg">See the full model &rarr;</a>
     </div>
   </section>
 
-  <!-- ========================================================================
-       10. CLIENT JOURNEY: START WITH YOUR PROBLEM
-       ======================================================================== -->
-  <section class="client-problems-section" id="problems" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+  <!-- ===================== 6. USE CASES ===================== -->
+  <section class="usecases-section" id="usecases">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow">Client intake</div>
-        <h2 class="section-title">
-          Start with<br />
-          <span class="highlight-gradient"><em><strong>your problem.</strong></em></span>
-        </h2>
-        <p class="section-subtitle">
-          You don't need to know exactly what service you need. Tell us what you're trying to achieve and where you're facing friction.
-        </p>
+        <div class="eyebrow">Where DIGISYNQ creates value</div>
+        <h2 class="section-title">Start with <span class="highlight-gradient"><em><strong>your problem.</strong></em></span></h2>
       </div>
 
-      <div class="problem-selector-grid">
-        <a href="contact.html?problem=technicians" class="problem-prompt-card" data-problem="technicians">
-          <div class="problem-prompt-text">&ldquo;I need technicians for my project.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-
-        <a href="contact.html?problem=content-utilization" class="problem-prompt-card" data-problem="content-utilization">
-          <div class="problem-prompt-text">&ldquo;Our content isn't being fully utilized.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-
-        <a href="contact.html?problem=audience-building" class="problem-prompt-card" data-problem="audience-building">
-          <div class="problem-prompt-text">&ldquo;We need an audience around our project.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-
-        <a href="contact.html?problem=unused-capacity" class="problem-prompt-card" data-problem="unused-capacity">
-          <div class="problem-prompt-text">&ldquo;We have unused capacity.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-
-        <a href="contact.html?problem=leakage-audit" class="problem-prompt-card" data-problem="leakage-audit">
-          <div class="problem-prompt-text">&ldquo;We don't know where the leakage is.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-
-        <a href="contact.html?problem=consultation" class="problem-prompt-card" data-problem="consultation">
-          <div class="problem-prompt-text">&ldquo;We aren't sure what we need.&rdquo;</div>
-          <div class="problem-prompt-arrow">&rarr;</div>
-        </a>
-      </div>
-
-      <div style="text-align: center; margin-top: 4rem;">
-        <a href="contact.html" class="btn btn-primary btn-lg">Tell us the project &rarr;</a>
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <h3 class="usecase-title">Production</h3>
+          <p class="usecase-problem">&ldquo;We need the right technical team without wasting time searching.&rdquo;</p>
+          <p class="usecase-solution">Maps verified talent &rarr; builds teams &rarr; coordinates deployment &rarr; tracks outcomes.</p>
+          <a href="contact.html?problem=technicians" class="btn btn-ghost btn-sm">Solve a production need &rarr;</a>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-title">Talent</h3>
+          <p class="usecase-problem">&ldquo;Emerging technicians have potential but lack access to real projects.&rdquo;</p>
+          <p class="usecase-solution">Workshop &rarr; assessment &rarr; profile &rarr; deployment &rarr; performance feedback.</p>
+          <a href="contact.html?type=join" class="btn btn-ghost btn-sm">Join the talent network &rarr;</a>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-title">Capacity</h3>
+          <p class="usecase-problem">&ldquo;Our facility has unused capacity.&rdquo;</p>
+          <p class="usecase-solution">Maps availability &rarr; identifies demand &rarr; facilitates utilization.</p>
+          <a href="contact.html?problem=unused-capacity" class="btn btn-ghost btn-sm">List your capacity &rarr;</a>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-title">Content</h3>
+          <p class="usecase-problem">&ldquo;We produced valuable content but aren't extracting enough from it.&rdquo;</p>
+          <p class="usecase-solution">Audit assets &rarr; find opportunities &rarr; connect creators/media &rarr; activate pathways.</p>
+          <a href="contact.html?problem=content-utilization" class="btn btn-ghost btn-sm">Activate content &rarr;</a>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-title">Media / Amplification</h3>
+          <p class="usecase-problem">&ldquo;We need stronger promotion without a generic marketing approach.&rdquo;</p>
+          <p class="usecase-solution">Coordinates with specialist media, PR, creator and distribution partners.</p>
+          <a href="contact.html?problem=audience-building" class="btn btn-ghost btn-sm">Discuss amplification &rarr;</a>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-title">Economics</h3>
+          <p class="usecase-problem">&ldquo;We don't know where time, money or opportunity is leaking.&rdquo;</p>
+          <p class="usecase-solution">Audit &rarr; identify leakage &rarr; connect resources &rarr; measure &rarr; feed insights forward.</p>
+          <a href="contact.html?type=audit" class="btn btn-ghost btn-sm">Run a DIGISYNQ audit &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================
-       15. FINAL CALL TO ACTION & BRAND MANIFESTO
-       ======================================================================== -->
+  <!-- ===================== 7. WHY DIGISYNQ ===================== -->
+  <section class="why-section" id="why" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">The fundamental philosophy</div>
+        <h2 class="section-title">Own less.<br /><span class="highlight-gradient"><em><strong>Connect more.</strong></em></span> Learn every project.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3 class="why-title">Own less</h3>
+          <p class="why-desc">We don't need to own every studio, camera, production company, media outlet, creator network or talent pool.</p>
+        </div>
+        <div class="why-card">
+          <h3 class="why-title">Connect more</h3>
+          <p class="why-desc">Value is built through coordination, relationships, workflows, data, network density and repeat collaboration.</p>
+        </div>
+        <div class="why-card">
+          <h3 class="why-title">Learn every project</h3>
+          <p class="why-desc">Each engagement compounds intelligence for the next one.</p>
+        </div>
+      </div>
+      <p class="why-line">DIGISYNQ does not need to own every asset. It needs to make existing assets work better together.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 8. NETWORK EFFECT ===================== -->
+  <section class="network-effect-section" id="network">
+    <div class="container text-center">
+      <div class="section-header text-center">
+        <div class="eyebrow">The network effect</div>
+        <h2 class="section-title">Every project makes<br /><span class="highlight-gradient"><em><strong>the network smarter.</strong></em></span></h2>
+      </div>
+      <div class="loop-diagram">
+        <div class="loop-step">Projects</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">More participants</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">More activity</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">More data</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">Better matching</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">Better outcomes</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step">More trust</div>
+        <div class="loop-arrow">&darr;</div>
+        <div class="loop-step loop-close">More projects &rarr; (repeat)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. PROOF OF WORK ===================== -->
+  <section class="proof-section" id="proof">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Proof of work</div>
+        <h2 class="section-title">Early network activations.</h2>
+        <p class="section-subtitle">We don't fabricate clients or metrics. Where work is in progress, we label it honestly.</p>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <span class="proof-tag">Pilot</span>
+          <h3 class="proof-title">Regional capacity pilot</h3>
+          <p class="proof-desc">Mapping underutilized studio and equipment availability to match nearby production demand.</p>
+        </div>
+        <div class="proof-card">
+          <span class="proof-tag">Workshop</span>
+          <h3 class="proof-title">Talent lab session</h3>
+          <p class="proof-desc">Practical, deployable training for emerging technicians — profiled and placed into live projects.</p>
+        </div>
+        <div class="proof-card">
+          <span class="proof-tag">Collaboration</span>
+          <h3 class="proof-title">Content activation</h3>
+          <p class="proof-desc">Identifying additional content pathways from existing footage with creator and media partners.</p>
+        </div>
+        <div class="proof-card">
+          <span class="proof-tag">Experiment</span>
+          <h3 class="proof-title">Leakage audit</h3>
+          <p class="proof-desc">Testing an operational review framework to locate time, capacity and cost leakage on a project.</p>
+        </div>
+      </div>
+      <p class="proof-note">Real case studies with verified outcomes will replace these as engagements complete.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 10. WHO WE WORK WITH ===================== -->
+  <section class="who-section" id="who">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Who we work with</div>
+        <h2 class="section-title">Six kinds of partner.</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card">
+          <h3 class="who-title">Producers</h3>
+          <p class="who-desc">Solve production and resource challenges.</p>
+          <a href="contact.html?problem=technicians" class="who-cta">Find talent &rarr;</a>
+        </div>
+        <div class="who-card">
+          <h3 class="who-title">Technicians</h3>
+          <p class="who-desc">Find opportunities, build profiles and develop skills.</p>
+          <a href="contact.html?type=join" class="who-cta">Join the network &rarr;</a>
+        </div>
+        <div class="who-card">
+          <h3 class="who-title">Studios &amp; Facilities</h3>
+          <p class="who-desc">Unlock unused capacity.</p>
+          <a href="contact.html?problem=unused-capacity" class="who-cta">List capacity &rarr;</a>
+        </div>
+        <div class="who-card">
+          <h3 class="who-title">Creators</h3>
+          <p class="who-desc">Connect with projects and content opportunities.</p>
+          <a href="contact.html?type=join" class="who-cta">Connect &rarr;</a>
+        </div>
+        <div class="who-card">
+          <h3 class="who-title">Media &amp; PR</h3>
+          <p class="who-desc">Collaborate on amplification.</p>
+          <a href="contact.html?problem=audience-building" class="who-cta">Discuss &rarr;</a>
+        </div>
+        <div class="who-card">
+          <h3 class="who-title">Brands &amp; Commercial</h3>
+          <p class="who-desc">Connect with relevant entertainment ecosystems.</p>
+          <a href="contact.html?type=discuss" class="who-cta">Partner &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 11. TALENT LAB ===================== -->
+  <section class="talent-teaser-section" id="talent" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Talent lab</div>
+        <h2 class="section-title">Not a film school.<br /><span class="highlight-gradient"><em><strong>A deployment mechanism.</strong></em></h2>
+        <p class="section-subtitle">Discover &rarr; Fine-tune &rarr; Assess &rarr; Profile &rarr; Deploy &rarr; Track. Real project exposure, multi-skilled development, professional behaviour, technical improvement.</p>
+      </div>
+      <p class="why-line">Learn for the project. Train for the ecosystem.</p>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="network.html#talent-lab" class="btn btn-secondary btn-lg">Explore the talent lab &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 12. RIGHTS / INDUSTRY EDUCATION ===================== -->
+  <section class="rights-section" id="rights">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow">Industry education</div>
+        <h2 class="section-title">Know the value of<br /><span class="highlight-gradient"><em><strong>what you create.</strong></em></h2>
+        <p class="section-subtitle">Better decisions begin with understanding what you own, what you license and what you can monetize.</p>
+      </div>
+      <div class="rights-grid">
+        <span class="rights-item">Content rights</span>
+        <span class="rights-item">Cinema rights</span>
+        <span class="rights-item">Audio rights</span>
+        <span class="rights-item">Digital rights</span>
+        <span class="rights-item">Usage rights</span>
+        <span class="rights-item">Licensing</span>
+        <span class="rights-item">Distribution</span>
+        <span class="rights-item">Ownership</span>
+        <span class="rights-item">Monetization pathways</span>
+      </div>
+      <p class="proof-note">Industry awareness, not legal advice.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 13. INSIGHTS ===================== -->
+  <section class="insights-teaser-section" id="insights">
+    <div class="container text-center">
+      <div class="eyebrow">Insights</div>
+      <h2 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem);">Observations on industry economics, capacity utilization and asset-light coordination.</h2>
+      <div style="margin-top: 2.5rem;">
+        <a href="about.html#insights" class="btn btn-secondary btn-lg">Read insights &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 14. FINAL CTA ===================== -->
   <section class="final-cta-section" id="contact" style="padding-bottom: 9rem;">
     <div class="container text-center">
       <div class="eyebrow">Get in touch</div>
-
-      <h2 class="final-cta-title" style="font-family: var(--font-serif); font-size: clamp(3.6rem, 7.5vw, 6.2rem); color: #ffffff; margin-bottom: 1.5rem;">
-        Have a project?<br />
-        <span class="highlight-gradient"><em><strong>Let's find the gaps.</strong></em></span>
+      <h2 class="final-cta-title" style="font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.4rem); color: #ffffff; margin-bottom: 1.5rem;">
+        Bring us a project.<br />
+        <span class="highlight-gradient"><em><strong>We'll find the gaps.</strong></em></span>
       </h2>
-
-      <p class="section-subtitle" style="margin-bottom: 3rem;">
-        We connect what is fragmented. We activate what is underused. We learn from every project.
-      </p>
-
+      <p class="section-subtitle" style="margin-bottom: 3rem;">Connect what is fragmented. Activate what is underused. Learn from every project.</p>
       <div class="btn-group" style="justify-content: center;">
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Discuss your project &rarr;</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring us a project &rarr;</a>
         <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network &rarr;</a>
+        <a href="contact.html?type=audit" class="btn btn-ghost btn-lg">Find the leakage</a>
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- ========================================================================
-       16. FOOTER
-       ======================================================================== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer" style="background: var(--bg-primary); border-top: 1px solid var(--border-subtle); padding: 5rem 0 3rem;">
     <div class="container">
       <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; margin-bottom: 4rem;">
@@ -474,10 +579,10 @@
             <span>DIGISYNQ</span>
           </a>
           <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; max-width: 400px; margin-bottom: 1.5rem;">
-            Entertainment industry operating network
+            The Operating Network for the Entertainment Industry.
           </p>
-          <div style="font-family: var(--font-display); font-size: 0.9rem; color: var(--accent-cyan); font-weight: 500;">
-            Asset-light &bull; Collaboration-driven &bull; Continuously learning
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan); font-weight: 500; letter-spacing: 0.04em;">
+            Connect &bull; Deploy &bull; Activate &bull; Measure &bull; Learn
           </div>
 
           <div class="footer-social-links">
@@ -485,7 +590,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
             </a>
             <a class="social-icon-btn" href="https://www.threads.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on Threads">
-              <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 00-2.215-.221z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-3.082a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 00-2.215-.221z"/></svg>
             </a>
             <a class="social-icon-btn" href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on YouTube">
               <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -511,9 +616,7 @@
         </div>
 
         <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">
-            System
-          </div>
+          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">System</div>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
             <li><a href="platform.html" style="color: var(--text-muted);">How it works</a></li>
             <li><a href="network.html" style="color: var(--text-muted);">Network</a></li>
@@ -523,9 +626,7 @@
         </div>
 
         <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">
-            Foundation
-          </div>
+          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Foundation</div>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
             <li><a href="business.html" style="color: var(--text-muted);">Business model</a></li>
             <li><a href="network.html#talent-lab" style="color: var(--text-muted);">Talent lab</a></li>
@@ -535,9 +636,7 @@
         </div>
 
         <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">
-            Initiate
-          </div>
+          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Initiate</div>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
             <li><a href="contact.html?type=discuss" style="color: var(--text-muted);">Discuss a project</a></li>
             <li><a href="contact.html?type=join" style="color: var(--text-muted);">Join the network</a></li>
@@ -561,70 +660,44 @@
           <h4>Co-founders</h4>
         </div>
         <div class="founders-grid">
-          <div class="founder-card">
-            <div class="founder-role">Co-founder</div>
-            <div class="founder-name">Yathish</div>
-          </div>
-          <div class="founder-card">
-            <div class="founder-role">Co-founder</div>
-            <div class="founder-name">Varun</div>
-          </div>
-          <div class="founder-card">
-            <div class="founder-role">Co-founder</div>
-            <div class="founder-name">Rakshith</div>
-          </div>
-          <div class="founder-card">
-            <div class="founder-role">Co-founder</div>
-            <div class="founder-name">Rubesh</div>
-          </div>
+          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Yathish</div></div>
+          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Varun</div></div>
+          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rakshith</div></div>
+          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rubesh</div></div>
         </div>
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 2rem; flex-wrap: wrap; gap: 1rem;">
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">
-          &copy; Digisynq &bull; Operating network for the entertainment industry. All rights reserved.
-        </p>
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">
-          Asset-light &bull; Collaboration-driven &bull; Project-based
-        </p>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">&copy; Digisynq &bull; The Operating Network for the Entertainment Industry. All rights reserved.</p>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">Asset-light &bull; Collaboration-driven &bull; Project-based</p>
       </div>
     </div>
   </footer>
 
-  <!-- ========================================================================
-       PROBLEM DIAGNOSIS MODAL (APPLE HIG SHEET)
-       ======================================================================== -->
+  <!-- ===================== PROBLEM DIAGNOSIS MODAL ===================== -->
   <div class="problem-diagnosis-modal" id="problem-diagnosis-modal">
     <div class="problem-diag-content">
       <button class="problem-diag-close" aria-label="Close modal">&times;</button>
       <div class="eyebrow" style="margin-bottom: 0.75rem;">Operational diagnosis</div>
       <div id="diag-quote" style="font-family: var(--font-serif); font-size: 1.6rem; font-style: normal; color: #38bdf8; margin-bottom: 1.25rem;"></div>
       <h3 id="diag-title" style="font-family: var(--font-serif); font-size: 2rem; color: #ffffff; margin-bottom: 1.25rem;"></h3>
-      
       <div style="margin-bottom: 1.5rem;">
         <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.35rem;">Root cause of friction</div>
         <p id="diag-root" style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;"></p>
       </div>
-
       <div style="margin-bottom: 1.5rem;">
         <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.35rem;">Digisynq operating solution</div>
         <p id="diag-sol" style="font-size: 1.15rem; color: #ffffff; line-height: 1.6;"></p>
       </div>
-
       <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem;" id="diag-engines"></div>
-
       <div style="padding: 1.25rem; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 16px; margin-bottom: 2rem;">
         <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: #38bdf8; letter-spacing: 0.04em; margin-bottom: 0.3rem;">Expected efficiency gain</div>
         <div id="diag-gain" style="font-size: 1.15rem; color: #ffffff;"></div>
       </div>
-
-      <a href="contact.html" id="diag-action-btn" class="btn btn-primary btn-lg" style="width: 100%; text-align: center;">
-        Start intake for this problem &rarr;
-      </a>
+      <a href="contact.html" id="diag-action-btn" class="btn btn-primary btn-lg" style="width: 100%; text-align: center;">Start intake for this problem &rarr;</a>
     </div>
   </div>
 
-  <!-- Core Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
