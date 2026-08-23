@@ -66,10 +66,11 @@
   --transition-slow: 0.85s var(--ease-out-smooth);
 }
 
-*, *::before, *::after {
+*, *::before, *::after, em, i {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-style: normal !important;
 }
 
 html {
@@ -193,16 +194,13 @@ strong {
 }
 
 em {
-  font-style: normal;
+  font-style: normal !important;
   color: var(--accent-cyan);
 }
 
 em strong, strong em {
-  font-style: normal;
+  font-style: normal !important;
   color: var(--accent-cyan);
-}
-  font-style: italic;
-  color: #ffffff;
 }
 
 a {
