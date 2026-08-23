@@ -22,12 +22,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initScrollReveal();
   initScrollSpy();
-  initStatsCounter();
   initInteractiveContinuityToggle();
   initInteractiveABCDEF();
   initProducerScopeMapper();
   initProblemDiagnosticModal();
 });
+
+/* ==========================================================================
+   MOTION UTILITIES — rAF throttling for scroll & resize (60fps guarantee)
+   ========================================================================== */
+function rafThrottle(fn) {
+  let ticking = false;
+  return function (...args) {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      fn.apply(this, args);
+    });
+  };
+}
+
+function rafDebounce(fn) {
+  let frameId = null;
+  return function (...args) {
+    if (frameId) cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(() => {
+      frameId = null;
+      fn.apply(this, args);
+    });
+  };
+}
 
 /* ==========================================================================
    1. SCROLL PROGRESS BAR
@@ -48,7 +73,7 @@ function initScrollProgress() {
     bar.style.width = `${Math.min(Math.max(scrolled, 0), 100)}%`;
   }
 
-  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('scroll', rafThrottle(updateProgress), { passive: true });
   updateProgress();
 }
 
@@ -74,7 +99,7 @@ function initBackToTop() {
     btn.classList.toggle('visible', window.scrollY > 400);
   }
 
-  window.addEventListener('scroll', toggleBtn, { passive: true });
+  window.addEventListener('scroll', rafThrottle(toggleBtn), { passive: true });
   toggleBtn();
 
   btn.addEventListener('click', () => {
@@ -93,7 +118,7 @@ function initHeader() {
     header.classList.toggle('scrolled', window.scrollY > 30);
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', rafThrottle(onScroll), { passive: true });
   onScroll();
 }
 
@@ -186,7 +211,7 @@ function initHeroNetwork() {
   }
 
   setSize();
-  window.addEventListener('resize', setSize, { passive: true });
+  window.addEventListener('resize', rafDebounce(setSize), { passive: true });
 
   // 12 Connected Resource Nodes around Central Project Node
   const resourceNames = [
@@ -475,7 +500,7 @@ function initOrbitEcosystem() {
   }
 
   setSize();
-  window.addEventListener('resize', setSize, { passive: true });
+  window.addEventListener('resize', rafDebounce(setSize), { passive: true });
 
   const pulseOffsets = Array.from({ length: total }, (_, i) => i / total);
   let orbitRotation = 0;
@@ -686,7 +711,7 @@ function initFlywheel() {
   }
 
   setSize();
-  window.addEventListener('resize', setSize, { passive: true });
+  window.addEventListener('resize', rafDebounce(setSize), { passive: true });
 
   const colors = [
     'rgba(56, 189, 248, 0.65)',
@@ -1115,7 +1140,7 @@ function initScrollSpy() {
   }
 
   measureSections();
-  window.addEventListener('resize', measureSections, { passive: true });
+  window.addEventListener('resize', rafDebounce(measureSections), { passive: true });
   window.addEventListener('load', measureSections);
 
   function updateSpy() {
@@ -1136,7 +1161,7 @@ function initScrollSpy() {
     });
   }
 
-  window.addEventListener('scroll', updateSpy, { passive: true });
+  window.addEventListener('scroll', rafThrottle(updateSpy), { passive: true });
   updateSpy();
 }
 

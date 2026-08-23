@@ -5132,3 +5132,247 @@ body::after {
 section[id] {
   scroll-margin-top: 72px;
 }
+
+/* ==========================================================================
+   PREMIUM POLISH LAYER — material depth, grain, sheen, calm motion
+   (no font / color / layout changes)
+   ========================================================================== */
+:root {
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.45);
+  --shadow-lift: 0 32px 90px rgba(0, 0, 0, 0.55);
+  --sheen-top: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Fine selection + scrollbar detailing */
+::selection {
+  background: rgba(56, 189, 248, 0.26);
+  color: #ffffff;
+}
+
+html {
+  scrollbar-color: #3f3f46 #0a0a0b;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+  border: 2px solid #0a0a0b;
+}
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+/* Cinematic film grain — barely there, adds material richness */
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hero canvas recedes so type carries the moment */
+#hero-canvas {
+  opacity: 0.5;
+}
+
+/* Buttons — machined material instead of flat fills */
+.btn-primary {
+  background: linear-gradient(180deg, #67c9fb 0%, #38bdf8 55%, #0ea5e9 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 12px 34px -12px rgba(56, 189, 248, 0.6);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06) saturate(1.05);
+}
+
+.btn-secondary {
+  box-shadow: var(--sheen-top);
+}
+
+.btn {
+  letter-spacing: 0.01em;
+}
+
+/* Cards — resting sheen, deep soft lift on hover */
+.bento-stat-card,
+.problem-card-v2,
+.engine-card,
+.abcdef-card,
+.project-os-card,
+.econ-card,
+.case-card-structured,
+.continuity-card,
+.founder-card,
+.diff-col {
+  box-shadow: var(--sheen-top);
+}
+
+.bento-stat-card:hover,
+.problem-card-v2:hover,
+.engine-card:hover,
+.abcdef-card:hover,
+.econ-card:hover,
+.founder-card:hover {
+  transform: translateY(-4px);
+  transition-duration: 0.5s;
+  box-shadow: var(--sheen-top), var(--shadow-lift);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+/* Eyebrows — precise, quiet, expensive */
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+/* Nav active underline becomes a gradient filament */
+.nav-link.active::after {
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+}
+
+.brand-logo span {
+  letter-spacing: 0.08em;
+}
+
+/* Reveal motion — slower, heavier easing for a weighted feel */
+.reveal {
+  will-change: transform, opacity;
+}
+
+.reveal.revealed {
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modal & drawer get the same material treatment */
+.problem-diag-content,
+.mobile-drawer {
+  box-shadow: var(--sheen-top), var(--shadow-lift);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal.revealed {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE & MOTION REFINEMENT — phones, tablets, touch, 60fps
+   ========================================================================== */
+
+/* --- Grid overflow guard: tracks can never exceed container width --- */
+.problem-grid-v2,
+.engines-grid,
+.abcdef-grid,
+.problem-selector-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* --- Is / Isn't matrix collapses cleanly on tablets & phones --- */
+@media (max-width: 900px) {
+  .diff-matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --- Dynamic viewport units: no jump when mobile browser chrome hides --- */
+.hero-section {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.mobile-drawer {
+  top: 56px;
+  height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
+}
+
+/* --- Touch devices: comfortable 44px+ targets --- */
+@media (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn-sm {
+    min-height: 40px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .problem-prompt-card,
+  .blueprint-pill-opt,
+  .stakeholder-tab-btn {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+}
+
+/* --- Hero CTAs become full-width taps on small screens --- */
+@media (max-width: 640px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* --- Phone perf: fullscreen blur layers are the #1 jank source --- */
+@media (max-width: 768px) {
+  body::after {
+    filter: none;
+    opacity: 0.45;
+  }
+
+  html::before {
+    opacity: 0.03;
+  }
+}
+
+/* --- Smooth hover-out: transitions live on base state, not just :hover --- */
+.bento-stat-card,
+.problem-card-v2,
+.engine-card,
+.abcdef-card,
+.econ-card,
+.founder-card {
+  transition:
+    transform 0.5s var(--ease-out-smooth),
+    box-shadow 0.5s var(--ease-out-smooth),
+    border-color 0.3s var(--ease-out-smooth),
+    background-color 0.3s var(--ease-out-smooth);
+}
+
+/* ==========================================================================
+   ENGINE TOPOLOGY STRIP — 5-up on desktop, graceful wrap below
+   ========================================================================== */
+.engine-topology-steps {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .engine-topology-steps {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  }
+}
