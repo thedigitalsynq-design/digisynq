@@ -186,7 +186,7 @@ h2 {
   letter-spacing: -0.035em;
   color: var(--text-primary);
   line-height: 1.05;
-  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.2rem, 4vw, 3.4rem);
 }
 
 h3 {
@@ -285,7 +285,7 @@ a {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.2rem, 4vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -0.035em;
   margin-bottom: 1.75rem;
@@ -325,17 +325,11 @@ a {
   font-weight: 800 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
-  background-image:
-    linear-gradient(120deg, rgba(125, 211, 252, 0.22), rgba(14, 165, 233, 0.12)),
-    linear-gradient(120deg, #7dd3fc 0%, #38bdf8 55%, #0ea5e9 100%);
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100% 0.5em, 100% 0.11em;
-  background-position: 0 84%, 0 100%;
-  border-radius: 0.14em;
+  background: rgba(56, 189, 248, 0.14) !important;
+  border-radius: 0.3em;
+  padding: 0.06em 0.28em 0.1em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  padding: 0.04em 0.1em 0.08em;
-  text-shadow: 0 1px 18px rgba(56, 189, 248, 0.25);
 }
 
 .highlight-gradient * {
@@ -357,6 +351,8 @@ a {
   -webkit-text-fill-color: #ffffff !important;
   background: none !important;
 }
+
+em, i { font-style: normal; }
 
 /* Apple HIG Button & Action System */
 .btn-group {
@@ -2505,7 +2501,7 @@ a {
 
 .page-title {
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.2rem, 4vw, 3.4rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.035em;
@@ -2529,7 +2525,7 @@ a {
 
 .page-404-title {
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.2rem, 4vw, 3.4rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.035em;
@@ -5530,7 +5526,7 @@ html::before {
 }
 .usecase-problem {
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
   line-height: 1.5;
   margin-bottom: 1rem;
   font-size: 1.05rem;
@@ -5630,7 +5626,7 @@ html::before {
   color: var(--text-dim);
   font-size: 0.95rem;
   margin-top: 2rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* Who we work with */
@@ -5832,4 +5828,49 @@ body { overflow-wrap: break-word; }
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 2rem !important;
   }
+}
+
+/* ABCDEF flow strip + stage icons */
+.flow-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.2rem;
+  margin-bottom: 3.5rem;
+}
+.flow-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.flow-letter {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.flow-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+.flow-arrow {
+  color: var(--accent-cyan);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.flow-arrow-loop { font-size: 1.5rem; }
+.abcdef-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--accent-cyan);
+  display: block;
+  margin-bottom: 0.9rem;
 }
