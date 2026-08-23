@@ -1,7 +1,7 @@
 /* ==========================================================================
    DIGISYNQ — THE NETWORK BETWEEN THE DOTS
    Institutional Operating System Visual Styling
-   Cinema × Network Infrastructure × Intelligence × Future
+   Entertainment × Network Infrastructure × Intelligence × Future
    ========================================================================== */
 
 /* --- 1. DESIGN TOKENS & RESET — Modern Designer Philosophy ---
@@ -3440,7 +3440,7 @@ section::after {
 }
 
 /* ==========================================================================
-   DIGISYNQ CINEMA OPERATING NETWORK — V4.0 SYSTEM STYLES
+   DIGISYNQ ENTERTAINMENT OPERATING NETWORK — V4.0 SYSTEM STYLES
    ========================================================================== */
 
 /* Hero Metaphor Strip & Flow Visual */
@@ -5162,7 +5162,7 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
 
-/* Cinematic film grain — barely there, adds material richness */
+/* Film grain texture — barely there, adds material richness */
 html::before {
   content: '';
   position: fixed;

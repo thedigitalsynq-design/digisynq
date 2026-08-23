@@ -1262,7 +1262,7 @@ const abcdefData = {
     desc: 'Increase useful output from people, content, resources, audiences, and commercial relationships.',
     checklist: [
       'Publish dozens of micro-assets, character capsules, and reels',
-      'Activate regional cinema communities and influencer discussions',
+      'Activate regional fan communities and influencer discussions',
       'Monetize secondary assets and licensing where rights allow',
       'Convert campaign momentum into durable follower networks'
     ],
@@ -1367,7 +1367,7 @@ function initProducerScopeMapper() {
     'Feature Film_Audience Building': {
       title: 'Feature Film: Creator & community amplification',
       engines: ['Engine 04 Amplification'],
-      desc: 'Synchronize 8+ contextual cinema creators and regional fan communities 6 weeks prior to theatrical release.',
+      desc: 'Synchronize 8+ contextual entertainment creators and regional fan communities 6 weeks prior to theatrical release.',
       actionUrl: 'contact.html?problem=audience-building&format=feature'
     },
     'Feature Film_Brand Alignment': {
@@ -1463,7 +1463,7 @@ const problemDiagData = {
   },
   'content-utilization': {
     title: 'Underutilized production content',
-    quote: '“We have a film but our digital content isn’t being fully utilized.”',
+    quote: '“We have strong content that isn’t being fully utilized.”',
     rootCause: 'Productions allocate 95% of focus to the master cut, treating BTS and ancillary assets as an afterthought.',
     digisynqSolution: 'Digisynq audits the shoot inventory and deploys a secondary capture/editing pipeline to create 30+ short-form, creator, and archival assets.',
     activatedEngines: ['Engine 03 Content', 'Engine 04 Amplification'],
@@ -1472,16 +1472,16 @@ const problemDiagData = {
   'audience-building': {
     title: 'Disconnected pre-release community building',
     quote: '“We need help building an audience around our project.”',
-    rootCause: 'Marketing campaigns launch 3 weeks before release without warm, invested cinema communities.',
-    digisynqSolution: 'Digisynq engages dedicated film communities and tastemakers early in production to foster genuine organic word-of-mouth.',
+    rootCause: 'Marketing campaigns launch 3 weeks before release without warm, invested fan communities.',
+    digisynqSolution: 'Digisynq engages dedicated entertainment communities and tastemakers early in production to foster genuine organic word-of-mouth.',
     activatedEngines: ['Engine 04 Amplification'],
     expectedGain: 'Higher organic opening-weekend conversion and enduring audience retention.'
   },
   'creators': {
-    title: 'Cinema & digital creator collaboration',
+    title: 'Creator & community collaboration',
     quote: '“We want creator collaborations.”',
     rootCause: 'Traditional agencies treat creators as ad banners instead of creative co-distributors.',
-    digisynqSolution: 'Digisynq pairs creators contextual to the film’s genre with on-set access and exclusive story elements.',
+    digisynqSolution: 'Digisynq pairs creators contextual to the project's genre with on-set access and exclusive story elements.',
     activatedEngines: ['Engine 04 Amplification', 'Engine 03 Content'],
     expectedGain: 'Authentic engagement with zero commercial cringe.'
   },
@@ -1489,7 +1489,7 @@ const problemDiagData = {
     title: 'Studio & facility downtime leakage',
     quote: '“We have unused capacity.”',
     rootCause: 'Physical floors and post suites sit empty during lull periods between major client bookings.',
-    digisynqSolution: 'Digisynq routes matching upcoming independent films and serials to fill available studio days.',
+    digisynqSolution: 'Digisynq routes matching upcoming independent productions to fill available studio days.',
     activatedEngines: ['Engine 01 Capacity'],
     expectedGain: 'Monetized downtime and higher annual facility return on investment.'
   },

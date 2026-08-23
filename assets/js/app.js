@@ -1,7 +1,7 @@
 /* ==========================================================================
    DIGISYNQ — Interaction & Kinetic Engine v11.0
    Features:
-   - Living Neural Cinema Graph (Physics Particles & Gravitational Cursor)
+   - Living Neural Graph (Physics Particles & Gravitational Cursor)
    - Interactive Live Orchestration Simulator
    - 10-Step Mechanism State Engine
    - Plan A/B/C Resilience Sandbox
@@ -230,7 +230,7 @@
     });
   });
 
-  /* ── 8. Living Neural Cinema Graph Engine ───────────────────────────────── */
+  /* ── 8. Living Neural Graph Engine ───────────────────────────────── */
   const canvas = document.getElementById('dot-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -542,7 +542,7 @@
       num: '08 // Verify',
       title: 'Verify Project Evidence & Logs',
       desc: 'Authenticate capability through actual wrap sheets, portfolio breakdowns, peer confirmations, and equipment maintenance history.',
-      example: 'Scenario: DOP low-light narrative competency authenticated via verified feature film wrap logs and colorist feedback.',
+      example: 'Scenario: DOP low-light narrative competency authenticated via verified production wrap logs and colorist feedback.',
       chain: ['Review Project Wraps', 'Validate Equipment Handoffs', 'Certify Capability Profile']
     },
     '9': {
