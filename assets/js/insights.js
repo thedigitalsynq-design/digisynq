@@ -129,7 +129,7 @@
 
     var chip = document.querySelector(".ins-chip--live .ins-chip-dot");
     if (chip) {
-      chip.style.background = snap.source === "seed" ? "#fbbf24" : "#38bdf8";
+      chip.style.background = snap.source === "seed" ? "#fbbf24" : "#34d399";
     }
 
     var liveChip = document.getElementById("ins-live-status");

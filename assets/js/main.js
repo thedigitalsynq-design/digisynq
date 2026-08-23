@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagnetic();
     initGlobalPlexus();
     initCardTilt();
+    initPageTransitions();
   });
 
 /* ==========================================================================
@@ -727,10 +728,10 @@ function initFlywheel() {
   const colors = [
     'rgba(52, 211, 153, 0.65)',
     'rgba(52, 211, 153, 0.55)',
-    'rgba(14, 165, 233, 0.45)',
+    'rgba(110, 231, 183, 0.45)',
     'rgba(52, 211, 153, 0.4)',
     'rgba(52, 211, 153, 0.35)',
-    'rgba(14, 165, 233, 0.3)',
+    'rgba(110, 231, 183, 0.3)',
     'rgba(52, 211, 153, 0.5)'
   ];
 
@@ -1377,6 +1378,33 @@ function initCardTilt() {
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 }
+
+
+/* Best page transitions — View Transitions API */
+function initPageTransitions() {
+  if (!document.startViewTransition) return;
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || a.target === '_blank' || href.startsWith('http') || href.startsWith('https://')) {
+      // also check external
+      if (href && (href.startsWith('http://') || href.startsWith('https://'))) return;
+    }
+    // only same-origin html navigation
+    if (!href || href.includes('://')) return;
+    // ignore hash-only or with hash but same page
+    if (href.startsWith('#')) return;
+    const url = new URL(href, location.href);
+    if (url.origin !== location.origin) return;
+    // let browser handle download etc.
+    if (a.hasAttribute('download')) return;
+    e.preventDefault();
+    document.startViewTransition(() => { location.href = href; });
+  });
+}
+
+
 
 /* ==========================================================================
    17. SCROLL SPY

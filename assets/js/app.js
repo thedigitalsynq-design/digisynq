@@ -98,8 +98,8 @@
   progressBar.style.cssText = `
     position: fixed; top: 0; left: 0; z-index: 9999;
     height: 2px; width: 0%;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+    background: linear-gradient(90deg, #34d399, #10b981);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
     pointer-events: none;
     transition: width 80ms linear;
   `;
@@ -243,16 +243,16 @@
     let isCanvasActive = true;
 
     const NODE_TYPES = [
-      { label: 'DOP Grade A',   color: '#7dd3fc', cluster: 'people' },
-      { label: 'ARRI Alexa 35', color: '#38bdf8', cluster: 'assets' },
-      { label: 'Stage 02 (8K)',  color: '#bae6fd', cluster: 'assets' },
-      { label: 'ACES Color DI',  color: '#60c8f0', cluster: 'work'   },
-      { label: 'Director',       color: '#7dd3fc', cluster: 'people' },
-      { label: 'Plan B LED',     color: '#a5d8f5', cluster: 'assets' },
-      { label: 'Mandate 04',     color: '#7dd3fc', cluster: 'work'   },
-      { label: 'Gaffer',         color: '#38bdf8', cluster: 'people' },
-      { label: 'Location',       color: '#bae6fd', cluster: 'assets' },
-      { label: 'Distribution',   color: '#e0f2fe', cluster: 'intel'  }
+      { label: 'DOP Grade A',   color: '#6ee7b7', cluster: 'people' },
+      { label: 'ARRI Alexa 35', color: '#34d399', cluster: 'assets' },
+      { label: 'Stage 02 (8K)',  color: '#a7f3d0', cluster: 'assets' },
+      { label: 'ACES Color DI',  color: '#10b981', cluster: 'work'   },
+      { label: 'Director',       color: '#6ee7b7', cluster: 'people' },
+      { label: 'Plan B LED',     color: '#34d399', cluster: 'assets' },
+      { label: 'Mandate 04',     color: '#10b981', cluster: 'work'   },
+      { label: 'Gaffer',         color: '#6ee7b7', cluster: 'people' },
+      { label: 'Location',       color: '#a7f3d0', cluster: 'assets' },
+      { label: 'Distribution',   color: '#10b981', cluster: 'intel'  }
     ];
 
     function resizeCanvas() {
@@ -346,7 +346,7 @@
             ctx.beginPath();
             ctx.moveTo(d1.x, d1.y);
             ctx.lineTo(d2.x, d2.y);
-            ctx.strokeStyle = isMatch ? `rgba(56,189,248,${alpha})` : `rgba(255,255,255,${alpha * 0.5})`;
+            ctx.strokeStyle = isMatch ? `rgba(52,211,153,${alpha})` : `rgba(255,255,255,${alpha * 0.5})`;
             ctx.lineWidth = (d1.cluster === d2.cluster && isMatch) ? 1.1 : 0.45;
             ctx.stroke();
           }
@@ -382,7 +382,7 @@
 
         if (isHighlighted) {
           ctx.shadowBlur = 14;
-          ctx.shadowColor = 'rgba(56, 189, 248, 0.7)';
+          ctx.shadowColor = 'rgba(52, 211, 153, 0.7)';
         }
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -390,7 +390,7 @@
         // Draw HUD Node Label on Desktop
         if (W > 768 && isHighlighted) {
           ctx.font = '8.5px "JetBrains Mono", monospace';
-          ctx.fillStyle = 'rgba(125, 211, 252, 0.45)';
+          ctx.fillStyle = 'rgba(110, 231, 183, 0.45)';
           ctx.textAlign = 'center';
           ctx.fillText(d.label, d.x, d.y + 14);
         }
@@ -413,9 +413,9 @@
 
           ctx.beginPath();
           ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(56, 189, 248, ${fadeAlpha})`;
+          ctx.fillStyle = `rgba(52, 211, 153, ${fadeAlpha})`;
           ctx.shadowBlur = 16;
-          ctx.shadowColor = `rgba(56, 189, 248, ${fadeAlpha * 0.8})`;
+          ctx.shadowColor = `rgba(52, 211, 153, ${fadeAlpha * 0.8})`;
           ctx.fill();
           ctx.shadowBlur = 0;
         }
