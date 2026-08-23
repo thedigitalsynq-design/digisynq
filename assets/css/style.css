@@ -2505,7 +2505,7 @@ a {
 
 .page-title {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 2.6rem);
+  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.035em;
@@ -2513,7 +2513,7 @@ a {
   margin-bottom: 1.75rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1040px;
+  max-width: 1180px;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
 }
 
@@ -2529,7 +2529,7 @@ a {
 
 .page-404-title {
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 5vw, 3.6rem);
+  font-size: clamp(3.4rem, 6.8vw, 5.8rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.035em;
