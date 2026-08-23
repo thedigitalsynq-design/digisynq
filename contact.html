@@ -3,388 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Digisynq — Start with your problem. Discuss an entertainment-industry project, apply to join the network, or inquire about Talent Lab." />
-  <title>Contact &amp; project intake — Digisynq</title>
+  <meta name="description" content="Start a conversation with DIGISYNQ — bring a project, join the network, list capacity or activate content." />
+  <meta name="theme-color" content="#060709" />
+  <meta property="og:title" content="Contact — DIGISYNQ" />
+  <meta property="og:description" content="Bring a project. Join the network. Start a conversation with the entertainment operating network." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo.svg" />
+  <title>Contact — DIGISYNQ</title>
 
-  <!-- Google Fonts: Momo Trust Display, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .intake-tabs-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 4rem;
-      flex-wrap: wrap;
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,4rem); align-items: start; margin-top: 2.6rem; }
+    .field { margin-bottom: 1.3rem; }
+    .field label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+    .field input, .field select, .field textarea {
+      width: 100%; background: var(--surface-tile); border: 1px solid var(--hairline); border-radius: 12px;
+      color: #fff; font-family: var(--font-body); font-size: 1rem; padding: 0.85rem 1rem; transition: border-color var(--transition-fast);
     }
-    .intake-tab-btn {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      padding: 0.9rem 2.2rem;
-      border-radius: 9999px;
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .intake-tab-btn.active {
-      background: rgba(56, 189, 248, 0.15);
-      border-color: #38bdf8;
-      color: #38bdf8;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
-    }
-    .form-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border-medium);
-      border-radius: 24px;
-      padding: 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .form-group-full {
-      grid-column: 1 / -1;
-      margin-bottom: 1.75rem;
-    }
-    .form-label {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: none;
-      color: var(--accent-cyan);
-      margin-bottom: 0.6rem;
-    }
-    .form-control {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-medium);
-      border-radius: 12px;
-      padding: 1rem 1.4rem;
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      color: #ffffff;
-      outline: none;
-      transition: all 0.2s ease;
-    }
-    .form-control:focus {
-      border-color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.04);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-    }
-    .form-control option {
-      background: var(--bg-secondary);
-      color: #ffffff;
-    }
-    @media (max-width: 768px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-      .form-panel {
-        padding: 2.5rem 1.75rem;
-      }
-    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent-line); }
+    .field textarea { resize: vertical; }
+    .entry-points { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+    .entry-points .tile h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .entry-points .tile p { font-size: 0.92rem; }
+    .entry-points .tile a { color: var(--accent); font-family: var(--font-mono); font-size: 0.8rem; text-decoration: none; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .hero h1 { max-width: none; } }
   </style>
 </head>
 <body>
-
+  <script>document.documentElement.classList.add('js');</script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- NAVIGATION -->
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="Digisynq home">
-        <span>DIGISYNQ</span>
-      </a>
-
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="platform.html" class="nav-link">How it works</a></li>
-        <li><a href="network.html" class="nav-link">Network</a></li>
-        <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-        <li><a href="index.html#proof" class="nav-link">Proof</a></li>
-        <li><a href="about.html#insights" class="nav-link">Insights</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>        </ul>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="platform.html" class="nav-link">How It Works</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
+          <li><a href="about.html" class="nav-link">Proof</a></li>
+          <li><a href="about.html#insights" class="nav-link">Insights</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
       </nav>
-
       <div class="nav-actions">
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Coordinate a Project</a>
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join the Network</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer">    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="platform.html" class="mobile-nav-link">How it works</a>
-    <a href="network.html" class="mobile-nav-link">Network</a>
-    <a href="platform.html#engines" class="mobile-nav-link">Solutions</a>
-    <a href="index.html#proof" class="mobile-nav-link">Proof</a>
-    <a href="about.html#insights" class="mobile-nav-link">Insights</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="contact.html?type=discuss" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Coordinate a Project</a>
-    <a href="contact.html?type=join" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem; text-align: center;">Join the Network</a>      </div>
-
   <main id="main-content">
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container text-center">
-      <div class="eyebrow">
-        <span class="pulse-dot"></span>
-        <span>Client intake &bull; Network registration</span>
+    <!-- HERO -->
+    <section class="hero section reveal">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Start a conversation.</h1>
+        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">
+          Tell us what you&rsquo;re making, what you have, and where you&rsquo;re hitting friction. We&rsquo;ll connect the right pieces.
+        </p>
       </div>
-      <h1 class="page-title">
-        Start with<br />
-        <span class="highlight-gradient"><strong>your problem.</strong></span>
-      </h1>
-      <p class="page-subtitle" style="margin: 0 auto; max-width: 900px;">
-        The entertainment ecosystem doesn't lack resources. It lacks synchronization. You don't need to know a specific service or taxonomy — tell us what you're producing in the entertainment ecosystem, what you already have, and where you're hitting friction, and we'll help synchronize the right talent, capacity, content, media, and brand partners around your project.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- INTAKE CONSOLE -->
-  <section style="padding-top: 0; padding-bottom: 8rem;">
-    <div class="container">
-      
-      <!-- Form Panel -->
-      <div class="form-panel">
-        <form id="project-intake-form" novalidate>
+    <hr class="rule" />
 
-          <div class="form-grid">
-            <div>
-              <label class="form-label" for="iam-a">I am a</label>
-              <select id="iam-a" class="form-control">
-                <option value="producer">Producer</option>
-                <option value="technician">Technician</option>
-                <option value="studio">Studio / Facility</option>
-                <option value="creator">Creator</option>
-                <option value="media">Media / PR</option>
-                <option value="brand">Brand / Commercial partner</option>
-                <option value="other">Other</option>
+    <!-- FORM + ENTRY POINTS -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="contact-grid">
+          <form class="contact-form" action="mailto:hello@digisynq.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label for="type">I want to</label>
+              <select id="type" name="type">
+                <option value="discuss">Bring a Project</option>
+                <option value="join">Join the Network</option>
+                <option value="capacity">List Capacity</option>
+                <option value="content">Activate Content</option>
               </select>
             </div>
-            <div>
-              <label class="form-label" for="i-need">I need</label>
-              <select id="i-need" class="form-control">
-                <option value="talent">Talent</option>
-                <option value="production-support">Production support</option>
-                <option value="capacity">Capacity</option>
-                <option value="content-activation">Content activation</option>
-                <option value="amplification">Amplification</option>
-                <option value="partnerships">Partnerships</option>
-                <option value="audit">Audit</option>
-                <option value="workshop">Workshop</option>
-                <option value="other">Other</option>
-              </select>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@studio.com" required />
+            </div>
+            <div class="field">
+              <label for="msg">What are you making or connecting?</label>
+              <textarea id="msg" name="message" rows="5" placeholder="What do you have? What is missing? What are you trying to achieve?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Send &rarr;</button>
+          </form>
+
+          <div>
+            <p class="sec-index">Or pick an entry point</p>
+            <div class="entry-points">
+              <div class="tile"><h3>Bring a Project</h3><p>Producer with a brief that needs the right pieces.</p><a href="contact.html?type=discuss">START &rarr;</a></div>
+              <div class="tile"><h3>Join the Network</h3><p>Talent, creator or partner ready to connect.</p><a href="contact.html?type=join">JOIN &rarr;</a></div>
+              <div class="tile"><h3>List Capacity</h3><p>Facility or equipment owner with idle supply.</p><a href="contact.html?type=capacity">LIST &rarr;</a></div>
+              <div class="tile"><h3>Activate Content</h3><p>Rights holder with assets to extend.</p><a href="contact.html?type=content">ACTIVATE &rarr;</a></div>
             </div>
           </div>
-
-          <div class="form-grid">
-            <div>
-              <label class="form-label" for="project-stage">Project stage</label>
-              <select id="project-stage" class="form-control">
-                <option value="idea">Idea</option>
-                <option value="development">Development</option>
-                <option value="pre-production">Pre-production</option>
-                <option value="production">Production</option>
-                <option value="post-production">Post-production</option>
-                <option value="release">Release</option>
-                <option value="existing-asset">Existing asset</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" for="contact-name">Your name</label>
-              <input type="text" id="contact-name" class="form-control" placeholder="Jane Doe" required />
-            </div>
-          </div>
-
-          <div class="form-grid">
-            <div>
-              <label class="form-label" for="contact-email">Email address</label>
-              <input type="email" id="contact-email" class="form-control" placeholder="jane@production.com" required />
-            </div>
-            <div>
-              <label class="form-label" for="contact-phone">Phone / WhatsApp</label>
-              <input type="tel" id="contact-phone" class="form-control" placeholder="+91 98765 43210" />
-            </div>
-          </div>
-
-          <div class="form-group-full">
-            <label class="form-label" for="challenge">Describe the challenge</label>
-              <textarea id="challenge" class="form-control" rows="5" placeholder="What are you making in the entertainment ecosystem? What do you have? What is missing? What are you trying to achieve?"></textarea>
-          </div>
-
-          <div style="text-align: center; margin-top: 2rem;">
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-              Send your project brief &rarr;
-            </button>
-            <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 1.25rem;">
-              Digisynq reviews each project to identify where coordination connects the right entertainment-industry resources and reduces unnecessary economic leakage.
-            </p>
-          </div>
-
-          <div id="form-confirm" style="display:none; text-align:center; margin-top:2rem; padding:1.5rem; border:1px solid rgba(56,189,248,0.35); border-radius:16px; background:rgba(56,189,248,0.05); color:#fff; font-family:var(--font-display); font-size:1.15rem;">
-            Thank you. Your brief has been received — a DIGISYNQ coordinator will respond shortly.
-          </div>
-        </form>
-
-        <script>
-          (function () {
-            var params = new URLSearchParams(window.location.search);
-            var need = document.getElementById('i-need');
-            var map = {
-              'technicians': 'talent',
-              'content-utilization': 'content-activation',
-              'audience-building': 'amplification',
-              'unused-capacity': 'capacity',
-              'leakage-audit': 'audit',
-              'brand-integration': 'partnerships',
-              'consultation': 'other'
-            };
-            if (params.get('type') === 'audit') need.value = 'audit';
-            var p = params.get('problem');
-            if (p && map[p]) need.value = map[p];
-            var form = document.getElementById('project-intake-form');
-            if (form) form.addEventListener('submit', function (e) {
-              e.preventDefault();
-              if (!form.checkValidity()) { form.reportValidity(); return; }
-              form.style.display = 'none';
-              var c = document.getElementById('form-confirm');
-              if (c) c.style.display = 'block';
-            });
-          })();
-        </script>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <hr class="rule" />
 
-  <!-- FOOTER -->
+    <!-- FINAL CTA -->
+    <section class="section reveal final" style="text-align:center;">
+      <div class="container">
+        <p class="sec-index" style="justify-content:center;">Connect</p>
+        <h2 class="statement" style="max-width:20ch;margin:0 auto;">Every conversation is a connection.</h2>
+        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
+          <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer" style="background: var(--bg-primary); border-top: 1px solid var(--border-subtle); padding: 5rem 0 3rem;">
+  <footer class="site-footer">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; margin-bottom: 4rem;">
-        <div>
-          <a href="index.html" class="brand-logo" style="margin-bottom: 1.25rem;">
-            <span>DIGISYNQ</span>
-          </a>
-          <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; max-width: 400px; margin-bottom: 1.5rem;">
-            The Operating Network for the Entertainment Industry.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan); font-weight: 500; letter-spacing: 0.04em;">
-            Own Less &bull; Connect More &bull; Multiply Value
-          </div>
-
-          <div class="footer-social-links">
-            <a class="social-icon-btn" href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener" aria-label="Digisynq on Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.threads.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on Threads">
-              <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-3.082a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 00-2.215-.221z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.facebook.com/digisynq" target="_blank" rel="noopener" aria-label="Digisynq on Facebook">
-              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://wa.me/917996548969" target="_blank" rel="noopener" aria-label="Digisynq on WhatsApp">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            </a>
-          </div>
-
-          <div class="footer-direct-contact">
-            <a class="contact-item-link" href="mailto:thedigitalsynq@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-              thedigitalsynq@gmail.com
-            </a>
-            <a class="contact-item-link" href="tel:+917996548969">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 79965 48969
-            </a>
-          </div>
+      <div class="f-top">
+        <div class="f-brand">
+          <div class="logo">DIGISYNQ</div>
+          <p>The Operating Network for the Entertainment Industry.</p>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">System</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="platform.html" style="color: var(--text-muted);">How it works</a></li>
-            <li><a href="network.html" style="color: var(--text-muted);">Network</a></li>
-            <li><a href="platform.html#engines" style="color: var(--text-muted);">Solutions</a></li>
-            <li><a href="flowchart.html" style="color: var(--text-muted);">ABCDEF model</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Explore</h4>
+          <a href="platform.html">How It Works</a>
+          <a href="network.html">Network</a>
+          <a href="platform.html#engines">Solutions</a>
+          <a href="about.html">Proof</a>
+          <a href="about.html#insights">Insights</a>
+          <a href="about.html">About</a>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Foundation</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="business.html" style="color: var(--text-muted);">Business model</a></li>
-            <li><a href="network.html#talent-lab" style="color: var(--text-muted);">Talent lab</a></li>
-            <li><a href="about.html#insights" style="color: var(--text-muted);">Insights</a></li>
-            <li><a href="about.html" style="color: var(--text-muted);">About</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Participate</h4>
+          <a href="contact.html?type=discuss">Bring a Project</a>
+          <a href="contact.html?type=join">Join the Network</a>
+          <a href="network.html#participate">Talent Lab</a>
+          <a href="contact.html?type=capacity">List Capacity</a>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Initiate</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="contact.html?type=discuss" style="color: var(--text-muted);">Coordinate a Project</a></li>
-            <li><a href="contact.html?type=join" style="color: var(--text-muted);">Join the Network</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted);">Contact &amp; intake</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Connect</h4>
+          <a href="contact.html">Start a Conversation</a>
+          <a href="mailto:hello@digisynq.com">hello@digisynq.com</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
         </div>
       </div>
-
-      <div class="footer-ethos" style="text-align: center; padding: 3.5rem 0 1rem; margin-bottom: 2.5rem;">
-        <p style="font-family: var(--font-display); font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: #ffffff; margin: 0;">
-          Own Less. Connect More. Multiply Value.
-        </p>
-        
-      </div>
-
-      <div class="footer-founders-strip">
-        <div class="founders-heading">
-          <span class="eyebrow-mini">Leadership</span>
-          <h4>Co-founders</h4>
-        </div>
-        <div class="founders-grid">
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Yathish</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Varun</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rakshith</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rubesh</div></div>
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 2rem; flex-wrap: wrap; gap: 1rem;">
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">&copy; Digisynq &bull; The Operating Network for the Entertainment Industry. All rights reserved.</p>
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">Coordination-led &bull; Asset-rich &bull; Ecosystem-first</p>
+      <div class="f-bottom">
+        <span>&copy; DIGISYNQ</span>
+        <span>Own Less. Connect More. Multiply Value.</span>
       </div>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search).get('type');
+      if (p) { var s = document.getElementById('type'); if (s) { var o = Array.prototype.find.call(s.options, function (x){ return x.value === p; }); if (o) s.value = p; } }
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
