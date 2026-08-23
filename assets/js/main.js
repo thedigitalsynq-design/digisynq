@@ -1481,7 +1481,7 @@ const problemDiagData = {
     title: 'Creator & community collaboration',
     quote: '“We want creator collaborations.”',
     rootCause: 'Traditional agencies treat creators as ad banners instead of creative co-distributors.',
-    digisynqSolution: 'Digisynq pairs creators contextual to the project's genre with on-set access and exclusive story elements.',
+    digisynqSolution: 'Digisynq pairs creators contextual to the project’s genre with on-set access and exclusive story elements.',
     activatedEngines: ['Engine 04 Amplification', 'Engine 03 Content'],
     expectedGain: 'Authentic engagement with zero commercial cringe.'
   },
