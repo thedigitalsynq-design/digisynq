@@ -5883,3 +5883,12 @@ body { overflow-wrap: break-word; }
   display: block;
   margin-bottom: 0.9rem;
 }
+
+/* Hero network — restrained line draw-in */
+.hero-network svg { width: 100%; height: auto; display: block; overflow: visible; }
+.hero-network .draw {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: netDraw 1.8s ease forwards;
+}
+@keyframes netDraw { to { stroke-dashoffset: 0; } }
