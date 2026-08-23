@@ -325,9 +325,8 @@ a {
   font-weight: 800 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
-  background: rgba(56, 189, 248, 0.14) !important;
-  border-radius: 0.3em;
-  padding: 0.06em 0.28em 0.1em;
+  border-bottom: 0.11em solid #38bdf8;
+  padding-bottom: 0.04em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
