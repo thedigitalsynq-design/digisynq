@@ -3,12 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ is the operating network for the entertainment industry — connecting talent, capacity, content and opportunity so entertainment projects work smarter. Entertainment already has the assets. DIGISYNQ connects them." />
+  <meta name="description" content="DIGISYNQ is the operating network for the entertainment industry — connecting talent, capacity, content and opportunity so projects work smarter." />
   <meta name="theme-color" content="#060709" />
   <meta property="og:title" content="DIGISYNQ — The Operating Network for the Entertainment Industry" />
   <meta property="og:description" content="The industry doesn't lack resources. It lacks synchronization. DIGISYNQ connects the talent, capacity, content and opportunity that already exist." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
+  <link rel="canonical" href="https://digisynq.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DIGISYNQ",
+    "url": "https://digisynq.com/",
+    "logo": "https://digisynq.com/assets/img/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/digisynq/",
+      "https://www.threads.com/@digisynq",
+      "https://www.youtube.com/@digisynq",
+      "https://www.facebook.com/digisynq"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "email": "thedigitalsynq@gmail.com",
+      "telephone": "+917996548969",
+      "contactType": "customer support"
+    }],
+    "founder": [
+      {"@type": "Person", "name": "Yathish"},
+      {"@type": "Person", "name": "Varun"},
+      {"@type": "Person", "name": "Rakshith"},
+      {"@type": "Person", "name": "Rubesh"}
+    ]
+  }
+  </script>
   <title>DIGISYNQ — The Operating Network for the Entertainment Industry</title>
 
   <!-- Google Fonts: Momo Trust Display, JetBrains Mono -->
@@ -20,7 +48,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    :root { --accent: #38bdf8; --accent-soft: rgba(56,189,248,0.14); --accent-line: rgba(56,189,248,0.40); }
+    :root { --accent: #34d399; --accent-soft: rgba(52,211,153,0.14); --accent-line: rgba(52,211,153,0.40); }
 
     /* ---- Editorial system (single accent, control-room) ---- */
     .section { padding: clamp(4rem, 9vw, 7.5rem) 0; position: relative; }
@@ -62,13 +90,16 @@
     .hero-tertiary:hover { border-color: var(--accent-line); }
 
     /* ---- Node constellation (hero + network) ---- */
-    .net-svg { width: 100%; height: auto; display: block; }
-    .node-dot { fill: var(--surface-tile); stroke: var(--hairline); stroke-width: 1.5; }
-    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .net-svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .node-dot { fill: var(--surface-tile); stroke: rgba(52,211,153,0.20); stroke-width: 1.5; filter: drop-shadow(0 0 7px rgba(52,211,153,0.18)); }
+    .node-outer { fill: none; stroke: rgba(52,211,153,0.11); stroke-width: 1.2; }
+    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; filter: drop-shadow(0 0 16px rgba(52,211,153,0.38)); transform-box: fill-box; transform-origin: center; animation: corePulse 3.2s ease-in-out infinite; }
     .node-label { fill: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
-    .net-line { stroke: var(--accent-line); stroke-width: 1.2; fill: none;
+    .net-line { stroke: var(--accent-line); stroke-width: 1.25; fill: none; stroke-linecap: round;
       stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
+    .orbit-ring { fill: none; stroke: rgba(52,211,153,0.08); stroke-width: 1; stroke-dasharray: 4 9; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes corePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
 
     /* ---- Problem: fragmented -> synchronized ---- */
     .frag-svg { width: 100%; height: auto; max-width: 920px; margin: 2.5rem auto 0; display: block; }
@@ -177,7 +208,7 @@
           <li><a href="network.html" class="nav-link">Network</a></li>
           <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
           <li><a href="about.html" class="nav-link">Proof</a></li>
-          <li><a href="about.html#insights" class="nav-link">Insights</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
@@ -201,7 +232,7 @@
           <h1>The Operating Network<br /><span class="soft">for the Entertainment Industry.</span></h1>
         </div>
         <div class="hero-copy-col reveal">
-          <p class="hero-support">Connecting talent, capacity, content and opportunity &mdash; so entertainment projects work smarter.</p>
+          <p class="hero-support">Stages idle. Specialists wait between gigs. Footage dies after release. DIGISYNQ keeps it all connected &mdash; so every asset gets <span style="color:#fff;">more life.</span></p>
           <div class="hero-actions">
             <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project</a>
             <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the Network</a>
@@ -209,21 +240,45 @@
           </div>
         </div>
         <div class="hero-visual reveal" aria-hidden="true">
-          <svg class="net-svg" viewBox="0 0 460 420" role="img">
-            <line class="net-line" x1="230" y1="210" x2="110" y2="90" style="animation-delay:.05s"/>
-            <line class="net-line" x1="230" y1="210" x2="350" y2="90" style="animation-delay:.15s"/>
-            <line class="net-line" x1="230" y1="210" x2="80"  y2="250" style="animation-delay:.25s"/>
-            <line class="net-line" x1="230" y1="210" x2="380" y2="250" style="animation-delay:.35s"/>
-            <line class="net-line" x1="230" y1="210" x2="130" y2="350" style="animation-delay:.45s"/>
-            <line class="net-line" x1="230" y1="210" x2="330" y2="350" style="animation-delay:.55s"/>
+          <svg class="net-svg" viewBox="0 0 460 420" role="img" aria-label="SYNQ network">
+            <defs>
+              <radialGradient id="coreGlowHero" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(52,211,153,0.22)"/>
+                <stop offset="100%" stop-color="rgba(52,211,153,0)"/>
+              </radialGradient>
+              <pattern id="gridHero" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+              </pattern>
+              <marker id="arrowHero" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" opacity="0.95"/></marker>
+            </defs>
+            <rect width="460" height="420" fill="url(#gridHero)" opacity="0.55"/>
+            <!-- subtle orbit + core glow -->
+            <ellipse class="orbit-ring" cx="230" cy="210" rx="162" ry="142"/>
+            <circle cx="230" cy="210" r="56" fill="url(#coreGlowHero)" opacity="0.95"/>
+            <!-- curved threads with arrow heads -->
+            <path id="hero-p1" class="net-line thread" d="M230 210 Q170 148 110 90" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.05s"/>
+            <path id="hero-p2" class="net-line thread" d="M230 210 Q292 148 350 90" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.15s"/>
+            <path id="hero-p3" class="net-line thread" d="M230 210 Q148 226 80 250" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.25s"/>
+            <path id="hero-p4" class="net-line thread" d="M230 210 Q314 226 380 250" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.35s"/>
+            <path id="hero-p5" class="net-line thread" d="M230 210 Q168 288 130 350" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.45s"/>
+            <path id="hero-p6" class="net-line thread" d="M230 210 Q294 288 330 350" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.55s"/>
+            <!-- traveling pulses -->
+            <circle r="2.4" fill="#34d399" opacity="0.95"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0s"><mpath href="#hero-p1"/></animateMotion></circle>
+            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0.5s"><mpath href="#hero-p2"/></animateMotion></circle>
+            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0.9s"><mpath href="#hero-p3"/></animateMotion></circle>
+            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="1.3s"><mpath href="#hero-p4"/></animateMotion></circle>
+            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="1.7s"><mpath href="#hero-p5"/></animateMotion></circle>
+            <circle r="2.4" fill="#34d399" opacity="0.95"><animateMotion dur="2.9s" repeatCount="indefinite" begin="2.1s"><mpath href="#hero-p6"/></animateMotion></circle>
+            <!-- core -->
             <circle class="node-core" cx="230" cy="210" r="34"/>
-            <text class="node-label" x="230" y="214" text-anchor="middle" style="font-size:11px;">SYNQ</text>
-            <circle class="node-dot" cx="110" cy="90"  r="13"/>
-            <circle class="node-dot" cx="350" cy="90"  r="13"/>
-            <circle class="node-dot" cx="80"  cy="250" r="13"/>
-            <circle class="node-dot" cx="380" cy="250" r="13"/>
-            <circle class="node-dot" cx="130" cy="350" r="13"/>
-            <circle class="node-dot" cx="330" cy="350" r="13"/>
+            <text class="node-label" x="230" y="214" text-anchor="middle" style="font-size:11px; font-weight:700; letter-spacing:0.08em;">SYNQ</text>
+            <!-- peripheral nodes — layered: outer halo + dot + inner accent -->
+            <g transform="translate(110,90)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
+            <g transform="translate(350,90)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
+            <g transform="translate(80,250)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
+            <g transform="translate(380,250)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
+            <g transform="translate(130,350)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
+            <g transform="translate(330,350)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
           </svg>
         </div>
       </div>
@@ -236,8 +291,6 @@
       <div class="container">
         <p class="sec-index">01 &mdash; The Problem</p>
         <h2 class="section-title">The resources already exist.</h2>
-        <p class="statement">Talent. <span class="em">Spaces.</span> Equipment. Content. Audiences. Capital.</p>
-
         <ul class="resource-list">
           <li>Talent</li><li>Spaces</li><li>Equipment</li><li>Content</li><li>Audiences</li><li>Capital</li>
         </ul>
@@ -300,45 +353,6 @@
             <p>Deploy, distribute, monetize and learn &mdash; so every asset gets more life.</p>
             <div class="arrow"><a href="contact.html?type=discuss">BRING A PROJECT &rarr;</a></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 04 — THE NETWORK ============ -->
-    <section class="section reveal" id="network">
-      <div class="container">
-        <p class="sec-index">03 &mdash; The Network</p>
-        <h2 class="section-title">One network. The entire entertainment ecosystem.</h2>
-        <p class="lead-line">DIGISYNQ connects the talent, production, facilities, creators, media, brands, audiences and data that already exist &mdash; into a single operating layer.</p>
-
-        <svg class="net-svg" viewBox="0 0 920 520" role="img" aria-label="DIGISYNQ network of entertainment participants">
-          <!-- connections -->
-          <line class="net-line" x1="460" y1="260" x2="460" y2="70"  style="animation-delay:.05s"/>
-          <line class="net-line" x1="460" y1="260" x2="594" y2="126" style="animation-delay:.15s"/>
-          <line class="net-line" x1="460" y1="260" x2="650" y2="260" style="animation-delay:.25s"/>
-          <line class="net-line" x1="460" y1="260" x2="594" y2="394" style="animation-delay:.35s"/>
-          <line class="net-line" x1="460" y1="260" x2="460" y2="450" style="animation-delay:.45s"/>
-          <line class="net-line" x1="460" y1="260" x2="326" y2="394" style="animation-delay:.55s"/>
-          <line class="net-line" x1="460" y1="260" x2="270" y2="260" style="animation-delay:.65s"/>
-          <line class="net-line" x1="460" y1="260" x2="326" y2="126" style="animation-delay:.75s"/>
-          <!-- surrounding nodes -->
-          <circle class="node-dot" cx="460" cy="70"  r="30"/><text class="node-label" x="460" y="74" text-anchor="middle">TALENT</text>
-          <circle class="node-dot" cx="594" cy="126" r="30"/><text class="node-label" x="594" y="130" text-anchor="middle">PRODUCTION</text>
-          <circle class="node-dot" cx="650" cy="260" r="30"/><text class="node-label" x="650" y="264" text-anchor="middle">FACILITIES</text>
-          <circle class="node-dot" cx="594" cy="394" r="30"/><text class="node-label" x="594" y="398" text-anchor="middle">CREATORS</text>
-          <circle class="node-dot" cx="460" cy="450" r="30"/><text class="node-label" x="460" y="454" text-anchor="middle">MEDIA</text>
-          <circle class="node-dot" cx="326" cy="394" r="30"/><text class="node-label" x="326" y="398" text-anchor="middle">BRANDS</text>
-          <circle class="node-dot" cx="270" cy="260" r="30"/><text class="node-label" x="270" y="264" text-anchor="middle">AUDIENCE</text>
-          <circle class="node-dot" cx="326" cy="126" r="30"/><text class="node-label" x="326" y="130" text-anchor="middle">DATA</text>
-          <!-- core -->
-          <circle class="node-core" cx="460" cy="260" r="44"/>
-          <text class="node-label" x="460" y="264" text-anchor="middle" style="font-size:13px;fill:#fff;">DIGISYNQ</text>
-        </svg>
-
-        <div class="hero-actions" style="margin-top:2.4rem;">
-          <a href="network.html" class="btn btn-secondary btn-lg">Explore the Network &rarr;</a>
         </div>
       </div>
     </section>
@@ -437,7 +451,7 @@
     <section class="section reveal final" id="start">
       <div class="container">
         <p class="sec-index" style="justify-content:center;">Start</p>
-        <h2 class="statement">Something in your entertainment ecosystem isn&rsquo;t working?</h2>
+        <h2 class="statement" style="max-width:32ch;margin:0.2rem auto 0;">Something in your entertainment ecosystem isn&rsquo;t working?</h2>
         <p class="lead-line" style="margin-left:auto;margin-right:auto;">Bring us the problem. We&rsquo;ll connect the pieces.</p>
         <div class="hero-actions">
           <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
@@ -461,7 +475,7 @@
           <a href="network.html">Network</a>
           <a href="platform.html#engines">Solutions</a>
           <a href="about.html">Proof</a>
-          <a href="about.html#insights">Insights</a>
+          <a href="insights.html">Insights</a>
           <a href="about.html">About</a>
         </div>
         <div class="f-col">
@@ -474,9 +488,12 @@
         <div class="f-col">
           <h4>Connect</h4>
           <a href="contact.html">Start a Conversation</a>
-          <a href="mailto:hello@digisynq.com">hello@digisynq.com</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
       <div class="f-bottom">

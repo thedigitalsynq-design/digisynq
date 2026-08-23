@@ -5,7 +5,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initScrollProgress();
   initBackToTop();
   initHeader();
   initMobileDrawer();
@@ -22,11 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initScrollReveal();
   initScrollSpy();
-  initInteractiveContinuityToggle();
-  initInteractiveABCDEF();
-  initProducerScopeMapper();
-  initProblemDiagnosticModal();
-});
+    initInteractiveContinuityToggle();
+    initInteractiveABCDEF();
+    initProducerScopeMapper();
+    initProblemDiagnosticModal();
+    initCounters();
+    initIcons();
+    initScrollProgress();
+    initMagnetic();
+    initGlobalPlexus();
+    initCardTilt();
+  });
 
 /* ==========================================================================
    MOTION UTILITIES — rAF throttling for scroll & resize (60fps guarantee)
@@ -274,7 +279,7 @@ function initHeroNetwork() {
       }
       ctx.beginPath();
       ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(56, 189, 248, ${rip.alpha})`;
+      ctx.strokeStyle = `rgba(52, 211, 153, ${rip.alpha})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
     }
@@ -287,7 +292,7 @@ function initHeroNetwork() {
     ctx.save();
     ctx.beginPath();
     ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.08)';
     ctx.lineWidth = 1;
     ctx.setLineDash([4, 8]);
     ctx.stroke();
@@ -310,7 +315,7 @@ function initHeroNetwork() {
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(nx, ny);
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.14)';
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.14)';
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -321,8 +326,8 @@ function initHeroNetwork() {
 
       ctx.beginPath();
       ctx.arc(pxIn, pyIn, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = '#38bdf8';
-      ctx.shadowColor = '#38bdf8';
+      ctx.fillStyle = '#34d399';
+      ctx.shadowColor = '#34d399';
       ctx.shadowBlur = 8;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -333,8 +338,8 @@ function initHeroNetwork() {
 
       ctx.beginPath();
       ctx.arc(pxOut, pyOut, 2, 0, Math.PI * 2);
-      ctx.fillStyle = '#38bdf8';
-      ctx.shadowColor = '#38bdf8';
+      ctx.fillStyle = '#34d399';
+      ctx.shadowColor = '#34d399';
       ctx.shadowBlur = 6;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -342,7 +347,7 @@ function initHeroNetwork() {
       // Draw Satellite Node
       ctx.beginPath();
       ctx.arc(nx, ny, 4, 0, Math.PI * 2);
-      ctx.fillStyle = '#38bdf8';
+      ctx.fillStyle = '#34d399';
       ctx.fill();
 
       // Satellite Label
@@ -359,7 +364,7 @@ function initHeroNetwork() {
       ctx.beginPath();
       ctx.moveTo(nodePositions[i].x, nodePositions[i].y);
       ctx.lineTo(nodePositions[nextIdx].x, nodePositions[nextIdx].y);
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.06)';
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.06)';
       ctx.lineWidth = 1;
       ctx.stroke();
     }
@@ -367,12 +372,12 @@ function initHeroNetwork() {
     // Draw Central Project Node
     const centerPulse = Math.sin(time * 3) * 4;
     ctx.save();
-    ctx.shadowColor = 'rgba(56, 189, 248, 0.6)';
+    ctx.shadowColor = 'rgba(52, 211, 153, 0.6)';
     ctx.shadowBlur = 24 + centerPulse;
 
     ctx.beginPath();
     ctx.arc(cx, cy, 14, 0, Math.PI * 2);
-    ctx.fillStyle = '#38bdf8';
+    ctx.fillStyle = '#34d399';
     ctx.fill();
 
     ctx.beginPath();
@@ -383,7 +388,7 @@ function initHeroNetwork() {
 
     // Central Label Badge
     ctx.font = '700 11px "JetBrains Mono", monospace';
-    ctx.fillStyle = '#38bdf8';
+    ctx.fillStyle = '#34d399';
     ctx.textAlign = 'center';
     ctx.fillText('ENTERTAINMENT INDUSTRY', cx, cy + 30);
 
@@ -530,7 +535,7 @@ function initOrbitEcosystem() {
     ctx.save();
     ctx.beginPath();
     ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.1)';
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.1)';
     ctx.lineWidth = 1;
     ctx.setLineDash([4, 8]);
     ctx.stroke();
@@ -545,7 +550,7 @@ function initOrbitEcosystem() {
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(x, y);
-      ctx.strokeStyle = isActive ? 'rgba(56, 189, 248, 0.35)' : 'rgba(255, 255, 255, 0.05)';
+      ctx.strokeStyle = isActive ? 'rgba(52, 211, 153, 0.35)' : 'rgba(255, 255, 255, 0.05)';
       ctx.lineWidth = isActive ? 1.5 : 1;
       ctx.stroke();
 
@@ -557,9 +562,9 @@ function initOrbitEcosystem() {
 
       ctx.beginPath();
       ctx.arc(px, py, isActive ? 3.5 : 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = isActive ? '#38bdf8' : 'rgba(56, 189, 248, 0.7)';
+      ctx.fillStyle = isActive ? '#34d399' : 'rgba(52, 211, 153, 0.7)';
       if (isActive) {
-        ctx.shadowColor = '#38bdf8';
+        ctx.shadowColor = '#34d399';
         ctx.shadowBlur = 10;
       }
       ctx.fill();
@@ -720,13 +725,13 @@ function initFlywheel() {
   window.addEventListener('resize', rafDebounce(setSize), { passive: true });
 
   const colors = [
-    'rgba(56, 189, 248, 0.65)',
-    'rgba(56, 189, 248, 0.55)',
+    'rgba(52, 211, 153, 0.65)',
+    'rgba(52, 211, 153, 0.55)',
     'rgba(14, 165, 233, 0.45)',
-    'rgba(56, 189, 248, 0.4)',
-    'rgba(56, 189, 248, 0.35)',
+    'rgba(52, 211, 153, 0.4)',
+    'rgba(52, 211, 153, 0.35)',
     'rgba(14, 165, 233, 0.3)',
-    'rgba(56, 189, 248, 0.5)'
+    'rgba(52, 211, 153, 0.5)'
   ];
 
   let flywheelFrameId = null;
@@ -757,12 +762,12 @@ function initFlywheel() {
       ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
       ctx.closePath();
 
-      ctx.fillStyle = isActive ? 'rgba(56, 189, 248, 0.22)' : colors[i] || 'rgba(56, 189, 248, 0.06)';
-      ctx.strokeStyle = isActive ? '#38bdf8' : 'rgba(56, 189, 248, 0.15)';
+      ctx.fillStyle = isActive ? 'rgba(52, 211, 153, 0.22)' : colors[i] || 'rgba(52, 211, 153, 0.06)';
+      ctx.strokeStyle = isActive ? '#34d399' : 'rgba(52, 211, 153, 0.15)';
       ctx.lineWidth = isActive ? 2 : 0.6;
 
       if (isActive) {
-        ctx.shadowColor = '#38bdf8';
+        ctx.shadowColor = '#34d399';
         ctx.shadowBlur = 15;
       }
       ctx.fill();
@@ -776,9 +781,9 @@ function initFlywheel() {
 
       ctx.beginPath();
       ctx.arc(dotX, dotY, isActive ? 5 : 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = isActive ? '#38bdf8' : 'rgba(255, 255, 255, 0.4)';
+      ctx.fillStyle = isActive ? '#34d399' : 'rgba(255, 255, 255, 0.4)';
       if (isActive) {
-        ctx.shadowColor = '#38bdf8';
+        ctx.shadowColor = '#34d399';
         ctx.shadowBlur = 10;
       }
       ctx.fill();
@@ -1014,7 +1019,7 @@ function initModals() {
       setTimeout(() => {
         form.innerHTML = `
           <div style="text-align: center; padding: 2.5rem 0;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(56,189,248,0.08); border: 1px solid #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #38bdf8; font-size: 1.5rem; box-shadow: 0 0 20px rgba(56,189,248,0.3);">✓</div>
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(52,211,153,0.08); border: 1px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #34d399; font-size: 1.5rem; box-shadow: 0 0 20px rgba(52,211,153,0.3);">✓</div>
             <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Signal registered</h3>
             <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Your profile has been ingested into the DIGISYNQ coordination pipeline. Our system orchestrators will synchronize with you within 24 hours.</p>
             <button type="button" class="btn btn-secondary btn-sm" id="modal-done-btn">Close console</button>
@@ -1038,8 +1043,8 @@ function initModals() {
 
       setTimeout(() => {
         contactPageForm.innerHTML = `
-          <div style="text-align: center; padding: 3rem 1.5rem; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 2px solid #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #38bdf8; font-size: 1.75rem; box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);">✓</div>
+          <div style="text-align: center; padding: 3rem 1.5rem; background: rgba(52, 211, 153, 0.06); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 12px;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #34d399; font-size: 1.75rem; box-shadow: 0 0 25px rgba(52, 211, 153, 0.35);">✓</div>
             <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Coordination Request Received</h3>
             <p style="font-size: 1.05rem; color: #f1f5f9; max-width: 480px; margin: 0 auto 2rem; line-height: 1.65;">Your request has been logged into the DIGISYNQ network. A coordination lead will review your requirements and reach out within 24 hours.</p>
             <a href="index.html" class="btn btn-secondary btn-sm">Return to homepage</a>
@@ -1124,6 +1129,253 @@ function initScrollReveal() {
 
   // Run initial check for above-the-fold content
   checkInitialVisibility();
+}
+
+/* ==========================================================================
+   MOTION — ANIMATED METRIC COUNTERS
+   ========================================================================== */
+function initCounters() {
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nums = document.querySelectorAll('.metric .num');
+  if (!nums.length || prefersReducedMotion) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      const text = el.textContent.trim();
+      const m = text.match(/^([^\d]*)([\d.,]+)(.*)$/);
+      if (!m) return;
+      const prefix = m[1], suffix = m[3];
+      const target = parseFloat(m[2].replace(/,/g, ''));
+      const decimals = (m[2].split('.')[1] || '').length;
+      const duration = 1200;
+      const startTime = performance.now();
+      function tick(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = (target * eased).toFixed(decimals);
+        el.textContent = prefix + val + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + (decimals ? target.toFixed(decimals) : target) + suffix;
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+
+  nums.forEach(n => io.observe(n));
+}
+
+/* ==========================================================================
+   ICON SYSTEM — inject on-brand line icons into card titles by keyword
+   ========================================================================== */
+function initIcons() {
+  const ICONS = {
+    // Original Apple-inspired glyphs — ultrathin, rounded, no SF copy
+    search:  '<circle cx="11" cy="11" r="6.8"/><path d="M20.2 20.2L16.1 16.1"/>',
+    nodes:   '<circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M8 7L16 11M8 17L16 13"/>',
+    bolt:    '<path d="M12.8 2.5L5.2 13.8H11L10.2 21.5L18.8 10.2H13z"/>',
+    arrow:   '<path d="M5 12h13.2M12.8 6.2L19 12 12.8 17.8"/>',
+    user:    '<circle cx="12" cy="7.8" r="3.8"/><path d="M4.8 20.5c0-3.6 3.4-5.6 7.2-5.6s7.2 2 7.2 5.6"/>',
+    users:   '<circle cx="9" cy="7.8" r="3.2"/><path d="M3.2 20.6c0-3.1 2.6-4.9 5.8-4.9S14.8 17.5 14.8 20.6"/><circle cx="17.2" cy="8.8" r="2.4"/><path d="M16 20.6c0-2.6 1.8-4.1 4.2-4.2"/>',
+    building:'<rect x="5.2" y="3.5" width="13.6" height="17" rx="1.8"/><path d="M9.2 7.5h1.8M12.8 7.5h1.8M9.2 11h1.8M12.8 11h1.8M9.2 14.5h1.8M12.8 14.5h1.8"/>',
+    clapper: '<rect x="3.2" y="6.5" width="17.6" height="12.2" rx="1.8"/><path d="M3.2 10.2h17.6M7.8 6.5L6 10.2M12.6 6.5L10.8 10.2M17.4 6.5L15.6 10.2"/>',
+    film:    '<rect x="3.2" y="4.2" width="17.6" height="15.6" rx="1.8"/><path d="M7.8 4.2v15.6M15.8 4.2v15.6M3.2 8.8h4.6M3.2 14.6h4.6M16 8.8h4.6M16 14.6h4.6"/>',
+    mega:    '<path d="M3.2 11.2v1.6a1 1 0 0 0 1 1h1.8l7.6 4.8V5.4L6 10.2H4.2a1 1 0 0 0-1 1z"/><path d="M15.6 9.2a3 3 0 0 1 0 5.6"/>',
+    tag:     '<path d="M3.2 12L11 4h6.6a1.8 1.8 0 0 1 1.8 1.8V12L11.4 20z"/><circle cx="15.2" cy="8.2" r="1.1"/>',
+    chart:   '<path d="M4.2 19.5V4.2M4.2 19.5h15.6"/><path d="M7.8 15.5l2.8-3.8 2.8 1.9 3.8-5.6"/>',
+    bulb:    '<path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.8 5.8 0 0 0-3.8 10c.6.6.9 1.3.9 2.2h5.8c0-.9.3-1.6.9-2.2A5.8 5.8 0 0 0 12 3.5z"/>',
+    drop:    '<path d="M12 3.2s5.6 6.2 5.6 10.4a5.6 5.6 0 0 1-11.2 0c0-4.2 5.6-10.4 5.6-10.4z"/>',
+    coin:    '<circle cx="12" cy="12" r="8.6"/><path d="M12 8.2v7.6M9.6 10.4h3.6a1.4 1.4 0 0 1 0 2.8H10a1.4 1.4 0 0 0 0 2.8h3.6"/>'
+  };
+
+  const MAP = [
+    [['find','audit','search'], 'search'],
+    [['connect','network','synchron','link'], 'nodes'],
+    [['activate','deploy','extract','activ'], 'bolt'],
+    [['build','feed'], 'arrow'],
+    [['talent','people','crew','technician','specialist'], 'user'],
+    [['capacity','facility','studio','place','location','space','util'], 'building'],
+    [['production','company','service'], 'clapper'],
+    [['content','film','video','ip','asset'], 'film'],
+    [['media','amplification','creator','voice','channel'], 'mega'],
+    [['brand','partner','sponsor'], 'tag'],
+    [['audience','community'], 'users'],
+    [['data','signal','intelligence'], 'chart'],
+    [['insight','learn'], 'bulb'],
+    [['leakage','loss','risk'], 'drop'],
+    [['revenue','value','fee','money'], 'coin'],
+    [['coordination'], 'nodes'],
+    [['execution'], 'bolt'],
+    [['project'], 'clapper'],
+    [['captur'], 'coin'],
+    [['silo'], 'nodes'],
+    [['bottleneck'], 'drop'],
+    [['invest'], 'coin'],
+    [['own'], 'tag'],
+    [['gradu'], 'user']
+  ];
+
+  function pick(text) {
+    const t = text.toLowerCase();
+    for (const [keys, ic] of MAP) {
+      if (keys.some(k => t.includes(k))) return ic;
+    }
+    return null;
+  }
+
+  const targets = document.querySelectorAll(
+    '.tile h3, .help-card h3, .participate .tile h3, .flow .step h3, ' +
+    '.belief .tile h3, .value-flow .stage h3, .entry-points .tile h3'
+  );
+
+  targets.forEach(el => {
+    if (el.dataset.iconReady) return;
+    const ic = pick(el.textContent);
+    if (!ic) return;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'ico');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+      svg.innerHTML = ICONS[ic];
+      el.insertBefore(svg, el.firstChild);
+      el.dataset.iconReady = '1';
+    });
+}
+
+/* ==========================================================================
+   PREMIUM MOTION — scroll progress bar
+   ========================================================================== */
+function initScrollProgress() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  let ticking = false;
+  function update() {
+    const h = document.documentElement;
+    const max = (h.scrollHeight - h.clientHeight) || 1;
+    bar.style.width = (Math.min(h.scrollTop / max, 1) * 100).toFixed(2) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+}
+
+/* ==========================================================================
+   PREMIUM MOTION — magnetic CTAs / brand
+   ========================================================================== */
+function initMagnetic() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  const els = document.querySelectorAll('.btn, .nav-brand');
+  els.forEach(el => {
+    el.style.transition = 'transform .25s cubic-bezier(.2,.8,.2,1), box-shadow var(--transition-smooth)';
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      const mx = (e.clientX - (r.left + r.width / 2)) * 0.18;
+      const my = (e.clientY - (r.top + r.height / 2)) * 0.28;
+      el.style.transform = `translate(${mx}px, ${my}px) scale(1.03)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
+
+
+
+/* ==========================================================================
+   PREMIUM — GLOBAL PLEXUS CANVAS (Canva-style network bg)
+   ========================================================================== */
+function initGlobalPlexus() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  let canvas = document.getElementById('plexus-bg');
+  if (!canvas) {
+    canvas = document.createElement('canvas');
+    canvas.id = 'plexus-bg';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.prepend(canvas);
+  }
+  const ctx = canvas.getContext('2d');
+  let w = 0, h = 0, dpr = window.devicePixelRatio || 1;
+  const mouse = { x: null, y: null };
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+  const particles = [];
+  function setSize() {
+    dpr = window.devicePixelRatio || 1;
+    w = window.innerWidth; h = window.innerHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.min(55, Math.max(30, Math.floor(w * h / 32000)));
+    particles.length = 0;
+    for (let i = 0; i < count; i++) {
+      particles.push({ x: Math.random()*w, y: Math.random()*h, vx: (Math.random()-0.5)*0.28, vy: (Math.random()-0.5)*0.28, r: Math.random()*1.0+0.7 });
+    }
+  }
+  setSize();
+  window.addEventListener('resize', rafDebounce(setSize), { passive: true });
+  let raf = null;
+  function tick() {
+    ctx.clearRect(0, 0, w, h);
+    const maxDist = 130;
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      if (mouse.x !== null) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
+        if (d < 120 && d > 0.1) { const f = (120 - d) / 120 * 0.22; p.x += dx/d*f*1.2; p.y += dy/d*f*1.2; }
+      }
+    }
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i], b = particles[j];
+        const dx = a.x - b.x, dy = a.y - b.y, d = Math.hypot(dx, dy);
+        if (d < maxDist) {
+          const alpha = (1 - d / maxDist) * 0.11;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(52,211,153,${alpha})`;
+          ctx.lineWidth = 0.9; ctx.stroke();
+        }
+      }
+    }
+    for (const p of particles) {
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(52,211,153,0.55)'; ctx.fill();
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  if (!prefersReduced) raf = requestAnimationFrame(tick);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(raf);
+    else raf = requestAnimationFrame(tick);
+  });
+}
+
+
+/* Premium: subtle 3D card tilt */
+function initCardTilt() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced || window.innerWidth < 900) return;
+  const cards = document.querySelectorAll('.tile, .help-card, .founder');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      const rx = ((y / r.height) - 0.5) * -6;
+      const ry = ((x / r.width) - 0.5) * 8;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
 }
 
 /* ==========================================================================
@@ -1317,7 +1569,7 @@ function initInteractiveABCDEF() {
         </p>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
           <div class="engine-chip">${data.engine}</div>
-          <div class="engine-chip" style="border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1);">${data.metric}</div>
+          <div class="engine-chip" style="border-color: #34d399; color: #34d399; background: rgba(52, 211, 153, 0.1);">${data.metric}</div>
         </div>
       </div>
       <div>

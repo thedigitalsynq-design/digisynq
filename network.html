@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The DIGISYNQ network — everything the entertainment industry needs already exists. DIGISYNQ connects talent, facilities, production, content, amplification and commercial partners into one operating network." />
+  <meta name="description" content="The DIGISYNQ network — talent, facilities, production, content, amplification and commercial partners connected into one operating network." />
   <meta name="theme-color" content="#060709" />
   <meta property="og:title" content="DIGISYNQ — The Network" />
   <meta property="og:description" content="Everything already exists. DIGISYNQ connects it. Explore the entertainment operating network." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
+  <link rel="canonical" href="https://digisynq.com/network.html" />
   <title>Network — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,12 +21,15 @@
   <style>
     .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
     .hero h1 .em { color: var(--accent); }
-    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; }
-    .node-dot { fill: var(--surface-tile); stroke: var(--hairline); stroke-width: 1.5; }
-    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; overflow: visible; }
+    .node-dot { fill: var(--surface-tile); stroke: rgba(52,211,153,0.20); stroke-width: 1.5; filter: drop-shadow(0 0 7px rgba(52,211,153,0.18)); }
+    .node-outer { fill: none; stroke: rgba(52,211,153,0.11); stroke-width: 1.2; }
+    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; filter: drop-shadow(0 0 16px rgba(52,211,153,0.38)); transform-box: fill-box; transform-origin: center; animation: corePulse 3.2s ease-in-out infinite; }
     .node-label { fill: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
-    .net-line { stroke: var(--accent-line); stroke-width: 1.2; fill: none; stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
+    .net-line { stroke: var(--accent-line); stroke-width: 1.25; fill: none; stroke-linecap: round; stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
+    .orbit-ring { fill: none; stroke: rgba(52,211,153,0.08); stroke-width: 1; stroke-dasharray: 4 9; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes corePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
     .participate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
     .participate .tile { display: flex; flex-direction: column; gap: 0.4rem; }
     .participate .tile .k { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; color: var(--text-dim); text-transform: uppercase; }
@@ -49,7 +53,7 @@
           <li><a href="network.html" class="nav-link active">Network</a></li>
           <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
           <li><a href="about.html" class="nav-link">Proof</a></li>
-          <li><a href="about.html#insights" class="nav-link">Insights</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
@@ -78,24 +82,47 @@
         </div>
 
         <svg class="net-svg" viewBox="0 0 920 520" role="img" aria-label="DIGISYNQ network of entertainment participants">
-          <line class="net-line" x1="460" y1="260" x2="460" y2="70"  style="animation-delay:.05s"/>
-          <line class="net-line" x1="460" y1="260" x2="594" y2="126" style="animation-delay:.15s"/>
-          <line class="net-line" x1="460" y1="260" x2="650" y2="260" style="animation-delay:.25s"/>
-          <line class="net-line" x1="460" y1="260" x2="594" y2="394" style="animation-delay:.35s"/>
-          <line class="net-line" x1="460" y1="260" x2="460" y2="450" style="animation-delay:.45s"/>
-          <line class="net-line" x1="460" y1="260" x2="326" y2="394" style="animation-delay:.55s"/>
-          <line class="net-line" x1="460" y1="260" x2="270" y2="260" style="animation-delay:.65s"/>
-          <line class="net-line" x1="460" y1="260" x2="326" y2="126" style="animation-delay:.75s"/>
-          <circle class="node-dot" cx="460" cy="70"  r="30"/><text class="node-label" x="460" y="74" text-anchor="middle">TALENT</text>
-          <circle class="node-dot" cx="594" cy="126" r="30"/><text class="node-label" x="594" y="130" text-anchor="middle">PRODUCTION</text>
-          <circle class="node-dot" cx="650" cy="260" r="30"/><text class="node-label" x="650" y="264" text-anchor="middle">FACILITIES</text>
-          <circle class="node-dot" cx="594" cy="394" r="30"/><text class="node-label" x="594" y="398" text-anchor="middle">CREATORS</text>
-          <circle class="node-dot" cx="460" cy="450" r="30"/><text class="node-label" x="460" y="454" text-anchor="middle">MEDIA</text>
-          <circle class="node-dot" cx="326" cy="394" r="30"/><text class="node-label" x="326" y="398" text-anchor="middle">BRANDS</text>
-          <circle class="node-dot" cx="270" cy="260" r="30"/><text class="node-label" x="270" y="264" text-anchor="middle">AUDIENCE</text>
-          <circle class="node-dot" cx="326" cy="126" r="30"/><text class="node-label" x="326" y="130" text-anchor="middle">DATA</text>
+          <defs>
+            <radialGradient id="coreGlowNet" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(52,211,153,0.20)"/>
+              <stop offset="100%" stop-color="rgba(52,211,153,0)"/>
+            </radialGradient>
+            <pattern id="gridNet" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+            </pattern>
+            <marker id="arrowNet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" opacity="0.95"/></marker>
+          </defs>
+          <rect width="920" height="520" fill="url(#gridNet)" opacity="0.55"/>
+          <ellipse class="orbit-ring" cx="460" cy="260" rx="208" ry="182"/>
+          <circle cx="460" cy="260" r="72" fill="url(#coreGlowNet)" opacity="0.95"/>
+          <!-- curved threads with arrow heads -->
+          <path id="net-p1" class="net-line thread" d="M460 260 Q432 160 460 70" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.05s"/>
+          <path id="net-p2" class="net-line thread" d="M460 260 Q542 182 594 126" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.15s"/>
+          <path id="net-p3" class="net-line thread" d="M460 260 Q580 250 650 260" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.25s"/>
+          <path id="net-p4" class="net-line thread" d="M460 260 Q542 340 594 394" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.35s"/>
+          <path id="net-p5" class="net-line thread" d="M460 260 Q488 360 460 450" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.45s"/>
+          <path id="net-p6" class="net-line thread" d="M460 260 Q378 340 326 394" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.55s"/>
+          <path id="net-p7" class="net-line thread" d="M460 260 Q340 250 270 260" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.65s"/>
+          <path id="net-p8" class="net-line thread" d="M460 260 Q378 182 326 126" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.75s"/>
+          <circle r="2.5" fill="#34d399" opacity="0.95"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0s"><mpath href="#net-p1"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0.35s"><mpath href="#net-p2"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0.7s"><mpath href="#net-p3"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.05s"><mpath href="#net-p4"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.4s"><mpath href="#net-p5"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.75s"><mpath href="#net-p6"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.1s"><mpath href="#net-p7"/></animateMotion></circle>
+          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.45s"><mpath href="#net-p8"/></animateMotion></circle>
+          <!-- peripheral nodes — layered halos -->
+          <g transform="translate(460,70)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">TALENT</text></g>
+          <g transform="translate(594,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">PRODUCTION</text></g>
+          <g transform="translate(650,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">FACILITIES</text></g>
+          <g transform="translate(594,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">CREATORS</text></g>
+          <g transform="translate(460,450)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">MEDIA</text></g>
+          <g transform="translate(326,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">BRANDS</text></g>
+          <g transform="translate(270,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">AUDIENCE</text></g>
+          <g transform="translate(326,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">DATA</text></g>
           <circle class="node-core" cx="460" cy="260" r="44"/>
-          <text class="node-label" x="460" y="264" text-anchor="middle" style="font-size:13px;fill:#fff;">DIGISYNQ</text>
+          <text class="node-label" x="460" y="264" text-anchor="middle" style="font-size:13px;fill:#fff;font-weight:700;letter-spacing:0.06em;">DIGISYNQ</text>
         </svg>
       </div>
     </section>
@@ -168,7 +195,7 @@
           <a href="network.html">Network</a>
           <a href="platform.html#engines">Solutions</a>
           <a href="about.html">Proof</a>
-          <a href="about.html#insights">Insights</a>
+          <a href="insights.html">Insights</a>
           <a href="about.html">About</a>
         </div>
         <div class="f-col">
@@ -181,9 +208,12 @@
         <div class="f-col">
           <h4>Connect</h4>
           <a href="contact.html">Start a Conversation</a>
-          <a href="mailto:hello@digisynq.com">hello@digisynq.com</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
       <div class="f-bottom">
