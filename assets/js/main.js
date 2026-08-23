@@ -127,12 +127,18 @@ function initHeader() {
    ========================================================================== */
 function initSmoothNavScroll() {
   const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  const currentFile = location.pathname.split('/').pop();
+  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '') return;
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const hashIndex = href.indexOf('#');
+      const targetId = href.slice(hashIndex);
+      if (targetId.length < 2) return;
+      const pathPart = href.slice(0, hashIndex);
+      const samePage = pathPart === '' || pathPart === currentFile;
       const targetEl = document.querySelector(targetId);
-      if (targetEl) {
+      if (samePage && targetEl) {
         e.preventDefault();
         const headerHeight = document.getElementById('site-header')?.offsetHeight || 80;
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight + 10;
@@ -1155,7 +1161,9 @@ function initScrollSpy() {
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
+      const lh = link.getAttribute('href') || '';
+      const lhHash = lh.includes('#') ? '#' + lh.split('#')[1] : '';
+      if (lhHash === `#${current}`) {
         link.classList.add('active');
       }
     });
