@@ -5892,3 +5892,93 @@ body { overflow-wrap: break-word; }
   animation: netDraw 1.8s ease forwards;
 }
 @keyframes netDraw { to { stroke-dashoffset: 0; } }
+
+/* ==========================================================================
+   DIGISYNQ — SHARED EDITORIAL SYSTEM (control-room / single-accent)
+   Used by redesigned pages for consistent typography, spacing and components.
+   ========================================================================== */
+:root { --accent: #38bdf8; --accent-soft: rgba(56,189,248,0.14); --accent-line: rgba(56,189,248,0.40); }
+
+.section { padding: clamp(4rem, 9vw, 7.5rem) 0; position: relative; }
+.rule { border: 0; height: 1px; background: var(--hairline); margin: 0; }
+
+.sec-index {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--text-dim); margin: 0 0 1.1rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.sec-index::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
+
+.statement {
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 3.4vw, 2.7rem); line-height: 1.18; color: #fff;
+  max-width: 18ch; margin: 0.2rem 0 0;
+}
+.statement .em { color: var(--accent); }
+.lead-line { font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.55; color: var(--text-muted); max-width: 60ch; margin: 1.4rem 0 0; }
+
+/* Generic card grids */
+.card-grid { display: grid; gap: 1.1rem; margin-top: 2.6rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
+.tile {
+  border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile);
+  padding: 1.6rem 1.5rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+}
+.tile:hover { border-color: var(--accent-line); transform: translateY(-3px); background: var(--surface-elevated); }
+.tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; }
+.tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; margin: 0.7rem 0 0.8rem; }
+.tile p { font-size: 1rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+/* Help cards (Problem -> DIGISYNQ -> outcome) */
+.help-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.5rem 1.4rem; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+.help-card:hover { border-color: var(--accent-line); transform: translateY(-3px); }
+.help-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 1rem; }
+.help-card .row { font-size: 0.95rem; line-height: 1.5; padding: 0.55rem 0; border-top: 1px solid var(--hairline); }
+.help-card .row:first-of-type { border-top: 0; }
+.help-card .tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); display: block; margin-bottom: 0.2rem; }
+.help-card .problem .val { color: var(--text-secondary); }
+.help-card .fix .val { color: #fff; }
+.help-card .out .val { color: var(--accent); }
+
+/* ABCDEF loop */
+.abcdef { display: flex; flex-wrap: wrap; align-items: stretch; margin: 2.6rem 0 0; }
+.abcdef .step { flex: 1 1 150px; min-width: 140px; border: 1px solid var(--hairline); border-right: 0; padding: 1.3rem 1.2rem; background: var(--surface-tile); }
+.abcdef .step:last-child { border-right: 1px solid var(--hairline); }
+.abcdef .step .ltr { font-family: var(--font-display); font-weight: 800; font-size: 1.7rem; color: var(--accent); line-height: 1; }
+.abcdef .step h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #fff; margin: 0.6rem 0 0.4rem; }
+.abcdef .step p { font-size: 0.92rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
+/* Metrics */
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
+.metric { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.4rem; }
+.metric .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 3.4vw, 2.7rem); color: var(--accent); letter-spacing: -0.02em; line-height: 1; }
+.metric .cap { font-size: 0.95rem; color: var(--text-muted); margin-top: 0.7rem; line-height: 1.45; }
+.note { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); margin-top: 1.6rem; }
+
+/* Minimal footer */
+.site-footer { border-top: 1px solid var(--hairline); margin-top: 2rem; }
+.f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding: clamp(3rem,6vw,4.5rem) 0 2.5rem; }
+.f-brand .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; }
+.f-brand p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 1rem 0 0; }
+.f-col h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin: 0 0 1.1rem; }
+.f-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.98rem; padding: 0.32rem 0; transition: color var(--transition-fast); }
+.f-col a:hover { color: var(--accent); }
+.f-bottom { border-top: 1px solid var(--hairline); padding: 1.4rem 0 2.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; align-items: center; }
+.f-bottom span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); }
+
+/* Reveal (safe: visible without JS) */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-smooth), transform 0.7s var(--ease-out-smooth); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1 !important; transform: none !important; } }
+
+@media (max-width: 1000px) {
+  .grid-3, .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .f-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .grid-3, .grid-5, .metric-grid, .f-top { grid-template-columns: 1fr; }
+  .abcdef .step { border-right: 1px solid var(--hairline); border-top: 0; }
+  .abcdef .step:first-child { border-top: 1px solid var(--hairline); }
+}

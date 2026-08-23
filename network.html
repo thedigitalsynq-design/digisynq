@@ -3,356 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Building the Entertainment Capacity Network &amp; DIGISYNQ Talent Lab — connecting talent, studios, creators, and production resources across the entertainment ecosystem." />
-  <title>Entertainment Capacity Network &amp; Talent Lab — DIGISYNQ</title>
-  <!-- Google Fonts: Momo Trust Display, JetBrains Mono -->
+  <meta name="description" content="The DIGISYNQ network — everything the entertainment industry needs already exists. DIGISYNQ connects talent, facilities, production, content, amplification and commercial partners into one operating network." />
+  <meta name="theme-color" content="#060709" />
+  <meta property="og:title" content="DIGISYNQ — The Network" />
+  <meta property="og:description" content="Everything already exists. DIGISYNQ connects it. Explore the entertainment operating network." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo.svg" />
+  <title>Network — DIGISYNQ</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
+    .hero h1 .em { color: var(--accent); }
+    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; }
+    .node-dot { fill: var(--surface-tile); stroke: var(--hairline); stroke-width: 1.5; }
+    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .node-label { fill: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+    .net-line { stroke: var(--accent-line); stroke-width: 1.2; fill: none; stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .participate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
+    .participate .tile { display: flex; flex-direction: column; gap: 0.4rem; }
+    .participate .tile .k { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; color: var(--text-dim); text-transform: uppercase; }
+    .participate .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff; margin: 0; }
+    .participate .tile a { margin-top: auto; font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; padding-top: 0.8rem; }
+    @media (max-width: 1000px) { .participate { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .participate { grid-template-columns: 1fr; } .hero h1 { max-width: none; } }
+  </style>
 </head>
 <body>
-
+  <script>document.documentElement.classList.add('js');</script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="Digisynq home">
-        <span>DIGISYNQ</span>
-      </a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="platform.html" class="nav-link">How it works</a></li>
-        <li><a href="network.html" class="nav-link">Network</a></li>
-        <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-        <li><a href="index.html#proof" class="nav-link">Proof</a></li>
-        <li><a href="about.html#insights" class="nav-link">Insights</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>        </ul>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="platform.html" class="nav-link">How It Works</a></li>
+          <li><a href="network.html" class="nav-link active">Network</a></li>
+          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
+          <li><a href="about.html" class="nav-link">Proof</a></li>
+          <li><a href="about.html#insights" class="nav-link">Insights</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Coordinate a Project</a>
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join the Network</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobile-drawer">    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="platform.html" class="mobile-nav-link">How it works</a>
-    <a href="network.html" class="mobile-nav-link">Network</a>
-    <a href="platform.html#engines" class="mobile-nav-link">Solutions</a>
-    <a href="index.html#proof" class="mobile-nav-link">Proof</a>
-    <a href="about.html#insights" class="mobile-nav-link">Insights</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="contact.html?type=discuss" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Coordinate a Project</a>
-    <a href="contact.html?type=join" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem; text-align: center;">Join the Network</a>      </div>
-
   <main id="main-content">
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container text-center">
-      <div class="eyebrow"><span class="pulse-dot"></span><span>Entertainment coordination layer</span></div>
-      <h1 class="page-title">
-        Building the entertainment<br />
-        <span class="highlight-gradient"><strong>capacity network.</strong></span>
-      </h1>
-        <p class="page-subtitle" style="margin: 0 auto; max-width: 900px;">
-        The entertainment ecosystem operates project-by-project. DIGISYNQ is building toward a system where talent, production capacity, content, opportunities, and relationships can remain connected between projects &mdash; because the entertainment ecosystem doesn't lack resources, it lacks synchronization.
-      </p>
-    </div>
-  </section>
-
-  <!-- NETWORK CATEGORIES -->
-  <section class="network-categories-section" style="padding-top: 2rem;">
-    <div class="container">
-      <div class="section-header text-center">
-        <div class="eyebrow">Connected categories</div>
-        <h2 class="section-title">A growing ecosystem of specialized capacity.</h2>
-        <p class="section-subtitle">
-          Connecting verified professionals, physical facilities, and commercial partners across every phase of film and digital content production within the entertainment ecosystem.
+    <!-- HERO -->
+    <section class="hero section reveal">
+      <div class="container">
+        <p class="eyebrow">The Network</p>
+        <h1>Everything already exists.</h1>
+        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">
+          Studios, crews, creators, brands, audiences and IP are already here. <span style="color:#fff;">DIGISYNQ is the layer that keeps them connected between projects.</span>
         </p>
+        <div class="hero-actions" style="margin-top:2rem;">
+          <a href="#participate" class="btn btn-primary btn-lg">Plug Into the Network &rarr;</a>
+        </div>
+
+        <svg class="net-svg" viewBox="0 0 900 480" role="img" aria-label="DIGISYNQ connects the entertainment network">
+          <line class="net-line" x1="450" y1="240" x2="450" y2="70"  style="animation-delay:.05s"/>
+          <line class="net-line" x1="450" y1="240" x2="610" y2="130" style="animation-delay:.15s"/>
+          <line class="net-line" x1="450" y1="240" x2="690" y2="240" style="animation-delay:.25s"/>
+          <line class="net-line" x1="450" y1="240" x2="610" y2="350" style="animation-delay:.35s"/>
+          <line class="net-line" x1="450" y1="240" x2="450" y2="410" style="animation-delay:.45s"/>
+          <line class="net-line" x1="450" y1="240" x2="290" y2="350" style="animation-delay:.55s"/>
+          <circle class="node-core" cx="450" cy="240" r="44"/>
+          <text class="node-label" x="450" y="244" text-anchor="middle" style="font-size:13px;fill:#fff;">DIGISYNQ</text>
+          <circle class="node-dot" cx="450" cy="70"  r="30"/><text class="node-label" x="450" y="74" text-anchor="middle">PEOPLE</text>
+          <circle class="node-dot" cx="610" cy="130" r="30"/><text class="node-label" x="610" y="134" text-anchor="middle">PLACES</text>
+          <circle class="node-dot" cx="690" cy="240" r="30"/><text class="node-label" x="690" y="244" text-anchor="middle">PRODUCTION</text>
+          <circle class="node-dot" cx="610" cy="350" r="30"/><text class="node-label" x="610" y="354" text-anchor="middle">CONTENT</text>
+          <circle class="node-dot" cx="450" cy="410" r="30"/><text class="node-label" x="450" y="414" text-anchor="middle">COMMERCIAL</text>
+          <circle class="node-dot" cx="290" cy="350" r="30"/><text class="node-label" x="290" y="354" text-anchor="middle">AMPLIFICATION</text>
+        </svg>
       </div>
+    </section>
 
-      <div style="display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 4rem;">
-        <div class="core-asset-tag">Talent</div>
-        <div class="core-asset-tag">Technicians</div>
-        <div class="core-asset-tag">Studios</div>
-        <div class="core-asset-tag">Creators</div>
-        <div class="core-asset-tag">Production</div>
-        <div class="core-asset-tag">Content</div>
-        <div class="core-asset-tag">Media</div>
-        <div class="core-asset-tag">Brands</div>
-        <div class="core-asset-tag">PR</div>
-        <div class="core-asset-tag">Audience</div>
-        <div class="core-asset-tag">Commercial partners</div>
-      </div>
+    <hr class="rule" />
 
-      <div class="problem-grid-v2">
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 01</div>
-            <h3 class="prob-title">Technicians &amp; crew</h3>
-            <p class="prob-desc">Directors of photography, gaffers, sound engineers, editors, production designers, and camera operators connecting with live production opportunities.</p>
-          </div>
-        </div>
-
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 02</div>
-            <h3 class="prob-title">Studios &amp; facilities</h3>
-            <p class="prob-desc">Soundstages, post-production suites, color grading facilities, and audio mastering suites with available capacity windows.</p>
-          </div>
-        </div>
-
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 03</div>
-            <h3 class="prob-title">Entertainment creators</h3>
-            <p class="prob-desc">Critics, narrative vloggers, short-form creators, and cultural commentators who build organic awareness around entertainment releases.</p>
-          </div>
-        </div>
-
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 04</div>
-            <h3 class="prob-title">Equipment partners</h3>
-            <p class="prob-desc">Camera houses, lighting rental companies, grip trucks, and specialized optical providers optimizing equipment turnaround.</p>
-          </div>
-        </div>
-
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 05</div>
-            <h3 class="prob-title">Media &amp; communities</h3>
-            <p class="prob-desc">Dedicated entertainment publications, digital publishers, fan communities, and regional entertainment channels.</p>
-          </div>
-        </div>
-
-        <div class="problem-card-v2" style="border-left-color: var(--accent-cyan);">
-          <div>
-            <div class="prob-num" style="color: var(--accent-cyan);">Category 06</div>
-            <h3 class="prob-title">Brands &amp; sponsors</h3>
-            <p class="prob-desc">Commercial partners looking for organic, authentic story integration, co-branded promotions, and creator-led activations.</p>
-          </div>
+    <!-- SIX LAYERS -->
+    <section class="section reveal">
+      <div class="container">
+        <p class="sec-index">01 &mdash; What Is Connected</p>
+        <h2 class="section-title">Six layers of the entertainment network.</h2>
+        <p class="lead-line">Every category already has supply. DIGISYNQ connects the supply to live demand &mdash; and keeps the relationship alive after the project ends.</p>
+        <div class="card-grid grid-3">
+          <div class="tile"><span class="k">People</span><h3>Talent &middot; Technicians &middot; Specialists</h3><p>Verified professionals across every craft, ready to be discovered and deployed.</p></div>
+          <div class="tile"><span class="k">Places</span><h3>Studios &middot; Locations &middot; Facilities</h3><p>Physical infrastructure mapped, booked and used at higher utilization.</p></div>
+          <div class="tile"><span class="k">Production</span><h3>Companies &middot; Crews &middot; Services</h3><p>The operational capacity that turns a brief into a finished production.</p></div>
+          <div class="tile"><span class="k">Content</span><h3>Films &middot; Video &middot; IP &middot; Assets</h3><p>Existing work extended into new formats, platforms and revenue.</p></div>
+          <div class="tile"><span class="k">Amplification</span><h3>Creators &middot; Media &middot; Communities</h3><p>The audiences and channels that give a project reach and relevance.</p></div>
+          <div class="tile"><span class="k">Commercial</span><h3>Brands &middot; Partners &middot; Sponsors</h3><p>Commercial relationships that fund and scale what gets made.</p></div>
         </div>
       </div>
+    </section>
 
-      <div style="margin-top: 3.5rem; text-align: center;">
-        <p style="font-size: 0.95rem; color: var(--text-dim);">
-          Growing network &bull; Building project-by-project &bull; Participating professionals and verified collaborators
-        </p>
-      </div>
-    </div>
-  </section>
+    <hr class="rule" />
 
-  <!-- TALENT LAB SECTION -->
-  <section class="talent-lab-section" id="talent-lab" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); margin-top: 6rem; padding: 8rem 0;">
-    <div class="container">
-      <div class="section-header text-center">
-        <div class="eyebrow">Practical technical development</div>
-        <h2 class="section-title">
-          Digisynq<br />
-          <span class="highlight-gradient"><strong>Talent Lab.</strong></span>
-        </h2>
-        <p class="section-subtitle">
-          &ldquo;Training is only useful when it creates a pathway toward real-world experience.&rdquo;
-        </p>
-      </div>
-
-      <div style="max-width: 860px; margin: 0 auto 3.5rem; text-align: center;">
-        <p style="font-size: 1.35rem; color: var(--text-secondary); line-height: 1.7;">
-          DIGISYNQ Talent Lab organizes industry-oriented workshops and practical learning initiatives to fine-tune emerging talent and connect skilled individuals with real project opportunities. Our focus is multi-skill development and cross-project leverage &mdash; following a Learn, Fine-tune, Connect, Deploy, Gain Experience path toward real production sets.
-        </p>
-      </div>
-
-      <!-- Progression Pipeline -->
-      <div class="pipeline-steps-wrap">
-        <div class="pipeline-step-item">
-          <div class="pipe-num">01 / Discipline</div>
-          <div class="pipe-label">Discover</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">02 / Workshop</div>
-          <div class="pipe-label">Train</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">03 / Evaluation</div>
-          <div class="pipe-label">Assess</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">04 / Taxonomy</div>
-          <div class="pipe-label">Profile</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">05 / On-set</div>
-          <div class="pipe-label">Deploy</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">06 / Execution</div>
-          <div class="pipe-label">Track</div>
-        </div>
-        <div class="pipeline-step-item">
-          <div class="pipe-num">07 / Pathway</div>
-          <div class="pipe-label">Improve</div>
+    <!-- HOW THE NETWORK PARTICIPATES -->
+    <section class="section reveal" id="participate">
+      <div class="container">
+        <p class="sec-index">02 &mdash; How The Network Participates</p>
+        <h2 class="section-title">Find your entry point.</h2>
+        <p class="lead-line">However you fit, there is one move: connect what you have to what the network needs.</p>
+        <div class="participate">
+          <div class="tile"><span class="k">For talent</span><h3>I&rsquo;m Talent</h3><a href="contact.html?type=join">ENTER THE LAB &rarr;</a></div>
+          <div class="tile"><span class="k">For owners</span><h3>I Have Capacity</h3><a href="contact.html?type=capacity">LIST CAPACITY &rarr;</a></div>
+          <div class="tile"><span class="k">For rights holders</span><h3>I Have Content</h3><a href="contact.html?type=content">ACTIVATE CONTENT &rarr;</a></div>
+          <div class="tile"><span class="k">For voices</span><h3>I&rsquo;m a Creator</h3><a href="contact.html?type=join">CONNECT &rarr;</a></div>
+          <div class="tile"><span class="k">For brands</span><h3>I&rsquo;m a Brand</h3><a href="contact.html?type=discuss">PARTNER &rarr;</a></div>
+          <div class="tile"><span class="k">For makers</span><h3>I&rsquo;m a Producer</h3><a href="contact.html?type=discuss">BRING A PROJECT &rarr;</a></div>
         </div>
       </div>
+    </section>
 
-      <div style="max-width: 900px; margin: 3.5rem auto 0; text-align: center;">
-        <div class="eyebrow" style="margin-bottom: 1.25rem;">Skill categories we develop</div>
-        <div class="rights-grid">
-          <span class="rights-item">Cinematography</span>
-          <span class="rights-item">Direction</span>
-          <span class="rights-item">Lighting &amp; Grip</span>
-          <span class="rights-item">Sound</span>
-          <span class="rights-item">Post-Production</span>
-          <span class="rights-item">Art &amp; Production Design</span>
+    <hr class="rule" />
+
+    <!-- FINAL CTA -->
+    <section class="section reveal final" style="text-align:center;">
+      <div class="container">
+        <p class="sec-index" style="justify-content:center;">Connect</p>
+        <h2 class="statement" style="max-width:22ch;margin:0 auto;">Ready to plug into the network?</h2>
+        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
+          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the Network</a>
         </div>
       </div>
-
-      <div style="margin-top: 4rem; padding: 3rem; background: rgba(56, 189, 248, 0.04); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 20px; text-align: center;">
-        <div class="eyebrow" style="margin-bottom: 1rem;">Notice &amp; disclaimer</div>
-        <p style="font-family: var(--font-serif); font-size: 1.35rem; color: #ffffff; margin-bottom: 0.5rem;">
-          Digisynq is not a conventional film school.
-        </p>
-        <p style="font-size: 0.95rem; color: var(--text-dim); margin: 0;">
-          DIGISYNQ organizes industry-oriented workshops and practical learning initiatives to fine-tune emerging talent and connect skilled individuals with real project opportunities. It is not a school, college, or academy. Training or network participation does not guarantee employment or projects.
-        </p>
-      </div>
-
-      <div style="text-align: center; margin-top: 3.5rem;">
-        <a href="contact.html?type=talent" class="btn btn-primary btn-lg">Join the Talent Lab &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="final-cta-section" style="padding: 9rem 0;">
-    <div class="container text-center">
-      <div class="eyebrow">Connect with Digisynq</div>
-      <h2 class="section-title">
-        Join the growing<br />
-        <span class="highlight-gradient"><strong>entertainment coordination layer.</strong></span>
-      </h2>
-        <p class="section-subtitle" style="margin: 0 auto 3rem;">
-        Whether you are a producer, technician, facility owner, creator, or brand&mdash;let's build better utilization of entertainment ecosystem capacity together.
-      </p>
-      <div class="btn-group" style="justify-content: center;">
-        <a href="contact.html?type=join" class="btn btn-primary btn-lg">Join the Network &rarr;</a>
-        <a href="contact.html?type=discuss" class="btn btn-secondary btn-lg">Coordinate a Project &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+    </section>
   </main>
 
-  <footer class="site-footer" style="background: var(--bg-primary); border-top: 1px solid var(--border-subtle); padding: 5rem 0 3rem;">
+  <footer class="site-footer">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; margin-bottom: 4rem;">
-        <div>
-          <a href="index.html" class="brand-logo" style="margin-bottom: 1.25rem;">
-            <span>DIGISYNQ</span>
-          </a>
-          <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; max-width: 400px; margin-bottom: 1.5rem;">
-            The Operating Network for the Entertainment Industry.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan); font-weight: 500; letter-spacing: 0.04em;">
-            Own Less &bull; Connect More &bull; Multiply Value
-          </div>
-
-          <div class="footer-social-links">
-            <a class="social-icon-btn" href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener" aria-label="Digisynq on Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.threads.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on Threads">
-              <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-3.082a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 00-2.215-.221z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener" aria-label="Digisynq on YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://www.facebook.com/digisynq" target="_blank" rel="noopener" aria-label="Digisynq on Facebook">
-              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a class="social-icon-btn" href="https://wa.me/917996548969" target="_blank" rel="noopener" aria-label="Digisynq on WhatsApp">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            </a>
-          </div>
-
-          <div class="footer-direct-contact">
-            <a class="contact-item-link" href="mailto:thedigitalsynq@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-              thedigitalsynq@gmail.com
-            </a>
-            <a class="contact-item-link" href="tel:+917996548969">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 79965 48969
-            </a>
-          </div>
+      <div class="f-top">
+        <div class="f-brand">
+          <div class="logo">DIGISYNQ</div>
+          <p>The Operating Network for the Entertainment Industry.</p>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">System</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="platform.html" style="color: var(--text-muted);">How it works</a></li>
-            <li><a href="network.html" style="color: var(--text-muted);">Network</a></li>
-            <li><a href="platform.html#engines" style="color: var(--text-muted);">Solutions</a></li>
-            <li><a href="flowchart.html" style="color: var(--text-muted);">ABCDEF model</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Explore</h4>
+          <a href="platform.html">How It Works</a>
+          <a href="network.html">Network</a>
+          <a href="platform.html#engines">Solutions</a>
+          <a href="about.html">Proof</a>
+          <a href="about.html#insights">Insights</a>
+          <a href="about.html">About</a>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Foundation</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="business.html" style="color: var(--text-muted);">Business model</a></li>
-            <li><a href="network.html#talent-lab" style="color: var(--text-muted);">Talent lab</a></li>
-            <li><a href="about.html#insights" style="color: var(--text-muted);">Insights</a></li>
-            <li><a href="about.html" style="color: var(--text-muted);">About</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Participate</h4>
+          <a href="contact.html?type=discuss">Bring a Project</a>
+          <a href="contact.html?type=join">Join the Network</a>
+          <a href="network.html#participate">Talent Lab</a>
+          <a href="contact.html?type=capacity">List Capacity</a>
         </div>
-
-        <div>
-          <div style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 1.25rem;">Initiate</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 1.1rem;">
-            <li><a href="contact.html?type=discuss" style="color: var(--text-muted);">Coordinate a Project</a></li>
-            <li><a href="contact.html?type=join" style="color: var(--text-muted);">Join the Network</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted);">Contact &amp; intake</a></li>
-          </ul>
+        <div class="f-col">
+          <h4>Connect</h4>
+          <a href="contact.html">Start a Conversation</a>
+          <a href="mailto:hello@digisynq.com">hello@digisynq.com</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
         </div>
       </div>
-
-      <div class="footer-ethos" style="text-align: center; padding: 3.5rem 0 1rem; margin-bottom: 2.5rem;">
-        <p style="font-family: var(--font-display); font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: #ffffff; margin: 0;">
-          Own Less. Connect More. Multiply Value.
-        </p>
-        
-      </div>
-
-      <div class="footer-founders-strip">
-        <div class="founders-heading">
-          <span class="eyebrow-mini">Leadership</span>
-          <h4>Co-founders</h4>
-        </div>
-        <div class="founders-grid">
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Yathish</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Varun</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rakshith</div></div>
-          <div class="founder-card"><div class="founder-role">Co-founder</div><div class="founder-name">Rubesh</div></div>
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 2rem; flex-wrap: wrap; gap: 1rem;">
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">&copy; Digisynq &bull; The Operating Network for the Entertainment Industry. All rights reserved.</p>
-        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">Coordination-led &bull; Asset-rich &bull; Ecosystem-first</p>
+      <div class="f-bottom">
+        <span>&copy; DIGISYNQ</span>
+        <span>Own Less. Connect More. Multiply Value.</span>
       </div>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
