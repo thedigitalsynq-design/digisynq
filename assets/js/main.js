@@ -101,6 +101,7 @@ function initHeader() {
    4. SMOOTH SCROLL WITH HEADER OFFSET
    ========================================================================== */
 function initSmoothNavScroll() {
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -112,7 +113,7 @@ function initSmoothNavScroll() {
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight + 10;
         window.scrollTo({
           top: targetPos,
-          behavior: 'smooth'
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
         });
       }
     });
@@ -170,6 +171,7 @@ function initHeroNetwork() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
 
@@ -354,7 +356,7 @@ function initHeroNetwork() {
     ctx.textAlign = 'center';
     ctx.fillText('FILM / SERIAL / DIGITAL PROJECT', cx, cy + 30);
 
-    if (isCanvasVisible) {
+    if (isCanvasVisible && !prefersReducedMotion) {
       animFrameId = requestAnimationFrame(render);
     }
   }
@@ -434,6 +436,7 @@ function initOrbitEcosystem() {
   const canvas = document.getElementById('orbit-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
   const satelliteNodes = document.querySelectorAll('.orbit-satellite-node');
@@ -476,10 +479,12 @@ function initOrbitEcosystem() {
 
   const pulseOffsets = Array.from({ length: total }, (_, i) => i / total);
   let orbitRotation = 0;
+  let orbitFrameId = null;
+  let isOrbitVisible = true;
 
   function drawOrbit() {
     if (!width || !height) {
-      requestAnimationFrame(drawOrbit);
+      orbitFrameId = requestAnimationFrame(drawOrbit);
       return;
     }
 
@@ -530,7 +535,24 @@ function initOrbitEcosystem() {
       ctx.shadowBlur = 0;
     });
 
-    requestAnimationFrame(drawOrbit);
+    if (isOrbitVisible && !prefersReducedMotion) {
+      orbitFrameId = requestAnimationFrame(drawOrbit);
+    }
+  }
+
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const orbitObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isOrbitVisible = entry.isIntersecting;
+        if (isOrbitVisible) {
+          cancelAnimationFrame(orbitFrameId);
+          orbitFrameId = requestAnimationFrame(drawOrbit);
+        } else {
+          cancelAnimationFrame(orbitFrameId);
+        }
+      });
+    }, { threshold: 0 });
+    orbitObserver.observe(canvas.parentElement || canvas);
   }
 
   drawOrbit();
@@ -643,6 +665,7 @@ function initFlywheel() {
   const canvas = document.getElementById('flywheel-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let width = 0, height = 0, dpr = window.devicePixelRatio || 1;
   const items = document.querySelectorAll('.flywheel-node-item');
@@ -675,9 +698,12 @@ function initFlywheel() {
     'rgba(0, 240, 255, 0.5)'
   ];
 
+  let flywheelFrameId = null;
+  let isFlywheelVisible = true;
+
   function animateFlywheel() {
     if (!width || !height) {
-      requestAnimationFrame(animateFlywheel);
+      flywheelFrameId = requestAnimationFrame(animateFlywheel);
       return;
     }
 
@@ -729,13 +755,30 @@ function initFlywheel() {
     }
 
     // Auto advance when not hovered
-    if (!isHovered && Date.now() - lastAutoSwitch > 2400) {
+    if (!isHovered && !prefersReducedMotion && Date.now() - lastAutoSwitch > 2400) {
       activeIndex = (activeIndex + 1) % total;
       items.forEach((it, idx) => it.classList.toggle('active', idx === activeIndex));
       lastAutoSwitch = Date.now();
     }
 
-    requestAnimationFrame(animateFlywheel);
+    if (isFlywheelVisible && !prefersReducedMotion) {
+      flywheelFrameId = requestAnimationFrame(animateFlywheel);
+    }
+  }
+
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const flywheelObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isFlywheelVisible = entry.isIntersecting;
+        if (isFlywheelVisible) {
+          cancelAnimationFrame(flywheelFrameId);
+          flywheelFrameId = requestAnimationFrame(animateFlywheel);
+        } else {
+          cancelAnimationFrame(flywheelFrameId);
+        }
+      });
+    }, { threshold: 0 });
+    flywheelObserver.observe(canvas.parentElement || canvas);
   }
 
   animateFlywheel();
@@ -1048,14 +1091,8 @@ function initScrollReveal() {
 
   elements.forEach(el => observer.observe(el));
 
-  // Run initial check
+  // Run initial check for above-the-fold content
   checkInitialVisibility();
-  window.addEventListener('scroll', checkInitialVisibility, { passive: true });
-
-  // Fail-safe: ensure all elements become visible after 1.2s regardless of viewport
-  setTimeout(() => {
-    elements.forEach(el => revealElement(el));
-  }, 1200);
 }
 
 /* ==========================================================================
@@ -1066,15 +1103,30 @@ function initScrollSpy() {
   const navLinks = document.querySelectorAll('.nav-link');
   if (!sections.length || !navLinks.length) return;
 
+  // Cache section positions — refreshed on resize, not on every scroll
+  let sectionBounds = [];
+
+  function measureSections() {
+    sectionBounds = Array.from(sections).map(section => ({
+      id: section.id,
+      top: section.offsetTop,
+      bottom: section.offsetTop + section.offsetHeight
+    }));
+  }
+
+  measureSections();
+  window.addEventListener('resize', measureSections, { passive: true });
+  window.addEventListener('load', measureSections);
+
   function updateSpy() {
     let current = '';
     const scrollPos = window.scrollY + 220;
 
-    sections.forEach(section => {
-      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-        current = section.id;
+    for (const bounds of sectionBounds) {
+      if (scrollPos >= bounds.top && scrollPos < bounds.bottom) {
+        current = bounds.id;
       }
-    });
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -1221,7 +1273,7 @@ function initInteractiveABCDEF() {
 
     displayBox.innerHTML = `
       <div>
-        <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.5rem;">
+        <div style="font-family: 'Elsie', Georgia, serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.5rem;">
           Stage ${data.letter} &bull; ${data.subtitle}
         </div>
         <h3 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.6rem); color: #ffffff; margin-bottom: 0.75rem;">
@@ -1332,7 +1384,7 @@ function initProducerScopeMapper() {
       outputBox.innerHTML = `
         <div class="blueprint-res-header">
           <div>
-            <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.25rem;">
+            <div style="font-family: 'Elsie', Georgia, serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.25rem;">
               Recommended blueprint
             </div>
             <div class="blueprint-res-title">${bp.title}</div>
