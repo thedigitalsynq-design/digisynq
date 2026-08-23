@@ -379,7 +379,7 @@ function initHeroNetwork() {
     ctx.font = '700 11px "JetBrains Mono", monospace';
     ctx.fillStyle = '#38bdf8';
     ctx.textAlign = 'center';
-    ctx.fillText('ENTERTAINMENT / MEDIA INDUSTRY', cx, cy + 30);
+    ctx.fillText('ENTERTAINMENT INDUSTRY', cx, cy + 30);
 
     if (isCanvasVisible && !prefersReducedMotion) {
       animFrameId = requestAnimationFrame(render);
@@ -613,7 +613,7 @@ function initSystemLoop() {
   const inspectorBadge = document.getElementById('inspector-stage-badge');
 
   const stageData = [
-    { title: "01 — Discover", badge: "Visibility layer", desc: "Make assets, talent, specialized craft, capabilities, facilities and project opportunities universally searchable and contextually discoverable across the entertainment spectrum." },
+    { title: "01 — Discover", badge: "Visibility layer", desc: "Make assets, talent, specialized craft, capabilities, facilities and project opportunities universally searchable and contextually discoverable across the entertainment industry." },
     { title: "02 — Register", badge: "Ingestion layer", desc: "Bring participants into a structured ecosystem with standardized metadata, capability vectors, portfolio assets, and technical specifications that the system can reason over." },
     { title: "03 — Verify", badge: "Trust protocol", desc: "Establish baseline trust and credentials through track-record audit, verified screen credits, peer validation, and operational capability vetting before any connection is made." },
     { title: "04 — Classify", badge: "TAG 1–10 matrix", desc: "Use functional TAG 1–10 classification to define operational capability, discipline, and specialization. TAG defines function, not hierarchy — TAG 10 is not superior to TAG 01." },
