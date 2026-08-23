@@ -1210,7 +1210,7 @@ const abcdefData = {
       'Identify equipment and studio facility overlap',
       'Quantify potential leakage and downtime risks'
     ],
-    metric: 'Estimated leakage prevention: Up to 22%',
+    metric: 'Estimated leakage prevention: up to ~22% (illustrative)',
     engine: 'Engine 01 Capacity + Engine 05 Intelligence'
   },
   B: {
@@ -1224,7 +1224,7 @@ const abcdefData = {
       'Establish cloud workflows and dailies turnaround protocols',
       'Formulate transparent risk-sharing or fee models'
     ],
-    metric: 'Setup velocity: 3x faster deployment',
+    metric: 'Setup velocity: up to ~3x faster deployment (illustrative)',
     engine: 'Engine 01 Capacity + Engine 02 Talent'
   },
   C: {
@@ -1238,7 +1238,7 @@ const abcdefData = {
       'Align co-branded brand integration parameters',
       'Harmonize distributor and PR release timelines'
     ],
-    metric: 'Connected reach: 100% contextual',
+    metric: 'Connected reach: fully contextual (matched, not blanket)',
     engine: 'Engine 04 Amplification + Capacity Network'
   },
   D: {
@@ -1266,7 +1266,7 @@ const abcdefData = {
       'Monetize secondary assets and licensing where rights allow',
       'Convert campaign momentum into durable follower networks'
     ],
-    metric: 'Content multiplication: 4x–7x asset output',
+    metric: 'Content multiplication: multiple ancillary assets per production (illustrative)',
     engine: 'Engine 03 Content + Engine 04 Amplification'
   },
   F: {
@@ -1349,7 +1349,7 @@ function initProducerScopeMapper() {
     'Feature Film_Crew Gap': {
       title: 'Feature Film: Technical pod integration',
       engines: ['Engine 01 Capacity', 'Engine 02 Talent'],
-      desc: 'Deploy verified department technicians (camera, lighting, audio) and Talent Lab assistant pods, reducing sourcing overhead by 60%.',
+      desc: 'Deploy verified department technicians (camera, lighting, audio) and Talent Lab assistant pods, reducing sourcing overhead (illustrative target: up to ~60%).',
       actionUrl: 'contact.html?problem=technicians&format=feature'
     },
     'Feature Film_Studio Downtime': {
@@ -1361,7 +1361,7 @@ function initProducerScopeMapper() {
     'Feature Film_Content Wastage': {
       title: 'Feature Film: Content multiplier protocol',
       engines: ['Engine 03 Content', 'Engine 04 Amplification'],
-      desc: 'Deploy a dedicated secondary unit on set to generate 30+ short-form capsules, character BTS, and creator collaborations.',
+      desc: 'Deploy a dedicated secondary unit on set to generate 30+ (illustrative) short-form capsules, character BTS, and creator collaborations.',
       actionUrl: 'contact.html?problem=content-utilization&format=feature'
     },
     'Feature Film_Audience Building': {
@@ -1457,17 +1457,17 @@ const problemDiagData = {
     title: 'Technician sourcing & availability friction',
     quote: '“I need technicians for my project.”',
     rootCause: 'Crew scheduling operates on word-of-mouth without structured visibility into technician windows between productions.',
-    digisynqSolution: 'Digisynq activates our verified technician network and Talent Lab practitioners to assemble project-ready crew pods within 48 hours.',
+    digisynqSolution: 'Digisynq activates our verified technician network and Talent Lab practitioners to assemble project-ready crew pods within an illustrative ~48-hour target window.',
     activatedEngines: ['Engine 01 Capacity', 'Engine 02 Talent'],
-    expectedGain: '40% reduction in staffing turnaround time; verified technical competence.'
+    expectedGain: 'Up to ~40% reduction in staffing turnaround (illustrative); verified technical competence.'
   },
   'content-utilization': {
     title: 'Underutilized production content',
     quote: '“We have strong content that isn’t being fully utilized.”',
-    rootCause: 'Productions allocate 95% of focus to the master cut, treating BTS and ancillary assets as an afterthought.',
-    digisynqSolution: 'Digisynq audits the shoot inventory and deploys a secondary capture/editing pipeline to create 30+ short-form, creator, and archival assets.',
+    rootCause: 'Productions allocate the vast majority of focus to the master cut, treating BTS and ancillary assets as an afterthought.',
+    digisynqSolution: 'Digisynq audits the shoot inventory and deploys a secondary capture/editing pipeline to create 30+ (illustrative) short-form, creator, and archival assets.',
     activatedEngines: ['Engine 03 Content', 'Engine 04 Amplification'],
-    expectedGain: '3x–5x expansion in organic impressions without increasing principal production budget.'
+    expectedGain: 'A multiple-fold expansion in organic impressions (illustrative) without increasing principal production budget.'
   },
   'audience-building': {
     title: 'Disconnected pre-release community building',
@@ -1496,7 +1496,7 @@ const problemDiagData = {
   'leakage-audit': {
     title: 'Economic leakage & coordination inefficiency',
     quote: '“We don’t know where the leakage is.”',
-    rootCause: 'Redundant sourcing, excessive markups, and uncoordinated workflows siphon up to 20% of project budgets.',
+    rootCause: 'Redundant sourcing, excessive markups, and uncoordinated workflows siphon a meaningful share (up to ~20%) of project budgets (illustrative).',
     digisynqSolution: 'Digisynq conducts a forensic Stage A (Audit) across all departments to pinpoint duplication before shooting starts.',
     activatedEngines: ['Engine 01 Capacity', 'Engine 05 Intelligence'],
     expectedGain: 'Clear cost reduction and streamlined resource allocation.'
