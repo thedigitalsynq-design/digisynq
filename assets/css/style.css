@@ -125,7 +125,7 @@ body::after {
   background:
     radial-gradient(38% 42% at 18% 22%, rgba(56, 189, 248, 0.07), transparent 60%),
     radial-gradient(34% 40% at 82% 16%, rgba(56, 189, 248, 0.06), transparent 62%),
-    radial-gradient(44% 48% at 70% 80%, rgba(99, 102, 241, 0.055), transparent 65%);
+    radial-gradient(44% 48% at 70% 80%, rgba(56, 189, 248, 0.05), transparent 65%);
   filter: blur(30px);
   pointer-events: none;
   z-index: 0;
@@ -210,7 +210,7 @@ h4, h5, h6 {
 p {
   font-family: var(--font-body);
   color: #f1f5f9;
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.02rem, 1.3vw, 1.2rem);
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: -0.01em;
@@ -243,7 +243,7 @@ a {
   align-items: center;
   gap: 0.75rem;
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -677,8 +677,8 @@ em, i { font-style: normal; }
 
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(3.8rem, 8.5vw, 6.8rem);
-  font-weight: 700;
+  font-size: clamp(1.2rem, 4vw, 3.4rem);
+  font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.04em;
   margin-bottom: 1.75rem;
@@ -1823,7 +1823,7 @@ em, i { font-style: normal; }
 }
 
 .final-cta-title {
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
 }
@@ -2352,7 +2352,7 @@ em, i { font-style: normal; }
   left: 0;
   height: 2px;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  background: linear-gradient(90deg, #0ea5e9, var(--accent-cyan));
   z-index: 9999;
   transition: width 0.1s linear;
   box-shadow: 0 0 8px var(--accent-cyan);
@@ -2514,9 +2514,9 @@ em, i { font-style: normal; }
 
 .page-subtitle {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  max-width: 860px;
-  color: #f1f5f9;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  max-width: 880px;
+  color: #e2e8f0;
   line-height: 1.7;
   margin-left: auto;
   margin-right: auto;
