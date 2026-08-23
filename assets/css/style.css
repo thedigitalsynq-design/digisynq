@@ -44,11 +44,11 @@
   --success-subtle: rgba(52, 211, 153, 0.18);
   --success-text: #34d399;
 
-  /* Typography — Premium Typography System (Sabapia Bold / Fredoka + Outfit + Plus Jakarta Sans + Inter) */
-  --font-highlight: 'Sabapia', 'Sabapia Bold', 'Fredoka', 'Outfit', sans-serif;
-  --font-serif: 'Sabapia', 'Fredoka', 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  --font-display: 'Sabapia', 'Fredoka', 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  /* Typography — Instrument Serif Across Complete Website */
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Instrument Serif', Georgia, serif;
+  --font-highlight: 'Instrument Serif', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
