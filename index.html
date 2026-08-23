@@ -110,6 +110,61 @@
       .flow-step { width: 100%; }
       .flow-arrow { transform: rotate(90deg); align-self: center; margin: 0.35rem 0; width: auto; flex: 0 0 auto; }
     }
+
+    /* ---- Multiple color families: ecosystem participant accents ---- */
+    :root{
+      --cf1:#38bdf8; --cf2:#60a5fa; --cf3:#818cf8; --cf4:#2dd4bf;
+      --cf5:#34d399; --cf6:#fbbf24; --cf7:#fb7185; --cf8:#e879f9;
+      --cf9:#22d3ee; --cf10:#a3e635;
+    }
+    /* Relationship pairs */
+    .connect-pairs .pair:nth-child(8n+1){--ac:var(--cf1)}
+    .connect-pairs .pair:nth-child(8n+2){--ac:var(--cf2)}
+    .connect-pairs .pair:nth-child(8n+3){--ac:var(--cf3)}
+    .connect-pairs .pair:nth-child(8n+4){--ac:var(--cf4)}
+    .connect-pairs .pair:nth-child(8n+5){--ac:var(--cf5)}
+    .connect-pairs .pair:nth-child(8n+6){--ac:var(--cf6)}
+    .connect-pairs .pair:nth-child(8n+7){--ac:var(--cf7)}
+    .connect-pairs .pair:nth-child(8n+8){--ac:var(--cf8)}
+    .connect-pairs .pair{ border-left:3px solid var(--ac); }
+    .connect-pairs .pair .lnk{ background:linear-gradient(90deg, color-mix(in srgb, var(--ac) 12%, transparent), color-mix(in srgb, var(--ac) 65%, transparent), color-mix(in srgb, var(--ac) 12%, transparent)); }
+    .connect-pairs .pair .lnk::after{ color:var(--ac); }
+    .connect-pairs .pair:hover{ border-color:var(--ac); }
+    /* TAG web */
+    .tag-web .tag{ position:relative; padding-left:1.9rem; border-color: color-mix(in srgb, var(--ac) 40%, var(--hairline)); }
+    .tag-web .tag::before{ content:""; position:absolute; left:0.8rem; top:50%; transform:translateY(-50%); width:7px; height:7px; border-radius:50%; background:var(--ac); }
+    .tag-web .tag:nth-child(10n+1){--ac:var(--cf1)} .tag-web .tag:nth-child(10n+2){--ac:var(--cf2)}
+    .tag-web .tag:nth-child(10n+3){--ac:var(--cf3)} .tag-web .tag:nth-child(10n+4){--ac:var(--cf4)}
+    .tag-web .tag:nth-child(10n+5){--ac:var(--cf5)} .tag-web .tag:nth-child(10n+6){--ac:var(--cf6)}
+    .tag-web .tag:nth-child(10n+7){--ac:var(--cf7)} .tag-web .tag:nth-child(10n+8){--ac:var(--cf8)}
+    .tag-web .tag:nth-child(10n+9){--ac:var(--cf9)} .tag-web .tag:nth-child(10n+10){--ac:var(--cf10)}
+    .tag-web .tag:hover{ border-color:var(--ac); background: color-mix(in srgb, var(--ac) 14%, var(--surface-tile)); }
+    /* Flow steps (model + intelligence) */
+    .flow-row .flow-step:nth-child(6n+1){--ac:var(--cf1)} .flow-row .flow-step:nth-child(6n+2){--ac:var(--cf2)}
+    .flow-row .flow-step:nth-child(6n+3){--ac:var(--cf3)} .flow-row .flow-step:nth-child(6n+4){--ac:var(--cf4)}
+    .flow-row .flow-step:nth-child(6n+5){--ac:var(--cf5)} .flow-row .flow-step:nth-child(6n+6){--ac:var(--cf6)}
+    .flow-row .flow-step{ border-top:2px solid var(--ac); }
+    .flow-row .flow-step .n{ color:var(--ac); }
+    .flow-row .flow-step:hover{ border-color:var(--ac); }
+    /* OS stages */
+    .os-stages .os-stage:nth-child(10n+1){--ac:var(--cf1)} .os-stages .os-stage:nth-child(10n+2){--ac:var(--cf2)}
+    .os-stages .os-stage:nth-child(10n+3){--ac:var(--cf3)} .os-stages .os-stage:nth-child(10n+4){--ac:var(--cf4)}
+    .os-stages .os-stage:nth-child(10n+5){--ac:var(--cf5)} .os-stages .os-stage:nth-child(10n+6){--ac:var(--cf6)}
+    .os-stages .os-stage:nth-child(10n+7){--ac:var(--cf7)} .os-stages .os-stage:nth-child(10n+8){--ac:var(--cf8)}
+    .os-stages .os-stage:nth-child(10n+9){--ac:var(--cf9)} .os-stages .os-stage:nth-child(10n+10){--ac:var(--cf10)}
+    .os-stages .os-stage{ border-left:3px solid var(--ac); }
+    .os-stages .os-stage .idx{ color:var(--ac); }
+    .os-stages .os-stage:hover{ border-color:var(--ac); }
+    /* Who cards */
+    .who-grid .who-card:nth-child(9n+1){--ac:var(--cf1)} .who-grid .who-card:nth-child(9n+2){--ac:var(--cf2)}
+    .who-grid .who-card:nth-child(9n+3){--ac:var(--cf3)} .who-grid .who-card:nth-child(9n+4){--ac:var(--cf4)}
+    .who-grid .who-card:nth-child(9n+5){--ac:var(--cf5)} .who-grid .who-card:nth-child(9n+6){--ac:var(--cf6)}
+    .who-grid .who-card:nth-child(9n+7){--ac:var(--cf7)} .who-grid .who-card:nth-child(9n+8){--ac:var(--cf8)}
+    .who-grid .who-card:nth-child(9n+9){--ac:var(--cf9)}
+    .who-grid .who-card{ border-top:2px solid var(--ac); }
+    .who-grid .who-card h3{ display:flex; align-items:center; }
+    .who-grid .who-card h3::before{ content:""; width:9px; height:9px; border-radius:50%; background:var(--ac); margin-right:0.6rem; flex:0 0 auto; }
+    .who-grid .who-card:hover{ border-color:var(--ac); }
   </style>
 </head>
 <body>
@@ -202,11 +257,11 @@
             <line class="draw" x1="340" y1="120" x2="150" y2="210" style="animation-delay:1s"/>
             <line class="draw" x1="340" y1="120" x2="530" y2="210" style="animation-delay:1.15s"/>
           </g>
-          <g fill="#ffffff">
-            <circle cx="90" cy="50" r="5"/><circle cx="590" cy="50" r="5"/>
-            <circle cx="60" cy="190" r="5"/><circle cx="620" cy="190" r="5"/>
-            <circle cx="200" cy="30" r="5"/><circle cx="480" cy="30" r="5"/>
-            <circle cx="150" cy="210" r="5"/><circle cx="530" cy="210" r="5"/>
+          <g>
+            <circle cx="90" cy="50" r="5" fill="#38bdf8"/><circle cx="590" cy="50" r="5" fill="#60a5fa"/>
+            <circle cx="60" cy="190" r="5" fill="#818cf8"/><circle cx="620" cy="190" r="5" fill="#2dd4bf"/>
+            <circle cx="200" cy="30" r="5" fill="#34d399"/><circle cx="480" cy="30" r="5" fill="#fbbf24"/>
+            <circle cx="150" cy="210" r="5" fill="#fb7185"/><circle cx="530" cy="210" r="5" fill="#e879f9"/>
           </g>
           <circle cx="340" cy="120" r="11" fill="#38bdf8"/>
           <text x="340" y="124" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#04121c" font-weight="700">SYNQ</text>
