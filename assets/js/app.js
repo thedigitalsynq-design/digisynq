@@ -247,7 +247,7 @@
       { label: 'ARRI Alexa 35', color: '#38bdf8', cluster: 'assets' },
       { label: 'Stage 02 (8K)',  color: '#bae6fd', cluster: 'assets' },
       { label: 'ACES Color DI',  color: '#60c8f0', cluster: 'work'   },
-      { label: 'Director',       color: '#93c5fd', cluster: 'people' },
+      { label: 'Director',       color: '#7dd3fc', cluster: 'people' },
       { label: 'Plan B LED',     color: '#a5d8f5', cluster: 'assets' },
       { label: 'Mandate 04',     color: '#7dd3fc', cluster: 'work'   },
       { label: 'Gaffer',         color: '#38bdf8', cluster: 'people' },

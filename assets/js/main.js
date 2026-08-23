@@ -243,7 +243,7 @@ function initHeroNetwork() {
       }
       ctx.beginPath();
       ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(52, 211, 153, ${rip.alpha})`;
+      ctx.strokeStyle = `rgba(56, 189, 248, ${rip.alpha})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
     }
@@ -256,7 +256,7 @@ function initHeroNetwork() {
     ctx.save();
     ctx.beginPath();
     ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(52, 211, 153, 0.08)';
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
     ctx.lineWidth = 1;
     ctx.setLineDash([4, 8]);
     ctx.stroke();
@@ -279,7 +279,7 @@ function initHeroNetwork() {
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(nx, ny);
-      ctx.strokeStyle = 'rgba(52, 211, 153, 0.14)';
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.14)';
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -290,8 +290,8 @@ function initHeroNetwork() {
 
       ctx.beginPath();
       ctx.arc(pxIn, pyIn, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = '#34d399';
-      ctx.shadowColor = '#34d399';
+      ctx.fillStyle = '#38bdf8';
+      ctx.shadowColor = '#38bdf8';
       ctx.shadowBlur = 8;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -311,7 +311,7 @@ function initHeroNetwork() {
       // Draw Satellite Node
       ctx.beginPath();
       ctx.arc(nx, ny, 4, 0, Math.PI * 2);
-      ctx.fillStyle = '#34d399';
+      ctx.fillStyle = '#38bdf8';
       ctx.fill();
 
       // Satellite Label
@@ -328,7 +328,7 @@ function initHeroNetwork() {
       ctx.beginPath();
       ctx.moveTo(nodePositions[i].x, nodePositions[i].y);
       ctx.lineTo(nodePositions[nextIdx].x, nodePositions[nextIdx].y);
-      ctx.strokeStyle = 'rgba(52, 211, 153, 0.06)';
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.06)';
       ctx.lineWidth = 1;
       ctx.stroke();
     }
@@ -336,12 +336,12 @@ function initHeroNetwork() {
     // Draw Central Project Node
     const centerPulse = Math.sin(time * 3) * 4;
     ctx.save();
-    ctx.shadowColor = 'rgba(52, 211, 153, 0.6)';
+    ctx.shadowColor = 'rgba(56, 189, 248, 0.6)';
     ctx.shadowBlur = 24 + centerPulse;
 
     ctx.beginPath();
     ctx.arc(cx, cy, 14, 0, Math.PI * 2);
-    ctx.fillStyle = '#34d399';
+    ctx.fillStyle = '#38bdf8';
     ctx.fill();
 
     ctx.beginPath();
@@ -352,9 +352,9 @@ function initHeroNetwork() {
 
     // Central Label Badge
     ctx.font = '700 11px "JetBrains Mono", monospace';
-    ctx.fillStyle = '#34d399';
+    ctx.fillStyle = '#38bdf8';
     ctx.textAlign = 'center';
-    ctx.fillText('FILM / SERIAL / DIGITAL PROJECT', cx, cy + 30);
+    ctx.fillText('ENTERTAINMENT / MEDIA INDUSTRY', cx, cy + 30);
 
     if (isCanvasVisible && !prefersReducedMotion) {
       animFrameId = requestAnimationFrame(render);
@@ -499,7 +499,7 @@ function initOrbitEcosystem() {
     ctx.save();
     ctx.beginPath();
     ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(0, 240, 255, 0.1)';
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.1)';
     ctx.lineWidth = 1;
     ctx.setLineDash([4, 8]);
     ctx.stroke();
@@ -514,7 +514,7 @@ function initOrbitEcosystem() {
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(x, y);
-      ctx.strokeStyle = isActive ? 'rgba(0, 240, 255, 0.35)' : 'rgba(255, 255, 255, 0.05)';
+      ctx.strokeStyle = isActive ? 'rgba(56, 189, 248, 0.35)' : 'rgba(255, 255, 255, 0.05)';
       ctx.lineWidth = isActive ? 1.5 : 1;
       ctx.stroke();
 
@@ -526,9 +526,9 @@ function initOrbitEcosystem() {
 
       ctx.beginPath();
       ctx.arc(px, py, isActive ? 3.5 : 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = isActive ? '#00F0FF' : 'rgba(0, 240, 255, 0.7)';
+      ctx.fillStyle = isActive ? '#38bdf8' : 'rgba(56, 189, 248, 0.7)';
       if (isActive) {
-        ctx.shadowColor = '#00F0FF';
+        ctx.shadowColor = '#38bdf8';
         ctx.shadowBlur = 10;
       }
       ctx.fill();
@@ -689,13 +689,13 @@ function initFlywheel() {
   window.addEventListener('resize', setSize, { passive: true });
 
   const colors = [
-    'rgba(0, 240, 255, 0.65)',
+    'rgba(56, 189, 248, 0.65)',
     'rgba(56, 189, 248, 0.55)',
     'rgba(14, 165, 233, 0.45)',
-    'rgba(0, 240, 255, 0.4)',
+    'rgba(56, 189, 248, 0.4)',
     'rgba(56, 189, 248, 0.35)',
     'rgba(14, 165, 233, 0.3)',
-    'rgba(0, 240, 255, 0.5)'
+    'rgba(56, 189, 248, 0.5)'
   ];
 
   let flywheelFrameId = null;
@@ -726,12 +726,12 @@ function initFlywheel() {
       ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
       ctx.closePath();
 
-      ctx.fillStyle = isActive ? 'rgba(0, 240, 255, 0.22)' : colors[i] || 'rgba(0, 240, 255, 0.06)';
-      ctx.strokeStyle = isActive ? '#00F0FF' : 'rgba(0, 240, 255, 0.15)';
+      ctx.fillStyle = isActive ? 'rgba(56, 189, 248, 0.22)' : colors[i] || 'rgba(56, 189, 248, 0.06)';
+      ctx.strokeStyle = isActive ? '#38bdf8' : 'rgba(56, 189, 248, 0.15)';
       ctx.lineWidth = isActive ? 2 : 0.6;
 
       if (isActive) {
-        ctx.shadowColor = '#00F0FF';
+        ctx.shadowColor = '#38bdf8';
         ctx.shadowBlur = 15;
       }
       ctx.fill();
@@ -745,9 +745,9 @@ function initFlywheel() {
 
       ctx.beginPath();
       ctx.arc(dotX, dotY, isActive ? 5 : 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = isActive ? '#00F0FF' : 'rgba(255, 255, 255, 0.4)';
+      ctx.fillStyle = isActive ? '#38bdf8' : 'rgba(255, 255, 255, 0.4)';
       if (isActive) {
-        ctx.shadowColor = '#00F0FF';
+        ctx.shadowColor = '#38bdf8';
         ctx.shadowBlur = 10;
       }
       ctx.fill();
@@ -983,7 +983,7 @@ function initModals() {
       setTimeout(() => {
         form.innerHTML = `
           <div style="text-align: center; padding: 2.5rem 0;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(0,240,255,0.08); border: 1px solid #00F0FF; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #00F0FF; font-size: 1.5rem; box-shadow: 0 0 20px rgba(0,240,255,0.3);">✓</div>
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(56,189,248,0.08); border: 1px solid #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #38bdf8; font-size: 1.5rem; box-shadow: 0 0 20px rgba(56,189,248,0.3);">✓</div>
             <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Signal registered</h3>
             <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Your profile has been ingested into the DIGISYNQ coordination pipeline. Our system orchestrators will synchronize with you within 24 hours.</p>
             <button type="button" class="btn btn-secondary btn-sm" id="modal-done-btn">Close console</button>
@@ -1007,8 +1007,8 @@ function initModals() {
 
       setTimeout(() => {
         contactPageForm.innerHTML = `
-          <div style="text-align: center; padding: 3rem 1.5rem; background: rgba(52, 211, 153, 0.06); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 12px;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #34d399; font-size: 1.75rem; box-shadow: 0 0 25px rgba(52, 211, 153, 0.35);">✓</div>
+          <div style="text-align: center; padding: 3rem 1.5rem; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 2px solid #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #38bdf8; font-size: 1.75rem; box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);">✓</div>
             <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem; color: #ffffff; letter-spacing: -0.02em;">Coordination Request Received</h3>
             <p style="font-size: 1.05rem; color: #f1f5f9; max-width: 480px; margin: 0 auto 2rem; line-height: 1.65;">Your request has been logged into the DIGISYNQ network. A coordination lead will review your requirements and reach out within 24 hours.</p>
             <a href="index.html" class="btn btn-secondary btn-sm">Return to homepage</a>
@@ -1273,7 +1273,7 @@ function initInteractiveABCDEF() {
 
     displayBox.innerHTML = `
       <div>
-        <div style="font-family: 'Elsie', Georgia, serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.5rem;">
+        <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.5rem;">
           Stage ${data.letter} &bull; ${data.subtitle}
         </div>
         <h3 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.6rem); color: #ffffff; margin-bottom: 0.75rem;">
@@ -1384,7 +1384,7 @@ function initProducerScopeMapper() {
       outputBox.innerHTML = `
         <div class="blueprint-res-header">
           <div>
-            <div style="font-family: 'Elsie', Georgia, serif; font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.25rem;">
+            <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.04em; margin-bottom: 0.25rem;">
               Recommended blueprint
             </div>
             <div class="blueprint-res-title">${bp.title}</div>
