@@ -57,11 +57,11 @@
   --success-subtle: rgba(52, 211, 153, 0.18);
   --success-text: #34d399;
 
-  /* Typography — Momo Trust Display across complete website */
-  --font-serif: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
-  --font-display: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
-  --font-body: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
-  --font-highlight: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  /* Typography — Smooch Sans Black 900 across complete website */
+  --font-serif: 'Smooch Sans', sans-serif;
+  --font-display: 'Smooch Sans', sans-serif;
+  --font-body: 'Smooch Sans', sans-serif;
+  --font-highlight: 'Smooch Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
@@ -319,7 +319,7 @@ a {
   text-shadow: 0 0 25px rgba(52, 211, 153, 0.45);
 }
 
-/* Gradient highlight — Momo Trust Display */
+/* Gradient highlight — Smooch Sans */
 .highlight-gradient {
   font-family: var(--font-highlight) !important;
   font-weight: 800 !important;
@@ -6374,9 +6374,9 @@ body::before {
 
 
 /* --- Apple OS theme — inspired, original assets, no infringement --- */
-/* Typography: Momo Trust Display across the whole website (Instrument Serif fallback) */
+/* Typography: Smooch Sans Black 900 across the whole website */
 :root {
-  --font-apple: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  --font-apple: 'Smooch Sans', sans-serif;
   --font-apple-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
