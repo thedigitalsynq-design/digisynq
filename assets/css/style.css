@@ -86,7 +86,7 @@
 }
 
 html {
-  font-size: clamp(15px, 0.4vw + 13.4px, 17px);
+  font-size: clamp(22.5px, 0.6vw + 20.1px, 25.5px);
   scroll-behavior: smooth;
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -6474,3 +6474,8 @@ a, .nav-link { transition: color 0.22s var(--ease-premium), opacity 0.22s var(--
 }
 html { scroll-padding-top: 88px; overscroll-behavior: none; }
 body { text-rendering: optimizeLegibility; }
+/* Fix contact form overflow at 390 after 50% scale */
+@media (max-width: 420px) {
+  .contact-form, .contact-form .field, .contact-form input, .contact-form select, .contact-form textarea { max-width: 100%; width: 100%; box-sizing: border-box; }
+  .container { padding-left: 12px; padding-right: 12px; }
+}
