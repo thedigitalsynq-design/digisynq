@@ -65,9 +65,14 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
-  --container-max: 1340px;
+  --container-max: 1280px;
   --container-narrow: 1040px;
-  --nav-height: 72px;
+  --nav-height: 64px;
+  /* Spacing — 8pt Swiss grid, editorial rhythm */
+  --space-section: clamp(5rem, 8vw, 8rem);
+  --space-section-compact: clamp(4rem, 6vw, 6rem);
+  --grid-gap: clamp(1.25rem, 2vw, 1.75rem);
+  --card-pad: 1.75rem;
 
   /* Motion — Ultra-Smooth Luxury Curves */
   --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
@@ -123,8 +128,8 @@ body::after {
   position: fixed;
   inset: -20%;
   background:
-    radial-gradient(38% 42% at 18% 22%, rgba(52, 211, 153, 0.07), transparent 60%),
-    radial-gradient(34% 40% at 82% 16%, rgba(52, 211, 153, 0.06), transparent 62%),
+    radial-gradient(38% 42% at 18% 22%, rgba(52, 211, 153, 0.045), transparent 60%),
+    radial-gradient(34% 40% at 82% 16%, rgba(52, 211, 153, 0.04), transparent 62%),
     radial-gradient(44% 48% at 70% 80%, rgba(52, 211, 153, 0.05), transparent 65%);
   filter: blur(30px);
   pointer-events: none;
@@ -355,7 +360,7 @@ em, i { font-style: normal; }
 .btn-group {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: var(--grid-gap);
   flex-wrap: wrap;
 }
 
@@ -671,12 +676,12 @@ em, i { font-style: normal; }
    3. HERO SECTION
    ========================================================================== */
 .hero-section {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: calc(var(--nav-height) + 3rem);
-  padding-bottom: 6rem;
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: clamp(4rem, 6vw, 6rem);
   overflow: hidden;
   position: relative;
 }
@@ -1802,7 +1807,7 @@ em, i { font-style: normal; }
    15. THE BIG IDEA (EDITORIAL FULL WIDTH)
    ========================================================================== */
 .big-idea-section {
-  padding: 10rem 0;
+  padding: var(--space-section) 0;
   background: radial-gradient(circle at center, #060709 0%, #050608 70%);
   text-align: center;
   border-top: 1px solid var(--border-subtle);
@@ -2190,14 +2195,14 @@ em, i { font-style: normal; }
 .asset-nodes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
-  gap: clamp(1rem, 2vw, 1.4rem);
+  gap: var(--grid-gap);
   align-items: stretch;
 }
 
 .breakdowns-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: clamp(1.5rem, 2.5vw, 2.2rem);
+  gap: var(--grid-gap);
   align-items: stretch;
 }
 
@@ -2497,7 +2502,7 @@ em, i { font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 20%, rgba(52, 211, 153, 0.06) 0%, var(--bg-primary) 70%);
+  background: radial-gradient(circle at 50% 20%, rgba(52, 211, 153, 0.04) 0%, var(--bg-primary) 70%);
   border-bottom: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
@@ -2557,7 +2562,7 @@ em, i { font-style: normal; }
 }
 
 .page-content-section {
-  padding: clamp(5rem, 8vw, 8rem) 0;
+  padding: var(--space-section) 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -2661,7 +2666,7 @@ em, i { font-style: normal; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.04) 0%, transparent 70%);
   opacity: 0;
   transition: opacity var(--transition-smooth);
 }
@@ -2852,7 +2857,7 @@ section::after {
    ========================================================================== */
 .tag-card.active-tag {
   border-color: var(--accent-cyan);
-  background: rgba(52, 211, 153, 0.06);
+  background: rgba(52, 211, 153, 0.04);
   box-shadow: 0 0 25px rgba(52, 211, 153, 0.15);
   transform: translateY(-4px);
 }
@@ -3798,7 +3803,7 @@ section::after {
 }
 
 .digisynq-loop .flow-step-row {
-  background: rgba(52, 211, 153, 0.06);
+  background: rgba(52, 211, 153, 0.04);
   border-color: rgba(52, 211, 153, 0.22);
 }
 
@@ -4068,7 +4073,7 @@ section::after {
 }
 
 .principle-pill-card:hover {
-  background: rgba(52, 211, 153, 0.06);
+  background: rgba(52, 211, 153, 0.04);
   border-color: var(--accent-cyan);
 }
 
@@ -5808,7 +5813,7 @@ html::before {
   min-width: 188px;
   padding: 1.15rem 1.35rem;
   border-color: rgba(52, 211, 153, 0.55);
-  background: linear-gradient(180deg, rgba(52, 211, 153, 0.2), rgba(52, 211, 153, 0.06));
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.2), rgba(52, 211, 153, 0.04));
   box-shadow: 0 0 44px rgba(52, 211, 153, 0.28);
 }
 .arch-center .arch-node-label { font-size: 1.18rem; }
@@ -6283,7 +6288,7 @@ body::before {
   background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%);
   border-top: 1px solid rgba(255,255,255,0.04);
 }
-.f-top { padding-top: 3.5rem; }
+.f-top { padding-top: clamp(3rem, 6vw, 4rem); }
 .sec-index::before { box-shadow: 0 0 8px var(--accent); }
 
 
@@ -6380,9 +6385,10 @@ body::before {
   --font-apple-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-.hero h1, .statement, .section-title, .tile h3, .help-card h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
+.hero h1, .statement, .section-title, .tile h3, .help-card h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 900; }
 .sec-index, .k, .tag, .role, .bar-label { font-family: var(--font-mono); }
 
+@media (max-width: 1000px) { .hero-visual { margin-block-start: 1.5rem; } .hero-grid { gap: clamp(2.5rem, 5vw, 3.5rem); } }
 /* Floating pill header — Apple Control Center style, keeps existing nav */
 .site-header {
   top: 12px;
