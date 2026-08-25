@@ -57,17 +57,17 @@
   --success-subtle: rgba(52, 211, 153, 0.18);
   --success-text: #34d399;
 
-  /* Typography — Momo Trust Display Across Complete Website */
-  --font-serif: 'Momo Trust Display', Georgia, serif;
-  --font-display: 'Momo Trust Display', Georgia, serif;
-  --font-body: 'Momo Trust Display', Georgia, serif;
-  --font-highlight: 'Momo Trust Display', Georgia, serif;
+  /* Typography — Momo Trust Display across complete website */
+  --font-serif: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  --font-display: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  --font-body: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  --font-highlight: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
   --container-max: 1340px;
   --container-narrow: 1040px;
-  --nav-height: 56px;
+  --nav-height: 72px;
 
   /* Motion — Ultra-Smooth Luxury Curves */
   --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
@@ -6374,14 +6374,14 @@ body::before {
 
 
 /* --- Apple OS theme — inspired, original assets, no infringement --- */
-/* Typography: Apple system stack as primary, Momo as display fallback — keeps editorial but feels OS-native */
+/* Typography: Momo Trust Display across the whole website (Instrument Serif fallback) */
 :root {
-  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-apple-mono: ui-monospace, "SF Mono", "JetBrains Mono", monospace;
+  --font-apple: 'Momo Trust Display', 'Instrument Serif', Georgia, serif;
+  --font-apple-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
-body { font-family: var(--font-apple); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-.hero h1, .statement, .section-title, .tile h3, .help-card h3 { font-family: var(--font-display), var(--font-apple); letter-spacing: -0.03em; }
-.sec-index, .k, .tag, .role, .bar-label { font-family: var(--font-apple-mono); }
+body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.hero h1, .statement, .section-title, .tile h3, .help-card h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
+.sec-index, .k, .tag, .role, .bar-label { font-family: var(--font-mono); }
 
 /* Floating pill header — Apple Control Center style, keeps existing nav */
 .site-header {
