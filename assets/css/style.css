@@ -63,6 +63,8 @@
   --font-body: 'Smooch Sans', sans-serif;
   --font-highlight: 'Smooch Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-weight-regular: 400;
+  --font-weight-black: 900;
 
   /* Layout */
   --container-max: 1280px;
@@ -91,7 +93,7 @@
 }
 
 html {
-  font-size: clamp(22.5px, 0.6vw + 20.1px, 25.5px);
+  font-size: clamp(15px, 0.4vw + 13.4px, 17px);
   scroll-behavior: smooth;
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -2360,6 +2362,10 @@ em, i { font-style: normal; }
   transform: translateX(35px) translateZ(0);
 }
 
+.no-js .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
 .reveal.revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
@@ -3054,6 +3060,10 @@ section::after {
   backface-visibility: hidden;
 }
 
+.no-js .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0) translateZ(0);
@@ -6384,7 +6394,7 @@ body::before {
   --font-apple: 'Smooch Sans', sans-serif;
   --font-apple-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
-body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-body); font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .hero h1, .statement, .section-title, .tile h3, .help-card h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 900; }
 .sec-index, .k, .tag, .role, .bar-label { font-family: var(--font-mono); }
 
