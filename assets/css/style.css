@@ -6699,3 +6699,43 @@ body { text-rendering: optimizeLegibility; }
   .contact-form, .contact-form .field, .contact-form input, .contact-form select, .contact-form textarea { max-width: 100%; width: 100%; box-sizing: border-box; }
   .container { padding-left: 12px; padding-right: 12px; }
 }
+
+/* Micro-Interactions & Live State Signals */
+.state-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 9999px;
+  padding: 0.22rem 0.75rem;
+  transition: all 0.3s var(--ease-premium);
+  user-select: none;
+}
+.state-chip:hover {
+  background: rgba(52, 211, 153, 0.18);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.25);
+  transform: translateY(-1px);
+}
+.state-chip .state-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: corePulse 2.4s ease-in-out infinite;
+}
+
+/* Enhanced Magnetic & Interactive Focus */
+.btn-primary:active, .btn-secondary:active {
+  transform: scale(0.97);
+}
+.tile, .help-card, .participate .tile {
+  cursor: pointer;
+}
+

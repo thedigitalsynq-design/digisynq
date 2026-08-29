@@ -1849,4 +1849,26 @@ function initProblemDiagnosticModal() {
   });
 }
 
+/* ==========================================================================
+   23. FORM SIGNAL FEEDBACK & MICRO-STATE INTERACTIONS
+   ========================================================================== */
+function initSignalFeedback() {
+  const contactForm = document.querySelector('.contact-form');
+  if (!contactForm) return;
 
+  contactForm.addEventListener('submit', function (e) {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Transmitting signal...';
+      setTimeout(() => {
+        submitBtn.innerHTML = 'Signal received &bull; Synchronizing';
+        submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      }, 600);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSignalFeedback();
+});
