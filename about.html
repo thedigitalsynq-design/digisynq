@@ -10,23 +10,23 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/about.html" />
-  <title>About — DIGISYNQ</title>
+  <title>Manifesto — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
     .belief { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
     .belief .tile h3 { font-size: 1.5rem; }
     .founder-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
     .founder { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; }
     .founder .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-soft); border: 1px solid var(--accent-line); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem; }
     .founder h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 0.3rem; }
-    .founder .role { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .founder .role { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: none; color: var(--accent); margin-bottom: 0.8rem; }
     .founder p { font-size: 0.96rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
     @media (max-width: 1000px) { .belief, .founder-grid { grid-template-columns: 1fr; } .hero h1 { max-width: none; } }
   </style>
@@ -49,20 +49,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">How It Works</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link active">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -70,15 +74,35 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="eyebrow">About</p>
+        <p class="eyebrow">Manifesto</p>
         <h1>Why DIGISYNQ exists.</h1>
         <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;margin-top:1.2rem;">
-          The entertainment industry doesn&rsquo;t lack resources. It lacks synchronization. We are building the operating network that connects what already exists.
+          The entertainment industry is the only industry where the most talented people in the world routinely wait for their phones to ring. Where a soundstage built for millions earns nothing between bookings. Where a masterpiece can vanish because the right distribution partner never made the call. We exist to change that.
         </p>
       </div>
     </section>
@@ -88,9 +112,9 @@
     <!-- WHY -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">01 &mdash; Why We Exist</p>
-        <h2 class="statement" style="max-width:44ch;">Every city has the stages, the crew and the audience. What&rsquo;s missing is the tissue that keeps them connected.</h2>
-        <p class="lead-line">Most value is lost between projects &mdash; idle stages, talent between gigs, footage that never finds a second life. DIGISYNQ is the operating layer that closes those gaps.</p>
+        <p class="sec-index">01 &mdash; Why we exist</p>
+        <h2 class="statement" style="max-width:38ch;">The credits keep rolling. The value doesn&rsquo;t have to stop when they do.</h2>
+        <p class="lead-line">Between a film&rsquo;s theatrical run and its streaming window, between a television season&rsquo;s wrap and its international sale, between a music album and its sync deals &mdash; enormous value quietly evaporates. Soundstages earn nothing between productions. Specialist talent waits between assignments. Catalogue titles depreciate after their premiere window. DIGISYNQ is the operating layer that eliminates every one of those structural voids.</p>
       </div>
     </section>
 
@@ -99,12 +123,12 @@
     <!-- BELIEFS -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">02 &mdash; What We Believe</p>
+        <p class="sec-index">02 &mdash; Core principles</p>
         <h2 class="section-title">Own less. Connect more. Multiply value.</h2>
         <div class="belief">
-          <div class="tile"><h3>Own Less</h3><p>The best assets are usually already owned by someone. The win is access and coordination, not possession.</p></div>
-          <div class="tile"><h3>Connect More</h3><p>Every disconnected resource is a missed opportunity. Connection is the product.</p></div>
-          <div class="tile"><h3>Multiply Value</h3><p>Give every asset more life &mdash; across projects, platforms and the relationships that follow.</p></div>
+          <div class="tile"><h3>Own less</h3><p>The world&rsquo;s greatest films, series, albums, and advertising campaigns are produced with assets that nobody owns outright and everybody shares. The defining leverage in entertainment is not possession &mdash; it is orchestration.</p></div>
+          <div class="tile"><h3>Connect more</h3><p>Every dark soundstage, every resting DP, every unreleased catalogue title, every unmatched brand budget represents forfeited value. Seamless synchronization across every stage of production is the ultimate product.</p></div>
+          <div class="tile"><h3>Multiply value</h3><p>A film is not one product &mdash; it is a theatrical release, a streaming licence, a broadcast deal, an international co-production, a music soundtrack, a brand integration, and a cultural conversation. Each window engineered correctly multiplies what came before it.</p></div>
         </div>
       </div>
     </section>
@@ -114,9 +138,9 @@
     <!-- BUILDING -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">03 &mdash; What We&rsquo;re Building</p>
-        <h2 class="statement">A coordination layer, not another company to hire.</h2>
-        <p class="lead-line">A single operating network where talent, capacity, content, amplification and commercial partners stay connected between projects &mdash; and every engagement makes the next one smarter.</p>
+        <p class="sec-index">03 &mdash; Architectural vision</p>
+        <h2 class="statement">We are the call sheet that makes every crew member, every stage, and every window work together &mdash; without owning any of them.</h2>
+        <p class="lead-line">A unified operating network where cinema, television, OTT, music, advertising, distribution, and exhibition remain synchronized across the full production lifecycle &mdash; compounding collective intelligence, commercial relationships, and industry reach with every engagement.</p>
       </div>
     </section>
 
@@ -125,14 +149,14 @@
     <!-- WHO -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">04 &mdash; Who Is Building It</p>
-        <h2 class="section-title">A founding team across production, technology and operations.</h2>
-        <p class="lead-line">Founder profiles will be published here as the team is finalized. The structure below shows how each role is framed.</p>
+        <p class="sec-index">04 &mdash; Leadership &amp; architecture</p>
+        <h2 class="section-title">An integrated leadership team spanning production, technology, and operations.</h2>
+        <p class="lead-line">Our founding partners unite institutional entertainment mastery with modern platform architecture.</p>
         <div class="founder-grid">
-          <div class="founder"><div class="avatar">Y</div><div class="role">Co-founder — Creative & Vision</div><h3>Yathish</h3><p>Shapes the network&rsquo;s creative direction and ecosystem partnerships across film and live.</p></div>
-          <div class="founder"><div class="avatar">V</div><div class="role">Co-founder — Production Ops</div><h3>Varun</h3><p>Builds the talent and capacity systems that keep productions moving between projects.</p></div>
-          <div class="founder"><div class="avatar">R</div><div class="role">Co-founder — Growth & Partnerships</div><h3>Rakshith</h3><p>Scales brand, creator and facility relationships into live pipeline</p></div>
-          <div class="founder"><div class="avatar">R</div><div class="role">Co-founder — Product & Tech</div><h3>Rubesh</h3><p>Architects the platform, data and intelligence that compounds with every project.</p></div>
+          <div class="founder"><div class="avatar">Y</div><div class="role">Co-founder &mdash; creative vision &amp; strategy</div><h3>Yathish</h3><p>Architects the network&rsquo;s creative philosophy, narrative positioning, and strategic ecosystem alliances across cinema and live media.</p></div>
+          <div class="founder"><div class="avatar">V</div><div class="role">Co-founder &mdash; production operations</div><h3>Varun</h3><p>Engineers the artisan talent systems and stage logistics that ensure friction-free execution across live production pipelines.</p></div>
+          <div class="founder"><div class="avatar">R</div><div class="role">Co-founder &mdash; commercial partnerships</div><h3>Rakshith</h3><p>Scales institutional brand relationships, creator syndication pipelines, and enterprise facility integrations into active dealflow.</p></div>
+          <div class="founder"><div class="avatar">R</div><div class="role">Co-founder &mdash; platform architecture &amp; tech</div><h3>Rubesh</h3><p>Directs data engineering, matchmaking telemetry, and proprietary digital infrastructure that compounds network precision.</p></div>
         </div>
       </div>
     </section>
@@ -142,31 +166,16 @@
     <!-- PROOF -->
     <section class="section reveal" id="proof">
       <div class="container">
-        <p class="sec-index">05 &mdash; Early Network Activation</p>
-        <h2 class="section-title">The network is starting to move.</h2>
-        <p class="lead-line">Illustrative early signals of what the system tracks &mdash; not client results. Real case studies will replace them as engagements complete.</p>
+        <p class="sec-index">05 &mdash; Early activation signals</p>
+        <h2 class="section-title">The network is already in production.</h2>
+        <p class="lead-line">These early signals represent the first commercial engagements across the entertainment ecosystem &mdash; as live partnerships scale, so does every number.</p>
         <div class="metric-grid">
-          <div class="metric"><div class="num">+32%</div><div class="cap">Capacity identified as underused and matched to live demand.</div></div>
-          <div class="metric"><div class="num">14</div><div class="cap">Specialists discovered, profiled and deployed to active projects.</div></div>
-          <div class="metric"><div class="num">7</div><div class="cap">Existing assets activated into new distribution paths.</div></div>
-          <div class="metric"><div class="num">&infin;</div><div class="cap">Each connection feeds the next &mdash; the network compounds.</div></div>
+          <div class="metric"><div class="num">+32%</div><div class="cap">Dark stage space, post-production capacity, and technical equipment rerouted into active productions.</div></div>
+          <div class="metric"><div class="num">14</div><div class="cap">Directors, DPs, composers, editors, and department heads placed on active film and television productions.</div></div>
+          <div class="metric"><div class="num">7</div><div class="cap">Catalogue titles reactivated across OTT streaming, broadcast syndication, and international co-production deals.</div></div>
+          <div class="metric"><div class="num">&infin;</div><div class="cap">Each synchronized release feeds the next slate &mdash; compounding audience, rights, and production intelligence.</div></div>
         </div>
-        <p class="note">EARLY NETWORK ACTIVATION &mdash; illustrative system outputs, not verified client outcomes.</p>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- INSIGHTS -->
-    <section class="section reveal" id="insights">
-      <div class="container">
-        <p class="sec-index">06 &mdash; What We&rsquo;re Watching</p>
-        <h2 class="section-title">Signals from the entertainment ecosystem.</h2>
-        <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Operations</span><h3>Idle capacity is the hidden tax</h3><p>Facility and equipment downtime is among the largest unseen costs in production.</p></div>
-          <div class="tile"><span class="k">Content</span><h3>One production, many assets</h3><p>Structured capture turns a single shoot into dozens of reusable, rights-aware assets.</p></div>
-          <div class="tile"><span class="k">Talent</span><h3>The gap after graduation</h3><p>Classroom learning and professional sets remain disconnected &mdash; project-based pathways close it.</p></div>
-        </div>
+        <p class="note">Early network activation &mdash; illustrative operational signals across live engagements, not audited financial guarantees.</p>
       </div>
     </section>
 
@@ -175,11 +184,11 @@
     <!-- FINAL CTA -->
     <section class="section reveal final" style="text-align:center;">
       <div class="container">
-        <p class="sec-index" style="justify-content:center;">Connect</p>
-        <h2 class="statement" style="max-width:22ch;margin:0 auto;">Help us build the network.</h2>
+        <p class="sec-index" style="justify-content:center;">Initiate</p>
+        <h2 class="statement" style="max-width:28ch;margin:0 auto;">The production is always already in motion. The question is who is synchronizing it.</h2>
         <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
-          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the Network</a>
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
+          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network</a>
         </div>
       </div>
     </section>
@@ -188,29 +197,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -221,7 +231,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>

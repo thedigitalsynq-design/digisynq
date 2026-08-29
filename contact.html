@@ -10,19 +10,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/contact.html" />
-  <title>Contact — DIGISYNQ</title>
+  <title>Transmit — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,4rem); align-items: start; margin-top: 2.6rem; }
     .field { margin-bottom: 1.3rem; }
-    .field label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+    .field label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: none; color: var(--text-dim); margin-bottom: 0.5rem; }
     .field input, .field select, .field textarea {
       width: 100%; background: var(--surface-tile); border: 1px solid var(--hairline); border-radius: 12px;
       color: #fff; font-family: var(--font-body); font-size: 1rem; padding: 0.85rem 1rem; transition: border-color var(--transition-fast);
@@ -54,20 +54,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">How It Works</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link active">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -75,15 +79,35 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="eyebrow">Contact</p>
+        <p class="eyebrow">Transmit</p>
         <h1>Start a conversation.</h1>
         <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">
-          Tell us what you&rsquo;re making, what you have, and where you&rsquo;re hitting friction. We&rsquo;ll connect the right pieces.
+          Bring us the production brief, the catalogue, the facility, the talent gap, or the release window you cannot fill. We engineer the connection.
         </p>
       </div>
     </section>
@@ -98,10 +122,11 @@
             <div class="field">
               <label for="type">I want to</label>
               <select id="type" name="type">
-                <option value="discuss">Bring a Project</option>
-                <option value="join">Join the Network</option>
-                <option value="capacity">List Capacity</option>
-                <option value="content">Activate Content</option>
+                <option value="discuss">Bring a production or project</option>
+                <option value="join">Join the talent network</option>
+                <option value="capacity">List a facility or stage</option>
+                <option value="content">Activate a content catalogue</option>
+                <option value="brand">Explore a brand integration</option>
               </select>
             </div>
             <div class="field">
@@ -113,22 +138,22 @@
               <input id="email" name="email" type="email" placeholder="you@studio.com" required />
             </div>
             <div class="field">
-              <label for="msg">What are you making or connecting?</label>
-              <textarea id="msg" name="message" rows="5" placeholder="What do you have? What is missing? What are you trying to achieve?"></textarea>
+              <label for="msg">Describe your production, catalogue, facility, or the gap you need bridged</label>
+              <textarea id="msg" name="message" rows="5" placeholder="Tell us about the film, series, album, stage, brand campaign, or distribution challenge. The more specific, the faster we can synchronize."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg">Send &rarr;</button>
+            <button type="submit" class="btn btn-primary btn-lg">Send inquiry &rarr;</button>
           </form>
 
           <div>
-            <p class="sec-index">Or pick an entry point</p>
+            <p class="sec-index">Or select your specific vector</p>
             <div class="entry-points">
-              <div class="tile"><h3>Bring a Project</h3><p>Producer with a brief that needs the right pieces.</p><a href="contact.html?type=discuss">START &rarr;</a></div>
-              <div class="tile"><h3>Join the Network</h3><p>Talent, creator or partner ready to connect.</p><a href="contact.html?type=join">JOIN &rarr;</a></div>
-              <div class="tile"><h3>List Capacity</h3><p>Facility or equipment owner with idle supply.</p><a href="contact.html?type=capacity">LIST &rarr;</a></div>
-              <div class="tile"><h3>Activate Content</h3><p>Rights holder with assets to extend.</p><a href="contact.html?type=content">ACTIVATE &rarr;</a></div>
+              <div class="tile"><h3>Bring a production</h3><p>A film, series, OTT original, music project, or advertising campaign requiring talent, facilities, distribution, or audience strategy.</p><a href="contact.html?type=discuss">Initiate &rarr;</a></div>
+              <div class="tile"><h3>Join the talent network</h3><p>A director, DP, composer, HOD, editor, or below-the-line specialist ready for live production assignments.</p><a href="contact.html?type=join">Apply &rarr;</a></div>
+              <div class="tile"><h3>List a facility or stage</h3><p>A soundstage, edit suite, ADR booth, colour grade facility, or equipment owner seeking higher utilization between bookings.</p><a href="contact.html?type=capacity">List &rarr;</a></div>
+              <div class="tile"><h3>Activate a catalogue</h3><p>A rights holder with film, television, or music IP ready for OTT licensing, broadcast syndication, or international co-production.</p><a href="contact.html?type=content">Syndicate &rarr;</a></div>
             </div>
             <div style="margin-top:1.6rem; border:1px solid var(--hairline); border-radius:var(--radius-card); background:var(--surface-tile); padding:1.4rem 1.5rem;">
-              <p style="font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin:0 0 0.8rem;">Direct</p>
+              <p style="font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.14em; color:var(--accent); margin:0 0 0.8rem;">Direct channels</p>
               <p style="margin:0 0 0.5rem;"><a href="mailto:thedigitalsynq@gmail.com" style="color:#fff; text-decoration:none; font-weight:600;">thedigitalsynq@gmail.com</a></p>
               <p style="margin:0 0 0.9rem;"><a href="https://wa.me/917996548969" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">WhatsApp: +91 79965 48969</a></p>
               <p style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted); margin:0; display:flex; flex-wrap:wrap; gap:0.8rem 1.2rem;">
@@ -149,9 +174,9 @@
     <section class="section reveal final" style="text-align:center;">
       <div class="container">
         <p class="sec-index" style="justify-content:center;">Connect</p>
-        <h2 class="statement" style="max-width:20ch;margin:0 auto;">Every conversation is a connection.</h2>
+        <h2 class="statement" style="max-width:24ch;margin:0 auto;">Every conversation here has started a production somewhere. Let&rsquo;s begin yours.</h2>
         <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+          <a href="index.html" class="btn btn-secondary btn-lg">Back to home</a>
         </div>
       </div>
     </section>
@@ -160,29 +185,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -193,7 +219,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>

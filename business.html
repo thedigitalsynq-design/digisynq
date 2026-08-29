@@ -10,16 +10,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/business.html" />
-  <title>Business Model — DIGISYNQ</title>
+  <title>Flywheel — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 22ch; }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
     .value-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 2.6rem; }
     .value-flow .stage { border: 1px solid var(--hairline); border-right: 0; padding: 1.6rem 1.4rem; background: var(--surface-tile); }
     .value-flow .stage:last-child { border-right: 1px solid var(--hairline); }
@@ -48,20 +48,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">How It Works</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link active">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -69,15 +73,35 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="eyebrow">Business Model</p>
-        <h1>We monetize coordination, not ownership.</h1>
+        <p class="eyebrow">Flywheel</p>
+        <h1>Every production generates a new revenue window.<br /><span class="soft">We are the mechanism that opens them.</span></h1>
         <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;margin-top:1.2rem;">
-          The assets already exist. DIGISYNQ creates value by connecting them &mdash; and captures a share of the value it helps create, through clearly defined services.
+          The entertainment industry runs on coordination — between talent and stages, between productions and distribution windows, between content and audiences. DIGISYNQ captures a disciplined share of every alignment it engineers, without ever owning a frame of footage or a square foot of stage.
         </p>
       </div>
     </section>
@@ -87,13 +111,13 @@
     <!-- HOW VALUE MOVES -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">01 &mdash; How Value Moves</p>
-        <h2 class="section-title">From project to captured value.</h2>
+        <p class="sec-index">01 &mdash; Flow mechanics</p>
+        <h2 class="section-title">From the first brief to the final royalty — how value moves through the DIGISYNQ flywheel.</h2>
         <div class="value-flow">
-          <div class="stage"><span class="n">01</span><h3>Projects</h3><p>A brief arrives &mdash; a film, a campaign, a piece of content that needs to get made.</p></div>
-          <div class="stage"><span class="n">02</span><h3>Network Activity</h3><p>Talent, capacity, content and audiences are found, matched and deployed around it.</p></div>
-          <div class="stage"><span class="n">03</span><h3>Value Created</h3><p>Production completes, content extends, reach lands, commercial relationships form.</p></div>
-          <div class="stage"><span class="n">04</span><h3>DIGISYNQ Captures</h3><p>A defined share of coordination, execution and activation &mdash; not ownership of the asset.</p></div>
+          <div class="stage"><span class="n">01</span><h3>The production brief</h3><p>A film, series, OTT original, music project, or advertising campaign lands. The brief demands talent, stage time, post-production capacity, distribution strategy, or audience reach.</p></div>
+          <div class="stage"><span class="n">02</span><h3>The synchronization</h3><p>The right DP, the right soundstage, the right media buyer, the right release window — dynamically assembled around the live brief. No agency drag, no cold outreach, no dark time.</p></div>
+          <div class="stage"><span class="n">03</span><h3>The release and windows</h3><p>Production executes on schedule. Every distribution window — theatrical, OTT, broadcast, international, music, advertising — is pre-planned, activated, and sequenced for maximum yield.</p></div>
+          <div class="stage"><span class="n">04</span><h3>The coordination fee</h3><p>DIGISYNQ captures a transparent fee for every alignment engineered. No equity in the IP. No overhead on the facilities. No claim on the content catalogue.</p></div>
         </div>
       </div>
     </section>
@@ -103,18 +127,18 @@
     <!-- HOW WE CAPTURE -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">02 &mdash; How We Capture Value</p>
-        <h2 class="section-title">Legitimate services, transparent economics.</h2>
-        <p class="lead-line">Each revenue path is tied to work DIGISYNQ actually performs. No ownership of talent, IP or infrastructure &mdash; value is earned through coordination.</p>
+        <p class="sec-index">02 &mdash; Commercial architecture</p>
+        <h2 class="section-title">Institutional services, transparent economics.</h2>
+        <p class="lead-line">Every revenue stream reflects active value delivered to the production ecosystem. We never take an equity position in creative IP &mdash; our return is earned entirely by reducing friction between the people and resources that make entertainment happen.</p>
         <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Coordination</span><h3>Connection fees</h3><p>For sourcing, matching and synchronizing the right talent, facilities, creators and partners around a project.</p></div>
-          <div class="tile"><span class="k">Execution</span><h3>Deployment fees</h3><p>For clearly scoped production support, workshop orchestration and operational audits.</p></div>
-          <div class="tile"><span class="k">Activation</span><h3>Content extension</h3><p>For packaging, distributing and monetizing existing content across new platforms and paths.</p></div>
-          <div class="tile"><span class="k">Utilization</span><h3>Capacity sharing</h3><p>For putting idle studios, equipment and crew to work at higher utilization.</p></div>
-          <div class="tile"><span class="k">Intelligence</span><h3>Network insight</h3><p>For structured access to what the network is learning &mdash; supply, demand and match patterns.</p></div>
-          <div class="tile" style="border-color:var(--accent-line);"><span class="k">Principle</span><h3>Asset-light</h3><p>We never monetize ownership of the underlying asset. We monetize the connection that made it work.</p></div>
+          <div class="tile"><span class="k">Coordination</span><h3>Synchronization fees</h3><p>For assembling the right crew, sourcing the right stage, and routing the right content to the right distribution window for each production.</p></div>
+          <div class="tile"><span class="k">Production oversight</span><h3>Pipeline management</h3><p>For managing shoot schedules, post-production handoffs, call sheet coordination, and delivery-to-distributor workflows from green-light to wrap.</p></div>
+          <div class="tile"><span class="k">Catalogue activation</span><h3>Multi-window syndication</h3><p>For engineering OTT licensing, broadcast syndication, international co-production, music rights, and ancillary monetization across every available window.</p></div>
+          <div class="tile"><span class="k">Capacity utilization</span><h3>Facility placement fees</h3><p>For routing verified productions into dark soundstages, edit suites, ADR booths, colour grade facilities, and equipment inventories between bookings.</p></div>
+          <div class="tile"><span class="k">Market intelligence</span><h3>Release-window analytics</h3><p>For enterprise subscribers: real-time audience profiling, box office projections, OTT acquisition signals, and production cost benchmarking.</p></div>
+          <div class="tile" style="border-color:var(--accent-line);"><span class="k">Foundational principle</span><h3>Asset-light by design</h3><p>We own no stages, hold no IP, and employ no crews. We are the call sheet that makes every resource work together — without being on the payroll.</p></div>
         </div>
-        <p class="note">ILLUSTRATIVE ECONOMIC MODEL &mdash; to be finalized with live engagements. No figures shown are client results.</p>
+        <p class="note">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
       </div>
     </section>
 
@@ -123,11 +147,12 @@
     <!-- FINAL CTA -->
     <section class="section reveal final" style="text-align:center;">
       <div class="container">
-        <p class="sec-index" style="justify-content:center;">Start</p>
-        <h2 class="statement" style="max-width:22ch;margin:0 auto;">Bring us a project. Let&rsquo;s map the value.</h2>
+        <p class="sec-index" style="justify-content:center;">Initiate</p>
+        <h2 class="statement" style="max-width:26ch;margin:0 auto;">The slate is full. The stages are ready. The windows are open. We synchronize the rest.</h2>
+        <p class="lead-line" style="margin-left:auto;margin-right:auto;margin-top:0.75rem;">Bring us the production brief, the catalogue, the facility, or the talent gap. We engineer the flywheel.</p>
         <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
-          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the Network</a>
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
+          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network</a>
         </div>
       </div>
     </section>
@@ -136,29 +161,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -169,7 +195,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>

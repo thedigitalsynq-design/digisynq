@@ -10,23 +10,24 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/flowchart.html" />
-  <title>ABCDEF — DIGISYNQ</title>
+  <title>Protocol — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
-    .step-view { min-height: 64vh; display: flex; align-items: center; padding: clamp(3rem,7vw,5rem) 0; border-bottom: 1px solid var(--hairline); }
-    .step-view .inner { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem,5vw,4rem); align-items: center; width: 100%; }
-    .step-view .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(5rem, 16vw, 13rem); line-height: 0.8; color: var(--accent); letter-spacing: -0.04em; }
-    .step-view h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 3rem); color: #fff; letter-spacing: -0.02em; margin: 0 0 1rem; }
-    .step-view p { font-size: clamp(1.05rem, 1.7vw, 1.4rem); line-height: 1.55; color: var(--text-muted); max-width: 52ch; margin: 0; }
-    .step-view .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); display: block; margin-bottom: 1rem; }
-    @media (max-width: 760px) { .step-view .inner { grid-template-columns: 1fr; gap: 1rem; } .step-view .big { font-size: 5.5rem; } }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
+    .step-view { padding: clamp(2.5rem, 5vw, 4.5rem) 0; border-bottom: 1px solid var(--hairline); }
+    .step-view:last-of-type { border-bottom: 0; }
+    .step-view .inner { display: grid; grid-template-columns: 140px 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; width: 100%; }
+    .step-view .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.5rem, 8vw, 6.5rem); color: var(--accent); line-height: 0.9; }
+    .step-view h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.6rem); color: #fff; margin: 0.4rem 0 0.8rem; letter-spacing: -0.02em; }
+    .step-view p { font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.6; color: var(--text-muted); max-width: 58ch; margin: 0; }
+    .step-view .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: none; color: var(--text-dim); }
+    @media (max-width: 700px) { .step-view .inner { grid-template-columns: 1fr; gap: 0.8rem; } }
   </style>
 
   <script type="application/ld+json">
@@ -47,20 +48,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link active">How It Works</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link active">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -68,15 +73,35 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="eyebrow">The Method</p>
-        <h1>One loop. Every project.</h1>
+        <p class="eyebrow">Protocol</p>
+        <h1>From script to screen<br /><span class="soft">to every window after it.</span></h1>
         <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">
-          Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract &rarr; Feed Forward. This is how DIGISYNQ operates &mdash; and how every engagement makes the next one smarter.
+          Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract &rarr; Feed forward. Every engagement runs through this closed production-to-distribution loop &mdash; ensuring every release generates audience intelligence, rights data, and commercial signal that compounds into the next slate decision.
         </p>
       </div>
     </section>
@@ -86,9 +111,9 @@
       <div class="container"><div class="inner">
         <div class="big">A</div>
         <div>
-          <span class="k">Step 01</span>
+          <span class="k">Step 01 / Diagnostic</span>
           <h2>Audit</h2>
-          <p>See what exists. Map the talent, capacity, content and opportunity that are already there &mdash; and what is being lost between projects.</p>
+          <p>Map the full production landscape before a single rupee is committed. We inventory available talent across departments &mdash; directors, DPs, composers, HODs, editors, stunt coordinators &mdash; alongside dark soundstages, post-production suites, dormant IP, and audiences already primed for the genre. This is the cast list before the script is locked.</p>
         </div>
       </div></div>
     </section>
@@ -98,9 +123,9 @@
       <div class="container"><div class="inner">
         <div class="big">B</div>
         <div>
-          <span class="k">Step 02</span>
+          <span class="k">Step 02 / Architecture</span>
           <h2>Build</h2>
-          <p>Shape the opportunity. Turn a fragmented brief into a structured opportunity the network can actually act on.</p>
+          <p>Convert the creative brief into a structured production architecture. We define above-the-line and below-the-line requirements, lock the post-production schedule, identify distribution targets, and pre-plan the release window sequence &mdash; theatrical to OTT to broadcast to international &mdash; before principal photography begins.</p>
         </div>
       </div></div>
     </section>
@@ -110,9 +135,9 @@
       <div class="container"><div class="inner">
         <div class="big">C</div>
         <div>
-          <span class="k">Step 03</span>
+          <span class="k">Step 03 / Synchronization</span>
           <h2>Connect</h2>
-          <p>Bring the right pieces together. Match people, spaces, IP and audiences around the project that needs them.</p>
+          <p>Engineer the precise alignments that make productions happen: the right DP to the right director, the right media buyer to the right premiere date, the right brand integration to the right content demographic, the right stage to the right shoot schedule. Great productions are not found &mdash; they are assembled.</p>
         </div>
       </div></div>
     </section>
@@ -122,9 +147,9 @@
       <div class="container"><div class="inner">
         <div class="big">D</div>
         <div>
-          <span class="k">Step 04</span>
+          <span class="k">Step 04 / Execution</span>
           <h2>Deploy</h2>
-          <p>Put them to work. Move from plan to production &mdash; capacity activated, talent deployed, content extended.</p>
+          <p>Green-light the production and execute. Synchronized call sheets, tight post-production handoffs, coordinated P&amp;A strategy, and release-day activation &mdash; DIGISYNQ eliminates the administrative drag that turns creative energy into schedule overrun and budget bleed.</p>
         </div>
       </div></div>
     </section>
@@ -134,9 +159,9 @@
       <div class="container"><div class="inner">
         <div class="big">E</div>
         <div>
-          <span class="k">Step 05</span>
+          <span class="k">Step 05 / Realization</span>
           <h2>Extract</h2>
-          <p>Capture the value. Measure what was created, used and learned &mdash; not just what was spent.</p>
+          <p>Capture every commercial window a production can generate: theatrical box office, OTT acquisition and licensing, broadcast syndication rights, international co-production deals, music soundtrack revenues, brand integration fees, merchandise, educational rights, and ancillary licensing. A single shoot day should earn across every window, not just one.</p>
         </div>
       </div></div>
     </section>
@@ -146,9 +171,9 @@
       <div class="container"><div class="inner">
         <div class="big">F</div>
         <div>
-          <span class="k">Step 06</span>
-          <h2>Feed Forward</h2>
-          <p>Turn learning into the next advantage. Every outcome becomes intelligence for the next match &mdash; the network compounds.</p>
+          <span class="k">Step 06 / Intelligence</span>
+          <h2>Feed forward</h2>
+          <p>Every release becomes a data asset for the next. Audience demographic profiles, box office performance by market, OTT viewership curves, critic and fan sentiment, rights clearance intelligence, production cost benchmarks &mdash; all synthesized into sharper decisions for the next brief, the next slate, and the next window.</p>
         </div>
       </div></div>
     </section>
@@ -156,19 +181,19 @@
     <!-- LOOP -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">The Loop</p>
-        <h2 class="section-title">Every project makes the network smarter.</h2>
+        <p class="sec-index">The loop</p>
+        <h2 class="section-title">A closed circuit never loses power.</h2>
         <div class="abcdef">
-          <div class="step"><div class="ltr">A</div><h4>Audit</h4><p>See what exists.</p></div>
-          <div class="step"><div class="ltr">B</div><h4>Build</h4><p>Shape the opportunity.</p></div>
-          <div class="step"><div class="ltr">C</div><h4>Connect</h4><p>Bring the right pieces together.</p></div>
-          <div class="step"><div class="ltr">D</div><h4>Deploy</h4><p>Put them to work.</p></div>
-          <div class="step"><div class="ltr">E</div><h4>Extract</h4><p>Capture the value.</p></div>
-          <div class="step"><div class="ltr">F</div><h4>Feed Forward</h4><p>Turn learning into the next advantage.</p></div>
+          <div class="step"><div class="ltr">A</div><h4>Audit</h4><p>Map the production slate: talent, stages, IP, and audiences already in place.</p></div>
+          <div class="step"><div class="ltr">B</div><h4>Build</h4><p>Define the above-the-line, post-production schedule, and distribution window sequence.</p></div>
+          <div class="step"><div class="ltr">C</div><h4>Connect</h4><p>Attach the right crew, stage, media buyer, and brand to the live production brief.</p></div>
+          <div class="step"><div class="ltr">D</div><h4>Deploy</h4><p>Execute with synchronized call sheets, tight post handoffs, and P&amp;A activation.</p></div>
+          <div class="step"><div class="ltr">E</div><h4>Extract</h4><p>Capture theatrical, OTT, broadcast, music, international, and ancillary windows.</p></div>
+          <div class="step"><div class="ltr">F</div><h4>Feed forward</h4><p>Synthesize box office data, audience profiles, and rights intelligence into the next slate.</p></div>
         </div>
         <div class="hero-actions" style="margin-top:2.4rem;">
-          <a href="platform.html" class="btn btn-secondary btn-lg">See How It Works &rarr;</a>
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project</a>
+          <a href="platform.html" class="btn btn-secondary btn-lg">See how it works &rarr;</a>
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project</a>
         </div>
       </div>
     </section>
@@ -177,29 +202,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -210,7 +236,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>

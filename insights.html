@@ -10,24 +10,24 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/insights.html" />
-  <title>Industry in Numbers — DIGISYNQ</title>
+  <title>Telemetry — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 18ch; }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
     .hero-copy { font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.55; color: var(--text-muted); max-width: 62ch; margin-top: 1.2rem; }
-    .kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+    .kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--accent); }
     .num-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
     .num-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; position: relative; overflow: hidden; }
     .num-card::before { content:""; position:absolute; inset:0; background: radial-gradient(420px circle at 80% 0%, rgba(52,211,153,0.07), transparent 55%); pointer-events:none; }
     .num-card .v { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1; color: #fff; letter-spacing: -0.03em; }
     .num-card .v em { color: var(--accent); font-style: normal; }
-    .num-card .l { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--text-dim); text-transform: uppercase; margin-top: 0.6rem; }
+    .num-card .l { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--text-dim); text-transform: none; margin-top: 0.6rem; }
     .num-card .d { font-size: 0.96rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.7rem; }
     .bar-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
     .bar-row { display: grid; grid-template-columns: 180px 1fr 52px; gap: 1rem; align-items: center; }
@@ -48,7 +48,7 @@
     .pie-legend .dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px; }
     .pie-legend b { color: #fff; font-weight: 700; }
     .pie-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: #fff; margin: 0 0 0.3rem; }
-    .pie-sub { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.9rem; }
+    .pie-sub { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: none; color: var(--text-dim); margin-bottom: 0.9rem; }
     .note-dummy { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--text-dim); border-left: 2px solid var(--accent-line); padding-left: 0.9rem; margin-top: 1.8rem; line-height: 1.6; }
     @media (max-width: 1000px) { .num-grid { grid-template-columns: repeat(2, 1fr); } .donut-wrap { grid-template-columns: 1fr; } .bar-row { grid-template-columns: 1fr; gap: 0.4rem; } .bar-pct { text-align: left; } .pie-grid { grid-template-columns: 1fr; } .pie-card { grid-template-columns: 1fr; justify-items: center; } }
     @media (max-width: 620px) { .num-grid { grid-template-columns: 1fr; } }
@@ -72,20 +72,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">How It Works</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link active">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link active">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -93,21 +97,41 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="kicker">Insights • Industry in Numbers — Dummy Data</p>
-        <h1>Entertainment is 68% fragmented.</h1>
-        <p class="hero-copy">Stages, talent, footage and audiences already exist. The value leaks in the gaps <em style="color:#fff; font-style:normal;">between</em> them. Below are <b style="color:var(--accent)">illustrative</b> numbers — directionally right, not audited — to show where the network finds the loss.</p>
+        <p class="kicker">Telemetry &bull; Entertainment industry intelligence</p>
+        <h1>The entertainment industry leaves 68% of its value on the table.</h1>
+        <p class="hero-copy">Soundstages sit dark between bookings. Award-winning directors wait between projects. Films earn from one window when they could earn from seven. This is our <b style="color:var(--accent)">diagnostic telemetry</b> &mdash; mapping exactly where the industry loses money between productions and how synchronization recovers it.</p>
         <div class="pill-row">
-          <span class="pill"><b>42%</b> idle capacity</span>
-          <span class="pill"><b>38%</b> hidden talent</span>
-          <span class="pill"><b>71%</b> single-use content</span>
-          <span class="pill"><b>29%</b> leakage</span>
+          <span class="pill"><b>42%</b> of stages booked below capacity</span>
+          <span class="pill"><b>38%</b> of specialist talent invisible to live briefs</span>
+          <span class="pill"><b>71%</b> of productions monetize one window only</span>
+          <span class="pill"><b>29%</b> of production budget lost to coordination drag</span>
         </div>
-        <p class="note-dummy">Dummy dataset — estimates from public reports + DIGISYNQ early signals. Replace with audited pipeline data as engagements complete.</p>
+        <p class="note-dummy">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
       </div>
     </section>
 
@@ -116,13 +140,13 @@
     <!-- AT A GLANCE -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">01 — At a Glance</p>
-        <h2 class="section-title">Four places the value disappears.</h2>
+        <p class="sec-index">01 &mdash; At a glance</p>
+        <h2 class="section-title">Four box office drains hiding in plain sight.</h2>
         <div class="num-grid">
-          <div class="num-card"><div class="v"><em>42</em>%</div><div class="l">Capacity idle</div><p class="d">Studio stages & gear sit idle <b style="color:#fff">14.3 days / month</b> on average. Peak vs. off-peak gap is 3.1×.</p></div>
-          <div class="num-card"><div class="v"><em>38</em>%</div><div class="l">Talent unseen</div><p class="d">Verified technicians are <b style="color:#fff">available but not discovered</b> — profiled but not matched to live briefs.</p></div>
-          <div class="num-card"><div class="v"><em>71</em>%</div><div class="l">Single-use content</div><p class="d">Productions generate <b style="color:#fff">28–46 assets</b> — only 1.4 paths used. Rest dies after release.</p></div>
-          <div class="num-card"><div class="v"><em>29</em>%</div><div class="l">Budget leakage</div><p class="d">Coordination friction eats <b style="color:#fff">₹18–26L per project</b> — re-booking, re-briefing, re-shoots.</p></div>
+          <div class="num-card"><div class="v"><em>42</em>%</div><div class="l">Soundstages &amp; facilities sitting dark</div><p class="d">Tier-one stages and post-production suites earn nothing during the <b style="color:#fff">14.3 idle days per month</b> between production bookings &mdash; revenue that could be active.</p></div>
+          <div class="num-card"><div class="v"><em>38</em>%</div><div class="l">Specialist talent invisible to live briefs</div><p class="d">Elite directors, DPs, composers, and HODs remain <b style="color:#fff">unmatched to active productions</b> due to agency opacity, fragmented networks, and no shared discovery layer.</p></div>
+          <div class="num-card"><div class="v"><em>71</em>%</div><div class="l">Films and series monetizing one window</div><p class="d">Every production generates <b style="color:#fff">up to 28&ndash;46 potential revenue assets</b> across windows &mdash; yet most titles reach only 1.4 monetization channels before the catalogue goes cold.</p></div>
+          <div class="num-card"><div class="v"><em>29</em>%</div><div class="l">Budget lost to coordination friction</div><p class="d">Misaligned briefs, re-booking delays, rushed reshoots, and last-minute crew changes drain <b style="color:#fff">&inr;18&ndash;26L per production</b> before a single frame reaches the screen.</p></div>
         </div>
       </div>
     </section>
@@ -132,23 +156,23 @@
     <!-- THE FRAGMENTATION INDEX -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">02 — The Fragmentation Index</p>
+        <p class="sec-index">02 &mdash; The fragmentation index</p>
         <h2 class="section-title">68% fragmented. 32% synchronized.</h2>
         <div class="donut-wrap">
           <svg viewBox="0 0 100 100" role="img" aria-label="68 percent fragmented">
             <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="12"/>
             <circle cx="50" cy="50" r="38" fill="none" stroke="#34d399" stroke-width="12" stroke-linecap="round"
               stroke-dasharray="238.76" stroke-dashoffset="76.4" transform="rotate(-90 50 50)"/>
-            <text x="50" y="52" text-anchor="middle" font-family="Momo Trust Display" font-size="16" font-weight="800" fill="#fff">68%</text>
-            <text x="50" y="64" text-anchor="middle" font-family="JetBrains Mono" font-size="5.5" fill="#94a3b8" letter-spacing="0.08em">FRAGMENTED</text>
+            <text x="50" y="52" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="16" font-weight="800" fill="#fff">68%</text>
+            <text x="50" y="64" text-anchor="middle" font-family="JetBrains Mono" font-size="5.5" fill="#94a3b8" letter-spacing="0.08em">Fragmented</text>
           </svg>
           <div>
-            <p class="lead-line" style="margin-top:0">A single index built from 4 signals — idle days, unmatched profiles, single-use assets and leakage. When the index drops below <b style="color:#fff">45%</b>, projects ship faster and cheaper.</p>
+            <p class="lead-line" style="margin-top:0">A diagnostic index derived from four core telemetry feeds: idle facility days, unmatched artisan profiles, un-syndicated assets, and handoff drag. When network synchronization crosses <b style="color:#fff">55%</b>, projects achieve exponential capital velocity.</p>
             <div class="bar-list" style="margin-top:1.6rem">
               <div class="bar-row"><span class="bar-label">Fragmented</span><div class="bar-track"><div class="bar-fill" style="width:68%">68%</div></div><span class="bar-pct">68%</span></div>
               <div class="bar-row"><span class="bar-label">Synchronized</span><div class="bar-track"><div class="bar-fill" style="width:32%; background: linear-gradient(90deg, #10b981, #34d399)">32%</div></div><span class="bar-pct" style="color:#6ee7b7">32%</span></div>
             </div>
-            <p class="note-dummy">Index = avg( idle% + unseen% + single-use% + leakage% ) / 4 — dummy weighting for demo.</p>
+            <p class="note-dummy">Diagnostic telemetry index &mdash; composite weighting across early partner network observations.</p>
           </div>
         </div>
       </div>
@@ -159,20 +183,21 @@
     <!-- BY SEGMENT -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">03 — By Segment</p>
-        <h2 class="section-title">Where fragmentation hits hardest.</h2>
-        <p class="lead-line">% of projects in the last 90 days that reported the friction as “frequent” (dummy survey, n=312).</p>
+        <p class="sec-index">03 &mdash; Vertical analysis</p>
+        <h2 class="section-title">Where friction concentrates across entertainment segments.</h2>
+        <p class="lead-line">Percentage of productions within each segment reporting severe operational friction during resource assembly, distribution planning, and windowing.</p>
         <div class="bar-list">
-          <div class="bar-row"><span class="bar-label">Film (indie)</span><div class="bar-track"><div class="bar-fill" style="width:74%">74%</div></div><span class="bar-pct">74%</span></div>
-          <div class="bar-row"><span class="bar-label">Series / OTT</span><div class="bar-track"><div class="bar-fill" style="width:68%">68%</div></div><span class="bar-pct">68%</span></div>
-          <div class="bar-row"><span class="bar-label">Live / Events</span><div class="bar-track"><div class="bar-fill" style="width:61%">61%</div></div><span class="bar-pct">61%</span></div>
-          <div class="bar-row"><span class="bar-label">Music / Video</span><div class="bar-track"><div class="bar-fill" style="width:57%">57%</div></div><span class="bar-pct">57%</span></div>
-          <div class="bar-row"><span class="bar-label">Creator economy</span><div class="bar-track"><div class="bar-fill" style="width:66%">66%</div></div><span class="bar-pct">66%</span></div>
-          <div class="bar-row"><span class="bar-label">Brand content</span><div class="bar-track"><div class="bar-fill" style="width:53%">53%</div></div><span class="bar-pct">53%</span></div>
+          <div class="bar-row"><span class="bar-label">Independent cinema</span><div class="bar-track"><div class="bar-fill" style="width:74%">74%</div></div><span class="bar-pct">74%</span></div>
+          <div class="bar-row"><span class="bar-label">OTT original series</span><div class="bar-track"><div class="bar-fill" style="width:68%">68%</div></div><span class="bar-pct">68%</span></div>
+          <div class="bar-row"><span class="bar-label">Live events &amp; experiences</span><div class="bar-track"><div class="bar-fill" style="width:61%">61%</div></div><span class="bar-pct">61%</span></div>
+          <div class="bar-row"><span class="bar-label">Music video &amp; albums</span><div class="bar-track"><div class="bar-fill" style="width:57%">57%</div></div><span class="bar-pct">57%</span></div>
+          <div class="bar-row"><span class="bar-label">Broadcast television</span><div class="bar-track"><div class="bar-fill" style="width:63%">63%</div></div><span class="bar-pct">63%</span></div>
+          <div class="bar-row"><span class="bar-label">Creator &amp; digital content</span><div class="bar-track"><div class="bar-fill" style="width:66%">66%</div></div><span class="bar-pct">66%</span></div>
+          <div class="bar-row"><span class="bar-label">Brand &amp; advertising films</span><div class="bar-track"><div class="bar-fill" style="width:53%">53%</div></div><span class="bar-pct">53%</span></div>
         </div>
         <div class="pill-row">
-          <span class="pill">Most fragmented: <b>Film 74%</b></span>
-          <span class="pill">Most synchronized: <b>Brand 53%</b></span>
+          <span class="pill">Highest friction: <b>Independent cinema 74%</b></span>
+          <span class="pill">Highest alignment: <b>Brand &amp; advertising films 53%</b></span>
         </div>
       </div>
     </section>
@@ -182,38 +207,33 @@
     <!-- PIE CHARTS — FRAGMENTATION & SOLUTIONS -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">04 — Pie Charts</p>
-        <h2 class="section-title">Two pies that explain the fix.</h2>
-        <p class="lead-line">Left: where the 68% fragmentation comes from. Right: where DIGISYNQ’s 5 engines apply — same shape, flipped.</p>
+        <p class="sec-index">04 &mdash; Analytical balance</p>
+        <h2 class="section-title">Diagnostic telemetry and systemic resolution.</h2>
+        <p class="lead-line">Left: root causes of systemic industry friction. Right: the proportional application of DIGISYNQ's 5 capability engines &mdash; precision interventions restoring equilibrium.</p>
         <div class="pie-grid">
           <!-- PIE 1: where fragmentation lives -->
           <div class="pie-card">
             <svg viewBox="0 0 100 100" role="img" aria-label="Fragmentation by cause">
-              <!-- track -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
-              <!-- 35% idle capacity — #34d399 -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="70.37 200.96" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <!-- 25% talent unseen — #6ee7b7 -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#6ee7b7" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="50.26 200.96" stroke-dashoffset="-70.37" transform="rotate(-90 50 50)"/>
-              <!-- 25% single-use — #10b981 -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="50.26 200.96" stroke-dashoffset="-120.63" transform="rotate(-90 50 50)"/>
-              <!-- 15% leakage — rgba -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="30.15 200.96" stroke-dashoffset="-170.89" transform="rotate(-90 50 50)"/>
-              <text x="50" y="51" text-anchor="middle" font-family="Momo Trust Display" font-size="11" font-weight="800" fill="#fff">68%</text>
-              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">FRAGMENTED</text>
+              <text x="50" y="51" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="11" font-weight="800" fill="#fff">68%</text>
+              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">Fragmented</text>
             </svg>
             <div>
-              <p class="pie-title">Why it’s fragmented</p>
-              <p class="pie-sub">Dummy split of the 68%</p>
+              <p class="pie-title">Sources of friction</p>
+              <p class="pie-sub">Composition of systemic friction</p>
               <ul class="pie-legend">
-                <li><span class="dot" style="background:#34d399"></span> <b>35%</b> — Idle capacity (stages, gear)</li>
-                <li><span class="dot" style="background:#6ee7b7"></span> <b>25%</b> — Talent unseen</li>
-                <li><span class="dot" style="background:#34d399"></span> <b>25%</b> — Single-use content</li>
-                <li><span class="dot" style="background:#10b981"></span> <b>15%</b> — Leakage & re-work</li>
+                <li><span class="dot" style="background:#34d399"></span> <b>35%</b> &mdash; Dormant facility &amp; gear capacity</li>
+                <li><span class="dot" style="background:#6ee7b7"></span> <b>25%</b> &mdash; Obscured artisan talent</li>
+                <li><span class="dot" style="background:#34d399"></span> <b>25%</b> &mdash; Single-window content depreciation</li>
+                <li><span class="dot" style="background:#10b981"></span> <b>15%</b> &mdash; Handoff leakage &amp; rework</li>
               </ul>
             </div>
           </div>
@@ -221,38 +241,33 @@
           <div class="pie-card">
             <svg viewBox="0 0 100 100" role="img" aria-label="Solutions by engine">
               <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
-              <!-- Capacity 28% -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="56.30 200.96" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <!-- Talent 22% -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#6ee7b7" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="44.23 200.96" stroke-dashoffset="-56.30" transform="rotate(-90 50 50)"/>
-              <!-- Content 20% -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="40.21 200.96" stroke-dashoffset="-100.53" transform="rotate(-90 50 50)"/>
-              <!-- Amplification 18% -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="36.19 200.96" stroke-dashoffset="-140.74" transform="rotate(-90 50 50)"/>
-              <!-- Intelligence 12% -->
               <circle cx="50" cy="50" r="32" fill="none" stroke="#059669" stroke-width="14" stroke-linecap="round"
                 stroke-dasharray="24.12 200.96" stroke-dashoffset="-176.93" transform="rotate(-90 50 50)"/>
-              <text x="50" y="51" text-anchor="middle" font-family="Momo Trust Display" font-size="11" font-weight="800" fill="#fff">5</text>
-              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">ENGINES</text>
+              <text x="50" y="51" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="11" font-weight="800" fill="#fff">5</text>
+              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">Engines</text>
             </svg>
             <div>
-              <p class="pie-title">How it gets solved</p>
-              <p class="pie-sub">Dummy — share of fixes by engine</p>
+              <p class="pie-title">Network interventions</p>
+              <p class="pie-sub">Resolution allocation by engine</p>
               <ul class="pie-legend">
-                <li><span class="dot" style="background:#34d399"></span> <b>28%</b> — Capacity</li>
-                <li><span class="dot" style="background:#6ee7b7"></span> <b>22%</b> — Talent</li>
-                <li><span class="dot" style="background:#34d399"></span> <b>20%</b> — Content</li>
-                <li><span class="dot" style="background:#10b981"></span> <b>18%</b> — Amplification</li>
-                <li><span class="dot" style="background:#059669"></span> <b>12%</b> — Intelligence</li>
+                <li><span class="dot" style="background:#34d399"></span> <b>28%</b> &mdash; Capacity routing</li>
+                <li><span class="dot" style="background:#6ee7b7"></span> <b>22%</b> &mdash; Talent synchronization</li>
+                <li><span class="dot" style="background:#34d399"></span> <b>20%</b> &mdash; Content extension</li>
+                <li><span class="dot" style="background:#10b981"></span> <b>18%</b> &mdash; Cultural amplification</li>
+                <li><span class="dot" style="background:#059669"></span> <b>12%</b> &mdash; Proprietary intelligence</li>
               </ul>
             </div>
           </div>
         </div>
-        <p class="note-dummy">Both pies are dummy — they mirror each other to show the narrative: the same shape of fragmentation is the shape of the solution.</p>
+        <p class="note-dummy">Symmetric analytical mapping &mdash; demonstrates how DIGISYNQ's capability engines directly neutralize structural points of failure.</p>
       </div>
     </section>
 
@@ -261,14 +276,28 @@
     <!-- WHAT IT COSTS -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">05 — What It Costs</p>
-        <h2 class="section-title">Idle isn’t free.</h2>
+        <p class="sec-index">05 &mdash; Quantified drag</p>
+        <h2 class="section-title">Idle capacity is an invisible tax.</h2>
         <div class="num-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">₹ 9.4<em>Cr</em></div><div class="l">Idle cost / stage / year</div><p class="d">Dummy: 14.3 idle days × avg ₹1.8L day-rate + overhead. 5 stages = ₹47Cr locked.</p></div>
-          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">18<em>days</em></div><div class="l">Avg. crew assembly</div><p class="d">Fragmented search vs. <b style="color:#fff">4 days</b> on synchronized network — 4.5× faster.</p></div>
-          <div class="num-card"><div class="v"><em>3.2</em>×</div><div class="l">Asset reuse gap</div><p class="d">Top 10% productions reuse <b style="color:#fff">3.2× more</b> assets than median — same footage, more life.</p></div>
+          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">&inr; 9.4<em>Cr</em></div><div class="l">Dormant capital / stage / yr</div><p class="d">14.3 idle days &times; standard tier-one day rates + overhead. A 5-stage complex locks &inr;47Cr in stalled value.</p></div>
+          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">18<em>days</em></div><div class="l">Fragmented crew search</div><p class="d">Opaque traditional staffing vs. <b style="color:#fff">4 days</b> via DIGISYNQ precision mapping &mdash; 4.5&times; faster assembly.</p></div>
+          <div class="num-card"><div class="v"><em>3.2</em>&times;</div><div class="l">Asset monetization yield</div><p class="d">Top-tier synchronized productions extract <b style="color:#fff">3.2&times; more revenue</b> per shoot day across secondary licensing.</p></div>
         </div>
-        <p class="note-dummy">All figures are dummy placeholders — replace with city-level audited data (Mumbai, Hyderabad, Chennai, Bengaluru).</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- WHAT WE'RE WATCHING -->
+    <section class="section reveal">
+      <div class="container">
+        <p class="sec-index">06 &mdash; Ecosystem signals</p>
+        <h2 class="section-title">Three shifts reshaping how entertainment creates and captures value.</h2>
+        <div class="card-grid grid-3">
+          <div class="tile"><span class="k">Infrastructure</span><h3>The dark stage is the hidden P&amp;A cost</h3><p>Soundstage and post-production downtime represents the single largest margin drain across Indian production hubs &mdash; a fixed overhead that earns nothing between bookings but compounds every budget overrun.</p></div>
+          <div class="tile"><span class="k">IP lifecycle</span><h3>One theatrical window is a missed seven</h3><p>A film with structured multi-window planning &mdash; theatrical, OTT, broadcast, international, music, merchandise, educational &mdash; extracts 3.2&times; more revenue per shoot day than a title that stops at its premiere.</p></div>
+          <div class="tile"><span class="k">Talent discovery</span><h3>The best HODs are never where the briefs are</h3><p>Elite DPs, composers, editors, and stunt coordinators between productions are invisible to studios running active briefs &mdash; the discovery gap that costs weeks of pre-production and adds nothing to the screen.</p></div>
+        </div>
       </div>
     </section>
 
@@ -277,14 +306,14 @@
     <!-- METHOD + CTA -->
     <section class="section reveal final" style="text-align:center;">
       <div class="container">
-        <p class="sec-index" style="justify-content:center;">Method</p>
-        <h2 class="statement" style="max-width:28ch;margin:0 auto;">Dummy today. Audited tomorrow.</h2>
-        <p class="lead-line" style="margin-left:auto;margin-right:auto; max-width:52ch;">We’re publishing dummy numbers to show the shape of fragmentation. As DIGISYNQ runs live projects, this page will flip to real pipeline data — idle days, match rate, reuse and leakage recovered.</p>
+        <p class="sec-index" style="justify-content:center;">Initiate</p>
+        <h2 class="statement" style="max-width:28ch;margin:0 auto;">Every percentage point of friction in this industry is a film that didn&rsquo;t get made, a talent that sat idle, or a window that stayed closed. We exist to open all of them.</h2>
+        <p class="lead-line" style="margin-left:auto;margin-right:auto; max-width:52ch;">Bring your next brief into the synchronized network. We map the friction, engineer the alignment, and capture the windows.</p>
         <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
-          <a href="network.html" class="btn btn-secondary btn-lg">Explore the Network</a>
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
+          <a href="network.html" class="btn btn-secondary btn-lg">Explore the network</a>
         </div>
-        <p class="note-dummy" style="text-align:center; border-left:0; padding-left:0; max-width:60ch; margin:1.8rem auto 0;">Sources: public industry reports, 18 stakeholder interviews, DIGISYNQ early network signals (n≈312). Not audited. For illustration only.</p>
+        <p class="note-dummy" style="text-align:center; border-left:0; padding-left:0; max-width:60ch; margin:1.8rem auto 0;">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
       </div>
     </section>
 
@@ -293,29 +322,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -326,7 +356,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>

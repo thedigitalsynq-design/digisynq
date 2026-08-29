@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGISYNQ Solutions — five capability engines that connect talent, capacity, content, amplification and intelligence across the entertainment industry." />
+  <meta name="theme-color" content="#060709" />
+  <meta property="og:title" content="Solutions — DIGISYNQ" />
+  <meta property="og:description" content="Five capability engines. One operating method. Start with the problem — we'll bring the connection." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo.svg" />
+  <link rel="canonical" href="https://digisynq.com/solutions.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DIGISYNQ",
+    "url": "https://digisynq.com/",
+    "description": "The Operating Network for the Entertainment Industry",
+    "email": "thedigitalsynq@gmail.com",
+    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
+  }
+  </script>
+
+  <title>Solutions — DIGISYNQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
+
+    /* Help cards */
+    .help-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.5rem 1.4rem; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+    .help-card:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); }
+    .help-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 1rem; }
+    .help-card .row { font-size: 0.95rem; line-height: 1.5; padding: 0.55rem 0; border-top: 1px solid var(--hairline); }
+    .help-card .row:first-of-type { border-top: 0; }
+    .help-card .tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: none; color: var(--text-dim); display: block; margin-bottom: 0.2rem; }
+    .help-card .problem .val { color: var(--text-secondary); }
+    .help-card .fix .val { color: #fff; }
+    .help-card .out .val { color: var(--accent); }
+
+    /* Engines */
+    .card-grid { display: grid; gap: 1.1rem; margin-top: 2.6rem; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-5 { grid-template-columns: repeat(5, 1fr); }
+    .tile { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); }
+    .tile:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
+    .tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: none; }
+    .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; margin: 0.7rem 0 0.8rem; }
+    .tile p { font-size: 1rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+    /* Value flow */
+    .value-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.1rem; margin-top: 2.6rem; }
+    .stage { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.4rem; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+    .stage:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); }
+    .stage .n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; display: block; margin-bottom: 0.8rem; }
+    .stage h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 0.6rem; }
+    .stage p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+    /* Sec helpers */
+    .sec-index { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; display: flex; align-items: center; gap: 0.7rem; }
+    .sec-index::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
+    .lead-line { font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.55; color: var(--text-muted); max-width: 60ch; margin: 1.4rem 0 0; }
+    .note { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); margin-top: 1.6rem; }
+    .rule { border: 0; height: 1px; background: var(--hairline); margin: 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+
+    /* Reveal */
+    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-smooth), transform 0.7s var(--ease-out-smooth); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* Footer */
+    .f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding: clamp(3rem,6vw,4.5rem) 0 2.5rem; }
+    .f-brand .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; }
+    .f-brand p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 1rem 0 0; }
+    .f-col h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; }
+    .f-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.98rem; padding: 0.32rem 0; transition: color var(--transition-fast); }
+    .f-col a:hover { color: var(--accent); }
+    .f-bottom { border-top: 1px solid var(--hairline); padding: 1.4rem 0 2.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; align-items: center; }
+    .f-bottom span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); }
+
+    @media (max-width: 1000px) {
+      .grid-3, .value-flow { grid-template-columns: repeat(2, 1fr); }
+      .grid-5 { grid-template-columns: repeat(2, 1fr); }
+      .f-top { grid-template-columns: 1fr 1fr; }
+      .hero h1 { max-width: none; }
+    }
+    @media (max-width: 620px) {
+      .grid-3, .grid-5, .value-flow, .f-top { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.classList.add('js');</script>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ====== NAV ====== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link active">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero section reveal">
+      <div class="container">
+        <p class="eyebrow">Interventions</p>
+        <h1>Name the gap in your production.<br /><span class="soft">We engineer the bridge.</span></h1>
+        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;margin-top:1.2rem;">
+          Built for cinema, television, OTT, music, advertising, distribution, and exhibition. Wherever value leaks across the production and distribution lifecycle &mdash; for any stakeholder in the entertainment ecosystem &mdash; we map it, synchronize it, and monetize it.
+        </p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- 01 — WHAT CAN WE HELP WITH -->
+    <section class="section reveal" id="help">
+      <div class="container">
+        <p class="sec-index">01 &mdash; Strategic interventions</p>
+        <h2 class="section-title">Whatever your role in the industry. Whatever the gap in your slate.</h2>
+        <div class="card-grid grid-5">
+          <div class="help-card">
+            <h3>Producer or studio?</h3>
+            <div class="row problem"><span class="tag">Reality</span><span class="val">The best DPs, HODs, composers, and stunt coordinators are invisible between projects. Stages fill last-minute. Budgets bleed on re-booking.</span></div>
+            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Precision talent discovery, facility mapping, and full pre-production to delivery-day coordination.</span></div>
+            <div class="row out"><span class="tag">Outcome</span><span class="val">The right crew on the right set, on schedule, without the agency markup.</span></div>
+          </div>
+          <div class="help-card">
+            <h3>Own a stage or facility?</h3>
+            <div class="row problem"><span class="tag">Reality</span><span class="val">Soundstages, edit suites, ADR booths, colour grade rooms, and grip yards earn nothing between bookings.</span></div>
+            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Live facility placement into verified, active productions. No cold outreach. No dead time.</span></div>
+            <div class="row out"><span class="tag">Outcome</span><span class="val">Fixed infrastructure overhead converted into continuous production revenue.</span></div>
+          </div>
+          <div class="help-card">
+            <h3>Hold IP or a catalogue?</h3>
+            <div class="row problem"><span class="tag">Reality</span><span class="val">Films, series, albums, and music catalogues lose most of their value after the first theatrical or streaming window closes.</span></div>
+            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Multi-window strategy: OTT licensing, broadcast syndication, international co-production, music sync, educational and ancillary rights.</span></div>
+            <div class="row out"><span class="tag">Outcome</span><span class="val">Catalogue assets monetized across every window, compounding royalty yields long after the premiere.</span></div>
+          </div>
+          <div class="help-card">
+            <h3>Brand or media buyer?</h3>
+            <div class="row problem"><span class="tag">Reality</span><span class="val">Brand budgets chase audiences that are already watching something else. Content integrations feel forced. Campaigns miss the cultural moment.</span></div>
+            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Brand-to-content matching by audience profile, genre, and release window. From product placement to co-production to music sync deals.</span></div>
+            <div class="row out"><span class="tag">Outcome</span><span class="val">Brand visibility that lives inside the content audiences already love, not alongside it.</span></div>
+          </div>
+          <div class="help-card">
+            <h3>Distributor or exhibitor?</h3>
+            <div class="row problem"><span class="tag">Reality</span><span class="val">P&amp;A overspend, release window clashes, distribution margin erosion, and screen underutilization quietly drain every release cycle.</span></div>
+            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Release window engineering, theatrical-to-OTT sequencing, rights clearance mapping, and distribution deal structuring.</span></div>
+            <div class="row out"><span class="tag">Outcome</span><span class="val">Tighter release economics, maximized screen yield, and predictable returns across the full distribution chain.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- 02 — FIVE CAPABILITY ENGINES -->
+    <section class="section reveal" id="engines">
+      <div class="container">
+        <p class="sec-index">02 &mdash; The capability engines</p>
+        <h2 class="section-title">Five specialized engines. One production-to-distribution loop.</h2>
+        <p class="lead-line">Each engine addresses a distinct stage of the entertainment value chain &mdash; from pre-production casting to post-release catalogue monetization &mdash; functioning together as a unified operating network.</p>
+        <div class="card-grid grid-3">
+          <div class="tile"><span class="k">Engine 01</span><h3>Capacity</h3><p>Soundstages, colour grade suites, ADR booths, post facilities, and tier-one grip &mdash; mapped, scheduled, and routed into live productions to eliminate dark time between bookings.</p></div>
+          <div class="tile"><span class="k">Engine 02</span><h3>Talent</h3><p>Directors, DPs, composers, HODs, editors, stunt coordinators, and below-the-line specialists &mdash; discovered, vetted, and deployed directly into the right production, at the right stage.</p></div>
+          <div class="tile"><span class="k">Engine 03</span><h3>Content</h3><p>From theatrical window to OTT licensing to broadcast syndication to international co-production &mdash; every master production engineered for compounding multi-window commercial returns.</p></div>
+          <div class="tile"><span class="k">Engine 04</span><h3>Amplification</h3><p>Opening weekend positioning, award season strategy, music sync deals, brand integrations, and digital audience community activation &mdash; converting craft into cultural visibility.</p></div>
+          <div class="tile"><span class="k">Engine 05</span><h3>Intelligence</h3><p>Every release generates audience data, rights intelligence, brand metrics, and production cost benchmarks that compound into sharper decisions for the next slate.</p></div>
+          <div class="tile" style="border-color:rgba(52,211,153,0.4);"><span class="k">The loop</span><h3>One method</h3><p>Discover &rarr; Synchronize &rarr; Catalyze &mdash; one closed production-to-distribution loop, compounded through ABCDEF across every engagement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- 03 — HOW VALUE MOVES -->
+    <section class="section reveal" id="value">
+      <div class="container">
+        <p class="sec-index">03 &mdash; Flow mechanics</p>
+        <h2 class="section-title">We monetize production coordination, not static IP ownership.</h2>
+        <p class="lead-line">The entertainment ecosystem is rich with underused assets. DIGISYNQ earns by engineering the perfect alignment between production briefs and available resources &mdash; capturing a transparent share of the value newly generated.</p>
+        <div class="value-flow">
+          <div class="stage"><span class="n">01</span><h3>The brief</h3><p>A film, series, OTT original, music project, or advertising campaign requires talent, facilities, distribution strategy, or audience activation.</p></div>
+          <div class="stage"><span class="n">02</span><h3>The alignment</h3><p>The right crew, the right stage, the right distribution window, the right media buyer &mdash; dynamically synchronized around the live production brief.</p></div>
+          <div class="stage"><span class="n">03</span><h3>The release</h3><p>Production completes on schedule. Every distribution window &mdash; theatrical, OTT, broadcast, international, ancillary &mdash; is pre-planned and activated.</p></div>
+          <div class="stage"><span class="n">04</span><h3>The return</h3><p>DIGISYNQ captures a transparent coordination fee &mdash; no equity in the IP, no ownership of the content, no overhead on the facilities.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- 04 — HOW WE CAPTURE VALUE -->
+    <section class="section reveal" id="model">
+      <div class="container">
+        <p class="sec-index">04 &mdash; Commercial architecture</p>
+        <h2 class="section-title">Institutional services, transparent economics.</h2>
+        <p class="lead-line">Every revenue channel reflects active coordination value delivered by DIGISYNQ. We never seek equity control over creative IP &mdash; our margin is earned entirely through friction reduction.</p>
+        <div class="card-grid grid-3">
+          <div class="tile"><span class="k">Coordination</span><h3>Synchronization fees</h3><p>For sourcing, vetting, and assembling the right talent, production facilities, and distribution partnerships for each brief.</p></div>
+          <div class="tile"><span class="k">Execution</span><h3>Production oversight</h3><p>For end-to-end shoot and post-production architecture, workflow audits, and call sheet to delivery-day coordination.</p></div>
+          <div class="tile"><span class="k">Activation</span><h3>Catalogue syndication</h3><p>For engineering OTT licensing, broadcast syndication, international co-production, and ancillary rights monetization across every window.</p></div>
+          <div class="tile"><span class="k">Utilization</span><h3>Facility routing</h3><p>For filling dark soundstages, edit suites, ADR facilities, and grip inventory with verified, active production bookings.</p></div>
+          <div class="tile"><span class="k">Intelligence</span><h3>Audience &amp; market data</h3><p>For enterprise access to release-window analytics, audience profiling, and real-time supply-and-demand intelligence across the ecosystem.</p></div>
+          <div class="tile" style="border-color:rgba(52,211,153,0.4);"><span class="k">Foundational principle</span><h3>Asset-light by design</h3><p>We own no stages, hold no IP, and employ no crews. We operate the connective architecture that makes everything work together.</p></div>
+        </div>
+        <p class="note">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- FINAL CTA -->
+    <section class="section reveal" style="text-align:center;">
+      <div class="container">
+        <p class="sec-index" style="justify-content:center;">Initiate</p>
+        <h2 class="statement" style="max-width:28ch;margin:0 auto;">The production is ready. The talent is available. The window is open. Let&rsquo;s synchronize.</h2>
+        <p class="lead-line" style="margin-left:auto;margin-right:auto;margin-top:0.75rem;">Bring us the brief. We build the conduit.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
+          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="f-top">
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
+        </div>
+        <div class="f-col">
+          <h4>Explore</h4>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
+        </div>
+        <div class="f-col">
+          <h4>Participate</h4>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
+        </div>
+        <div class="f-col">
+          <h4>Connect</h4>
+          <a href="contact.html">Start a conversation</a>
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <span>&copy; DIGISYNQ</span>
+        <span>Own less. Connect more. Multiply value.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -14,14 +14,19 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.1rem, 5.5vw, 3.8rem); line-height: 1.05; color: #fff; margin: 1.2rem 0 0; max-width: 16ch; }
+    :root {
+      --accent: #34d399;
+      --accent-soft: rgba(52,211,153,0.14);
+      --accent-line: rgba(52,211,153,0.40);
+    }
+    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
     .hero h1 .em { color: var(--accent); }
-    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; overflow: visible; }
+    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; overflow: hidden; aspect-ratio: 920 / 520; }
     .node-dot { fill: var(--surface-tile); stroke: rgba(52,211,153,0.20); stroke-width: 1.5; filter: drop-shadow(0 0 7px rgba(52,211,153,0.18)); }
     .node-outer { fill: none; stroke: rgba(52,211,153,0.11); stroke-width: 1.2; }
     .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; filter: drop-shadow(0 0 16px rgba(52,211,153,0.38)); transform-box: fill-box; transform-origin: center; animation: corePulse 3.2s ease-in-out infinite; }
@@ -31,12 +36,14 @@
     @keyframes draw { to { stroke-dashoffset: 0; } }
     @keyframes corePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
     .participate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .participate .tile { display: flex; flex-direction: column; gap: 0.4rem; }
-    .participate .tile .k { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; color: var(--text-dim); text-transform: uppercase; }
-    .participate .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff; margin: 0; }
+    .participate { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
+    .participate .tile { display: flex; flex-direction: column; gap: 0.4rem; border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); }
+    .participate .tile:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
+    .participate .tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: none; }
+    .participate .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; margin: 0.7rem 0 0.8rem; }
     .participate .tile a { margin-top: auto; font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; padding-top: 0.8rem; }
-    @media (max-width: 1000px) { .participate { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 620px) { .participate { grid-template-columns: 1fr; } .hero h1 { max-width: none; } }
+    @media (max-width: 760px) { .participate { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { .hero h1 { max-width: none; } }
   </style>
 
   <script type="application/ld+json">
@@ -57,20 +64,24 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><span>DIGISYNQ</span></a>
+      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">How It Works</a></li>
-          <li><a href="network.html" class="nav-link active">Network</a></li>
-          <li><a href="platform.html#engines" class="nav-link">Solutions</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html" class="nav-link">Origin</a></li>
+          <li><a href="platform.html" class="nav-link">Architecture</a></li>
+          <li><a href="flowchart.html" class="nav-link">Protocol</a></li>
+          <li><a href="network.html" class="nav-link active">Grid</a></li>
+          <li><a href="solutions.html" class="nav-link">Interventions</a></li>
+          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
+          <li><a href="business.html" class="nav-link">Flywheel</a></li>
+          <li><a href="insights.html" class="nav-link">Telemetry</a></li>
+          <li><a href="about.html" class="nav-link">Manifesto</a></li>
+          <li><a href="contact.html" class="nav-link">Transmit</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join Network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
+        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
         </button>
@@ -78,18 +89,38 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <a href="index.html" class="mobile-nav-link">Origin</a>
+      <a href="platform.html" class="mobile-nav-link">Architecture</a>
+      <a href="flowchart.html" class="mobile-nav-link">Protocol</a>
+      <a href="network.html" class="mobile-nav-link">Grid</a>
+      <a href="solutions.html" class="mobile-nav-link">Interventions</a>
+      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
+      <a href="business.html" class="mobile-nav-link">Flywheel</a>
+      <a href="insights.html" class="mobile-nav-link">Telemetry</a>
+      <a href="about.html" class="mobile-nav-link">Manifesto</a>
+      <a href="contact.html" class="mobile-nav-link">Transmit</a>
+    </nav>
+    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
+      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    </div>
+  </div>
+
   <main id="main-content">
 
     <!-- HERO -->
     <section class="hero section reveal">
       <div class="container">
-        <p class="eyebrow">The Network</p>
-        <h1>Everything already exists.</h1>
+        <p class="eyebrow">Grid</p>
+        <h1>Every player exists.<br /><span class="soft">We write the call sheet that connects them.</span></h1>
         <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">
-          Studios, crews, creators, brands, audiences and IP are already here. <span style="color:#fff;">DIGISYNQ is the layer that keeps them connected between projects.</span>
+          Cinema. Television. OTT. Music. Advertising. Distribution. Exhibition. Every discipline, every segment, every stakeholder is already here. <span style="color:#fff;">DIGISYNQ is the operating layer that orchestrates continuous synchronization across the entertainment ecosystem.</span>
         </p>
         <div class="hero-actions" style="margin-top:2rem;">
-          <a href="#participate" class="btn btn-primary btn-lg">Plug Into the Network &rarr;</a>
+          <a href="#participate" class="btn btn-primary btn-lg">Plug into the network &rarr;</a>
         </div>
 
         <svg class="net-svg" viewBox="0 0 920 520" role="img" aria-label="DIGISYNQ network of entertainment participants">
@@ -124,14 +155,14 @@
           <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.1s"><mpath href="#net-p7"/></animateMotion></circle>
           <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.45s"><mpath href="#net-p8"/></animateMotion></circle>
           <!-- peripheral nodes — layered halos -->
-          <g transform="translate(460,70)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">TALENT</text></g>
-          <g transform="translate(594,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">PRODUCTION</text></g>
-          <g transform="translate(650,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">FACILITIES</text></g>
-          <g transform="translate(594,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">CREATORS</text></g>
-          <g transform="translate(460,450)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">MEDIA</text></g>
-          <g transform="translate(326,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">BRANDS</text></g>
-          <g transform="translate(270,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">AUDIENCE</text></g>
-          <g transform="translate(326,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">DATA</text></g>
+          <g transform="translate(460,70)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Talent</text></g>
+          <g transform="translate(594,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Production</text></g>
+          <g transform="translate(650,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Facilities</text></g>
+          <g transform="translate(594,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Creators</text></g>
+          <g transform="translate(460,450)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Media</text></g>
+          <g transform="translate(326,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Brands</text></g>
+          <g transform="translate(270,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Audience</text></g>
+          <g transform="translate(326,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Data</text></g>
           <circle class="node-core" cx="460" cy="260" r="44"/>
           <text class="node-label" x="460" y="264" text-anchor="middle" style="font-size:13px;fill:#fff;font-weight:700;letter-spacing:0.06em;">DIGISYNQ</text>
         </svg>
@@ -143,18 +174,18 @@
     <!-- SIX LAYERS -->
     <section class="section reveal">
       <div class="container">
-        <p class="sec-index">01 &mdash; What Is Connected</p>
-        <h2 class="section-title">Eight layers of the entertainment network.</h2>
-        <p class="lead-line">Every category already has supply. DIGISYNQ connects the supply to live demand &mdash; and keeps the relationship alive after the project ends.</p>
+        <p class="sec-index">01 &mdash; What is connected</p>
+        <h2 class="section-title">Eight integrated layers of the entertainment ecosystem.</h2>
+        <p class="lead-line">From pre-production to post-release, from cinema to streaming to music to advertising &mdash; every discipline holds latent capacity. DIGISYNQ routes isolated supply to the active demand that is already waiting for it.</p>
         <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Talent</span><h3>Professionals</h3><p>Verified talent, technicians and specialists across every craft, ready to be discovered and deployed.</p></div>
-          <div class="tile"><span class="k">Production</span><h3>Companies &middot; Crews</h3><p>The operational capacity &mdash; production companies, crews and services &mdash; that turns a brief into a finished work.</p></div>
-          <div class="tile"><span class="k">Facilities</span><h3>Studios &middot; Locations</h3><p>Physical infrastructure mapped, booked and used at higher utilization.</p></div>
-          <div class="tile"><span class="k">Creators</span><h3>Voices &middot; Channels</h3><p>The creators and channels that amplify a project and give it cultural reach.</p></div>
-          <div class="tile"><span class="k">Media</span><h3>Press &middot; Platforms</h3><p>Distribution and editorial surfaces that carry the work to the right audience.</p></div>
-          <div class="tile"><span class="k">Brands</span><h3>Partners &middot; Sponsors</h3><p>Commercial relationships that fund and scale what gets made.</p></div>
-          <div class="tile"><span class="k">Audience</span><h3>Communities</h3><p>The communities a project needs to reach &mdash; and the relationships that keep them engaged.</p></div>
-          <div class="tile"><span class="k">Data</span><h3>Signals</h3><p>Supply, demand and match signals that make every subsequent connection smarter.</p></div>
+          <div class="tile"><span class="k">Talent</span><h3>Specialists &middot; Artisans</h3><p>Directors, DPs, composers, HODs, editors, stunt coordinators, and below-the-line crew &mdash; discovered, profiled, and directly deployed into the right production.</p></div>
+          <div class="tile"><span class="k">Production</span><h3>Units &middot; Pipeline</h3><p>Film and television production companies, field crews, and post-production pipelines &mdash; converting scripts and schedules into master deliverables on time.</p></div>
+          <div class="tile"><span class="k">Facilities</span><h3>Soundstages &middot; Suites</h3><p>Soundstages, ADR booths, colour grade suites, edit facilities, and tier-one equipment &mdash; mapped to eliminate dark time between every production booking.</p></div>
+          <div class="tile"><span class="k">Creators &amp; media</span><h3>Amplifiers &middot; Press</h3><p>Digital creators, cultural voices, and editorial channels engineering opening-weekend reach, OTT acquisition interest, and sustained streaming viewership.</p></div>
+          <div class="tile"><span class="k">Distribution &amp; exhibition</span><h3>Windows &middot; Platforms</h3><p>Theatrical exhibitors, OTT platforms, broadcast networks, international distributors, and music streaming channels &mdash; every window mapped and sequenced.</p></div>
+          <div class="tile"><span class="k">Brands &amp; advertising</span><h3>Capital &middot; Sponsors</h3><p>Media buyers, brand integrations, and co-production financing frameworks that fund productions and amplify content to the right audience demographics.</p></div>
+          <div class="tile"><span class="k">Audience</span><h3>Communities &middot; Fans</h3><p>Targeted fan communities, OTT subscriber bases, and theatrical audiences &mdash; cultivated before, during, and long after release to drive sustained commercial conversion.</p></div>
+          <div class="tile"><span class="k">Data</span><h3>Network intelligence</h3><p>Box office, streaming, rights, and production cost intelligence that compounds across every release to sharpen the next slate, next window, and next deal.</p></div>
         </div>
       </div>
     </section>
@@ -164,16 +195,16 @@
     <!-- HOW THE NETWORK PARTICIPATES -->
     <section class="section reveal" id="participate">
       <div class="container">
-        <p class="sec-index">02 &mdash; How The Network Participates</p>
-        <h2 class="section-title">Find your entry point.</h2>
-        <p class="lead-line">However you fit, there is one move: connect what you have to what the network needs.</p>
+        <p class="sec-index">02 &mdash; How the network participates</p>
+        <h2 class="section-title">Select your position in the entertainment ecosystem.</h2>
+        <p class="lead-line">Whether you are in cinema, television, OTT, music, advertising, distribution, or exhibition &mdash; the mechanism is identical: connect your assets to the live production demand that already exists.</p>
         <div class="participate">
-          <div class="tile"><span class="k">For talent</span><h3>I&rsquo;m Talent</h3><a href="contact.html?type=join">ENTER THE LAB &rarr;</a></div>
-          <div class="tile"><span class="k">For owners</span><h3>I Have Capacity</h3><a href="contact.html?type=capacity">LIST CAPACITY &rarr;</a></div>
-          <div class="tile"><span class="k">For rights holders</span><h3>I Have Content</h3><a href="contact.html?type=content">ACTIVATE CONTENT &rarr;</a></div>
-          <div class="tile"><span class="k">For voices</span><h3>I&rsquo;m a Creator</h3><a href="contact.html?type=join">CONNECT &rarr;</a></div>
-          <div class="tile"><span class="k">For brands</span><h3>I&rsquo;m a Brand</h3><a href="contact.html?type=discuss">PARTNER &rarr;</a></div>
-          <div class="tile"><span class="k">For makers</span><h3>I&rsquo;m a Producer</h3><a href="contact.html?type=discuss">BRING A PROJECT &rarr;</a></div>
+          <div class="tile"><span class="k">For talent</span><h3>I am talent</h3><a href="contact.html?type=join">Enter the talent lab &rarr;</a></div>
+          <div class="tile"><span class="k">For facility owners</span><h3>I have a soundstage or studio</h3><a href="contact.html?type=capacity">List capacity &rarr;</a></div>
+          <div class="tile"><span class="k">For rights holders</span><h3>I have a film, series, or music catalogue</h3><a href="contact.html?type=content">Activate catalogue &rarr;</a></div>
+          <div class="tile"><span class="k">For creators &amp; media</span><h3>I am a creator or media channel</h3><a href="contact.html?type=join">Connect your channel &rarr;</a></div>
+          <div class="tile"><span class="k">For brands &amp; advertisers</span><h3>I have a campaign or integration budget</h3><a href="contact.html?type=discuss">Explore a brand integration &rarr;</a></div>
+          <div class="tile"><span class="k">For producers &amp; studios</span><h3>I have a production or slate</h3><a href="contact.html?type=discuss">Bring a project &rarr;</a></div>
         </div>
       </div>
     </section>
@@ -184,10 +215,10 @@
     <section class="section reveal final" style="text-align:center;">
       <div class="container">
         <p class="sec-index" style="justify-content:center;">Connect</p>
-        <h2 class="statement" style="max-width:22ch;margin:0 auto;">Ready to plug into the network?</h2>
+        <h2 class="statement" style="max-width:28ch;margin:0 auto;">An industry this rich in talent, content, and infrastructure should not leave so much value between shoots and releases. It doesn&rsquo;t have to.</h2>
         <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a Project &rarr;</a>
-          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the Network</a>
+          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
+          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network</a>
         </div>
       </div>
     </section>
@@ -196,29 +227,30 @@
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand">
-          <div class="logo">DIGISYNQ</div>
-          <p>The Operating Network for the Entertainment Industry.</p>
+        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">How It Works</a>
-          <a href="network.html">Network</a>
-          <a href="platform.html#engines">Solutions</a>
-          <a href="about.html">Proof</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="platform.html">Architecture</a>
+          <a href="flowchart.html">Protocol</a>
+          <a href="network.html">Grid</a>
+          <a href="solutions.html">Interventions</a>
+          <a href="cinema-damage-control.html">Radar</a>
+          <a href="business.html">Flywheel</a>
+          <a href="insights.html">Telemetry</a>
+          <a href="about.html">Manifesto</a>
         </div>
         <div class="f-col">
           <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a Project</a>
-          <a href="contact.html?type=join">Join the Network</a>
-          <a href="network.html#participate">Talent Lab</a>
-          <a href="contact.html?type=capacity">List Capacity</a>
+          <a href="contact.html?type=discuss">Bring a project</a>
+          <a href="contact.html?type=join">Join the network</a>
+          <a href="network.html#talent">Talent lab</a>
+          <a href="network.html#capacity">List capacity</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a Conversation</a>
+          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
@@ -229,7 +261,7 @@
       </div>
       <div class="f-bottom">
         <span>&copy; DIGISYNQ</span>
-        <span>Own Less. Connect More. Multiply Value.</span>
+        <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>
@@ -240,7 +272,7 @@
       if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
       els.forEach(function (e) { io.observe(e); });
     })();
   </script>
