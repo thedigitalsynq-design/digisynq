@@ -37,8 +37,8 @@
   --text-light: #ffffff;
 
   /* Typography Fonts */
-  --font-serif: 'Calistoga', sans-serif;
-  --font-body: 'Calistoga', sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --font-body: 'DM Serif Display', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
   /* Radii & Shadows */
