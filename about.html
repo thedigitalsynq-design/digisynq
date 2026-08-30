@@ -3,42 +3,411 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="About DIGISYNQ &mdash; Founding philosophy, core principles, manifesto, and the architectural vision behind the entertainment operating network."/>
-  <meta property="og:title" content="About &mdash; DIGISYNQ"/>
+  <meta name="description" content="About DIGISYNQ — The manifesto, community philosophy, ecosystem thinking, and founding team behind the entertainment operating network."/>
+  <meta property="og:title" content="About &amp; Manifesto — DIGISYNQ"/>
   <meta property="og:description" content="Own less. Connect more. Multiply value. The full story behind DIGISYNQ."/>
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://digisynq.com/about.html"/>
-  <title>About &amp; Manifesto &mdash; DIGISYNQ</title>
-  
+  <title>About &amp; Manifesto — DIGISYNQ</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .founding-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-    .founding-stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.8rem; }
-    .founding-stat { border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.6rem 1.2rem; background: rgba(255,255,255,0.04); text-align: center; }
-    .founding-stat-num { font-family: var(--font-body); font-weight: 900; font-size: 2.4rem; color: #ffffff; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.4rem; }
-    .founding-stat-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+    /* ── Manifesto Big Typography ── */
+    .manifesto-big {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .manifesto-big span {
+      display: block;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .manifesto-big.revealed span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .manifesto-big.revealed span:nth-child(2) { transition-delay: 0.12s; }
+    .manifesto-big.revealed span:nth-child(3) { transition-delay: 0.24s; }
+    .manifesto-big.revealed span:nth-child(4) { transition-delay: 0.36s; }
 
-    .vision-timeline { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; max-width: 760px; }
-    .vision-item { display: flex; gap: 2rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .vision-item:last-child { border-bottom: 0; }
-    .vision-year { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; color: #09090b; font-weight: 800; width: 75px; flex-shrink: 0; padding-top: 0.2rem; }
-    .vision-content h4 { font-family: var(--font-body); font-weight: 800; font-size: 1.1rem; color: #09090b; margin: 0 0 0.4rem; letter-spacing: -0.02em; }
-    .vision-content p { font-size: 0.92rem; color: #52525b; line-height: 1.6; margin: 0; }
+    .manifesto-sub {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      max-width: 60ch;
+      margin: 2rem auto 0;
+    }
+    .manifesto-sub.dark-text {
+      color: #52525b;
+    }
 
-    @media (max-width: 768px) {
-      .founding-grid { grid-template-columns: 1fr; }
-      .vision-item { flex-direction: column; gap: 0.5rem; }
+    /* ── Who We Are Grid ── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+    .who-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .who-item {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(255,255,255,0.85);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .who-item.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .who-item:nth-child(2) { transition-delay: 0.06s; }
+    .who-item:nth-child(3) { transition-delay: 0.12s; }
+    .who-item:nth-child(4) { transition-delay: 0.18s; }
+    .who-item:nth-child(5) { transition-delay: 0.24s; }
+    .who-item:nth-child(6) { transition-delay: 0.30s; }
+
+    /* ── Belief Role Cards ── */
+    .belief-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .belief-role {
+      text-align: center;
+      padding: 2rem 1rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.04);
+      transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .belief-role.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .belief-role:nth-child(2) { transition-delay: 0.07s; }
+    .belief-role:nth-child(3) { transition-delay: 0.14s; }
+    .belief-role:nth-child(4) { transition-delay: 0.21s; }
+    .belief-role:nth-child(5) { transition-delay: 0.28s; }
+    .belief-role:nth-child(6) { transition-delay: 0.35s; }
+    .belief-role:nth-child(7) { transition-delay: 0.42s; }
+    .belief-role:nth-child(8) { transition-delay: 0.49s; }
+    .belief-role:hover {
+      transform: translateY(-6px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 16px 36px rgba(0,0,0,0.08);
+      border-color: rgba(0,0,0,0.15);
+    }
+    .belief-role-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #09090b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .belief-role-icon svg { width: 22px; height: 22px; stroke: #ffffff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .belief-role-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: #09090b;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* ── Community Nodes ── */
+    .node-ring {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 3rem auto 0;
+      position: relative;
+    }
+    .node-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.2rem;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .node-item.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .node-item:nth-child(2) { transition-delay: 0.08s; }
+    .node-item:nth-child(3) { transition-delay: 0.16s; }
+    .node-item:nth-child(4) { transition-delay: 0.24s; }
+    .node-item:nth-child(5) { transition-delay: 0.32s; }
+    .node-item:nth-child(6) { transition-delay: 0.40s; }
+    .node-item:nth-child(7) { transition-delay: 0.48s; }
+    .node-item:nth-child(8) { transition-delay: 0.56s; }
+    .node-dot {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .node-dot:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.5);
+      transform: scale(1.1);
+    }
+    .node-dot svg { width: 20px; height: 20px; stroke: #ffffff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .node-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .node-connector {
+      width: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+      flex-shrink: 0;
+    }
+
+    /* ── Connect Flow ── */
+    .connect-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 600px;
+      margin: 2.5rem auto 0;
+    }
+    .flow-step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .flow-step.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .flow-step:nth-child(2) { transition-delay: 0.1s; }
+    .flow-step:nth-child(3) { transition-delay: 0.2s; }
+    .flow-step:nth-child(4) { transition-delay: 0.3s; }
+    .flow-step:nth-child(5) { transition-delay: 0.4s; }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: #09090b;
+      font-weight: 800;
+      width: 28px;
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+    .flow-body h4 {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #09090b;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .flow-body p {
+      font-size: 0.9rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Value Sequence ── */
+    .value-seq {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 2.5rem auto 0;
+      max-width: 800px;
+    }
+    .value-seq-item {
+      text-align: center;
+      padding: 1.5rem 1.2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .value-seq-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .value-seq-item:nth-child(2) { transition-delay: 0.1s; }
+    .value-seq-item:nth-child(3) { transition-delay: 0.2s; }
+    .value-seq-item:nth-child(4) { transition-delay: 0.3s; }
+    .value-seq-word {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      color: #09090b;
+      letter-spacing: -0.02em;
+    }
+    .value-seq-arrow {
+      font-size: 1.5rem;
+      color: #d4d4d8;
+      padding: 0 0.3rem;
+    }
+
+    /* ── Founder Cards ── */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .founder-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem 2rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 20px rgba(0,0,0,0.04);
+      transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .founder-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .founder-card:nth-child(2) { transition-delay: 0.1s; }
+    .founder-card:nth-child(3) { transition-delay: 0.2s; }
+    .founder-card:nth-child(4) { transition-delay: 0.3s; }
+    .founder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 20px 48px rgba(0,0,0,0.08);
+      border-color: rgba(0,0,0,0.15);
+    }
+    .founder-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #09090b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .founder-avatar svg { width: 28px; height: 28px; stroke: #ffffff; fill: none; stroke-width: 2; }
+    .founder-name {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #09090b;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.3rem;
+    }
+    .founder-role {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: #71717a;
+      text-transform: uppercase;
+    }
+
+    /* ── Problem Items ── */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .problem-item {
+      padding: 1.5rem;
+      border-left: 3px solid #d4d4d8;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .problem-item.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .problem-item:nth-child(2) { transition-delay: 0.08s; }
+    .problem-item:nth-child(3) { transition-delay: 0.16s; }
+    .problem-item:nth-child(4) { transition-delay: 0.24s; }
+    .problem-item p {
+      font-size: 0.95rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .who-grid { grid-template-columns: 1fr; }
+      .belief-grid { grid-template-columns: repeat(2, 1fr); }
+      .founder-grid { grid-template-columns: repeat(2, 1fr); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .node-connector { display: none; }
+    }
+    @media (max-width: 600px) {
+      .belief-grid { grid-template-columns: 1fr; }
+      .founder-grid { grid-template-columns: 1fr; }
+      .value-seq { flex-direction: column; }
+      .value-seq-arrow { transform: rotate(90deg); }
     }
   </style>
 </head>
 <body>
 <div class="app-card">
   <header class="top-nav">
-    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img"/><span class="brand-name">DIGISYNQ</span></a>
     <nav aria-label="Primary Navigation">
       <ul class="nav-links-center">
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
@@ -49,7 +418,8 @@
         <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="about.html" class="active">About</a></li>
-</ul></nav>
+      </ul>
+    </nav>
     <div class="nav-actions-right">
       <a href="contact.html" class="btn-login">Connect</a>
       <div class="vertical-sep"></div>
@@ -57,252 +427,418 @@
     </div>
   </header>
 
-  <!-- UNIFIED HERO SECTION (INSIGHTS FORMAT) -->
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO: THE DIGISYNQ MANIFESTO
+       ══════════════════════════════════════════════════════════════ -->
   <div class="ins-hero" id="main-content">
     <div class="ins-eyebrow">The DIGISYNQ Manifesto</div>
-    <h1 class="ins-hero-title">Credits Roll.<br><em>Value Endures.</em></h1>
-    <p class="ins-hero-desc">"The entertainment industry does not lack resources. It lacks synchronization. Every great project that never got made, every talent that waited too long, every stage that stayed dark &mdash; that is not a supply problem. It is a routing problem."</p>
-    
+    <h1 class="ins-hero-title">Different Parts.<br><em>One Connected Ecosystem.</em></h1>
+    <p class="ins-hero-desc">DIGISYNQ connects the pieces of the entertainment ecosystem. People. Talent. Technology. Businesses. Communities. Opportunities.</p>
     <div class="ins-hero-actions">
       <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
       <a href="network.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Network Nodes</a>
     </div>
   </div>
 
-  <!-- SECTION 01: FOUNDING THESIS (DARK) -->
-  <section class="ins-section dark" id="founding-thesis">
+  <!-- ══════════════════════════════════════════════════════════════
+       01 — WHO WE ARE
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="who-we-are">
     <div style="max-width:1100px;margin:0 auto;">
-      <div class="founding-grid">
+      <div class="who-grid">
         <div>
-          <div class="sec-eyebrow-light" style="color:rgba(255,255,255,0.75);">Section 01 // Why We Exist</div>
-          <h2 class="ins-h2-light">The Founding Thesis</h2>
-          <p class="ins-desc-light" style="margin-bottom:1.2rem;">The Indian entertainment economy generates billions in gross output annually &mdash; but the mechanisms connecting talent, capital, and production capacity are still largely informal, relationship-dependent, and opaque. Deals break down not because the industry lacks the resources to make them, but because there is no shared operating infrastructure for trust.</p>
-          <p class="ins-desc-light" style="margin-bottom:0;">DIGISYNQ was built to be that infrastructure. Not an agency. Not a production house. Not a fund. An operating network &mdash; a neutral connective tissue that routes the right assets to the right opportunities at the right moment, with verified milestone accountability built in.</p>
+          <div class="sec-eyebrow-light" style="color:rgba(255,255,255,0.75);">Section 01 // Who We Are</div>
+          <h2 class="ins-h2-light">The Entertainment Ecosystem. Connected.</h2>
+          <p class="ins-desc-light">Think of Indian entertainment like separate power plants with no transmission lines. DIGISYNQ is the grid that routes talent, studios, and capital wherever demand sparks.</p>
+          <p class="ins-desc-light" style="margin-top:1rem;">We are not an agency. Not a production house. Not a fund. We are the operating network &mdash; the neutral connective tissue that routes the right assets to the right opportunities at the right moment.</p>
         </div>
         <div>
-          <div class="founding-stat-row">
-            <div class="founding-stat">
-              <div class="founding-stat-num">+32%</div>
-              <div class="founding-stat-label">Dormant Stages Activated</div>
-            </div>
-            <div class="founding-stat">
-              <div class="founding-stat-num">14</div>
-              <div class="founding-stat-label">Specialists on Network</div>
-            </div>
-            <div class="founding-stat">
-              <div class="founding-stat-num">7</div>
-              <div class="founding-stat-label">Catalogues Synchronized</div>
-            </div>
-            <div class="founding-stat">
-              <div class="founding-stat-num">&infin;</div>
-              <div class="founding-stat-label">Compounding Yield</div>
-            </div>
+          <div class="who-list">
+            <div class="who-item" data-reveal>People.</div>
+            <div class="who-item" data-reveal>Talent.</div>
+            <div class="who-item" data-reveal>Technology.</div>
+            <div class="who-item" data-reveal>Businesses.</div>
+            <div class="who-item" data-reveal>Communities.</div>
+            <div class="who-item" data-reveal>Opportunities.</div>
           </div>
-          <p class="ins-desc-light" style="margin-top:1.5rem;font-size:0.88rem;opacity:0.7;">Every stakeholder on the DIGISYNQ network gains access to infrastructure that previously required agency relationships, legal retainers, and institutional backing. The network itself becomes the asset.</p>
+          <p class="ins-desc-light" style="margin-top:1.5rem;font-weight:700;color:rgba(255,255,255,0.9);">Different parts.<br>One connected ecosystem.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 02: THREE CORE PRINCIPLES (WHITE) -->
-  <section class="ins-section white" id="principles">
+  <!-- ══════════════════════════════════════════════════════════════
+       02 — THE MANIFESTO
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="manifesto" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
     <div style="max-width:1100px;margin:0 auto;">
-      <div style="text-align:center;margin-bottom:2.5rem;">
-        <div class="sec-eyebrow-light" style="justify-content:center;">Section 02 // Core Operating Philosophy</div>
-        <h2 class="ins-h2-dark" style="text-align:center;">Three Principles. One Network.</h2>
-        <p class="ins-desc-dark" style="margin:0 auto;text-align:center;">Every decision DIGISYNQ makes as an organization &mdash; from how deals are structured to how fees are earned &mdash; flows from these three foundational principles.</p>
+      <div class="manifesto-big" data-reveal>
+        <span>EVERYTHING IS CONNECTED.</span>
+        <span>WE MAKE THE CONNECTIONS WORK.</span>
       </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
-        <div class="ins-card">
-          <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#09090b;font-weight:800;display:block;margin-bottom:0.6rem;">PRINCIPLE 01 // OWN LESS</span>
-          <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;color:#09090b;margin:0 0 0.7rem;letter-spacing:-0.02em;">Idle Capacity Is Dead Capital</h3>
-          <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.2rem;">Every unused studio day, every idle camera package, every unread completed screenplay is lost economic value. DIGISYNQ treats synchronization as the real leverage.</p>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:#3f3f46;">
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Zero asset ownership &mdash; DIGISYNQ holds no stages or equipment</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Capacity is activated through precision routing, not capital acquisition</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Every dark day converted to revenue without operational overhead</li>
-          </ul>
-        </div>
-
-        <div class="ins-card">
-          <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#09090b;font-weight:800;display:block;margin-bottom:0.6rem;">PRINCIPLE 02 // CONNECT MORE</span>
-          <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;color:#09090b;margin:0 0 0.7rem;letter-spacing:-0.02em;">Alignment Beats Extraction</h3>
-          <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.2rem;">Traditional entertainment intermediaries extract high upfront fees regardless of outcomes. DIGISYNQ earns only coordination fees when milestones are verified.</p>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:#3f3f46;">
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>No retainer fees, no toll gates, no relationship taxes</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Revenue model strictly tied to milestone delivery and verified gates</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Shared commercial upside replaces zero-sum negotiations</li>
-          </ul>
-        </div>
-
-        <div class="ins-card">
-          <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#09090b;font-weight:800;display:block;margin-bottom:0.6rem;">PRINCIPLE 03 // MULTIPLY VALUE</span>
-          <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;color:#09090b;margin:0 0 0.7rem;letter-spacing:-0.02em;">Transparency Creates Velocity</h3>
-          <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.2rem;">Information asymmetry maintains gatekeeper control. Automated milestone escrow and standardized deal memos allow deals to close in days with full confidence.</p>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:#3f3f46;">
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Automated multi-sig escrow with predefined delivery stages</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Standardized deal memos eliminating interpretive friction</li>
-            <li style="position:relative;padding-left:1.2rem;"><span style="position:absolute;left:0;color:#09090b;font-weight:800;">;</span>Network intelligence compounds with every completed production</li>
-          </ul>
-        </div>
-      </div>
+      <p class="manifesto-sub" style="margin-top:3rem;">Entertainment is never created by one person.</p>
+      <p class="manifesto-sub">Behind every face is a team.<br>Behind every team is a network.<br>Behind every network is an ecosystem.</p>
+      <p class="manifesto-sub" style="color:#ffffff;font-weight:700;margin-top:2rem;">DIGISYNQ exists to connect it.</p>
     </div>
   </section>
 
-  <!-- SECTION 03: THE INTERSTICE (OFFWHITE) -->
-  <section class="ins-section offwhite" id="the-diagnostic">
+  <!-- ══════════════════════════════════════════════════════════════
+       03 — THE PROBLEM
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section white" id="problem">
     <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Section 03 // The Structural Interstice</div>
-      <h2 class="ins-h2-dark">Production Corridors DIGISYNQ Bridges</h2>
-      <p class="ins-desc-dark">The entertainment ecosystem comprises distinct resource categories &mdash; each functioning as an isolated silo. DIGISYNQ provides the neutral synchronization layer.</p>
+      <div class="sec-eyebrow-light">Section 02 // The Problem</div>
+      <h2 class="ins-h2-dark">Too many pieces.<br>Too many gaps.</h2>
+      <p class="ins-desc-dark">Too much value left disconnected.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.9rem;">
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">01</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Cinema &amp; Films</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Theatrical exhibition, feature production slates, IP packages</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">02</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Broadcast TV</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Satellite channels, linear network broadcasting, regional slates</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">03</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">OTT &amp; Streaming</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Digital original acquisitions, direct-to-digital distribution</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">04</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Music &amp; Audio</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Original film soundtracks, scoring syndication, masters</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">05</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Branded Integrations</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">In-film commercial placement, brand co-marketing</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">06</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Distribution Corridors</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Multi-territory rights routing, theatrical &amp; satellite syndication</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">07</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Exhibition Circuits</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Multiplex chains, single-screen circuits, event exhibition</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">08</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Creative Capabilities</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Writers, directors, cast, crew, specialized VFX technicians</p></div>
-        <div class="ins-card" style="padding:1.3rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">09</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;">Studio Infrastructure</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Soundstages, production floors, cameras, technical gear</p></div>
-        <div class="ins-card" style="padding:1.3rem;border:1.5px solid #09090b;background:#ffffff;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:800;">SYNQ</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-weight:800;color:#09090b;">That Interstice</h4><p style="font-size:0.83rem;color:#09090b;margin:0;font-weight:600;">DIGISYNQ &mdash; The connective network</p></div>
+      <div class="problem-grid">
+        <div class="problem-item" data-reveal>
+          <p>Talent gets overlooked.</p>
+        </div>
+        <div class="problem-item" data-reveal>
+          <p>Skills stay invisible.</p>
+        </div>
+        <div class="problem-item" data-reveal>
+          <p>Opportunities miss the right people.</p>
+        </div>
+        <div class="problem-item" data-reveal>
+          <p>Communities remain fragmented.</p>
+        </div>
       </div>
+
+      <p class="ins-desc-dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;font-size:1.05rem;">We believe the ecosystem can work better.</p>
     </div>
   </section>
 
-  <!-- SECTION 04: ARCHITECTURAL VISION (WHITE) -->
-  <section class="ins-section white" id="vision">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Section 04 // Architectural Roadmap</div>
-      <h2 class="ins-h2-dark">Vision &amp; Scaling Timeline</h2>
-      <p class="ins-desc-dark">DIGISYNQ is built in modular architectural phases &mdash; expanding network range and compounding intelligence with every connection.</p>
-
-      <div class="vision-timeline">
-        <div class="vision-item">
-          <div class="vision-year">PHASE 1</div>
-          <div class="vision-content">
-            <h4>Capacity &amp; Talent Synchronization</h4>
-            <p>Routing dark soundstages, underbooked facilities, and verified creative talent directly to active productions with milestone escrow deal security.</p>
-          </div>
-        </div>
-        <div class="vision-item">
-          <div class="vision-year">PHASE 2</div>
-          <div class="vision-content">
-            <h4>IP Syndication &amp; Co-Production Mesh</h4>
-            <p>Activating dormant screenplays and developed IP assets through standardized co-production packaging and multi-party capital pools.</p>
-          </div>
-        </div>
-        <div class="vision-item">
-          <div class="vision-year">PHASE 3</div>
-          <div class="vision-content">
-            <h4>Damage Radar &amp; Release Intelligence</h4>
-            <p>Deploying the 8-channel Cinema Damage Control radar to protect opening weekend box office narratives from dark social decay and review manipulation.</p>
-          </div>
-        </div>
-        <div class="vision-item">
-          <div class="vision-year">PHASE 4</div>
-          <div class="vision-content">
-            <h4>Multi-Window Compounding Yield</h4>
-            <p>Automating cascade royalty distribution across theatrical, OTT, satellite, audio, and international windows &mdash; compounding network returns.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 05: ENTER THE NETWORK (DARK) -->
-  <section class="ins-section dark" id="join">
+  <!-- ══════════════════════════════════════════════════════════════
+       04 — OUR BELIEF
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section offwhite" id="belief">
     <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Section 05 // Network Entry</div>
-      <h2 class="ins-h2-light" style="margin-bottom:1rem;">Every Stakeholder. One Network.</h2>
-      <p class="ins-desc-light" style="margin:0 auto 2.5rem;max-width:58ch;">Whether you operate a studio, represent marquee talent, package screenplays, or deploy institutional capital &mdash; there is a direct corridor for you.</p>
+      <div class="sec-eyebrow-light" style="justify-content:center;">Section 03 // Our Belief</div>
+      <h2 class="ins-h2-dark" style="text-align:center;">Everyone has value.</h2>
+      <p class="ins-desc-dark" style="margin:0 auto;text-align:center;">Different roles. Different strengths. Equal importance to the ecosystem.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;text-align:left;margin-bottom:2.5rem;">
-        <div class="ins-card dark">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.5rem;font-weight:700;">FOR TALENT</span>
-          <h4 style="font-weight:800;font-size:1.1rem;color:#fff;margin:0 0 0.4rem;">Actors, Directors &amp; Writers</h4>
-          <p style="font-size:0.87rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">Join the verified talent registry. Get routed to active productions matching your schedule.</p>
+      <div class="belief-grid">
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="belief-role-label">Hero</div>
         </div>
-        <div class="ins-card dark">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.5rem;font-weight:700;">FOR FACILITIES</span>
-          <h4 style="font-weight:800;font-size:1.1rem;color:#fff;margin:0 0 0.4rem;">Studios &amp; Soundstages</h4>
-          <p style="font-size:0.87rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">List your dark days. Monetize idle studio inventory without operational overhead.</p>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="belief-role-label">Technician</div>
         </div>
-        <div class="ins-card dark">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.5rem;font-weight:700;">FOR PRODUCERS</span>
-          <h4 style="font-weight:800;font-size:1.1rem;color:#fff;margin:0 0 0.4rem;">Production Houses</h4>
-          <p style="font-size:0.87rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">Access verified talent pods, available stages, and co-production capital through one interface.</p>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="belief-role-label">Creator</div>
         </div>
-        <div class="ins-card dark">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.5rem;font-weight:700;">FOR FINANCIERS</span>
-          <h4 style="font-weight:800;font-size:1.1rem;color:#fff;margin:0 0 0.4rem;">Investors &amp; Funds</h4>
-          <p style="font-size:0.87rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">Deploy into milestone-gated production packages with multi-sig escrow protection.</p>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="belief-role-label">Producer</div>
+        </div>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="belief-role-label">Distributor</div>
+        </div>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="belief-role-label">Brand</div>
+        </div>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="belief-role-label">Platform</div>
+        </div>
+        <div class="belief-role" data-reveal>
+          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="belief-role-label">Audience</div>
         </div>
       </div>
 
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Initiate Network Entry ;</a>
+      <p class="ins-desc-dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;">We value contribution, not just visibility.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       05 — COMMUNITIES
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section white" id="communities">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;">Section 04 // Communities</div>
+      <h2 class="ins-h2-dark" style="text-align:center;">We don't just connect people.<br>We build communities.</h2>
+      <p class="ins-desc-dark" style="margin:0 auto 2.5rem;text-align:center;max-width:50ch;">An audience watches. A community participates.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:700px;margin:0 auto;">
+        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community shares.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community collaborates.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community creates.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       06 — THE DIGISYNQ COMMUNITY
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="ecosystem">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Section 05 // The Ecosystem</div>
+      <h2 class="ins-h2-light" style="text-align:center;">Everyone is part of the ecosystem.</h2>
+
+      <div class="node-ring">
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="node-label">Talent</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="node-label">Technicians</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="node-label">Creators</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="node-label">Producers</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="node-label">Brands</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="node-label">Platforms</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="node-label">Distributors</div>
+        </div>
+        <div class="node-connector"></div>
+        <div class="node-item" data-reveal>
+          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="node-label">Audiences</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       07 — HOW WE CONNECT
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section white" id="how-we-connect">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Section 06 // How We Connect</div>
+      <h2 class="ins-h2-dark">The journey from discovery to growth.</h2>
+
+      <div class="connect-flow">
+        <div class="flow-step" data-reveal>
+          <div class="flow-num">01</div>
+          <div class="flow-body">
+            <h4>Discover</h4>
+            <p>Find people, skills, ideas and opportunities.</p>
+          </div>
+        </div>
+        <div class="flow-step" data-reveal>
+          <div class="flow-num">02</div>
+          <div class="flow-body">
+            <h4>Connect</h4>
+            <p>Bring the right people together.</p>
+          </div>
+        </div>
+        <div class="flow-step" data-reveal>
+          <div class="flow-num">03</div>
+          <div class="flow-body">
+            <h4>Collaborate</h4>
+            <p>Turn connections into possibilities.</p>
+          </div>
+        </div>
+        <div class="flow-step" data-reveal>
+          <div class="flow-num">04</div>
+          <div class="flow-body">
+            <h4>Contribute</h4>
+            <p>Create measurable value.</p>
+          </div>
+        </div>
+        <div class="flow-step" data-reveal>
+          <div class="flow-num">05</div>
+          <div class="flow-body">
+            <h4>Grow</h4>
+            <p>Build reputation, relationships and opportunity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       08 — VALUE & REPUTATION
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section offwhite" id="value">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;">Section 07 // Value &amp; Reputation</div>
+      <h2 class="ins-h2-dark" style="text-align:center;">Your work builds your value.</h2>
+      <p class="ins-desc-dark" style="margin:0 auto;text-align:center;max-width:50ch;">Contribution over popularity. Work over noise.</p>
+
+      <div class="value-seq">
+        <div class="value-seq-item" data-reveal><div class="value-seq-word">Work</div></div>
+        <div class="value-seq-arrow">&rarr;</div>
+        <div class="value-seq-item" data-reveal><div class="value-seq-word">Contribution</div></div>
+        <div class="value-seq-arrow">&rarr;</div>
+        <div class="value-seq-item" data-reveal><div class="value-seq-word">Reputation</div></div>
+        <div class="value-seq-arrow">&rarr;</div>
+        <div class="value-seq-item" data-reveal><div class="value-seq-word">Opportunity</div></div>
+      </div>
+
+      <p class="ins-desc-dark" style="margin-top:2.5rem;max-width:50ch;margin-left:auto;margin-right:auto;">You work.<br>You contribute.<br>You earn your place.<br>You build your value.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       09 — THE BIGGER IDEA
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="bigger-idea" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="manifesto-big" data-reveal>
+        <span>ONE PERSON CAN CREATE SOMETHING.</span>
+        <span>A COMMUNITY CAN CREATE SOMETHING BIGGER.</span>
+        <span>A CONNECTED ECOSYSTEM CAN CHANGE AN INDUSTRY.</span>
+      </div>
+      <p class="manifesto-sub" style="margin-top:3rem;color:#ffffff;font-weight:700;">That's the idea behind DIGISYNQ.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       10 — WHAT WE ARE BUILDING
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section white" id="building">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;">Section 08 // What We Are Building</div>
+      <h2 class="ins-h2-dark" style="text-align:center;">Not just a platform.<br>An ecosystem.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:800px;margin:2rem auto 0;">
+        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to discover.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to connect.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to collaborate.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to create value.</p>
+        </div>
+        <div class="ins-card" style="text-align:center;padding:1.6rem;grid-column:1/-1;" data-reveal>
+          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place where communities grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       11 — THE CO-FOUNDERS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section offwhite" id="founders">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;">Section 09 // The Co-Founders</div>
+      <h2 class="ins-h2-dark" style="text-align:center;">Four minds.<br>One SYNQ.</h2>
+      <p class="ins-desc-dark" style="margin:0 auto 2rem;text-align:center;">Built together. Driven by different strengths. Connected by one vision.</p>
+
+      <div class="founder-grid">
+        <div class="founder-card" data-reveal>
+          <div class="founder-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="founder-name">Yathish</div>
+          <div class="founder-role">Co-Founder</div>
+        </div>
+        <div class="founder-card" data-reveal>
+          <div class="founder-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="founder-name">Varun</div>
+          <div class="founder-role">Co-Founder</div>
+        </div>
+        <div class="founder-card" data-reveal>
+          <div class="founder-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="founder-name">Rakshith</div>
+          <div class="founder-role">Co-Founder</div>
+        </div>
+        <div class="founder-card" data-reveal>
+          <div class="founder-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="founder-name">Rubesh</div>
+          <div class="founder-role">Co-Founder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       12 — FOUNDING PHILOSOPHY
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="founding-philosophy">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Section 10 // Founding Philosophy</div>
+      <h2 class="ins-h2-light" style="text-align:center;">Four founders.<br>One vision.<br>One connected ecosystem.</h2>
+      <p class="ins-desc-light" style="margin:2rem auto 0;text-align:center;max-width:55ch;">DIGISYNQ exists to connect what has always belonged together.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       13 — THE FINAL MANIFESTO
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="ins-section dark" id="final-manifesto" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="manifesto-big" data-reveal>
+        <span>WE CONNECT THE PIECES.</span>
+        <span>WE BUILD THE COMMUNITY.</span>
+        <span>WE CREATE THE CONNECTIONS.</span>
+        <span>WE STRENGTHEN THE ECOSYSTEM.</span>
+      </div>
+      <p class="manifesto-sub" style="margin-top:3rem;">We make the industry work better.</p>
+
+      <div style="text-align:center;margin-top:4rem;">
+        <p style="font-family:var(--font-body);font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#ffffff;letter-spacing:-0.03em;line-height:1.15;">DIGISYNQ</p>
+        <p style="font-family:var(--font-body);font-weight:400;font-size:clamp(0.95rem,1.5vw,1.15rem);color:rgba(255,255,255,0.6);margin-top:1rem;letter-spacing:0.02em;">Different roles. One ecosystem. One SYNQ.</p>
+      </div>
+
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Initiate Network Entry &rarr;</a>
         <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">WhatsApp Desk</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <!-- ══════════════════════════════════════════════════════════════
+       TRUST STRIP + FOOTER (UNCHANGED)
+       ══════════════════════════════════════════════════════════════ -->
   <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
     <div class="mono-trust-inner">
       <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
-      
       <div class="mono-trust-marquee-wrapper">
         <div class="mono-trust-marquee-track">
-          <!-- Set 1 -->
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
-
-          <!-- Set 2 (Seamless Infinite Loop) -->
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
         </div>
       </div>
-
       <div class="mono-trust-tags">
         <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
         <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
@@ -316,7 +852,7 @@
     <div class="container">
       <div class="f-top">
         <div class="f-brand">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;"/><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
           <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
         </div>
         <div class="f-col">
@@ -354,4 +890,3 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
-
