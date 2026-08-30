@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DIGISYNQ — 3D Experience</title>
+<meta name="description" content="Enter the DIGISYNQ Operating Network — an immersive 3D experience."/>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --yellow: #FFFF00;
+    --white:  #ffffff;
+    --black:  #09090b;
+    --mono:   'Courier New', monospace;
+    --sans:   system-ui, -apple-system, sans-serif;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--black);
+    overflow: hidden;
+    font-family: var(--sans);
+    color: var(--white);
+    cursor: none;
+  }
+
+  /* ── WebGL Canvas ─────────────────────────────── */
+  #experience-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+
+  /* ── Custom Cursor ────────────────────────────── */
+  #cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--white);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    mix-blend-mode: difference;
+  }
+  #cursor.hovered {
+    width: 36px; height: 36px;
+    background: var(--yellow);
+  }
+  #cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease;
+  }
+
+  /* ── HUD Navigation ───────────────────────────── */
+  #hud-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.5rem;
+    background: rgba(9,9,11,0.4);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    animation: hudIn 1s cubic-bezier(0.16,1,0.3,1) 0.5s both;
+  }
+  @keyframes hudIn {
+    from { opacity: 0; transform: translateY(-100%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  #hud-logo {
+    font-family: var(--mono);
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+  }
+  #hud-logo span { color: var(--yellow); }
+  .hud-btn {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+    cursor: none;
+  }
+  .hud-btn:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-1px);
+  }
+  .hud-btn.primary {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+    font-weight: 700;
+  }
+  .hud-btn.primary:hover {
+    background: #ffff44;
+    transform: translateY(-2px) scale(1.02);
+  }
+  .hud-right { display: flex; gap: 0.75rem; align-items: center; }
+
+  /* ── Scroll Indicator ─────────────────────────── */
+  #scroll-hint {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: hintFade 1.2s cubic-bezier(0.16,1,0.3,1) 1.8s both;
+    transition: opacity 0.4s ease;
+  }
+  #scroll-hint.hidden { opacity: 0; pointer-events: none; }
+  @keyframes hintFade {
+    from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  #scroll-hint span {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    animation: scrollPulse 1.8s ease infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: 0.3; transform: scaleY(0.6); }
+    50%      { opacity: 1;   transform: scaleY(1); }
+  }
+
+  /* ── Stage Labels (HTML overlays in 3D space) ─── */
+  .stage-overlay {
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    transform: translateY(20px);
+  }
+  .stage-overlay.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ── Hero Overlay ─────────────────────────────── */
+  #hero-overlay {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    text-align: center;
+    width: min(700px, 90vw);
+  }
+  #hero-overlay.visible {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .hero-title-3d {
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title-3d em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-3d {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: none;
+    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    border: 1px solid transparent;
+  }
+  .btn-3d.solid {
+    background: var(--white);
+    color: var(--black);
+    font-weight: 700;
+  }
+  .btn-3d.solid:hover { background: var(--yellow); transform: translateY(-2px) scale(1.03); }
+  .btn-3d.outline {
+    border-color: rgba(255,255,255,0.3);
+    color: var(--white);
+    background: rgba(255,255,255,0.06);
+  }
+  .btn-3d.outline:hover { border-color: var(--white); transform: translateY(-2px); }
+
+  /* ── Section Labels ───────────────────────────── */
+  #network-label {
+    top: 12%; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    text-align: center;
+  }
+  #network-label.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+  #cards-label {
+    top: 12%; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    text-align: center;
+  }
+  #cards-label.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+  #portal-label {
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%) translateY(20px);
+    text-align: center;
+  }
+  #portal-label.visible {
+    transform: translate(-50%,-50%) translateY(0);
+  }
+
+  .sec-eyebrow-3d {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.24em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .sec-title-3d {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .sec-title-3d em { font-style: normal; color: var(--yellow); }
+
+  /* ── Node Tooltip ─────────────────────────────── */
+  #node-tooltip {
+    position: fixed;
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: rgba(9,9,11,0.88);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    white-space: nowrap;
+    transform: translate(-50%, -130%);
+  }
+  #node-tooltip.show { opacity: 1; }
+
+  /* ── Portal CTA ───────────────────────────────── */
+  .portal-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .portal-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Progress Bar ─────────────────────────────── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: var(--yellow);
+    z-index: 500;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px var(--yellow);
+  }
+
+  /* ── Stage Dots ───────────────────────────────── */
+  #stage-dots {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: hudIn 1s cubic-bezier(0.16,1,0.3,1) 0.8s both;
+  }
+  .stage-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: none;
+    transition: all 0.3s ease;
+  }
+  .stage-dot.active {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    box-shadow: 0 0 8px var(--yellow);
+    transform: scale(1.4);
+  }
+
+  /* ── Loading Screen ───────────────────────────── */
+  #loading {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: opacity 0.6s ease;
+  }
+  #loading.done { opacity: 0; pointer-events: none; }
+  .loading-logo {
+    font-family: var(--mono);
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    font-weight: 700;
+  }
+  .loading-logo span { color: var(--yellow); }
+  .loading-bar-track {
+    width: 200px; height: 1px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .loading-bar-fill {
+    height: 100%;
+    background: var(--yellow);
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px var(--yellow);
+  }
+  .loading-pct {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.3);
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading">
+  <div class="loading-logo">DIGI<span>SYNQ</span></div>
+  <div class="loading-bar-track"><div class="loading-bar-fill" id="loading-bar"></div></div>
+  <div class="loading-pct" id="loading-pct">INITIALISING</div>
+</div>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- WebGL Canvas -->
+<canvas id="experience-canvas"></canvas>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- HUD Navigation -->
+<nav id="hud-nav">
+  <a href="index.html" class="hud-logo" id="hud-logo">DIGI<span>SYNQ</span></a>
+  <div class="hud-right">
+    <span style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.14em;color:rgba(255,255,255,0.3);">3D EXPERIENCE</span>
+    <a href="network.html" class="hud-btn">NETWORK</a>
+    <a href="solutions.html" class="hud-btn">SOLUTIONS</a>
+    <a href="index.html" class="hud-btn primary">MAIN SITE</a>
+  </div>
+</nav>
+
+<!-- Stage Dots -->
+<div id="stage-dots">
+  <div class="stage-dot active" data-stage="0"></div>
+  <div class="stage-dot" data-stage="1"></div>
+  <div class="stage-dot" data-stage="2"></div>
+  <div class="stage-dot" data-stage="3"></div>
+</div>
+
+<!-- Scroll Hint -->
+<div id="scroll-hint">
+  <div class="scroll-line"></div>
+  <span>Scroll to explore</span>
+</div>
+
+<!-- Node Tooltip -->
+<div id="node-tooltip"></div>
+
+<!-- ── Stage 0: Hero ──────────────────────────── -->
+<div class="stage-overlay visible" id="hero-overlay">
+  <span class="hero-eyebrow">▸ The Operating Network</span>
+  <h1 class="hero-title-3d">The <em>New</em><br/>Entertainment<br/>Infrastructure</h1>
+  <p class="hero-sub">One operating mesh. Connected nodes.<br/>The industry, synchronized.</p>
+  <div class="hero-cta-row">
+    <a href="network.html" class="btn-3d solid">Enter the Network</a>
+    <a href="solutions.html" class="btn-3d outline">Explore Solutions</a>
+  </div>
+</div>
+
+<!-- ── Stage 1: Network Galaxy ───────────────── -->
+<div class="stage-overlay" id="network-label">
+  <span class="sec-eyebrow-3d">▸ Connected Nodes</span>
+  <h2 class="sec-title-3d">The <em>Galaxy</em><br/>of Talent</h2>
+</div>
+
+<!-- ── Stage 2: Solutions Cards ─────────────── -->
+<div class="stage-overlay" id="cards-label">
+  <span class="sec-eyebrow-3d">▸ Core Solutions</span>
+  <h2 class="sec-title-3d">What We <em>Power</em></h2>
+</div>
+
+<!-- ── Stage 3: Portal ───────────────────────── -->
+<div class="stage-overlay" id="portal-label">
+  <p class="portal-title">Ready to <em style="font-style:normal;color:var(--yellow)">Sync?</em></p>
+  <p class="portal-sub">Join the operating network for the entertainment industry.</p>
+  <div class="hero-cta-row" style="margin-top:0">
+    <a href="contact.html" class="btn-3d solid">Connect with DIGISYNQ</a>
+    <a href="index.html" class="btn-3d outline">Back to Main Site</a>
+  </div>
+</div>
+
+<!-- Three.js from CDN -->
+<script async src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+<script>
+/* ================================================================
+   DIGISYNQ 3D EXPERIENCE ENGINE
+   ================================================================ */
+
+// Wait for Three.js to load
+function waitForThree(cb) {
+  if (typeof THREE !== 'undefined') { cb(); return; }
+  const t = setInterval(() => {
+    if (typeof THREE !== 'undefined') { clearInterval(t); cb(); }
+  }, 30);
+}
+
+waitForThree(initExperience);
+
+function initExperience() {
+  // ── Loading simulation ────────────────────────────────────────
+  const bar = document.getElementById('loading-bar');
+  const pct = document.getElementById('loading-pct');
+  const loading = document.getElementById('loading');
+  let loadVal = 0;
+  const loadInt = setInterval(() => {
+    loadVal += Math.random() * 18;
+    if (loadVal >= 100) { loadVal = 100; clearInterval(loadInt); }
+    bar.style.width = loadVal + '%';
+    pct.textContent = Math.floor(loadVal) + '%';
+    if (loadVal === 100) {
+      setTimeout(() => {
+        loading.classList.add('done');
+        setTimeout(() => loading.remove(), 700);
+      }, 300);
+    }
+  }, 80);
+
+  // ── Scene Setup ───────────────────────────────────────────────
+  const canvas = document.getElementById('experience-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x09090b, 1);
+  renderer.shadowMap.enabled = false;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x09090b, 0.018);
+
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 500);
+  camera.position.set(0, 0, 22);
+
+  // ── Camera target (smooth damping) ────────────────────────────
+  const camTarget = { x: 0, y: 0, z: 22 };
+  const camCurrent = { x: 0, y: 0, z: 22 };
+  const mouseParallax = { x: 0, y: 0 };
+  const mouseParallaxTarget = { x: 0, y: 0 };
+
+  // ── Lighting ───────────────────────────────────────────────────
+  const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+  scene.add(ambient);
+
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+  dirLight.position.set(5, 10, 8);
+  scene.add(dirLight);
+
+  const yellowLight = new THREE.PointLight(0xffff00, 3, 40);
+  yellowLight.position.set(-8, 4, 10);
+  scene.add(yellowLight);
+
+  const blueLight = new THREE.PointLight(0x4488ff, 1.5, 35);
+  blueLight.position.set(10, -4, 5);
+  scene.add(blueLight);
+
+  // ── Star Field ────────────────────────────────────────────────
+  const starGeo = new THREE.BufferGeometry();
+  const starCount = 2400;
+  const starPos = new Float32Array(starCount * 3);
+  const starColors = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount; i++) {
+    starPos[i * 3]     = (Math.random() - 0.5) * 300;
+    starPos[i * 3 + 1] = (Math.random() - 0.5) * 200;
+    starPos[i * 3 + 2] = (Math.random() - 0.5) * 200 - 20;
+    const bright = 0.5 + Math.random() * 0.5;
+    starColors[i * 3] = bright;
+    starColors[i * 3 + 1] = bright;
+    starColors[i * 3 + 2] = bright + (Math.random() > 0.7 ? 0.3 : 0);
+  }
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+  starGeo.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+  const starMat = new THREE.PointsMaterial({ size: 0.18, vertexColors: true, transparent: true, opacity: 0.85 });
+  scene.add(new THREE.Points(starGeo, starMat));
+
+  // ── Floating Shard Geometry (Hero BG) ─────────────────────────
+  const shards = [];
+  const shardMat = new THREE.MeshStandardMaterial({
+    color: 0x1a1a1a, metalness: 0.3, roughness: 0.6,
+    transparent: true, opacity: 0.6, side: THREE.DoubleSide
+  });
+  const shardGeos = [
+    new THREE.TetrahedronGeometry(1.2, 0),
+    new THREE.OctahedronGeometry(0.9, 0),
+    new THREE.TetrahedronGeometry(0.7, 0),
+    new THREE.OctahedronGeometry(1.5, 0),
+    new THREE.TetrahedronGeometry(2.0, 0),
+  ];
+  const shardPositions = [
+    [-9, 4, 2], [9, -3, 0], [-6, -5, -2], [11, 5, -4], [-12, 2, -3]
+  ];
+  shardPositions.forEach((pos, i) => {
+    const mesh = new THREE.Mesh(shardGeos[i], shardMat.clone());
+    mesh.position.set(...pos);
+    mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+    mesh.userData.rotSpeed = { x: (Math.random() - 0.5) * 0.004, y: (Math.random() - 0.5) * 0.006 };
+    scene.add(mesh);
+    shards.push(mesh);
+  });
+
+  // ── DIGISYNQ Logo (canvas texture plane) ─────────────────────
+  function makeTextTexture(text, opts = {}) {
+    const { fontSize = 120, color = '#ffffff', font = 'bold 120px system-ui', width = 1024, height = 256 } = opts;
+    const c = document.createElement('canvas');
+    c.width = width; c.height = height;
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, width, height);
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, width / 2, height / 2);
+    const tex = new THREE.CanvasTexture(c);
+    return tex;
+  }
+
+  // ── Network Galaxy (Stage 1) ───────────────────────────────────
+  const nodeLabels = [
+    'DIRECTOR', 'PRODUCER', 'CINEMATOGRAPHER', 'EDITOR', 'SOUND DESIGNER',
+    'VFX SUPERVISOR', 'SCRIPT WRITER', 'COMPOSER', 'COLORIST', 'LINE PRODUCER',
+    'CASTING DIRECTOR', 'ART DIRECTOR', 'COSTUME DESIGNER', 'LOCATION SCOUT', 'GAFFER',
+    'KEY GRIP', 'STUNT COORDINATOR', 'ASSISTANT DIRECTOR', 'PRODUCTION DESIGNER', 'BOOM OPERATOR',
+    'FOCUS PULLER', 'DATA MANAGER', 'STEADICAM OP', 'POST SUPERVISOR', 'DIT',
+    'ANIMATOR', 'MOTION DESIGNER', 'PODCAST HOST', 'CONTENT CREATOR', 'BRAND STRATEGIST',
+    'TALENT AGENT', 'PUBLICIST', 'DISTRIBUTION EXEC', 'PLATFORM EDITOR', 'ARCHIVE CURATOR'
+  ];
+
+  const nodeGroup = new THREE.Group();
+  nodeGroup.position.set(0, 0, -28);
+  scene.add(nodeGroup);
+
+  const nodes = [];
+  const nodePositions = [];
+  const nodeMat = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.1, roughness: 0.4 });
+  const nodeGlow = new THREE.MeshStandardMaterial({ color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 0.8, metalness: 0, roughness: 1 });
+
+  nodeLabels.forEach((label, i) => {
+    const r = 6 + Math.random() * 7;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta) * 0.6;
+    const z = r * Math.cos(phi);
+
+    const isCore = i < 5;
+    const size = isCore ? 0.22 : 0.1 + Math.random() * 0.08;
+    const geo = new THREE.SphereGeometry(size, 12, 12);
+    const mat = isCore ? nodeGlow.clone() : nodeMat.clone();
+    if (!isCore) {
+      const g = 0.5 + Math.random() * 0.5;
+      mat.color.setRGB(g, g, g);
+    }
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, y, z);
+    mesh.userData = { label, baseY: y, phase: Math.random() * Math.PI * 2, isCore };
+    nodeGroup.add(mesh);
+    nodes.push(mesh);
+    nodePositions.push(new THREE.Vector3(x, y, z));
+  });
+
+  // Connection lines
+  const linePositions = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dist = nodePositions[i].distanceTo(nodePositions[j]);
+      if (dist < 5.5 && Math.random() > 0.5) {
+        linePositions.push(nodePositions[i].x, nodePositions[i].y, nodePositions[i].z);
+        linePositions.push(nodePositions[j].x, nodePositions[j].y, nodePositions[j].z);
+      }
+    }
+  }
+  const lineGeo = new THREE.BufferGeometry();
+  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x333333, transparent: true, opacity: 0.5 });
+  nodeGroup.add(new THREE.LineSegments(lineGeo, lineMat));
+
+  // ── Solution Cards (Stage 2) ───────────────────────────────────
+  const cardGroup = new THREE.Group();
+  cardGroup.position.set(0, 0, -56);
+  scene.add(cardGroup);
+
+  const cardData = [
+    { title: 'CINEMA\nDAMAGE CTRL', sub: 'Real-time production\nmonitoring system', x: -7, y: 1, z: 0, rot: 0.15 },
+    { title: 'NETWORK\nNODES', sub: 'Connected talent\nacross the industry', x: 0, y: 2.5, z: 2, rot: 0 },
+    { title: 'BUSINESS\nINFRASTRUCTURE', sub: 'The operating layer\nfor your company', x: 7, y: 1, z: 0, rot: -0.15 },
+    { title: 'TALENT\nSOURCING', sub: 'Find the right\npeople instantly', x: -4.5, y: -2.5, z: 1, rot: 0.1 },
+    { title: 'INSIGHTS\n& DATA', sub: 'Industry intelligence\nat your fingertips', x: 4.5, y: -2.5, z: 1, rot: -0.1 },
+  ];
+
+  cardData.forEach(({ title, sub, x, y, z, rot }) => {
+    const cw = 512, ch = 320;
+    const c = document.createElement('canvas');
+    c.width = cw; c.height = ch;
+    const ctx = c.getContext('2d');
+
+    // Glass card background
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.roundRect(0, 0, cw, ch, 24);
+    ctx.fill();
+
+    // Border
+    ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    ctx.lineWidth = 1.5;
+    ctx.roundRect(0, 0, cw, ch, 24);
+    ctx.stroke();
+
+    // Yellow accent line
+    ctx.fillStyle = '#FFFF00';
+    ctx.fillRect(28, 28, 36, 3);
+
+    // Title
+    ctx.font = 'bold 52px system-ui, sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'left';
+    const lines = title.split('\n');
+    lines.forEach((line, i) => ctx.fillText(line, 28, 80 + i * 58));
+
+    // Sub
+    ctx.font = '28px system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    const subLines = sub.split('\n');
+    subLines.forEach((line, i) => ctx.fillText(line, 28, 200 + i * 36));
+
+    const tex = new THREE.CanvasTexture(c);
+    const cardMat = new THREE.MeshStandardMaterial({
+      map: tex, transparent: true, opacity: 0.92,
+      metalness: 0.1, roughness: 0.3, side: THREE.FrontSide
+    });
+    const cardGeo = new THREE.PlaneGeometry(3.8, 2.4);
+    const card = new THREE.Mesh(cardGeo, cardMat);
+    card.position.set(x, y, z);
+    card.rotation.y = rot;
+    card.userData = { baseRot: rot, phase: Math.random() * Math.PI * 2 };
+    cardGroup.add(card);
+  });
+
+  // ── Portal Ring (Stage 3) ──────────────────────────────────────
+  const portalGroup = new THREE.Group();
+  portalGroup.position.set(0, 0, -88);
+  scene.add(portalGroup);
+
+  const ringGeo = new THREE.TorusGeometry(4, 0.06, 16, 120);
+  const ringMat = new THREE.MeshStandardMaterial({
+    color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 1.2,
+    metalness: 0.5, roughness: 0.1
+  });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  portalGroup.add(ring);
+
+  const ring2 = new THREE.Mesh(
+    new THREE.TorusGeometry(4.4, 0.02, 16, 120),
+    new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.3, transparent: true, opacity: 0.3 })
+  );
+  portalGroup.add(ring2);
+
+  // Portal glow plane
+  const glowGeo = new THREE.CircleGeometry(4, 64);
+  const glowMat = new THREE.MeshBasicMaterial({
+    color: 0xffff00, transparent: true, opacity: 0.04, side: THREE.DoubleSide
+  });
+  portalGroup.add(new THREE.Mesh(glowGeo, glowMat));
+
+  // Orbiting particles around portal
+  const orbitCount = 60;
+  const orbitGeo = new THREE.BufferGeometry();
+  const orbitPos = new Float32Array(orbitCount * 3);
+  for (let i = 0; i < orbitCount; i++) {
+    const a = (i / orbitCount) * Math.PI * 2;
+    const r = 4 + (Math.random() - 0.5) * 1.5;
+    orbitPos[i * 3]     = Math.cos(a) * r;
+    orbitPos[i * 3 + 1] = Math.sin(a) * r;
+    orbitPos[i * 3 + 2] = (Math.random() - 0.5) * 0.5;
+  }
+  orbitGeo.setAttribute('position', new THREE.BufferAttribute(orbitPos, 3));
+  const orbitMat = new THREE.PointsMaterial({ color: 0xffff44, size: 0.08, transparent: true, opacity: 0.7 });
+  const orbitPoints = new THREE.Points(orbitGeo, orbitMat);
+  portalGroup.add(orbitPoints);
+
+  // ── Scroll / Stage System ──────────────────────────────────────
+  const stages = [
+    { z: 22,  label: 'hero-overlay',   dotIdx: 0 },
+    { z: -4,  label: 'network-label',  dotIdx: 1 },
+    { z: -36, label: 'cards-label',    dotIdx: 2 },
+    { z: -68, label: 'portal-label',   dotIdx: 3 },
+  ];
+
+  let currentStage = 0;
+  let targetZ = stages[0].z;
+  const scrollSensitivity = 14;
+
+  function setStage(idx) {
+    if (idx === currentStage) return;
+    currentStage = idx;
+    document.querySelectorAll('.stage-overlay').forEach(el => el.classList.remove('visible'));
+    document.getElementById(stages[idx].label).classList.add('visible');
+    document.querySelectorAll('.stage-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    const prog = idx / (stages.length - 1);
+    document.getElementById('progress-bar').style.width = (prog * 100) + '%';
+    document.getElementById('scroll-hint').classList.toggle('hidden', idx > 0);
+
+    // Sound feedback
+    if (window.__digisynqSounds) window.__digisynqSounds.stage();
+  }
+
+  // Scroll handler
+  let scrollAccum = 0;
+  window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scrollAccum += e.deltaY;
+    const step = Math.floor(scrollAccum / scrollSensitivity / 10);
+    if (step !== 0) {
+      scrollAccum = 0;
+      const next = Math.max(0, Math.min(stages.length - 1, currentStage + Math.sign(e.deltaY)));
+      if (next !== currentStage) {
+        setStage(next);
+        targetZ = stages[next].z;
+      }
+    }
+  }, { passive: false });
+
+  // Stage dot clicks
+  document.querySelectorAll('.stage-dot').forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      setStage(i);
+      targetZ = stages[i].z;
+    });
+  });
+
+  // Touch support
+  let touchStartY = 0;
+  window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+  window.addEventListener('touchend', e => {
+    const diff = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(diff) > 40) {
+      const next = Math.max(0, Math.min(stages.length - 1, currentStage + Math.sign(diff)));
+      setStage(next);
+      targetZ = stages[next].z;
+    }
+  }, { passive: true });
+
+  // ── Mouse Parallax ─────────────────────────────────────────────
+  window.addEventListener('mousemove', (e) => {
+    mouseParallaxTarget.x = (e.clientX / window.innerWidth - 0.5) * 2.5;
+    mouseParallaxTarget.y = -(e.clientY / window.innerHeight - 0.5) * 1.5;
+  }, { passive: true });
+
+  // ── Raycasting (Node Hover) ────────────────────────────────────
+  const raycaster = new THREE.Raycaster();
+  const mouse2D = new THREE.Vector2();
+  const tooltip = document.getElementById('node-tooltip');
+  const cursor = document.getElementById('cursor');
+  const cursorRing = document.getElementById('cursor-ring');
+  let cursorX = 0, cursorY = 0, cursorTargetX = 0, cursorTargetY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    cursorTargetX = e.clientX;
+    cursorTargetY = e.clientY;
+    mouse2D.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse2D.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  }, { passive: true });
+
+  // Cursor hover on interactive elements
+  document.querySelectorAll('a, button, .hud-btn, .btn-3d, .stage-dot').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+  });
+
+  // ── Animation Loop ─────────────────────────────────────────────
+  let frame = 0;
+  let visible = true;
+  document.addEventListener('visibilitychange', () => { visible = !document.hidden; });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!visible) return;
+    frame++;
+    const t = frame * 0.016;
+
+    // Cursor smooth follow
+    cursorX = lerp(cursorX, cursorTargetX, 0.14);
+    cursorY = lerp(cursorY, cursorTargetY, 0.14);
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top  = cursorY + 'px';
+    cursorRing.style.left = lerp(parseFloat(cursorRing.style.left || 0), cursorTargetX, 0.09) + 'px';
+    cursorRing.style.top  = lerp(parseFloat(cursorRing.style.top  || 0), cursorTargetY, 0.09) + 'px';
+
+    // Camera damping
+    mouseParallax.x = lerp(mouseParallax.x, mouseParallaxTarget.x, 0.06);
+    mouseParallax.y = lerp(mouseParallax.y, mouseParallaxTarget.y, 0.06);
+    camCurrent.z = lerp(camCurrent.z, targetZ, 0.055);
+    camera.position.set(
+      mouseParallax.x * 0.4,
+      mouseParallax.y * 0.4,
+      camCurrent.z
+    );
+    camera.lookAt(mouseParallax.x * 0.1, mouseParallax.y * 0.1, camCurrent.z - 10);
+
+    // Animate shards
+    shards.forEach(s => {
+      s.rotation.x += s.userData.rotSpeed.x;
+      s.rotation.y += s.userData.rotSpeed.y;
+    });
+
+    // Animate nodes (float)
+    nodes.forEach(n => {
+      n.position.y = n.userData.baseY + Math.sin(t * 0.6 + n.userData.phase) * 0.12;
+      if (n.userData.isCore) {
+        n.material.emissiveIntensity = 0.6 + Math.sin(t * 1.2 + n.userData.phase) * 0.3;
+      }
+    });
+
+    // Rotate node group slowly
+    nodeGroup.rotation.y = t * 0.04;
+
+    // Animate cards
+    cardGroup.children.forEach(child => {
+      if (child.userData.phase !== undefined) {
+        child.rotation.y = child.userData.baseRot + Math.sin(t * 0.3 + child.userData.phase) * 0.04;
+        child.position.y += Math.sin(t * 0.4 + child.userData.phase) * 0.0008;
+      }
+    });
+
+    // Animate portal
+    portalGroup.rotation.z = t * 0.25;
+    ring.rotation.z = -t * 0.15;
+    ring2.rotation.z = t * 0.2;
+    const portalPulse = 0.04 + Math.sin(t * 1.5) * 0.02;
+    glowMat.opacity = portalPulse;
+    yellowLight.intensity = 3 + Math.sin(t * 0.8) * 0.8;
+
+    // Orbit particles rotate
+    orbitPoints.rotation.z = t * 0.5;
+
+    // Raycasting for node hover (only in stage 1)
+    if (currentStage === 1) {
+      raycaster.setFromCamera(mouse2D, camera);
+      const hits = raycaster.intersectObjects(nodes);
+      if (hits.length > 0) {
+        const n = hits[0].object;
+        tooltip.textContent = n.userData.label;
+        tooltip.style.left = cursorTargetX + 'px';
+        tooltip.style.top  = cursorTargetY + 'px';
+        tooltip.classList.add('show');
+        cursor.classList.add('hovered');
+      } else {
+        tooltip.classList.remove('show');
+        if (!document.querySelector('a:hover, button:hover')) cursor.classList.remove('hovered');
+      }
+    } else {
+      tooltip.classList.remove('show');
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // ── Resize ────────────────────────────────────────────────────
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // ── Keyboard nav ──────────────────────────────────────────────
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      const next = Math.min(stages.length - 1, currentStage + 1);
+      setStage(next); targetZ = stages[next].z;
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      const prev = Math.max(0, currentStage - 1);
+      setStage(prev); targetZ = stages[prev].z;
+    }
+  });
+}
+</script>
+<script src="assets/js/sounds.js" defer></script>
+</body>
+</html>
