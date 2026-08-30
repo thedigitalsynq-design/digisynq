@@ -37,8 +37,8 @@
   --text-light: #ffffff;
 
   /* Typography Fonts */
-  --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Smooch Sans', sans-serif;
+  --font-body: 'Smooch Sans', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
   /* Radii & Shadows */

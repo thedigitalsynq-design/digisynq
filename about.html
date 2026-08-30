@@ -11,7 +11,7 @@
   <title>About &amp; Manifesto — DIGISYNQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
@@ -41,11 +41,11 @@
       content: "";
       width: 24px;
       height: 1px;
-      background: currentColor;
-      opacity: 0.4;
+      background: #34d399;
+      opacity: 0.6;
     }
-    .about-eyebrow.light { color: rgba(255,255,255,0.5); }
-    .about-eyebrow.dark { color: #94a3b8; }
+    .about-eyebrow.light { color: rgba(52,211,153,0.8); }
+    .about-eyebrow.dark { color: #34d399; }
 
     /* ── Section Headings ── */
     .about-h2 {
@@ -106,12 +106,12 @@
       font-weight: 400;
       font-size: clamp(0.88rem, 1.4vw, 1.05rem);
       line-height: 1.7;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.5);
       text-align: center;
       max-width: 48ch;
       margin: 1.5rem auto 0;
     }
-    .m-sub strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+    .m-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
 
     /* ── Hero Enhancement ── */
     .about-hero {
@@ -162,7 +162,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.3);
+      background: #34d399;
       flex-shrink: 0;
     }
     .who-tagline {
@@ -184,6 +184,7 @@
       padding: 1.3rem;
       border-radius: 16px;
       border: 1px solid rgba(0,0,0,0.06);
+      border-left: 3px solid #34d399;
       background: rgba(255,255,255,0.7);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -238,7 +239,7 @@
     .belief-card:nth-child(8) { transition-delay: 0.42s; }
     .belief-card:hover {
       transform: translateY(-6px) scale(1.02);
-      border-color: rgba(255,255,255,0.25);
+      border-color: rgba(52,211,153,0.3);
       background: rgba(255,255,255,0.08);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 16px 40px rgba(0,0,0,0.3);
     }
@@ -347,8 +348,8 @@
       border: 1px solid rgba(255,255,255,0.05);
     }
     .node-circle:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.35);
+      background: rgba(52,211,153,0.15);
+      border-color: rgba(52,211,153,0.4);
       transform: scale(1.12);
     }
     .node-circle svg { width: 20px; height: 20px; stroke: #ffffff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -356,7 +357,7 @@
       font-family: var(--font-mono);
       font-size: 0.55rem;
       letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.4);
+      color: rgba(52,211,153,0.6);
       text-transform: uppercase;
     }
     .node-line {
@@ -397,7 +398,7 @@
       font-family: var(--font-mono);
       font-size: 0.65rem;
       letter-spacing: 0.12em;
-      color: #94a3b8;
+      color: #34d399;
       font-weight: 700;
       width: 24px;
       flex-shrink: 0;
@@ -446,7 +447,7 @@
     }
     .value-arr {
       font-size: 1.2rem;
-      color: #d4d4d8;
+      color: #34d399;
       padding: 0 0.2rem;
       flex-shrink: 0;
     }
@@ -478,18 +479,18 @@
     .founder-card:hover {
       transform: translateY(-8px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 24px 56px rgba(0,0,0,0.08);
-      border-color: rgba(0,0,0,0.12);
+      border-color: rgba(52,211,153,0.2);
     }
     .founder-avatar {
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #18181b, #27272a);
+      background: linear-gradient(135deg, #059669, #34d399);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+      box-shadow: 0 4px 16px rgba(52,211,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
     }
     .founder-avatar svg { width: 24px; height: 24px; stroke: #ffffff; fill: none; stroke-width: 1.8; }
     .founder-name {
@@ -522,7 +523,7 @@
     .final-brand-sub {
       font-weight: 400;
       font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.5);
       margin-top: 0.8rem;
       letter-spacing: 0.02em;
     }
