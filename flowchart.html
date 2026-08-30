@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .stage-flow-track { display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap;overflow-x:auto;padding:2rem clamp(1rem,3vw,3rem);background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);scrollbar-width:thin; }
+    .stage-flow-track { display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap;overflow-x:auto;padding:1.2rem clamp(1rem,3vw,3rem);background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);scrollbar-width:thin;position:sticky;top:64px;z-index:100; }
     .stage-pill { display:flex;flex-direction:column;align-items:center;gap:0.3rem;padding:0.8rem 1.4rem;background:rgba(247,248,250,0.9);border:1px solid rgba(0,0,0,0.1);border-radius:999px;cursor:pointer;transition:all 0.25s ease;white-space:nowrap;flex-shrink:0; }
     .stage-pill:hover,.stage-pill.active { background:#09090b;border-color:#09090b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15); }
     .stage-pill-letter { font-family:var(--font-mono);font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:#09090b;transition:color 0.25s; }
@@ -89,17 +89,17 @@
 
     <!-- STAGE GATE FLOW TRACK -->
     <div class="stage-flow-track" role="navigation" aria-label="Stage Navigation">
-      <div class="stage-pill active"><span class="stage-pill-letter">STAGE A</span><span class="stage-pill-name">Audit</span></div>
+      <div class="stage-pill active" data-stage="a"><span class="stage-pill-letter">STAGE A</span><span class="stage-pill-name">Audit</span></div>
       <div class="stage-connector"></div>
-      <div class="stage-pill"><span class="stage-pill-letter">STAGE B</span><span class="stage-pill-name">Build</span></div>
+      <div class="stage-pill" data-stage="b"><span class="stage-pill-letter">STAGE B</span><span class="stage-pill-name">Build</span></div>
       <div class="stage-connector"></div>
-      <div class="stage-pill"><span class="stage-pill-letter">STAGE C</span><span class="stage-pill-name">Connect</span></div>
+      <div class="stage-pill" data-stage="c"><span class="stage-pill-letter">STAGE C</span><span class="stage-pill-name">Connect</span></div>
       <div class="stage-connector"></div>
-      <div class="stage-pill"><span class="stage-pill-letter">STAGE D</span><span class="stage-pill-name">Deploy</span></div>
+      <div class="stage-pill" data-stage="d"><span class="stage-pill-letter">STAGE D</span><span class="stage-pill-name">Deploy</span></div>
       <div class="stage-connector"></div>
-      <div class="stage-pill"><span class="stage-pill-letter">STAGE E</span><span class="stage-pill-name">Extract</span></div>
+      <div class="stage-pill" data-stage="e"><span class="stage-pill-letter">STAGE E</span><span class="stage-pill-name">Extract</span></div>
       <div class="stage-connector"></div>
-      <div class="stage-pill"><span class="stage-pill-letter">STAGE F</span><span class="stage-pill-name">Feed Forward</span></div>
+      <div class="stage-pill" data-stage="f"><span class="stage-pill-letter">STAGE F</span><span class="stage-pill-name">Feed Forward</span></div>
     </div>
 
     <!-- SECTION: 6 STAGES IN DETAIL (WHITE) -->
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Stage A -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-a">
           <div class="stage-big-letter">A</div>
           <div>
             <div class="stage-label">STAGE A // AUDIT</div>
@@ -136,7 +136,7 @@
         </div>
 
         <!-- Stage B -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-b">
           <div class="stage-big-letter">B</div>
           <div>
             <div class="stage-label">STAGE B // BUILD</div>
@@ -160,7 +160,7 @@
         </div>
 
         <!-- Stage C -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-c">
           <div class="stage-big-letter">C</div>
           <div>
             <div class="stage-label">STAGE C // CONNECT</div>
@@ -184,7 +184,7 @@
         </div>
 
         <!-- Stage D -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-d">
           <div class="stage-big-letter">D</div>
           <div>
             <div class="stage-label">STAGE D // DEPLOY</div>
@@ -208,7 +208,7 @@
         </div>
 
         <!-- Stage E -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-e">
           <div class="stage-big-letter">E</div>
           <div>
             <div class="stage-label">STAGE E // EXTRACT</div>
@@ -232,7 +232,7 @@
         </div>
 
         <!-- Stage F -->
-        <div class="stage-detail-card">
+        <div class="stage-detail-card" id="stage-f">
           <div class="stage-big-letter">F</div>
           <div>
             <div class="stage-label">STAGE F // FEED FORWARD</div>
@@ -396,12 +396,55 @@
   </div>
 <script src="assets/js/main.js"></script>
   <script>
-    document.querySelectorAll('.stage-pill').forEach(pill => {
+    // Stage pill click → scroll to detail card
+    const pills = document.querySelectorAll('.stage-pill');
+    const cards = document.querySelectorAll('.stage-detail-card');
+
+    pills.forEach(pill => {
       pill.addEventListener('click', function() {
-        document.querySelectorAll('.stage-pill').forEach(p => p.classList.remove('active'));
-        this.classList.add('active');
+        const stage = this.getAttribute('data-stage');
+        const target = document.getElementById('stage-' + stage);
+        if (target) {
+          const navHeight = document.querySelector('.top-nav').offsetHeight;
+          const trackHeight = document.querySelector('.stage-flow-track').offsetHeight;
+          const offset = navHeight + trackHeight + 24;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
       });
     });
+
+    // Scroll spy — highlight active pill based on scroll position
+    function updateActivePill() {
+      const navHeight = document.querySelector('.top-nav').offsetHeight;
+      const trackHeight = document.querySelector('.stage-flow-track').offsetHeight;
+      const offset = navHeight + trackHeight + 80;
+      let current = 'a';
+
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top <= offset) {
+          current = card.id.replace('stage-', '');
+        }
+      });
+
+      pills.forEach(p => {
+        p.classList.toggle('active', p.getAttribute('data-stage') === current);
+      });
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateActivePill();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    updateActivePill();
   </script>
 </body>
 </html>
