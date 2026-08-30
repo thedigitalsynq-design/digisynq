@@ -8,7 +8,7 @@
   <title>Solutions &mdash; DIGISYNQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
@@ -20,7 +20,7 @@
     .stakeholder-card.reverse{direction:rtl;}
     .stakeholder-card.reverse>*{direction:ltr;}
     .stk-tag{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.6rem;display:block;font-weight:700;}
-    .stk-title{font-family:var(--font-body);font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em;}
+    .stk-title{font-family:var(--font-serif);font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em;}
     .stk-desc{font-size:clamp(0.95rem,1.3vw,1.05rem);line-height:1.7;color:#52525b;margin:0 0 1.5rem;}
     .stk-bullets{list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.4rem;}
     .stk-bullets li{font-size:0.92rem;color:#3f3f46;padding-left:1.2rem;position:relative;line-height:1.5;}
@@ -43,9 +43,9 @@
   
   <!-- TOP NAVIGATION -->
   <header class="top-nav">
-    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
     <nav aria-label="Primary Navigation">
-      <ul class="nav-links-center">
+        <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html" class="active">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -55,7 +55,7 @@
         <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="about.html">About</a></li>
 </ul></nav>
-    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a><div class="vertical-sep"></div><a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a></div>
+    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a></div>
   </header>
 
   <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
@@ -147,16 +147,16 @@
           <div style="display:flex;flex-direction:column;gap:0.8rem;">
             <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);">
               <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">INDUSTRY DARK RATE</span>
-              <span style="font-family:var(--font-body);font-weight:700;font-size:1.2rem;color:#ef4444;">42%</span>
+              <span style="font-family:var(--font-num);font-weight:900;font-size:1.2rem;color:#ef4444;">42%</span>
             </div>
             <div style="text-align:center;color:#09090b;font-size:1rem;">&darr; DIGISYNQ ROUTING</div>
             <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(255, 255, 0,0.25);">
               <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">NETWORKED DARK RATE</span>
-              <span style="font-family:var(--font-body);font-weight:700;font-size:1.2rem;color:#22c55e;">&lt;12%</span>
+              <span style="font-family:var(--font-num);font-weight:900;font-size:1.2rem;color:#22c55e;">&lt;12%</span>
             </div>
             <div style="padding:0.8rem;background:rgba(255, 255, 0,0.06);border-radius:10px;border:1px solid rgba(255, 255, 0,0.15);text-align:center;">
               <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;color:#09090b;">ESTIMATED RECOVERED VALUE</div>
-              <div style="font-family:var(--font-body);font-weight:800;font-size:1.5rem;color:#09090b;margin-top:0.3rem;">₹2.8Cr+</div>
+              <div style="font-family:var(--font-num);font-weight:900;font-size:1.5rem;color:#09090b;margin-top:0.3rem;">₹2.8Cr+</div>
               <div style="font-size:0.8rem;color:#71717a;">per dark month at market production day rates</div>
             </div>
           </div>
@@ -212,7 +212,7 @@
       
       <div class="stakeholder-card reverse" style="border-bottom:0;">
         <div>
-          <span class="stk-tag" style="color:#09090b;">FOR INVESTORS &amp; CO-FINANCIERS</span>
+          <span class="stk-tag" style="color:rgba(255,255,255,0.5);">FOR INVESTORS &amp; CO-FINANCIERS</span>
           <h3 class="stk-title" style="color:#fff;">Protected, Structured Entertainment Capital</h3>
           <p class="stk-desc" style="color:rgba(255,255,255,0.6);">DIGISYNQ replaces informal, relationship-gated investment with institutional-grade stage gates, milestone-secured capital deployment, and automated settlement.</p>
           <ul class="stk-bullets" style="color:rgba(255,255,255,0.7);">
@@ -228,7 +228,7 @@
           </div>
         </div>
         <div class="stk-visual" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
-          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">INVESTOR PROTECTION STACK</div>
+          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">INVESTOR PROTECTION STACK</div>
           <div style="display:flex;flex-direction:column;gap:0.6rem;">
             <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Multi-Sig Escrow</span><span class="tick">&#10003;</span></div>
             <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Milestone-Gated Deployment</span><span class="tick">&#10003;</span></div>
@@ -237,6 +237,17 @@
             <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Automated Royalty Settlement</span><span class="tick">&#10003;</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ins-section dark" style="text-align:center;">
+    <div style="max-width:800px;margin:0 auto;">
+      <h2 class="ins-h2-light" style="margin-bottom:1rem;">Ready to Join the Network?</h2>
+      <p class="ins-desc-light" style="margin:0 auto 2.2rem;">Connect your assets, talent, or production requirements to the DIGISYNQ operating grid. Zero upfront cost.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Enter the Network &rarr;</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">WhatsApp: +91 79965 48969</a>
       </div>
     </div>
   </section>
@@ -308,7 +319,7 @@
     <div class="container">
       <div class="f-top">
         <div class="f-brand"><div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
-            <p>The operating network for the entertainment industry.</p></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p></div>
         <div class="f-col"><h4>Explore</h4><a href="network.html">Network Nodes</a><a href="platform.html">Operating System</a><a href="solutions.html">Solutions</a><a href="flowchart.html">Process Protocol</a><a href="cinema-damage-control.html">Damage Radar</a></div>
         <div class="f-col"><h4>Participate</h4><a href="contact.html?type=join">Enter Network</a><a href="network.html#talent">Talent Lab</a><a href="network.html#capacity">List Capacity</a><a href="business.html">Commercial Model</a><a href="insights.html">Research</a></div>
         <div class="f-col"><h4>Connect</h4><a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a><a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a><a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a><a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a><a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a></div>

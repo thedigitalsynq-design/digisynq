@@ -11,7 +11,7 @@
   <title>About &amp; Manifesto — DIGISYNQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
@@ -21,8 +21,11 @@
 
     /* ── Section Spacing ── */
     .about-section {
-      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 3vw, 2.5rem);
+      padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);
     }
+    .about-section.dark { background: #09090b; color: #ffffff; }
+    .about-section.white { background: #ffffff; color: #09090b; }
+    .about-section.offwhite { background: #f8fafc; color: #09090b; }
     .about-section.tight { padding-bottom: clamp(1.5rem, 3vw, 2rem); }
     .about-container { max-width: 1080px; margin: 0 auto; }
 
@@ -49,11 +52,11 @@
 
     /* ── Section Headings ── */
     .about-h2 {
-      font-family: var(--font-body);
+      font-family: var(--font-serif);
       font-weight: 900;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.12;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
       margin: 0 0 0.6rem;
     }
     .about-h2.light { color: #ffffff; }
@@ -73,7 +76,7 @@
 
     /* ── Manifesto Big Statement ── */
     .m-big {
-      font-family: var(--font-body);
+      font-family: var(--font-serif);
       font-weight: 900;
       font-size: clamp(1.8rem, 4.5vw, 3.4rem);
       line-height: 1.08;
@@ -442,7 +445,7 @@
     .value-word {
       font-weight: 900;
       font-size: clamp(1rem, 2vw, 1.4rem);
-      color: #09090b;
+      color: #ffffff;
       letter-spacing: -0.02em;
     }
     .value-arr {
@@ -538,16 +541,12 @@
     }
 
     /* ── Responsive ── */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .who-split { grid-template-columns: 1fr; }
       .belief-grid { grid-template-columns: repeat(2, 1fr); }
       .founder-row { grid-template-columns: repeat(2, 1fr); }
       .problem-list { grid-template-columns: 1fr; }
       .node-line { display: none; }
-    }
-    @media (max-width: 600px) {
-      .belief-grid { grid-template-columns: 1fr 1fr; }
-      .founder-row { grid-template-columns: 1fr 1fr; }
       .community-grid { grid-template-columns: 1fr; }
       .value-row { flex-direction: column; }
       .value-arr { transform: rotate(90deg); }
@@ -557,9 +556,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
-    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img"/><span class="brand-name">DIGISYNQ</span></a>
     <nav aria-label="Primary Navigation">
       <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -572,8 +571,6 @@
     </nav>
     <div class="nav-actions-right">
       <a href="contact.html" class="btn-login">Connect</a>
-      <div class="vertical-sep"></div>
-      <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
     </div>
   </header>
 

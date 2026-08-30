@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
@@ -22,14 +22,14 @@
     .stage-pill:hover .stage-pill-name,.stage-pill.active .stage-pill-name { color:#fff; }
     .stage-connector { width:36px;height:1px;background:linear-gradient(to right,rgba(0,0,0,0.12),rgba(0,0,0,0.06));flex-shrink:0;position:relative; }
     .stage-connector::after { content:">";position:absolute;right:-6px;top:-9px;color:rgba(0,0,0,0.2);font-size:0.9rem; }
-    .loop-badge { display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;background:rgba(255, 255, 0,0.08);border:1px solid rgba(255, 255, 0,0.25);border-radius:999px;padding:0.4rem 1.1rem;margin:0 auto 2rem; }
-    .loop-dot { width:6px;height:6px;border-radius:50%;background:#09090b;animation:pulseDot 2s ease-in-out infinite; }
+    .loop-badge { display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:rgba(255,255,255,0.7);background:rgba(255, 255, 0,0.08);border:1px solid rgba(255, 255, 0,0.25);border-radius:999px;padding:0.4rem 1.1rem;margin:0 auto 2rem; }
+    .loop-dot { width:6px;height:6px;border-radius:50%;background:#ffff00;animation:pulseDot 2s ease-in-out infinite; }
     @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
     .stage-detail-card { display:grid;grid-template-columns:140px 1fr;gap:clamp(1.5rem,4vw,3.2rem);align-items:start;padding:clamp(2rem,4vw,3.5rem) 0;border-bottom:1px solid rgba(0,0,0,0.07); }
     .stage-detail-card:last-of-type { border-bottom:0; }
     .stage-big-letter { font-family:var(--font-body);font-weight:900;font-size:clamp(4rem,9vw,7rem);color:#09090b;line-height:0.85;letter-spacing:-0.04em;opacity:0.08;user-select:none; }
     .stage-label { font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.2em;color:#09090b;margin-bottom:0.5rem; }
-    .stage-detail-title { font-family:var(--font-body);font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em; }
+    .stage-detail-title { font-family:var(--font-serif);font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em; }
     .stage-detail-desc { font-size:clamp(0.95rem,1.3vw,1.05rem);line-height:1.65;color:#52525b;max-width:60ch;margin:0 0 1.2rem; }
     .stage-detail-bullets { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem; }
     .stage-detail-bullets li { font-size:0.93rem;color:#3f3f46;padding-left:1.2rem;position:relative;line-height:1.5; }
@@ -37,14 +37,14 @@
     .stage-tag-row { display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem; }
     .stage-tag { font-family:var(--font-mono);font-size:0.66rem;font-weight:700;letter-spacing:0.1em;color:#09090b;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.1);border-radius:999px;padding:0.25rem 0.75rem; }
     .stage-summary-band { background:#09090b;color:#fff;padding:clamp(3.5rem,6vw,5.5rem) clamp(1.5rem,4vw,3.5rem);text-align:center; }
-    .stage-summary-band h2 { font-family:var(--font-body);font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-0.03em;margin:0 0 0.8rem;color:#fff; }
+    .stage-summary-band h2 { font-family:var(--font-serif);font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-0.03em;margin:0 0 0.8rem;color:#fff; }
     .stage-summary-band p { font-size:1.05rem;color:rgba(255,255,255,0.65);max-width:60ch;margin:0 auto 2rem;line-height:1.65; }
     .stage-flow-summary { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0; }
     .sfs-step { font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;color:rgba(255,255,255,0.55);padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:rgba(255,255,255,0.05);transition:all 0.2s; }
     .sfs-step:hover { background:rgba(255,255,255,0.1);color:#fff; }
     .sfs-step .sfs-letter { display:block;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:0.15rem; }
     .sfs-arr { color:rgba(255, 255, 0,0.6);font-size:1rem;padding:0 0.5rem; }
-    .sfs-loop-back { width:100%;margin-top:1.2rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#09090b; }
+    .sfs-loop-back { width:100%;margin-top:1.2rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:rgba(255,255,255,0.5); }
     .sfs-loop-back::before,.sfs-loop-back::after { content:"";flex:1;max-width:80px;height:1px;background:rgba(255, 255, 0,0.3); }
     @media (max-width:700px) { .stage-detail-card { grid-template-columns:1fr;gap:0.6rem; } .stage-big-letter { font-size:3.5rem; } .stage-flow-track { justify-content:flex-start; } }
   </style>
@@ -55,10 +55,9 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
-      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
-
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -71,8 +70,6 @@
 
       <div class="nav-actions-right">
         <a href="contact.html" class="btn-login">Connect</a>
-        <div class="vertical-sep" aria-hidden="true"></div>
-        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
       </div>
     </header>
 
@@ -83,7 +80,7 @@
       <p class="ins-hero-desc">A closed-circuit six-stage rhythm that transforms disconnected entertainment assets into verified, compounding revenue streams. Every project feeds the next loop.</p>
       
       <div class="ins-hero-actions">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Initiate Stage A ;</a>
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Initiate Stage A &rarr;</a>
         <a href="#stages" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore 6 Stages</a>
       </div>
     </div>
@@ -282,7 +279,7 @@
         <div class="sfs-loop-back">&#8634; &nbsp; FEEDS BACK INTO STAGE A &nbsp; &#8634;</div>
 
         <div style="display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap;">
-          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.85rem 2rem;">Initiate Stage A ;</a>
+          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.85rem 2rem;">Initiate Stage A &rarr;</a>
           <a href="platform.html" class="btn-pill-outline" style="padding:0.85rem 2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Platform OS</a>
         </div>
       </div>

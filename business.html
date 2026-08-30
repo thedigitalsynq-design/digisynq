@@ -11,23 +11,23 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
     .flow-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative;}
     .flow-step{padding:1.8rem;text-align:center;border-right:1px solid rgba(0,0,0,0.08);position:relative;}
     .flow-step:last-child{border-right:0;}
-    .flow-num{font-family:var(--font-body);font-weight:900;font-size:2.8rem;letter-spacing:-0.05em;color:rgba(0,0,0,0.08);line-height:1;margin-bottom:0.5rem;}
+    .flow-num{font-family:var(--font-num);font-weight:900;font-size:2.8rem;letter-spacing:-0.05em;color:rgba(0,0,0,0.08);line-height:1;margin-bottom:0.5rem;}
     .flow-tag{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.6rem;display:block;font-weight:800;}
-    .flow-step h3{font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0 0 0.5rem;letter-spacing:-0.01em;}
+    .flow-step h3{font-family:var(--font-body);font-weight:900;font-size:1.05rem;color:#09090b;margin:0 0 0.5rem;letter-spacing:-0.01em;}
     .flow-step p{font-size:0.86rem;color:#52525b;line-height:1.55;margin:0;}
 
     .stream-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2.5rem;}
     .stream-card{border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.8rem;background:rgba(255,255,255,0.04);transition:border-color 0.2s,transform 0.2s;}
     .stream-card:hover{border-color:rgba(255,255,255,0.25);transform:translateY(-3px);}
     .stream-num{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:rgba(255,255,255,0.5);margin-bottom:0.7rem;font-weight:700;}
-    .stream-card h3{font-family:var(--font-body);font-weight:800;font-size:1.1rem;color:#fff;margin:0 0 0.6rem;letter-spacing:-0.01em;}
+    .stream-card h3{font-family:var(--font-body);font-weight:900;font-size:1.1rem;color:#fff;margin:0 0 0.6rem;letter-spacing:-0.01em;}
     .stream-card p{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.55;margin:0 0 1rem;}
     .stream-fee{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;color:#ffffff;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:0.35rem 0.85rem;display:inline-block;}
 
@@ -41,7 +41,7 @@
     .investor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2.5rem;}
     .investor-card{border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:1.8rem;background:#fff;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;}
     .investor-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.07);border-color:rgba(0,0,0,0.2);}
-    .investor-card h3{font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0 0 0.5rem;letter-spacing:-0.01em;}
+    .investor-card h3{font-family:var(--font-body);font-weight:900;font-size:1.05rem;color:#09090b;margin:0 0 0.5rem;letter-spacing:-0.01em;}
     .investor-card p{font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;}
 
     @media(max-width:768px){.flow-track{grid-template-columns:1fr;}.flow-step{border-right:0;border-bottom:1px solid rgba(0,0,0,0.08);}.asset-light-grid{grid-template-columns:1fr;}}
@@ -50,9 +50,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
-    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
     <nav aria-label="Primary Navigation">
-      <ul class="nav-links-center">
+        <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -62,7 +62,7 @@
         <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="about.html">About</a></li>
 </ul></nav>
-    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a><div class="vertical-sep"></div><a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a></div>
+    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a></div>
   </header>
 
   <!-- UNIFIED HERO SECTION -->
@@ -192,7 +192,7 @@
         <div>
           <div class="ins-card" style="background:#f8fafc;padding:2rem;">
             <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#09090b;font-weight:800;display:block;margin-bottom:0.6rem;">NETWORK ADVANTAGE</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;margin:0 0 0.8rem;color:#09090b;">Why This Model Wins</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.2rem;margin:0 0 0.8rem;color:#09090b;">Why This Model Wins</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1rem;">Because DIGISYNQ carries zero balance sheet asset risk, 100% of our focus is on routing velocity and matching accuracy. As the network grows, unit margins expand without increasing overhead.</p>
             <div style="font-family:var(--font-mono);font-size:0.75rem;color:#09090b;font-weight:800;">; 92%+ Gross Contribution Margin</div>
           </div>
@@ -239,7 +239,7 @@
       <h2 class="ins-h2-light" style="margin-bottom:1rem;">Ready to Participate in the Commercial Network?</h2>
       <p class="ins-desc-light" style="margin:0 auto 2.2rem;">Connect your assets, talent availability, or production requirements to the DIGISYNQ operating grid.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Initiate Network Entry ;</a>
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Initiate Network Entry &rarr;</a>
         <a href="contact.html" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">Speak With Our Team</a>
       </div>
     </div>
@@ -312,7 +312,7 @@
     <div class="container">
       <div class="f-top">
         <div class="f-brand">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:900;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
           <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
         </div>
         <div class="f-col">
@@ -324,12 +324,12 @@
           <a href="cinema-damage-control.html">Damage Radar</a>
         </div>
         <div class="f-col">
-          <h4>Commercial</h4>
-          <a href="business.html#flow-mechanics">Operating Flow</a>
-          <a href="business.html#fee-streams">Fee Channels</a>
-          <a href="business.html#asset-light">Asset-Light Model</a>
-          <a href="business.html#investor-fit">Stakeholder Fit</a>
-          <a href="insights.html">Telemetry</a>
+          <h4>Participate</h4>
+          <a href="contact.html?type=join">Enter Network</a>
+          <a href="network.html#talent">Talent Lab</a>
+          <a href="network.html#capacity">List Capacity</a>
+          <a href="business.html">Commercial Model</a>
+          <a href="insights.html">Research</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>

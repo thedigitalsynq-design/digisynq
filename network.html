@@ -10,36 +10,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .filter-bar {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-    .filter-btn {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      padding: 0.55rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.05);
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--accent-orange);
-      color: #fff;
-      border-color: var(--accent-orange);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 255, 0,0.3);
-    }
     .node-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -58,9 +32,6 @@
       transform: translateY(-4px);
       box-shadow: 0 14px 35px rgba(0,0,0,0.08);
       border-color: rgba(255, 255, 0,0.35);
-    }
-    .node-card.hidden {
-      display: none !important;
     }
     .node-num {
       font-family: var(--font-mono);
@@ -123,10 +94,9 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
-      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
-
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html" class="active">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -139,8 +109,6 @@
 
       <div class="nav-actions-right">
         <a href="contact.html" class="btn-login">Connect</a>
-        <div class="vertical-sep" aria-hidden="true"></div>
-        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
       </div>
     </header>
 
@@ -149,15 +117,6 @@
       <div class="ins-eyebrow">Production Resource Corridors</div>
       <h1 class="ins-hero-title">Production Corridors.<br><em>One Operating Mesh.</em></h1>
       <p class="ins-hero-desc">Ten distinct industry verticals — from soundstages to streaming pipelines — linked together so you can assemble a complete production pod in hours, not months.</p>
-
-      <!-- Category Filter Tabs -->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All Network Nodes</button>
-        <button class="filter-btn" data-filter="creative">Creative &amp; Talent</button>
-        <button class="filter-btn" data-filter="facilities">Facilities &amp; Tech</button>
-        <button class="filter-btn" data-filter="distribution">Distribution &amp; Marketing</button>
-        <button class="filter-btn" data-filter="finance">Finance &amp; Escrow</button>
-      </div>
     </div>
 
     <!-- SECTION: 10 NODE CARDS (WHITE) -->
@@ -165,12 +124,12 @@
       <div style="max-width:1100px;margin:0 auto;">
         <div class="sec-eyebrow-light">Connected Ecosystem</div>
         <h2 class="ins-h2-dark">Connected Nodes. Zero Intermediaries.</h2>
-        <p class="ins-desc-dark">Filter by capability to explore how each stakeholder pod interfaces with the DIGISYNQ operating architecture.</p>
+        <p class="ins-desc-dark">Explore how each stakeholder pod interfaces with the DIGISYNQ operating architecture.</p>
 
         <div class="node-grid">
           
           <!-- Node 01 -->
-          <div class="node-card" data-category="creative">
+          <div class="node-card">
             <div class="node-num">NODE 01 // CREATIVE</div>
             <h3>Writers &amp; Showrunners</h3>
             <p>Screenplay development, script lock telemetry, writer pods, and franchise Bible architecture connected to verified production packages.</p>
@@ -181,7 +140,7 @@
           </div>
 
           <!-- Node 02 -->
-          <div class="node-card" data-category="facilities">
+          <div class="node-card">
             <div class="node-num">NODE 02 // FACILITIES</div>
             <h3>Soundstages &amp; Studio Lots</h3>
             <p>A-grade acoustic floors, virtual production stages, backlots, and dark-stage scheduling integration with escrow-backed booking.</p>
@@ -192,7 +151,7 @@
           </div>
 
           <!-- Node 03 -->
-          <div class="node-card" data-category="creative">
+          <div class="node-card">
             <div class="node-num">NODE 03 // CREATIVE</div>
             <h3>Marquee Cast &amp; Ensemble</h3>
             <p>Availability window synchronization, talent rate parity indexing, and multi-window backend profit participation packaging.</p>
@@ -203,7 +162,7 @@
           </div>
 
           <!-- Node 04 -->
-          <div class="node-card" data-category="creative">
+          <div class="node-card">
             <div class="node-num">NODE 04 // CREATIVE</div>
             <h3>Directors &amp; Vision Leads</h3>
             <p>Lead directorial attachments, cinematic packaging, visual pitch decks, and milestone-governed creative execution controls.</p>
@@ -214,7 +173,7 @@
           </div>
 
           <!-- Node 05 -->
-          <div class="node-card" data-category="facilities">
+          <div class="node-card">
             <div class="node-num">NODE 05 // FACILITIES</div>
             <h3>Technical Crew &amp; Gear</h3>
             <p>Cinematographers, gaffers, sound engineers, camera packages, lighting grids, and specialized rig syndication across shoots.</p>
@@ -225,7 +184,7 @@
           </div>
 
           <!-- Node 06 -->
-          <div class="node-card" data-category="facilities">
+          <div class="node-card">
             <div class="node-num">NODE 06 // FACILITIES</div>
             <h3>Post-Production &amp; VFX</h3>
             <p>Color grading suites, distributed boutique render nodes, Foley stages, Dolby Atmos mastering, and CGI delivery pipelines.</p>
@@ -236,7 +195,7 @@
           </div>
 
           <!-- Node 07 -->
-          <div class="node-card" data-category="creative">
+          <div class="node-card">
             <div class="node-num">NODE 07 // CREATIVE</div>
             <h3>Music &amp; Score Publishing</h3>
             <p>Original film composition, background scoring, lyricists, soundtrack licensing, and automated streaming royalty split routing.</p>
@@ -247,7 +206,7 @@
           </div>
 
           <!-- Node 08 -->
-          <div class="node-card" data-category="distribution">
+          <div class="node-card">
             <div class="node-num">NODE 08 // DISTRIBUTION</div>
             <h3>Damage Radar &amp; Narrative</h3>
             <p>Pre-release sentiment telemetry, social listening, anti-piracy interception, and opening weekend sentiment calibration.</p>
@@ -258,7 +217,7 @@
           </div>
 
           <!-- Node 09 -->
-          <div class="node-card" data-category="distribution">
+          <div class="node-card">
             <div class="node-num">NODE 09 // DISTRIBUTION</div>
             <h3>Exhibitors &amp; Theatrical</h3>
             <p>Multiplex chains, single-screen programming coordinators, screen share optimization, and POS collection verification.</p>
@@ -269,7 +228,7 @@
           </div>
 
           <!-- Node 10 -->
-          <div class="node-card" data-category="finance">
+          <div class="node-card">
             <div class="node-num">NODE 10 // FINANCE</div>
             <h3>Capital Funds &amp; Escrow</h3>
             <p>Production gap funds, private investor pods, multi-sig escrow verification ledgers, and cascade royalty payout automation.</p>
@@ -294,16 +253,16 @@
           
           <div class="ins-card" id="talent">
             <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;display:block;margin-bottom:0.6rem;">TALENT LAB</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.6rem;">Register Creative Availability</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.3rem;margin:0 0 0.6rem;">Register Creative Availability</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.5rem;">Actors, directors, writers, and technicians can submit availability windows to be matched with funded productions.</p>
-            <a href="contact.html?type=talent" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">Submit Talent Profile ;</a>
+            <a href="contact.html?type=talent" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">Submit Talent Profile &rarr;</a>
           </div>
 
           <div class="ins-card" id="capacity">
             <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;display:block;margin-bottom:0.6rem;">CAPACITY REGISTRY</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.6rem;">List Idle Studio Capacity</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.3rem;margin:0 0 0.6rem;">List Idle Studio Capacity</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.5rem;">Soundstage owners and equipment houses can monetize dark days through standardized network booking memos.</p>
-            <a href="contact.html?type=capacity" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">List Studio Inventory ;</a>
+            <a href="contact.html?type=capacity" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">List Studio Inventory &rarr;</a>
           </div>
 
         </div>
@@ -318,7 +277,7 @@
         <p class="ins-desc-light">DIGISYNQ operates under strict neutral protocols. No single party holds gatekeeping control. Every transaction is milestone-verified and recorded in transparent deal ledgers.</p>
         
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-          <a href="flowchart.html" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">View ABCDEF Protocol ;</a>
+          <a href="flowchart.html" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">View ABCDEF Protocol &rarr;</a>
           <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Commercial Architecture</a>
         </div>
       </div>

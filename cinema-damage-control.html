@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
@@ -21,7 +21,7 @@
     .cdc-pcr-card:hover { border-color:rgba(255,255,255,0.3);transform:translateY(-4px);background:rgba(255,255,255,0.07); }
     .cdc-pcr-card:hover::before { opacity:0.3; }
     .cdc-pcr-num { font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.45);margin-bottom:0.8rem;font-weight:700; }
-    .cdc-pcr-card h3 { font-family:var(--font-body);font-weight:800;font-size:1.3rem;color:#fff;margin:0.4rem 0 0.7rem;letter-spacing:-0.02em; }
+    .cdc-pcr-card h3 { font-family:var(--font-body);font-weight:900;font-size:1.3rem;color:#fff;margin:0.4rem 0 0.7rem;letter-spacing:-0.02em; }
     .cdc-pcr-card > p { font-size:0.92rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0 0 1.2rem; }
     .cdc-pcr-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem; }
     .cdc-pcr-list li { font-size:0.88rem;color:rgba(255,255,255,0.5);padding-left:1.2rem;position:relative;line-height:1.5; }
@@ -40,7 +40,7 @@
 
     /* Risk dial */
     .cdc-dial { width:clamp(140px,16vw,200px);height:clamp(140px,16vw,200px);border-radius:50%;border:2px solid rgba(9,9,11,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(9,9,11,0.04);flex-shrink:0;position:relative;box-shadow:0 0 40px rgba(9,9,11,0.04); }
-    .cdc-dial-num { font-family:var(--font-body);font-weight:800;font-size:clamp(2rem,4.5vw,3rem);color:#09090b;line-height:1; }
+    .cdc-dial-num { font-family:var(--font-num);font-weight:900;font-size:clamp(2rem,4.5vw,3rem);color:#09090b;line-height:1; }
     .cdc-dial-den { font-family:var(--font-mono);font-size:0.85rem;color:#71717a;margin-top:0.15rem; }
     .cdc-dial-lbl { font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.22em;color:#71717a;margin-top:0.4rem;font-weight:700; }
     .cdc-bars { display:flex;flex-direction:column;gap:0.8rem;width:100%; }
@@ -74,10 +74,10 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
-      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
-          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
@@ -88,8 +88,6 @@
 </ul></nav>
       <div class="nav-actions-right">
         <a href="contact.html" class="btn-login">Connect</a>
-        <div class="vertical-sep" aria-hidden="true"></div>
-        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
       </div>
     </header>
 

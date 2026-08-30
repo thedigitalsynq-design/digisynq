@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -20,10 +20,9 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
-      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
-
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -36,8 +35,6 @@
 
       <div class="nav-actions-right">
         <a href="contact.html" class="btn-login">Connect</a>
-        <div class="vertical-sep" aria-hidden="true"></div>
-        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
       </div>
     </header>
 
@@ -59,19 +56,19 @@
           
           <div class="ins-card">
             <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">IN DEVELOPMENT</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;margin:0 0 0.6rem;">AI Script Breakdown &amp; Soundstage Estimator</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.25rem;margin:0 0 0.6rem;">AI Script Breakdown &amp; Soundstage Estimator</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0;">Instant script character count extraction, soundstage day estimation, and automated budget tiering from Final Draft screenplays.</p>
           </div>
 
           <div class="ins-card">
             <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">PLANNED</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;margin:0 0 0.6rem;">Direct Theatrical Ticketing POS API</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.25rem;margin:0 0 0.6rem;">Direct Theatrical Ticketing POS API</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0;">Direct connection with exhibitor point-of-sale systems for automated minute-by-minute box office collection tracking.</p>
           </div>
 
           <div class="ins-card">
             <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">COMMUNITY REQUEST</span>
-            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.25rem;margin:0 0 0.6rem;">Decentralized VFX Render Mesh</h3>
+            <h3 style="font-family:var(--font-body);font-weight:900;font-size:1.25rem;margin:0 0 0.6rem;">Decentralized VFX Render Mesh</h3>
             <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0;">Syndicate idle workstation GPU render power across regional VFX boutique studios during overnight hours.</p>
           </div>
 
@@ -84,14 +81,14 @@
       <div style="max-width:700px;margin:0 auto;">
         <div class="ins-card" style="padding:2.5rem;">
           <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">PROPOSE FEATURE</span>
-          <h2 style="font-family:var(--font-body);font-weight:800;font-size:1.8rem;margin:0 0 0.6rem;color:#09090b;">Propose a Tool or Capability</h2>
+          <h2 style="font-family:var(--font-serif);font-weight:900;font-size:1.8rem;margin:0 0 0.6rem;color:#09090b;">Propose a Tool or Capability</h2>
           <p style="font-size:0.92rem;color:#52525b;line-height:1.6;margin:0 0 1.5rem;">Tell our engineering pod what tools, integrations, or workflows would accelerate your productions.</p>
 
           <form action="mailto:thedigitalsynq@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:1rem;">
             <input type="text" placeholder="Your Name / Studio" required style="width:100%;padding:0.9rem 1.1rem;border-radius:12px;border:1px solid rgba(0,0,0,0.12);background:rgba(248,250,252,0.9);font-family:var(--font-body);font-size:0.95rem;color:#09090b;" />
             <input type="email" placeholder="Your Official Email" required style="width:100%;padding:0.9rem 1.1rem;border-radius:12px;border:1px solid rgba(0,0,0,0.12);background:rgba(248,250,252,0.9);font-family:var(--font-body);font-size:0.95rem;color:#09090b;" />
             <textarea rows="4" placeholder="Describe the feature, integration, or workflow you need..." required style="width:100%;padding:0.9rem 1.1rem;border-radius:12px;border:1px solid rgba(0,0,0,0.12);background:rgba(248,250,252,0.9);font-family:var(--font-body);font-size:0.95rem;color:#09090b;resize:vertical;"></textarea>
-            <button type="submit" class="btn-pill-solid" style="padding:0.95rem;border:none;cursor:pointer;justify-content:center;font-size:0.95rem;">Submit Proposal ;</button>
+            <button type="submit" class="btn-pill-solid" style="padding:0.95rem;border:none;cursor:pointer;justify-content:center;font-size:0.95rem;">Submit Proposal &rarr;</button>
           </form>
         </div>
       </div>

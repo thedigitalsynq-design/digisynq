@@ -2,6 +2,22 @@
    DIGISYNQ — LIQUID GLASS DESIGN SYSTEM & 3D MASTER STYLESHEET
    ========================================================================== */
 
+/* Swear Display — Self-hosted (Bold + BoldItalic) for numbers */
+@font-face {
+  font-family: 'Swear Display';
+  src: url('../fonts/SwearDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Swear Display';
+  src: url('../fonts/SwearDisplay-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   /* Surface & Background Tokens */
   --bg-outer: #e6e8ec;
@@ -25,8 +41,6 @@
   /* Color Accents */
   --accent-orange: #09090b;
   --accent-orange-hover: #27272a;
-  --accent-violet: #8a4fff;
-  --accent-blue: #38bdf8;
   --accent-emerald: #10b981;
   --accent-gold: #f59e0b;
 
@@ -37,9 +51,10 @@
   --text-light: #ffffff;
 
   /* Typography Fonts */
-  --font-serif: 'DM Serif Display', serif;
-  --font-body: 'DM Serif Display', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-body: 'Playfair Display', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  --font-num: 'Swear Display', serif;
 
   /* Radii & Shadows */
   --radius-outer: 44px;
@@ -65,6 +80,7 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-weight: 500;
   background: #000000;
   background-image:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
@@ -76,6 +92,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+/* Numbers — Swear Display */
+.num {
+  font-family: var(--font-num);
+  font-weight: 900;
 }
 
 /* Master Container App Frame (Liquid Glass Rounded Frame) */
@@ -120,11 +142,11 @@ body {
 }
 
 .top-nav.scrolled {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 223, 0, 0.85);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
     0 -1px 0 rgba(0, 0, 0, 0.04) inset,
     0 12px 40px -8px rgba(0, 0, 0, 0.08),
     0 4px 12px -4px rgba(0, 0, 0, 0.04);
@@ -194,14 +216,14 @@ body {
   align-items: center;
   gap: 0.25rem;
   list-style: none;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 223, 0, 0.85);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   padding: 0.3rem 0.4rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 223, 0, 0.5);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 4px 16px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04);
   flex-shrink: 1;
@@ -414,7 +436,7 @@ body {
 /* Main Big Editorial Title */
 .hero-main-title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-size: clamp(4.8rem, 10vw, 8.8rem);
   line-height: 0.88;
   letter-spacing: -0.03em;
@@ -740,7 +762,7 @@ body {
   font-size: 0.62rem;
   font-family: var(--font-mono);
   text-transform: uppercase;
-  color: var(--accent-blue);
+  color: var(--accent-emerald);
   font-weight: 700;
 }
 
@@ -909,7 +931,7 @@ body {
   flex-shrink: 0;
 }
 .check-box-icon.orange { background: #FFFF00; box-shadow: 0 2px 8px rgba(255, 255, 0, 0.4); }
-.check-box-icon.blue { background: #3b82f6; box-shadow: 0 2px 8px rgba(59,130,246,0.4); }
+.check-box-icon.blue { background: #10b981; box-shadow: 0 2px 8px rgba(16,185,129,0.4); }
 
 .float-glass-stat {
   position: absolute;
@@ -937,8 +959,9 @@ body {
 }
 
 .glass-metric-num {
+  font-family: var(--font-num);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1;
   color: #09090b;
   letter-spacing: -0.04em;
@@ -1071,7 +1094,7 @@ body {
 
 .sec-title {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: #09090b;
@@ -1110,7 +1133,7 @@ body {
 
 .subpage-card h3 {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 900;
   color: #09090b;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
@@ -1219,7 +1242,7 @@ body {
 
 .f-col h4 {
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 900;
   color: #09090b;
   margin-bottom: 1.2rem;
   letter-spacing: -0.01em;
@@ -1373,6 +1396,15 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+/* Index page hero - full viewport */
+body.page-home .ins-hero {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .ins-hero::before {
   content: "";
   position: absolute;
@@ -1381,7 +1413,7 @@ body {
   pointer-events: none;
 }
 .ins-hero .ins-eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-num);
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   color: #FFFF00 !important;
@@ -1399,7 +1431,7 @@ body {
 }
 .ins-hero-title {
   font-family: var(--font-serif);
-  font-weight: 800;
+  font-weight: 900;
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   letter-spacing: -0.04em;
   color: #ffffff;
@@ -1581,7 +1613,7 @@ body {
 
 .ins-h2-dark {
   font-family: var(--font-serif);
-  font-weight: 800;
+  font-weight: 900;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.03em;
   color: #09090b;
@@ -1590,7 +1622,7 @@ body {
 }
 .ins-h2-light {
   font-family: var(--font-serif);
-  font-weight: 800;
+  font-weight: 900;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.03em;
   color: #ffffff;
@@ -1843,8 +1875,6 @@ canvas {
 
 .btn-pill-outline:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 

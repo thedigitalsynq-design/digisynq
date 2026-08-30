@@ -12,14 +12,14 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
     .leakage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
     .leakage-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 2rem; background: #fff; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
     .leakage-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.2); }
-    .leakage-pct { font-family: var(--font-body); font-weight: 900; font-size: clamp(3rem, 6vw, 4.5rem); letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 0.8rem; color: #09090b; }
+    .leakage-pct { font-family: var(--font-num); font-weight: 900; font-size: clamp(3rem, 6vw, 4.5rem); letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 0.8rem; color: #09090b; }
     .leakage-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.18em; color: #71717a; margin-bottom: 0.7rem; display: block; font-weight: 700; }
     .leakage-card h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: #09090b; margin: 0 0 0.6rem; letter-spacing: -0.02em; }
     .leakage-card p { font-size: 0.9rem; color: #52525b; line-height: 1.6; margin: 0; }
@@ -37,7 +37,7 @@
     .data-viz-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
     .data-viz-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 1.6rem 1.2rem; background: #fff; text-align: center; }
     .data-viz-card:hover { border-color: rgba(0,0,0,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-    .dvz-num { font-family: var(--font-body); font-weight: 900; font-size: 2.2rem; letter-spacing: -0.04em; color: #09090b; line-height: 1; }
+    .dvz-num { font-family: var(--font-num); font-weight: 900; font-size: 2.2rem; letter-spacing: -0.04em; color: #09090b; line-height: 1; }
     .dvz-unit { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: #71717a; display: block; margin: 0.4rem 0 0.3rem; font-weight: 700; }
     .dvz-label { font-size: 0.83rem; color: #52525b; line-height: 1.45; }
 
@@ -55,9 +55,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
-    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
     <nav aria-label="Primary Navigation">
       <ul class="nav-links-center">
+        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
@@ -69,8 +69,6 @@
 </ul></nav>
     <div class="nav-actions-right">
       <a href="contact.html" class="btn-login">Connect</a>
-      <div class="vertical-sep"></div>
-      <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
     </div>
   </header>
 
@@ -244,6 +242,17 @@
     </div>
   </section>
 
+  <section class="ins-section dark" style="text-align:center;">
+    <div style="max-width:800px;margin:0 auto;">
+      <h2 class="ins-h2-light" style="margin-bottom:1rem;">Ready to Access the Research?</h2>
+      <p class="ins-desc-light" style="margin:0 auto 2.2rem;">Join the DIGISYNQ network to access full telemetry data, whitepapers, and operational intelligence. Zero upfront cost.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Enter the Network &rarr;</a>
+        <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">WhatsApp: +91 79965 48969</a>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
       <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
   <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
@@ -323,12 +332,12 @@
           <a href="cinema-damage-control.html">Damage Radar</a>
         </div>
         <div class="f-col">
-          <h4>Research</h4>
-          <a href="insights.html#leakage-metrics">Leakage Metrics</a>
-          <a href="insights.html#data-points">Data Points</a>
-          <a href="insights.html#whitepapers">Whitepapers</a>
-          <a href="insights.html#methodology">Methodology</a>
-          <a href="about.html">About DIGISYNQ</a>
+          <h4>Participate</h4>
+          <a href="contact.html?type=join">Enter Network</a>
+          <a href="network.html#talent">Talent Lab</a>
+          <a href="network.html#capacity">List Capacity</a>
+          <a href="business.html">Commercial Model</a>
+          <a href="insights.html">Research</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>

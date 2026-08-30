@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initScrollReveal();
   initSmoothScroll();
-  initNodeFilters();
   initCopyButtons();
   initContactForm();
   initPageTransitionLinks();
@@ -125,40 +124,6 @@ function initPageTransitionLinks() {
         appCard.style.transform = 'scale(0.99)';
       }
       setTimeout(() => { window.location.href = href; }, 200);
-    });
-  });
-}
-
-/* ===========================================================
-   INTERACTIVE NODE CATEGORY FILTERS (network.html)
-   =========================================================== */
-function initNodeFilters() {
-  const filterBtns = document.querySelectorAll('.node-filter-btn');
-  const nodeCards = document.querySelectorAll('.subpage-card[data-node-category]');
-  if (!filterBtns.length || !nodeCards.length) return;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      nodeCards.forEach((card, i) => {
-        const cat = card.getAttribute('data-node-category');
-        const visible = filter === 'all' || cat === filter;
-        card.style.transition = `opacity 0.3s ease ${i * 30}ms, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${i * 30}ms`;
-        if (visible) {
-          card.style.display = 'flex';
-          requestAnimationFrame(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          });
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          setTimeout(() => { card.style.display = 'none'; }, 200);
-        }
-      });
     });
   });
 }
