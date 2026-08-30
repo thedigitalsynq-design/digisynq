@@ -256,7 +256,41 @@ window.addEventListener('load', () => {
 });
 
 function init3D() {
-  // ── Loading ──────────────────────────────────────────────────
+  // ── Helper functions (MUST be first — used throughout) ───────
+  function roundRect(ctx, x, y, w, h, r) {
+    r = Math.max(0.001, r); // prevent degenerate path when r=0
+    ctx.beginPath();
+    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+    ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);
+    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h);
+    ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r);
+    ctx.quadraticCurveTo(x,y,x+r,y);
+    ctx.closePath();
+  }
+
+  function makeGlowSprite(color, size) {
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const ctx = c.getContext('2d');
+    const g = ctx.createRadialGradient(64,64,0,64,64,64);
+    g.addColorStop(0, color.replace('%a','1'));
+    g.addColorStop(.5, color.replace('%a','.35'));
+    g.addColorStop(1, color.replace('%a','0'));
+    ctx.fillStyle = g; ctx.fillRect(0,0,128,128);
+    const t = new THREE.CanvasTexture(c);
+    return new THREE.Mesh(
+      new THREE.PlaneGeometry(size,size),
+      new THREE.MeshBasicMaterial({ map:t, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, side:THREE.DoubleSide })
+    );
+  }
+
+  function hexToRgb(hex) {
+    const r=(hex>>16)&255, g=(hex>>8)&255, b=hex&255;
+    return `${r},${g},${b}`;
+  }
+
   const lf = document.getElementById('lf');
   const lp = document.getElementById('lp');
   const loadEl = document.getElementById('load');
@@ -271,7 +305,7 @@ function init3D() {
     }
   }, 60);
 
-  // ── Renderer ─────────────────────────────────────────────────
+  // ── Loading ──────────────────────────────────────────────────
   const canvas = document.getElementById('xp-canvas');
   const R = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
   R.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -425,17 +459,6 @@ function init3D() {
   });
 
   // Glow sprites near ico
-  function makeGlowSprite(color, size) {
-    const c = document.createElement('canvas'); c.width = c.height = 128;
-    const ctx = c.getContext('2d');
-    const g = ctx.createRadialGradient(64,64,0,64,64,64);
-    g.addColorStop(0, color.replace('%a', '1'));
-    g.addColorStop(.5, color.replace('%a', '.4'));
-    g.addColorStop(1, color.replace('%a', '0'));
-    ctx.fillStyle = g; ctx.fillRect(0,0,128,128);
-    const t = new THREE.CanvasTexture(c);
-    return new THREE.Mesh(new THREE.PlaneGeometry(size,size), new THREE.MeshBasicMaterial({ map:t, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, side:THREE.DoubleSide }));
-  }
   const glow1 = makeGlowSprite('rgba(255,255,0,%a)', 18);
   glow1.position.set(-10, 5, 10); heroGroup.add(glow1);
   const glow2 = makeGlowSprite('rgba(50,100,255,%a)', 14);
@@ -676,17 +699,13 @@ function init3D() {
 
     // Accent glow strip
     ctx.save();
-    roundRect(ctx, 0,0,cw,6,0);
+    roundRect(ctx, 0, 0, cw, 6, 2);
     ctx.fillStyle = col; ctx.fill();
     ctx.restore();
 
-    // Inner glow
-    const ig = ctx.createLinearGradient(0,0,0,ch);
-    ig.addColorStop(0, col.replace(')', ',0.08)').replace('rgb','rgba').replace('#','').padStart(0,'rgba('));
-    ig.addColorStop(1, 'transparent');
-    // Simplified glow
-    ctx.fillStyle = 'rgba(255,255,255,0.02)';
-    ctx.fillRect(0,0,cw,ch/2);
+    // Inner glow (simple, no bad string manipulation)
+    ctx.fillStyle = 'rgba(255,255,255,0.025)';
+    ctx.fillRect(0, 8, cw, ch / 2);
 
     // Icon
     ctx.font = '52px monospace'; ctx.fillStyle = col;
@@ -724,18 +743,8 @@ function init3D() {
     cardsGroup.add(eg);
   });
 
-  function roundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
-    ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-    ctx.lineTo(x+w,y+h-r);
-    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    ctx.lineTo(x+r,y+h);
-    ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-    ctx.lineTo(x,y+r);
-    ctx.quadraticCurveTo(x,y,x+r,y);
-    ctx.closePath();
-  }
+  // roundRect is defined at top of init3D — no duplicate needed here
+
 
   // ── Portal (Stage 5) ──────────────────────────────────────────
   const portalGroup = new THREE.Group();
@@ -1000,10 +1009,8 @@ function init3D() {
   });
 }
 
-function hexToRgb(hex) {
-  const r = (hex>>16)&255, g = (hex>>8)&255, b = hex&255;
-  return `${r},${g},${b}`;
-}
+
+
 </script>
 <script src="assets/js/sounds.js" defer></script>
 </body>
