@@ -9,398 +9,547 @@
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://digisynq.com/about.html"/>
   <title>About &amp; Manifesto — DIGISYNQ</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    /* ── Manifesto Big Typography ── */
-    .manifesto-big {
+    /* ═══════════════════════════════════════════════════════════
+       ABOUT PAGE — PREMIUM MANIFESTO DESIGN SYSTEM
+       ═══════════════════════════════════════════════════════════ */
+
+    /* ── Section Spacing ── */
+    .about-section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 3.5rem);
+    }
+    .about-section.tight { padding-bottom: clamp(2rem, 4vw, 3rem); }
+    .about-container { max-width: 1080px; margin: 0 auto; }
+
+    /* ── Section Eyebrow ── */
+    .about-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .about-eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.4;
+    }
+    .about-eyebrow.light { color: rgba(255,255,255,0.5); }
+    .about-eyebrow.dark { color: #94a3b8; }
+
+    /* ── Section Headings ── */
+    .about-h2 {
       font-family: var(--font-body);
       font-weight: 900;
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 0 0 1rem;
     }
-    .manifesto-big span {
-      display: block;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
-    }
-    .manifesto-big.revealed span {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .manifesto-big.revealed span:nth-child(2) { transition-delay: 0.12s; }
-    .manifesto-big.revealed span:nth-child(3) { transition-delay: 0.24s; }
-    .manifesto-big.revealed span:nth-child(4) { transition-delay: 0.36s; }
+    .about-h2.light { color: #ffffff; }
+    .about-h2.dark { color: #09090b; }
 
-    .manifesto-sub {
+    .about-desc {
       font-family: var(--font-body);
       font-weight: 400;
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-size: clamp(0.95rem, 1.4vw, 1.08rem);
       line-height: 1.7;
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      max-width: 60ch;
-      margin: 2rem auto 0;
+      max-width: 56ch;
+      margin: 0;
     }
-    .manifesto-sub.dark-text {
-      color: #52525b;
+    .about-desc.light { color: rgba(255,255,255,0.55); }
+    .about-desc.dark { color: #64748b; }
+    .about-desc.center { text-align: center; margin-left: auto; margin-right: auto; }
+
+    /* ── Manifesto Big Statement ── */
+    .m-big {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: clamp(2rem, 5.5vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+      text-align: center;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    .m-big em {
+      font-style: normal;
+      display: block;
+      background: linear-gradient(135deg, #ffffff 30%, rgba(255,255,255,0.5) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .m-big span {
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .m-big.revealed span { opacity: 1; transform: translateY(0); }
+    .m-big.revealed span:nth-child(2) { transition-delay: 0.15s; }
+    .m-big.revealed span:nth-child(3) { transition-delay: 0.3s; }
+    .m-big.revealed span:nth-child(4) { transition-delay: 0.45s; }
+
+    .m-sub {
+      font-weight: 400;
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      max-width: 48ch;
+      margin: 2.5rem auto 0;
+    }
+    .m-sub strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+    /* ── Hero Enhancement ── */
+    .about-hero {
+      padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(4rem, 8vw, 7rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
     }
 
-    /* ── Who We Are Grid ── */
-    .who-grid {
+    /* ── Who We Are — Split Grid ── */
+    .who-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
       align-items: start;
     }
-    .who-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
+    .who-list { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
     .who-item {
-      font-family: var(--font-body);
       font-weight: 700;
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      color: rgba(255,255,255,0.85);
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: rgba(255,255,255,0.8);
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       opacity: 0;
-      transform: translateX(-20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateX(-16px);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .who-item.revealed {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .who-item.revealed { opacity: 1; transform: translateX(0); }
     .who-item:nth-child(2) { transition-delay: 0.06s; }
     .who-item:nth-child(3) { transition-delay: 0.12s; }
     .who-item:nth-child(4) { transition-delay: 0.18s; }
     .who-item:nth-child(5) { transition-delay: 0.24s; }
     .who-item:nth-child(6) { transition-delay: 0.30s; }
+    .who-item::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+    .who-tagline {
+      font-weight: 800;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: #ffffff;
+      margin-top: 2rem;
+      line-height: 1.4;
+    }
+
+    /* ── Problem Cards ── */
+    .problem-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .problem-card {
+      padding: 1.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.03);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .problem-card.revealed { opacity: 1; transform: translateY(0); }
+    .problem-card:nth-child(2) { transition-delay: 0.08s; }
+    .problem-card:nth-child(3) { transition-delay: 0.16s; }
+    .problem-card:nth-child(4) { transition-delay: 0.24s; }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .problem-card p {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #09090b;
+      margin: 0;
+      line-height: 1.4;
+    }
 
     /* ── Belief Role Cards ── */
     .belief-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
-    .belief-role {
+    .belief-card {
       text-align: center;
       padding: 2rem 1rem;
-      border: 1px solid rgba(0,0,0,0.08);
       border-radius: 20px;
-      background: rgba(255,255,255,0.65);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
       transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px) scale(0.96);
     }
-    .belief-role.revealed {
-      opacity: 1;
-      transform: translateY(0);
+    .belief-card.revealed { opacity: 1; transform: translateY(0) scale(1); }
+    .belief-card:nth-child(2) { transition-delay: 0.06s; }
+    .belief-card:nth-child(3) { transition-delay: 0.12s; }
+    .belief-card:nth-child(4) { transition-delay: 0.18s; }
+    .belief-card:nth-child(5) { transition-delay: 0.24s; }
+    .belief-card:nth-child(6) { transition-delay: 0.30s; }
+    .belief-card:nth-child(7) { transition-delay: 0.36s; }
+    .belief-card:nth-child(8) { transition-delay: 0.42s; }
+    .belief-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 16px 40px rgba(0,0,0,0.3);
     }
-    .belief-role:nth-child(2) { transition-delay: 0.07s; }
-    .belief-role:nth-child(3) { transition-delay: 0.14s; }
-    .belief-role:nth-child(4) { transition-delay: 0.21s; }
-    .belief-role:nth-child(5) { transition-delay: 0.28s; }
-    .belief-role:nth-child(6) { transition-delay: 0.35s; }
-    .belief-role:nth-child(7) { transition-delay: 0.42s; }
-    .belief-role:nth-child(8) { transition-delay: 0.49s; }
-    .belief-role:hover {
-      transform: translateY(-6px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 16px 36px rgba(0,0,0,0.08);
-      border-color: rgba(0,0,0,0.15);
-    }
-    .belief-role-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: #09090b;
+    .belief-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .belief-role-icon svg { width: 22px; height: 22px; stroke: #ffffff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .belief-role-label {
+    .belief-icon svg { width: 22px; height: 22px; stroke: #ffffff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .belief-label {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      color: #09090b;
-      font-weight: 700;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.5);
       text-transform: uppercase;
     }
 
-    /* ── Community Nodes ── */
+    /* ── Community Cards ── */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      max-width: 680px;
+      margin: 2.5rem auto 0;
+    }
+    .community-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.03);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .community-card.revealed { opacity: 1; transform: translateY(0); }
+    .community-card:nth-child(2) { transition-delay: 0.08s; }
+    .community-card:nth-child(3) { transition-delay: 0.16s; }
+    .community-card:nth-child(4) { transition-delay: 0.24s; }
+    .community-card:hover {
+      transform: translateY(-4px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 12px 32px rgba(0,0,0,0.06);
+    }
+    .community-card p {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #09090b;
+      margin: 0;
+    }
+
+    /* ── Node Ring (Ecosystem) ── */
     .node-ring {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 0;
       flex-wrap: wrap;
-      max-width: 700px;
+      max-width: 800px;
       margin: 3rem auto 0;
-      position: relative;
     }
     .node-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1.2rem;
+      gap: 0.6rem;
+      padding: 1rem 0.6rem;
       opacity: 0;
-      transform: scale(0.85);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: scale(0.8);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .node-item.revealed {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .node-item:nth-child(2) { transition-delay: 0.08s; }
-    .node-item:nth-child(3) { transition-delay: 0.16s; }
-    .node-item:nth-child(4) { transition-delay: 0.24s; }
-    .node-item:nth-child(5) { transition-delay: 0.32s; }
-    .node-item:nth-child(6) { transition-delay: 0.40s; }
-    .node-item:nth-child(7) { transition-delay: 0.48s; }
-    .node-item:nth-child(8) { transition-delay: 0.56s; }
-    .node-dot {
-      width: 52px;
-      height: 52px;
+    .node-item.revealed { opacity: 1; transform: scale(1); }
+    .node-item:nth-child(2) { transition-delay: 0.06s; }
+    .node-item:nth-child(4) { transition-delay: 0.12s; }
+    .node-item:nth-child(6) { transition-delay: 0.18s; }
+    .node-item:nth-child(8) { transition-delay: 0.24s; }
+    .node-item:nth-child(10) { transition-delay: 0.30s; }
+    .node-item:nth-child(12) { transition-delay: 0.36s; }
+    .node-item:nth-child(14) { transition-delay: 0.42s; }
+    .node-item:nth-child(16) { transition-delay: 0.48s; }
+    .node-circle {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 1.5px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
+      position: relative;
     }
-    .node-dot:hover {
-      background: rgba(255,255,255,0.2);
-      border-color: rgba(255,255,255,0.5);
-      transform: scale(1.1);
+    .node-circle::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
     }
-    .node-dot svg { width: 20px; height: 20px; stroke: #ffffff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .node-label {
+    .node-circle:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.35);
+      transform: scale(1.12);
+    }
+    .node-circle svg { width: 20px; height: 20px; stroke: #ffffff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .node-text {
       font-family: var(--font-mono);
-      font-size: 0.58rem;
+      font-size: 0.55rem;
       letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
-      text-align: center;
     }
-    .node-connector {
-      width: 24px;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    .node-line {
+      width: 20px;
+      height: 1.5px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.2), rgba(255,255,255,0.06));
       flex-shrink: 0;
+      margin: 0 -2px;
+      align-self: center;
+      margin-bottom: 1.2rem;
     }
 
     /* ── Connect Flow ── */
-    .connect-flow {
+    .flow-track {
       display: flex;
       flex-direction: column;
       gap: 0;
-      max-width: 600px;
+      max-width: 580px;
       margin: 2.5rem auto 0;
     }
     .flow-step {
       display: flex;
       gap: 1.5rem;
       align-items: flex-start;
-      padding: 1.8rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateX(-12px);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .flow-step.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .flow-step:nth-child(2) { transition-delay: 0.1s; }
-    .flow-step:nth-child(3) { transition-delay: 0.2s; }
-    .flow-step:nth-child(4) { transition-delay: 0.3s; }
-    .flow-step:nth-child(5) { transition-delay: 0.4s; }
+    .flow-step.revealed { opacity: 1; transform: translateX(0); }
+    .flow-step:nth-child(2) { transition-delay: 0.08s; }
+    .flow-step:nth-child(3) { transition-delay: 0.16s; }
+    .flow-step:nth-child(4) { transition-delay: 0.24s; }
+    .flow-step:nth-child(5) { transition-delay: 0.32s; }
     .flow-step:last-child { border-bottom: none; }
     .flow-num {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      color: #09090b;
-      font-weight: 800;
-      width: 28px;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      font-weight: 700;
+      width: 24px;
       flex-shrink: 0;
-      padding-top: 0.15rem;
+      padding-top: 0.2rem;
     }
     .flow-body h4 {
-      font-family: var(--font-body);
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #09090b;
-      margin: 0 0 0.35rem;
+      margin: 0 0 0.3rem;
       letter-spacing: -0.02em;
     }
     .flow-body p {
-      font-size: 0.9rem;
-      color: #52525b;
+      font-size: 0.88rem;
+      color: #64748b;
       line-height: 1.6;
       margin: 0;
     }
 
     /* ── Value Sequence ── */
-    .value-seq {
+    .value-row {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 0;
       flex-wrap: wrap;
-      margin: 2.5rem auto 0;
-      max-width: 800px;
+      margin: 3rem auto 0;
+      max-width: 750px;
     }
-    .value-seq-item {
+    .value-node {
       text-align: center;
-      padding: 1.5rem 1.2rem;
+      padding: 1.5rem 1rem;
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(16px);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .value-seq-item.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .value-seq-item:nth-child(2) { transition-delay: 0.1s; }
-    .value-seq-item:nth-child(3) { transition-delay: 0.2s; }
-    .value-seq-item:nth-child(4) { transition-delay: 0.3s; }
-    .value-seq-word {
-      font-family: var(--font-body);
+    .value-node.revealed { opacity: 1; transform: translateY(0); }
+    .value-node:nth-child(2) { transition-delay: 0.1s; }
+    .value-node:nth-child(3) { transition-delay: 0.2s; }
+    .value-node:nth-child(4) { transition-delay: 0.3s; }
+    .value-word {
       font-weight: 900;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1rem, 2vw, 1.4rem);
       color: #09090b;
       letter-spacing: -0.02em;
     }
-    .value-seq-arrow {
-      font-size: 1.5rem;
+    .value-arr {
+      font-size: 1.2rem;
       color: #d4d4d8;
-      padding: 0 0.3rem;
+      padding: 0 0.2rem;
+      flex-shrink: 0;
     }
 
     /* ── Founder Cards ── */
-    .founder-grid {
+    .founder-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
     }
     .founder-card {
       text-align: center;
-      padding: 2.5rem 1.5rem 2rem;
-      border: 1px solid rgba(0,0,0,0.08);
+      padding: 2.5rem 1.2rem 2rem;
       border-radius: 24px;
-      background: rgba(255,255,255,0.65);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 20px rgba(0,0,0,0.04);
       transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
       opacity: 0;
       transform: translateY(24px);
     }
-    .founder-card.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .founder-card.revealed { opacity: 1; transform: translateY(0); }
     .founder-card:nth-child(2) { transition-delay: 0.1s; }
     .founder-card:nth-child(3) { transition-delay: 0.2s; }
     .founder-card:nth-child(4) { transition-delay: 0.3s; }
     .founder-card:hover {
-      transform: translateY(-6px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 20px 48px rgba(0,0,0,0.08);
-      border-color: rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 24px 56px rgba(0,0,0,0.08);
+      border-color: rgba(0,0,0,0.12);
     }
     .founder-avatar {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      background: #09090b;
+      background: linear-gradient(135deg, #18181b, #27272a);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.2rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    .founder-avatar svg { width: 28px; height: 28px; stroke: #ffffff; fill: none; stroke-width: 2; }
+    .founder-avatar svg { width: 28px; height: 28px; stroke: #ffffff; fill: none; stroke-width: 1.8; }
     .founder-name {
-      font-family: var(--font-body);
       font-weight: 800;
       font-size: 1.15rem;
       color: #09090b;
       letter-spacing: -0.02em;
-      margin: 0 0 0.3rem;
+      margin: 0 0 0.35rem;
     }
     .founder-role {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      color: #71717a;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      color: #94a3b8;
       text-transform: uppercase;
     }
 
-    /* ── Problem Items ── */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2rem;
+    /* ── Final Manifesto Closing ── */
+    .final-brand {
+      text-align: center;
+      margin-top: 4rem;
     }
-    .problem-item {
-      padding: 1.5rem;
-      border-left: 3px solid #d4d4d8;
-      opacity: 0;
-      transform: translateX(-16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+    .final-brand-name {
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #ffffff;
+      letter-spacing: -0.04em;
+      line-height: 1;
     }
-    .problem-item.revealed {
-      opacity: 1;
-      transform: translateX(0);
+    .final-brand-sub {
+      font-weight: 400;
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.8rem;
+      letter-spacing: 0.02em;
     }
-    .problem-item:nth-child(2) { transition-delay: 0.08s; }
-    .problem-item:nth-child(3) { transition-delay: 0.16s; }
-    .problem-item:nth-child(4) { transition-delay: 0.24s; }
-    .problem-item p {
-      font-size: 0.95rem;
-      color: #52525b;
-      line-height: 1.6;
-      margin: 0;
+
+    /* ── Section Dividers ── */
+    .about-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.08) 50%, transparent 95%);
+    }
+    .about-divider.dark {
+      background: linear-gradient(90deg, transparent 5%, rgba(0,0,0,0.06) 50%, transparent 95%);
     }
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .who-grid { grid-template-columns: 1fr; }
+      .who-split { grid-template-columns: 1fr; }
       .belief-grid { grid-template-columns: repeat(2, 1fr); }
-      .founder-grid { grid-template-columns: repeat(2, 1fr); }
-      .problem-grid { grid-template-columns: 1fr; }
-      .node-connector { display: none; }
+      .founder-row { grid-template-columns: repeat(2, 1fr); }
+      .problem-list { grid-template-columns: 1fr; }
+      .node-line { display: none; }
     }
     @media (max-width: 600px) {
-      .belief-grid { grid-template-columns: 1fr; }
-      .founder-grid { grid-template-columns: 1fr; }
-      .value-seq { flex-direction: column; }
-      .value-seq-arrow { transform: rotate(90deg); }
+      .belief-grid { grid-template-columns: 1fr 1fr; }
+      .founder-row { grid-template-columns: 1fr 1fr; }
+      .community-grid { grid-template-columns: 1fr; }
+      .value-row { flex-direction: column; }
+      .value-arr { transform: rotate(90deg); }
     }
   </style>
 </head>
@@ -427,10 +576,10 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       HERO: THE DIGISYNQ MANIFESTO
-       ══════════════════════════════════════════════════════════════ -->
-  <div class="ins-hero" id="main-content">
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════ -->
+  <div class="about-hero ins-hero" id="main-content">
     <div class="ins-eyebrow">The DIGISYNQ Manifesto</div>
     <h1 class="ins-hero-title">Different Parts.<br><em>One Connected Ecosystem.</em></h1>
     <p class="ins-hero-desc">DIGISYNQ connects the pieces of the entertainment ecosystem. People. Talent. Technology. Businesses. Communities. Opportunities.</p>
@@ -440,17 +589,17 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
        01 — WHO WE ARE
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="who-we-are">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="who-grid">
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="who-we-are">
+    <div class="about-container">
+      <div class="who-split">
         <div>
-          <div class="sec-eyebrow-light" style="color:rgba(255,255,255,0.75);">Section 01 // Who We Are</div>
-          <h2 class="ins-h2-light">The Entertainment Ecosystem. Connected.</h2>
-          <p class="ins-desc-light">Think of Indian entertainment like separate power plants with no transmission lines. DIGISYNQ is the grid that routes talent, studios, and capital wherever demand sparks.</p>
-          <p class="ins-desc-light" style="margin-top:1rem;">We are not an agency. Not a production house. Not a fund. We are the operating network &mdash; the neutral connective tissue that routes the right assets to the right opportunities at the right moment.</p>
+          <div class="about-eyebrow light">01 &mdash; Who We Are</div>
+          <h2 class="about-h2 light">The Entertainment Ecosystem. Connected.</h2>
+          <p class="about-desc light">Think of Indian entertainment like separate power plants with no transmission lines. DIGISYNQ is the grid that routes talent, studios, and capital wherever demand sparks.</p>
+          <p class="about-desc light" style="margin-top:1rem;">We are not an agency. Not a production house. Not a fund. We are the operating network &mdash; the neutral connective tissue that routes the right assets to the right opportunities at the right moment.</p>
         </div>
         <div>
           <div class="who-list">
@@ -461,304 +610,259 @@
             <div class="who-item" data-reveal>Communities.</div>
             <div class="who-item" data-reveal>Opportunities.</div>
           </div>
-          <p class="ins-desc-light" style="margin-top:1.5rem;font-weight:700;color:rgba(255,255,255,0.9);">Different parts.<br>One connected ecosystem.</p>
+          <p class="who-tagline">Different parts.<br>One connected ecosystem.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        02 — THE MANIFESTO
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="manifesto" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="manifesto-big" data-reveal>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="manifesto">
+    <div class="about-container">
+      <div class="m-big" data-reveal>
         <span>EVERYTHING IS CONNECTED.</span>
         <span>WE MAKE THE CONNECTIONS WORK.</span>
       </div>
-      <p class="manifesto-sub" style="margin-top:3rem;">Entertainment is never created by one person.</p>
-      <p class="manifesto-sub">Behind every face is a team.<br>Behind every team is a network.<br>Behind every network is an ecosystem.</p>
-      <p class="manifesto-sub" style="color:#ffffff;font-weight:700;margin-top:2rem;">DIGISYNQ exists to connect it.</p>
+      <p class="m-sub">Entertainment is never created by one person.</p>
+      <p class="m-sub">Behind every face is a team.<br>Behind every team is a network.<br>Behind every network is an ecosystem.</p>
+      <p class="m-sub" style="color:rgba(255,255,255,0.85);font-weight:600;margin-top:2rem;">DIGISYNQ exists to connect it.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       03 — THE PROBLEM
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section white" id="problem">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Section 02 // The Problem</div>
-      <h2 class="ins-h2-dark">Too many pieces.<br>Too many gaps.</h2>
-      <p class="ins-desc-dark">Too much value left disconnected.</p>
+  <div class="about-divider dark"></div>
 
-      <div class="problem-grid">
-        <div class="problem-item" data-reveal>
-          <p>Talent gets overlooked.</p>
-        </div>
-        <div class="problem-item" data-reveal>
-          <p>Skills stay invisible.</p>
-        </div>
-        <div class="problem-item" data-reveal>
-          <p>Opportunities miss the right people.</p>
-        </div>
-        <div class="problem-item" data-reveal>
-          <p>Communities remain fragmented.</p>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════
+       03 — THE PROBLEM
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section white" id="problem">
+    <div class="about-container">
+      <div class="about-eyebrow dark">02 &mdash; The Problem</div>
+      <h2 class="about-h2 dark">Too many pieces.<br>Too many gaps.</h2>
+      <p class="about-desc dark">Too much value left disconnected.</p>
+
+      <div class="problem-list">
+        <div class="problem-card" data-reveal><p>Talent gets overlooked.</p></div>
+        <div class="problem-card" data-reveal><p>Skills stay invisible.</p></div>
+        <div class="problem-card" data-reveal><p>Opportunities miss the right people.</p></div>
+        <div class="problem-card" data-reveal><p>Communities remain fragmented.</p></div>
       </div>
 
-      <p class="ins-desc-dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;font-size:1.05rem;">We believe the ecosystem can work better.</p>
+      <p class="about-desc dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;font-size:1.05rem;">We believe the ecosystem can work better.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider dark"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        04 — OUR BELIEF
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section offwhite" id="belief">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;">Section 03 // Our Belief</div>
-      <h2 class="ins-h2-dark" style="text-align:center;">Everyone has value.</h2>
-      <p class="ins-desc-dark" style="margin:0 auto;text-align:center;">Different roles. Different strengths. Equal importance to the ecosystem.</p>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="belief">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow light" style="justify-content:center;">03 &mdash; Our Belief</div>
+      <h2 class="about-h2 light" style="text-align:center;">Everyone has value.</h2>
+      <p class="about-desc light center">Different roles. Different strengths. Equal importance to the ecosystem.</p>
 
       <div class="belief-grid">
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="belief-role-label">Hero</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="belief-label">Hero</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <div class="belief-role-label">Technician</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="belief-label">Technician</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="belief-role-label">Creator</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="belief-label">Creator</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-          <div class="belief-role-label">Producer</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="belief-label">Producer</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div class="belief-role-label">Distributor</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="belief-label">Distributor</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-          <div class="belief-role-label">Brand</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="belief-label">Brand</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="belief-role-label">Platform</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="belief-label">Platform</div>
         </div>
-        <div class="belief-role" data-reveal>
-          <div class="belief-role-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="belief-role-label">Audience</div>
+        <div class="belief-card" data-reveal>
+          <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="belief-label">Audience</div>
         </div>
       </div>
 
-      <p class="ins-desc-dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;">We value contribution, not just visibility.</p>
+      <p class="about-desc light" style="margin-top:2.5rem;font-weight:700;color:rgba(255,255,255,0.9);text-align:center;">We value contribution, not just visibility.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        05 — COMMUNITIES
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section white" id="communities">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;">Section 04 // Communities</div>
-      <h2 class="ins-h2-dark" style="text-align:center;">We don't just connect people.<br>We build communities.</h2>
-      <p class="ins-desc-dark" style="margin:0 auto 2.5rem;text-align:center;max-width:50ch;">An audience watches. A community participates.</p>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section white" id="communities">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow dark" style="justify-content:center;">04 &mdash; Communities</div>
+      <h2 class="about-h2 dark" style="text-align:center;">We don't just connect people.<br>We build communities.</h2>
+      <p class="about-desc dark center" style="margin-bottom:2rem;">An audience watches. A community participates.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:700px;margin:0 auto;">
-        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community shares.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community collaborates.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community creates.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.8rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1.05rem;color:#09090b;margin:0;">A community grows.</p>
-        </div>
+      <div class="community-grid">
+        <div class="community-card" data-reveal><p>A community shares.</p></div>
+        <div class="community-card" data-reveal><p>A community collaborates.</p></div>
+        <div class="community-card" data-reveal><p>A community creates.</p></div>
+        <div class="community-card" data-reveal><p>A community grows.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       06 — THE DIGISYNQ COMMUNITY
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="ecosystem">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Section 05 // The Ecosystem</div>
-      <h2 class="ins-h2-light" style="text-align:center;">Everyone is part of the ecosystem.</h2>
+  <div class="about-divider dark"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       06 — THE ECOSYSTEM
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="ecosystem">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow light" style="justify-content:center;">05 &mdash; The Ecosystem</div>
+      <h2 class="about-h2 light" style="text-align:center;">Everyone is part of the ecosystem.</h2>
 
       <div class="node-ring">
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="node-label">Talent</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <div class="node-label">Technicians</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="node-label">Creators</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-          <div class="node-label">Producers</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-          <div class="node-label">Brands</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="node-label">Platforms</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div class="node-label">Distributors</div>
-        </div>
-        <div class="node-connector"></div>
-        <div class="node-item" data-reveal>
-          <div class="node-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="node-label">Audiences</div>
-        </div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="node-text">Talent</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="node-text">Technicians</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="node-text">Creators</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="node-text">Producers</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="node-text">Brands</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="node-text">Platforms</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="node-text">Distributors</div></div>
+        <div class="node-line"></div>
+        <div class="node-item" data-reveal><div class="node-circle"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="node-text">Audiences</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       07 — HOW WE CONNECT
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section white" id="how-we-connect">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Section 06 // How We Connect</div>
-      <h2 class="ins-h2-dark">The journey from discovery to growth.</h2>
+  <div class="about-divider"></div>
 
-      <div class="connect-flow">
+  <!-- ═══════════════════════════════════════════════════════
+       07 — HOW WE CONNECT
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section white" id="how-we-connect">
+    <div class="about-container">
+      <div class="about-eyebrow dark">06 &mdash; How We Connect</div>
+      <h2 class="about-h2 dark">The journey from discovery to growth.</h2>
+
+      <div class="flow-track">
         <div class="flow-step" data-reveal>
           <div class="flow-num">01</div>
-          <div class="flow-body">
-            <h4>Discover</h4>
-            <p>Find people, skills, ideas and opportunities.</p>
-          </div>
+          <div class="flow-body"><h4>Discover</h4><p>Find people, skills, ideas and opportunities.</p></div>
         </div>
         <div class="flow-step" data-reveal>
           <div class="flow-num">02</div>
-          <div class="flow-body">
-            <h4>Connect</h4>
-            <p>Bring the right people together.</p>
-          </div>
+          <div class="flow-body"><h4>Connect</h4><p>Bring the right people together.</p></div>
         </div>
         <div class="flow-step" data-reveal>
           <div class="flow-num">03</div>
-          <div class="flow-body">
-            <h4>Collaborate</h4>
-            <p>Turn connections into possibilities.</p>
-          </div>
+          <div class="flow-body"><h4>Collaborate</h4><p>Turn connections into possibilities.</p></div>
         </div>
         <div class="flow-step" data-reveal>
           <div class="flow-num">04</div>
-          <div class="flow-body">
-            <h4>Contribute</h4>
-            <p>Create measurable value.</p>
-          </div>
+          <div class="flow-body"><h4>Contribute</h4><p>Create measurable value.</p></div>
         </div>
         <div class="flow-step" data-reveal>
           <div class="flow-num">05</div>
-          <div class="flow-body">
-            <h4>Grow</h4>
-            <p>Build reputation, relationships and opportunity.</p>
-          </div>
+          <div class="flow-body"><h4>Grow</h4><p>Build reputation, relationships and opportunity.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       08 — VALUE & REPUTATION
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section offwhite" id="value">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;">Section 07 // Value &amp; Reputation</div>
-      <h2 class="ins-h2-dark" style="text-align:center;">Your work builds your value.</h2>
-      <p class="ins-desc-dark" style="margin:0 auto;text-align:center;max-width:50ch;">Contribution over popularity. Work over noise.</p>
+  <div class="about-divider dark"></div>
 
-      <div class="value-seq">
-        <div class="value-seq-item" data-reveal><div class="value-seq-word">Work</div></div>
-        <div class="value-seq-arrow">&rarr;</div>
-        <div class="value-seq-item" data-reveal><div class="value-seq-word">Contribution</div></div>
-        <div class="value-seq-arrow">&rarr;</div>
-        <div class="value-seq-item" data-reveal><div class="value-seq-word">Reputation</div></div>
-        <div class="value-seq-arrow">&rarr;</div>
-        <div class="value-seq-item" data-reveal><div class="value-seq-word">Opportunity</div></div>
+  <!-- ═══════════════════════════════════════════════════════
+       08 — VALUE & REPUTATION
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="value">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow light" style="justify-content:center;">07 &mdash; Value &amp; Reputation</div>
+      <h2 class="about-h2 light" style="text-align:center;">Your work builds your value.</h2>
+      <p class="about-desc light center">Contribution over popularity. Work over noise.</p>
+
+      <div class="value-row">
+        <div class="value-node" data-reveal><div class="value-word">Work</div></div>
+        <div class="value-arr">&rarr;</div>
+        <div class="value-node" data-reveal><div class="value-word">Contribution</div></div>
+        <div class="value-arr">&rarr;</div>
+        <div class="value-node" data-reveal><div class="value-word">Reputation</div></div>
+        <div class="value-arr">&rarr;</div>
+        <div class="value-node" data-reveal><div class="value-word">Opportunity</div></div>
       </div>
 
-      <p class="ins-desc-dark" style="margin-top:2.5rem;max-width:50ch;margin-left:auto;margin-right:auto;">You work.<br>You contribute.<br>You earn your place.<br>You build your value.</p>
+      <p class="about-desc light" style="margin-top:2.5rem;text-align:center;max-width:40ch;margin-left:auto;margin-right:auto;">You work. You contribute.<br>You earn your place. You build your value.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        09 — THE BIGGER IDEA
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="bigger-idea" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="manifesto-big" data-reveal>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="bigger-idea">
+    <div class="about-container">
+      <div class="m-big" data-reveal>
         <span>ONE PERSON CAN CREATE SOMETHING.</span>
         <span>A COMMUNITY CAN CREATE SOMETHING BIGGER.</span>
         <span>A CONNECTED ECOSYSTEM CAN CHANGE AN INDUSTRY.</span>
       </div>
-      <p class="manifesto-sub" style="margin-top:3rem;color:#ffffff;font-weight:700;">That's the idea behind DIGISYNQ.</p>
+      <p class="m-sub" style="color:rgba(255,255,255,0.85);font-weight:600;margin-top:3rem;">That's the idea behind DIGISYNQ.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       10 — WHAT WE ARE BUILDING
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section white" id="building">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;">Section 08 // What We Are Building</div>
-      <h2 class="ins-h2-dark" style="text-align:center;">Not just a platform.<br>An ecosystem.</h2>
+  <div class="about-divider dark"></div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:800px;margin:2rem auto 0;">
-        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to discover.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to connect.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to collaborate.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.6rem;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place to create value.</p>
-        </div>
-        <div class="ins-card" style="text-align:center;padding:1.6rem;grid-column:1/-1;" data-reveal>
-          <p style="font-family:var(--font-body);font-weight:800;font-size:1rem;color:#09090b;margin:0;">A place where communities grow.</p>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════
+       10 — WHAT WE ARE BUILDING
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section white" id="building">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow dark" style="justify-content:center;">08 &mdash; What We Are Building</div>
+      <h2 class="about-h2 dark" style="text-align:center;">Not just a platform.<br>An ecosystem.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;max-width:780px;margin:2.5rem auto 0;">
+        <div class="community-card" data-reveal><p>A place to discover.</p></div>
+        <div class="community-card" data-reveal><p>A place to connect.</p></div>
+        <div class="community-card" data-reveal><p>A place to collaborate.</p></div>
+        <div class="community-card" data-reveal><p>A place to create value.</p></div>
+        <div class="community-card" data-reveal style="grid-column:1/-1;"><p>A place where communities grow.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       11 — THE CO-FOUNDERS
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section offwhite" id="founders">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;">Section 09 // The Co-Founders</div>
-      <h2 class="ins-h2-dark" style="text-align:center;">Four minds.<br>One SYNQ.</h2>
-      <p class="ins-desc-dark" style="margin:0 auto 2rem;text-align:center;">Built together. Driven by different strengths. Connected by one vision.</p>
+  <div class="about-divider dark"></div>
 
-      <div class="founder-grid">
+  <!-- ═══════════════════════════════════════════════════════
+       11 — THE CO-FOUNDERS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section white" id="founders">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow dark" style="justify-content:center;">09 &mdash; The Co-Founders</div>
+      <h2 class="about-h2 dark" style="text-align:center;">Four minds.<br>One SYNQ.</h2>
+      <p class="about-desc dark center" style="margin-bottom:1rem;">Built together. Driven by different strengths. Connected by one vision.</p>
+
+      <div class="founder-row">
         <div class="founder-card" data-reveal>
           <div class="founder-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <div class="founder-name">Yathish</div>
@@ -783,33 +887,37 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider dark"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        12 — FOUNDING PHILOSOPHY
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="founding-philosophy">
-    <div style="max-width:1100px;margin:0 auto;text-align:center;">
-      <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Section 10 // Founding Philosophy</div>
-      <h2 class="ins-h2-light" style="text-align:center;">Four founders.<br>One vision.<br>One connected ecosystem.</h2>
-      <p class="ins-desc-light" style="margin:2rem auto 0;text-align:center;max-width:55ch;">DIGISYNQ exists to connect what has always belonged together.</p>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="founding-philosophy">
+    <div class="about-container" style="text-align:center;">
+      <div class="about-eyebrow light" style="justify-content:center;">10 &mdash; Founding Philosophy</div>
+      <h2 class="about-h2 light" style="text-align:center;">Four founders.<br>One vision.<br>One connected ecosystem.</h2>
+      <p class="about-desc light center" style="margin-top:2rem;">DIGISYNQ exists to connect what has always belonged together.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
+  <div class="about-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
        13 — THE FINAL MANIFESTO
-       ══════════════════════════════════════════════════════════════ -->
-  <section class="ins-section dark" id="final-manifesto" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="manifesto-big" data-reveal>
+       ═══════════════════════════════════════════════════════ -->
+  <section class="about-section dark" id="final-manifesto">
+    <div class="about-container">
+      <div class="m-big" data-reveal>
         <span>WE CONNECT THE PIECES.</span>
         <span>WE BUILD THE COMMUNITY.</span>
         <span>WE CREATE THE CONNECTIONS.</span>
         <span>WE STRENGTHEN THE ECOSYSTEM.</span>
       </div>
-      <p class="manifesto-sub" style="margin-top:3rem;">We make the industry work better.</p>
+      <p class="m-sub" style="margin-top:3rem;">We make the industry work better.</p>
 
-      <div style="text-align:center;margin-top:4rem;">
-        <p style="font-family:var(--font-body);font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#ffffff;letter-spacing:-0.03em;line-height:1.15;">DIGISYNQ</p>
-        <p style="font-family:var(--font-body);font-weight:400;font-size:clamp(0.95rem,1.5vw,1.15rem);color:rgba(255,255,255,0.6);margin-top:1rem;letter-spacing:0.02em;">Different roles. One ecosystem. One SYNQ.</p>
+      <div class="final-brand">
+        <div class="final-brand-name">DIGISYNQ</div>
+        <div class="final-brand-sub">Different roles. One ecosystem. One SYNQ.</div>
       </div>
 
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;">
@@ -819,9 +927,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       TRUST STRIP + FOOTER (UNCHANGED)
-       ══════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════
+       TRUST STRIP + FOOTER
+       ═══════════════════════════════════════════════════════ -->
   <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
     <div class="mono-trust-inner">
       <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
@@ -832,11 +940,11 @@
           <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
           <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
           <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
         </div>
       </div>
       <div class="mono-trust-tags">
