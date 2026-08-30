@@ -3,278 +3,437 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The DIGISYNQ network — talent, facilities, production, content, amplification and commercial partners connected into one operating network." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="DIGISYNQ — The Network" />
-  <meta property="og:description" content="Everything already exists. DIGISYNQ connects it. Explore the entertainment operating network." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta name="description" content="DIGISYNQ Network Nodes &mdash; Discover all 10 connected entertainment ecosystem nodes across creative talent, facilities, distribution, and finance." />
+  <meta property="og:title" content="Network Nodes &mdash; DIGISYNQ" />
   <link rel="canonical" href="https://digisynq.com/network.html" />
-  <title>Network — DIGISYNQ</title>
+  <title>Network Nodes &mdash; DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <style>
-    :root {
-      --accent: #34d399;
-      --accent-soft: rgba(52,211,153,0.14);
-      --accent-line: rgba(52,211,153,0.40);
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
     }
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
-    .hero h1 .em { color: var(--accent); }
-    .net-svg { width: 100%; height: auto; display: block; max-width: 900px; margin: 2.5rem auto 0; overflow: hidden; aspect-ratio: 920 / 520; }
-    .node-dot { fill: var(--surface-tile); stroke: rgba(52,211,153,0.20); stroke-width: 1.5; filter: drop-shadow(0 0 7px rgba(52,211,153,0.18)); }
-    .node-outer { fill: none; stroke: rgba(52,211,153,0.11); stroke-width: 1.2; }
-    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; filter: drop-shadow(0 0 16px rgba(52,211,153,0.38)); transform-box: fill-box; transform-origin: center; animation: corePulse 3.2s ease-in-out infinite; }
-    .node-label { fill: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
-    .net-line { stroke: var(--accent-line); stroke-width: 1.25; fill: none; stroke-linecap: round; stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
-    .orbit-ring { fill: none; stroke: rgba(52,211,153,0.08); stroke-width: 1; stroke-dasharray: 4 9; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes corePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
-    .participate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .participate { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .participate .tile { display: flex; flex-direction: column; gap: 0.4rem; border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); }
-    .participate .tile:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
-    .participate .tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: none; }
-    .participate .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; margin: 0.7rem 0 0.8rem; }
-    .participate .tile a { margin-top: auto; font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; padding-top: 0.8rem; }
-    @media (max-width: 760px) { .participate { grid-template-columns: 1fr; } }
-    @media (max-width: 620px) { .hero h1 { max-width: none; } }
+    .filter-btn {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-orange);
+      color: #fff;
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 255, 0,0.3);
+    }
+    .node-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .node-card {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      background: #fff;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .node-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+      border-color: rgba(255, 255, 0,0.35);
+    }
+    .node-card.hidden {
+      display: none !important;
+    }
+    .node-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--accent-orange);
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+    .node-card h3 {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #09090b;
+      margin: 0 0 0.6rem;
+    }
+    .node-card p {
+      font-size: 0.9rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin: 0 0 1.2rem;
+      flex-grow: 1;
+    }
+    .node-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+    .node-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #71717a;
+      letter-spacing: 0.1em;
+    }
+    .node-status {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #16a34a;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .node-status::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+      display: inline-block;
+    }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "description": "The Operating Network for the Entertainment Industry",
-    "email": "thedigitalsynq@gmail.com",
-    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
-  }
-  </script>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link active">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
+        <ul class="nav-links-center">
+        <li><a href="network.html" class="active">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
       </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
+
+      <div class="nav-actions-right">
+        <a href="contact.html" class="btn-login">Connect</a>
+        <div class="vertical-sep" aria-hidden="true"></div>
+        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
+      </div>
+    </header>
+
+    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">Production Resource Corridors</div>
+      <h1 class="ins-hero-title">Production Corridors.<br><em>One Operating Mesh.</em></h1>
+      <p class="ins-hero-desc">Ten distinct industry verticals — from soundstages to streaming pipelines — linked together so you can assemble a complete production pod in hours, not months.</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Network Nodes</button>
+        <button class="filter-btn" data-filter="creative">Creative &amp; Talent</button>
+        <button class="filter-btn" data-filter="facilities">Facilities &amp; Tech</button>
+        <button class="filter-btn" data-filter="distribution">Distribution &amp; Marketing</button>
+        <button class="filter-btn" data-filter="finance">Finance &amp; Escrow</button>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    <!-- SECTION: 10 NODE CARDS (WHITE) -->
+    <section class="ins-section white" id="nodes-grid">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Connected Ecosystem</div>
+        <h2 class="ins-h2-dark">Connected Nodes. Zero Intermediaries.</h2>
+        <p class="ins-desc-dark">Filter by capability to explore how each stakeholder pod interfaces with the DIGISYNQ operating architecture.</p>
+
+        <div class="node-grid">
+          
+          <!-- Node 01 -->
+          <div class="node-card" data-category="creative">
+            <div class="node-num">NODE 01 // CREATIVE</div>
+            <h3>Writers &amp; Showrunners</h3>
+            <p>Screenplay development, script lock telemetry, writer pods, and franchise Bible architecture connected to verified production packages.</p>
+            <div class="node-meta">
+              <span class="node-tag">SCREENPLAY &middot; IP</span>
+              <span class="node-status">ACTIVE PODS</span>
+            </div>
+          </div>
+
+          <!-- Node 02 -->
+          <div class="node-card" data-category="facilities">
+            <div class="node-num">NODE 02 // FACILITIES</div>
+            <h3>Soundstages &amp; Studio Lots</h3>
+            <p>A-grade acoustic floors, virtual production stages, backlots, and dark-stage scheduling integration with escrow-backed booking.</p>
+            <div class="node-meta">
+              <span class="node-tag">INFRASTRUCTURE</span>
+              <span class="node-status">VERIFIED STAGES</span>
+            </div>
+          </div>
+
+          <!-- Node 03 -->
+          <div class="node-card" data-category="creative">
+            <div class="node-num">NODE 03 // CREATIVE</div>
+            <h3>Marquee Cast &amp; Ensemble</h3>
+            <p>Availability window synchronization, talent rate parity indexing, and multi-window backend profit participation packaging.</p>
+            <div class="node-meta">
+              <span class="node-tag">PERFORMANCE</span>
+              <span class="node-status">ROUTING READY</span>
+            </div>
+          </div>
+
+          <!-- Node 04 -->
+          <div class="node-card" data-category="creative">
+            <div class="node-num">NODE 04 // CREATIVE</div>
+            <h3>Directors &amp; Vision Leads</h3>
+            <p>Lead directorial attachments, cinematic packaging, visual pitch decks, and milestone-governed creative execution controls.</p>
+            <div class="node-meta">
+              <span class="node-tag">DIRECTION</span>
+              <span class="node-status">ATTACHMENT OPEN</span>
+            </div>
+          </div>
+
+          <!-- Node 05 -->
+          <div class="node-card" data-category="facilities">
+            <div class="node-num">NODE 05 // FACILITIES</div>
+            <h3>Technical Crew &amp; Gear</h3>
+            <p>Cinematographers, gaffers, sound engineers, camera packages, lighting grids, and specialized rig syndication across shoots.</p>
+            <div class="node-meta">
+              <span class="node-tag">TECHNICAL PODS</span>
+              <span class="node-status">AVAILABLE</span>
+            </div>
+          </div>
+
+          <!-- Node 06 -->
+          <div class="node-card" data-category="facilities">
+            <div class="node-num">NODE 06 // FACILITIES</div>
+            <h3>Post-Production &amp; VFX</h3>
+            <p>Color grading suites, distributed boutique render nodes, Foley stages, Dolby Atmos mastering, and CGI delivery pipelines.</p>
+            <div class="node-meta">
+              <span class="node-tag">POST-PIPELINE</span>
+              <span class="node-status">CONNECTED</span>
+            </div>
+          </div>
+
+          <!-- Node 07 -->
+          <div class="node-card" data-category="creative">
+            <div class="node-num">NODE 07 // CREATIVE</div>
+            <h3>Music &amp; Score Publishing</h3>
+            <p>Original film composition, background scoring, lyricists, soundtrack licensing, and automated streaming royalty split routing.</p>
+            <div class="node-meta">
+              <span class="node-tag">AUDIO RIGHTS</span>
+              <span class="node-status">ACTIVE</span>
+            </div>
+          </div>
+
+          <!-- Node 08 -->
+          <div class="node-card" data-category="distribution">
+            <div class="node-num">NODE 08 // DISTRIBUTION</div>
+            <h3>Damage Radar &amp; Narrative</h3>
+            <p>Pre-release sentiment telemetry, social listening, anti-piracy interception, and opening weekend sentiment calibration.</p>
+            <div class="node-meta">
+              <span class="node-tag">SENTIMENT SHIELD</span>
+              <span class="node-status">24/7 ONLINE</span>
+            </div>
+          </div>
+
+          <!-- Node 09 -->
+          <div class="node-card" data-category="distribution">
+            <div class="node-num">NODE 09 // DISTRIBUTION</div>
+            <h3>Exhibitors &amp; Theatrical</h3>
+            <p>Multiplex chains, single-screen programming coordinators, screen share optimization, and POS collection verification.</p>
+            <div class="node-meta">
+              <span class="node-tag">THEATRICAL POS</span>
+              <span class="node-status">ROUTED</span>
+            </div>
+          </div>
+
+          <!-- Node 10 -->
+          <div class="node-card" data-category="finance">
+            <div class="node-num">NODE 10 // FINANCE</div>
+            <h3>Capital Funds &amp; Escrow</h3>
+            <p>Production gap funds, private investor pods, multi-sig escrow verification ledgers, and cascade royalty payout automation.</p>
+            <div class="node-meta">
+              <span class="node-tag">CAPITAL PODS</span>
+              <span class="node-status">VERIFIED ESCROW</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LIST YOUR NODE OR CAPACITY (OFFWHITE) -->
+    <section class="ins-section offwhite" id="onboarding">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Node Integration</div>
+        <h2 class="ins-h2-dark">Join as a Verified Node</h2>
+        <p class="ins-desc-dark">Register your studio capacity or creative availability to receive incoming routed production briefs.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+          
+          <div class="ins-card" id="talent">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;display:block;margin-bottom:0.6rem;">TALENT LAB</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.6rem;">Register Creative Availability</h3>
+            <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.5rem;">Actors, directors, writers, and technicians can submit availability windows to be matched with funded productions.</p>
+            <a href="contact.html?type=talent" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">Submit Talent Profile ;</a>
+          </div>
+
+          <div class="ins-card" id="capacity">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;display:block;margin-bottom:0.6rem;">CAPACITY REGISTRY</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.6rem;">List Idle Studio Capacity</h3>
+            <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1.5rem;">Soundstage owners and equipment houses can monetize dark days through standardized network booking memos.</p>
+            <a href="contact.html?type=capacity" class="btn-pill-solid" style="display:inline-block;padding:0.75rem 1.8rem;">List Studio Inventory ;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: NETWORK GOVERNANCE (DARK) -->
+    <section class="ins-section dark" id="governance">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <div class="ins-eyebrow" style="justify-content:center;">Network Governance</div>
+        <h2 class="ins-h2-light">The Rules of Participation</h2>
+        <p class="ins-desc-light">DIGISYNQ operates under strict neutral protocols. No single party holds gatekeeping control. Every transaction is milestone-verified and recorded in transparent deal ledgers.</p>
+        
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+          <a href="flowchart.html" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">View ABCDEF Protocol ;</a>
+          <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Commercial Architecture</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+        <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
+      </div>
     </div>
-  </div>
-
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero section reveal">
-      <div class="container">
-        <p class="eyebrow">Network</p>
-        <h1>Every dot exists.<br /><span class="soft">We draft the constellation.</span></h1>
-        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;m.</p>
-        <div class="hero-actions" style="margin-top:2rem;">
-          <a href="#participate" class="btn btn-primary btn-lg">Plug into the network &rarr;</a>
-        </div>
-
-        <svg class="net-svg" viewBox="0 0 920 520" role="img" aria-label="DIGISYNQ network of entertainment participants">
-          <defs>
-            <radialGradient id="coreGlowNet" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="rgba(52,211,153,0.20)"/>
-              <stop offset="100%" stop-color="rgba(52,211,153,0)"/>
-            </radialGradient>
-            <pattern id="gridNet" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
-            </pattern>
-            <marker id="arrowNet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" opacity="0.95"/></marker>
-          </defs>
-          <rect width="920" height="520" fill="url(#gridNet)" opacity="0.55"/>
-          <ellipse class="orbit-ring" cx="460" cy="260" rx="208" ry="182"/>
-          <circle cx="460" cy="260" r="72" fill="url(#coreGlowNet)" opacity="0.95"/>
-          <!-- curved threads with arrow heads -->
-          <path id="net-p1" class="net-line thread" d="M460 260 Q432 160 460 70" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.05s"/>
-          <path id="net-p2" class="net-line thread" d="M460 260 Q542 182 594 126" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.15s"/>
-          <path id="net-p3" class="net-line thread" d="M460 260 Q580 250 650 260" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.25s"/>
-          <path id="net-p4" class="net-line thread" d="M460 260 Q542 340 594 394" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.35s"/>
-          <path id="net-p5" class="net-line thread" d="M460 260 Q488 360 460 450" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.45s"/>
-          <path id="net-p6" class="net-line thread" d="M460 260 Q378 340 326 394" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.55s"/>
-          <path id="net-p7" class="net-line thread" d="M460 260 Q340 250 270 260" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.65s"/>
-          <path id="net-p8" class="net-line thread" d="M460 260 Q378 182 326 126" fill="none" marker-end="url(#arrowNet)" style="animation-delay:.75s"/>
-          <circle r="2.5" fill="#34d399" opacity="0.95"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0s"><mpath href="#net-p1"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0.35s"><mpath href="#net-p2"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0.7s"><mpath href="#net-p3"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.05s"><mpath href="#net-p4"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.4s"><mpath href="#net-p5"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="1.75s"><mpath href="#net-p6"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.1s"><mpath href="#net-p7"/></animateMotion></circle>
-          <circle r="2.5" fill="#34d399" opacity="0.9"><animateMotion dur="3.0s" repeatCount="indefinite" begin="2.45s"><mpath href="#net-p8"/></animateMotion></circle>
-          <!-- peripheral nodes — layered halos -->
-          <g transform="translate(460,70)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Talent</text></g>
-          <g transform="translate(594,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Production</text></g>
-          <g transform="translate(650,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Facilities</text></g>
-          <g transform="translate(594,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Creators</text></g>
-          <g transform="translate(460,450)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Media</text></g>
-          <g transform="translate(326,394)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Brands</text></g>
-          <g transform="translate(270,260)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Audience</text></g>
-          <g transform="translate(326,126)"><circle class="node-outer" r="36"/><circle class="node-dot" r="30"/><circle r="4.2" fill="#34d399"/><text class="node-label" y="6" text-anchor="middle">Data</text></g>
-          <circle class="node-core" cx="460" cy="260" r="44"/>
-          <text class="node-label" x="460" y="264" text-anchor="middle" style="font-size:13px;fill:#fff;font-weight:700;letter-spacing:0.06em;">DIGISYNQ</text>
-        </svg>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- SIX LAYERS -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">01 &mdash; What is connected</p>
-        <h2 class="section-title">Octet. One grid.</h2>
-        <p class="lead-line">Pre to post — latent everywhere.</p>
-        <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Talent</span><h3>Creative &amp; Technical</h3><p>Craft, vetted and deployed.</p></div>
-          <div class="tile"><span class="k">Production</span><h3>Pipelines &amp; Units</h3><p>Units turning vision into masters.</p></div>
-          <div class="tile"><span class="k">Facilities</span><h3>Stages &amp; Suites</h3><p>Stages and suites — no dark windows.</p></div>
-          <div class="tile"><span class="k">Creators &amp; media</span><h3>Reach &amp; Cultural Signal</h3><p>Creators driving discovery.</p></div>
-          <div class="tile"><span class="k">Distribution &amp; exhibition</span><h3>Windows &amp; Platforms</h3><p>Windows mapped for maximum yield.</p></div>
-          <div class="tile"><span class="k">Brands &amp; advertising</span><h3>Capital &amp; Integrations</h3><p>Brands aligning inside content.</p></div>
-          <div class="tile"><span class="k">Audience</span><h3>Communities &amp; Fandoms</h3><p>Fandoms activated across windows.</p></div>
-          <div class="tile"><span class="k">Data</span><h3>Ecosystem Intelligence</h3><p>Data compounding into next releases.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- HOW THE NETWORK PARTICIPATES -->
-    <section class="section reveal" id="participate">
-      <div class="container">
-        <p class="sec-index">02 &mdash; How the network participates</p>
-        <h2 class="section-title">Choose your node.</h2>
-        <p class="lead-line">Tether your node to demand.</p>
-        <div class="participate">
-          <div class="tile"><span class="k">For talent</span><h3>Talent</h3><a href="contact.html?type=join">Enter the talent lab &rarr;</a></div>
-          <div class="tile"><span class="k">For facility owners</span><h3>I have a stage</h3><a href="contact.html?type=capacity">List capacity &rarr;</a></div>
-          <div class="tile"><span class="k">For rights holders</span><h3>I have IP</h3><a href="contact.html?type=content">Activate catalogue &rarr;</a></div>
-          <div class="tile"><span class="k">For creators &amp; media</span><h3>I am a voice</h3><a href="contact.html?type=join">Connect your channel &rarr;</a></div>
-          <div class="tile"><span class="k">For brands &amp; advertisers</span><h3>I have budget</h3><a href="contact.html?type=discuss">Explore a brand integration &rarr;</a></div>
-          <div class="tile"><span class="k">For producers &amp; studios</span><h3>I have a slate</h3><a href="contact.html?type=discuss">Bring a project &rarr;</a></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- FINAL CTA -->
-    <section class="section reveal final" style="text-align:center;">
-      <div class="container">
-        <p class="sec-index" style="justify-content:center;">Connect</p>
-        <h2 class="statement" style="max-width:28ch;margin:0 auto;">Opulent ecosystem. <span class="em">Nothing left behind.</span></h2>
-        <p class="lead-line">Eight layers — one constellation.</p>
-        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
-          <a href="contact.html?type=join" class="btn btn-secondary btn-lg">Join the network</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  </section>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
+          </div>
 
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
+          <div class="f-col">
+            <h4>Explore</h4>
+            <a href="network.html">Network Nodes</a>
+            <a href="platform.html">Operating System</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="flowchart.html">Process Protocol</a>
+            <a href="cinema-damage-control.html">Damage Radar</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Participate</h4>
+            <a href="contact.html?type=join">Enter Network</a>
+            <a href="network.html#talent">Talent Lab</a>
+            <a href="network.html#capacity">List Capacity</a>
+            <a href="business.html">Commercial Model</a>
+            <a href="insights.html">Research</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/cinematic-3d.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

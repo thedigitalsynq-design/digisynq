@@ -3,254 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How DIGISYNQ works — finding disconnected, underused and lost assets, connecting them to the right opportunity and activating them across one loop." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="How It Works — DIGISYNQ" />
-  <meta property="og:description" content="Find what is disconnected. Connect it to the right opportunity. Activate it. DIGISYNQ's operating method, explained." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta name="description" content="DIGISYNQ Platform OS &mdash; The 5 Core Capability Engines and 3 Operating Loops of the entertainment operating system." />
+  <meta property="og:title" content="Platform OS &mdash; DIGISYNQ" />
   <link rel="canonical" href="https://digisynq.com/platform.html" />
-  <title>How it works — DIGISYNQ</title>
+  <title>Platform OS &mdash; DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
-    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .flow .step { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.8rem 1.6rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); position: relative; }
-    .flow .step:hover { border-color: var(--accent-line); transform: translateY(-3px); background: var(--surface-elevated); }
-    .flow .step .n { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); letter-spacing: 0.08em; }
-    .flow .step h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: #fff; margin: 0.7rem 0 0.8rem; }
-    .flow .step p { font-size: 1rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
-    .flow .step .pts { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; }
-    .flow .step .pts li { font-size: 0.95rem; color: var(--text-secondary); padding-left: 1.1rem; position: relative; line-height: 1.45; }
-    .flow .step .pts li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); }
-    @media (max-width: 1000px) { .flow { grid-template-columns: 1fr; } .hero h1 { max-width: none; } }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "description": "The Operating Network for the Entertainment Industry",
-    "email": "thedigitalsynq@gmail.com",
-    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
-  }
-  </script>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link active">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
+        <ul class="nav-links-center">
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html" class="active">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
       </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
+
+      <div class="nav-actions-right">
+        <a href="contact.html" class="btn-login">Connect</a>
+        <div class="vertical-sep" aria-hidden="true"></div>
+        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
+      </div>
+    </header>
+
+    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">Operating System Infrastructure</div>
+      <h1 class="ins-hero-title">Operating Engines.<br><em>Pure Synchronization.</em></h1>
+      <p class="ins-hero-desc">Find what is disconnected. Connect it to the right opportunity. Activate it with zero balance drag &mdash; powered by 5 specialized capability engines.</p>
+      
+      <div class="ins-hero-actions">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Activate Operating Hub ;</a>
+        <a href="#engines" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore 5 Engines</a>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    <!-- SECTION: 3 OPERATING LOOPS (WHITE) -->
+    <section class="ins-section white" id="loops">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 01 // Operating Dynamics</div>
+        <h2 class="ins-h2-dark">Continuous Operating Loops</h2>
+        <p class="ins-desc-dark">DIGISYNQ OS maintains three concurrent execution cycles to ensure continuous opportunity discovery and frictionless capital velocity.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+          
+          <div class="ins-card">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.7rem;">LOOP 01 // DISCOVER</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.7rem;">Find Latent Capacity</h3>
+            <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1rem;">Continuous network telemetry monitors 42% dark soundstage availability, actor schedule windows, and dormant developed IP libraries.</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem;font-size:0.87rem;color:#3f3f46;">
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Soundstage calendar indexing</li>
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Screenplay monetization audit</li>
+            </ul>
+          </div>
+
+          <div class="ins-card">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.7rem;">LOOP 02 // CONNECT</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.7rem;">Standardized Deal Packaging</h3>
+            <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1rem;">Multi-party deal memos lock incentive waterfalls, attach verified cast and crew pods, and secure production funds into automated escrow.</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem;font-size:0.87rem;color:#3f3f46;">
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Milestone escrow locking</li>
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Co-production alignment</li>
+            </ul>
+          </div>
+
+          <div class="ins-card">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.7rem;">LOOP 03 // ACTIVATE</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;margin:0 0 0.7rem;">Compounding Loop Execution</h3>
+            <p style="font-size:0.9rem;color:#52525b;line-height:1.6;margin:0 0 1rem;">Coordinated release execution with pre-release narrative shielding, followed by automated cascade settlement across all revenue windows.</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem;font-size:0.87rem;color:#3f3f46;">
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Multi-window settlement</li>
+              <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:#09090b;">;</span> Intelligence feed-forward</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 5 CORE CAPABILITY ENGINES (DARK) -->
+    <section class="ins-section dark" id="engines">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Section 02 // Core Technology</div>
+        <h2 class="ins-h2-light">The 5 Capability Engines</h2>
+        <p class="ins-desc-light">Modular algorithmic and operational systems running beneath the DIGISYNQ operating architecture.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;">
+          
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">ENGINE 01 // CAPACITY</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">Dynamic Studio Routing</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Real-time matching engine routing active productions to available soundstage floors, camera packages, and technical infrastructure across production corridors.</p>
+          </div>
+
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">ENGINE 02 // TALENT</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">Talent Window Synchronization</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Algorithmic schedule mesh aligning marquee actor availability with ready-to-shoot production packages to eliminate window drag.</p>
+          </div>
+
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">ENGINE 03 // SYNDICATION</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">IP &amp; Co-Production Mesh</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Standardized co-production memos, milestone-secured co-financing pods, and IP rights packaging that eliminate legal friction.</p>
+          </div>
+
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">ENGINE 04 // DEFENSE</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">Cinema Damage Radar</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">24/7 pre-release narrative listening, sentiment scoring, and counter-narrative calibration protecting opening weekend box office.</p>
+          </div>
+
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">ENGINE 05 // SETTLEMENT</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">Cascade Royalty Ledger</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Automated multi-window royalty distribution ledger settling theatrical, OTT, music, satellite, and ancillary revenues transparently.</p>
+          </div>
+
+          <div class="ins-card dark" style="border:1px dashed rgba(255, 255, 0,0.4);background:rgba(255, 255, 0,0.04);">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;">INTEGRATION</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.2rem;color:#fff;margin:0 0 0.6rem;">Plug into DIGISYNQ API</h3>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Connect your studio booking software or distribution portal directly to the DIGISYNQ telemetry pipelines.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LIVE TELEMETRY SIMULATION (OFFWHITE) -->
+    <section class="ins-section offwhite" id="telemetry">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 03 // Real-Time Intelligence</div>
+        <h2 class="ins-h2-dark">Platform Telemetry Feed</h2>
+        <p class="ins-desc-dark">Continuous operational telemetry monitoring resource liquidity across the entertainment ecosystem.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+          <div class="ins-card" style="text-align:center;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">LATENCY</span>
+            <div style="font-family:var(--font-body);font-weight:800;font-size:2rem;margin:0.3rem 0;">&lt; 48 hrs</div>
+            <p style="font-size:0.82rem;color:#71717a;margin:0;">Brief to matched package speed</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">ESCROW SECURITY</span>
+            <div style="font-family:var(--font-body);font-weight:800;font-size:2rem;margin:0.3rem 0;">100%</div>
+            <p style="font-size:0.82rem;color:#71717a;margin:0;">Milestone-locked capital safety</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">RADAR UPTIME</span>
+            <div style="font-family:var(--font-body);font-weight:800;font-size:2rem;margin:0.3rem 0;">24/7</div>
+            <p style="font-size:0.82rem;color:#71717a;margin:0;">Continuous sentiment protection</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">ASSET DRAG</span>
+            <div style="font-family:var(--font-body);font-weight:800;font-size:2rem;margin:0.3rem 0;">ZERO</div>
+            <p style="font-size:0.82rem;color:#71717a;margin:0;">Pure coordination architecture</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+        <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
+      </div>
     </div>
-  </div>
-
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero section reveal">
-      <div class="container">
-        <p class="eyebrow">Platform</p>
-        <h1>Dark stage → opening weekend.<br /><span class="soft">One arc.</span></h1>
-        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;margin-top:1.2rem;">style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;m.</p>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- THE OPERATING LOOP -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">01 &mdash; The operating loop</p>
-        <h2 class="section-title">Three moves.</h2>
-        <p class="lead-line">Find the dots. Connect the grid. Activate the loop.</p>
-        <div class="flow">
-          <div class="step">
-            <span class="n">01 / Find</span>
-            <h3>Find</h3>
-            <p>Scout dormant constellations.</p>
-            <ul class="pts">
-              <li>Audit craft and units.</li>
-              <li>Map stages and hardware.</li>
-              <li>Spot IP ready for reactivation.</li>
-            </ul>
-          </div>
-          <div class="step">
-            <span class="n">02 / Connect</span>
-            <h3>Connect</h3>
-            <p>Engineer constellations per brief.</p>
-            <ul class="pts">
-              <li>Align teams, schedules, partners.</li>
-              <li>Structure light agreements for velocity.</li>
-              <li>Route to optimal windows.</li>
-            </ul>
-          </div>
-          <div class="step">
-            <span class="n">03 / Activate</span>
-            <h3>Activate</h3>
-            <p>Execute → distribute → compound.</p>
-            <ul class="pts">
-              <li>Mobilize with sync timelines.</li>
-              <li>Monetize across all windows.</li>
-              <li>Feed telemetry into the next slate.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- FIVE CAPABILITY ENGINES -->
-    <section class="section reveal" id="engines">
-      <div class="container">
-        <p class="sec-index">02 &mdash; The capability engines</p>
-        <h2 class="section-title">Five engines.</h2>
-        <p class="lead-line">Capacity, talent, content, amplification, intelligence — one engine.</p>
-        <p class="lead-line">Five engines — craft to syndication.</p>
-        <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Engine 01</span><h3>Capacity</h3><p>Stages and hardware — no dark windows.</p></div>
-          <div class="tile"><span class="k">Engine 02</span><h3>Talent</h3><p>Craft discovered, deployed into projects.</p></div>
-          <div class="tile"><span class="k">Engine 03</span><h3>Content</h3><p>Productions built for multi-window.</p></div>
-          <div class="tile"><span class="k">Engine 04</span><h3>Amplification</h3><p>Release, sync, partnerships, resonance.</p></div>
-          <div class="tile"><span class="k">Engine 05</span><h3>Intelligence</h3><p>Data compounding into future slates.</p></div>
-          <div class="tile" style="border-color:var(--accent-line);"><span class="k">The loop</span><h3>One method</h3><p>Discover → Sync → Catalyze.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- BRIDGE TO ABCDEF -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">03 &mdash; Production-to-distribution protocol</p>
-        <h2 class="section-title">Every signal runs ABCDEF.</h2>
-        <p class="lead-line">Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract &rarr; Feed forward.</p>
-        <div class="hero-actions" style="margin-top:2rem;">
-          <a href="flowchart.html" class="btn btn-secondary btn-lg">See the protocol &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- FINAL CTA -->
-    <section class="section reveal final" style="text-align:center;">
-      <div class="container">
-        <p class="sec-index" style="justify-content:center;">Initiate</p>
-        <h2 class="statement" style="max-width:28ch;margin:0 auto;">Every brief is a signal. <span class="em">We route it.</span></h2>
-        <p class="lead-line" style="margin-left:auto;margin-right:auto;margin-top:0.75rem;">Bring the gap. We engineer the conduit.</p>
-        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Bring a project &rarr;</a>
-          <a href="flowchart.html" class="btn btn-secondary btn-lg">See the protocol &rarr;</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  </section>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
+          </div>
 
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
+          <div class="f-col">
+            <h4>Explore</h4>
+            <a href="network.html">Network Nodes</a>
+            <a href="platform.html">Operating System</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="flowchart.html">Process Protocol</a>
+            <a href="cinema-damage-control.html">Damage Radar</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Participate</h4>
+            <a href="contact.html?type=join">Enter Network</a>
+            <a href="network.html#talent">Talent Lab</a>
+            <a href="network.html#capacity">List Capacity</a>
+            <a href="business.html">Commercial Model</a>
+            <a href="insights.html">Research</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/cinematic-3d.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

@@ -3,1073 +3,442 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Monitor narratives. Identify risks. Control damage. risks and respond strategically when the conversation changes." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="Cinema Damage Control | Digital Intelligence &amp; Reputation | DIGISYNQ" />
-  <meta property="og:description" content="Real-time cinema intelligence, reputation protection and strategic response built for the moments that can change a film's digital trajectory." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta name="description" content="DIGISYNQ Cinema Damage Control &mdash; Pre-release narrative radar, sentiment interception, and box office risk protection." />
+  <meta property="og:title" content="Cinema Damage Control &amp; Radar &mdash; DIGISYNQ" />
   <link rel="canonical" href="https://digisynq.com/cinema-damage-control.html" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Cinema Damage Control",
-    "provider": {
-      "@type": "Organization",
-      "name": "DIGISYNQ",
-      "url": "https://digisynq.com/"
-    },
-    "description": "Real-time cinema intelligence, reputation protection and strategic response for films, studios and entertainment brands.",
-    "url": "https://digisynq.com/cinema-damage-control.html"
-  }
-  </script>
-
-  <title>Radar — DIGISYNQ</title>
+  <title>Cinema Damage Control &amp; Radar &mdash; DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <style>
-    /* ── CDC page-local variables ── */
-    :root {
-      --danger-border: rgba(248,113,113,0.55);
-      --danger-soft: rgba(248,113,113,0.10);
-      --danger-text: #f87171;
-      --warning: #fbbf24;
-    }
+    /* PCR Cards — dark section */
+    .cdc-pcr { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem; }
+    .cdc-pcr-card { border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:rgba(255,255,255,0.04);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:all 0.3s cubic-bezier(0.16,1,0.3,1); }
+    .cdc-pcr-card::before { content:"";position:absolute;top:0;left:0;right:0;height:2px;background:#ffffff;opacity:0;transition:opacity 0.3s; }
+    .cdc-pcr-card:hover { border-color:rgba(255,255,255,0.3);transform:translateY(-4px);background:rgba(255,255,255,0.07); }
+    .cdc-pcr-card:hover::before { opacity:0.3; }
+    .cdc-pcr-num { font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.45);margin-bottom:0.8rem;font-weight:700; }
+    .cdc-pcr-card h3 { font-family:var(--font-body);font-weight:800;font-size:1.3rem;color:#fff;margin:0.4rem 0 0.7rem;letter-spacing:-0.02em; }
+    .cdc-pcr-card > p { font-size:0.92rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0 0 1.2rem; }
+    .cdc-pcr-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem; }
+    .cdc-pcr-list li { font-size:0.88rem;color:rgba(255,255,255,0.5);padding-left:1.2rem;position:relative;line-height:1.5; }
+    .cdc-pcr-list li::before { content:"";width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);position:absolute;left:0;top:0.55em; }
 
-    /* ── Shared layout helpers (mirrors index.html approach) ── */
-    .cdc-sec { padding: clamp(4rem,9vw,7.5rem) 0; position: relative; }
-    .cdc-rule { border: 0; height: 1px; background: var(--hairline); margin: 0; }
-    .cdc-eyebrow {
-      font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em;
-      text-transform: none; color: var(--accent); margin: 0 0 1.1rem;
-      display: flex; align-items: center; gap: 0.7rem;
-    }
-    .cdc-eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
+    /* Radar Loop — white section */
+    .cdc-loop { display:flex;flex-direction:column;align-items:center;margin-top:2.8rem;gap:0; }
+    .cdc-loop-item { width:100%;max-width:700px;display:flex;align-items:flex-start;gap:1.3rem;padding:1.4rem 1.8rem;border:1px solid rgba(0,0,0,0.08);border-radius:14px;background:#fff;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);box-shadow:0 4px 15px rgba(0,0,0,0.03); }
+    .cdc-loop-item:hover { border-color:rgba(0,0,0,0.2);transform:translateX(4px);box-shadow:0 8px 24px rgba(0,0,0,0.07); }
+    .cdc-conn { width:2px;height:24px;background:linear-gradient(to bottom,rgba(0,0,0,0.12),transparent);margin:0 auto; }
+    .cdc-loop-icon { width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-mono);font-size:0.65rem;font-weight:700;color:#09090b; }
+    .cdc-loop-text h4 { font-family:var(--font-body);font-weight:700;font-size:1.05rem;color:#09090b;margin:0 0 0.28rem; }
+    .cdc-loop-text p { font-size:0.88rem;color:#52525b;margin:0;line-height:1.55; }
+    .cdc-loop-back { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:#09090b;text-align:center;margin-top:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;max-width:700px;width:100%;opacity:0.5; }
+    .cdc-loop-back::before,.cdc-loop-back::after { content:"";flex:1;max-width:60px;height:1px;background:rgba(0,0,0,0.25); }
 
-    /* ── HERO ── */
-    .cdc-hero {
-      padding: clamp(6.5rem,13vw,11rem) 0 clamp(4rem,8vw,7rem);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .cdc-hero::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(60% 55% at 50% 10%, rgba(52,211,153,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cdc-kicker {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.22em;
-      text-transform: none; color: var(--accent);
-      padding: 0.45rem 1.2rem; border: 1px solid rgba(52,211,153,0.4);
-      border-radius: 999px; background: rgba(52,211,153,0.1); margin-bottom: 2rem;
-    }
-    .cdc-kicker .dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-      animation: cdcDot 2.2s ease-in-out infinite;
-    }
-    @keyframes cdcDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    /* Risk dial */
+    .cdc-dial { width:clamp(140px,16vw,200px);height:clamp(140px,16vw,200px);border-radius:50%;border:2px solid rgba(9,9,11,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(9,9,11,0.04);flex-shrink:0;position:relative;box-shadow:0 0 40px rgba(9,9,11,0.04); }
+    .cdc-dial-num { font-family:var(--font-body);font-weight:800;font-size:clamp(2rem,4.5vw,3rem);color:#09090b;line-height:1; }
+    .cdc-dial-den { font-family:var(--font-mono);font-size:0.85rem;color:#71717a;margin-top:0.15rem; }
+    .cdc-dial-lbl { font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.22em;color:#71717a;margin-top:0.4rem;font-weight:700; }
+    .cdc-bars { display:flex;flex-direction:column;gap:0.8rem;width:100%; }
+    .cdc-bar-row { display:flex;align-items:center;gap:1rem; }
+    .cdc-bar-lbl { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.1em;color:#71717a;width:130px;flex-shrink:0; }
+    .cdc-bar-track { flex:1;height:6px;background:rgba(0,0,0,0.07);border-radius:999px;overflow:hidden; }
+    .cdc-bar-fill { height:100%;border-radius:999px; }
+    .fill-h { background:#09090b; }
+    .fill-m { background:#52525b; }
+    .fill-l { background:#a1a1aa; }
+    .cdc-bar-val { font-family:var(--font-mono);font-size:0.7rem;color:#71717a;width:28px;text-align:right; }
 
-    .cdc-hero h1 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      font-size: clamp(2.9rem, 6.3vw, 5.0rem);
-      line-height: 0.98;
-      color: #fff;
-      margin: 0.8rem auto 1.4rem;
-      max-width: 22ch;
-    }
-    .cdc-hero h1 .cdc-accent { color: var(--accent); }
-    .cdc-hero-desc {
-      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-      line-height: 1.6;
-      color: var(--text-muted);
-      max-width: 58ch;
-      margin: 1.4rem auto 0;
-    }
+    /* Monitoring channel cards — white section */
+    .cdc-eco-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem; }
+    .cdc-eco-card { border:1px solid rgba(0,0,0,0.08);border-radius:14px;background:#fff;padding:1.6rem 1.3rem;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);box-shadow:0 4px 20px -2px rgba(0,0,0,0.03); }
+    .cdc-eco-card:hover { border-color:rgba(0,0,0,0.2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.07); }
+    .cdc-eco-icon { width:36px;height:36px;border-radius:10px;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;color:#09090b; }
+    .cdc-eco-card h3 { font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin:0 0 0.4rem;font-weight:700; }
+    .cdc-eco-card p { font-size:0.85rem;color:#71717a;margin:0;line-height:1.5; }
 
-    /* Section titles & statement headers */
-    .cdc-sec h2, .cdc-final h2 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2.2rem, 4.8vw, 3.8rem);
-      line-height: 1.04;
-      color: #ffffff;
-      letter-spacing: -0.03em;
-      margin: 0.4rem 0 1.2rem;
-    }
-
-    .cdc-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-
-    /* ── Intro ── */
-    .cdc-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,4rem); align-items: center; }
-    .cdc-lines { list-style: none; padding: 0; margin: 1.6rem 0 0; }
-    .cdc-lines li {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(1.05rem,2vw,1.5rem); color: var(--text-muted);
-      padding: 0.85rem 0; border-bottom: 1px solid var(--hairline);
-      letter-spacing: -0.01em; transition: color var(--transition-fast);
-    }
-    .cdc-lines li:last-child { border-bottom: 0; }
-    .cdc-lines li:hover { color: #fff; }
-    .cdc-lines strong { color: #fff; }
-
-    /* ── PCR Framework ── */
-    .cdc-pcr { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; margin-top: 3rem; }
-    .cdc-pcr-card {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 2rem 1.8rem; position: relative; overflow: hidden;
-      transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-pcr-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: var(--accent); opacity: 0; transition: opacity var(--transition-fast);
-    }
-    .cdc-pcr-card:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-4px); background: var(--surface-elevated); }
-    .cdc-pcr-card:hover::before { opacity: 1; }
-    .cdc-pcr-num { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.8rem; }
-    .cdc-pcr-card h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.5rem,2.8vw,2rem); color: #fff; margin: 0.4rem 0 0.7rem; letter-spacing: -0.03em; }
-    .cdc-pcr-card > p { font-size: 0.97rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 1.2rem; }
-    .cdc-pcr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; }
-    .cdc-pcr-list li { font-size: 0.93rem; color: var(--text-secondary); padding-left: 1.1rem; position: relative; line-height: 1.45; }
-    .cdc-pcr-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-
-    /* ── Process Loop ── */
-    .cdc-loop { display: flex; flex-direction: column; align-items: center; margin-top: 2.8rem; }
-    .cdc-loop-item {
-      width: 100%; max-width: 620px; display: flex; align-items: flex-start; gap: 1.3rem;
-      padding: 1.4rem 1.6rem; border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); position: relative;
-      transition: border-color var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-loop-item:hover { border-color: rgba(52,211,153,0.4); background: var(--surface-elevated); }
-    .cdc-conn { width: 2px; height: 24px; background: linear-gradient(to bottom, rgba(52,211,153,0.4), transparent); margin: 0 auto; }
-    .cdc-conn.rev { background: linear-gradient(to bottom, transparent, rgba(52,211,153,0.4)); }
-    .cdc-loop-icon {
-      width: 34px; height: 34px; border-radius: 50%; background: rgba(52,211,153,0.1);
-      border: 1px solid rgba(52,211,153,0.4); display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
-      color: var(--accent); letter-spacing: 0.04em;
-    }
-    .cdc-loop-text h4 { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: #fff; margin: 0 0 0.28rem; }
-    .cdc-loop-text p { font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
-    .cdc-loop-back {
-      font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em;
-      color: var(--accent); text-align: center; margin-top: 0.5rem;
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    }
-    .cdc-loop-back::before, .cdc-loop-back::after { content: ""; flex: 1; max-width: 50px; height: 1px; background: rgba(52,211,153,0.35); }
-
-    /* ── Risk Score ── */
-    .cdc-risk-box {
-      background: var(--surface-band); border: 1px solid var(--hairline);
-      border-radius: var(--radius-tile); padding: clamp(2rem,4vw,3.5rem); margin-top: 3rem;
-    }
-    .cdc-risk-top { display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; }
-    .cdc-dial {
-      width: clamp(170px,18vw,220px); height: clamp(170px,18vw,220px);
-      border-radius: 50%; border: 2px solid var(--danger-border);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: var(--danger-soft); flex-shrink: 0; position: relative;
-      box-shadow: 0 0 40px rgba(248,113,113,0.15);
-    }
-    .cdc-dial::before { content:""; position:absolute; inset:6px; border-radius:50%; border:1px solid rgba(248,113,113,0.2); }
-    .cdc-dial-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem,4.5vw,3.5rem); color: var(--danger-text); line-height: 1; letter-spacing: -0.04em; }
-    .cdc-dial-den { font-family: var(--font-mono); font-size: 0.88rem; color: rgba(248,113,113,0.55); margin-top: 0.15rem; }
-    .cdc-dial-lbl { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--danger-text); margin-top: 0.4rem; font-weight: 700; }
-    .cdc-bars { display: flex; flex-direction: column; gap: 0.8rem; }
-    .cdc-bar-row { display: flex; align-items: center; gap: 1rem; }
-    .cdc-bar-lbl { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text-dim); text-transform: none; width: 120px; flex-shrink: 0; }
-    .cdc-bar-track { flex: 1; height: 5px; background: var(--hairline); border-radius: 999px; overflow: hidden; }
-    .cdc-bar-fill { height: 100%; border-radius: 999px; }
-    .fill-h { background: var(--danger-text); box-shadow: 0 0 8px rgba(248,113,113,0.45); }
-    .fill-m { background: var(--warning); box-shadow: 0 0 7px rgba(251,191,36,0.35); }
-    .fill-l { background: var(--accent); box-shadow: 0 0 7px rgba(52,211,153,0.35); }
-    .cdc-bar-val { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); width: 28px; text-align: right; }
-    .cdc-risk-note { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; color: var(--text-dim); margin-top: 1.8rem; padding-top: 1rem; border-top: 1px solid var(--hairline); }
-
-    /* ── Narrative Map ── */
-    .cdc-narr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,4rem); align-items: start; }
-    .cdc-narr-flow { display: flex; flex-direction: column; }
-    .cdc-narr-node {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 1.2rem 1.5rem;
-      transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
-    }
-    .cdc-narr-node:hover { border-color: rgba(52,211,153,0.4); background: var(--surface-elevated); transform: translateX(4px); }
-    .cdc-narr-node .nl { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.25rem; }
-    .cdc-narr-node h4 { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: #fff; margin: 0; }
-    .cdc-narr-node p { font-size: 0.86rem; color: var(--text-muted); margin: 0.25rem 0 0; line-height: 1.45; }
-    .cdc-narr-arr { padding: 0 0 0 1.5rem; height: 26px; display: flex; align-items: center; gap: 0.4rem; }
-    .cdc-narr-arr .a { color: var(--accent); }
-    .cdc-narr-arr span { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--text-dim); }
-    .cdc-narr-node.danger { border-color: var(--danger-border); background: var(--danger-soft); }
-    .cdc-narr-node.danger .nl { color: var(--danger-text); }
-    .cdc-narr-node.danger h4 { color: var(--danger-text); }
-
-    /* ── Monitoring Ecosystem ── */
-    .cdc-eco { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.1rem; margin-top: 2.8rem; }
-    .cdc-eco-card {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 1.5rem 1.2rem;
-      transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-eco-card:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
-    .cdc-eco-card h3 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); text-transform: none; margin: 0 0 1rem; }
-    .cdc-eco-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; }
-    .cdc-eco-card ul li { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
-
-    /* ── Signal vs Noise ── */
-    .cdc-ladder { display: flex; align-items: stretch; max-width: 800px; margin: 3rem auto 0; }
-    .cdc-rung {
-      flex: 1; border: 1px solid var(--hairline); background: var(--surface-tile);
-      padding: 1.8rem 1.1rem; position: relative;
-      transition: border-color var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-rung:not(:last-child) { border-right: 0; }
-    .cdc-rung:first-child { border-radius: var(--radius-card) 0 0 var(--radius-card); }
-    .cdc-rung:last-child { border-radius: 0 var(--radius-card) var(--radius-card) 0; border-color: var(--danger-border); background: var(--danger-soft); }
-    .cdc-rung:hover { border-color: rgba(52,211,153,0.4); background: var(--surface-elevated); z-index: 1; }
-    .cdc-rung:last-child:hover { border-color: var(--danger-text); background: rgba(248,113,113,0.18); }
-    .cdc-rung-arr { position: absolute; right: -13px; top: 50%; transform: translateY(-50%); color: var(--accent); z-index: 2; font-size: 0.95rem; }
-    .cdc-rung:last-child .cdc-rung-arr { display: none; }
-    .cdc-rung h4 { font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; color: var(--text-muted); margin: 0 0 0.5rem; letter-spacing: -0.01em; }
-    .cdc-rung:last-child h4 { color: var(--danger-text); }
-    .cdc-rung p { font-size: 0.8rem; color: var(--text-dim); margin: 0; line-height: 1.4; }
-    .cdc-ladder-cap { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--text-dim); text-align: center; margin-top: 1.8rem; }
-
-    /* ── Scenarios ── */
-    .cdc-scen-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; margin-top: 2.8rem; }
-    .cdc-scen {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 1.8rem 1.6rem;
-      transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-scen:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
-    .cdc-scen h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: #fff; margin: 0 0 0.65rem; }
-    .cdc-scen > p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 1.1rem; }
-    .cdc-resp { background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.35); border-radius: 10px; padding: 0.85rem 1rem; }
-    .cdc-resp-lbl { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 0.35rem; }
-    .cdc-resp p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.45; font-family: var(--font-mono); }
-    .cdc-disclaimer { text-align: center; margin-top: 2.2rem; }
-    .cdc-disclaimer p { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.05rem,2vw,1.4rem); color: var(--accent); letter-spacing: -0.01em; }
-
-    /* ── Command Center ── */
-    .cdc-cmd {
-      background: var(--surface-band); border: 1px solid var(--hairline);
-      border-radius: var(--radius-tile); padding: clamp(2rem,4vw,3.5rem); margin-top: 3rem;
-    }
-    .cdc-cmd-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-    .cdc-cmd-title { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); }
-    .cdc-cmd-live { display: flex; align-items: center; gap: 0.45rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--text-dim); }
-    .cdc-ldot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: cdcDot 2s infinite; }
-    .cdc-cmd-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
-    .cdc-mc {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--bg-secondary); padding: 1.2rem 1.1rem;
-    }
-    .cdc-mc .ml { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.16em; color: var(--text-dim); text-transform: none; margin-bottom: 0.7rem; }
-    .cdc-mc .mv { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.2rem,2.3vw,1.75rem); color: #fff; letter-spacing: -0.03em; line-height: 1; }
-    .mv-a { color: var(--accent) !important; }
-    .mv-d { color: var(--danger-text) !important; }
-    .mv-w { color: var(--warning) !important; }
-    .cdc-mc .ms { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-top: 0.35rem; }
-    .cdc-cmd-note { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.05em; color: var(--text-dim); margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--hairline); }
-
-    /* ── Audience ── */
-    .cdc-aud-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.8rem; }
-    .cdc-aud-card {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 1.4rem 1.2rem; text-align: center;
-      transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-aud-card:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
-    .cdc-aud-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 0.97rem; color: #fff; margin: 0; }
-
-    /* ── Services ── */
-    .cdc-svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; margin-top: 3rem; }
-    .cdc-svc {
-      border: 1px solid var(--hairline); border-radius: var(--radius-card);
-      background: var(--surface-tile); padding: 2rem 1.8rem; position: relative; overflow: hidden;
-      transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-    }
-    .cdc-svc::after { content:""; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--accent); opacity:0; transition:opacity var(--transition-fast); }
-    .cdc-svc:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-4px); background: var(--surface-elevated); }
-    .cdc-svc:hover::after { opacity: 1; }
-    .cdc-svc h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.35rem,2.4vw,1.75rem); color: #fff; margin: 0 0 0.45rem; letter-spacing: -0.02em; }
-    .cdc-svc .tgl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.9rem; display: block; }
-    .cdc-svc p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
-    .cdc-svc-cta { text-align: center; margin-top: 2.4rem; }
-
-    /* ── Ethics ── */
-    .cdc-eth { text-align: center; }
-    .cdc-pillars { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 2.8rem; }
-    .cdc-pillar {
-      border: 1px solid rgba(52,211,153,0.4); border-radius: var(--radius-card);
-      background: rgba(52,211,153,0.1); padding: 1.3rem 2rem;
-      font-family: var(--font-display); font-weight: 800;
-      font-size: clamp(0.95rem,1.8vw,1.2rem); color: var(--accent); letter-spacing: -0.01em;
-      transition: background var(--transition-fast), transform var(--transition-fast);
-    }
-    .cdc-pillar:hover { background: rgba(52,211,153,0.2); transform: translateY(-2px); }
-
-    /* ── Final CTA ── */
-    .cdc-final {
-      text-align: center;
-      background: radial-gradient(50% 55% at 50% 100%, rgba(52,211,153,0.08) 0%, transparent 70%);
-      border-top: 1px solid var(--hairline);
-    }
-    .cdc-final h2 {
-      font-family: var(--font-display); font-weight: 800;
-      font-size: clamp(2.2rem, 4.8vw, 3.8rem); letter-spacing: -0.03em;
-      line-height: 1.04; color: #fff; margin-bottom: 0.5rem;
-    }
-    .cdc-final h3 {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(1rem,2.3vw,1.65rem); letter-spacing: -0.02em;
-      color: var(--text-muted); margin-bottom: 2rem;
-    }
-    .cdc-final-brand { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.18em; color: var(--text-dim); margin-top: 2.4rem; }
-
-    /* ── Footer locals (reuse from index.html pattern) ── */
-    .f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding: clamp(3rem,6vw,4.5rem) 0 2.5rem; }
-    .f-brand .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; }
-    .f-brand p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 1rem 0 0; }
-    .f-col h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; }
-    .f-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.98rem; padding: 0.32rem 0; transition: color var(--transition-fast); }
-    .f-col a:hover { color: var(--accent); }
-    .f-bottom { border-top: 1px solid var(--hairline); padding: 1.4rem 0 2.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; align-items: center; }
-    .f-bottom span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); }
-
-    /* ── Reveal (mirrors index.html) ── */
-    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-smooth), transform 0.7s var(--ease-out-smooth); }
-    .js .reveal.in { opacity: 1; transform: none; }
-
-    /* ── Responsive ── */
-    @media (max-width: 1100px) {
-      .cdc-pcr { grid-template-columns: 1fr; }
-      .cdc-eco { grid-template-columns: repeat(3,1fr); }
-      .cdc-cmd-grid { grid-template-columns: repeat(2,1fr); }
-      .cdc-aud-grid { grid-template-columns: repeat(2,1fr); }
-      .cdc-risk-top { grid-template-columns: 1fr; text-align: center; }
-      .cdc-dial { margin: 0 auto; }
-      .cdc-bar-lbl { width: 100px; }
-    }
-    @media (max-width: 760px) {
-      .cdc-intro-grid { grid-template-columns: 1fr; }
-      .cdc-narr-grid { grid-template-columns: 1fr; }
-      .cdc-ladder { flex-direction: column; max-width: 340px; }
-      .cdc-rung { border-right: 1px solid var(--hairline) !important; border-top: 0; border-radius: 0 !important; }
-      .cdc-rung:first-child { border-top: 1px solid var(--hairline); border-radius: var(--radius-card) var(--radius-card) 0 0 !important; }
-      .cdc-rung:last-child { border-radius: 0 0 var(--radius-card) var(--radius-card) !important; }
-      .cdc-rung-arr { display: none; }
-      .cdc-scen-grid { grid-template-columns: 1fr; }
-      .cdc-eco { grid-template-columns: repeat(2,1fr); }
-      .cdc-svc-grid { grid-template-columns: 1fr; }
-      .f-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 480px) {
-      .cdc-eco { grid-template-columns: 1fr; }
-      .cdc-cmd-grid { grid-template-columns: 1fr; }
-      .cdc-aud-grid { grid-template-columns: 1fr 1fr; }
-      .cdc-hero h1 { font-size: clamp(3.8rem,12vw,6.5rem); }
-      .f-top { grid-template-columns: 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .js .reveal { opacity: 1 !important; transform: none !important; }
-      .cdc-kicker .dot, .cdc-ldot { animation: none !important; }
-    }
+    /* Stat row in Why This Exists */
+    .cdc-stat-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.65rem; }
+    .cdc-stat-list li { font-family:var(--font-body);font-weight:500;font-size:1rem;color:rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:0.65rem;line-height:1.45; }
+    .cdc-stat-list li:last-child { border-bottom:0; }
+    .cdc-stat-list li strong { color:#fff;font-weight:800; }
   </style>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- ====== NAVIGATION ====== -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link active">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <ul class="nav-links-center">
+          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="cinema-damage-control.html" class="active">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
+      <div class="nav-actions-right">
+        <a href="contact.html" class="btn-login">Connect</a>
+        <div class="vertical-sep" aria-hidden="true"></div>
+        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">Cinema Damage Control Radar</div>
+      <h1 class="ins-hero-title">Live Telemetry Radar Loop.<br><em>Zero Box-Office Leak.</em></h1>
+      <p class="ins-hero-desc">Real-time cinema intelligence, reputation protection, and strategic response built for the moments that can permanently change a film's digital trajectory.</p>
+      <div class="ins-hero-actions">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Deploy Radar Shield &rarr;</a>
+        <a href="#pcr-framework" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Framework</a>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
-    </div>
-  </div>
-
-  <main id="main-content">
-
-    <!-- ===== 01 — HERO ===== -->
-    <section class="cdc-hero" aria-labelledby="cdc-h1">
-      <div class="container">
-        <div class="cdc-kicker reveal">
-          <span class="dot" aria-hidden="true"></span>
-          Cinema intelligence &middot; Reputation protection &middot; Response architecture
-        </div>
-        <h1 id="cdc-h1" class="reveal">
-          When the narrative turns,<br />
-          <span class="em">we command the frequency.</span>
-        </h1>
-        <p class="cdc-hero-sub reveal">
-          Real-time cinema telemetry, reputation insulation, and strategic counter-narrative engineering &mdash; built for the critical windows between a trailer drop and opening weekend that determine whether a release becomes a cultural moment or a commercial casualty.
-        </p>
-        <div class="cdc-actions reveal">
-          <a href="#process" class="btn btn-primary btn-lg" id="cdc-see-how-btn">See how it works</a>
-          <a href="contact.html?type=discuss&service=cinema-damage-control" class="btn btn-secondary btn-lg" id="cdc-talk-btn">Talk to DIGISYNQ</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 02 — INTRODUCTION ===== -->
-    <section class="cdc-sec reveal" id="intro">
-      <div class="container">
-        <div class="cdc-intro-grid">
+    <!-- SECTION 01: WHY THIS EXISTS (DARK) -->
+    <section class="ins-section dark" id="why-radar">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;">
           <div>
-            <p class="cdc-eyebrow">01 &mdash; The reality</p>
-            <h2 class="section-title">Every film emits a live digital current.</h2>
-            <p style="font-family:var(--font-display);font-weight:700;font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--accent);letter-spacing:-0.01em;margin:0.5rem 0 0;">
-              Without orchestration, digital currents turn volatile.
-            </p>
+            <div class="ins-eyebrow" style="justify-content:flex-start;">Section 01 // Why This Exists</div>
+            <h2 class="ins-h2-light">The conversation shifts<br>before you do.</h2>
+            <p class="ins-desc-light">A film's narrative is set in the 72 hours before release. One coordinated review bomb, one uncontrolled leak, or one misread social signal can reduce opening weekend returns by 18&ndash;35% before a single ticket is scanned.</p>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.4);font-style:italic;margin:0;">Think of it like a wildfire: by the time smoke is visible, the forest is already burning. Radar activates 30 days before release — before the first spark.</p>
           </div>
           <div>
-            <p style="font-size:1.02rem;color:var(--text-muted);line-height:1.65;margin:0 0 1rem;">A film's digital life begins the moment the first teaser frame is uploaded and ends long after the OTT run closes. Between those two points, the conversation is live, relentless, and often volatile.</p>
-            <ul class="cdc-lines" aria-label="Digital risks for films">
-              <li>A single trailer frame can ignite <strong>algorithmic backlash within hours.</strong></li>
-              <li>An isolated critic review can become an <strong>industry-wide opening weekend narrative.</strong></li>
-              <li>A rogue creator's commentary can derail <strong>months of promotional momentum.</strong></li>
-              <li>Manufactured rumour can reach the box office tracking agencies <strong>before the facts do.</strong></li>
-              <li>A casting controversy can harden into <strong>permanent audience avoidance behaviour.</strong></li>
+            <ul class="cdc-stat-list">
+              <li><strong>71%</strong> of opening weekend damage is narrative, not product quality</li>
+              <li><strong>48 hours</strong> before release is when audience sentiment crystallizes</li>
+              <li><strong>Review bombing</strong> is a coordinated attack, not organic feedback</li>
+              <li><strong>Trailer sentiment</strong> is a statistically provable collection predictor</li>
+              <li><strong>Dark social</strong> is where the real narrative is being written</li>
             </ul>
-            <p style="font-size:0.97rem;color:var(--text-secondary);line-height:1.65;margin:1.6rem 0 0;">
-              DIGISYNQ isolates narrative turbulence in real time, diagnoses root cultural signals, and executes calibrated counter-measures to safeguard commercial momentum.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <hr class="cdc-rule" />
+    <!-- SECTION 02: PCR FRAMEWORK (DARK) -->
+    <section class="ins-section dark" id="pcr-framework" style="background:#0e0e13;border-top:1px solid rgba(255,255,255,0.06);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Section 02 // Architecture</div>
+        <h2 class="ins-h2-light">The PCR Framework</h2>
+        <p class="ins-desc-light">Coordinated intervention phases covering the full release lifecycle. Pre-Release establishes the baseline. Crisis intercepts in real-time. Recovery compounds what survives.</p>
 
-    <!-- ===== 03 — PREVENT → CONTROL → RECOVER ===== -->
-    <section class="cdc-sec reveal" id="framework">
-      <div class="container">
-        <p class="cdc-eyebrow">02 &mdash; Core framework</p>
-        <h2 class="section-title">Prevent &rarr; Control &rarr; Recover</h2>
-        <p style="color:var(--text-muted);font-size:0.97rem;max-width:52ch;line-height:1.6;margin:0 0 0;">
-          The three-phase defense architecture that insulates and defends a film's commercial equity.
-        </p>
         <div class="cdc-pcr">
           <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">01 &mdash; Prevent</div>
-            <h3>Diagnose narrative fault lines before they fracture.</h3>
-            <p>Predictive intelligence and sentiment stress-testing before public release windows.</p>
+            <div class="cdc-pcr-num">01 // PRE-RELEASE SHIELD</div>
+            <h3>Pre-Release</h3>
+            <p>Sentinel-mode monitoring from 30 days out. Identify, calibrate, and neutralize before narrative damage compounds.</p>
             <ul class="cdc-pcr-list">
-              <li>Audience affinity telemetry</li>
-              <li>Reputation baseline mapping</li>
-              <li>Pre-release risk simulation</li>
-              <li>Early teaser vulnerability analysis</li>
-              <li>Key demographic sentiment tracking</li>
-              <li>Cultural alignment checks</li>
+              <li>Trailer sentiment velocity analysis across comment clusters</li>
+              <li>Coordinated hashtag seeding across aligned creator networks</li>
+              <li>Advance critic and verified reviewer pipeline synchronization</li>
+              <li>BookMyShow and Paytm demand tracking across cities</li>
+              <li>Dark social monitoring: private Reddit threads and Telegram groups</li>
             </ul>
           </div>
+
           <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">02 &mdash; Control</div>
-            <h3>When volatility surges, deploy calibrated countermeasures.</h3>
-            <p>Rapid-response tactical intervention that neutralizes distortion and reframes the dialogue.</p>
+            <div class="cdc-pcr-num">02 // CRISIS DEFLECTION</div>
+            <h3>Crisis</h3>
+            <p>Immediate-response infrastructure when a narrative threat becomes active. Every minute without response compounds the damage.</p>
             <ul class="cdc-pcr-list">
-              <li>Live sentiment tracking</li>
-              <li>Algorithmic escalation alerts</li>
-              <li>Cinema risk scoring</li>
-              <li>Narrative trajectory modelling</li>
-              <li>Calibrated response staging</li>
-              <li>Key stakeholder alignment</li>
-              <li>Multi-platform conduit deployment</li>
+              <li>Real-time review bomb detection vs. organic feedback</li>
+              <li>Counter-narrative rapid deployment: cast activations &amp; BTS content</li>
+              <li>Platform escalation protocols on IMDb, Google &amp; BookMyShow</li>
+              <li>Exhibitor communication loops to protect morning screen count</li>
+              <li>Distributor PR desk alignment across regional release markets</li>
             </ul>
           </div>
+
           <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">03 &mdash; Recover</div>
-            <h3>Restore audience confidence and reignite commercial velocity.</h3>
-            <p>Strategic resonance rebuilding that converts turbulent cycles into sustained box office conversion.</p>
-            <ul class="cdc-pcr-list">
-              <li>Reputational equity restoration</li>
-              <li>Community confidence rebuilding</li>
-              <li>Authentic narrative amplification</li>
-              <li>Secondary window momentum</li>
-              <li>Post-mortem narrative audits</li>
-              <li>Long-term equity compounding</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 04 — PROCESS LOOP ===== -->
-    <section class="cdc-sec reveal" id="process">
-      <div class="container" style="max-width:800px;">
-        <p class="cdc-eyebrow" style="justify-content:center;">03 &mdash; Closed-loop response</p>
-        <h2 class="section-title" style="text-align:center;">The intelligence loop</h2>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.97rem;max-width:48ch;margin:0 auto 2.2rem;line-height:1.65;">
-          A perpetual surveillance and reaction circuit. Every intervention compounds network leverage for future campaigns.
-        </p>
-        <div class="cdc-loop" role="list" aria-label="Cinema Damage Control process">
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">01</div>
-            <div class="cdc-loop-text">
-              <h4>Detect</h4>
-              <p>Isolate abnormal sentiment spikes and narrative velocity surges the moment they appear &mdash; across trailer comments, critic aggregators, fan forums, creator channels, and trade publications.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">02</div>
-            <div class="cdc-loop-text">
-              <h4>Diagnose</h4>
-              <p>Deconstruct root motivations and algorithmic drivers &mdash; separating authentic critique from synthetic noise.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">03</div>
-            <div class="cdc-loop-text">
-              <h4>Score</h4>
-              <p>Quantify commercial threat severity using the proprietary DIGISYNQ Cinema Risk Score.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">04</div>
-            <div class="cdc-loop-text">
-              <h4>Decide</h4>
-              <p>Determine the optimal posture: observe, correct, reframe, counter, or escalate &mdash; guided by empirical telemetry.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">05</div>
-            <div class="cdc-loop-text">
-              <h4>Deploy</h4>
-              <p>Mobilize authoritative facts, trusted conduits, and creative amplification across targeted community nodes.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">06</div>
-            <div class="cdc-loop-text">
-              <h4>Defuse</h4>
-              <p>Track real-time sentiment stabilization and verify the deceleration of hostile narrative vectors.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">07</div>
-            <div class="cdc-loop-text">
-              <h4>Recover</h4>
-              <p>Pivot the conversation back toward the film&rsquo;s creative excellence, the performance, the score, the direction &mdash; restoring audience enthusiasm and rebuilding opening weekend intent.</p>
-            </div>
-          </div>
-          <div class="cdc-conn" aria-hidden="true"></div>
-          <div class="cdc-loop-item reveal" role="listitem">
-            <div class="cdc-loop-icon" aria-hidden="true">08</div>
-            <div class="cdc-loop-text">
-              <h4>Feed forward</h4>
-              <p>Synthesize incident telemetry into institutional defenses &mdash; strengthening future franchise resilience.</p>
-            </div>
-          </div>
-          <div class="cdc-conn rev" aria-hidden="true"></div>
-          <div class="cdc-loop-back" aria-label="Loop returns to detect">
-            &#8635;&nbsp;&nbsp;Monitor again &mdash; continuous narrative surveillance
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 05 — CINEMA RISK SCORE ===== -->
-    <section class="cdc-sec reveal" id="risk-score">
-      <div class="container">
-        <p class="cdc-eyebrow">04 &mdash; Assessment framework</p>
-        <h2 class="section-title">DIGISYNQ Cinema Risk Score&#8482;</h2>
-        <p style="color:var(--text-muted);font-size:0.97rem;max-width:54ch;line-height:1.65;margin:0 0 0;">
-          A structured analytical index translating fragmented social signals into an authoritative risk rating &mdash; enabling decisive, evidence-based leadership.
-        </p>
-        <div class="cdc-risk-box">
-          <div class="cdc-risk-top">
-            <div class="cdc-dial" role="img" aria-label="Example score: 82 out of 100, Critical">
-              <div class="cdc-dial-num">82</div>
-              <div class="cdc-dial-den">/ 100</div>
-              <div class="cdc-dial-lbl">Critical</div>
-            </div>
-            <div class="cdc-bars" aria-label="Score breakdown by dimension">
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Reach velocity</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:88%"></div></div>
-                <div class="cdc-bar-val">88</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Spread rate</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:91%"></div></div>
-                <div class="cdc-bar-val">91</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Hostile sentiment</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:79%"></div></div>
-                <div class="cdc-bar-val">79</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Amplification index</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:68%"></div></div>
-                <div class="cdc-bar-val">68</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Media contagion</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:74%"></div></div>
-                <div class="cdc-bar-val">74</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Audience drag</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:85%"></div></div>
-                <div class="cdc-bar-val">85</div>
-              </div>
-              <div class="cdc-bar-row">
-                <div class="cdc-bar-lbl">Commercial exposure</div>
-                <div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:82%"></div></div>
-                <div class="cdc-bar-val">82</div>
-              </div>
-            </div>
-          </div>
-          <p class="cdc-risk-note">
-            DIGISYNQ Cinema Risk Score&#8482; &mdash; Conceptual representation of our assessment architecture. Values shown are illustrative operational examples and do not reflect specific live engagements.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 06 — NARRATIVE MAP ===== -->
-    <section class="cdc-sec reveal" id="narrative">
-      <div class="container">
-        <div class="cdc-narr-grid">
-          <div>
-            <p class="cdc-eyebrow">05 &mdash; Vector dynamics</p>
-            <h2 class="section-title">The narrative trajectory</h2>
-            <p style="color:var(--text-muted);font-size:0.97rem;line-height:1.65;max-width:42ch;">
-              DIGISYNQ maps the contagion path of digital narratives &mdash; from obscure origin points to mainstream media headlines &mdash; empowering teams to intercept threats before they achieve critical mass.
-            </p>
-            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.6;margin-top:1rem;max-width:42ch;">
-              Precision intervention at early contagion nodes prevents catastrophic commercial damage at release.
-            </p>
-          </div>
-          <div class="cdc-narr-flow" aria-label="How a narrative travels through the digital landscape">
-            <div class="cdc-narr-node">
-              <div class="nl">Home</div>
-              <h4>Incident trigger</h4>
-              <p>A provocative quote, leaked frame, or ambiguous creative element surfaces.</p>
-            </div>
-            <div class="cdc-narr-arr" aria-hidden="true"><span class="a">&darr;</span><span>Spreads to</span></div>
-            <div class="cdc-narr-node">
-              <div class="nl">Stage 2</div>
-              <h4>Sub-community polarization</h4>
-              <p>Early commentary gathers momentum across niche enthusiast forums and comment threads.</p>
-            </div>
-            <div class="cdc-narr-arr" aria-hidden="true"><span class="a">&darr;</span><span>Picked up by</span></div>
-            <div class="cdc-narr-node">
-              <div class="nl">Stage 3</div>
-              <h4>Creator amplification</h4>
-              <p>High-reach cultural commentators synthesize the topic into algorithmic video formats.</p>
-            </div>
-            <div class="cdc-narr-arr" aria-hidden="true"><span class="a">&darr;</span><span>Triggers</span></div>
-            <div class="cdc-narr-node">
-              <div class="nl">Stage 4</div>
-              <h4>General audience consensus</h4>
-              <p>Broad consumer perception solidifies, hardening into unexamined assumptions.</p>
-            </div>
-            <div class="cdc-narr-arr" aria-hidden="true"><span class="a">&darr;</span><span>Reaches</span></div>
-            <div class="cdc-narr-node">
-              <div class="nl">Stage 5</div>
-              <h4>Trade and mainstream press</h4>
-              <p>Tier-one entertainment journalism formalizes the narrative as editorial fact.</p>
-            </div>
-            <div class="cdc-narr-arr" aria-hidden="true"><span class="a">&darr;</span><span>Becomes</span></div>
-            <div class="cdc-narr-node danger">
-              <div class="nl">Stage 6</div>
-              <h4>Commercial headwind</h4>
-              <p>The controversy defines the project &mdash; creating steep box office friction.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 07 — MONITORING ECOSYSTEM ===== -->
-    <section class="cdc-sec reveal" id="monitoring">
-      <div class="container">
-        <p class="cdc-eyebrow" style="justify-content:center;">06 &mdash; Telemetry vectors</p>
-        <h2 class="section-title" style="text-align:center;">Comprehensive ecosystem surveillance</h2>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.97rem;max-width:52ch;margin:0 auto;line-height:1.65;">
-          Continuous monitoring across public signals, cultural channels, and algorithmic vectors.
-        </p>
-        <div class="cdc-eco">
-          <div class="cdc-eco-card">
-            <h3>Social</h3>
-            <ul>
-              <li>Instagram</li>
-              <li>YouTube</li>
-              <li>X (Twitter)</li>
-              <li>Facebook</li>
-              <li>Reddit</li>
-              <li>Public communities</li>
-            </ul>
-          </div>
-          <div class="cdc-eco-card">
-            <h3>Search intent</h3>
-            <ul>
-              <li>Search queries</li>
-              <li>Emerging keywords</li>
-              <li>Spike indicators</li>
-            </ul>
-          </div>
-          <div class="cdc-eco-card">
-            <h3>Media conduits</h3>
-            <ul>
-              <li>Trade publications</li>
-              <li>Critic reviews</li>
-              <li>Mainstream press</li>
-            </ul>
-          </div>
-          <div class="cdc-eco-card">
-            <h3>Cultural nodes</h3>
-            <ul>
-              <li>Creators</li>
-              <li>Tastemakers</li>
-              <li>Fan collectives</li>
-              <li>Online communities</li>
-            </ul>
-          </div>
-          <div class="cdc-eco-card">
-            <h3>Market landscape</h3>
-            <ul>
-              <li>Competing releases</li>
-              <li>Windowing clashes</li>
-              <li>Talent cycles</li>
-              <li>Cultural events</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 08 — SIGNAL VS NOISE ===== -->
-    <section class="cdc-sec reveal" id="signal" style="text-align:center;">
-      <div class="container">
-        <p class="cdc-eyebrow" style="justify-content:center;">07 &mdash; Precision discrimination</p>
-        <h2 class="section-title">We do not react to synthetic noise.</h2>
-        <h3 style="font-family:var(--font-display);font-weight:800;font-size:clamp(1.3rem,2.8vw,2rem);text-align:center;color:var(--accent);letter-spacing:-0.03em;margin:0.3rem 0 0;">
-          We isolate genuine signal.
-        </h3>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.97rem;max-width:52ch;margin:1.6rem auto 0;line-height:1.65;">
-          Not every negative tweet demands an institutional response. DIGISYNQ rigorously differentiates trivial friction from systemic risk &mdash; preserving credibility and focusing capital where it counts.
-        </p>
-        <div class="cdc-ladder" role="list" aria-label="Escalation from noise to crisis">
-          <div class="cdc-rung" role="listitem">
-            <span class="cdc-rung-arr" aria-hidden="true">&rarr;</span>
-            <h4>Background noise</h4>
-            <p>Isolated negative sentiment. Normal organic friction. No intervention needed.</p>
-          </div>
-          <div class="cdc-rung" role="listitem">
-            <span class="cdc-rung-arr" aria-hidden="true">&rarr;</span>
-            <h4>Emerging pattern</h4>
-            <p>Recurring thematic alignment. Elevated observation. Staged posture.</p>
-          </div>
-          <div class="cdc-rung" role="listitem">
-            <span class="cdc-rung-arr" aria-hidden="true">&rarr;</span>
-            <h4>Commercial threat</h4>
-            <p>Significant velocity and reach. Structured counter-strategy mobilized.</p>
-          </div>
-          <div class="cdc-rung" role="listitem">
-            <h4>Critical event</h4>
-            <p>Multi-channel escalation. Coordinated narrative intervention deployed.</p>
-          </div>
-        </div>
-        <p class="cdc-ladder-cap">DIGISYNQ Signal Classification Framework &mdash; conceptual representation of the assessment methodology.</p>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 09 — SCENARIOS ===== -->
-    <section class="cdc-sec reveal" id="scenarios">
-      <div class="container">
-        <p class="cdc-eyebrow">08 &mdash; Practical applications</p>
-        <h2 class="section-title">Strategic response playbooks</h2>
-        <p style="color:var(--text-muted);font-size:0.97rem;max-width:50ch;line-height:1.65;margin:0 0 0;">Four operational models demonstrating how our response framework neutralizes common industry crises.</p>
-        <div class="cdc-scen-grid">
-          <div class="cdc-scen reveal">
-            <h3>Teaser or trailer friction</h3>
-            <p>A promotional asset generates rapid algorithmic backlash within hours of premiere.</p>
-            <div class="cdc-resp">
-              <div class="cdc-resp-lbl">DIGISYNQ intervention</div>
-              <p>Monitor &rarr; Diagnose root cause &rarr; Isolate genuine critique &rarr; Reframe narrative &rarr; Measure</p>
-            </div>
-          </div>
-          <div class="cdc-scen reveal">
-            <h3>Casting discord</h3>
-            <p>A casting announcement encounters polarized reaction across core fanbases and media outlets.</p>
-            <div class="cdc-resp">
-              <div class="cdc-resp-lbl">DIGISYNQ intervention</div>
-              <p>Track vector &rarr; Segment demographics &rarr; Assess commercial risk &rarr; Deploy authentic context</p>
-            </div>
-          </div>
-          <div class="cdc-scen reveal">
-            <h3>Misinformation &amp; leaks</h3>
-            <p>Unverified plot details or manufactured rumors gain velocity ahead of theatrical premiere.</p>
-            <div class="cdc-resp">
-              <div class="cdc-resp-lbl">DIGISYNQ intervention</div>
-              <p>Trace origin &rarr; Measure spread rate &rarr; Verify facts &rarr; Coordinate authoritative clarification</p>
-            </div>
-          </div>
-          <div class="cdc-scen reveal">
-            <h3>Early review turbulence</h3>
-            <p>Selective early reviews threaten to harden into broad consumer consensus prior to wide opening.</p>
-            <div class="cdc-resp">
-              <div class="cdc-resp-lbl">DIGISYNQ intervention</div>
-              <p>Analyze sentiment &rarr; Surface counter-perspectives &rarr; Amplify audience enthusiasm &rarr; Stabilize tracking</p>
-            </div>
-          </div>
-        </div>
-        <div class="cdc-disclaimer">
-          <p>Not every turbulent conversation requires intervention. Restraint is as vital as action.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 10 — COMMAND CENTER ===== -->
-    <section class="cdc-sec reveal" id="command">
-      <div class="container">
-        <p class="cdc-eyebrow">09 &mdash; Command interface</p>
-        <h2 class="section-title">The DIGISYNQ Cinema Command Center</h2>
-        <p style="color:var(--text-muted);font-size:0.97rem;max-width:52ch;line-height:1.65;margin:0 0 0;">An architectural overview of real-time metrics and narrative telemetry monitored for client productions.</p>
-        <div class="cdc-cmd" aria-label="Cinema Command Center — conceptual dashboard">
-          <div class="cdc-cmd-hd">
-            <div class="cdc-cmd-title">Cinema command center &mdash; live telemetry</div>
-            <div class="cdc-cmd-live">
-              <span class="cdc-ldot" aria-hidden="true"></span>
-              Real-time monitoring active
-            </div>
-          </div>
-          <div class="cdc-cmd-grid">
-            <div class="cdc-mc"><div class="ml">Live sentiment</div><div class="mv mv-w">Mixed</div><div class="ms">Trending negative &#8599;</div></div>
-            <div class="cdc-mc"><div class="ml">Narrative velocity</div><div class="mv mv-d">Elevated</div><div class="ms">+340% in 4h</div></div>
-            <div class="cdc-mc"><div class="ml">Risk level</div><div class="mv mv-d">Critical</div><div class="ms">Score: 82 / 100</div></div>
-            <div class="cdc-mc"><div class="ml">Active discussion clusters</div><div class="mv mv-a">14</div><div class="ms">Monitored channels</div></div>
-            <div class="cdc-mc"><div class="ml">Emerging vectors</div><div class="mv mv-w">3</div><div class="ms">Staged for intervention</div></div>
-            <div class="cdc-mc"><div class="ml">Creator amplifiers</div><div class="mv">28</div><div class="ms">Key accounts mapped</div></div>
-            <div class="cdc-mc"><div class="ml">Trade pickup rate</div><div class="mv mv-d">Surging</div><div class="ms">6 publications tracking</div></div>
-            <div class="cdc-mc"><div class="ml">Audience polarity</div><div class="mv mv-w">Bifurcated</div><div class="ms">47% pos / 53% neg</div></div>
-          </div>
-          <p class="cdc-cmd-note">
-            Early network activation &mdash; illustrative operational signals, not audited financial guarantees.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 11 — WHO IT IS FOR ===== -->
-    <section class="cdc-sec reveal" id="audience">
-      <div class="container">
-        <p class="cdc-eyebrow" style="justify-content:center;">10 &mdash; Ecosystem partners</p>
-        <h2 class="section-title" style="text-align:center;">Built for institutional entertainment stakeholders</h2>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.97rem;max-width:52ch;margin:0 auto;line-height:1.65;">
-          DIGISYNQ functions as an agile intelligence and response layer &mdash; collaborating seamlessly with existing publicity and marketing teams.
-        </p>
-        <div class="cdc-aud-grid">
-          <div class="cdc-aud-card"><h3>Major studios</h3></div>
-          <div class="cdc-aud-card"><h3>Production companies</h3></div>
-          <div class="cdc-aud-card"><h3>Lead producers &amp; directors</h3></div>
-          <div class="cdc-aud-card"><h3>Theatrical distributors</h3></div>
-          <div class="cdc-aud-card"><h3>OTT platforms</h3></div>
-          <div class="cdc-aud-card"><h3>Music labels &amp; labels</h3></div>
-          <div class="cdc-aud-card"><h3>Exhibition chains</h3></div>
-          <div class="cdc-aud-card"><h3>PR &amp; communications leads</h3></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="cdc-rule" />
-
-    <!-- ===== 12 — SERVICE STRUCTURE ===== -->
-    <section class="cdc-sec reveal" id="services">
-      <div class="container">
-        <p class="cdc-eyebrow">11 &mdash; Engagement architecture</p>
-        <h2 class="section-title">Structured service tiers</h2>
-        <p style="color:var(--text-muted);font-size:0.97rem;max-width:48ch;line-height:1.65;margin:0 0 0;">Three precision engagement models configured for distinct stages of the release cycle.</p>
-        <div class="cdc-svc-grid">
-          <div class="cdc-svc">
-            <h3>Intelligence</h3>
-            <span class="tgl">Surveillance before the moment.</span>
-            <p>Continuous sentiment telemetry and risk mapping. Detect latent fault lines and understand cultural undercurrents well before promotional launch.</p>
-          </div>
-          <div class="cdc-svc">
-            <h3>Control</h3>
-            <span class="tgl">Precision intervention in the moment.</span>
-            <p>Active narrative command, risk de-escalation, and tactical counter-messaging during critical theatrical and promotional windows.</p>
-          </div>
-          <div class="cdc-svc">
+            <div class="cdc-pcr-num">03 // RECOVERY &amp; COMPOUND</div>
             <h3>Recovery</h3>
-            <span class="tgl">Momentum compounding after the moment.</span>
-            <p>Post-turbulence equity restoration and secondary-window amplification &mdash; transforming challenge into long-term commercial momentum.</p>
+            <p>Post-crisis stabilization and upside capture. Convert a corrected narrative into a compounding second-week story.</p>
+            <ul class="cdc-pcr-list">
+              <li>Second-week audience expansion narrative repositioning</li>
+              <li>Word-of-mouth amplification engine with verified testimonials</li>
+              <li>OTT platform rights negotiation leverage via sentiment data</li>
+              <li>Merchandise and ancillary window narrative protection</li>
+              <li>Post-mortem intelligence fed back into the next release shield</li>
+            </ul>
           </div>
         </div>
-        <div class="cdc-svc-cta">
-          <a href="contact.html?type=discuss&service=cinema-damage-control" class="btn btn-primary btn-lg" id="cdc-build-btn">Build your cinema response system &rarr;</a>
+      </div>
+    </section>
+
+    <!-- SECTION 03: LIVE RADAR LOOP (WHITE) -->
+    <section class="ins-section white" id="radar-loop">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 03 // Operational Process</div>
+        <h2 class="ins-h2-dark">Live Telemetry Radar Loop</h2>
+        <p class="ins-desc-dark">A closed-loop process that continuously monitors, intercepts, counters, and compounds — like a control tower that never sleeps.</p>
+
+        <div class="cdc-loop">
+          <div class="cdc-loop-item">
+            <div class="cdc-loop-icon">01</div>
+            <div class="cdc-loop-text">
+              <h4>SCAN &mdash; Continuous Monitoring</h4>
+              <p>24/7 sentiment tracking across YouTube trailer comments, Instagram Reels, Facebook fan communities, Reddit discussion megathreads, X (Twitter), BookMyShow advance bookings, and regional Telegram groups. Signal frequency: every 4 hours.</p>
+            </div>
+          </div>
+          <div class="cdc-conn"></div>
+
+          <div class="cdc-loop-item">
+            <div class="cdc-loop-icon">02</div>
+            <div class="cdc-loop-text">
+              <h4>ISOLATE &mdash; Threat Classification</h4>
+              <p>Distinguish between organic negative sentiment and coordinated review bombing. Classify threat severity (Low, Medium, Critical) and assign rapid response protocols.</p>
+            </div>
+          </div>
+          <div class="cdc-conn"></div>
+
+          <div class="cdc-loop-item">
+            <div class="cdc-loop-icon">03</div>
+            <div class="cdc-loop-text">
+              <h4>COUNTER &mdash; Rapid Response Deployment</h4>
+              <p>Activate pre-prepared counter-narrative assets: verified cast content, curated audience testimonials, and behind-the-scenes clarifications within 6 hours.</p>
+            </div>
+          </div>
+          <div class="cdc-conn"></div>
+
+          <div class="cdc-loop-item">
+            <div class="cdc-loop-icon">04</div>
+            <div class="cdc-loop-text">
+              <h4>PROTECT &mdash; Exhibitor and Platform Shield</h4>
+              <p>Communicate corrected sentiment signals directly to exhibitor chains to prevent premature screen reductions. Coordinate review integrity flags on manipulation evidence.</p>
+            </div>
+          </div>
+          <div class="cdc-conn"></div>
+
+          <div class="cdc-loop-item">
+            <div class="cdc-loop-icon">05</div>
+            <div class="cdc-loop-text">
+              <h4>TELEMETRY &mdash; Post-Response Analysis</h4>
+              <p>Measure counter-narrative asset performance. Feed all telemetry data back into the pre-release shield model for the next film in the production slate.</p>
+            </div>
+          </div>
+          <div class="cdc-loop-back">LOOP RESETS CONTINUOUSLY &mdash; EVERY 4 HOURS THROUGH RELEASE WINDOW</div>
         </div>
       </div>
     </section>
 
-    <hr class="cdc-rule" />
+    <!-- SECTION 04: NARRATIVE RISK SCORING (OFFWHITE) -->
+    <section class="ins-section offwhite" id="risk-dashboard">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 04 // Live Intelligence</div>
+        <h2 class="ins-h2-dark">Composite Narrative Risk Scoring</h2>
+        <p class="ins-desc-dark">Every monitored release receives a composite risk index derived from real-time signal channels — like a credit score, but for public sentiment.</p>
 
-    <!-- ===== 13 — ETHICAL POSITIONING ===== -->
-    <section class="cdc-sec reveal cdc-eth" id="ethics">
-      <div class="container">
-        <p class="cdc-eyebrow" style="justify-content:center;">12 &mdash; Operational integrity</p>
-        <h2 class="section-title" style="text-align:center;">The DIGISYNQ standard</h2>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.97rem;max-width:56ch;margin:0 auto;line-height:1.65;">
-          DIGISYNQ never engages in astroturfing, synthetic bot manipulation, false review creation, or dishonest suppression of authentic audience feedback. Our power lies in superior intelligence, verified facts, and strategic narrative clarity.
-        </p>
-        <div class="cdc-pillars">
-          <div class="cdc-pillar">Protect authentic artistic integrity.</div>
-          <div class="cdc-pillar">Command factual narrative clarity.</div>
-          <div class="cdc-pillar">Engineer enduring commercial momentum.</div>
+        <div class="ins-card" style="padding:2.5rem;">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
+            <div class="cdc-dial">
+              <div class="cdc-dial-num">7.4</div>
+              <div class="cdc-dial-den">/ 10</div>
+              <div class="cdc-dial-lbl">RISK SCORE</div>
+            </div>
+            <div class="cdc-bars">
+              <div style="font-family:var(--font-body);font-weight:700;font-size:1.1rem;color:#09090b;margin-bottom:0.4rem;">Live Signal Channel Breakdown</div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Trailer Sentiment</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:82%"></div></div><div class="cdc-bar-val">82%</div></div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Review Velocity</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:74%"></div></div><div class="cdc-bar-val">74%</div></div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Advance Booking</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:55%"></div></div><div class="cdc-bar-val">55%</div></div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Dark Social Signal</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:91%"></div></div><div class="cdc-bar-val">91%</div></div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Cast Amplification</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:48%"></div></div><div class="cdc-bar-val">48%</div></div>
+              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Platform Integrity</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-l" style="width:23%"></div></div><div class="cdc-bar-val">23%</div></div>
+            </div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.05em;color:#a1a1aa;margin-top:1.8rem;padding-top:1rem;border-top:1px solid rgba(0,0,0,0.08);">
+            *DIGISYNQ NARRATIVE RISK SCORE IS A COMPOSITE MODEL. DEMONSTRATION METRICS SHOWN. CLIENT DATA ENCRYPTED.
+          </div>
         </div>
       </div>
     </section>
 
-    <hr class="cdc-rule" />
+    <!-- SECTION 05: MONITORING CHANNELS (WHITE) -->
+    <section class="ins-section white" id="channels">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 05 // Monitoring Ecosystem</div>
+        <h2 class="ins-h2-dark">Where the Radar Listens</h2>
+        <p class="ins-desc-dark">Continuous signal collection across public media, ticketing systems, and dark social corridors — the same channels where audience opinion is formed and manipulated.</p>
 
-    <!-- ===== 14 — FINAL CTA ===== -->
-    <section class="cdc-sec cdc-final reveal" id="cdc-contact">
-      <div class="container">
-        <h2>Opening weekend<br />is not guaranteed.</h2>
-        <h3>Command the signal before the box office tracking agencies write the story for you.</h3>
-        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-          <a href="contact.html?type=discuss&service=cinema-damage-control" class="btn btn-primary btn-lg" id="cdc-final-btn">Talk to DIGISYNQ &rarr;</a>
+        <div class="cdc-eco-grid">
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+            <h3>YOUTUBE</h3>
+            <p>Trailer comment sentiment velocity &amp; like-to-dislike ratio shifts</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+            <h3>INSTAGRAM</h3>
+            <p>Reel audio velocity, fan edit virality &amp; comment sentiment clusters</p>
+          </div>
+
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></div>
+            <h3>FACEBOOK</h3>
+            <p>Regional fan club groups, meme page narrative loops &amp; viral video shares</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M17 13c-.4 1.2-1.5 2-3 2s-2.6-.8-3-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
+            <h3>REDDIT</h3>
+            <p>Film community megathreads, spoiler leak tracking &amp; coordinated brigading</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg></div>
+            <h3>X (TWITTER)</h3>
+            <p>Hashtag velocity &amp; influencer amplification maps</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+            <h3>BOOKMYSHOW</h3>
+            <p>Advance booking conversion &amp; cancellation spikes</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+            <h3>TELEGRAM</h3>
+            <p>Private film communities where early leaks spread</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg></div>
+            <h3>IMDB / LETTERBOXD</h3>
+            <p>Early review bomb detection &amp; rating spikes</p>
+          </div>
+          <div class="cdc-eco-card">
+            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <h3>PIRACY CHANNELS</h3>
+            <p>Cam-recording detection &amp; illegal stream tracking</p>
+          </div>
         </div>
-        <p class="cdc-final-brand">DIGISYNQ &mdash; Cinema intelligence &middot; Reputation protection &middot; Response &middot; Recovery</p>
       </div>
     </section>
 
-  </main>
-
-  <!-- ====== FOOTER ====== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
+    <!-- SECTION 06: CTA (DARK) -->
+    <section class="ins-section dark" id="activate-radar">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Deploy Your Shield</div>
+        <h2 class="ins-h2-light" style="margin-bottom:1rem;">Don't Wait for Narrative Decay</h2>
+        <p class="ins-desc-light" style="margin:0 auto 2.5rem;">Damage Radar activates 30 days before your release date &mdash; giving you sufficient time to calibrate what would otherwise be permanent box office losses.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Activate Damage Radar &rarr;</a>
+          <a href="insights.html" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">Read Research Papers</a>
         </div>
       </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
+    </section>
+
+      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
+  <footer class="site-footer">
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand"><div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
+          </div>
+          <div class="f-col">
+            <h4>Explore</h4>
+            <a href="network.html">Network Nodes</a>
+            <a href="platform.html">Operating System</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="flowchart.html">Process Protocol</a>
+            <a href="cinema-damage-control.html">Damage Radar</a>
+          </div>
+          <div class="f-col">
+            <h4>Participate</h4>
+            <a href="contact.html?type=join">Enter Network</a>
+            <a href="network.html#talent">Talent Lab</a>
+            <a href="network.html#capacity">List Capacity</a>
+            <a href="business.html">Commercial Model</a>
+            <a href="insights.html">Research</a>
+          </div>
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/cinematic-3d.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

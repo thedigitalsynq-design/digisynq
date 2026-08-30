@@ -1,290 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Solutions — five capability engines that connect talent, capacity, content, amplification and intelligence across the entertainment industry." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="Solutions — DIGISYNQ" />
-  <meta property="og:description" content="Five capability engines. One operating method. Start with the problem — we'll bring the connection." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
-  <link rel="canonical" href="https://digisynq.com/solutions.html" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "description": "The Operating Network for the Entertainment Industry",
-    "email": "thedigitalsynq@gmail.com",
-    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
-  }
-  </script>
-
-  <title>Solutions — DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="DIGISYNQ Solutions &mdash; Tailored operating solutions for producers, facility owners, talent, and financiers."/>
+  <meta property="og:title" content="Solutions &mdash; DIGISYNQ"/>
+  <link rel="canonical" href="https://digisynq.com/solutions.html"/>
+  <title>Solutions &mdash; DIGISYNQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
-
-    /* Help cards */
-    .help-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.5rem 1.4rem; transition: border-color var(--transition-fast), transform var(--transition-fast); }
-    .help-card:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); }
-    .help-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 1rem; }
-    .help-card .row { font-size: 0.95rem; line-height: 1.5; padding: 0.55rem 0; border-top: 1px solid var(--hairline); }
-    .help-card .row:first-of-type { border-top: 0; }
-    .help-card .tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: none; color: var(--text-dim); display: block; margin-bottom: 0.2rem; }
-    .help-card .problem .val { color: var(--text-secondary); }
-    .help-card .fix .val { color: #fff; }
-    .help-card .out .val { color: var(--accent); }
-
-    /* Engines */
-    .card-grid { display: grid; gap: 1.1rem; margin-top: 2.6rem; }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-5 { grid-template-columns: repeat(5, 1fr); }
-    .tile { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); }
-    .tile:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); background: var(--surface-elevated); }
-    .tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: none; }
-    .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; margin: 0.7rem 0 0.8rem; }
-    .tile p { font-size: 1rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
-
-    /* Value flow */
-    .value-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .stage { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.4rem; transition: border-color var(--transition-fast), transform var(--transition-fast); }
-    .stage:hover { border-color: rgba(52,211,153,0.4); transform: translateY(-3px); }
-    .stage .n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; display: block; margin-bottom: 0.8rem; }
-    .stage h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin: 0 0 0.6rem; }
-    .stage p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
-
-    /* Sec helpers */
-    .sec-index { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; display: flex; align-items: center; gap: 0.7rem; }
-    .sec-index::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
-    .lead-line { font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.55; color: var(--text-muted); max-width: 60ch; margin: 1.4rem 0 0; }
-    .note { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); margin-top: 1.6rem; }
-    .rule { border: 0; height: 1px; background: var(--hairline); margin: 0; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
-
-    /* Reveal */
-    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-smooth), transform 0.7s var(--ease-out-smooth); }
-    .js .reveal.in { opacity: 1; transform: none; }
-
-    /* Footer */
-    .f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding: clamp(3rem,6vw,4.5rem) 0 2.5rem; }
-    .f-brand .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; }
-    .f-brand p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 1rem 0 0; }
-    .f-col h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; }
-    .f-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.98rem; padding: 0.32rem 0; transition: color var(--transition-fast); }
-    .f-col a:hover { color: var(--accent); }
-    .f-bottom { border-top: 1px solid var(--hairline); padding: 1.4rem 0 2.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; align-items: center; }
-    .f-bottom span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); }
-
-    @media (max-width: 1000px) {
-      .grid-3, .value-flow { grid-template-columns: repeat(2, 1fr); }
-      .grid-5 { grid-template-columns: repeat(2, 1fr); }
-      .f-top { grid-template-columns: 1fr 1fr; }
-      .hero h1 { max-width: none; }
-    }
-    @media (max-width: 620px) {
-      .grid-3, .grid-5, .value-flow, .f-top { grid-template-columns: 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .js .reveal { opacity: 1 !important; transform: none !important; }
-    }
+    .sol-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;}
+    .sol-tab{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;padding:0.55rem 1.2rem;border-radius:999px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.05);cursor:pointer;transition:all 0.25s;text-decoration:none;display:inline-block;}
+    .sol-tab:hover,.sol-tab.active{background:#09090b;color:#fff;border-color:#09090b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(255, 255, 0,0.3);}
+    .stakeholder-card{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;padding:clamp(2.5rem,4vw,4rem) 0;border-bottom:1px solid rgba(0,0,0,0.07);}
+    .stakeholder-card:last-of-type{border-bottom:0;}
+    .stakeholder-card.reverse{direction:rtl;}
+    .stakeholder-card.reverse>*{direction:ltr;}
+    .stk-tag{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.6rem;display:block;font-weight:700;}
+    .stk-title{font-family:var(--font-body);font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em;}
+    .stk-desc{font-size:clamp(0.95rem,1.3vw,1.05rem);line-height:1.7;color:#52525b;margin:0 0 1.5rem;}
+    .stk-bullets{list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.4rem;}
+    .stk-bullets li{font-size:0.92rem;color:#3f3f46;padding-left:1.2rem;position:relative;line-height:1.5;}
+    .stk-bullets li::before{content:"";position:absolute;left:0;color:#09090b;font-weight:700;}
+    .stk-outcome{background:#f8fafc;border:1px solid rgba(0,0,0,0.07);border-radius:14px;padding:1.2rem 1.5rem;}
+    .stk-outcome-label{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.4rem;display:block;}
+    .stk-outcome-text{font-family:var(--font-body);font-weight:700;font-size:1rem;color:#09090b;line-height:1.35;}
+    .stk-visual{border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:2rem;background:linear-gradient(135deg,#f8fafc,#fff);display:flex;flex-direction:column;gap:1rem;}
+    .stk-vis-flow{display:flex;flex-direction:column;gap:0.5rem;}
+    .stk-vis-step{display:flex;align-items:center;gap:0.8rem;padding:0.7rem 1rem;background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:10px;}
+    .stk-vis-icon{width:28px;height:28px;border-radius:8px;background:rgba(255, 255, 0,0.1);border:1px solid rgba(255, 255, 0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-mono);font-size:0.6rem;color:#09090b;font-weight:700;}
+    .stk-vis-step span{font-size:0.87rem;color:#3f3f46;font-weight:500;}
+    .stk-vis-arr{text-align:center;color:#09090b;font-size:0.85rem;padding:0.2rem 0;}
+    .tick{color:#22c55e;font-weight:700;}
+    @media(max-width:768px){.stakeholder-card{grid-template-columns:1fr;}.stakeholder-card.reverse{direction:ltr;}}
   </style>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <!-- ====== NAV ====== -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link active">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
-      </div>
-    </div>
+<div class="app-card">
+  
+  <!-- TOP NAVIGATION -->
+  <header class="top-nav">
+    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links-center">
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html" class="active">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a><div class="vertical-sep"></div><a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a></div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+  <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
+  <div class="ins-hero" id="main-content">
+    <div class="ins-eyebrow">Stakeholder Architecture</div>
+    <h1 class="ins-hero-title">Targeted Solutions.<br><em>Zero Intermediary Fees.</em></h1>
+    <p class="ins-hero-desc">Whether you produce films, own soundstage inventory, create intellectual property, or deploy institutional capital &mdash; DIGISYNQ delivers structural speed and milestone safety.</p>
+    
+    <div class="sol-tabs">
+      <a href="#producers" class="sol-tab active">For Producers</a>
+      <a href="#facilities" class="sol-tab">For Facilities</a>
+      <a href="#talent" class="sol-tab">For Talent &amp; IP</a>
+      <a href="#financiers" class="sol-tab">For Financiers</a>
     </div>
   </div>
 
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero section reveal">
-      <div class="container">
-        <p class="eyebrow">Solutions</p>
-        <h1>Name the gap in your production.<br /><span class="soft">We engineer the bridge.</span></h1>
-        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;margin-top:1.2rem;">style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:56ch;m.</p>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- 01 — WHAT CAN WE HELP WITH -->
-    <section class="section reveal" id="help">
-      <div class="container">
-        <p class="sec-index">01 &mdash; Strategic interventions</p>
-        <h2 class="section-title">Whatever your role. Whatever the gap.</h2>
-        <div class="card-grid grid-5">
-          <div class="help-card">
-            <h3>Producer or studio?</h3>
-            <div class="row problem"><span class="tag">Reality</span><span class="val">The best DPs, HODs, composers, and stunt coordinators are invisible between projects. Stages fill last-minute. Budgets bleed on re-booking.</span></div>
-            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Precision talent discovery, facility mapping, and full pre-production to delivery-day coordination.</span></div>
-            <div class="row out"><span class="tag">Outcome</span><span class="val">The right crew on the right set, on schedule, without the agency markup.</span></div>
+  <!-- SOLUTION 01: PRODUCERS (WHITE) -->
+  <section class="ins-section white" id="producers">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Solution 01 / 04</div>
+      <h2 class="ins-h2-dark">Production Packaging &amp; Gap Financing</h2>
+      <p class="ins-desc-dark">For production houses and independent producers who need to move from concept to camera without the traditional 18-month deal-building cycle.</p>
+      
+      <div class="stakeholder-card">
+        <div>
+          <span class="stk-tag">FOR PRODUCERS &amp; PRODUCTION HOUSES</span>
+          <h3 class="stk-title">From Concept to Camera in Weeks, Not Years</h3>
+          <p class="stk-desc">The traditional production packaging cycle &mdash; finding talent, securing stages, closing co-production deals, and aligning investor capital &mdash; takes 12&ndash;24 months. DIGISYNQ collapses this through verified network routing.</p>
+          <ul class="stk-bullets">
+            <li>Access pre-verified talent pods that match your genre, budget tier, and production timeline</li>
+            <li>Secure facility access with standardized booking agreements &mdash; no relationship gatekeeping</li>
+            <li>Close co-production deals using pre-agreed incentive waterfall frameworks</li>
+            <li>Attract gap financing from DIGISYNQ investor pods without pitching agency by agency</li>
+            <li>Monitor all active milestones through a single production dashboard</li>
+            <li>Receive cascade royalty settlement across all distribution windows post-release</li>
+          </ul>
+          <div class="stk-outcome">
+            <span class="stk-outcome-label">PRODUCER OUTCOME</span>
+            <div class="stk-outcome-text">Close verified production packages in under 30 days. Move to camera faster. Keep more of the upside.</div>
           </div>
-          <div class="help-card">
-            <h3>Own a stage or facility?</h3>
-            <div class="row problem"><span class="tag">Reality</span><span class="val">Soundstages, edit suites, ADR booths, colour grade rooms, and grip yards earn nothing between bookings.</span></div>
-            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Live facility placement into verified, active productions. No cold outreach. No dead time.</span></div>
-            <div class="row out"><span class="tag">Outcome</span><span class="val">Fixed infrastructure overhead converted into continuous production revenue.</span></div>
-          </div>
-          <div class="help-card">
-            <h3>Hold IP or a catalogue?</h3>
-            <div class="row problem"><span class="tag">Reality</span><span class="val">Films, series, albums, and music catalogues lose most of their value after the first theatrical or streaming window closes.</span></div>
-            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Multi-window strategy: OTT licensing, broadcast syndication, international co-production, music sync, educational and ancillary rights.</span></div>
-            <div class="row out"><span class="tag">Outcome</span><span class="val">Catalogue assets monetized across every window, compounding royalty yields long after the premiere.</span></div>
-          </div>
-          <div class="help-card">
-            <h3>Brand or media buyer?</h3>
-            <div class="row problem"><span class="tag">Reality</span><span class="val">Brand budgets chase audiences that are already watching something else. Content integrations feel forced. Campaigns miss the cultural moment.</span></div>
-            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Brand-to-content matching by audience profile, genre, and release window. From product placement to co-production to music sync deals.</span></div>
-            <div class="row out"><span class="tag">Outcome</span><span class="val">Brand visibility that lives inside the content audiences already love, not alongside it.</span></div>
-          </div>
-          <div class="help-card">
-            <h3>Distributor or exhibitor?</h3>
-            <div class="row problem"><span class="tag">Reality</span><span class="val">P&amp;A overspend, release window clashes, distribution margin erosion, and screen underutilization quietly drain every release cycle.</span></div>
-            <div class="row fix"><span class="tag">DIGISYNQ</span><span class="val">Release window engineering, theatrical-to-OTT sequencing, rights clearance mapping, and distribution deal structuring.</span></div>
-            <div class="row out"><span class="tag">Outcome</span><span class="val">Tighter release economics, maximized screen yield, and predictable returns across the full distribution chain.</span></div>
+        </div>
+        <div class="stk-visual">
+          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">PRODUCER JOURNEY</div>
+          <div class="stk-vis-flow">
+            <div class="stk-vis-step"><div class="stk-vis-icon">A</div><span>Submit production brief to DIGISYNQ network</span></div>
+            <div class="stk-vis-arr">&darr;</div>
+            <div class="stk-vis-step"><div class="stk-vis-icon">B</div><span>Receive matched talent pods, stages &amp; co-producers</span></div>
+            <div class="stk-vis-arr">&darr;</div>
+            <div class="stk-vis-step"><div class="stk-vis-icon">C</div><span>Sign standardized deal memos &mdash; all parties aligned</span></div>
+            <div class="stk-vis-arr">&darr;</div>
+            <div class="stk-vis-step"><div class="stk-vis-icon">D</div><span>Capital locked in milestone escrow &mdash; move to shoot</span></div>
+            <div class="stk-vis-arr">&darr;</div>
+            <div class="stk-vis-step"><div class="stk-vis-icon">E</div><span>Release with narrative shield active</span></div>
+            <div class="stk-vis-arr">&darr;</div>
+            <div class="stk-vis-step"><div class="stk-vis-icon">F</div><span>Cascade royalty settlement &mdash; all windows</span></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="rule" />
-
-    <!-- 02 — FIVE CAPABILITY ENGINES (BRIDGE) -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">02 &mdash; How it works</p>
-        <h2 class="section-title">Five engines. One operating method.</h2>
-        <p class="lead-line">Capacity. Talent.</p>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- FINAL CTA -->
-    <section class="section reveal" style="text-align:center;">
-      <div class="container">
-        <p class="sec-index" style="justify-content:center;">Initiate</p>
-        <h2 class="statement" style="max-width:28ch;margin:0 auto;">The production is ready. The window is open. <span class="em">Let&rsquo;s synchronize.</span></h2>
-        <p class="lead-line" style="margin-left:auto;margin-right:auto;margin-top:0.75rem;">Bring the gap. We build the conduit.</p>
-        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Start the SYNQ &rarr;</a>
-          <a href="network.html" class="btn btn-secondary btn-lg">See the grid</a>
+  <!-- SOLUTION 02: FACILITIES (OFFWHITE) -->
+  <section class="ins-section offwhite" id="facilities">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Solution 02 / 04</div>
+      <h2 class="ins-h2-dark">Dark Stage Facility Monetization</h2>
+      <p class="ins-desc-dark">For soundstage owners, post-production facilities, equipment rental houses, and technical infrastructure operators.</p>
+      
+      <div class="stakeholder-card reverse">
+        <div>
+          <span class="stk-tag">FOR FACILITY OWNERS &amp; STUDIOS</span>
+          <h3 class="stk-title">Convert Every Dark Day Into Verified Revenue</h3>
+          <p class="stk-desc">A dark soundstage day is dead capital. DIGISYNQ routes active productions directly to available stages through standardized booking contracts that eliminate deal-making risk.</p>
+          <ul class="stk-bullets">
+            <li>List available facility inventory with pricing, technical specifications, and availability windows</li>
+            <li>Receive direct booking inquiries from DIGISYNQ-vetted productions &mdash; no broker intermediaries</li>
+            <li>Use standardized facility access agreements &mdash; no custom contract negotiation for every booking</li>
+            <li>Lock facility fees in pre-production milestone escrow before the shoot begins</li>
+            <li>Access co-production revenue sharing opportunities on productions you host</li>
+            <li>Build a verified production history that attracts higher-value future bookings</li>
+          </ul>
+          <div class="stk-outcome">
+            <span class="stk-outcome-label">FACILITY OUTCOME</span>
+            <div class="stk-outcome-text">Reduce dark days from 42% to under 12% of annual capacity. Guaranteed payment via escrow. Zero upfront investment.</div>
+          </div>
+        </div>
+        <div class="stk-visual">
+          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">DARK DAY RECOVERY MODEL</div>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">INDUSTRY DARK RATE</span>
+              <span style="font-family:var(--font-body);font-weight:700;font-size:1.2rem;color:#ef4444;">42%</span>
+            </div>
+            <div style="text-align:center;color:#09090b;font-size:1rem;">&darr; DIGISYNQ ROUTING</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(255, 255, 0,0.25);">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">NETWORKED DARK RATE</span>
+              <span style="font-family:var(--font-body);font-weight:700;font-size:1.2rem;color:#22c55e;">&lt;12%</span>
+            </div>
+            <div style="padding:0.8rem;background:rgba(255, 255, 0,0.06);border-radius:10px;border:1px solid rgba(255, 255, 0,0.15);text-align:center;">
+              <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;color:#09090b;">ESTIMATED RECOVERED VALUE</div>
+              <div style="font-family:var(--font-body);font-weight:800;font-size:1.5rem;color:#09090b;margin-top:0.3rem;">₹2.8Cr+</div>
+              <div style="font-size:0.8rem;color:#71717a;">per dark month at market production day rates</div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- SOLUTION 03: TALENT & IP (WHITE) -->
+  <section class="ins-section white" id="talent">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Solution 03 / 04</div>
+      <h2 class="ins-h2-dark">Talent &amp; Creator Packaging</h2>
+      <p class="ins-desc-dark">For actors, directors, writers, technical crew, and IP holders seeking verified production attachments.</p>
+      
+      <div class="stakeholder-card">
+        <div>
+          <span class="stk-tag">FOR TALENT, CREATORS &amp; IP OWNERS</span>
+          <h3 class="stk-title">Get Routed to Verified Productions</h3>
+          <p class="stk-desc">DIGISYNQ creates a direct channel from verified talent to active productions &mdash; with payment secured in milestone escrow before any work begins.</p>
+          <ul class="stk-bullets">
+            <li>Join the DIGISYNQ verified talent registry with availability windows and rate cards</li>
+            <li>Get matched to active productions based on compatibility, timeline, and production tier</li>
+            <li>Receive all deal terms in standardized format &mdash; no opaque agency translation layers</li>
+            <li>Payment secured in milestone escrow before production begins &mdash; guaranteed delivery</li>
+            <li>IP owners: list dormant screenplays and franchise rights for active packaging</li>
+            <li>Participate in revenue share agreements on productions where your performance is core</li>
+          </ul>
+          <div class="stk-outcome">
+            <span class="stk-outcome-label">TALENT OUTCOME</span>
+            <div class="stk-outcome-text">Access verified production opportunities. Get paid through milestone-secured escrow. Build a verified production history.</div>
+          </div>
+        </div>
+        <div class="stk-visual">
+          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">TALENT REGISTRY PROFILE</div>
+          <div style="display:flex;flex-direction:column;gap:0.7rem;">
+            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">AVAILABILITY</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Q4 2025 &mdash; Q1 2026</span></div>
+            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">GENRE PREFERENCE</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Drama &middot; Thriller &middot; Action</span></div>
+            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">DEAL STRUCTURE</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Milestone Escrow &middot; Revenue Share</span></div>
+            <div style="padding:0.8rem 1rem;background:rgba(34,197,94,0.06);border-radius:10px;border:1px solid rgba(34,197,94,0.2);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#16a34a;display:block;margin-bottom:0.2rem;">STATUS</span><span style="font-size:0.87rem;color:#16a34a;font-weight:700;">VERIFIED &middot; AVAILABLE</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION 04: FINANCIERS (DARK) -->
+  <section class="ins-section dark" id="financiers">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="ins-eyebrow" style="justify-content:flex-start;">Solution 04 / 04</div>
+      <h2 class="ins-h2-light">De-Risked Investor Pods</h2>
+      <p class="ins-desc-light">For family offices, private capital, and institutional investors seeking structured exposure to Indian entertainment.</p>
+      
+      <div class="stakeholder-card reverse" style="border-bottom:0;">
+        <div>
+          <span class="stk-tag" style="color:#09090b;">FOR INVESTORS &amp; CO-FINANCIERS</span>
+          <h3 class="stk-title" style="color:#fff;">Protected, Structured Entertainment Capital</h3>
+          <p class="stk-desc" style="color:rgba(255,255,255,0.6);">DIGISYNQ replaces informal, relationship-gated investment with institutional-grade stage gates, milestone-secured capital deployment, and automated settlement.</p>
+          <ul class="stk-bullets" style="color:rgba(255,255,255,0.7);">
+            <li style="color:rgba(255,255,255,0.7);">Co-invest in milestone-verified production packages alongside qualified pods</li>
+            <li style="color:rgba(255,255,255,0.7);">Capital held in multi-sig milestone escrow &mdash; no single-party control</li>
+            <li style="color:rgba(255,255,255,0.7);">Receive investor-grade reporting at every stage gate with full capital trail visibility</li>
+            <li style="color:rgba(255,255,255,0.7);">Participate in multi-window upside: theatrical, OTT, satellite, audio, and merchandise</li>
+            <li style="color:rgba(255,255,255,0.7);">Automated royalty settlement eliminates manual disputes and delayed disbursement</li>
+          </ul>
+          <div class="stk-outcome" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+            <span class="stk-outcome-label">INVESTOR OUTCOME</span>
+            <div class="stk-outcome-text" style="color:#fff;">Deploy into entertainment with the same structural protections as private equity &mdash; milestone-gated, transparent, and multi-window.</div>
+          </div>
+        </div>
+        <div class="stk-visual" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
+          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">INVESTOR PROTECTION STACK</div>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;">
+            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Multi-Sig Escrow</span><span class="tick">&#10003;</span></div>
+            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Milestone-Gated Deployment</span><span class="tick">&#10003;</span></div>
+            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Investor-Grade Reporting</span><span class="tick">&#10003;</span></div>
+            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Multi-Window Revenue Share</span><span class="tick">&#10003;</span></div>
+            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Automated Royalty Settlement</span><span class="tick">&#10003;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
+      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
-        </div>
+        <div class="f-brand"><div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry.</p></div>
+        <div class="f-col"><h4>Explore</h4><a href="network.html">Network Nodes</a><a href="platform.html">Operating System</a><a href="solutions.html">Solutions</a><a href="flowchart.html">Process Protocol</a><a href="cinema-damage-control.html">Damage Radar</a></div>
+        <div class="f-col"><h4>Participate</h4><a href="contact.html?type=join">Enter Network</a><a href="network.html#talent">Talent Lab</a><a href="network.html#capacity">List Capacity</a><a href="business.html">Commercial Model</a><a href="insights.html">Research</a></div>
+        <div class="f-col"><h4>Connect</h4><a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a><a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a><a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a><a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a><a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a></div>
       </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
+      <div class="f-bottom"><span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span><span>Own less. Connect more. Multiply value.</span></div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
-  <script src="assets/js/main.js"></script>
-</body>
+</div>
+<script src="assets/js/cinematic-3d.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

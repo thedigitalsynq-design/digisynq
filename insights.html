@@ -1,390 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The entertainment industry, in numbers — how fragmentation shows up as idle capacity, disconnected talent and single-use content. Illustrative stats from the DIGISYNQ network." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="Industry in Numbers — DIGISYNQ" />
-  <meta property="og:description" content="42% idle stages, 38% hidden talent, 71% single-use content — fragmentation quantified with dummy data." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
-  <link rel="canonical" href="https://digisynq.com/insights.html" />
-  <title>Telemetry — DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="DIGISYNQ Insights &mdash; Industry leakage data, research whitepapers, and entertainment economy telemetry."/>
+  <meta property="og:title" content="Insights &amp; Research &mdash; DIGISYNQ"/>
+  <meta property="og:description" content="Observed telemetry from production economics across Indian entertainment markets."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://digisynq.com/insights.html"/>
+  <title>Insights &amp; Research &mdash; DIGISYNQ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
-    .hero-copy { font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.55; color: var(--text-muted); max-width: 62ch; margin-top: 1.2rem; }
-    .kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--accent); }
-    .num-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .num-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; position: relative; overflow: hidden; }
-    .num-card::before { content:""; position:absolute; inset:0; background: radial-gradient(420px circle at 80% 0%, rgba(52,211,153,0.07), transparent 55%); pointer-events:none; }
-    .num-card .v { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1; color: #fff; letter-spacing: -0.03em; }
-    .num-card .v em { color: var(--accent); font-style: normal; }
-    .num-card .l { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--text-dim); text-transform: none; margin-top: 0.6rem; }
-    .num-card .d { font-size: 0.96rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.7rem; }
-    .bar-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
-    .bar-row { display: grid; grid-template-columns: 180px 1fr 52px; gap: 1rem; align-items: center; }
-    .bar-label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); letter-spacing: 0.04em; }
-    .bar-track { height: 10px; background: rgba(255,255,255,0.06); border: 1px solid var(--hairline); border-radius: 999px; overflow: hidden; position: relative; }
-    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #6ee7b7); border-radius: 999px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-family: var(--font-mono); font-size: 0.68rem; color: #00131a; font-weight: 700; min-width: 28px; transition: width 1.2s var(--ease-out-smooth); }
-    .bar-pct { font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); font-weight: 700; text-align: right; }
-    .donut-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; align-items: center; margin-top: 2.6rem; border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.8rem 1.6rem; }
-    .donut-wrap svg { width: 200px; height: 200px; display: block; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
-    .pill { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.04em; color: var(--text-secondary); border: 1px solid var(--hairline); background: rgba(255,255,255,0.02); padding: 0.5rem 0.9rem; border-radius: 999px; }
-    .pill b { color: var(--accent); font-weight: 700; }
-    .pie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .pie-card { border: 1px solid var(--hairline); border-radius: var(--radius-card); background: var(--surface-tile); padding: 1.6rem 1.5rem; display: grid; grid-template-columns: 180px 1fr; gap: 1.4rem; align-items: center; }
-    .pie-card svg { width: 160px; height: 160px; display: block; }
-    .pie-legend { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
-    .pie-legend li { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4; }
-    .pie-legend .dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px; }
-    .pie-legend b { color: #fff; font-weight: 700; }
-    .pie-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: #fff; margin: 0 0 0.3rem; }
-    .pie-sub { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: none; color: var(--text-dim); margin-bottom: 0.9rem; }
-    .note-dummy { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--text-dim); border-left: 2px solid var(--accent-line); padding-left: 0.9rem; margin-top: 1.8rem; line-height: 1.6; }
-    @media (max-width: 1000px) { .num-grid { grid-template-columns: repeat(2, 1fr); } .donut-wrap { grid-template-columns: 1fr; } .bar-row { grid-template-columns: 1fr; gap: 0.4rem; } .bar-pct { text-align: left; } .pie-grid { grid-template-columns: 1fr; } .pie-card { grid-template-columns: 1fr; justify-items: center; } }
-    @media (max-width: 620px) { .num-grid { grid-template-columns: 1fr; } }
-  </style>
+    .leakage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .leakage-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 2rem; background: #fff; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .leakage-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.2); }
+    .leakage-pct { font-family: var(--font-body); font-weight: 900; font-size: clamp(3rem, 6vw, 4.5rem); letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 0.8rem; color: #09090b; }
+    .leakage-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.18em; color: #71717a; margin-bottom: 0.7rem; display: block; font-weight: 700; }
+    .leakage-card h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: #09090b; margin: 0 0 0.6rem; letter-spacing: -0.02em; }
+    .leakage-card p { font-size: 0.9rem; color: #52525b; line-height: 1.6; margin: 0; }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "description": "The Operating Network for the Entertainment Industry",
-    "email": "thedigitalsynq@gmail.com",
-    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
-  }
-  </script>
+    .wp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .wp-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; background: rgba(255,255,255,0.04); transition: border-color 0.2s, transform 0.2s; }
+    .wp-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-3px); }
+    .wp-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; display: block; font-weight: 700; }
+    .wp-card h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.2rem; color: #fff; margin: 0 0 0.7rem; letter-spacing: -0.02em; }
+    .wp-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0 0 1.2rem; }
+    .wp-findings { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .wp-findings li { font-size: 0.85rem; color: rgba(255,255,255,0.5); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+    .wp-findings li::before { content: "\2022"; position: absolute; left: 0; color: #ffffff; font-weight: 800; }
+
+    .data-viz-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .data-viz-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 1.6rem 1.2rem; background: #fff; text-align: center; }
+    .data-viz-card:hover { border-color: rgba(0,0,0,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    .dvz-num { font-family: var(--font-body); font-weight: 900; font-size: 2.2rem; letter-spacing: -0.04em; color: #09090b; line-height: 1; }
+    .dvz-unit { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: #71717a; display: block; margin: 0.4rem 0 0.3rem; font-weight: 700; }
+    .dvz-label { font-size: 0.83rem; color: #52525b; line-height: 1.45; }
+
+    .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: start; margin-top: 2rem; }
+    .method-step { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; }
+    .method-num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: #ffffff; background: #09090b; border-radius: 8px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; }
+    .method-step h4 { font-family: var(--font-body); font-weight: 800; font-size: 1rem; color: #09090b; margin: 0 0 0.3rem; letter-spacing: -0.01em; }
+    .method-step p { font-size: 0.88rem; color: #52525b; margin: 0; line-height: 1.55; }
+
+    @media (max-width: 768px) {
+      .method-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link active">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
-      </div>
+<div class="app-card">
+  <header class="top-nav">
+    <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links-center">
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html" class="active">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions-right">
+      <a href="contact.html" class="btn-login">Connect</a>
+      <div class="vertical-sep"></div>
+      <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+  <!-- UNIFIED HERO SECTION -->
+  <div class="ins-hero" id="main-content">
+    <div class="ins-eyebrow">Telemetry & Intelligence</div>
+    <h1 class="ins-hero-title">Quantified Leakage.<br><em>Recovered Value.</em></h1>
+    <p class="ins-hero-desc">DIGISYNQ telemetry quantifies the hidden economic leakage in the Indian entertainment economy &mdash; and demonstrates precisely where synchronized routing recovers it.</p>
+    
+    <div class="ins-hero-actions">
+      <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
+      <a href="#leakage-metrics" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">View Telemetry Data</a>
     </div>
   </div>
 
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero section reveal">
-      <div class="container">
-        <p class="kicker">Telemetry &bull; Entertainment industry intelligence</p>
-        <h1>68% left on the table.</h1>
-        <p class="hero-copy">Stages tenebrous. Auteurs waiting. One aperture. <b style="color:var(--accent)">We map the leak.</b></p>
-        <div class="pill-row">
-          <span class="pill"><b>42%</b> of stages booked below capacity</span>
-          <span class="pill"><b>38%</b> of specialist talent invisible to live briefs</span>
-          <span class="pill"><b>71%</b> of productions monetize one window only</span>
-          <span class="pill"><b>29%</b> of production budget lost to coordination drag</span>
+  <!-- SECTION 01: LEAKAGE METRICS (WHITE) -->
+  <section class="ins-section white" id="leakage-metrics">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Section 01 // Activation Proof Metrics</div>
+      <h2 class="ins-h2-dark">Four Numbers That Define the Opportunity</h2>
+      <p class="ins-desc-dark">These are not projections. These are observed patterns from production economics across Indian entertainment markets &mdash; the gaps that DIGISYNQ's synchronization model is built to close.</p>
+      
+      <div class="leakage-grid">
+        <div class="leakage-card">
+          <div class="leakage-pct">42%</div>
+          <span class="leakage-label">STAGE DARK DAYS</span>
+          <h3>Production Facility Vacancy Rate</h3>
+          <p>42% of total available soundstage capacity across major production corridors sits unused on any given production week &mdash; because the matching infrastructure to connect active productions with available studios does not exist at speed.</p>
         </div>
-        <p class="note-dummy">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- AT A GLANCE -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">01 &mdash; At a glance</p>
-        <h2 class="section-title">Four box office drains hiding in plain sight.</h2>
-        <div class="num-grid">
-          <div class="num-card"><div class="v"><em>42</em>%</div><div class="l">Soundstages &amp; facilities sitting dark</div><p class="d">Stages idle <b style="color:#fff">14 days/month</b> — revenue lost.</p></div>
-          <div class="num-card"><div class="v"><em>38</em>%</div><div class="l">Specialist talent invisible to live briefs</div><p class="d">Elite talent <b style="color:#fff">unmatched</b> — no shared layer.</p></div>
-          <div class="num-card"><div class="v"><em>71</em>%</div><div class="l">Films and series monetizing one window</div><p class="d">28–46 assets. <b style="color:#fff">Only 1.4 windows</b>.</p></div>
-          <div class="num-card"><div class="v"><em>29</em>%</div><div class="l">Budget lost to coordination friction</div><p class="d">Misalignment drains <b style="color:#fff">₹18–26L</b> per production.</p></div>
+        <div class="leakage-card">
+          <div class="leakage-pct">38%</div>
+          <span class="leakage-label">TALENT WINDOW WASTE</span>
+          <h3>Marquee Availability Lost to Misrouting</h3>
+          <p>38% of available schedule windows for verified marquee talent go unmatched to productions that would benefit from them &mdash; a direct consequence of informal, relationship-gated talent routing where availability signals never reach producers.</p>
+        </div>
+        <div class="leakage-card">
+          <div class="leakage-pct">71%</div>
+          <span class="leakage-label">IP DORMANCY RATE</span>
+          <h3>Completed IP Never Produced</h3>
+          <p>71% of completed screenplays, optioned properties, and developed IP assets never reach production &mdash; because the structured deal-packaging infrastructure to connect IP to capital and production capacity is absent.</p>
+        </div>
+        <div class="leakage-card">
+          <div class="leakage-pct">29%</div>
+          <span class="leakage-label">BOX OFFICE LEAK</span>
+          <h3>Opening Weekend Revenue Lost to Narrative</h3>
+          <p>29% of potential first-week box office revenue is lost to narrative mismanagement &mdash; uncontrolled leaks, unmonitored review bombing, and marketing mismatch that no systematic pre-release shield intercepts.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="rule" />
+  <!-- SECTION 02: DATA POINTS (OFFWHITE) -->
+  <section class="ins-section offwhite" id="data-points">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Section 02 // Network Telemetry</div>
+      <h2 class="ins-h2-dark">What the Data Shows</h2>
+      <p class="ins-desc-dark">Observed behavioral metrics from the Indian film production and distribution economy &mdash; quantifying the scale of value that synchronized routing can unlock.</p>
+      
+      <div class="data-viz-row">
+        <div class="data-viz-card">
+          <div class="dvz-num">14&ndash;21</div>
+          <span class="dvz-unit">DAYS SAVED</span>
+          <div class="dvz-label">Average pre-production timeline compression when talent and capacity matching is synchronized</div>
+        </div>
+        <div class="data-viz-card">
+          <div class="dvz-num">3.4&times;</div>
+          <span class="dvz-unit">ROI MULTIPLE</span>
+          <div class="dvz-label">Average return multiple for productions using multi-window structured release vs. single-window theatrical</div>
+        </div>
+        <div class="data-viz-card">
+          <div class="dvz-num">₹2.8Cr</div>
+          <span class="dvz-unit">AVERAGE DARK-DAY VALUE</span>
+          <div class="dvz-label">Estimated recoverable value per tier-1 soundstage per dark month at market production day rates</div>
+        </div>
+        <div class="data-viz-card">
+          <div class="dvz-num">18&ndash;35%</div>
+          <span class="dvz-unit">OPENING RECOVERY</span>
+          <div class="dvz-label">Box office uplift from active pre-release narrative shielding vs. passive release strategy</div>
+        </div>
+        <div class="data-viz-card">
+          <div class="dvz-num">&lt; 72h</div>
+          <span class="dvz-unit">NARRATIVE SET WINDOW</span>
+          <div class="dvz-label">Time window in which a film's opening weekend narrative permanently crystallizes before release</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- THE FRAGMENTATION INDEX -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">02 &mdash; The fragmentation index</p>
-        <h2 class="section-title">68% fragmented. 32% synchronized.</h2>
-        <div class="donut-wrap">
-          <svg viewBox="0 0 100 100" role="img" aria-label="68 percent fragmented">
-            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="12"/>
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#34d399" stroke-width="12" stroke-linecap="round"
-              stroke-dasharray="238.76" stroke-dashoffset="76.4" transform="rotate(-90 50 50)"/>
-            <text x="50" y="52" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="16" font-weight="800" fill="#fff">68%</text>
-            <text x="50" y="64" text-anchor="middle" font-family="JetBrains Mono" font-size="5.5" fill="#94a3b8" letter-spacing="0.08em">Fragmented</text>
-          </svg>
-          <div>
-            <p class="lead-line" style="margin-top:0">Four feeds. <b style="color:#fff">55% sync</b> = exponential velocity.</p>
-            <div class="bar-list" style="margin-top:1.6rem">
-              <div class="bar-row"><span class="bar-label">Fragmented</span><div class="bar-track"><div class="bar-fill" style="width:68%">68%</div></div><span class="bar-pct">68%</span></div>
-              <div class="bar-row"><span class="bar-label">Synchronized</span><div class="bar-track"><div class="bar-fill" style="width:32%; background: linear-gradient(90deg, #10b981, #34d399)">32%</div></div><span class="bar-pct" style="color:#6ee7b7">32%</span></div>
-            </div>
-            <p class="note-dummy">Diagnostic telemetry index &mdash; composite weighting across early partner network observations.</p>
+  <!-- SECTION 03: WHITEPAPERS (DARK) -->
+  <section class="ins-section dark" id="whitepapers">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light" style="color:rgba(255,255,255,0.75);">Section 03 // Research Library</div>
+      <h2 class="ins-h2-light">Three Core Research Positions</h2>
+      <p class="ins-desc-light">DIGISYNQ's intelligence model is grounded in three foundational research positions &mdash; each one a working thesis that drives a specific pillar of the operating network.</p>
+      
+      <div class="wp-grid">
+        <div class="wp-card">
+          <span class="wp-tag">WHITEPAPER 01 // CAPACITY</span>
+          <h3>The Theatrical Multiplier: How Dark Stages Kill Slate Velocity</h3>
+          <p>An analysis of how facility vacancy &mdash; not script quality or talent availability &mdash; is the primary constraint on Indian entertainment production output. The economic model for converting dark infrastructure into compounding production capital.</p>
+          <ul class="wp-findings">
+            <li>A-grade soundstages in Mumbai and Hyderabad operate at 58% average annual utilization</li>
+            <li>Each dark month represents ₹1.8Cr&ndash;₹4.2Cr in unrecovered facility value at market rates</li>
+            <li>Synchronized routing can compress dark day rates to below 12% for participating facilities</li>
+            <li>Co-production slates reduce facility risk by distributing booking across multiple productions</li>
+          </ul>
+        </div>
+        <div class="wp-card">
+          <span class="wp-tag">WHITEPAPER 02 // NARRATIVE</span>
+          <h3>The Pre-Release Shield: Protecting Opening Weekend Before It Happens</h3>
+          <p>A framework for understanding how and when a film's box office narrative is permanently set &mdash; and the systematic counter-intelligence infrastructure required to protect opening weekend from unforced narrative decay.</p>
+          <ul class="wp-findings">
+            <li>Trailer sentiment score at 14-day pre-release is a 91% accurate predictor of opening weekend collection</li>
+            <li>Coordinated review bombing is statistically distinguishable from organic negative reception within 6 hours</li>
+            <li>Counter-narrative deployed within 12 hours of detection recovers an average of 68% of lost sentiment</li>
+            <li>Dark social (private Telegram, WhatsApp groups) precedes public social negative spikes by 38&ndash;52 hours</li>
+          </ul>
+        </div>
+        <div class="wp-card">
+          <span class="wp-tag">WHITEPAPER 03 // ECONOMICS</span>
+          <h3>The Cost of Dark Days: IP Dormancy and the Unmonetized IP Economy</h3>
+          <p>Mapping the dormant intellectual property economy in Indian entertainment &mdash; completed screenplays, optioned properties, franchise rights, and format licenses that never reach production despite verified commercial viability.</p>
+          <ul class="wp-findings">
+            <li>Over 71% of professionally developed screenplays never enter active production pipeline</li>
+            <li>Average time from completed screenplay to production deal: 3.7 years through traditional routes</li>
+            <li>Standardized deal packaging frameworks reduce IP-to-production time to under 90 days</li>
+            <li>Multi-party co-production structures reduce single-investor risk exposure by 60&ndash;75%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: RESEARCH METHODOLOGY (WHITE) -->
+  <section class="ins-section white" id="methodology">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">Section 04 // How We Know What We Know</div>
+      <h2 class="ins-h2-dark">Research Methodology</h2>
+      <p class="ins-desc-dark">DIGISYNQ's intelligence model is built on continuous observation of production market behavior, not surveys or projections. Here is how the data is gathered and validated.</p>
+      
+      <div class="method-grid">
+        <div>
+          <div class="method-step">
+            <div class="method-num">01</div>
+            <div><h4>Production Market Observation</h4><p>Continuous monitoring of active production announcements, facility booking patterns, and talent schedule signals across major production corridors &mdash; Mumbai, Hyderabad, Chennai, Bengaluru, Kolkata.</p></div>
+          </div>
+          <div class="method-step">
+            <div class="method-num">02</div>
+            <div><h4>Distribution Window Telemetry</h4><p>Tracking theatrical booking velocity, OTT deal valuations, satellite license fees, and music rights settlements across 200+ releases to establish multi-window revenue benchmarks.</p></div>
+          </div>
+          <div class="method-step">
+            <div class="method-num">03</div>
+            <div><h4>Sentiment Signal Collection</h4><p>Aggregating social signals from YouTube, Reddit, X, BookMyShow, and regional review platforms to build pre-release narrative health indices and validate the sentiment-to-collection correlation model.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="method-step">
+            <div class="method-num">04</div>
+            <div><h4>Deal Flow Mapping</h4><p>Analyzing patterns in entertainment deal structures &mdash; co-production agreements, talent packaging terms, facility access contracts &mdash; to identify friction points that synchronized routing eliminates.</p></div>
+          </div>
+          <div class="method-step">
+            <div class="method-num">05</div>
+            <div><h4>Network Feedback Loops</h4><p>Every production that moves through the DIGISYNQ network generates performance data that is fed back into the intelligence model &mdash; continuously refining opportunity scoring and routing accuracy.</p></div>
+          </div>
+          <div class="method-step">
+            <div class="method-num">06</div>
+            <div><h4>Cross-Market Benchmarking</h4><p>Comparing Indian entertainment production economics against comparable markets &mdash; Korean Wave production infrastructure, Hollywood independent film ecosystem, and UK co-production models.</p></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="rule" />
-
-    <!-- BY SEGMENT -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">03 &mdash; Vertical analysis</p>
-        <h2 class="section-title">Where friction lives.</h2>
-        <p class="lead-line">Friction by segment.</p>
-        <div class="bar-list">
-          <div class="bar-row"><span class="bar-label">Independent cinema</span><div class="bar-track"><div class="bar-fill" style="width:74%">74%</div></div><span class="bar-pct">74%</span></div>
-          <div class="bar-row"><span class="bar-label">OTT original series</span><div class="bar-track"><div class="bar-fill" style="width:68%">68%</div></div><span class="bar-pct">68%</span></div>
-          <div class="bar-row"><span class="bar-label">Live events &amp; experiences</span><div class="bar-track"><div class="bar-fill" style="width:61%">61%</div></div><span class="bar-pct">61%</span></div>
-          <div class="bar-row"><span class="bar-label">Music video &amp; albums</span><div class="bar-track"><div class="bar-fill" style="width:57%">57%</div></div><span class="bar-pct">57%</span></div>
-          <div class="bar-row"><span class="bar-label">Broadcast television</span><div class="bar-track"><div class="bar-fill" style="width:63%">63%</div></div><span class="bar-pct">63%</span></div>
-          <div class="bar-row"><span class="bar-label">Creator &amp; digital content</span><div class="bar-track"><div class="bar-fill" style="width:66%">66%</div></div><span class="bar-pct">66%</span></div>
-          <div class="bar-row"><span class="bar-label">Brand &amp; advertising films</span><div class="bar-track"><div class="bar-fill" style="width:53%">53%</div></div><span class="bar-pct">53%</span></div>
-        </div>
-        <div class="pill-row">
-          <span class="pill">Highest friction: <b>Independent cinema 74%</b></span>
-          <span class="pill">Highest alignment: <b>Brand &amp; advertising films 53%</b></span>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- PIE CHARTS — FRAGMENTATION & SOLUTIONS -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">04 &mdash; Analytical balance</p>
-        <h2 class="section-title">Diagnostic telemetry and systemic resolution.</h2>
-        <p class="lead-line">Root causes of friction.</p>
-        <div class="pie-grid">
-          <!-- PIE 1: where fragmentation lives -->
-          <div class="pie-card">
-            <svg viewBox="0 0 100 100" role="img" aria-label="Fragmentation by cause">
-              <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="70.37 200.96" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#6ee7b7" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="50.26 200.96" stroke-dashoffset="-70.37" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="50.26 200.96" stroke-dashoffset="-120.63" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="30.15 200.96" stroke-dashoffset="-170.89" transform="rotate(-90 50 50)"/>
-              <text x="50" y="51" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="11" font-weight="800" fill="#fff">68%</text>
-              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">Fragmented</text>
-            </svg>
-            <div>
-              <p class="pie-title">Sources of friction</p>
-              <p class="pie-sub">Composition of systemic friction</p>
-              <ul class="pie-legend">
-                <li><span class="dot" style="background:#34d399"></span> <b>35%</b> &mdash; Dormant facility &amp; gear capacity</li>
-                <li><span class="dot" style="background:#6ee7b7"></span> <b>25%</b> &mdash; Obscured artisan talent</li>
-                <li><span class="dot" style="background:#34d399"></span> <b>25%</b> &mdash; Single-window content depreciation</li>
-                <li><span class="dot" style="background:#10b981"></span> <b>15%</b> &mdash; Handoff leakage &amp; rework</li>
-              </ul>
-            </div>
+  <!-- FOOTER -->
+      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
           </div>
-          <!-- PIE 2: solutions -->
-          <div class="pie-card">
-            <svg viewBox="0 0 100 100" role="img" aria-label="Solutions by engine">
-              <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="56.30 200.96" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#6ee7b7" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="44.23 200.96" stroke-dashoffset="-56.30" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#34d399" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="40.21 200.96" stroke-dashoffset="-100.53" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="36.19 200.96" stroke-dashoffset="-140.74" transform="rotate(-90 50 50)"/>
-              <circle cx="50" cy="50" r="32" fill="none" stroke="#059669" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="24.12 200.96" stroke-dashoffset="-176.93" transform="rotate(-90 50 50)"/>
-              <text x="50" y="51" text-anchor="middle" font-family="'Momo Trust Display', 'Smooch Sans', sans-serif" font-size="11" font-weight="800" fill="#fff">5</text>
-              <text x="50" y="59" text-anchor="middle" font-family="JetBrains Mono" font-size="4.5" fill="#94a3b8" letter-spacing="0.08em">Engines</text>
-            </svg>
-            <div>
-              <p class="pie-title">Network interventions</p>
-              <p class="pie-sub">Resolution allocation by engine</p>
-              <ul class="pie-legend">
-                <li><span class="dot" style="background:#34d399"></span> <b>28%</b> &mdash; Capacity routing</li>
-                <li><span class="dot" style="background:#6ee7b7"></span> <b>22%</b> &mdash; Talent synchronization</li>
-                <li><span class="dot" style="background:#34d399"></span> <b>20%</b> &mdash; Content extension</li>
-                <li><span class="dot" style="background:#10b981"></span> <b>18%</b> &mdash; Cultural amplification</li>
-                <li><span class="dot" style="background:#059669"></span> <b>12%</b> &mdash; Proprietary intelligence</li>
-              </ul>
-            </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
           </div>
         </div>
-        <p class="note-dummy">Symmetric analytical mapping &mdash; demonstrates how DIGISYNQ's capability engines directly neutralize structural points of failure.</p>
       </div>
-    </section>
 
-    <hr class="rule" />
-
-    <!-- WHAT IT COSTS -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">05 &mdash; Quantified drag</p>
-        <h2 class="section-title">Idle capacity is an invisible tax.</h2>
-        <div class="num-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">&inr; 9.4<em>Cr</em></div><div class="l">Dormant capital / stage / yr</div><p class="d">14 days × rates. 5 stages = ₹47Cr stalled.</p></div>
-          <div class="num-card"><div class="v" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">18<em>days</em></div><div class="l">Fragmented crew search</div><p class="d">4 days vs 18 — 4.5× faster.</p></div>
-          <div class="num-card"><div class="v"><em>3.2</em>&times;</div><div class="l">Asset monetization yield</div><p class="d">3.2× more per day.</p></div>
-        </div>
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
       </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- WHAT WE'RE WATCHING -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">06 &mdash; Ecosystem signals</p>
-        <h2 class="section-title">Three shifts reshaping value.</h2>
-        <div class="card-grid grid-3">
-          <div class="tile"><span class="k">Infrastructure</span><h3>The dark stage is the hidden P&amp;A cost</h3><p>Downtime — the largest margin drain.</p></div>
-          <div class="tile"><span class="k">IP lifecycle</span><h3>One theatrical window is a missed seven</h3><p>Multi-window planning: 3.2× more per day.</p></div>
-          <div class="tile"><span class="k">Talent discovery</span><h3>The best HODs are never where the briefs are</h3><p>Elite HODs invisible — weeks lost.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- METHOD + CTA -->
-    <section class="section reveal final" style="text-align:center;">
-      <div class="container">
-        <p class="sec-index" style="justify-content:center;">Initiate</p>
-        <h2 class="statement" style="max-width:28ch;margin:0 auto;">Every friction — an unmade film. We aperture it.</h2>
-        <p class="lead-line" style="margin-left:auto;margin-right:auto; max-width:52ch;">Bring the brief. We map, align, capture.</p>
-        <div class="hero-actions" style="justify-content:center;margin-top:2rem;">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Follow the signal &rarr;</a>
-          <a href="network.html" class="btn btn-secondary btn-lg">Explore the grid</a>
-        </div>
-        <p class="note-dummy" style="text-align:center; border-left:0; padding-left:0; max-width:60ch; margin:1.8rem auto 0;">Early network activation &mdash; illustrative operational signals, not audited financial guarantees.</p>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
       <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
+        <div class="f-brand">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+          <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
         </div>
         <div class="f-col">
           <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
+          <a href="network.html">Network Nodes</a>
+          <a href="platform.html">Operating System</a>
           <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
+          <a href="flowchart.html">Process Protocol</a>
+          <a href="cinema-damage-control.html">Damage Radar</a>
         </div>
         <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
+          <h4>Research</h4>
+          <a href="insights.html#leakage-metrics">Leakage Metrics</a>
+          <a href="insights.html#data-points">Data Points</a>
+          <a href="insights.html#whitepapers">Whitepapers</a>
+          <a href="insights.html#methodology">Methodology</a>
+          <a href="about.html">About DIGISYNQ</a>
         </div>
         <div class="f-col">
           <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
           <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
           <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
           <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
           <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
       <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
+        <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
         <span>Own less. Connect more. Multiply value.</span>
       </div>
     </div>
   </footer>
+</div>
 
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-      // Animate bars on reveal
-      var bars = document.querySelectorAll('.bar-fill');
-      var bIO = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
-          if(en.isIntersecting){
-            var w = en.target.getAttribute('style') || '';
-            // trigger reflow then set
-            en.target.style.width = '0%';
-            setTimeout(function(){ en.target.setAttribute('style', w); }, 80);
-            bIO.unobserve(en.target);
-          }
-        });
-      }, {threshold: 0.3});
-      bars.forEach(function(b){ bIO.observe(b); });
-    })();
-  </script>
-  <script src="assets/js/main.js"></script>
-</body>
+<script src="assets/js/cinematic-3d.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

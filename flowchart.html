@@ -3,252 +3,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The DIGISYNQ operating method — ABCDEF: Audit, Build, Connect, Deploy, Extract, Feed Forward. One loop that turns every project into intelligence for the next." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="ABCDEF — The DIGISYNQ Method" />
-  <meta property="og:description" content="Audit → Build → Connect → Deploy → Extract → Feed Forward. The operating methodology behind the entertainment operating network." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
+  <meta name="description" content="The DIGISYNQ operating method &mdash; ABCDEF: Audit, Build, Connect, Deploy, Extract, Feed Forward. One closed-circuit loop that turns every project into intelligence for the next." />
+  <meta property="og:title" content="ABCDEF Protocol &mdash; DIGISYNQ" />
   <link rel="canonical" href="https://digisynq.com/flowchart.html" />
-  <title>Protocol — DIGISYNQ</title>
+  <title>ABCDEF Protocol &mdash; DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <style>
-    .hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(2.9rem, 6.3vw, 5.0rem); line-height: 0.98; color: #fff; margin: 0.8rem 0 0; }
-    .step-view { padding: clamp(2.5rem, 5vw, 4.5rem) 0; border-bottom: 1px solid var(--hairline); }
-    .step-view:last-of-type { border-bottom: 0; }
-    .step-view .inner { display: grid; grid-template-columns: 140px 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; width: 100%; }
-    .step-view .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.5rem, 8vw, 6.5rem); color: var(--accent); line-height: 0.9; }
-    .step-view h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.6rem); color: #fff; margin: 0.4rem 0 0.8rem; letter-spacing: -0.02em; }
-    .step-view p { font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.6; color: var(--text-muted); max-width: 58ch; margin: 0; }
-    .step-view .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: none; color: var(--text-dim); }
-    @media (max-width: 700px) { .step-view .inner { grid-template-columns: 1fr; gap: 0.8rem; } }
+    .stage-flow-track { display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap;overflow-x:auto;padding:2rem clamp(1rem,3vw,3rem);background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);scrollbar-width:thin; }
+    .stage-pill { display:flex;flex-direction:column;align-items:center;gap:0.3rem;padding:0.8rem 1.4rem;background:rgba(247,248,250,0.9);border:1px solid rgba(0,0,0,0.1);border-radius:999px;cursor:pointer;transition:all 0.25s ease;white-space:nowrap;flex-shrink:0; }
+    .stage-pill:hover,.stage-pill.active { background:#09090b;border-color:#09090b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+    .stage-pill-letter { font-family:var(--font-mono);font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:#09090b;transition:color 0.25s; }
+    .stage-pill-name { font-size:0.78rem;font-weight:700;color:#09090b;letter-spacing:-0.01em;transition:color 0.25s; }
+    .stage-pill:hover .stage-pill-name,.stage-pill.active .stage-pill-name { color:#fff; }
+    .stage-connector { width:36px;height:1px;background:linear-gradient(to right,rgba(0,0,0,0.12),rgba(0,0,0,0.06));flex-shrink:0;position:relative; }
+    .stage-connector::after { content:">";position:absolute;right:-6px;top:-9px;color:rgba(0,0,0,0.2);font-size:0.9rem; }
+    .loop-badge { display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#09090b;background:rgba(255, 255, 0,0.08);border:1px solid rgba(255, 255, 0,0.25);border-radius:999px;padding:0.4rem 1.1rem;margin:0 auto 2rem; }
+    .loop-dot { width:6px;height:6px;border-radius:50%;background:#09090b;animation:pulseDot 2s ease-in-out infinite; }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    .stage-detail-card { display:grid;grid-template-columns:140px 1fr;gap:clamp(1.5rem,4vw,3.2rem);align-items:start;padding:clamp(2rem,4vw,3.5rem) 0;border-bottom:1px solid rgba(0,0,0,0.07); }
+    .stage-detail-card:last-of-type { border-bottom:0; }
+    .stage-big-letter { font-family:var(--font-body);font-weight:900;font-size:clamp(4rem,9vw,7rem);color:#09090b;line-height:0.85;letter-spacing:-0.04em;opacity:0.08;user-select:none; }
+    .stage-label { font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.2em;color:#09090b;margin-bottom:0.5rem; }
+    .stage-detail-title { font-family:var(--font-body);font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em; }
+    .stage-detail-desc { font-size:clamp(0.95rem,1.3vw,1.05rem);line-height:1.65;color:#52525b;max-width:60ch;margin:0 0 1.2rem; }
+    .stage-detail-bullets { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem; }
+    .stage-detail-bullets li { font-size:0.93rem;color:#3f3f46;padding-left:1.2rem;position:relative;line-height:1.5; }
+    .stage-detail-bullets li::before { content:"";position:absolute;left:0;color:#09090b;font-weight:700; }
+    .stage-tag-row { display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem; }
+    .stage-tag { font-family:var(--font-mono);font-size:0.66rem;font-weight:700;letter-spacing:0.1em;color:#09090b;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.1);border-radius:999px;padding:0.25rem 0.75rem; }
+    .stage-summary-band { background:#09090b;color:#fff;padding:clamp(3.5rem,6vw,5.5rem) clamp(1.5rem,4vw,3.5rem);text-align:center; }
+    .stage-summary-band h2 { font-family:var(--font-body);font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-0.03em;margin:0 0 0.8rem;color:#fff; }
+    .stage-summary-band p { font-size:1.05rem;color:rgba(255,255,255,0.65);max-width:60ch;margin:0 auto 2rem;line-height:1.65; }
+    .stage-flow-summary { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0; }
+    .sfs-step { font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;color:rgba(255,255,255,0.55);padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:rgba(255,255,255,0.05);transition:all 0.2s; }
+    .sfs-step:hover { background:rgba(255,255,255,0.1);color:#fff; }
+    .sfs-step .sfs-letter { display:block;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:0.15rem; }
+    .sfs-arr { color:rgba(255, 255, 0,0.6);font-size:1rem;padding:0 0.5rem; }
+    .sfs-loop-back { width:100%;margin-top:1.2rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#09090b; }
+    .sfs-loop-back::before,.sfs-loop-back::after { content:"";flex:1;max-width:80px;height:1px;background:rgba(255, 255, 0,0.3); }
+    @media (max-width:700px) { .stage-detail-card { grid-template-columns:1fr;gap:0.6rem; } .stage-big-letter { font-size:3.5rem; } .stage-flow-track { justify-content:flex-start; } }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "description": "The Operating Network for the Entertainment Industry",
-    "email": "thedigitalsynq@gmail.com",
-    "sameAs": ["https://www.instagram.com/digisynq/","https://www.youtube.com/@digisynq"]
-  }
-  </script>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link active">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
+        <ul class="nav-links-center">
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html" class="active">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
       </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
+
+      <div class="nav-actions-right">
+        <a href="contact.html" class="btn-login">Connect</a>
+        <div class="vertical-sep" aria-hidden="true"></div>
+        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
+      </div>
+    </header>
+
+    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">ABCDEF Protocol</div>
+      <h1 class="ins-hero-title">Protocol Stages.<br><em>Locked Escrow.</em></h1>
+      <p class="ins-hero-desc">A closed-circuit six-stage rhythm that transforms disconnected entertainment assets into verified, compounding revenue streams. Every project feeds the next loop.</p>
+      
+      <div class="ins-hero-actions">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Initiate Stage A ;</a>
+        <a href="#stages" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore 6 Stages</a>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    <!-- STAGE GATE FLOW TRACK -->
+    <div class="stage-flow-track" role="navigation" aria-label="Stage Navigation">
+      <div class="stage-pill active"><span class="stage-pill-letter">STAGE A</span><span class="stage-pill-name">Audit</span></div>
+      <div class="stage-connector"></div>
+      <div class="stage-pill"><span class="stage-pill-letter">STAGE B</span><span class="stage-pill-name">Build</span></div>
+      <div class="stage-connector"></div>
+      <div class="stage-pill"><span class="stage-pill-letter">STAGE C</span><span class="stage-pill-name">Connect</span></div>
+      <div class="stage-connector"></div>
+      <div class="stage-pill"><span class="stage-pill-letter">STAGE D</span><span class="stage-pill-name">Deploy</span></div>
+      <div class="stage-connector"></div>
+      <div class="stage-pill"><span class="stage-pill-letter">STAGE E</span><span class="stage-pill-name">Extract</span></div>
+      <div class="stage-connector"></div>
+      <div class="stage-pill"><span class="stage-pill-letter">STAGE F</span><span class="stage-pill-name">Feed Forward</span></div>
     </div>
-  </div>
 
-  <main id="main-content">
+    <!-- SECTION: 6 STAGES IN DETAIL (WHITE) -->
+    <section class="ins-section white" id="stages">
+      <div style="max-width:900px;margin:0 auto;">
+        
+        <div style="text-align:center;margin-bottom:3rem;">
+          <div class="loop-badge"><span class="loop-dot"></span>CLOSED CIRCUIT &mdash; EVERY STAGE FEEDS THE NEXT</div>
+          <p style="color:#52525b;font-size:1rem;max-width:58ch;margin:0 auto;">Every stage gate requires verified consensus before advancing capital and resources to the next corridor. No stage is skipped.</p>
+        </div>
 
-    <!-- HERO -->
-    <section class="hero section reveal">
-      <div class="container">
-        <p class="eyebrow">Process</p>
-        <h1>From script to screen<br /><span class="soft">to every window after it.</span></h1>
-        <p class="hero-copy" style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;margin-top:1.2rem;">style="font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);max-width:54ch;m.</p>
+        <!-- Stage A -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">A</div>
+          <div>
+            <div class="stage-label">STAGE A // AUDIT</div>
+            <h2 class="stage-detail-title">Opportunity Discovery</h2>
+            <p class="stage-detail-desc">Systematic scan for latent capacity and untapped value in the entertainment ecosystem. We identify what is underperforming, underutilized, or invisible before any capital is deployed.</p>
+            <ul class="stage-detail-bullets">
+              <li>Map dark soundstages, idle post-production suites, and underbooked technical facilities within viable production corridors</li>
+              <li>Identify unattached IP &mdash; completed scripts, option-expired properties, and dormant franchise rights with monetization potential</li>
+              <li>Flag available marquee talent and key crew whose schedules have gap windows alignable with production timelines</li>
+              <li>Locate high-demand distributor and OTT platform release slots that remain unfilled due to supply chain failures</li>
+              <li>Score each opportunity by conversion probability, capital velocity, and network leverage factor</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Capacity Mapping</span>
+              <span class="stage-tag">IP Audit</span>
+              <span class="stage-tag">Talent Availability</span>
+              <span class="stage-tag">Distributor Slot Analysis</span>
+              <span class="stage-tag">Opportunity Scoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage B -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">B</div>
+          <div>
+            <div class="stage-label">STAGE B // BUILD</div>
+            <h2 class="stage-detail-title">Deal Structuring &amp; Packaging</h2>
+            <p class="stage-detail-desc">Standardize multi-party deal architecture so every stakeholder &mdash; producer, facility owner, financier, talent &mdash; enters the network under a common incentive framework with no information asymmetry.</p>
+            <ul class="stage-detail-bullets">
+              <li>Structure multi-party deal memos with standardized incentive waterfalls &mdash; profit participation, net revenue splits, deferred compensation</li>
+              <li>Attach verified talent pods to production packages with zero upfront agency drag or blind commission layers</li>
+              <li>Align facility access agreements for dark-stage utilization with minimum booking guarantees and upside sharing</li>
+              <li>Assemble co-production and co-financing architecture across production houses, independent financiers, and institutional partners</li>
+              <li>Create the investment memorandum presentable directly to qualified investor pods within the DIGISYNQ network</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Deal Architecture</span>
+              <span class="stage-tag">Incentive Waterfall</span>
+              <span class="stage-tag">Talent Packaging</span>
+              <span class="stage-tag">Facility Agreements</span>
+              <span class="stage-tag">Co-Production Structure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage C -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">C</div>
+          <div>
+            <div class="stage-label">STAGE C // CONNECT</div>
+            <h2 class="stage-detail-title">Escrow &amp; Milestone Locking</h2>
+            <p class="stage-detail-desc">Production capital is deposited into multi-party milestone escrow. Funds are released only upon verified completion of predefined stage gates &mdash; protecting all stakeholders from trust failures.</p>
+            <ul class="stage-detail-bullets">
+              <li>Production capital locked into automated multi-sig milestone escrow &mdash; no party holds unilateral control</li>
+              <li>Predefined delivery gates: Script lock, Cast confirmation, Shoot wrap, Post-production delivery, Distributor master handover</li>
+              <li>Independent milestone verification through neutral third-party auditors embedded in the DIGISYNQ network</li>
+              <li>Automated disbursement triggers upon milestone sign-off &mdash; eliminating payment disputes and delayed settlements</li>
+              <li>Investor-grade reporting at each gate with full capital trail visibility for all co-financiers</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Milestone Escrow</span>
+              <span class="stage-tag">Stage Gate Verification</span>
+              <span class="stage-tag">Capital Protection</span>
+              <span class="stage-tag">Neutral Auditing</span>
+              <span class="stage-tag">Disbursement Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage D -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">D</div>
+          <div>
+            <div class="stage-label">STAGE D // DEPLOY</div>
+            <h2 class="stage-detail-title">Synchronized Production Execution</h2>
+            <p class="stage-detail-desc">Live production execution across all synchronized nodes &mdash; soundstages, technical crew pods, equipment chains, and distributed VFX pipelines &mdash; with continuous schedule telemetry and milestone tracking.</p>
+            <ul class="stage-detail-bullets">
+              <li>Coordinate multi-location shoot execution with dynamic schedule telemetry &mdash; daily burn rate, schedule deviation, crew utilization metrics</li>
+              <li>Activate distributed VFX and post-production pipelines across regional boutique studios for cost-optimized workflows</li>
+              <li>Manage equipment syndication across production pods &mdash; cameras, lighting, grip, sound &mdash; minimizing redundant procurement</li>
+              <li>Facilitate real-time communication between producers, facility managers, department heads, and financiers via the platform dashboard</li>
+              <li>Monitor all active milestone gates against the agreed delivery calendar &mdash; triggering alerts on any schedule slippage</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Shoot Coordination</span>
+              <span class="stage-tag">Schedule Telemetry</span>
+              <span class="stage-tag">VFX Pipelines</span>
+              <span class="stage-tag">Equipment Syndication</span>
+              <span class="stage-tag">Burn Rate Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage E -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">E</div>
+          <div>
+            <div class="stage-label">STAGE E // EXTRACT</div>
+            <h2 class="stage-detail-title">Narrative Shield &amp; Revenue Release</h2>
+            <p class="stage-detail-desc">Pre-release narrative shielding, anti-piracy countermeasures, and coordinated multi-window release execution &mdash; protecting opening weekend box office and maximizing revenue extraction across every distribution corridor.</p>
+            <ul class="stage-detail-bullets">
+              <li>Pre-release sentiment radar monitoring across YouTube trailers, Reddit, BookMyShow, X, and regional review aggregators &mdash; 14 days before release</li>
+              <li>Counter-narrative calibration through precision PR assets, behind-the-scenes content, and targeted cast interviews</li>
+              <li>Coordinated theatrical window execution with dynamic screen redistribution based on first-day collection velocity</li>
+              <li>Streaming and OTT window activation &mdash; negotiating holdback periods and minimum guarantee floors for digital platform launches</li>
+              <li>Anti-piracy monitoring and content protection across camcorder-to-torrent pipelines during the theatrical run</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Sentiment Radar</span>
+              <span class="stage-tag">Narrative Shield</span>
+              <span class="stage-tag">Theatrical Release</span>
+              <span class="stage-tag">OTT Windowing</span>
+              <span class="stage-tag">Anti-Piracy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage F -->
+        <div class="stage-detail-card">
+          <div class="stage-big-letter">F</div>
+          <div>
+            <div class="stage-label">STAGE F // FEED FORWARD</div>
+            <h2 class="stage-detail-title">Cascade Payout &amp; Compounding Loop</h2>
+            <p class="stage-detail-desc">Automated multi-window royalty settlement and systematic intelligence capture. Every project's performance data, network behavior, and financial outcomes are fed back into Stage A &mdash; making the next loop faster, smarter, and more profitable.</p>
+            <ul class="stage-detail-bullets">
+              <li>Automated cascade settlement of multi-window royalties &mdash; theatrical, OTT, audio streaming, satellite, music publishing, merchandise</li>
+              <li>Transparent waterfall disbursement to all co-investors, talent participants, and facility owners based on pre-agreed participation terms</li>
+              <li>Performance analytics capture: collection velocities, audience demographic maps, review sentiment data, and window conversion rates</li>
+              <li>Network intelligence update &mdash; every project refines the opportunity scoring engine used in Stage A for the next production cycle</li>
+              <li>Reinvestment facilitation &mdash; matched opportunities for surplus capital from successful projects to enter new production packages</li>
+            </ul>
+            <div class="stage-tag-row">
+              <span class="stage-tag">Royalty Settlement</span>
+              <span class="stage-tag">Waterfall Distribution</span>
+              <span class="stage-tag">Performance Analytics</span>
+              <span class="stage-tag">Network Intelligence</span>
+              <span class="stage-tag">Capital Reinvestment</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- A -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">A</div>
-        <div>
-          <span class="k">Step 01 / Diagnostic</span>
-          <h2>Audit</h2>
-          <p>Map the full landscape before resources commit. We inventory available creative and technical capabilities, dormant intellectual property, soundstage windows, and primed audience signals.</p>
+    <!-- SECTION: SUMMARY BAND (DARK) -->
+    <section class="stage-summary-band">
+      <div style="max-width:900px;margin:0 auto;">
+        <div class="loop-badge" style="background:rgba(255, 255, 0,0.15);border-color:rgba(255, 255, 0,0.35);"><span class="loop-dot"></span>THE COMPOUNDING LOOP</div>
+        <h2>One loop. Every project. Infinite compounding.</h2>
+        <p>The ABCDEF method is not linear &mdash; Stage F feeds directly back into Stage A, compounding intelligence, network trust, and financial returns across every successive project cycle.</p>
+        
+        <div class="stage-flow-summary">
+          <div class="sfs-step"><span class="sfs-letter">A</span>Audit</div>
+          <span class="sfs-arr">;</span>
+          <div class="sfs-step"><span class="sfs-letter">B</span>Build</div>
+          <span class="sfs-arr">;</span>
+          <div class="sfs-step"><span class="sfs-letter">C</span>Connect</div>
+          <span class="sfs-arr">;</span>
+          <div class="sfs-step"><span class="sfs-letter">D</span>Deploy</div>
+          <span class="sfs-arr">;</span>
+          <div class="sfs-step"><span class="sfs-letter">E</span>Extract</div>
+          <span class="sfs-arr">;</span>
+          <div class="sfs-step"><span class="sfs-letter">F</span>Feed Forward</div>
         </div>
-      </div></div>
-    </section>
+        <div class="sfs-loop-back">&#8634; &nbsp; FEEDS BACK INTO STAGE A &nbsp; &#8634;</div>
 
-    <!-- B -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">B</div>
-        <div>
-          <span class="k">Step 02 / Architecture</span>
-          <h2>Build</h2>
-          <p>Convert the brief into an airtight production structure. Lock creative frameworks, schedule post workflows, and pre-plan the multi-window distribution sequence before production begins.</p>
-        </div>
-      </div></div>
-    </section>
-
-    <!-- C -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">C</div>
-        <div>
-          <span class="k">Step 03 / Synchronization</span>
-          <h2>Connect</h2>
-          <p>Engineer high-conviction alignments across the ecosystem: creative teams to projects, brand capital to release dates, and content to the optimal distribution corridors.</p>
-        </div>
-      </div></div>
-    </section>
-
-    <!-- D -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">D</div>
-        <div>
-          <span class="k">Step 04 / Execution</span>
-          <h2>Deploy</h2>
-          <p>Execute with zero administrative drag. Synchronized schedules, seamless post handoffs, and calibrated release activation keep budgets disciplined and momentum intact.</p>
-        </div>
-      </div></div>
-    </section>
-
-    <!-- E -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">E</div>
-        <div>
-          <span class="k">Step 05 / Realization</span>
-          <h2>Extract</h2>
-          <p>Monetize across every commercial window: theatrical, OTT, broadcast, music rights, brand integrations, international syndication, and ancillary licensing.</p>
-        </div>
-      </div></div>
-    </section>
-
-    <!-- F -->
-    <section class="step-view reveal">
-      <div class="container"><div class="inner">
-        <div class="big">F</div>
-        <div>
-          <span class="k">Step 06 / Intelligence</span>
-          <h2>Feed forward</h2>
-          <p>Every release becomes signal for the next. Box office dynamics, viewership curves, audience profiles, and rights data feed directly into future slate decisions.</p>
-        </div>
-      </div></div>
-    </section>
-
-    <!-- LOOP -->
-    <section class="section reveal">
-      <div class="container">
-        <p class="sec-index">The loop</p>
-        <h2 class="section-title">A closed circuit never loses power.</h2>
-        <div class="abcdef">
-          <div class="step"><div class="ltr">A</div><h4>Audit</h4><p>Map the production slate: capabilities, stages, IP, and audience signals in place.</p></div>
-          <div class="step"><div class="ltr">B</div><h4>Build</h4><p>Structure the production framework, timeline, and multi-window release sequence.</p></div>
-          <div class="step"><div class="ltr">C</div><h4>Connect</h4><p>Attach the right teams, facilities, media channels, and brand partners.</p></div>
-          <div class="step"><div class="ltr">D</div><h4>Deploy</h4><p>Execute with synchronized workflows, tight handoffs, and release activation.</p></div>
-          <div class="step"><div class="ltr">E</div><h4>Extract</h4><p>Capture theatrical, OTT, broadcast, music, international, and ancillary returns.</p></div>
-          <div class="step"><div class="ltr">F</div><h4>Feed forward</h4><p>Synthesize commercial and audience intelligence to compound the next slate.</p></div>
-        </div>
-        <div class="hero-actions" style="margin-top:2.4rem;">
-          <a href="network.html" class="btn btn-primary btn-lg">Enter the grid &rarr;</a>
-          <a href="platform.html" class="btn btn-secondary btn-lg">See the architecture</a>
+        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap;">
+          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.85rem 2rem;">Initiate Stage A ;</a>
+          <a href="platform.html" class="btn-pill-outline" style="padding:0.85rem 2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Platform OS</a>
         </div>
       </div>
     </section>
-  </main>
+
+    <!-- FOOTER -->
+        <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand"><div class="logo" style="display:flex; align-items:center; gap:0.75rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" /><span>DIGISYNQ</span></div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
+          </div>
 
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
+          <div class="f-col">
+            <h4>Explore</h4>
+            <a href="network.html">Network Nodes</a>
+            <a href="platform.html">Operating System</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="flowchart.html">Process Protocol</a>
+            <a href="cinema-damage-control.html">Damage Radar</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Participate</h4>
+            <a href="contact.html?type=join">Enter Network</a>
+            <a href="network.html#talent">Talent Lab</a>
+            <a href="network.html#capacity">List Capacity</a>
+            <a href="business.html">Commercial Model</a>
+            <a href="insights.html">Research</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/cinematic-3d.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+  <script>
+    document.querySelectorAll('.stage-pill').forEach(pill => {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.stage-pill').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>

@@ -3,632 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The operating network for entertainment — connecting talent, capacity and content." />
-  <meta name="theme-color" content="#060709" />
-  <meta property="og:title" content="DIGISYNQ — The Operating Network for the Entertainment Industry" />
-  <meta property="og:description" content="The industry doesn't lack resources. It lacks synchronization." />
+  <meta name="description" content="DIGISYNQ &mdash; The Operating Network for the Entertainment Industry. Connecting talent, capacity, and content." />
+  <meta property="og:title" content="DIGISYNQ &mdash; The Entertainment Operating Network" />
+  <meta property="og:description" content="The industry doesn't lack resources. It lacks synchronization. Own less. Connect more. Multiply value." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.svg" />
   <link rel="canonical" href="https://digisynq.com/" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DIGISYNQ",
-    "url": "https://digisynq.com/",
-    "logo": "https://digisynq.com/assets/img/logo.svg",
-    "sameAs": [
-      "https://www.instagram.com/digisynq/",
-      "https://www.threads.com/@digisynq",
-      "https://www.youtube.com/@digisynq",
-      "https://www.facebook.com/digisynq"
-    ]
-  }
-  </script>
-  <title>DIGISYNQ &mdash; The operating network for the entertainment industry</title>
+  <title>DIGISYNQ &mdash; The Operating Network for the Entertainment Industry</title>
 
-  <!-- Google Fonts: Inter, Momo Trust Display, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Momo+Trust+Display&family=Smooch+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet" />
-
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    :root { --accent: #34d399; --accent-soft: rgba(52,211,153,0.14); --accent-line: rgba(52,211,153,0.40); }
-
-    /* ---- Floating Header Pill ---- */
-    .site-header {
-      top: 12px !important;
-      left: 50% !important;
-      width: min(1440px, calc(100% - 32px)) !important;
-      transform: translateX(-50%) !important;
-      border-radius: 9999px !important;
-      padding: 0 1.25rem !important;
-      box-sizing: border-box !important;
-    }
-    .site-header .nav-inner {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 0 0.5rem !important;
-      margin: 0 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-    }
-    .site-header .nav-actions {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 0.5rem !important;
-      flex-shrink: 0 !important;
-      margin-right: 0.25rem !important;
-    }
-
-    /* ---- Editorial system (single accent, control-room) ---- */
-    .section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
-    .rule {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 15%, rgba(52, 211, 153, 0.35) 50%, rgba(255, 255, 255, 0.08) 85%, transparent 100%);
-      margin: 0;
-    }
-
-    .sec-index {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: none;
-      color: var(--accent);
-      background: rgba(52, 211, 153, 0.06);
-      border: 1px solid rgba(52, 211, 153, 0.22);
-      padding: 0.28rem 0.85rem;
-      border-radius: 9999px;
-      margin: 0 0 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      width: fit-content;
-      box-shadow: 0 0 16px rgba(52, 211, 153, 0.10);
-      backdrop-filter: blur(10px);
-    }
-    .sec-index::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-      display: inline-block;
-    }
-
-    .statement {
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      font-size: clamp(2rem, 4.2vw, 3.2rem);
-      line-height: 1.1;
-      color: #fff;
-      background: linear-gradient(180deg, #FFFFFF 15%, rgba(255, 255, 255, 0.82) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      max-width: 26ch;
-      margin: 0.4rem 0 0;
-    }
-    .statement .em {
-      color: var(--accent);
-      -webkit-text-fill-color: var(--accent);
-      text-shadow: 0 0 24px rgba(52, 211, 153, 0.45);
-    }
-    .lead-line {
-      font-size: clamp(1.02rem, 1.4vw, 1.2rem);
-      line-height: 1.65;
-      color: var(--text-muted);
-      max-width: 58ch;
-      margin: 1.2rem 0 0;
-    }
-
-    /* ---- Hero ---- */
-    .hero { padding: clamp(4rem, 8vw, 6.5rem) 0 clamp(2.5rem, 5vw, 4rem); }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.5rem clamp(2rem, 4vw, 3.5rem);
-      align-items: center;
-    }
-    .hero-head {
-      grid-column: 1 / -1;
-      max-width: 900px;
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      font-size: clamp(2.9rem, 6.3vw, 5.0rem);
-      line-height: 0.98;
-      color: #fff;
-      background: linear-gradient(180deg, #FFFFFF 20%, rgba(255, 255, 255, 0.78) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0.8rem 0 0;
-    }
-    .hero h1 .soft {
-      color: var(--text-muted);
-      background: linear-gradient(180deg, #cbd5e1 0%, #64748b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-copy-col {
-      grid-column: 1;
-    }
-    .hero-visual {
-      grid-column: 2;
-    }
-    .hero-support {
-      font-size: clamp(1.02rem, 1.4vw, 1.2rem);
-      line-height: 1.65;
-      color: var(--text-muted);
-      max-width: 48ch;
-      margin: 0.8rem 0 1.8rem;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
-    .hero-tertiary {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-    .hero-tertiary:hover {
-      border-color: var(--accent);
-      text-shadow: 0 0 12px rgba(52, 211, 153, 0.4);
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-head, .hero-copy-col, .hero-visual { grid-column: 1; }
-      .hero-visual { order: 3; }
-    }
-
-    /* ---- Node constellation (hero + network) ---- */
-    .net-svg { width: 100%; height: auto; display: block; overflow: visible; }
-    .node-dot { fill: var(--surface-tile); stroke: rgba(52,211,153,0.20); stroke-width: 1.5; filter: drop-shadow(0 0 7px rgba(52,211,153,0.18)); }
-    .node-outer { fill: none; stroke: rgba(52,211,153,0.11); stroke-width: 1.2; }
-    .node-core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; filter: drop-shadow(0 0 16px rgba(52,211,153,0.38)); transform-box: fill-box; transform-origin: center; animation: corePulse 3.2s ease-in-out infinite; }
-    .node-label { fill: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
-    .net-line { stroke: var(--accent-line); stroke-width: 1.25; fill: none; stroke-linecap: round;
-      stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 1.6s var(--ease-out-smooth) forwards; }
-    .orbit-ring { fill: none; stroke: rgba(52,211,153,0.08); stroke-width: 1; stroke-dasharray: 4 9; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes corePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
-
-    /* ---- Problem: fragmented -> synchronized ---- */
-    .frag-svg { width: 100%; height: auto; max-width: 920px; margin: 2.5rem auto 0; display: block; }
-    .frag-dot { fill: var(--surface-tile); stroke: var(--border-subtle); stroke-width: 1.5; }
-    .sync-dot { fill: var(--surface-tile); stroke: var(--accent); stroke-width: 1.5; }
-    .sync-line { stroke: var(--accent); stroke-width: 1.4; fill: none; }
-    .frag-label, .sync-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; fill: var(--text-dim); }
-    .sync-label { fill: var(--accent); }
-    .arrow-line { stroke: var(--text-dim); stroke-width: 1.5; }
-
-    .resource-list { list-style: none; padding: 0; margin: 1.8rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .resource-list li { font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; color: #fff;
-      padding: 0.45rem 1rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--surface-tile); }
-
-    /* ---- Generic card grid ---- */
-    .card-grid { display: grid; gap: 1.1rem; margin-top: 2.6rem; }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-5 { grid-template-columns: repeat(5, 1fr); }
-    .tile {
-      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-card);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%), rgba(14, 18, 24, 0.80);
-      backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.10);
-      padding: 1.8rem 1.6rem; transition: all 0.3s var(--ease-out-smooth);
-    }
-    .tile:hover {
-      border-color: rgba(52, 211, 153, 0.45); transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(52, 211, 153, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
-    }
-    .tile .k { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); text-transform: none; }
-    .tile h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: #fff; margin: 0.7rem 0 0.8rem; }
-    .tile p { font-size: 0.98rem; line-height: 1.6; color: var(--text-muted); margin: 0; }
-    .tile .arrow { margin-top: 1.1rem; }
-    .tile .arrow a { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; }
-
-    /* ---- Help cards (Problem -> DIGISYNQ -> outcome) ---- */
-    .help-card {
-      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-card);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%), rgba(14, 18, 24, 0.80);
-      backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.10);
-      padding: 1.6rem 1.5rem; transition: all 0.3s var(--ease-out-smooth);
-    }
-    .help-card:hover {
-      border-color: rgba(52, 211, 153, 0.45); transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(52, 211, 153, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
-    }
-    .help-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff; margin: 0 0 1rem; }
-    .help-card .row { font-size: 0.95rem; line-height: 1.5; padding: 0.55rem 0; border-top: 1px solid var(--hairline); }
-    .help-card .row:first-of-type { border-top: 0; }
-    .help-card .tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: none; color: var(--text-dim); display: block; margin-bottom: 0.2rem; }
-    .help-card .problem .val { color: var(--text-secondary); }
-    .help-card .fix .val { color: #fff; }
-    .help-card .out .val { color: var(--accent); }
-
-    /* ---- ABCDEF loop ---- */
-    .abcdef { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; margin: 2.6rem 0 0; }
-    .abcdef .step {
-      flex: 1 1 150px; min-width: 140px; border: 1px solid rgba(255, 255, 255, 0.08); border-right: 0;
-      padding: 1.4rem 1.2rem; background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.005) 100%), rgba(14, 18, 24, 0.75);
-      position: relative; transition: all 0.3s var(--ease-out-smooth);
-    }
-    .abcdef .step:hover { background: rgba(52, 211, 153, 0.05); border-color: rgba(52, 211, 153, 0.3); }
-    .abcdef .step:last-child { border-right: 1px solid rgba(255, 255, 255, 0.08); }
-    .abcdef .step .ltr { font-family: var(--font-display); font-weight: 800; font-size: 1.8rem; color: var(--accent); line-height: 1; text-shadow: 0 0 16px rgba(52, 211, 153, 0.35); }
-    .abcdef .step h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; color: #fff; margin: 0.6rem 0 0.4rem; }
-    .abcdef .step p { font-size: 0.90rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
-
-    /* ---- Proof metrics ---- */
-    .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
-    .metric {
-      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-card);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%), rgba(14, 18, 24, 0.80);
-      backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.10);
-      padding: 1.8rem 1.5rem; transition: all 0.3s var(--ease-out-smooth);
-    }
-    .metric:hover {
-      border-color: rgba(52, 211, 153, 0.45); transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(52, 211, 153, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
-    }
-    .metric .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 3.6vw, 3rem); color: var(--accent); letter-spacing: -0.02em; line-height: 1; text-shadow: 0 0 20px rgba(52, 211, 153, 0.4); }
-    .metric .cap { font-size: 0.95rem; color: var(--text-muted); margin-top: 0.7rem; line-height: 1.5; }
-    .note { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); margin-top: 1.6rem; }
-
-    /* ---- Final CTA ---- */
-    .final { text-align: center; }
-    .final .statement { max-width: 22ch; margin: 0 auto; }
-    .final .hero-actions { justify-content: center; margin-top: 2.2rem; }
-
-    /* ---- Minimal footer ---- */
-    .f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding: clamp(3rem,6vw,4.5rem) 0 2.5rem; }
-    .f-brand .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; }
-    .f-brand p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 1rem 0 0; }
-    .f-col h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: none; color: var(--text-dim); margin: 0 0 1.1rem; }
-    .f-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 0.98rem; padding: 0.32rem 0; transition: color var(--transition-fast); }
-    .f-col a:hover { color: var(--accent); }
-    .f-bottom { border-top: 1px solid var(--hairline); padding: 1.4rem 0 2.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; align-items: center; }
-    .f-bottom span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text-dim); }
-
-    @media (max-width: 1000px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-visual { order: -1; }
-      .grid-3, .metric-grid { grid-template-columns: repeat(2, 1fr); }
-      .grid-5 { grid-template-columns: repeat(2, 1fr); }
-      .f-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 620px) {
-      .grid-3, .grid-5, .metric-grid, .f-top { grid-template-columns: 1fr; }
-      .abcdef .step { border-right: 1px solid var(--hairline); border-top: 0; }
-      .abcdef .step:first-child { border-top: 1px solid var(--hairline); }
-    }
-
-    /* ---- Reveal (safe: visible without JS) ---- */
-    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-smooth), transform 0.7s var(--ease-out-smooth); }
-    .js .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .js .reveal { opacity: 1 !important; transform: none !important; }
-      .net-line { animation: none; stroke-dashoffset: 0; }
-    }
-  </style>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="app-card">
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="DIGISYNQ home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" class="brand-logo-img" /><span>DIGISYNQ</span></a>
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <a href="index.html" class="brand-area" aria-label="DIGISYNQ Home"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" class="brand-logo-img" /><span class="brand-name">DIGISYNQ</span></a>
+
       <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="flowchart.html" class="nav-link">Process</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="cinema-damage-control.html" class="nav-link">Radar</a></li>
-          <li><a href="business.html" class="nav-link">Business</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
+        <ul class="nav-links-center">
+        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
       </nav>
-      <div class="nav-actions">
-        <a href="contact.html?type=join" class="btn btn-secondary btn-sm">Join network</a>
-        <a href="contact.html?type=discuss" class="btn btn-primary btn-sm">Bring a project &rarr;</a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
-        </button>
+
+      <div class="nav-actions-right">
+        <a href="contact.html" class="btn-login">Connect</a>
+        <div class="vertical-sep" aria-hidden="true"></div>
+        <a href="contact.html?type=join" class="btn-pill-outline">Enter the Network &mdash; It's Free</a>
       </div>
-    </div>
     </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <nav class="mobile-nav-links" style="display:flex; flex-direction:column; gap:0.9rem;">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="platform.html" class="mobile-nav-link">Platform</a>
-      <a href="flowchart.html" class="mobile-nav-link">Process</a>
-      <a href="network.html" class="mobile-nav-link">Network</a>
-      <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-      <a href="cinema-damage-control.html" class="mobile-nav-link">Radar</a>
-      <a href="business.html" class="mobile-nav-link">Business</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
-    <div class="mobile-drawer-actions" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-      <a href="contact.html?type=join" class="btn btn-secondary btn-lg" style="justify-content:center;">Join network</a>
-      <a href="contact.html?type=discuss" class="btn btn-primary btn-lg" style="justify-content:center;">Bring a project &rarr;</a>
+    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT + 3D SHOWCASE -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">The Entertainment Operating Network</div>
+      <h1 class="ins-hero-title">Abundant Resources.<br><em>Zero Synchronization.</em></h1>
+      <p class="ins-hero-desc">Connecting idle soundstages, verified marquee talent, dormant IP, and institutional capital through milestone-secured escrow. Own less. Connect more. Multiply value.</p>
+      
+      <div class="ins-hero-actions">
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
+        <a href="network.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Network Nodes</a>
+      </div>
     </div>
+
+    <!-- SECTION 01: THE DIAGNOSTIC (WHITE) -->
+    <section class="ins-section white" id="diagnostic">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 01 // The Diagnostic</div>
+        <h2 class="ins-h2-dark">Production Corridors. One Connected Grid.</h2>
+        <p class="ins-desc-dark">Think of Indian entertainment like separate power plants with no transmission lines. DIGISYNQ is the grid that routes talent, studios, and capital wherever demand sparks.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.9rem;">
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">01</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Cinema &amp; Films</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Theatrical slates &amp; screenplays</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">02</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Broadcast TV</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Satellite &amp; linear broadcasting</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">03</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">OTT &amp; Streaming</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Digital original acquisitions</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">04</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Music &amp; Audio</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Soundtracks &amp; scoring syndication</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">05</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Branded Integrations</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">In-film commercial placement</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">06</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Distribution Corridors</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Multi-territory rights routing</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">07</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Exhibition Circuits</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Multiplex &amp; single screens</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">08</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Creative Talent</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Writers, directors, cast &amp; crew</p></div>
+          <div class="ins-card" style="padding:1.4rem;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;">09</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;">Studio Infrastructure</h4><p style="font-size:0.83rem;color:#71717a;margin:0;">Soundstages &amp; technical gear</p></div>
+          <div class="ins-card" style="padding:1.4rem;border:1.5px solid #09090b;background:#f8fafc;"><span style="font-family:var(--font-mono);font-size:0.65rem;color:#09090b;font-weight:700;">SYNQ</span><h4 style="margin:0.4rem 0 0.3rem;font-size:0.95rem;font-family:var(--font-body);font-weight:700;color:#09090b;">That Interstice</h4><p style="font-size:0.83rem;color:#52525b;margin:0;font-weight:600;">DIGISYNQ &mdash; The connective network</p></div><div style="margin-top:1.8rem;text-align:center;"><a href="network.html" class="btn-pill-outline" style="padding:0.75rem 1.8rem;font-weight:700;">Explore Production Corridors &rarr;</a></div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: CORE CAPABILITIES (DARK) -->
+    <section class="ins-section dark" id="capabilities">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Section 02 // Core Capabilities</div>
+        <h2 class="ins-h2-light">Operating Engines. Zero Friction.</h2>
+        <p class="ins-desc-light">The network operates across three synchronized phases &mdash; turning idle assets into active, protected, compounding revenue.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.7rem;display:block;">01 // DISCOVER</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;color:#fff;margin:0 0 0.7rem;">Latent Capacity Mapping</h3>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Continuous telemetry identifies dark soundstage days, available talent windows, unproduced screenplays, and unfilled distributor release slots across every production corridor.</p>
+          </div>
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.7rem;display:block;">02 // SYNCHRONIZE</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;color:#fff;margin:0 0 0.7rem;">Milestone-Locked Packaging</h3>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Multi-party deal memos standardize revenue splits and lock production capital into automated milestone escrow &mdash; guaranteeing delivery before capital is released.</p>
+          </div>
+          <div class="ins-card dark">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.7rem;display:block;">03 // CATALYZE</span>
+            <h3 style="font-family:var(--font-body);font-weight:800;font-size:1.3rem;color:#fff;margin:0 0 0.7rem;">Compounding Loop Intelligence</h3>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;">Automated cascade payout across theatrical, OTT, satellite, audio, and merchandise windows. Performance telemetry feeds forward to optimize the next project cycle.</p>
+          </div><div style="margin-top:1.8rem;text-align:center;"><a href="platform.html" class="btn-pill-outline" style="padding:0.75rem 1.8rem;color:#fff;border-color:rgba(255,255,255,0.3);font-weight:700;">Explore Platform Architecture &rarr;</a></div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: ACTIVATION PROOF (WHITE) -->
+    <section class="ins-section white" id="proof">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">Section 03 // Empirical Telemetry</div>
+        <h2 class="ins-h2-dark">Proven Activation Multipliers</h2>
+        <p class="ins-desc-dark">Quantifiable performance benchmarks achieved through synchronized network routing.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;">
+          <div class="ins-card" style="text-align:center;">
+            <div style="font-family:var(--font-body);font-weight:900;font-size:3rem;color:#09090b;line-height:1;">+32%</div>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#71717a;display:block;margin:0.5rem 0;">DORMANT STAGES</span>
+            <p style="font-size:0.88rem;color:#52525b;margin:0;">Facility occupancy increase across networked soundstages</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <div style="font-family:var(--font-body);font-weight:900;font-size:3rem;color:#09090b;line-height:1;">14</div>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#71717a;display:block;margin:0.5rem 0;">SPECIALISTS</span>
+            <p style="font-size:0.88rem;color:#52525b;margin:0;">Verified creative and technical pods actively routing projects</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <div style="font-family:var(--font-body);font-weight:900;font-size:3rem;color:#09090b;line-height:1;">7</div>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#71717a;display:block;margin:0.5rem 0;">CATALOGUES</span>
+            <p style="font-size:0.88rem;color:#52525b;margin:0;">IP libraries synchronized across multi-window releases</p>
+          </div>
+          <div class="ins-card" style="text-align:center;">
+            <div style="font-family:var(--font-body);font-weight:900;font-size:3rem;color:#09090b;line-height:1;">&#8734;</div>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:#71717a;display:block;margin:0.5rem 0;">COMPOUNDING YIELD</span>
+            <p style="font-size:0.88rem;color:#52525b;margin:0;">Network intelligence expands with every completed deal</p>
+          </div><div style="margin-top:1.8rem;text-align:center;"><a href="insights.html" class="btn-pill-outline" style="padding:0.75rem 1.8rem;font-weight:700;">View Telemetry &amp; Research &rarr;</a></div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: INITIATE CTA (DARK) -->
+    <section class="ins-section dark" id="initiate">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Initiate Connectivity</div>
+        <h2 class="ins-h2-light" style="margin-bottom:1rem;">Ready to Synchronize Your Assets?</h2>
+        <p class="ins-desc-light" style="margin:0 auto 2.5rem;">Join production houses, facility operators, creators, and institutional investors on the DIGISYNQ network. Zero upfront cost. Complete milestone security.</p>
+        
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Enter Network Desk &rarr;</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">WhatsApp: +91 79965 48969</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+        <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <section class="mono-trust-strip" aria-label="Ecosystem Trust Network">
+    <div class="mono-trust-inner">
+      <div class="mono-trust-label">Trusted Across Production &amp; Entertainment Corridors</div>
+      
+      <div class="mono-trust-marquee-wrapper">
+        <div class="mono-trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+
+          <!-- Set 2 (Seamless Infinite Loop) -->
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Cinema Commons</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Buzzing Mafia</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">2nd Take</span>
+          </div>
+          <div class="mono-trust-logo-item" aria-hidden="true">
+            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
+            <span class="mono-trust-logo-name">Your Bro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mono-trust-tags">
+        <span class="mono-trust-pill highlight">&#9889; Connected Nodes &bull; Zero Friction</span>
+        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+        <span class="mono-trust-pill">&#9889; 100% Direct</span>
+        <span class="mono-trust-pill">&#127760; Pan-India Grid</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <p>The operating network for the entertainment industry. Connecting talent, capacity, and content.</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Explore</h4>
+            <a href="network.html">Network Nodes</a>
+            <a href="platform.html">Operating System</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="flowchart.html">Process Protocol</a>
+            <a href="cinema-damage-control.html">Damage Radar</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Participate</h4>
+            <a href="contact.html?type=join">Enter Network</a>
+            <a href="network.html#talent">Talent Lab</a>
+            <a href="network.html#capacity">List Capacity</a>
+            <a href="business.html">Commercial Model</a>
+            <a href="insights.html">Research</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
+            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
   </div>
 
-  <main id="main-content">
-
-    <!-- ============ 01 — HERO ============ -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-head reveal">
-          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.4rem;">
-            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ logo" style="width:38px; height:38px; border-radius:8px; border:1px solid rgba(52,211,153,0.3); box-shadow:0 0 16px rgba(52,211,153,0.35); flex-shrink:0;" />
-            <p class="eyebrow" style="margin:0;">Cinema &middot; Television &middot; OTT &middot; Music &middot; Advertising &middot; Distribution &middot; Exhibition</p>
-          </div>
-          <h1>The operating network<br /><span class="soft">for entertainment.</span></h1>
-        </div>
-        <div class="hero-copy-col reveal">
-          <p class="hero-support">Transmuting fragments into continuum.</p>
-          <div class="hero-actions">
-            <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Start the SYNQ &rarr;</a>
-            <a href="network.html" class="btn btn-secondary btn-lg">See the network</a>
-            <a href="platform.html" class="hero-tertiary">Explore the system &rarr;</a>
-          </div>
-        </div>
-        <div class="hero-visual reveal" aria-hidden="true">
-          <svg class="net-svg" viewBox="0 0 460 420" role="img" aria-label="SYNQ network">
-            <defs>
-              <radialGradient id="coreGlowHero" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(52,211,153,0.22)"/>
-                <stop offset="100%" stop-color="rgba(52,211,153,0)"/>
-              </radialGradient>
-              <pattern id="gridHero" width="80" height="80" patternUnits="userSpaceOnUse">
-                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
-              </pattern>
-              <marker id="arrowHero" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" opacity="0.95"/></marker>
-            </defs>
-            <rect width="460" height="420" fill="url(#gridHero)" opacity="0.55"/>
-            <!-- subtle orbit + core glow -->
-            <ellipse class="orbit-ring" cx="230" cy="210" rx="162" ry="142"/>
-            <circle cx="230" cy="210" r="56" fill="url(#coreGlowHero)" opacity="0.95"/>
-            <!-- curved threads with arrow heads -->
-            <path id="hero-p1" class="net-line thread" d="M230 210 Q170 148 110 90" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.05s"/>
-            <path id="hero-p2" class="net-line thread" d="M230 210 Q292 148 350 90" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.15s"/>
-            <path id="hero-p3" class="net-line thread" d="M230 210 Q148 226 80 250" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.25s"/>
-            <path id="hero-p4" class="net-line thread" d="M230 210 Q314 226 380 250" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.35s"/>
-            <path id="hero-p5" class="net-line thread" d="M230 210 Q168 288 130 350" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.45s"/>
-            <path id="hero-p6" class="net-line thread" d="M230 210 Q294 288 330 350" fill="none" marker-end="url(#arrowHero)" style="animation-delay:.55s"/>
-            <!-- traveling pulses -->
-            <circle r="2.4" fill="#34d399" opacity="0.95"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0s"><mpath href="#hero-p1"/></animateMotion></circle>
-            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0.5s"><mpath href="#hero-p2"/></animateMotion></circle>
-            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0.9s"><mpath href="#hero-p3"/></animateMotion></circle>
-            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="1.3s"><mpath href="#hero-p4"/></animateMotion></circle>
-            <circle r="2.4" fill="#34d399" opacity="0.9"><animateMotion dur="2.9s" repeatCount="indefinite" begin="1.7s"><mpath href="#hero-p5"/></animateMotion></circle>
-            <circle r="2.4" fill="#34d399" opacity="0.95"><animateMotion dur="2.9s" repeatCount="indefinite" begin="2.1s"><mpath href="#hero-p6"/></animateMotion></circle>
-            <!-- core -->
-            <circle class="node-core" cx="230" cy="210" r="34"/>
-            <text class="node-label" x="230" y="214" text-anchor="middle" style="font-size:11px; font-weight:700; letter-spacing:0.08em;">SYNQ</text>
-            <!-- peripheral nodes — layered: outer halo + dot + inner accent -->
-            <g transform="translate(110,90)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-            <g transform="translate(350,90)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-            <g transform="translate(80,250)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-            <g transform="translate(380,250)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-            <g transform="translate(130,350)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-            <g transform="translate(330,350)"><circle class="node-outer" r="16"/><circle class="node-dot" r="11"/><circle r="3.2" fill="#34d399"/></g>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 02 — THE PROBLEM ============ -->
-    <section class="section reveal" id="problem">
-      <div class="container">
-        <p class="sec-index">01 &mdash; The diagnostic</p>
-        <h2 class="section-title">Abundance, unsynced.</h2>
-        <ul class="resource-list">
-          <li>Cinema &amp; Films</li><li>Broadcast Television</li><li>OTT &amp; Streaming</li><li>Music &amp; Live Rights</li><li>Branded Integrations</li><li>Distribution Corridors</li><li>Exhibition Circuits</li><li>Creative Capabilities</li><li>Studio Infrastructure</li><li>Ancillary Windows</li>
-        </ul>
-
-        <h3 class="statement" style="margin-top:2.5rem;">That interstice — DIGISYNQ.</h3>
-
-        <svg class="frag-svg" viewBox="0 0 920 260" role="img" aria-label="From fragmented to synchronized">
-          <text class="frag-label" x="150" y="34" text-anchor="middle">Fragmented</text>
-          <text class="sync-label" x="770" y="34" text-anchor="middle">Synchronized</text>
-          <!-- fragmented dots -->
-          <circle class="frag-dot" cx="90"  cy="110" r="11"/>
-          <circle class="frag-dot" cx="200" cy="80"  r="11"/>
-          <circle class="frag-dot" cx="120" cy="190" r="11"/>
-          <circle class="frag-dot" cx="230" cy="170" r="11"/>
-          <circle class="frag-dot" cx="160" cy="140" r="11"/>
-          <circle class="frag-dot" cx="210" cy="220" r="11"/>
-          <!-- arrow -->
-          <line class="arrow-line" x1="430" y1="130" x2="500" y2="130"/>
-          <path class="arrow-line" d="M500 130 l-10 -6 v12 z" fill="var(--text-dim)"/>
-          <!-- synchronized chain -->
-          <line class="sync-line" x1="600" y1="120" x2="670" y2="90"/>
-          <line class="sync-line" x1="670" y1="90"  x2="760" y2="130"/>
-          <line class="sync-line" x1="760" y1="130" x2="790" y2="190"/>
-          <line class="sync-line" x1="790" y1="190" x2="700" y2="210"/>
-          <line class="sync-line" x1="700" y2="210" x2="620" y2="190"/>
-          <line class="sync-line" x1="620" y2="190" x2="600" y2="120"/>
-          <circle class="sync-dot" cx="600" cy="120" r="11"/>
-          <circle class="sync-dot" cx="670" cy="90"  r="11"/>
-          <circle class="sync-dot" cx="760" cy="130" r="11"/>
-          <circle class="sync-dot" cx="790" cy="190" r="11"/>
-          <circle class="sync-dot" cx="700" cy="210" r="11"/>
-          <circle class="sync-dot" cx="620" cy="190" r="11"/>
-        </svg>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 03 — WHAT DIGISYNQ DOES ============ -->
-    <section class="section reveal" id="does">
-      <div class="container">
-        <p class="sec-index">02 &mdash; What DIGISYNQ does</p>
-        <h2 class="section-title">We orchestrate the arc — atelier to aperture.</h2>
-        <p class="lead-line">Three capabilities — one continuum.</p>
-        <div class="card-grid grid-3">
-          <div class="tile">
-            <span class="k">01 / Discover</span>
-            <h3>Discover</h3>
-            <p>Surface unseen assets before the aperture closes.</p>
-            <div class="arrow"><a href="platform.html">See the architecture &rarr;</a></div>
-          </div>
-          <div class="tile">
-            <span class="k">02 / Synchronize</span>
-            <h3>Synchronize</h3>
-            <p>Align capabilities and corridors, live.</p>
-            <div class="arrow"><a href="network.html">See the grid &rarr;</a></div>
-          </div>
-          <div class="tile">
-            <span class="k">03 / Catalyze</span>
-            <h3>Catalyze</h3>
-            <p>One brief. Many apertures.</p>
-            <div class="arrow"><a href="solutions.html">See interventions &rarr;</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 04 — WHAT HAPPENS NEXT ============ -->
-    <section class="section reveal" id="help">
-      <div class="container">
-        <p class="sec-index">03 &mdash; What happens next</p>
-        <h2 class="section-title">One circuit. Every aperture.</h2>
-        <p class="lead-line">Audit → Build → Connect → Deploy → Extract → Feed forward.</p>
-        <div class="hero-actions" style="margin-top:2rem;">
-          <a href="flowchart.html" class="btn btn-secondary btn-lg">See the protocol &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 05 — PROOF ============ -->
-    <section class="section reveal" id="proof">
-      <div class="container">
-        <p class="sec-index">04 &mdash; Early activation signals</p>
-        <h2 class="section-title">Live — in production.</h2>
-        <p class="lead-line">Live signals, early.</p>
-        <div class="metric-grid">
-          <div class="metric"><div class="num">+32%</div><div class="cap">Dormant stages reanimated.</div></div>
-          <div class="metric"><div class="num">14</div><div class="cap">Specialists deployed, live.</div></div>
-          <div class="metric"><div class="num">7</div><div class="cap">Catalogues reactivated across windows.</div></div>
-          <div class="metric"><div class="num">&infin;</div><div class="cap">Each release compounds the next.</div></div>
-        </div>
-        <p class="note">Illustrative — live signals.</p>
-        <div class="hero-actions" style="margin-top:2rem;">
-          <a href="about.html" class="btn btn-secondary btn-lg">View the manifesto &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- ============ 06 — FINAL CTA ============ -->
-    <section class="section reveal final" id="start">
-      <div class="container">
-        <p class="sec-index" style="justify-content:center;">Initiate</p>
-        <h2 class="statement" style="max-width:24ch;margin:0.2rem auto 0;">The industry knows. <span class="em">We connect.</span></h2>
-        <p class="lead-line" style="margin-left:auto;margin-right:auto;">Bring the gap.</p>
-        <div class="hero-actions">
-          <a href="contact.html?type=discuss" class="btn btn-primary btn-lg">Start the SYNQ &rarr;</a>
-          <a href="network.html" class="btn btn-secondary btn-lg">See the network</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand">
-          <div class="logo" style="display:flex; align-items:center; gap:0.75rem;">
-            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ mark" style="width:34px; height:34px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);" />
-            <span>DIGISYNQ</span>
-          </div>
-          <p>The operating network for the entertainment industry.</p>
-        </div>
-        <div class="f-col">
-          <h4>Explore</h4>
-          <a href="platform.html">Platform</a>
-          <a href="flowchart.html">Process</a>
-          <a href="network.html">Network</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="cinema-damage-control.html">Radar</a>
-          <a href="business.html">Business</a>
-          <a href="insights.html">Insights</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="f-col">
-          <h4>Participate</h4>
-          <a href="contact.html?type=discuss">Bring a project</a>
-          <a href="contact.html?type=join">Join the network</a>
-          <a href="network.html#talent">Talent lab</a>
-          <a href="network.html#capacity">List capacity</a>
-        </div>
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html">Start a conversation</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-          <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/digisynq" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Reveal on scroll (safe: content visible without JS)
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
-  </script>
+  <script src="assets/js/cinematic-3d.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+<script src="assets/js/sounds.js" defer></script></body>
 </html>
