@@ -2,26 +2,12 @@
    DIGISYNQ — LIQUID GLASS DESIGN SYSTEM & 3D MASTER STYLESHEET
    ========================================================================== */
 
-/* Swear Display — Self-hosted (Bold + BoldItalic + Italic) */
+/* Swear Display — Self-hosted (Bold = Extra Bold 900) */
 @font-face {
   font-family: 'Swear Display';
   src: url('../fonts/SwearDisplay-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Swear Display';
-  src: url('../fonts/SwearDisplay-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Swear Display';
-  src: url('../fonts/SwearDisplay-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -87,8 +73,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   background: #000000;
   background-image:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
@@ -102,13 +88,8 @@ body {
   align-items: flex-start;
 }
 
-/* Swear Display Font Combinations */
-/* Bold: Headlines, strong emphasis, navigation */
-/* BoldItalic: Decorative text, quotes, special emphasis */
-/* Italic: Body text, descriptions, subheadings */
-.font-bold { font-family: var(--font-serif); font-weight: 700; font-style: normal; }
-.font-bold-italic { font-family: var(--font-serif); font-weight: 700; font-style: italic; }
-.font-italic { font-family: var(--font-body); font-weight: 400; font-style: italic; }
+/* Swear Display Font — Extra Bold only */
+.font-bold { font-family: var(--font-serif); font-weight: 900; font-style: normal; }
 
 /* Numbers — Swear Display */
 .num {
@@ -249,7 +230,7 @@ body {
 .nav-links-center li a {
   text-decoration: none;
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 0.82rem;
   color: #52525b;
@@ -269,7 +250,7 @@ body {
 .nav-links-center li a.active {
   color: #ffffff !important;
   background: #09090b !important;
-  font-weight: 700;
+  font-weight: 900;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -288,7 +269,7 @@ body {
 
 .btn-login {
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   text-decoration: none;
   padding: 0.45rem 0.6rem;
@@ -313,7 +294,7 @@ body {
   border-radius: var(--radius-pill);
   padding: 0.45rem 1.15rem;
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 0.82rem;
   color: #09090b;
@@ -339,7 +320,7 @@ body {
   border-radius: var(--radius-pill);
   padding: 0.85rem 1.8rem;
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 0.92rem;
   text-decoration: none;
@@ -458,7 +439,7 @@ body {
 /* Main Big Editorial Title */
 .hero-main-title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: clamp(4.8rem, 10vw, 8.8rem);
   line-height: 0.88;
@@ -530,7 +511,7 @@ body {
 
 .proof-top-line {
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   display: flex;
   align-items: center;
@@ -568,7 +549,7 @@ body {
   align-items: center;
   gap: 0.35rem;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -664,7 +645,7 @@ body {
   color: #ffffff;
   font-size: 0.72rem;
   font-family: var(--font-mono);
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .c3d-status-dot {
@@ -700,7 +681,7 @@ body {
   border: none;
   color: #94a3b8;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 900;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -752,13 +733,13 @@ body {
 .c3d-layer-count {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--accent-orange);
 }
 
 .c3d-layer-name {
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #ffffff;
 }
 
@@ -786,7 +767,7 @@ body {
   font-family: var(--font-mono);
   text-transform: uppercase;
   color: var(--accent-emerald);
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .c3d-hs-pulse {
@@ -848,7 +829,7 @@ body {
   font-family: var(--font-mono);
   text-transform: uppercase;
   color: var(--accent-orange);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.05em;
 }
 
@@ -912,7 +893,7 @@ body {
   align-items: center;
   gap: 0.65rem;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   z-index: 12;
   transition: transform 0.3s ease;
@@ -934,7 +915,7 @@ body {
   align-items: center;
   gap: 0.65rem;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   z-index: 12;
   transition: transform 0.3s ease;
@@ -975,7 +956,7 @@ body {
 
 .glass-label {
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.06em;
   color: #475569;
   text-transform: uppercase;
@@ -1041,7 +1022,7 @@ body {
 
 .product-title {
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #09090b;
   white-space: nowrap;
 }
@@ -1105,7 +1086,7 @@ body {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--accent-orange);
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -1117,7 +1098,7 @@ body {
 
 .sec-title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   letter-spacing: -0.03em;
@@ -1158,7 +1139,7 @@ body {
 
 .subpage-card h3 {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 1.25rem;
   color: #09090b;
@@ -1168,8 +1149,8 @@ body {
 
 .subpage-card p {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: 0.92rem;
   color: #475569;
   line-height: 1.55;
@@ -1215,7 +1196,7 @@ body {
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius-pill);
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #475569;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1265,8 +1246,8 @@ body {
 
 .f-brand p {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: 0.92rem;
   color: #64748b;
   max-width: 340px;
@@ -1275,7 +1256,7 @@ body {
 
 .f-col h4 {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 0.95rem;
   color: #09090b;
@@ -1286,8 +1267,8 @@ body {
 .f-col a {
   display: block;
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: 0.88rem;
   color: #475569;
   text-decoration: none;
@@ -1468,7 +1449,7 @@ body.page-home .ins-hero {
 }
 .ins-hero-title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   letter-spacing: -0.04em;
   color: #ffffff;
@@ -1477,13 +1458,13 @@ body.page-home .ins-hero {
 }
 .ins-hero-title em {
   color: #FFFF00 !important;
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 900;
 }
 .ins-hero-desc {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   color: rgba(255, 255, 255, 0.6);
   max-width: 58ch;
@@ -1581,7 +1562,7 @@ body.page-home .ins-hero {
 }
 .mono-trust-logo-name {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 900;
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   color: #ffffff;
@@ -1608,7 +1589,7 @@ body.page-home .ins-hero {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.35);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.08em;
 }
 
@@ -1630,7 +1611,7 @@ body.page-home .ins-hero {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  font-weight: 700;
+  font-weight: 900;
 }
 .sec-eyebrow-light::before, .ins-sec-eyebrow::before, .ins-eyebrow::before {
   content: "";
@@ -1654,7 +1635,7 @@ body.page-home .ins-hero {
 
 .ins-h2-dark {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.03em;
   color: #09090b;
@@ -1663,7 +1644,7 @@ body.page-home .ins-hero {
 }
 .ins-h2-light {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 900;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.03em;
   color: #ffffff;
@@ -1672,8 +1653,8 @@ body.page-home .ins-hero {
 }
 .ins-desc-dark {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   line-height: 1.7;
   color: #52525b;
@@ -1682,8 +1663,8 @@ body.page-home .ins-hero {
 }
 .ins-desc-light {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal;
   font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
