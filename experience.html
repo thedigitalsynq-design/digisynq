@@ -819,16 +819,22 @@ function init3D() {
 
   document.querySelectorAll('.dot').forEach((d,i) => d.addEventListener('click', ()=>goStage(i)));
 
-  // Scroll / wheel
-  let scrollAccum = 0;
-  window.addEventListener('wheel', e => {
+  // Scroll — cooldown debounce (works with mouse wheel + trackpad)
+  let scrollCooldown = false;
+  function onWheel(e) {
     e.preventDefault();
-    scrollAccum += e.deltaY;
-    if (Math.abs(scrollAccum) > 80) {
-      goStage(Math.max(0, Math.min(STAGES.length-1, curStage + Math.sign(scrollAccum))));
-      scrollAccum = 0;
+    if (scrollCooldown) return;
+    const dir = e.deltaY > 0 ? 1 : -1;
+    const next = Math.max(0, Math.min(STAGES.length - 1, curStage + dir));
+    if (next !== curStage) {
+      goStage(next);
+      scrollCooldown = true;
+      setTimeout(() => { scrollCooldown = false; }, 750);
     }
-  }, { passive:false });
+  }
+  window.addEventListener('wheel', onWheel, { passive: false });
+  document.addEventListener('wheel', onWheel, { passive: false });
+
 
   // Touch
   let ty0 = 0;
