@@ -2,7 +2,7 @@
    DIGISYNQ — LIQUID GLASS DESIGN SYSTEM & 3D MASTER STYLESHEET
    ========================================================================== */
 
-/* Swear Display — Self-hosted (Bold + BoldItalic) for numbers */
+/* Swear Display — Self-hosted (Bold + BoldItalic) for all text */
 @font-face {
   font-family: 'Swear Display';
   src: url('../fonts/SwearDisplay-Bold.woff2') format('woff2');
@@ -51,8 +51,8 @@
   --text-light: #ffffff;
 
   /* Typography Fonts */
-  --font-serif: 'Playfair Display', serif;
-  --font-body: 'Playfair Display', serif;
+  --font-serif: 'Swear Display', serif;
+  --font-body: 'Swear Display', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
   --font-num: 'Swear Display', serif;
 
