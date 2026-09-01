@@ -3362,19 +3362,57 @@ body {
 }
 
 /* ==========================================================================
-   ENHANCED GRID ARCHITECTURE & HIGH-VISIBILITY DESIGN OVERRIDES
+   ENHANCED GRID ARCHITECTURE & TOTAL UNIFORMITY SYSTEM
    ========================================================================== */
 
-/* 1. Grid Spacing & Responsive Auto-Fit Alignment */
+/* 1. Universal Grid Spacing & Responsive Alignment */
 .tlc-prob-sol-grid,
 .claude-card-grid,
 .stakeholder-grid,
+.tlc-nodes-grid,
+.workshops-grid,
+.proof-grid,
+.insights-grid,
 .tlc-stats-grid,
-.tlc-comparison-grid {
+.tlc-comparison-grid,
+.pillars-grid,
+.modules-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
   gap: 1.8rem !important;
+  align-items: stretch !important;
   margin-top: 2.2rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+/* 2. Universal Equal-Height Card Containers */
+.tlc-prob-sol-card,
+.solution-deep-card,
+.pillar-plain-card,
+.paper-deep-card,
+.workshop-deep-card,
+.proof-card,
+.tlc-node-card,
+.claude-card,
+.tlc-stat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Top Content Flex Growth (Pushes CTAs / Badges to Bottom Align) */
+.solution-deep-card > div:first-child,
+.pillar-plain-card > div:first-child,
+.workshop-deep-card > div:first-child,
+.proof-card > div:first-child,
+.paper-deep-card > div:first-child,
+.tlc-node-card > div:first-child {
+  flex: 1 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* 2. High-Visibility Dark Cards (Solutions, Network, Insights, Lab) */
@@ -3482,6 +3520,120 @@ body {
 }
 
 /* ==========================================================================
+   HOMEPAGE COLORING PATTERN UNIFICATION (ALL SUBPAGES)
+   ========================================================================== */
+
+/* 1. All Content Cards (Solutions, Network, Insights, Workshops, Proof, Lab) */
+.solution-deep-card,
+.pillar-plain-card,
+.paper-deep-card,
+.workshop-deep-card,
+.proof-card,
+.tlc-node-card,
+.tlc-prob-sol-card,
+.tlc-stat-card,
+.claude-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(9, 9, 11, 0.12) !important;
+  border-radius: 22px !important;
+  padding: clamp(1.8rem, 3.5vw, 2.4rem) !important;
+  box-shadow: 4px 4px 0px rgba(9, 9, 11, 0.85) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.solution-deep-card:hover,
+.pillar-plain-card:hover,
+.paper-deep-card:hover,
+.workshop-deep-card:hover,
+.proof-card:hover,
+.tlc-node-card:hover,
+.tlc-prob-sol-card:hover,
+.tlc-stat-card:hover,
+.claude-card:hover {
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 7px 7px 0px #09090b !important;
+  border-color: #09090b !important;
+}
+
+/* 2. Card Typography (Pure Black Titles + Charcoal Body) */
+.solution-deep-card h3,
+.pillar-plain-card h3,
+.paper-deep-card h3,
+.workshop-deep-card h3,
+.proof-card h3,
+.tlc-node-card h3,
+.tlc-prob-title,
+.claude-card-title {
+  color: #09090b !important;
+  font-family: var(--font-serif) !important;
+  font-weight: 900 !important;
+  font-size: 1.35rem !important;
+  line-height: 1.3 !important;
+  margin: 0.4rem 0 0.7rem !important;
+}
+
+.solution-deep-card p,
+.pillar-plain-card p,
+.paper-deep-card p,
+.workshop-deep-card p,
+.proof-card p,
+.tlc-node-card p,
+.tlc-prob-desc,
+.tlc-sol-desc,
+.tlc-caption-desc,
+.claude-card-desc {
+  color: #27272a !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+/* 3. Sub-Boxes & Benefits Lists */
+.benefits-box,
+.solution-deep-card .benefits-box {
+  background: #f8fafc !important;
+  border: 1px solid rgba(9, 9, 11, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 1rem 1.2rem !important;
+  margin: 1rem 0 1.2rem !important;
+}
+
+.benefits-list li {
+  color: #3f3f46 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+}
+
+.benefits-list li::before {
+  content: "✓" !important;
+  color: #16a34a !important;
+  font-weight: 900 !important;
+}
+
+/* 4. Section Headings & Category Titles */
+.tlc-section-heading,
+.stakeholder-category-title {
+  color: #09090b !important;
+  font-family: var(--font-serif) !important;
+  font-weight: 900 !important;
+}
+
+.tlc-quiet {
+  color: #71717a !important;
+  font-style: italic !important;
+}
+
+/* 3. Badge & Button Padding Optimization */
+.tlc-prob-badge,
+.tlc-sol-badge,
+.tlc-console-spec-tag {
+  padding: 0.35rem 0.85rem !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ==========================================================================
    ULTRA-SMOOTH MOTION & GPU ACCELERATION TRANSITION SYSTEM
    ========================================================================== */
 
@@ -3551,6 +3703,283 @@ a, button, input, select, textarea {
 .tlc-hero-stage,
 .app-card {
   animation: fadeInUpSmooth 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   CSS TEXT HIGHLIGHT SUITE (CONCEPT DEMONSTRATION)
+   ========================================================================== */
+
+/* 1. Translucent Yellow Block Highlight */
+.hl-simple, mark {
+  background: rgba(254, 240, 138, 0.42) !important;
+  color: inherit !important;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+/* 2. Translucent Green Ribbon Notched Highlight */
+.hl-ribbon {
+  background: rgba(134, 239, 172, 0.42) !important;
+  color: inherit !important;
+  padding: 0.15rem 0.85rem;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* 3. Translucent Orange Arrow Pointed Highlight */
+.hl-arrow {
+  background: rgba(249, 115, 22, 0.45) !important;
+  color: inherit !important;
+  padding: 0.15rem 0.95rem 0.15rem 0.65rem;
+  clip-path: polygon(0% 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 0% 100%);
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* 4. Translucent Hand-Drawn Sketched Box Highlight */
+.hl-sketch {
+  border: 2px solid rgba(99, 102, 241, 0.6) !important;
+  background: rgba(99, 102, 241, 0.1) !important;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  padding: 0.12rem 0.5rem;
+  color: inherit !important;
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* 5. Translucent Realistic Marker Pen Underline Streak Highlight */
+.hl-marker {
+  background: linear-gradient(104deg, rgba(244,63,94,0) 0.9%, rgba(244,63,94,0.25) 2.4%, rgba(244,63,94,0.35) 5.8%, rgba(244,63,94,0.15) 93%, rgba(244,63,94,0.35) 96%, rgba(244,63,94,0) 98%) !important;
+  border-radius: 1em 0.2em;
+  padding: 0.12rem 0.45rem;
+  color: inherit !important;
+  font-weight: 800;
+}
+
+/* 6. Translucent Dashed Red Border Highlight */
+.hl-border-dashed {
+  border: 2px dashed rgba(239, 68, 68, 0.6) !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  color: inherit !important;
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* 7. Translucent Hand-Drawn Circle Sketch Highlight */
+.hl-circle {
+  position: relative;
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+}
+.hl-circle::before {
+  content: '';
+  position: absolute;
+  inset: -4px -8px;
+  border: 2px solid rgba(239, 68, 68, 0.6);
+  border-radius: 50% / 40%;
+  transform: rotate(-1.5deg);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   NeoPOP CRED DESIGN SYSTEM & TACTILE PLINTH OVERRIDES
+   ========================================================================== */
+
+/* 1. NeoPOP Hard-Edged Plinth Buttons */
+.neopop-btn,
+.tlc-btn-dark {
+  background: #09090b !important;
+  color: #ffffff !important;
+  border: 1px solid #09090b !important;
+  box-shadow: 4px 4px 0px #09090b !important;
+  font-family: 'JetBrains Mono', var(--font-mono), monospace !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.neopop-btn:hover,
+.tlc-btn-dark:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px #09090b !important;
+  background: #18181b !important;
+}
+
+.neopop-btn:active,
+.tlc-btn-dark:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px #09090b !important;
+}
+
+/* 2. NeoPOP Ghost & Secondary Plinth Buttons */
+.neopop-btn-ghost,
+.tlc-btn-ghost {
+  background: #ffffff !important;
+  color: #09090b !important;
+  border: 1px solid #09090b !important;
+  box-shadow: 4px 4px 0px #09090b !important;
+  font-family: 'JetBrains Mono', var(--font-mono), monospace !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.neopop-btn-ghost:hover,
+.tlc-btn-ghost:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px #09090b !important;
+}
+
+.neopop-btn-ghost:active,
+.tlc-btn-ghost:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px #09090b !important;
+}
+
+/* 3. NeoPOP Solid Plinth Cards (Dark & Light) */
+.neopop-card,
+.tlc-prob-sol-card,
+.claude-card,
+.solution-deep-card {
+  border: 1px solid rgba(9, 9, 11, 0.15) !important;
+  box-shadow: 5px 5px 0px rgba(9, 9, 11, 0.9) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.neopop-card:hover,
+.tlc-prob-sol-card:hover,
+.claude-card:hover,
+.solution-deep-card:hover {
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 8px 8px 0px rgba(9, 9, 11, 1) !important;
+}
+
+/* 4. NeoPOP Monospaced Plinth Badges */
+.neopop-badge,
+.tlc-prob-badge,
+.tlc-sol-badge {
+  font-family: 'JetBrains Mono', var(--font-mono), monospace !important;
+  font-weight: 800 !important;
+  font-size: 0.68rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.3rem 0.75rem !important;
+  border: 1px solid #09090b !important;
+  box-shadow: 2px 2px 0px #09090b !important;
+  background: #fef08a !important;
+  color: #09090b !important;
+  border-radius: 2px !important;
+}
+
+/* 5. NeoPOP High-Contrast Accent Plinth Variations */
+.neopop-badge-green {
+  background: #86efac !important;
+  color: #09090b !important;
+}
+
+.neopop-badge-red {
+  background: #fca5a5 !important;
+  color: #09090b !important;
+}
+
+.neopop-badge-indigo {
+  background: #c7d2fe !important;
+  color: #09090b !important;
+}
+
+/* ==========================================================================
+   INFOGRAPHIC FLOWCHARTS & DATA INSIGHTS ARCHITECTURE
+   ========================================================================== */
+
+.infographic-flow-container {
+  background: #09090b;
+  border-radius: 28px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  color: #ffffff;
+  margin: 3rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 6px 6px 0px #09090b, 0 30px 90px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-step-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.flow-node-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.4rem;
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flow-node-box:hover {
+  transform: translateY(-4px);
+  border-color: #fef08a;
+  box-shadow: 0 12px 30px rgba(254, 240, 138, 0.15);
+}
+
+.flow-arrow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fef08a;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+.insights-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.insights-metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.4rem;
+  position: relative;
+}
+
+.insights-metric-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0.4rem 0;
+}
+
+.insights-bar-track {
+  background: rgba(255, 255, 255, 0.08);
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.8rem;
+}
+
+.insights-bar-fill {
+  background: #fef08a;
+  height: 100%;
+  border-radius: 999px;
 }
 
 
