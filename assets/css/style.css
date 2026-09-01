@@ -3481,6 +3481,78 @@ body {
   line-height: 1.55 !important;
 }
 
+/* ==========================================================================
+   ULTRA-SMOOTH MOTION & GPU ACCELERATION TRANSITION SYSTEM
+   ========================================================================== */
+
+/* 1. Smooth Page Scrolling & Anchor Offset */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 5.5rem !important;
+}
+
+/* 2. Global GPU-Accelerated Micro-Transitions */
+a, button, input, select, textarea {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 3. Ultra-Smooth Card Hover Transitions */
+.claude-card,
+.solution-deep-card,
+.tlc-prob-sol-card,
+.tlc-stat-card,
+.tlc-node-card,
+.paper-deep-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.claude-card:hover,
+.solution-deep-card:hover,
+.tlc-prob-sol-card:hover,
+.tlc-stat-card:hover,
+.tlc-node-card:hover,
+.paper-deep-card:hover {
+  transform: translateY(-6px) scale(1.008) !important;
+}
+
+/* 4. Smooth Button Micro-Hover Lift */
+.tlc-btn-pill {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.28s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.tlc-btn-pill:hover {
+  transform: translateY(-3px) !important;
+}
+
+/* 5. Smooth Nav Link Underline & Color Shift */
+.tlc-nav-link {
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 6. Page Stage Entrance Fade-In Motion */
+@keyframes fadeInUpSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tlc-hero-stage,
+.app-card {
+  animation: fadeInUpSmooth 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 
 
 
