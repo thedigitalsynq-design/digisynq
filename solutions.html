@@ -1,353 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="DIGISYNQ Solutions &mdash; Tailored operating solutions for producers, facility owners, talent, and financiers."/>
-  <meta property="og:description" content="DIGISYNQ Solutions — Tailored operating solutions for producers, facility owners, talent, and financiers." />
-  <meta property="og:title" content="Solutions &mdash; DIGISYNQ"/>
-  <link rel="canonical" href="https://digisynq.com/solutions.html"/>
-  <title>Solutions &mdash; DIGISYNQ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGISYNQ Solutions — Tailored operational journeys for Producers, Talent, Facilities, Content Creators, Distributors, and Capital Partners." />
+  <meta property="og:title" content="Stakeholder Solutions — DIGISYNQ" />
+  <meta property="og:description" content="Tailored operating solutions: From brief to camera for producers, idle capacity monetization for facilities, and milestone-secured deals for talent." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://digisynq.com/solutions.html" />
+  <title>Stakeholder Solutions — DIGISYNQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .sol-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;}
-    .sol-tab{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;padding:0.55rem 1.2rem;border-radius:999px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.05);cursor:pointer;transition:all 0.25s;text-decoration:none;display:inline-block;}
-    .sol-tab:hover,.sol-tab.active{background:#09090b;color:#fff;border-color:#09090b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(255, 255, 0,0.3);}
-    .stakeholder-card{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;padding:clamp(2.5rem,4vw,4rem) 0;border-bottom:1px solid rgba(0,0,0,0.07);}
-    .stakeholder-card:last-of-type{border-bottom:0;}
-    .stakeholder-card.reverse{direction:rtl;}
-    .stakeholder-card.reverse>*{direction:ltr;}
-    .stk-tag{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;margin-bottom:0.6rem;display:block;font-weight:700;}
-    .stk-title{font-family:var(--font-serif);font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);color:#09090b;margin:0 0 0.8rem;letter-spacing:-0.02em;}
-    .stk-desc{font-size:clamp(0.95rem,1.3vw,1.05rem);line-height:1.7;color:#52525b;margin:0 0 1.5rem;}
-    .stk-bullets{list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.4rem;}
-    .stk-bullets li{font-size:0.92rem;color:#3f3f46;padding-left:1.2rem;position:relative;line-height:1.5;}
-    .stk-bullets li::before{content:"";position:absolute;left:0;color:#09090b;font-weight:700;}
-    .stk-outcome{background:#f8fafc;border:1px solid rgba(0,0,0,0.07);border-radius:14px;padding:1.2rem 1.5rem;}
-    .stk-outcome-label{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.4rem;display:block;}
-    .stk-outcome-text{font-family:var(--font-body);font-weight:700;font-size:1rem;color:#09090b;line-height:1.35;}
-    .stk-visual{border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:2rem;background:linear-gradient(135deg,#f8fafc,#fff);display:flex;flex-direction:column;gap:1rem;}
-    .stk-vis-flow{display:flex;flex-direction:column;gap:0.5rem;}
-    .stk-vis-step{display:flex;align-items:center;gap:0.8rem;padding:0.7rem 1rem;background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:10px;}
-    .stk-vis-icon{width:28px;height:28px;border-radius:8px;background:rgba(255, 255, 0,0.1);border:1px solid rgba(255, 255, 0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-mono);font-size:0.6rem;color:#09090b;font-weight:700;}
-    .stk-vis-step span{font-size:0.87rem;color:#3f3f46;font-weight:500;}
-    .stk-vis-arr{text-align:center;color:#09090b;font-size:0.85rem;padding:0.2rem 0;}
-    .tick{color:#22c55e;font-weight:700;}
-    @media(max-width:768px){.stakeholder-card{grid-template-columns:1fr;}.stakeholder-card.reverse{direction:ltr;}}
+    .sol-journey-section {
+      padding: clamp(3.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .sol-journey-section.dark { background: #09090b; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .sol-journey-section.offwhite { background: #f8fafc; color: #09090b; }
+    .sol-journey-section.white { background: #ffffff; color: #09090b; }
+
+    .sol-journey-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .sol-journey-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: #71717a;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .sol-journey-grid h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+    }
+    .sol-journey-grid p.lead {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #52525b;
+      margin: 0 0 1.5rem;
+    }
+    .sol-journey-section.dark p.lead { color: #a1a1aa; }
+
+    .sol-qa-box {
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 1.8rem;
+    }
+    .sol-journey-section.dark .sol-qa-box {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .sol-qa-item { margin-bottom: 1rem; }
+    .sol-qa-item:last-child { margin-bottom: 0; }
+    .sol-qa-q {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      font-weight: 800;
+      color: #71717a;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+    .sol-qa-a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #09090b;
+      line-height: 1.45;
+    }
+    .sol-journey-section.dark .sol-qa-a { color: #ffffff; }
+
+    @media (max-width: 860px) {
+      .sol-journey-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<div class="app-card">
-  
-  <!-- TOP NAVIGATION -->
-  <header class="top-nav">
-    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <nav aria-label="Primary Navigation">
+
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
-        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="solutions.html" class="active">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-<li><a href="feedback.html">Feedback</a></li>
-</ul></nav>
-    <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a></div>
-  </header>
+          <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="solutions.html" class="active">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="lab.html">Lab</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions-right">
+        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
+      </div>
+    </header>
 
-  <div class="nav-mobile-overlay">
-    <a href="index.html">Home</a>
-    <a href="network.html">Network</a>
-    <a href="platform.html">Platform</a>
-    <a href="solutions.html" class="active">Solutions</a>
-    <a href="business.html">Business</a>
-    <a href="flowchart.html">Protocol</a>
-    <a href="cinema-damage-control.html">Radar</a>
-    <a href="insights.html">Insights</a>
-    <a href="about.html">About</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+    <div class="nav-mobile-overlay">
+      <a href="index.html">Home</a>
+      <a href="network.html">Network</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="solutions.html" class="active">Solutions</a>
+      <a href="business.html">Business</a>
+      <a href="cinema-damage-control.html">Radar</a>
+      <a href="insights.html">Insights</a>
+      <a href="proof.html">Proof</a>
+      <a href="about.html">About</a>
+      <a href="lab.html">Lab</a>
+      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
+    </div>
+
+    <!-- HERO -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">Stakeholder Solutions</div>
+      <h1 class="ins-hero-title">Bespoke Solutions.<br><em>Built for Every Stakeholder.</em></h1>
+      <p class="ins-hero-desc">Whether you are packaging a film, managing soundstage inventory, deploying crew, or protecting a theatrical release — DIGISYNQ provides clear operational infrastructure.</p>
+      <div class="ins-hero-actions">
+        <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Bring a Project &rarr;</a>
+        <a href="#producers" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Roles &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 01 // PRODUCERS -->
+    <section class="sol-journey-section white" id="producers">
+      <div class="sol-journey-grid">
+        <div>
+          <span class="sol-journey-meta">ROLE 01 // PRODUCERS &amp; STUDIOS</span>
+          <h2>From Brief to Camera</h2>
+          <p class="lead">Assemble vetted directors, cinematography pods, soundstage bookings, and equipment packages in days. Milestone escrow protects your budget against delivery defaults.</p>
+          <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.75rem 1.8rem;font-size:0.86rem;">Submit Production Brief &rarr;</a>
+        </div>
+        <div class="sol-qa-box">
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What You Have</span>
+            <div class="sol-qa-a">A greenlit script, timeline constraint, or production slate.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Bottleneck</span>
+            <div class="sol-qa-a">Fragmented negotiations across dozens of agents and facilities.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What DIGISYNQ Does</span>
+            <div class="sol-qa-a">Matches verified talent &amp; stages directly under milestone escrow.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Outcome</span>
+            <div class="sol-qa-a">30–40% faster pre-production with zero payment default risk.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 // TALENT -->
+    <section class="sol-journey-section dark" id="talent">
+      <div class="sol-journey-grid">
+        <div>
+          <span class="sol-journey-meta">ROLE 02 // CREATIVE &amp; TECHNICAL TALENT</span>
+          <h2>From Availability to Opportunity</h2>
+          <p class="lead">We are not a talent agency. We are deployment infrastructure. Access verified production briefs with transparent milestone payments held in secure escrow.</p>
+          <a href="contact.html?type=talent" class="btn-pill-solid" style="padding:0.75rem 1.8rem;font-size:0.86rem;">Register Availability &rarr;</a>
+        </div>
+        <div class="sol-qa-box">
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What You Have</span>
+            <div class="sol-qa-a">Verified skills, professional credits, and available calendar days.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Bottleneck</span>
+            <div class="sol-qa-a">Delayed payments, unvetted producers, and idle gap periods.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What DIGISYNQ Does</span>
+            <div class="sol-qa-a">Routes active briefs with 100% escrow-backed payment releases.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Outcome</span>
+            <div class="sol-qa-a">Guaranteed milestone payout upon verified deliverable approval.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 // FACILITIES -->
+    <section class="sol-journey-section offwhite" id="facilities">
+      <div class="sol-journey-grid">
+        <div>
+          <span class="sol-journey-meta">ROLE 03 // SOUNDSTAGES &amp; EQUIPMENT</span>
+          <h2>Turn Idle Capacity into Active Value</h2>
+          <p class="lead">Monetize dark soundstage days, virtual production floors, and unused camera packages by connecting directly with capitalized production schedules.</p>
+          <a href="contact.html?type=capacity" class="btn-pill-solid" style="padding:0.75rem 1.8rem;font-size:0.86rem;">List Studio Capacity &rarr;</a>
+        </div>
+        <div class="sol-qa-box">
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What You Have</span>
+            <div class="sol-qa-a">High-fixed-cost studio floors, equipment rigs, and post suites.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Bottleneck</span>
+            <div class="sol-qa-a">10–15 unbooked dark days between production cycles.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What DIGISYNQ Does</span>
+            <div class="sol-qa-a">Dynamically matches dark days with active shoot schedules.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Outcome</span>
+            <div class="sol-qa-a">Significant reduction in dark calendar vacancy with zero marketing cost.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 // CONTENT & IP -->
+    <section class="sol-journey-section dark" id="content">
+      <div class="sol-journey-grid">
+        <div>
+          <span class="sol-journey-meta">ROLE 04 // WRITERS &amp; IP OWNERS</span>
+          <h2>Give Dormant IP Another Route</h2>
+          <p class="lead">Package completed screenplays, optioned books, and catalog masters with verified production teams, co-producers, and secondary streaming distribution corridors.</p>
+          <a href="contact.html?type=content" class="btn-pill-solid" style="padding:0.75rem 1.8rem;font-size:0.86rem;">Submit IP for Syndication &rarr;</a>
+        </div>
+        <div class="sol-qa-box">
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What You Have</span>
+            <div class="sol-qa-a">Screenplays, book options, or unmonetized catalog masters.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Bottleneck</span>
+            <div class="sol-qa-a">IP sits inactive without packaging and financing partners.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What DIGISYNQ Does</span>
+            <div class="sol-qa-a">Packages IP into production packages and secondary window licensing.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Outcome</span>
+            <div class="sol-qa-a">Direct path to production greenlight or revenue monetization.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 // DISTRIBUTION & CAPITAL -->
+    <section class="sol-journey-section white" id="distribution-capital">
+      <div class="sol-journey-grid">
+        <div>
+          <span class="sol-journey-meta">ROLE 05 &amp; 06 // DISTRIBUTORS &amp; CAPITAL</span>
+          <h2>The Right Content, The Right Window</h2>
+          <p class="lead">Source verified completed titles, monitor box office health with Cinema Radar, and deploy production capital with covenant-backed milestone escrow security.</p>
+          <a href="contact.html?type=discuss" class="btn-pill-solid" style="padding:0.75rem 1.8rem;font-size:0.86rem;">Explore Institutional Partnerships &rarr;</a>
+        </div>
+        <div class="sol-qa-box">
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What You Have</span>
+            <div class="sol-qa-a">Capital allocation, theatrical screen footprint, or OTT streaming capacity.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Bottleneck</span>
+            <div class="sol-qa-a">Opacity in production progress and pre-release sentiment vulnerability.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">What DIGISYNQ Does</span>
+            <div class="sol-qa-a">Provides covenant escrow tracking and pre-release Radar defense.</div>
+          </div>
+          <div class="sol-qa-item">
+            <span class="sol-qa-q">Your Outcome</span>
+            <div class="sol-qa-a">Protected capital deployment and protected theatrical window collections.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="mono-trust-strip" aria-label="Trust Network">
+      <div class="mono-trust-inner">
+        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
+        <div class="mono-trust-marquee-wrapper">
+          <div class="mono-trust-marquee-track">
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          </div>
+        </div>
+        <div class="mono-trust-tags">
+          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
+          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+          <span class="mono-trust-pill">&#9889; 100% Direct</span>
+          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
+              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
+              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
+            </div>
+            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Core Architecture</h4>
+            <a href="network.html">The Network</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="solutions.html">Stakeholder Solutions</a>
+            <a href="business.html">Revenue Engine</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Intelligence &amp; Trust</h4>
+            <a href="cinema-damage-control.html">Cinema Radar</a>
+            <a href="insights.html">Industry Research</a>
+            <a href="proof.html">Proof &amp; Pilots</a>
+            <a href="about.html">About &amp; Founders</a>
+            <a href="lab.html">Innovation Lab</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="contact.html?type=project">Bring a Project</a>
+            <a href="contact.html?type=join">Join Network</a>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
   </div>
-
-  <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
-  <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">Bespoke Stakeholder Modules</div>
-    <h1 class="ins-hero-title">Tailored Utility.<br><em>Disintermediated Value.</em></h1>
-    <p class="ins-hero-desc">Accelerated deal structuring and covenant-protected escrow engineered for producers, facility owners, writers, and financiers.</p>
-    
-    <div class="sol-tabs">
-      <a href="#producers" class="sol-tab active">For Producers</a>
-      <a href="#facilities" class="sol-tab">For Facilities</a>
-      <a href="#talent" class="sol-tab">For Talent &amp; IP</a>
-      <a href="#financiers" class="sol-tab">For Financiers</a>
-    </div>
-  </div>
-
-  <!-- SOLUTION 01: PRODUCERS (WHITE) -->
-  <section class="ins-section white" id="producers">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Solution 01 / 04</div>
-      <h2 class="ins-h2-dark">Production Packaging &amp; Gap Financing</h2>
-      <p class="ins-desc-dark">For production houses and independent producers who need to move from concept to camera without the traditional 18-month deal-building cycle.</p>
-      
-      <div class="stakeholder-card">
-        <div>
-          <span class="stk-tag">FOR PRODUCERS &amp; PRODUCTION HOUSES</span>
-          <h3 class="stk-title">From Concept to Camera in Weeks, Not Years</h3>
-          <p class="stk-desc">The traditional production packaging cycle &mdash; finding talent, securing stages, closing co-production deals, and aligning investor capital &mdash; takes 12&ndash;24 months. DIGISYNQ collapses this through verified network routing.</p>
-          <ul class="stk-bullets">
-            <li>Access pre-verified talent pods that match your genre, budget tier, and production timeline</li>
-            <li>Secure facility access with standardized booking agreements &mdash; no relationship gatekeeping</li>
-            <li>Close co-production deals using pre-agreed incentive waterfall frameworks</li>
-            <li>Attract gap financing from DIGISYNQ investor pods without pitching agency by agency</li>
-            <li>Monitor all active milestones through a single production dashboard</li>
-            <li>Receive cascade royalty settlement across all distribution windows post-release</li>
-          </ul>
-          <div class="stk-outcome">
-            <span class="stk-outcome-label">PRODUCER OUTCOME</span>
-            <div class="stk-outcome-text">Close verified production packages in under 30 days. Move to camera faster. Keep more of the upside.</div>
-          </div>
-        </div>
-        <div class="stk-visual">
-          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">PRODUCER JOURNEY</div>
-          <div class="stk-vis-flow">
-            <div class="stk-vis-step"><div class="stk-vis-icon">A</div><span>Submit production brief to DIGISYNQ network</span></div>
-            <div class="stk-vis-arr">&darr;</div>
-            <div class="stk-vis-step"><div class="stk-vis-icon">B</div><span>Receive matched talent pods, stages &amp; co-producers</span></div>
-            <div class="stk-vis-arr">&darr;</div>
-            <div class="stk-vis-step"><div class="stk-vis-icon">C</div><span>Sign standardized deal memos &mdash; all parties aligned</span></div>
-            <div class="stk-vis-arr">&darr;</div>
-            <div class="stk-vis-step"><div class="stk-vis-icon">D</div><span>Capital locked in milestone escrow &mdash; move to shoot</span></div>
-            <div class="stk-vis-arr">&darr;</div>
-            <div class="stk-vis-step"><div class="stk-vis-icon">E</div><span>Release with narrative shield active</span></div>
-            <div class="stk-vis-arr">&darr;</div>
-            <div class="stk-vis-step"><div class="stk-vis-icon">F</div><span>Cascade royalty settlement &mdash; all windows</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION 02: FACILITIES (OFFWHITE) -->
-  <section class="ins-section offwhite" id="facilities">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Solution 02 / 04</div>
-      <h2 class="ins-h2-dark">Dark Stage Facility Monetization</h2>
-      <p class="ins-desc-dark">For soundstage owners, post-production facilities, equipment rental houses, and technical facility operators.</p>
-      
-      <div class="stakeholder-card reverse">
-        <div>
-          <span class="stk-tag">FOR FACILITY OWNERS &amp; STUDIOS</span>
-          <h3 class="stk-title">Convert Every Dark Day Into Verified Revenue</h3>
-          <p class="stk-desc">A dark soundstage day is dead capital. DIGISYNQ routes active productions directly to available stages through standardized booking contracts that eliminate deal-making risk.</p>
-          <ul class="stk-bullets">
-            <li>List available facility inventory with pricing, technical specifications, and availability windows</li>
-            <li>Receive direct booking inquiries from DIGISYNQ-vetted productions &mdash; no broker intermediaries</li>
-            <li>Use standardized facility access agreements &mdash; no custom contract negotiation for every booking</li>
-            <li>Lock facility fees in pre-production milestone escrow before the shoot begins</li>
-            <li>Access co-production revenue sharing opportunities on productions you host</li>
-            <li>Build a verified production history that attracts higher-value future bookings</li>
-          </ul>
-          <div class="stk-outcome">
-            <span class="stk-outcome-label">FACILITY OUTCOME</span>
-            <div class="stk-outcome-text">Reduce dark days from 42% to under 12% of annual capacity. Guaranteed payment via escrow. Zero upfront investment.</div>
-          </div>
-        </div>
-        <div class="stk-visual">
-          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">DARK DAY RECOVERY MODEL</div>
-          <div style="display:flex;flex-direction:column;gap:0.8rem;">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);">
-              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">INDUSTRY DARK RATE</span>
-              <span style="font-family:var(--font-num);font-weight:900;font-size:1.2rem;color:#ef4444;">42%</span>
-            </div>
-            <div style="text-align:center;color:#09090b;font-size:1rem;">&darr; DIGISYNQ ROUTING</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:#fff;border-radius:10px;border:1px solid rgba(255, 255, 0,0.25);">
-              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#71717a;">NETWORKED DARK RATE</span>
-              <span style="font-family:var(--font-num);font-weight:900;font-size:1.2rem;color:#22c55e;">&lt;12%</span>
-            </div>
-            <div style="padding:0.8rem;background:rgba(255, 255, 0,0.06);border-radius:10px;border:1px solid rgba(255, 255, 0,0.15);text-align:center;">
-              <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;color:#09090b;">ESTIMATED RECOVERED VALUE</div>
-              <div style="font-family:var(--font-num);font-weight:900;font-size:1.5rem;color:#09090b;margin-top:0.3rem;">₹2.8Cr+</div>
-              <div style="font-size:0.8rem;color:#71717a;">per dark month at market production day rates</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION 03: TALENT & IP (WHITE) -->
-  <section class="ins-section white" id="talent">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Solution 03 / 04</div>
-      <h2 class="ins-h2-dark">Talent &amp; Creator Packaging</h2>
-      <p class="ins-desc-dark">For actors, directors, writers, technical crew, and IP holders seeking verified production attachments.</p>
-      
-      <div class="stakeholder-card">
-        <div>
-          <span class="stk-tag">FOR TALENT, CREATORS &amp; IP OWNERS</span>
-          <h3 class="stk-title">Get Routed to Verified Productions</h3>
-          <p class="stk-desc">DIGISYNQ creates a direct channel from verified talent to active productions &mdash; with payment secured in milestone escrow before any work begins.</p>
-          <ul class="stk-bullets">
-            <li>Join the DIGISYNQ verified talent registry with availability windows and rate cards</li>
-            <li>Get matched to active productions based on compatibility, timeline, and production tier</li>
-            <li>Receive all deal terms in standardized format &mdash; no opaque agency translation layers</li>
-            <li>Payment secured in milestone escrow before production begins &mdash; guaranteed delivery</li>
-            <li>IP owners: list dormant screenplays and franchise rights for active packaging</li>
-            <li>Participate in revenue share agreements on productions where your performance is core</li>
-          </ul>
-          <div class="stk-outcome">
-            <span class="stk-outcome-label">TALENT OUTCOME</span>
-            <div class="stk-outcome-text">Access verified production opportunities. Get paid through milestone-secured escrow. Build a verified production history.</div>
-          </div>
-        </div>
-        <div class="stk-visual">
-          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin-bottom:0.5rem;">TALENT REGISTRY PROFILE</div>
-          <div style="display:flex;flex-direction:column;gap:0.7rem;">
-            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">AVAILABILITY</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Q4 2025 &mdash; Q1 2026</span></div>
-            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">GENRE PREFERENCE</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Drama &middot; Thriller &middot; Action</span></div>
-            <div style="padding:0.8rem 1rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#09090b;display:block;margin-bottom:0.2rem;">DEAL STRUCTURE</span><span style="font-size:0.87rem;color:#09090b;font-weight:600;">Milestone Escrow &middot; Revenue Share</span></div>
-            <div style="padding:0.8rem 1rem;background:rgba(34,197,94,0.06);border-radius:10px;border:1px solid rgba(34,197,94,0.2);"><span style="font-family:var(--font-mono);font-size:0.63rem;letter-spacing:0.1em;color:#16a34a;display:block;margin-bottom:0.2rem;">STATUS</span><span style="font-size:0.87rem;color:#16a34a;font-weight:700;">VERIFIED &middot; AVAILABLE</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION 04: FINANCIERS (DARK) -->
-  <section class="ins-section dark" id="financiers">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="ins-eyebrow" style="justify-content:flex-start;">Solution 04 / 04</div>
-      <h2 class="ins-h2-light">De-Risked Investor Pods</h2>
-      <p class="ins-desc-light">For family offices, private capital, and institutional investors seeking structured exposure to Indian entertainment.</p>
-      
-      <div class="stakeholder-card reverse" style="border-bottom:0;">
-        <div>
-          <span class="stk-tag" style="color:rgba(255,255,255,0.5);">FOR INVESTORS &amp; CO-FINANCIERS</span>
-          <h3 class="stk-title" style="color:#fff;">Protected, Structured Entertainment Capital</h3>
-          <p class="stk-desc" style="color:rgba(255,255,255,0.6);">DIGISYNQ replaces informal, relationship-gated investment with institutional-grade stage gates, milestone-secured capital deployment, and automated settlement.</p>
-          <ul class="stk-bullets" style="color:rgba(255,255,255,0.7);">
-            <li style="color:rgba(255,255,255,0.7);">Co-invest in milestone-verified production packages alongside qualified pods</li>
-            <li style="color:rgba(255,255,255,0.7);">Capital held in multi-sig milestone escrow &mdash; no single-party control</li>
-            <li style="color:rgba(255,255,255,0.7);">Receive investor-grade reporting at every stage gate with full capital trail visibility</li>
-            <li style="color:rgba(255,255,255,0.7);">Participate in multi-window upside: theatrical, OTT, satellite, audio, and merchandise</li>
-            <li style="color:rgba(255,255,255,0.7);">Automated royalty settlement eliminates manual disputes and delayed disbursement</li>
-          </ul>
-          <div class="stk-outcome" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
-            <span class="stk-outcome-label">INVESTOR OUTCOME</span>
-            <div class="stk-outcome-text" style="color:#fff;">Deploy into entertainment with the same structural protections as private equity &mdash; milestone-gated, transparent, and multi-window.</div>
-          </div>
-        </div>
-        <div class="stk-visual" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
-          <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">INVESTOR PROTECTION STACK</div>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;">
-            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Multi-Sig Escrow</span><span class="tick">&#10003;</span></div>
-            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Milestone-Gated Deployment</span><span class="tick">&#10003;</span></div>
-            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Investor-Grade Reporting</span><span class="tick">&#10003;</span></div>
-            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Multi-Window Revenue Share</span><span class="tick">&#10003;</span></div>
-            <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.87rem;color:#fff;font-weight:500;">Automated Royalty Settlement</span><span class="tick">&#10003;</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ins-section dark" style="text-align:center;">
-    <div style="max-width:800px;margin:0 auto;">
-      <h2 class="ins-h2-light" style="margin-bottom:1rem;">Ready to Join the Network?</h2>
-      <p class="ins-desc-light" style="margin:0 auto 2.2rem;">Connect your assets, talent, or production requirements to the DIGISYNQ operating grid. Zero upfront cost.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Enter the Network &rarr;</a>
-        <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">WhatsApp: +91 79965 48969</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
-  <section class="mono-trust-strip" aria-label="Trust Network">
-    <div class="mono-trust-inner">
-      <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-      
-      <div class="mono-trust-marquee-wrapper">
-        <div class="mono-trust-marquee-track">
-          <!-- Set 1 -->
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
-
-          <!-- Set 2 (Seamless Infinite Loop) -->
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mono-trust-tags">
-        <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-        <span class="mono-trust-pill">&#9889; 100% Direct</span>
-        <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand"><div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p></div>
-        <div class="f-col"><h4>Explore</h4><a href="network.html">Network Nodes</a><a href="platform.html">Operating System</a><a href="solutions.html">Solutions</a><a href="flowchart.html">Process Protocol</a><a href="cinema-damage-control.html">Damage Radar</a></div>
-        <div class="f-col"><h4>Participate</h4><a href="contact.html?type=join">Enter Network</a><a href="network.html#talent">Talent Lab</a><a href="network.html#capacity">List Capacity</a><a href="business.html">Commercial Model</a><a href="insights.html">Research</a></div>
-        <div class="f-col"><h4>Connect</h4><a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a><a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a><a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a><a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a><a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a></div>
-      </div>
-      <div class="f-bottom"><span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span><span>Own less. Connect more. Multiply value.</span></div>
-    </div>
-  </footer>
-</div>
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-

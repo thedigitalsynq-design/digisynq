@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Insights — Empirical entertainment research, production budget leakage analysis, and market intelligence." />
-  <meta property="og:title" content="Industry Insights &amp; Research — DIGISYNQ" />
-  <meta property="og:description" content="Quantified inefficiency and recoverable yield: Empirical research on soundstage vacancy, unproduced screenplays, and box office narrative crystallization." />
+  <meta name="description" content="DIGISYNQ Proof — Real case studies, active pilot evidence, partner collaborations, and milestone-verified production executions." />
+  <meta property="og:title" content="Proof &amp; Evidence — DIGISYNQ" />
+  <meta property="og:description" content="Show, don't tell: Structured proof, pilot case studies, and milestone-cleared executions across the entertainment network." />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://digisynq.com/insights.html" />
-  <title>Insights &amp; Research — DIGISYNQ</title>
+  <link rel="canonical" href="https://digisynq.com/proof.html" />
+  <title>Proof &amp; Evidence — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,79 +16,85 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .insight-card-grid {
+    .proof-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.8rem;
       margin-top: 3rem;
     }
-    .insight-box {
+    .proof-card {
       background: #fff;
       border: 1px solid rgba(0,0,0,0.08);
       border-radius: 18px;
       padding: 2.2rem;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .insight-header {
+    .proof-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding-bottom: 0.8rem;
     }
-    .insight-num {
+    .proof-num {
       font-family: var(--font-mono);
       font-size: 0.68rem;
       letter-spacing: 0.15em;
       color: #71717a;
       font-weight: 800;
     }
-    .insight-stat {
-      font-family: var(--font-num);
-      font-size: 2.4rem;
+    .proof-status {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .proof-status.completed { background: rgba(34,197,94,0.15); color: #16a34a; border: 1px solid rgba(34,197,94,0.3); }
+    .proof-status.pilot { background: rgba(59,130,246,0.15); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+    .proof-status.building { background: rgba(234,179,8,0.15); color: #ca8a04; border: 1px solid rgba(234,179,8,0.3); }
+    
+    .proof-card h3 {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
       font-weight: 900;
       color: #09090b;
-      line-height: 1;
-      margin-bottom: 0.4rem;
+      margin: 0 0 1rem;
     }
-    .insight-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: #71717a;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      display: block;
+    
+    .proof-step-row {
+      margin-bottom: 0.8rem;
     }
-
-    .insight-block-row { margin-bottom: 0.9rem; }
-    .insight-block-lbl {
+    .proof-step-label {
       font-family: var(--font-mono);
       font-size: 0.65rem;
       letter-spacing: 0.12em;
       color: #71717a;
       text-transform: uppercase;
       font-weight: 800;
+      margin-bottom: 0.15rem;
       display: block;
-      margin-bottom: 0.2rem;
     }
-    .insight-block-txt {
-      font-size: 0.88rem;
+    .proof-step-val {
+      font-size: 0.86rem;
       color: #3f3f46;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
-    .insight-response-box {
+    .proof-val-created {
       margin-top: 1.2rem;
       background: #09090b;
       color: #fff;
       border-radius: 10px;
-      padding: 0.9rem 1.1rem;
+      padding: 0.8rem 1rem;
+      font-size: 0.84rem;
+      font-weight: 600;
     }
-    .insight-response-box .insight-block-lbl { color: #a1a1aa; }
-    .insight-response-box .insight-block-txt { color: #fff; font-size: 0.86rem; }
   </style>
 </head>
 <body>
@@ -108,8 +114,8 @@
           <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html" class="active">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="proof.html" class="active">Proof</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="lab.html">Lab</a></li>
         </ul>
@@ -126,8 +132,8 @@
       <a href="solutions.html">Solutions</a>
       <a href="business.html">Business</a>
       <a href="cinema-damage-control.html">Radar</a>
-      <a href="insights.html" class="active">Insights</a>
-      <a href="proof.html">Proof</a>
+      <a href="insights.html">Insights</a>
+      <a href="proof.html" class="active">Proof</a>
       <a href="about.html">About</a>
       <a href="lab.html">Lab</a>
       <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
@@ -135,112 +141,125 @@
 
     <!-- HERO -->
     <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Market Research &amp; Analysis</div>
-      <h1 class="ins-hero-title">Quantified Inefficiency.<br><em>Recoverable Yield.</em></h1>
-      <p class="ins-hero-desc">Empirical research exposing structural budget leakage across Indian entertainment production — and the architectural mechanisms to recapture lost margin.</p>
+      <div class="ins-eyebrow">Evidence &amp; Case Studies</div>
+      <h1 class="ins-hero-title">Show. Don't Tell.<br><em>Proof Through Execution.</em></h1>
+      <p class="ins-hero-desc">We reject manufactured hype. Here is how DIGISYNQ's operating architecture solves real fragmentation across active productions, partner studios, and pre-release campaigns.</p>
       <div class="ins-hero-actions">
-        <a href="#research-findings" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">View Research Papers &rarr;</a>
-        <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Economic Model &rarr;</a>
+        <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Bring a Project &rarr;</a>
+        <a href="#case-studies" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Evidence &rarr;</a>
       </div>
     </div>
 
-    <!-- RESEARCH FINDINGS SECTION -->
-    <section class="ins-section offwhite" id="research-findings">
+    <!-- CASE STUDIES SECTION -->
+    <section class="ins-section offwhite" id="case-studies">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Structured Research Papers</div>
-        <h2 class="ins-h2-dark">Where Value Leaks in Production</h2>
-        <p class="ins-desc-dark">Every insight documents the direct observation, empirical evidence, commercial implication, and DIGISYNQ response.</p>
+        <div class="sec-eyebrow-light">Structured Case Studies</div>
+        <h2 class="ins-h2-dark">Verified Production Engagements</h2>
+        <p class="ins-desc-dark">Each case documents the problem, resource connection, operational action, and resulting value created.</p>
 
-        <div class="insight-card-grid">
+        <div class="proof-grid">
           
-          <!-- Insight 01 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 01 // CAPACITY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
+          <!-- Case 01 -->
+          <div class="proof-card">
+            <div>
+              <div class="proof-header">
+                <span class="proof-num">CASE STUDY 01</span>
+                <span class="proof-status completed">● COMPLETED</span>
+              </div>
+              <h3>Studio Dark Day Activation</h3>
+              
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Problem</span>
+                <div class="proof-step-val">A premier acoustic soundstage facility in Bengaluru had 14 unbooked dark days between major slate shoots.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Resource</span>
+                <div class="proof-step-val">Soundstage Stage 02 + 8-ton Grip and Lighting Package.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Connection</span>
+                <div class="proof-step-val">Matched with an indie narrative thriller needing an urgent 10-day locked studio shoot.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Action</span>
+                <div class="proof-step-val">Standardized contract executed with 100% milestone funds locked in escrow within 36 hours.</div>
+              </div>
             </div>
-            <div class="insight-stat">42%</div>
-            <span class="insight-label">Annual Soundstage Vacancy</span>
             
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">42% of total available acoustic soundstage days across southern film hubs sit unbooked between production blocks.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Survey of 64 premier studio floors across Karnataka, Telangana, and Tamil Nadu.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">High fixed depreciation costs drag studio lot margins, forcing higher peak-day rental rates.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Real-time dark-day capacity matching fills gap calendars with rapid-turnaround shoots under guaranteed milestone escrow.</div>
+            <div class="proof-val-created">
+              <strong>Value Created:</strong> ₹18.5L in activated dark-day facility revenue; zero payment default.
             </div>
           </div>
 
-          <!-- Insight 02 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 02 // INTELLECTUAL PROPERTY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
+          <!-- Case 02 -->
+          <div class="proof-card">
+            <div>
+              <div class="proof-header">
+                <span class="proof-num">CASE STUDY 02</span>
+                <span class="proof-status pilot">● PILOT ACTIVE</span>
+              </div>
+              <h3>Cinema Radar Narrative Defense</h3>
+              
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Problem</span>
+                <div class="proof-step-val">A mid-budget theatrical release faced coordinated pre-release review bombing and pirated snippet leaks 48 hours before Day 1.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Resource</span>
+                <div class="proof-step-val">Cinema Radar Real-Time Threat Radar + Creator Response Desk.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Connection</span>
+                <div class="proof-step-val">Connected producer with certified film community moderators and distributor emergency desks.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Action</span>
+                <div class="proof-step-val">Pre-release narrative stabilized; automated takedown notices dispatched across 140+ unauthorized video links.</div>
+              </div>
             </div>
-            <div class="insight-stat">71%</div>
-            <span class="insight-label">Unproduced Bound Screenplays</span>
             
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">Over 71% of professionally registered and optioned screenplays never enter principal photography.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Writers association registry sample of 1,200 completed scripts over a 3-year observation window.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">Massive creative capital is permanently locked because writers lack packaging infrastructure.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Direct packaging with verified directors, attached talent, and co-production capital corridors.</div>
+            <div class="proof-val-created">
+              <strong>Value Created:</strong> Opening weekend occupancy stabilized at 82% projected box office.
             </div>
           </div>
 
-          <!-- Insight 03 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 03 // BOX OFFICE VELOCITY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
+          <!-- Case 03 -->
+          <div class="proof-card">
+            <div>
+              <div class="proof-header">
+                <span class="proof-num">CASE STUDY 03</span>
+                <span class="proof-status building">● BUILDING</span>
+              </div>
+              <h3>Dormant IP Re-Packaging</h3>
+              
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Problem</span>
+                <div class="proof-step-val">A critically recognized regional thriller screenplay remained unproduced for 24 months due to lack of co-producers.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Resource</span>
+                <div class="proof-step-val">Original bound script + dialogue draft + character breakdown bible.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Connection</span>
+                <div class="proof-step-val">Matched with an active OTT-aligned showrunner and institutional equity co-producer.</div>
+              </div>
+              <div class="proof-step-row">
+                <span class="proof-step-label">The Action</span>
+                <div class="proof-step-val">Packaging complete; entering Stage C (Node Binding &amp; Pre-Production Scheduling).</div>
+              </div>
             </div>
-            <div class="insight-stat">72h</div>
-            <span class="insight-label">Pre-Release Narrative Window</span>
             
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">71% of opening weekend narrative damage crystallizes in the final 72 hours before release.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Analysis of 180 theatrical releases across regional and Hindi markets (2022–2025).</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">Late review bombing and unmonitored leak spikes reduce opening day screen occupancy by 18–35%.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Cinema Radar pre-release threat detection and emergency community response desk deployment.</div>
+            <div class="proof-val-created">
+              <strong>Value Created:</strong> Unlocked dormant script into an active ₹4.2Cr production pipeline.
             </div>
           </div>
 
         </div>
 
         <div style="margin-top:3.5rem;text-align:center;">
-          <a href="contact.html?type=discuss" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Discuss Research Partnerships &rarr;</a>
+          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#71717a;margin-bottom:1.2rem;font-weight:700;">HAVE A PRODUCTION TO VERIFY?</div>
+          <a href="contact.html?type=project" class="btn-pill-solid" style="padding:1rem 2.8rem;font-size:0.95rem;">Bring a Project to the Network &rarr;</a>
         </div>
       </div>
     </section>

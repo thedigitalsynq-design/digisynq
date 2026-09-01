@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How DIGISYNQ Works — The 5-stage operating method (Discover, Match, Coordinate, Activate, Learn) and the proprietary ABCDEF milestone protocol." />
+  <meta property="og:title" content="How It Works &amp; Protocol — DIGISYNQ" />
+  <meta property="og:description" content="Discover how DIGISYNQ operates: from resource discovery to milestone-governed escrow and compounding project intelligence." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://digisynq.com/how-it-works.html" />
+  <title>How It Works &amp; Protocol — DIGISYNQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ── 5 Operating Steps ── */
+    .how-steps-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 3rem;
+      background: #fff;
+    }
+    .how-step-card {
+      padding: 2.2rem 1.6rem;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .how-step-card:last-child { border-right: 0; }
+    .how-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #71717a;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .how-step-card h3 {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0 0 0.6rem;
+    }
+    .how-step-card p {
+      font-size: 0.86rem;
+      color: #52525b;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── ABCDEF Protocol Visual Track ── */
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .protocol-card {
+      background: #0e0e13;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2.2rem 2rem;
+      text-align: left;
+      position: relative;
+    }
+    .protocol-letter {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      display: block;
+      line-height: 1;
+    }
+    .protocol-card h3 {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 0 0.6rem;
+    }
+    .protocol-card p {
+      font-size: 0.88rem;
+      color: #a1a1aa;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+    .protocol-covenant {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      display: inline-block;
+    }
+
+    .loop-closure-box {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .how-steps-track { grid-template-columns: 1fr; }
+      .how-step-card { border-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-card">
+
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links-center">
+          <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="how-it-works.html" class="active">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="lab.html">Lab</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions-right">
+        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
+      </div>
+    </header>
+
+    <div class="nav-mobile-overlay">
+      <a href="index.html">Home</a>
+      <a href="network.html">Network</a>
+      <a href="how-it-works.html" class="active">How It Works</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="business.html">Business</a>
+      <a href="cinema-damage-control.html">Radar</a>
+      <a href="insights.html">Insights</a>
+      <a href="proof.html">Proof</a>
+      <a href="about.html">About</a>
+      <a href="lab.html">Lab</a>
+      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
+    </div>
+
+    <!-- HERO -->
+    <div class="ins-hero" id="main-content">
+      <div class="ins-eyebrow">The Operating Layer</div>
+      <h1 class="ins-hero-title">How DIGISYNQ Operates.<br><em>From Discovery to Release.</em></h1>
+      <p class="ins-hero-desc">We replace fragmented, informal production deals with a systematic five-stage operating method and milestone-governed escrow.</p>
+      <div class="ins-hero-actions">
+        <a href="#operating-method" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">5 Operating Steps &rarr;</a>
+        <a href="#protocol" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">ABCDEF Protocol &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 5 OPERATING STEPS -->
+    <section class="ins-section white" id="operating-method">
+      <div style="max-width:1150px;margin:0 auto;">
+        <div class="sec-eyebrow-light">The Five-Step Operating Sequence</div>
+        <h2 class="ins-h2-dark">From Discovery to Compounding Intelligence</h2>
+        <p class="ins-desc-dark">Every production follows a disciplined trajectory that protects capital and accelerates delivery.</p>
+
+        <div class="how-steps-track">
+          
+          <div class="how-step-card">
+            <span class="how-step-num">01 // DISCOVER</span>
+            <h3>Find</h3>
+            <p>Identify available soundstages, unencumbered talent, and dormant IP across the national network index.</p>
+          </div>
+
+          <div class="how-step-card">
+            <span class="how-step-num">02 // MATCH</span>
+            <h3>Connect</h3>
+            <p>Pair compatible creative teams, technical pods, and facility packages directly with funded production briefs.</p>
+          </div>
+
+          <div class="how-step-card">
+            <span class="how-step-num">03 // COORDINATE</span>
+            <h3>Structure</h3>
+            <p>Align multi-stakeholder delivery terms under standardized contracts and milestone-backed escrow covenants.</p>
+          </div>
+
+          <div class="how-step-card">
+            <span class="how-step-num">04 // ACTIVATE</span>
+            <h3>Execute</h3>
+            <p>Deploy capital as verified production milestones clear — eliminating payment defaults and execution delays.</p>
+          </div>
+
+          <div class="how-step-card">
+            <span class="how-step-num">05 // LEARN</span>
+            <h3>Compound</h3>
+            <p>Capture performance history and relationship graph data to make every subsequent production faster and safer.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABCDEF PROTOCOL DEEP-DIVE -->
+    <section class="ins-section dark" id="protocol">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Proprietary Operating Protocol</div>
+        <h2 class="ins-h2-light">The ABCDEF Protocol</h2>
+        <p class="ins-desc-light">The closed-loop lifecycle governance standard built exclusively for entertainment production.</p>
+
+        <div class="protocol-grid">
+          
+          <!-- Stage A -->
+          <div class="protocol-card">
+            <span class="protocol-letter">A</span>
+            <h3>Audit</h3>
+            <p>Find the gap. Comprehensive technical breakdown of screenplay requirements, facility dark days, and budget viability.</p>
+            <span class="protocol-covenant">Discovery &amp; Viability Audit</span>
+          </div>
+
+          <!-- Stage B -->
+          <div class="protocol-card">
+            <span class="protocol-letter">B</span>
+            <h3>Build</h3>
+            <p>Shape the opportunity. Assemble production packages, co-production terms, and milestone payment schedules.</p>
+            <span class="protocol-covenant">Milestone Escrow Covenants</span>
+          </div>
+
+          <!-- Stage C -->
+          <div class="protocol-card">
+            <span class="protocol-letter">C</span>
+            <h3>Connect</h3>
+            <p>Bring the right people together. Bind verified soundstages, technical crews, and distribution partners.</p>
+            <span class="protocol-covenant">Node Binding &amp; Contracting</span>
+          </div>
+
+          <!-- Stage D -->
+          <div class="protocol-card">
+            <span class="protocol-letter">D</span>
+            <h3>Deploy</h3>
+            <p>Make it happen. Execute active shoot schedules, post-production pipelines, and daily burn-rate monitoring.</p>
+            <span class="protocol-covenant">Execution &amp; Escrow Releases</span>
+          </div>
+
+          <!-- Stage E -->
+          <div class="protocol-card">
+            <span class="protocol-letter">E</span>
+            <h3>Extract</h3>
+            <p>Capture more value. Release management, Cinema Radar sentiment defense, and multi-window monetization.</p>
+            <span class="protocol-covenant">Distribution &amp; Revenue Clearance</span>
+          </div>
+
+          <!-- Stage F -->
+          <div class="protocol-card">
+            <span class="protocol-letter">F</span>
+            <h3>Feed Forward</h3>
+            <p>Make the next cycle smarter. Ingest operational delivery records back into network intelligence to optimize future matches.</p>
+            <span class="protocol-covenant">Loop Reset: Stage F → Stage A</span>
+          </div>
+
+        </div>
+
+        <div class="loop-closure-box" style="margin-top:3rem;background:#09090b;border-color:rgba(255,255,255,0.12);">
+          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#fff;font-weight:800;margin-bottom:0.8rem;">CLOSED-CIRCUIT LIFECYCLE</div>
+          <p style="font-size:0.95rem;color:#a1a1aa;max-width:640px;margin:0 auto 1.8rem;line-height:1.65;">
+            Stage F automatically informs Stage A of the next production. No project starts from scratch; every project builds upon the accumulated intelligence of the entire network.
+          </p>
+          <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.85rem 2.4rem;">Bring a Project to the Protocol &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="mono-trust-strip" aria-label="Trust Network">
+      <div class="mono-trust-inner">
+        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
+        <div class="mono-trust-marquee-wrapper">
+          <div class="mono-trust-marquee-track">
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          </div>
+        </div>
+        <div class="mono-trust-tags">
+          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
+          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+          <span class="mono-trust-pill">&#9889; 100% Direct</span>
+          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
+              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
+              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
+            </div>
+            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Core Architecture</h4>
+            <a href="network.html">The Network</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="solutions.html">Stakeholder Solutions</a>
+            <a href="business.html">Revenue Engine</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Intelligence &amp; Trust</h4>
+            <a href="cinema-damage-control.html">Cinema Radar</a>
+            <a href="insights.html">Industry Research</a>
+            <a href="proof.html">Proof &amp; Pilots</a>
+            <a href="about.html">About &amp; Founders</a>
+            <a href="lab.html">Innovation Lab</a>
+          </div>
+
+          <div class="f-col">
+            <h4>Connect</h4>
+            <a href="contact.html?type=project">Bring a Project</a>
+            <a href="contact.html?type=join">Join Network</a>
+            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+          <span>Own less. Connect more. Multiply value.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

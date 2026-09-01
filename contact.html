@@ -1,337 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Connect with DIGISYNQ &mdash; Join the network, list studio capacity, submit talent profiles, or structure a co-production." />
-  <meta property="og:description" content="Connect with DIGISYNQ — Join the network, list studio capacity, submit talent profiles, or structure a co-production." />
-  <meta property="og:title" content="Contact & Connect &mdash; DIGISYNQ" />
-  <link rel="canonical" href="https://digisynq.com/contact.html" />
-  <title>Connect &mdash; DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Connect with DIGISYNQ — Bring a production project, join the talent network, list soundstage capacity, or request Cinema Radar intelligence."/>
+  <meta property="og:title" content="Bring a Project &amp; Connect — DIGISYNQ"/>
+  <meta property="og:description" content="Direct intake routing: Submit your production brief or register network capability with a guaranteed 24-hour response SLA."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://digisynq.com/contact.html"/>
+  <title>Bring a Project &amp; Connect — DIGISYNQ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .contact-form-grid {
+    .connect-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 4vw, 4rem);
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      margin-top: 3rem;
       align-items: start;
     }
-    .form-glass-card {
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 20px;
-      padding: clamp(2rem, 4vw, 3rem);
-      background: #ffffff;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+    .connect-info-panel {
+      background: #0e0e13;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: left;
     }
-    .form-group {
+    .connect-info-panel h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 0 1rem;
+    }
+    .connect-info-panel p {
+      font-size: 0.92rem;
+      color: #a1a1aa;
+      line-height: 1.65;
+      margin: 0 0 1.8rem;
+    }
+
+    .direct-links-list {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1.2rem;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
     }
-    .form-group label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #09090b;
-      letter-spacing: 0.08em;
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.9rem 1.1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      background: rgba(248, 250, 252, 0.85);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: #09090b;
-      transition: all 0.2s ease;
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent-orange);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.15);
-    }
-    .channel-card {
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-      padding: 1.8rem;
-      background: #ffffff;
-      margin-bottom: 1rem;
-      transition: all 0.25s ease;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-    }
-    .channel-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      border-color: rgba(255, 255, 0, 0.3);
-    }
-    .channel-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(255, 255, 0, 0.08);
-      border: 1px solid rgba(255, 255, 0, 0.2);
+    .direct-link-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--accent-orange);
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
-    .faq-item {
-      border-bottom: 1px solid rgba(0,0,0,0.07);
-      padding: 1.5rem 0;
+    .direct-link-item:hover { opacity: 0.75; }
+
+    .intake-form-box {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: left;
     }
-    .faq-item:last-child {
-      border-bottom: 0;
-    }
-    .faq-item h4 {
-      font-family: var(--font-body);
+    .intake-row { margin-bottom: 1.2rem; }
+    .intake-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: #71717a;
+      text-transform: uppercase;
       font-weight: 800;
-      font-size: 1.1rem;
-      color: #09090b;
-      margin: 0 0 0.5rem;
+      margin-bottom: 0.4rem;
+      display: block;
     }
-    .faq-item p {
+    .intake-select, .intake-input, .intake-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 8px;
+      font-family: var(--font-body);
       font-size: 0.92rem;
-      color: #52525b;
-      line-height: 1.6;
-      margin: 0;
+      background: #fafafa;
+      color: #09090b;
+      box-sizing: border-box;
     }
-    @media(max-width: 768px) {
-      .contact-form-grid {
-        grid-template-columns: 1fr;
-      }
+    .intake-select:focus, .intake-input:focus, .intake-textarea:focus {
+      outline: none;
+      border-color: #09090b;
+      background: #fff;
+    }
+
+    @media (max-width: 860px) {
+      .connect-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+<div class="app-card">
 
-  <div class="app-card">
-
-    <!-- TOP NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
+  <!-- TOP NAVIGATION -->
+  <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-<li><a href="feedback.html">Feedback</a></li>
-</ul></nav>
+        <li><a href="lab.html">Lab</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions-right"><a href="contact.html?type=project" class="btn-login active">Bring a Project</a></div>
+  </header>
 
-      <div class="nav-actions-right">
-        <a href="contact.html" class="btn-login active" style="color:#09090b;">Connect</a>
-      </div>
-    </header>
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="business.html">Business</a>
+    <a href="cinema-damage-control.html">Radar</a>
+    <a href="insights.html">Insights</a>
+    <a href="proof.html">Proof</a>
+    <a href="about.html">About</a>
+    <a href="lab.html">Lab</a>
+    <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
+  </div>
 
-    <div class="nav-mobile-overlay">
-      <a href="index.html">Home</a>
-      <a href="network.html">Network</a>
-      <a href="platform.html">Platform</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="business.html">Business</a>
-      <a href="flowchart.html">Protocol</a>
-      <a href="cinema-damage-control.html">Radar</a>
-      <a href="insights.html">Insights</a>
-      <a href="about.html">About</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="contact.html" class="active" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
-    </div>
+  <!-- HERO -->
+  <div class="ins-hero" id="main-content">
+    <div class="ins-eyebrow">Direct Engagement Desk</div>
+    <h1 class="ins-hero-title">Bring a Project.<br><em>Or Join the Network.</em></h1>
+    <p class="ins-hero-desc">Direct two-stage routing: Specify what you have and what you need. Guaranteed dispatch response within 24 hours.</p>
+  </div>
 
-    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Direct Engagement Desk</div>
-      <h1 class="ins-hero-title">Direct Transmission.<br><em>Immediate Engagement.</em></h1>
-      <p class="ins-hero-desc">Inquire regarding facility onboarding, talent syndication, or co-production structuring. Guaranteed dispatch response within 24 hours.</p>
-    </div>
-
-    <!-- SECTION: TRANSMIT FORM + CHANNELS (WHITE) -->
-    <section class="ins-section white" id="transmit">
-      <div style="max-width:1100px;margin:0 auto;">
+  <!-- INTAKE & DIRECT ROUTING SECTION -->
+  <section class="ins-section offwhite" id="intake-section">
+    <div style="max-width:1100px;margin:0 auto;">
+      
+      <div class="connect-grid">
         
-        <div class="contact-form-grid">
+        <!-- Info Column -->
+        <div class="connect-info-panel">
+          <h3>The Operating Dispatch</h3>
+          <p>Every submission is reviewed by our operations desk and matched with verified network nodes under milestone escrow governance.</p>
           
-          <!-- LEFT: FORM -->
-          <div class="form-glass-card">
-            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">TRANSMIT BRIEF</span>
-            <h2 style="font-family:var(--font-serif);font-weight:900;font-size:1.8rem;margin:0 0 1.5rem;color:#09090b;">Send Us Your Requirement</h2>
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;letter-spacing:0.15em;font-weight:800;margin-bottom:0.4rem;">RESPONSE TIME SLA</div>
+            <div style="font-size:1.1rem;color:#fff;font-weight:900;">Guaranteed &lt; 24 Hours</div>
+          </div>
+
+          <div class="direct-links-list">
+            <a href="mailto:thedigitalsynq@gmail.com" class="direct-link-item">
+              <span style="color:#71717a;">Email //</span> thedigitalsynq@gmail.com
+            </a>
+            <a href="https://wa.me/917996548969" target="_blank" rel="noopener" class="direct-link-item">
+              <span style="color:#71717a;">WhatsApp //</span> +91 79965 48969
+            </a>
+            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener" class="direct-link-item">
+              <span style="color:#71717a;">Social //</span> @digisynq
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="intake-form-box">
+          <form id="contactForm" onsubmit="event.preventDefault();alert('Your submission has been dispatched to the DIGISYNQ desk. A coordinator will respond within 24 hours.');">
             
-            <form id="contact-form" action="mailto:thedigitalsynq@gmail.com" method="post" enctype="text/plain">
-              
-              <div class="form-group">
-                <label for="contact-name">FULL NAME / STUDIO</label>
-                <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g., Yash Raj / Siddharth Roy" required />
-              </div>
-
-              <div class="form-group">
-                <label for="contact-email">OFFICIAL EMAIL</label>
-                <input type="email" id="contact-email" name="email" class="form-control" placeholder="name@production.com" required />
-              </div>
-
-              <div class="form-group">
-                <label for="contact-type">I WANT TO</label>
-                <select id="contact-type" name="intent" class="form-control" required>
-                  <option value="join">Enter the Network as a Creator / Talent</option>
-                  <option value="capacity">List Studio Capacity or Dark Days</option>
-                  <option value="discuss">Structure a Co-Production or Package</option>
-                  <option value="radar">Deploy Cinema Damage Radar</option>
-                  <option value="invest">Participate in Investor Pods</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-message">BRIEF OVERVIEW</label>
-                <textarea id="contact-message" name="message" rows="4" class="form-control" placeholder="Describe your project, timeline, or capacity specifications..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn-pill-solid" style="width:100%;padding:1rem;justify-content:center;font-size:1rem;border:none;cursor:pointer;margin-top:0.5rem;">
-                Transmit to Network Desk &rarr;
-              </button>
-
-            </form>
-          </div>
-
-          <!-- RIGHT: DIRECT CHANNELS -->
-          <div>
-            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#09090b;display:block;margin-bottom:0.6rem;font-weight:700;">DIRECT DESKS</span>
-            <h2 style="font-family:var(--font-serif);font-weight:900;font-size:1.8rem;margin:0 0 1.5rem;color:#09090b;">Instant Communication</h2>
-
-            <div class="channel-card">
-              <div class="channel-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div>
-                <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:#71717a;display:block;">PRIMARY INTAKE EMAIL</span>
-                <h4 style="font-family:var(--font-body);font-weight:700;font-size:1.05rem;margin:0.2rem 0;"><a href="mailto:thedigitalsynq@gmail.com" style="color:#09090b;text-decoration:none;">thedigitalsynq@gmail.com</a></h4>
-                <p style="font-size:0.85rem;color:#71717a;margin:0;">Formal deal briefs &amp; co-production packages</p>
-              </div>
+            <div class="intake-row">
+              <label class="intake-label" for="intakeHave">01 // What Do You Have?</label>
+              <select id="intakeHave" class="intake-select" required>
+                <option value="project">Active Production / Film Brief</option>
+                <option value="talent">Professional Talent / Technical Craft</option>
+                <option value="studio">Soundstage / Studio Facility</option>
+                <option value="equipment">Camera / Lighting / Post Rig</option>
+                <option value="content">Screenplay / Bound IP / Content Rights</option>
+                <option value="capital">Production Capital / Co-Financing</option>
+                <option value="radar">Pre-Release Title Needing Radar Defense</option>
+                <option value="partnership">Institutional Partnership</option>
+              </select>
             </div>
 
-            <div class="channel-card">
-              <div class="channel-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </div>
-              <div>
-                <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:#71717a;display:block;">WHATSAPP FAST-TRACK DESK</span>
-                <h4 style="font-family:var(--font-body);font-weight:700;font-size:1.05rem;margin:0.2rem 0;"><a href="https://wa.me/917996548969" target="_blank" rel="noopener" style="color:#09090b;text-decoration:none;">+91 79965 48969</a></h4>
-                <p style="font-size:0.85rem;color:#71717a;margin:0;">Urgent soundstage availability &amp; talent bookings</p>
-              </div>
+            <div class="intake-row">
+              <label class="intake-label" for="intakeNeed">02 // What Do You Need?</label>
+              <select id="intakeNeed" class="intake-select" required>
+                <option value="stages">Soundstage Booking / Dark Day Clearance</option>
+                <option value="talent">Vetted Crew &amp; Marquee Talent</option>
+                <option value="escrow">Milestone Escrow Governance</option>
+                <option value="distribution">Theatrical &amp; OTT Distribution</option>
+                <option value="radar">Cinema Radar Sentiment Shield</option>
+                <option value="capital">Co-Production Financing</option>
+                <option value="general">Network Onboarding &amp; Registration</option>
+              </select>
             </div>
 
-            <div class="channel-card">
-              <div class="channel-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </div>
-              <div>
-                <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:#71717a;display:block;">INSTAGRAM OFFICIAL</span>
-                <h4 style="font-family:var(--font-body);font-weight:700;font-size:1.05rem;margin:0.2rem 0;"><a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener" style="color:#09090b;text-decoration:none;">@digisynq</a></h4>
-                <p style="font-size:0.85rem;color:#71717a;margin:0;">Public network updates &amp; announcements</p>
-              </div>
+            <div class="intake-row">
+              <label class="intake-label" for="intakeName">Name / Entity</label>
+              <input type="text" id="intakeName" class="intake-input" placeholder="Your name or production house" required />
             </div>
 
-          </div>
+            <div class="intake-row">
+              <label class="intake-label" for="intakeContact">Contact (Email or Phone)</label>
+              <input type="text" id="intakeContact" class="intake-input" placeholder="email@domain.com or WhatsApp number" required />
+            </div>
 
+            <div class="intake-row">
+              <label class="intake-label" for="intakeDetails">Brief Overview (Optional)</label>
+              <textarea id="intakeDetails" class="intake-textarea" rows="3" placeholder="Timeline, scale, stage requirements, or project link"></textarea>
+            </div>
+
+            <button type="submit" class="btn-pill-solid" style="width:100%;padding:0.95rem;font-size:0.92rem;margin-top:0.5rem;">
+              Dispatch to DIGISYNQ Desk &rarr;
+            </button>
+          </form>
         </div>
 
       </div>
-    </section>
 
-    <!-- SECTION: ONBOARDING FAQ (OFFWHITE) -->
-    <section class="ins-section offwhite" id="faq">
-      <div style="max-width:900px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Clear Consensus</div>
-        <h2 class="ins-h2-dark">Frequently Asked Questions</h2>
-        <p class="ins-desc-dark">How onboarding, deal structures, and escrow protections work on the DIGISYNQ network.</p>
+    </div>
+  </section>
 
-        <div class="faq-item">
-          <h4>Is it free to enter the DIGISYNQ network?</h4>
-          <p>Yes. There are zero upfront registration or subscription fees for creative talent, producers, or studio facilities. DIGISYNQ earns a transparent coordination fee only when verified deals close and milestone payments are delivered.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>How does milestone escrow protect our production funds?</h4>
-          <p>All production capital is locked in multi-sig milestone escrow accounts. Funds are only disbursed when neutral stage-gate auditors verify that delivery milestones (script lock, shoot wrap, post delivery) have been fully met.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>How fast can a dark soundstage or talent window be booked?</h4>
-          <p>Once a brief is matched with an available facility or talent pod, standardized digital deal memos allow contract execution and escrow funding to be finalized within 48 to 72 hours.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-        <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <!-- TRUST STRIP -->
   <section class="mono-trust-strip" aria-label="Trust Network">
     <div class="mono-trust-inner">
       <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-      
       <div class="mono-trust-marquee-wrapper">
         <div class="mono-trust-marquee-track">
-          <!-- Set 1 -->
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
-
-          <!-- Set 2 (Seamless Infinite Loop) -->
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
         </div>
       </div>
-
       <div class="mono-trust-tags">
         <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
         <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
@@ -341,51 +262,77 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+    <div class="container">
+      <div class="f-top">
+        <div class="f-brand">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
+            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
+            <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
           </div>
-
-          <div class="f-col">
-            <h4>Explore</h4>
-            <a href="network.html">Network Nodes</a>
-            <a href="platform.html">Operating System</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="flowchart.html">Process Protocol</a>
-            <a href="cinema-damage-control.html">Damage Radar</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Participate</h4>
-            <a href="contact.html?type=join">Enter Network</a>
-            <a href="network.html#talent">Talent Lab</a>
-            <a href="network.html#capacity">List Capacity</a>
-            <a href="business.html">Commercial Model</a>
-            <a href="insights.html">Research</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          </div>
+          <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
         </div>
 
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
+        <div class="f-col">
+          <h4>Core Architecture</h4>
+          <a href="network.html">The Network</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="solutions.html">Stakeholder Solutions</a>
+          <a href="business.html">Revenue Engine</a>
+        </div>
+
+        <div class="f-col">
+          <h4>Intelligence &amp; Trust</h4>
+          <a href="cinema-damage-control.html">Cinema Radar</a>
+          <a href="insights.html">Industry Research</a>
+          <a href="proof.html">Proof &amp; Pilots</a>
+          <a href="about.html">About &amp; Founders</a>
+          <a href="lab.html">Innovation Lab</a>
+        </div>
+
+        <div class="f-col">
+          <h4>Connect</h4>
+          <a href="contact.html?type=project">Bring a Project</a>
+          <a href="contact.html?type=join">Join Network</a>
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
         </div>
       </div>
-    </footer>
 
-  </div>
+      <div class="f-bottom">
+        <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+        <span>Own less. Connect more. Multiply value.</span>
+      </div>
+    </div>
+  </footer>
+</div>
 <script src="assets/js/main.js"></script>
+<script>
+  // Query param auto-selection handler
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const haveSelect = document.getElementById('intakeHave');
+  const needSelect = document.getElementById('intakeNeed');
+  if (type === 'project') {
+    haveSelect.value = 'project';
+    needSelect.value = 'talent';
+  } else if (type === 'join' || type === 'talent') {
+    haveSelect.value = 'talent';
+    needSelect.value = 'general';
+  } else if (type === 'capacity') {
+    haveSelect.value = 'studio';
+    needSelect.value = 'stages';
+  } else if (type === 'radar') {
+    haveSelect.value = 'radar';
+    needSelect.value = 'radar';
+  } else if (type === 'content') {
+    haveSelect.value = 'content';
+    needSelect.value = 'distribution';
+  } else if (type === 'discuss') {
+    haveSelect.value = 'partnership';
+    needSelect.value = 'general';
+  }
+</script>
 </body>
 </html>
-

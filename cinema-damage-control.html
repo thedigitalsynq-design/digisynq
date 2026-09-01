@@ -1,410 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Cinema Damage Control &mdash; Pre-release narrative radar, sentiment interception, and box office risk protection." />
-  <meta property="og:description" content="DIGISYNQ Cinema Damage Control — Pre-release narrative radar, sentiment interception, and box office risk protection." />
-  <meta property="og:title" content="Cinema Damage Control &amp; Radar &mdash; DIGISYNQ" />
-  <link rel="canonical" href="https://digisynq.com/cinema-damage-control.html" />
-  <title>Cinema Damage Control &amp; Radar &mdash; DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Cinema Radar by DIGISYNQ — Pre-release sentiment intelligence, narrative threat interception, and box office defense."/>
+  <meta property="og:title" content="Cinema Radar &amp; Damage Control — DIGISYNQ"/>
+  <meta property="og:description" content="See the signal before it becomes the problem: Detect, Understand, Respond, and Recover across theatrical and streaming releases."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://digisynq.com/cinema-damage-control.html"/>
+  <title>Cinema Radar &amp; Pre-Release Intelligence — DIGISYNQ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    /* PCR Cards — dark section */
-    .cdc-pcr { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem; }
-    .cdc-pcr-card { border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:rgba(255,255,255,0.04);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:all 0.3s cubic-bezier(0.16,1,0.3,1); }
-    .cdc-pcr-card::before { content:"";position:absolute;top:0;left:0;right:0;height:2px;background:#ffffff;opacity:0;transition:opacity 0.3s; }
-    .cdc-pcr-card:hover { border-color:rgba(255,255,255,0.3);transform:translateY(-4px);background:rgba(255,255,255,0.07); }
-    .cdc-pcr-card:hover::before { opacity:0.3; }
-    .cdc-pcr-num { font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.45);margin-bottom:0.8rem;font-weight:700; }
-    .cdc-pcr-card h3 { font-family:var(--font-body);font-weight:900;font-size:1.3rem;color:#fff;margin:0.4rem 0 0.7rem;letter-spacing:-0.02em; }
-    .cdc-pcr-card > p { font-size:0.92rem;color:rgba(255,255,255,0.6);line-height:1.6;margin:0 0 1.2rem; }
-    .cdc-pcr-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem; }
-    .cdc-pcr-list li { font-size:0.88rem;color:rgba(255,255,255,0.5);padding-left:1.2rem;position:relative;line-height:1.5; }
-    .cdc-pcr-list li::before { content:"";width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);position:absolute;left:0;top:0.55em; }
+    .radar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 3rem;
+      background: #fff;
+    }
+    .radar-step {
+      padding: 2.2rem 1.6rem;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .radar-step:last-child { border-right: 0; }
+    .radar-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #71717a;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .radar-step h3 {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0 0 0.6rem;
+    }
+    .radar-step p {
+      font-size: 0.88rem;
+      color: #52525b;
+      line-height: 1.55;
+      margin: 0;
+    }
 
-    /* Radar Loop — white section */
-    .cdc-loop { display:flex;flex-direction:column;align-items:center;margin-top:2.8rem;gap:0; }
-    .cdc-loop-item { width:100%;max-width:700px;display:flex;align-items:flex-start;gap:1.3rem;padding:1.4rem 1.8rem;border:1px solid rgba(0,0,0,0.08);border-radius:14px;background:#fff;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);box-shadow:0 4px 15px rgba(0,0,0,0.03); }
-    .cdc-loop-item:hover { border-color:rgba(0,0,0,0.2);transform:translateX(4px);box-shadow:0 8px 24px rgba(0,0,0,0.07); }
-    .cdc-conn { width:2px;height:24px;background:linear-gradient(to bottom,rgba(0,0,0,0.12),transparent);margin:0 auto; }
-    .cdc-loop-icon { width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-mono);font-size:0.65rem;font-weight:700;color:#09090b; }
-    .cdc-loop-text h4 { font-family:var(--font-body);font-weight:700;font-size:1.05rem;color:#09090b;margin:0 0 0.28rem; }
-    .cdc-loop-text p { font-size:0.88rem;color:#52525b;margin:0;line-height:1.55; }
-    .cdc-loop-back { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.18em;color:#09090b;text-align:center;margin-top:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;max-width:700px;width:100%;opacity:0.5; }
-    .cdc-loop-back::before,.cdc-loop-back::after { content:"";flex:1;max-width:60px;height:1px;background:rgba(0,0,0,0.25); }
+    .radar-console {
+      background: #0e0e13;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
 
-    /* Risk dial */
-    .cdc-dial { width:clamp(140px,16vw,200px);height:clamp(140px,16vw,200px);border-radius:50%;border:2px solid rgba(9,9,11,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(9,9,11,0.04);flex-shrink:0;position:relative;box-shadow:0 0 40px rgba(9,9,11,0.04); }
-    .cdc-dial-num { font-family:var(--font-num);font-weight:900;font-size:clamp(2rem,4.5vw,3rem);color:#09090b;line-height:1; }
-    .cdc-dial-den { font-family:var(--font-mono);font-size:0.85rem;color:#71717a;margin-top:0.15rem; }
-    .cdc-dial-lbl { font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.22em;color:#71717a;margin-top:0.4rem;font-weight:700; }
-    .cdc-bars { display:flex;flex-direction:column;gap:0.8rem;width:100%; }
-    .cdc-bar-row { display:flex;align-items:center;gap:1rem; }
-    .cdc-bar-lbl { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.1em;color:#71717a;width:130px;flex-shrink:0; }
-    .cdc-bar-track { flex:1;height:6px;background:rgba(0,0,0,0.07);border-radius:999px;overflow:hidden; }
-    .cdc-bar-fill { height:100%;border-radius:999px; }
-    .fill-h { background:#09090b; }
-    .fill-m { background:#52525b; }
-    .fill-l { background:#a1a1aa; }
-    .cdc-bar-val { font-family:var(--font-mono);font-size:0.7rem;color:#71717a;width:28px;text-align:right; }
-
-    /* Monitoring channel cards — white section */
-    .cdc-eco-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem; }
-    .cdc-eco-card { border:1px solid rgba(0,0,0,0.08);border-radius:14px;background:#fff;padding:1.6rem 1.3rem;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);box-shadow:0 4px 20px -2px rgba(0,0,0,0.03); }
-    .cdc-eco-card:hover { border-color:rgba(0,0,0,0.2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.07); }
-    .cdc-eco-icon { width:36px;height:36px;border-radius:10px;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;color:#09090b; }
-    .cdc-eco-card h3 { font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.15em;color:#09090b;margin:0 0 0.4rem;font-weight:700; }
-    .cdc-eco-card p { font-size:0.85rem;color:#71717a;margin:0;line-height:1.5; }
-
-    /* Stat row in Why This Exists */
-    .cdc-stat-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.65rem; }
-    .cdc-stat-list li { font-family:var(--font-body);font-weight:500;font-size:1rem;color:rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:0.65rem;line-height:1.45; }
-    .cdc-stat-list li:last-child { border-bottom:0; }
-    .cdc-stat-list li strong { color:#fff;font-weight:800; }
+    @media (max-width: 860px) {
+      .radar-grid { grid-template-columns: 1fr; }
+      .radar-step { border-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    }
   </style>
 </head>
 <body>
+<div class="app-card">
 
-  <div class="app-card">
-
-    <!-- TOP NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
+  <!-- TOP NAVIGATION -->
+  <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
         <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="cinema-damage-control.html" class="active">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-<li><a href="feedback.html">Feedback</a></li>
-</ul></nav>
-      <div class="nav-actions-right">
-        <a href="contact.html" class="btn-login">Connect</a>
-      </div>
-    </header>
+        <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="cinema-damage-control.html" class="active">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
+        <li><a href="lab.html">Lab</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions-right"><a href="contact.html?type=radar" class="btn-login">Request Radar Desk</a></div>
+  </header>
 
-    <div class="nav-mobile-overlay">
-      <a href="index.html">Home</a>
-      <a href="network.html">Network</a>
-      <a href="platform.html">Platform</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="business.html">Business</a>
-      <a href="flowchart.html">Protocol</a>
-      <a href="cinema-damage-control.html" class="active">Radar</a>
-      <a href="insights.html">Insights</a>
-      <a href="about.html">About</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="business.html">Business</a>
+    <a href="cinema-damage-control.html" class="active">Radar</a>
+    <a href="insights.html">Insights</a>
+    <a href="proof.html">Proof</a>
+    <a href="about.html">About</a>
+    <a href="lab.html">Lab</a>
+    <a href="contact.html?type=radar" style="margin-top:1.5rem;background:#09090b;color:#fff;">Request Radar Desk</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="ins-hero" id="main-content">
+    <div class="ins-eyebrow">Cinema Radar Intelligence</div>
+    <h1 class="ins-hero-title">See the Signal.<br><em>Before It Becomes the Problem.</em></h1>
+    <p class="ins-hero-desc">71% of opening weekend narrative damage crystallizes in the final 72 hours before release. Cinema Radar intercepts sentiment risks, unauthorized leaks, and review anomalies in real time.</p>
+    <div class="ins-hero-actions">
+      <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Request Radar Brief &rarr;</a>
+      <a href="#radar-sequence" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">4-Step Protocol &rarr;</a>
     </div>
+  </div>
 
-    <!-- HERO -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Theatrical Risk Mitigation</div>
-      <h1 class="ins-hero-title">Pre-Release Intelligence.<br><em>Absolute Box-Office Integrity.</em></h1>
-      <p class="ins-hero-desc">Predictive audience sentiment analysis, real-time narrative defense, and rapid threat neutralization across theatrical and streaming windows.</p>
-      <div class="ins-hero-actions">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
-        <a href="#pcr-framework" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Framework</a>
+  <!-- SECTION: 4-STEP RADAR PROTOCOL -->
+  <section class="ins-section white" id="radar-sequence">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="sec-eyebrow-light">The Defense Protocol</div>
+      <h2 class="ins-h2-dark">Detect. Understand. Respond. Recover.</h2>
+      <p class="ins-desc-dark">A disciplined intelligence sequence designed to preserve box office momentum without artificial manipulation.</p>
+
+      <div class="radar-grid">
+        
+        <div class="radar-step">
+          <span class="radar-num">PHASE 01</span>
+          <h3>Detect</h3>
+          <p>Continuous monitoring of advance booking velocity, social discussion clusters, unauthorized clip distribution, and narrative sentiment anomalies.</p>
+        </div>
+
+        <div class="radar-step">
+          <span class="radar-num">PHASE 02</span>
+          <h3>Understand</h3>
+          <p>Distinguish authentic organic audience reception from coordinated bot campaigns, competitor sabotage, and isolated fringe reviews.</p>
+        </div>
+
+        <div class="radar-step">
+          <span class="radar-num">PHASE 03</span>
+          <h3>Respond</h3>
+          <p>Deploy verified official clip corrections, coordinate community moderation desks, and dispatch immediate takedown enforcement.</p>
+        </div>
+
+        <div class="radar-step">
+          <span class="radar-num">PHASE 04</span>
+          <h3>Recover</h3>
+          <p>Stabilize opening weekend word-of-mouth narrative, protect Monday hold-rate, and safeguard secondary streaming window valuation.</p>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- SECTION 01: WHY THIS EXISTS (DARK) -->
-    <section class="ins-section dark" id="why-radar">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;">
-          <div>
-            <div class="ins-eyebrow" style="justify-content:flex-start;">Section 01 // Why This Exists</div>
-            <h2 class="ins-h2-light">The conversation shifts<br>before you do.</h2>
-            <p class="ins-desc-light">A film's narrative is set in the 72 hours before release. One coordinated review bomb, one uncontrolled leak, or one misread social signal can reduce opening weekend returns by 18&ndash;35% before a single ticket is scanned.</p>
-            <p style="font-size:0.85rem;color:rgba(255,255,255,0.4);font-style:italic;margin:0;">Radar goes live 30 days before release — before damage starts.</p>
+  <!-- SECTION: RADAR CONSOLE (DARK) -->
+  <section class="ins-section dark" id="console">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="ins-eyebrow" style="justify-content:flex-start;">Live Signal Intelligence</div>
+      <h2 class="ins-h2-light">Threat Detection Scope</h2>
+      <p class="ins-desc-light">The core signals monitored across active theatrical and streaming release windows.</p>
+
+      <div class="radar-console">
+        <div class="console-header">
+          <span style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.15em;color:#fff;font-weight:800;">MONITORED INTELLIGENCE FEEDS</span>
+          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:#71717a;border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.6rem;border-radius:4px;">ILLUSTRATIVE SPECIFICATION</span>
+        </div>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+          <div style="border-left:2px solid #fff;padding-left:1rem;">
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 01</div>
+            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Advance Booking Velocity</h4>
+            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Screen-by-screen occupancy pacing against genre baseline models.</p>
           </div>
-          <div>
-            <ul class="cdc-stat-list">
-              <li><strong>71%</strong> of opening weekend damage is narrative, not product quality</li>
-              <li><strong>48 hours</strong> before release is when audience sentiment crystallizes</li>
-              <li><strong>Review bombing</strong> is a coordinated attack, not organic feedback</li>
-              <li><strong>Trailer sentiment</strong> is a statistically provable collection predictor</li>
-              <li><strong>Dark social</strong> is where the real narrative is being written</li>
-            </ul>
+          <div style="border-left:2px solid #fff;padding-left:1rem;">
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 02</div>
+            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Coordinated Review Bombs</h4>
+            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Automated detection of inorganic negative clustering on ticketing platforms.</p>
+          </div>
+          <div style="border-left:2px solid #fff;padding-left:1rem;">
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 03</div>
+            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Piracy &amp; Leak Interception</h4>
+            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Rapid-response takedown notifications for unauthorized footage leaks.</p>
+          </div>
+          <div style="border-left:2px solid #fff;padding-left:1rem;">
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 04</div>
+            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Community Sentiment Shift</h4>
+            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Real-time tracking across Reddit, Threads, YouTube comments, and regional film hubs.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION 02: PCR FRAMEWORK (DARK) -->
-    <section class="ins-section dark" id="pcr-framework" style="background:#0e0e13;border-top:1px solid rgba(255,255,255,0.06);">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">Section 02 // Architecture</div>
-        <h2 class="ins-h2-light">The PCR Framework</h2>
-        <p class="ins-desc-light">Coordinated intervention phases covering the full release lifecycle. Pre-Release establishes the baseline. Crisis intercepts in real-time. Recovery compounds what survives.</p>
-
-        <div class="cdc-pcr">
-          <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">01 // PRE-RELEASE SHIELD</div>
-            <h3>Pre-Release</h3>
-            <p>Sentinel-mode monitoring from 30 days out. Identify, calibrate, and neutralize before narrative damage compounds.</p>
-            <ul class="cdc-pcr-list">
-              <li>Trailer sentiment velocity analysis across comment clusters</li>
-              <li>Coordinated hashtag seeding across aligned creator networks</li>
-              <li>Advance critic and verified reviewer pipeline synchronization</li>
-              <li>BookMyShow and Paytm demand tracking across cities</li>
-              <li>Dark social monitoring: private Reddit threads and Telegram groups</li>
-            </ul>
-          </div>
-
-          <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">02 // CRISIS DEFLECTION</div>
-            <h3>Crisis</h3>
-            <p>Rapid response when a narrative threat goes live. Every minute without response compounds the damage.</p>
-            <ul class="cdc-pcr-list">
-              <li>Real-time review bomb detection vs. organic feedback</li>
-              <li>Counter-narrative rapid deployment: cast activations &amp; BTS content</li>
-              <li>Platform escalation protocols on IMDb, Google &amp; BookMyShow</li>
-              <li>Exhibitor communication loops to protect morning screen count</li>
-              <li>Distributor PR desk alignment across regional release markets</li>
-            </ul>
-          </div>
-
-          <div class="cdc-pcr-card">
-            <div class="cdc-pcr-num">03 // RECOVERY &amp; COMPOUND</div>
-            <h3>Recovery</h3>
-            <p>Post-crisis stabilization and upside capture. Convert a corrected narrative into a compounding second-week story.</p>
-            <ul class="cdc-pcr-list">
-              <li>Second-week audience expansion narrative repositioning</li>
-              <li>Word-of-mouth amplification engine with verified testimonials</li>
-              <li>OTT platform rights negotiation leverage via sentiment data</li>
-              <li>Merchandise and ancillary window narrative protection</li>
-              <li>Post-mortem intelligence fed back into the next release shield</li>
-            </ul>
-          </div>
-        </div>
+      <div style="margin-top:3.5rem;text-align:center;">
+        <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Engage Radar Pre-Release Desk &rarr;</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 03: LIVE RADAR LOOP (WHITE) -->
-    <section class="ins-section white" id="radar-loop">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Section 03 // Operational Process</div>
-        <h2 class="ins-h2-dark">Live Radar Loop</h2>
-        <p class="ins-desc-dark">A loop that scans, counters and protects — 24/7 through release.</p>
-
-        <div class="cdc-loop">
-          <div class="cdc-loop-item">
-            <div class="cdc-loop-icon">01</div>
-            <div class="cdc-loop-text">
-              <h4>SCAN &mdash; Continuous Monitoring</h4>
-              <p>24/7 sentiment tracking across YouTube trailer comments, Instagram Reels, Facebook fan communities, Reddit discussion megathreads, X (Twitter), BookMyShow advance bookings, and regional Telegram groups. Signal frequency: every 4 hours.</p>
-            </div>
-          </div>
-          <div class="cdc-conn"></div>
-
-          <div class="cdc-loop-item">
-            <div class="cdc-loop-icon">02</div>
-            <div class="cdc-loop-text">
-              <h4>ISOLATE &mdash; Threat Classification</h4>
-              <p>Distinguish between organic negative sentiment and coordinated review bombing. Classify threat severity (Low, Medium, Critical) and assign rapid response protocols.</p>
-            </div>
-          </div>
-          <div class="cdc-conn"></div>
-
-          <div class="cdc-loop-item">
-            <div class="cdc-loop-icon">03</div>
-            <div class="cdc-loop-text">
-              <h4>COUNTER &mdash; Rapid Response Deployment</h4>
-              <p>Activate pre-prepared counter-narrative assets: verified cast content, curated audience testimonials, and behind-the-scenes clarifications within 6 hours.</p>
-            </div>
-          </div>
-          <div class="cdc-conn"></div>
-
-          <div class="cdc-loop-item">
-            <div class="cdc-loop-icon">04</div>
-            <div class="cdc-loop-text">
-              <h4>PROTECT &mdash; Exhibitor and Platform Shield</h4>
-              <p>Communicate corrected sentiment signals directly to exhibitor chains to prevent premature screen reductions. Coordinate review integrity flags on manipulation evidence.</p>
-            </div>
-          </div>
-          <div class="cdc-conn"></div>
-
-          <div class="cdc-loop-item">
-            <div class="cdc-loop-icon">05</div>
-            <div class="cdc-loop-text">
-              <h4>ANALYSIS &mdash; Post-Response Metrics</h4>
-              <p>Measure counter-narrative asset performance. Feed all performance data back into the pre-release shield model for the next film in the production slate.</p>
-            </div>
-          </div>
-          <div class="cdc-loop-back">LOOP RESETS CONTINUOUSLY &mdash; EVERY 4 HOURS THROUGH RELEASE WINDOW</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: NARRATIVE RISK SCORING (OFFWHITE) -->
-    <section class="ins-section offwhite" id="risk-dashboard">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Section 04 // Live Intelligence</div>
-        <h2 class="ins-h2-dark">Composite Narrative Risk Scoring</h2>
-        <p class="ins-desc-dark">A risk score for public sentiment — like a credit score for your release.</p>
-
-        <div class="ins-card" style="padding:2.5rem;">
-          <div style="display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
-            <div class="cdc-dial">
-              <div class="cdc-dial-num">7.4</div>
-              <div class="cdc-dial-den">/ 10</div>
-              <div class="cdc-dial-lbl">RISK SCORE</div>
-            </div>
-            <div class="cdc-bars">
-              <div style="font-family:var(--font-body);font-weight:700;font-size:1.1rem;color:#09090b;margin-bottom:0.4rem;">Live Signal Channel Breakdown</div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Trailer Sentiment</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:82%"></div></div><div class="cdc-bar-val">82%</div></div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Review Velocity</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:74%"></div></div><div class="cdc-bar-val">74%</div></div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Advance Booking</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:55%"></div></div><div class="cdc-bar-val">55%</div></div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Dark Social Signal</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-h" style="width:91%"></div></div><div class="cdc-bar-val">91%</div></div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Cast Amplification</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-m" style="width:48%"></div></div><div class="cdc-bar-val">48%</div></div>
-              <div class="cdc-bar-row"><div class="cdc-bar-lbl">Platform Integrity</div><div class="cdc-bar-track"><div class="cdc-bar-fill fill-l" style="width:23%"></div></div><div class="cdc-bar-val">23%</div></div>
-            </div>
-          </div>
-          <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.05em;color:#a1a1aa;margin-top:1.8rem;padding-top:1rem;border-top:1px solid rgba(0,0,0,0.08);">
-            *DIGISYNQ NARRATIVE RISK SCORE IS A COMPOSITE MODEL. DEMONSTRATION METRICS SHOWN. CLIENT DATA ENCRYPTED.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: MONITORING CHANNELS (WHITE) -->
-    <section class="ins-section white" id="channels">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Section 05 // Monitoring Ecosystem</div>
-        <h2 class="ins-h2-dark">Where the Radar Listens</h2>
-        <p class="ins-desc-dark">Continuous signal collection across public media, ticketing systems, and social channels — the exact places where audience opinion is formed and manipulated.</p>
-
-        <div class="cdc-eco-grid">
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
-            <h3>YOUTUBE</h3>
-            <p>Trailer comment sentiment velocity &amp; like-to-dislike ratio shifts</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
-            <h3>INSTAGRAM</h3>
-            <p>Reel audio velocity, fan edit virality &amp; comment sentiment clusters</p>
-          </div>
-
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></div>
-            <h3>FACEBOOK</h3>
-            <p>Regional fan club groups, meme page narrative loops &amp; viral video shares</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M17 13c-.4 1.2-1.5 2-3 2s-2.6-.8-3-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
-            <h3>REDDIT</h3>
-            <p>Film community megathreads, spoiler leak tracking &amp; coordinated brigading</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg></div>
-            <h3>X (TWITTER)</h3>
-            <p>Hashtag velocity &amp; influencer amplification maps</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-            <h3>BOOKMYSHOW</h3>
-            <p>Advance booking conversion &amp; cancellation spikes</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
-            <h3>TELEGRAM</h3>
-            <p>Private film communities where early leaks spread</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg></div>
-            <h3>IMDB / LETTERBOXD</h3>
-            <p>Early review bomb detection &amp; rating spikes</p>
-          </div>
-          <div class="cdc-eco-card">
-            <div class="cdc-eco-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-            <h3>PIRACY CHANNELS</h3>
-            <p>Cam-recording detection &amp; illegal stream tracking</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: CTA (DARK) -->
-    <section class="ins-section dark" id="activate-radar">
-      <div style="max-width:900px;margin:0 auto;text-align:center;">
-        <div class="sec-eyebrow-light" style="justify-content:center;color:rgba(255,255,255,0.75);">Deploy Your Shield</div>
-        <h2 class="ins-h2-light" style="margin-bottom:1rem;">Don't Wait for Narrative Decay</h2>
-        <p class="ins-desc-light" style="margin:0 auto 2.5rem;">Damage Radar activates 30 days before your release date &mdash; giving you sufficient time to calibrate what would otherwise be permanent box office losses.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:1rem 2.5rem;font-size:1rem;">Activate Damage Radar &rarr;</a>
-          <a href="insights.html" class="btn-pill-outline" style="padding:1rem 2.5rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);font-size:1rem;">Read Research Papers</a>
-        </div>
-      </div>
-    </section>
-
-      <!-- MONO TRUST DISPLAY STRIP (PRE-FOOTER) -->
+  <!-- TRUST STRIP -->
   <section class="mono-trust-strip" aria-label="Trust Network">
     <div class="mono-trust-inner">
       <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-      
       <div class="mono-trust-marquee-wrapper">
         <div class="mono-trust-marquee-track">
-          <!-- Set 1 -->
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
-
-          <!-- Set 2 (Seamless Infinite Loop) -->
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Cinema Commons</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Buzzing Mafia</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">2nd Take</span>
-          </div>
-          <div class="mono-trust-logo-item" aria-hidden="true">
-            <img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img" />
-            <span class="mono-trust-logo-name">Your Bro</span>
-          </div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
         </div>
       </div>
-
       <div class="mono-trust-tags">
         <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
         <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
@@ -414,46 +235,51 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand"><div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+    <div class="container">
+      <div class="f-top">
+        <div class="f-brand">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
+            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
+            <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
           </div>
-          <div class="f-col">
-            <h4>Explore</h4>
-            <a href="network.html">Network Nodes</a>
-            <a href="platform.html">Operating System</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="flowchart.html">Process Protocol</a>
-            <a href="cinema-damage-control.html">Damage Radar</a>
-          </div>
-          <div class="f-col">
-            <h4>Participate</h4>
-            <a href="contact.html?type=join">Enter Network</a>
-            <a href="network.html#talent">Talent Lab</a>
-            <a href="network.html#capacity">List Capacity</a>
-            <a href="business.html">Commercial Model</a>
-            <a href="insights.html">Research</a>
-          </div>
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
-          </div>
+          <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
         </div>
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
+
+        <div class="f-col">
+          <h4>Core Architecture</h4>
+          <a href="network.html">The Network</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="solutions.html">Stakeholder Solutions</a>
+          <a href="business.html">Revenue Engine</a>
+        </div>
+
+        <div class="f-col">
+          <h4>Intelligence &amp; Trust</h4>
+          <a href="cinema-damage-control.html">Cinema Radar</a>
+          <a href="insights.html">Industry Research</a>
+          <a href="proof.html">Proof &amp; Pilots</a>
+          <a href="about.html">About &amp; Founders</a>
+          <a href="lab.html">Innovation Lab</a>
+        </div>
+
+        <div class="f-col">
+          <h4>Connect</h4>
+          <a href="contact.html?type=project">Bring a Project</a>
+          <a href="contact.html?type=join">Join Network</a>
+          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
+          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
         </div>
       </div>
-    </footer>
 
-  </div>
+      <div class="f-bottom">
+        <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
+        <span>Own less. Connect more. Multiply value.</span>
+      </div>
+    </div>
+  </footer>
+</div>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
-

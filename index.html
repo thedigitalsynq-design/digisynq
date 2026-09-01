@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ — The Operating Network for Entertainment. Turning fragmented industry resources into connected, compounding value." />
+  <meta name="description" content="DIGISYNQ — The Operating Network for Entertainment. Entertainment has everything. It just isn't connected. We connect the people, places, content and opportunities behind entertainment." />
   <meta property="og:title" content="DIGISYNQ — The Operating Network for Entertainment" />
-  <meta property="og:description" content="Entertainment has everything. It just isn't connected. We connect, coordinate, and activate fragmented resources into compounding value." />
+  <meta property="og:description" content="Entertainment has everything. It just isn't connected. DIGISYNQ connects people, spaces, content, and capital into compounding value." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://digisynq.com/" />
   <title>DIGISYNQ — The Operating Network for Entertainment</title>
@@ -16,32 +16,237 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .home-exists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
-    .home-exist-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; text-align: left; }
-    .home-exist-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.5rem; display: block; font-weight: 700; }
-    .home-exist-card h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 900; color: #fff; margin: 0 0 0.4rem; }
-    .home-exist-card p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; margin: 0; }
+    /* ── Editorial Homepage Specific Styling ── */
+    .hp-hero {
+      padding: clamp(5rem, 10vw, 8.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(3.5rem, 6vw, 5.5rem);
+      text-align: center;
+      background: #09090b;
+      color: #fff;
+      position: relative;
+    }
+    .hp-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #71717a;
+      margin-bottom: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hp-eyebrow::before, .hp-eyebrow::after {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: #3f3f46;
+    }
+    .hp-hero-title {
+      font-family: var(--font-serif);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+      max-width: 1050px;
+      margin: 0 auto 1.8rem;
+    }
+    .hp-hero-title em {
+      font-style: italic;
+      color: #a1a1aa;
+    }
+    .hp-hero-desc {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      line-height: 1.65;
+      color: #a1a1aa;
+      max-width: 680px;
+      margin: 0 auto 2.8rem;
+    }
+    .hp-hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-    .home-broken-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
-    .home-broken-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 1.8rem; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-    .home-broken-num { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: #71717a; margin-bottom: 0.6rem; font-weight: 800; }
-    .home-broken-card h3 { font-family: var(--font-body); font-size: 1.2rem; font-weight: 900; color: #09090b; margin: 0 0 0.5rem; }
-    .home-broken-card p { font-size: 0.88rem; color: #52525b; line-height: 1.55; margin: 0; }
+    /* ── Problem Section ── */
+    .hp-problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .hp-problem-item {
+      padding: 2.2rem 1.8rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      text-align: left;
+    }
+    .hp-problem-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #71717a;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .hp-problem-item h3 {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0 0 0.5rem;
+    }
+    .hp-problem-item p {
+      font-size: 0.9rem;
+      color: #52525b;
+      line-height: 1.55;
+      margin: 0;
+    }
 
-    .home-tri-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; position: relative; }
-    .home-tri-card { background: #0e0e13; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.2rem 1.8rem; text-align: left; position: relative; }
-    .home-tri-step { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.8rem; font-weight: 800; display: block; }
-    .home-tri-card h3 { font-family: var(--font-body); font-size: 1.35rem; font-weight: 900; color: #fff; margin: 0 0 0.6rem; }
-    .home-tri-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+    /* ── Ecosystem Diagram ── */
+    .hp-eco-box {
+      background: #0e0e13;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: clamp(2.5rem, 5vw, 4rem) 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .hp-eco-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2rem 0;
+    }
+    .hp-eco-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: #fff;
+      font-weight: 700;
+    }
+    .hp-eco-center {
+      background: #fff;
+      color: #09090b;
+      border-color: #fff;
+      font-weight: 900;
+      padding: 0.85rem 2rem;
+      box-shadow: 0 0 30px rgba(255,255,255,0.2);
+    }
 
-    .home-outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-    .home-outcome-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 2rem 1.8rem; text-align: left; }
-    .home-outcome-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; color: #09090b; font-weight: 800; margin-bottom: 0.5rem; display: block; }
-    .home-outcome-card h3 { font-family: var(--font-body); font-size: 1.25rem; font-weight: 900; color: #09090b; margin: 0 0 0.5rem; }
-    .home-outcome-card p { font-size: 0.88rem; color: #52525b; line-height: 1.55; margin: 0; }
+    /* ── 4-Step Operational Flow ── */
+    .hp-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 3rem;
+      background: #fff;
+    }
+    .hp-step {
+      padding: 2.5rem 1.8rem;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .hp-step:last-child { border-right: 0; }
+    .hp-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: #71717a;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .hp-step h3 {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0 0 0.6rem;
+    }
+    .hp-step p {
+      font-size: 0.88rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin: 0;
+    }
 
-    @media(max-width: 860px) {
-      .home-tri-grid, .home-outcomes-grid { grid-template-columns: 1fr; }
+    /* ── Solutions One-Liners ── */
+    .hp-sol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .hp-sol-card {
+      background: #0e0e13;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: left;
+    }
+    .hp-sol-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: #71717a;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .hp-sol-card h3 {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 0 0.4rem;
+    }
+    .hp-sol-card p {
+      font-size: 0.88rem;
+      color: #a1a1aa;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── Value Flow Diagram ── */
+    .hp-value-track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 2.5rem 0;
+    }
+    .hp-val-node {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.12);
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #09090b;
+      font-weight: 800;
+    }
+    .hp-val-arrow { color: #71717a; font-weight: 900; }
+
+    @media (max-width: 860px) {
+      .hp-steps-grid { grid-template-columns: 1fr; }
+      .hp-step { border-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
     }
   </style>
 </head>
@@ -49,7 +254,7 @@
 
   <div class="app-card">
 
-    <!-- TOP NAVIGATION -->
+    <!-- PRIMARY REFINED NAVIGATION -->
     <header class="top-nav">
       <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -58,177 +263,301 @@
         <ul class="nav-links-center">
           <li><a href="index.html" class="active">Home</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="lab.html">Lab</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions-right">
-        <a href="contact.html" class="btn-login">Connect</a>
+        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
       </div>
     </header>
 
+    <!-- MOBILE OVERLAY -->
     <div class="nav-mobile-overlay">
       <a href="index.html" class="active">Home</a>
       <a href="network.html">Network</a>
-      <a href="platform.html">Platform</a>
+      <a href="how-it-works.html">How It Works</a>
       <a href="solutions.html">Solutions</a>
       <a href="business.html">Business</a>
-      <a href="flowchart.html">Protocol</a>
       <a href="cinema-damage-control.html">Radar</a>
       <a href="insights.html">Insights</a>
+      <a href="proof.html">Proof</a>
       <a href="about.html">About</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+      <a href="lab.html">Lab</a>
+      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
     </div>
 
     <!-- 01 // HERO: THE BIG IDEA -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">The Operating Network for Entertainment</div>
-      <h1 class="ins-hero-title">Entertainment Has Everything.<br><em>It Just Isn't Connected.</em></h1>
-      <p class="ins-hero-desc">The industry doesn't lack talent, stages, capital, or IP. It lacks synchronization. DIGISYNQ connects fragmented resources, coordinates execution, and activates compounding value.</p>
+    <div class="hp-hero" id="main-content">
+      <div class="hp-eyebrow">The Operating Network for Entertainment</div>
+      <h1 class="hp-hero-title">Entertainment Has Everything.<br><em>It Just Isn't Connected.</em></h1>
+      <p class="hp-hero-desc">DIGISYNQ connects the people, places, content and opportunities behind entertainment.</p>
       
-      <div class="ins-hero-actions">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Bring a Project &rarr;</a>
-        <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">How Value Moves &rarr;</a>
+      <div class="hp-hero-actions">
+        <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.95rem 2.4rem;font-size:0.92rem;">Bring a Project &rarr;</a>
+        <a href="contact.html?type=join" class="btn-pill-outline" style="padding:0.95rem 2.4rem;font-size:0.92rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Join the Network &rarr;</a>
       </div>
     </div>
 
-    <!-- 02 // WHAT EXISTS (DARK) -->
-    <section class="ins-section dark" id="what-exists">
+    <!-- 02 // THE PROBLEM -->
+    <section class="ins-section offwhite" id="problem">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">The Landscape</div>
-        <h2 class="ins-h2-light">The Assets Already Exist</h2>
-        <p class="ins-desc-light">The global entertainment industry is rich in creative and physical capability. Every essential element for high-margin production is already present in the market.</p>
+        <div class="sec-eyebrow-light">The Structural Problem</div>
+        <h2 class="ins-h2-dark">Too Much Value Is Sitting Still</h2>
+        <p class="ins-desc-dark">The entertainment industry does not lack assets. It lacks synchronization.</p>
 
-        <div class="home-exists-grid">
-          <div class="home-exist-card">
-            <span class="home-exist-tag">RESOURCE 01</span>
-            <h3>Talent &amp; Creators</h3>
-            <p>Writers, directors, marquee cast, and world-class technical crews.</p>
+        <div class="hp-problem-grid">
+          <div class="hp-problem-item">
+            <span class="hp-problem-label">IDLE CAPACITY</span>
+            <h3>Studios Sitting Dark</h3>
+            <p>A-grade soundstages and facilities sit empty between productions because booking demand is uncoordinated.</p>
           </div>
-          <div class="home-exist-card">
-            <span class="home-exist-tag">RESOURCE 02</span>
-            <h3>Production Spaces</h3>
-            <p>Acoustic soundstages, virtual production floors, and backlots.</p>
+          <div class="hp-problem-item">
+            <span class="hp-problem-label">FRAGMENTED TALENT</span>
+            <h3>Talent Waiting for Briefs</h3>
+            <p>Skilled directors, cinematographers, and crew navigate scattered agency gatekeepers between projects.</p>
           </div>
-          <div class="home-exist-card">
-            <span class="home-exist-tag">RESOURCE 03</span>
-            <h3>Equipment &amp; Post</h3>
-            <p>Camera packages, lighting gear, VFX pipelines, and audio mixing suites.</p>
+          <div class="hp-problem-item">
+            <span class="hp-problem-label">DORMANT STORIES</span>
+            <h3>Content Locked in Storage</h3>
+            <p>Completed screenplays, optioned IP, and finished media wait for structured financing and distribution access.</p>
           </div>
-          <div class="home-exist-card">
-            <span class="home-exist-tag">RESOURCE 04</span>
-            <h3>Stories &amp; IP</h3>
-            <p>Optioned screenplays, published literature, and dormant franchises.</p>
-          </div>
-          <div class="home-exist-card">
-            <span class="home-exist-tag">RESOURCE 05</span>
-            <h3>Capital &amp; Windows</h3>
-            <p>Production funds, brand sponsors, theatrical chains, and OTT platforms.</p>
+          <div class="hp-problem-item">
+            <span class="hp-problem-label">MISSED VELOCITY</span>
+            <h3>Opportunities Lost in Silos</h3>
+            <p>Productions take months to assemble because capital, facilities, and creators operate in isolation.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 03 // WHAT'S BROKEN (OFFWHITE) -->
-    <section class="ins-section offwhite" id="whats-broken">
+    <!-- 03 // THE NETWORK -->
+    <section class="ins-section dark" id="network">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">The Friction</div>
-        <h2 class="ins-h2-dark">Why Value Leaks</h2>
-        <p class="ins-desc-dark">Because these assets exist in silos, massive amounts of value remain locked in invisible inventory and fragmented execution.</p>
+        <div class="ins-eyebrow" style="justify-content:flex-start;">The Ecosystem</div>
+        <h2 class="ins-h2-light">The Network Unifies the Industry</h2>
+        <p class="ins-desc-light">Six essential pillars organized into one seamless, collaborative environment.</p>
 
-        <div class="home-broken-grid">
-          <div class="home-broken-card">
-            <div class="home-broken-num">PROBLEM 01</div>
-            <h3>Idle Soundstage Days</h3>
-            <p>Premium studio facilities sit dark between booked productions because demand is uncoordinated.</p>
+        <div class="hp-eco-box">
+          <div class="hp-eco-nodes">
+            <span class="hp-eco-pill">PEOPLE</span>
+            <span class="hp-eco-pill">INFRASTRUCTURE</span>
+            <span class="hp-eco-pill">CONTENT</span>
+            <span class="hp-eco-pill">MARKET</span>
+            <span class="hp-eco-pill">CAPITAL</span>
+            <span class="hp-eco-pill">AUDIENCE</span>
           </div>
-          <div class="home-broken-card">
-            <div class="home-broken-num">PROBLEM 02</div>
-            <h3>Fragmented Sourcing</h3>
-            <p>Producers spend months negotiating piecemeal contracts across scattered gatekeepers and agencies.</p>
+          <div style="margin: 1.5rem 0; font-size: 1.4rem; color: #71717a;">↓</div>
+          <div style="display:inline-block;">
+            <span class="hp-eco-pill hp-eco-center">DIGISYNQ OPERATING LAYER</span>
           </div>
-          <div class="home-broken-card">
-            <div class="home-broken-num">PROBLEM 03</div>
-            <h3>Dormant IP &amp; Content</h3>
-            <p>Valuable scripts and completed media sit unmonetized without access to structured capital and secondary windows.</p>
-          </div>
-          <div class="home-broken-card">
-            <div class="home-broken-num">PROBLEM 04</div>
-            <h3>Unprotected Releases</h3>
-            <p>Box office narratives are distorted in pre-release windows without real-time sentiment defense.</p>
-          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;text-align:center;">
+          <a href="network.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore the Network &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- 04 // WHAT DIGISYNQ DOES (DARK) -->
-    <section class="ins-section dark" id="how-it-works">
+    <!-- 04 // HOW IT WORKS -->
+    <section class="ins-section white" id="how-it-works">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">The Operating Layer</div>
-        <h2 class="ins-h2-light">Connect. Coordinate. Activate.</h2>
-        <p class="ins-desc-light">DIGISYNQ serves as the neutral coordination infrastructure between all entertainment stakeholders.</p>
+        <div class="sec-eyebrow-light">The Operating Method</div>
+        <h2 class="ins-h2-dark">Find. Connect. Activate. Learn.</h2>
+        <p class="ins-desc-dark">A disciplined operational sequence backed by milestone-governed escrow.</p>
 
-        <div class="home-tri-grid">
-          <div class="home-tri-card">
-            <span class="home-tri-step">STEP 01 // DISCOVER &amp; MATCH</span>
-            <h3>Connect</h3>
-            <p>We make invisible inventory visible — mapping verified soundstages, available technical talent, and dormant IP directly to capitalized projects.</p>
+        <div class="hp-steps-grid">
+          <div class="hp-step">
+            <span class="hp-step-num">01 // FIND</span>
+            <h3>Discover</h3>
+            <p>Locate available soundstages, verified technical talent, and dormant IP in real time.</p>
           </div>
-          <div class="home-tri-card">
-            <span class="home-tri-step">STEP 02 // MILESTONE ESCROW</span>
-            <h3>Coordinate</h3>
-            <p>We replace informal deals with standardized contracts and milestone-backed escrow, ensuring every participant executes with verified trust.</p>
+          <div class="hp-step">
+            <span class="hp-step-num">02 // CONNECT</span>
+            <h3>Match</h3>
+            <p>Package resources directly with funded productions under standardized milestone terms.</p>
           </div>
-          <div class="home-tri-card">
-            <span class="home-tri-step">STEP 03 // VALUE ACTIVATION</span>
-            <h3>Activate</h3>
-            <p>From production launch to multi-window distribution and real-time box office radar, we ensure value moves without friction.</p>
+          <div class="hp-step">
+            <span class="hp-step-num">03 // ACTIVATE</span>
+            <h3>Execute</h3>
+            <p>Coordinate shoot schedules, facility locks, and distribution windows with neutral escrow governance.</p>
           </div>
+          <div class="hp-step">
+            <span class="hp-step-num">04 // LEARN</span>
+            <h3>Compound</h3>
+            <p>Every completed production feeds performance data forward to make the next project faster and safer.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;text-align:center;">
+          <a href="how-it-works.html" class="btn-pill-solid" style="padding:0.85rem 2.2rem;">See How It Works &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- 05 // WHAT HAPPENS (WHITE) -->
-    <section class="ins-section white" id="outcomes">
+    <!-- 05 // SOLUTIONS -->
+    <section class="ins-section dark" id="solutions">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">The Compounding Result</div>
-        <h2 class="ins-h2-dark">The Network Effect</h2>
-        <p class="ins-desc-dark">Every completed production leaves behind data, verified relationships, and higher network density — making the next project faster, safer, and more valuable.</p>
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Stakeholder Solutions</div>
+        <h2 class="ins-h2-light">Built for Every Role in Entertainment</h2>
+        <p class="ins-desc-light">Direct value creation for creators, facility operators, distributors, and capital partners.</p>
 
-        <div class="home-outcomes-grid">
-          <div class="home-outcome-card">
-            <span class="home-outcome-label">HIGHER UTILIZATION</span>
-            <h3>Dormant Assets Monetize</h3>
-            <p>Soundstages fill dark calendar days. Equipment stays rented. Talent moves seamlessly across verified productions.</p>
+        <div class="hp-sol-grid">
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">PRODUCERS</span>
+            <h3>From Brief to Camera</h3>
+            <p>Assemble cast, crew, stages, and distribution in days rather than months.</p>
           </div>
-          <div class="home-outcome-card">
-            <span class="home-outcome-label">FASTER EXECUTION</span>
-            <h3>Turn Months into Days</h3>
-            <p>Complete cast, crew, and stage packages assemble in hours with standardized milestone governance.</p>
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">TALENT</span>
+            <h3>From Availability to Opportunity</h3>
+            <p>Direct access to verified productions with milestone-guaranteed payouts.</p>
           </div>
-          <div class="home-outcome-card">
-            <span class="home-outcome-label">COMPOUNDING REVENUE</span>
-            <h3>We Earn When Value Moves</h3>
-            <p>Zero upfront retainer liabilities. DIGISYNQ participates exclusively in the value successfully created and unlocked.</p>
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">FACILITIES</span>
+            <h3>Turn Idle Capacity into Revenue</h3>
+            <p>Monetize dark soundstage days and unbooked equipment packages seamlessly.</p>
+          </div>
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">CONTENT / IP</span>
+            <h3>Give Dormant IP Another Life</h3>
+            <p>Package screenplays and catalog media into secondary licensing and streaming windows.</p>
+          </div>
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">DISTRIBUTION</span>
+            <h3>The Right Content, The Right Window</h3>
+            <p>Source vetted, completed titles directly for theatrical and OTT licensing.</p>
+          </div>
+          <div class="hp-sol-card">
+            <span class="hp-sol-tag">CAPITAL</span>
+            <h3>Visibility &amp; Escrow Security</h3>
+            <p>Deploy production capital with covenant-backed milestone protection.</p>
           </div>
         </div>
 
-        <div style="margin-top:3.5rem;text-align:center;">
-          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#71717a;margin-bottom:1.2rem;font-weight:700;">READY TO MOBILIZE YOUR PRODUCTION?</div>
-          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.8rem;font-size:0.95rem;">Enter the Network &rarr;</a>
+        <div style="margin-top:2.5rem;text-align:center;">
+          <a href="solutions.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Solutions &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- MONO TRUST STRIP -->
+    <!-- 06 // VALUE & BUSINESS -->
+    <section class="ins-section offwhite" id="value-model">
+      <div style="max-width:1100px;margin:0 auto;text-align:center;">
+        <div class="sec-eyebrow-light" style="justify-content:center;">Commercial Thesis</div>
+        <h2 class="ins-h2-dark">When Value Moves, DIGISYNQ Participates</h2>
+        <p class="ins-desc-dark" style="margin:0 auto 2rem;">Zero upfront retainers. Zero software subscription traps. We monetize when transactions clear.</p>
+
+        <div class="hp-value-track">
+          <span class="hp-val-node">CONNECT</span>
+          <span class="hp-val-arrow">→</span>
+          <span class="hp-val-node">COORDINATE</span>
+          <span class="hp-val-arrow">→</span>
+          <span class="hp-val-node">ACTIVATE</span>
+          <span class="hp-val-arrow">→</span>
+          <span class="hp-val-node">TRANSACT</span>
+          <span class="hp-val-arrow">→</span>
+          <span class="hp-val-node">VALUE</span>
+          <span class="hp-val-arrow">→</span>
+          <span class="hp-val-node" style="background:#09090b;color:#fff;">REVENUE</span>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <a href="business.html" class="btn-pill-solid" style="padding:0.85rem 2.2rem;">See the Business Model &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 // NETWORK EFFECT -->
+    <section class="ins-section dark" id="network-effect">
+      <div style="max-width:1100px;margin:0 auto;text-align:center;">
+        <div class="ins-eyebrow" style="justify-content:center;">Defensibility &amp; Moats</div>
+        <h2 class="ins-h2-light">Every New Connection Makes the Network More Useful</h2>
+        <p class="ins-desc-light" style="margin:0 auto 2.5rem;">The network itself becomes the asset. As density grows, matching speed increases and deal friction drops.</p>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;max-width:850px;margin:0 auto;">
+          <span class="hp-eco-pill">PEOPLE</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill">ASSETS</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill">PROJECTS</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill">TRANSACTIONS</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill">DATA</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill">INTELLIGENCE</span>
+          <span style="color:#71717a;display:flex;align-items:center;">→</span>
+          <span class="hp-eco-pill" style="background:#fff;color:#09090b;font-weight:900;">MORE VALUE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 // PROOF & PILOTS -->
+    <section class="ins-section white" id="proof">
+      <div style="max-width:1100px;margin:0 auto;text-align:center;">
+        <div class="sec-eyebrow-light" style="justify-content:center;">Evidence &amp; Verification</div>
+        <h2 class="ins-h2-dark">Proof Through Execution</h2>
+        <p class="ins-desc-dark" style="margin:0 auto 2rem;">We prioritize verified delivery records and live pilot initiatives over unverified marketing claims.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;text-align:left;margin-top:2.5rem;">
+          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
+              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">PILOT 01</span>
+              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(34,197,94,0.15);color:#16a34a;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● COMPLETED</span>
+            </div>
+            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Studio Capacity Activation</h3>
+            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Coordinated dark soundstage calendar matching with regional indie productions in Karnataka.</p>
+          </div>
+          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
+              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">PILOT 02</span>
+              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(59,130,246,0.15);color:#2563eb;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● ONGOING</span>
+            </div>
+            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Cinema Radar Sentiment Defense</h3>
+            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Pre-release 72-hour sentiment intelligence and threat monitoring for theatrical launch campaigns.</p>
+          </div>
+          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
+              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">INITIATIVE 03</span>
+              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(234,179,8,0.15);color:#ca8a04;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● BUILDING</span>
+            </div>
+            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Dormant IP Syndication</h3>
+            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Packaging unproduced screenplays with vetted showrunners and financing partners.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <a href="proof.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;">View Full Proof &amp; Case Studies &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 // FINAL CALL -->
+    <section class="ins-section dark" id="final-cta" style="text-align:center;padding:clamp(5rem,8vw,7rem) 1.5rem;">
+      <div style="max-width:800px;margin:0 auto;">
+        <div class="hp-eyebrow" style="justify-content:center;">The Operating Standard</div>
+        <h2 style="font-family:var(--font-serif);font-size:clamp(2.2rem,5.5vw,4.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;line-height:1.08;margin:0 0 1.5rem;">
+          Own Less.<br>Connect More.<br><em style="font-style:italic;color:#a1a1aa;">Multiply Value.</em>
+        </h2>
+        <p style="font-size:1.05rem;color:#a1a1aa;max-width:560px;margin:0 auto 2.5rem;line-height:1.6;">
+          Ready to mobilize a production, list studio capacity, or access the network?
+        </p>
+        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+          <a href="contact.html?type=project" class="btn-pill-solid" style="padding:1rem 2.8rem;font-size:0.95rem;">Bring a Project &rarr;</a>
+          <a href="contact.html?type=join" class="btn-pill-outline" style="padding:1rem 2.8rem;font-size:0.95rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Join the Network &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
     <section class="mono-trust-strip" aria-label="Trust Network">
       <div class="mono-trust-inner">
         <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
@@ -268,30 +597,28 @@
           </div>
 
           <div class="f-col">
-            <h4>Explore</h4>
-            <a href="network.html">Network Nodes</a>
-            <a href="platform.html">Operating System</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="flowchart.html">Process Protocol</a>
-            <a href="cinema-damage-control.html">Damage Radar</a>
+            <h4>Core Architecture</h4>
+            <a href="network.html">The Network</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="solutions.html">Stakeholder Solutions</a>
+            <a href="business.html">Revenue Engine</a>
           </div>
 
           <div class="f-col">
-            <h4>Participate</h4>
-            <a href="contact.html?type=join">Enter Network</a>
-            <a href="network.html#talent">Talent Lab</a>
-            <a href="network.html#capacity">List Capacity</a>
-            <a href="business.html">Commercial Model</a>
-            <a href="insights.html">Research</a>
+            <h4>Intelligence &amp; Trust</h4>
+            <a href="cinema-damage-control.html">Cinema Radar</a>
+            <a href="insights.html">Industry Research</a>
+            <a href="proof.html">Proof &amp; Pilots</a>
+            <a href="about.html">About &amp; Founders</a>
+            <a href="lab.html">Innovation Lab</a>
           </div>
 
           <div class="f-col">
             <h4>Connect</h4>
+            <a href="contact.html?type=project">Bring a Project</a>
+            <a href="contact.html?type=join">Join Network</a>
             <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
             <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-            <a href="https://www.instagram.com/digisynq/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.threads.com/@digisynq" target="_blank" rel="noopener">Threads</a>
-            <a href="https://www.youtube.com/@digisynq" target="_blank" rel="noopener">YouTube</a>
           </div>
         </div>
 

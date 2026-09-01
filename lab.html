@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Network — Discover who is connected across People, Infrastructure, Content, Market, Capital, and Audience pillars." />
-  <meta property="og:title" content="The Network — DIGISYNQ" />
-  <meta property="og:description" content="Who is connected: Creators, Soundstages, Technicians, IP, Capital, and Distribution in one synchronized network." />
+  <meta name="description" content="DIGISYNQ Lab — Innovation roadmap, experimental production tools, feature voting, and future entertainment infrastructure." />
+  <meta property="og:title" content="Innovation Lab &amp; Roadmap — DIGISYNQ" />
+  <meta property="og:description" content="Transparently exploring the future of entertainment infrastructure across Live, Pilot, In Development, and Experimental tiers." />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://digisynq.com/network.html" />
-  <title>The Network — DIGISYNQ</title>
+  <link rel="canonical" href="https://digisynq.com/lab.html" />
+  <title>Innovation Lab &amp; Roadmap — DIGISYNQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,67 +16,80 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .net-pillar-grid {
+    .lab-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
       margin-top: 3rem;
     }
-    .net-pillar-card {
+    .lab-card {
       background: #0e0e13;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 2.2rem 2rem;
       text-align: left;
-      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .net-pillar-card:hover {
-      border-color: rgba(255,255,255,0.25);
-      transform: translateY(-3px);
+    .lab-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
     }
-    .net-pillar-num {
+    .lab-status-badge {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: #71717a;
-      font-weight: 800;
-      display: block;
-      margin-bottom: 0.8rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 700;
     }
-    .net-pillar-card h3 {
+    .lab-status-badge.live { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .lab-status-badge.pilot { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .lab-status-badge.dev { background: rgba(234,179,8,0.15); color: #fde047; border: 1px solid rgba(234,179,8,0.3); }
+    .lab-status-badge.experimental { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+
+    .lab-card h3 {
       font-family: var(--font-body);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 900;
       color: #fff;
-      margin: 0 0 0.8rem;
+      margin: 0 0 0.6rem;
     }
-    .net-pillar-card p {
-      font-size: 0.9rem;
+    .lab-card p {
+      font-size: 0.88rem;
       color: #a1a1aa;
       line-height: 1.6;
       margin: 0 0 1.5rem;
     }
-    .net-subnodes {
-      display: flex;
-      flex-wrap: wrap;
+    .lab-vote-btn {
+      display: inline-flex;
+      align-items: center;
       gap: 0.5rem;
-    }
-    .net-subnode {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 6px;
-      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(255,255,255,0.15);
       color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: fit-content;
+    }
+    .lab-vote-btn:hover {
+      background: #fff;
+      color: #09090b;
     }
 
-    .net-conn-box {
+    .proposal-box {
       background: #fff;
       border: 1px solid rgba(0,0,0,0.08);
       border-radius: 18px;
-      padding: 3rem 2.2rem;
+      padding: 3rem 2rem;
       margin-top: 3.5rem;
       text-align: center;
     }
@@ -94,7 +107,7 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
           <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="network.html" class="active">Network</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
@@ -102,7 +115,7 @@
           <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
           <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="lab.html">Lab</a></li>
+          <li><a href="lab.html" class="active">Lab</a></li>
         </ul>
       </nav>
       <div class="nav-actions-right">
@@ -112,7 +125,7 @@
 
     <div class="nav-mobile-overlay">
       <a href="index.html">Home</a>
-      <a href="network.html" class="active">Network</a>
+      <a href="network.html">Network</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="solutions.html">Solutions</a>
       <a href="business.html">Business</a>
@@ -120,134 +133,122 @@
       <a href="insights.html">Insights</a>
       <a href="proof.html">Proof</a>
       <a href="about.html">About</a>
-      <a href="lab.html">Lab</a>
+      <a href="lab.html" class="active">Lab</a>
       <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
     </div>
 
     <!-- HERO -->
     <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">The Connected Ecosystem</div>
-      <h1 class="ins-hero-title">Who Is Connected.<br><em>Every Discipline in Entertainment.</em></h1>
-      <p class="ins-hero-desc">The DIGISYNQ network is organized into six interconnected pillars. We connect the creators, the spaces, the content, and the capital that make production move.</p>
+      <div class="ins-eyebrow">Innovation &amp; Future Architecture</div>
+      <h1 class="ins-hero-title">The DIGISYNQ Lab.<br><em>Experiments in Entertainment Infrastructure.</em></h1>
+      <p class="ins-hero-desc">Explore live tools, active pilot programs, and upcoming protocol modules. We build publicly and transparently with the entertainment ecosystem.</p>
       <div class="ins-hero-actions">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Join the Network &rarr;</a>
-        <a href="how-it-works.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">How Connections Work &rarr;</a>
+        <a href="#roadmap" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Explore Lab Modules &rarr;</a>
+        <a href="#propose" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Propose an Integration &rarr;</a>
       </div>
     </div>
 
-    <!-- 6 PILLARS SECTION -->
-    <section class="ins-section dark" id="pillars">
+    <!-- ROADMAP GRID -->
+    <section class="ins-section dark" id="roadmap">
       <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">Ecosystem Architecture</div>
-        <h2 class="ins-h2-light">The Six Pillars of the Network</h2>
-        <p class="ins-desc-light">Every participant contributes specialized capability, liquidity, or distribution reach.</p>
+        <div class="ins-eyebrow" style="justify-content:flex-start;">Ecosystem Roadmap</div>
+        <h2 class="ins-h2-light">Active Experiments &amp; Capabilities</h2>
+        <p class="ins-desc-light">Clearly classified by development and verification maturity.</p>
 
-        <div class="net-pillar-grid">
+        <div class="lab-grid">
           
-          <!-- Pillar 01 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 01</span>
-            <h3>People</h3>
-            <p>The human engine of entertainment. Verified creative directors, writers, marquee cast, and technical department heads.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Screenwriters</span>
-              <span class="net-subnode">Directors</span>
-              <span class="net-subnode">Cinematographers</span>
-              <span class="net-subnode">Gaffers &amp; Grips</span>
-              <span class="net-subnode">Cast &amp; Talent</span>
+          <!-- Module 01 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 01</span>
+                <span class="lab-status-badge live">● LIVE</span>
+              </div>
+              <h3>Milestone Escrow Router</h3>
+              <p>Automated contract execution and conditional payment releases tied directly to verified department head deliverable sign-offs.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='✓ Verified Active'"><span>▲</span> Active in Core Protocol</button>
           </div>
 
-          <!-- Pillar 02 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 02</span>
-            <h3>Infrastructure</h3>
-            <p>Physical and virtual facilities. Acoustic soundstages, equipment rental packages, and high-bandwidth post suites.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Soundstages</span>
-              <span class="net-subnode">Virtual LED Floors</span>
-              <span class="net-subnode">Camera Packages</span>
-              <span class="net-subnode">VFX Pipelines</span>
-              <span class="net-subnode">Audio Mixing</span>
+          <!-- Module 02 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 02</span>
+                <span class="lab-status-badge live">● LIVE</span>
+              </div>
+              <h3>Cinema Radar 72h Threat Radar</h3>
+              <p>Real-time pre-release sentiment defense, review bombing mitigation, and authorized theatrical clip verification desks.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='✓ Verified Active'"><span>▲</span> Active on Radar Desk</button>
           </div>
 
-          <!-- Pillar 03 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 03</span>
-            <h3>Content &amp; IP</h3>
-            <p>The underlying intellectual value. Optioned scripts, developed formats, franchise bibles, and catalog master rights.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Screenplays</span>
-              <span class="net-subnode">Original Formats</span>
-              <span class="net-subnode">Music Masters</span>
-              <span class="net-subnode">Franchise IP</span>
-              <span class="net-subnode">Dormant Rights</span>
+          <!-- Module 03 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 03</span>
+                <span class="lab-status-badge pilot">● PILOT</span>
+              </div>
+              <h3>Dynamic Stage Dark-Day Index</h3>
+              <p>Direct calendar feed integration across major studio lots to match unbooked vacancy with rapid-turnaround commercial and indie shoots.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (142)'"><span>▲</span> Upvote (141)</button>
           </div>
 
-          <!-- Pillar 04 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 04</span>
-            <h3>Market &amp; Windows</h3>
-            <p>The distribution corridors. Theatrical circuits, streaming platforms, broadcast networks, and international sales desks.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Theatrical Chains</span>
-              <span class="net-subnode">OTT Platforms</span>
-              <span class="net-subnode">Regional Distros</span>
-              <span class="net-subnode">Global Sales</span>
-              <span class="net-subnode">Sponsors</span>
+          <!-- Module 04 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 04</span>
+                <span class="lab-status-badge dev">● IN DEVELOPMENT</span>
+              </div>
+              <h3>Algorithmic Relational Graph</h3>
+              <p>Analyzing historical collaboration patterns to recommend director-cinematographer-soundstage packages with optimal operational fit.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (98)'"><span>▲</span> Upvote (97)</button>
           </div>
 
-          <!-- Pillar 05 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 05</span>
-            <h3>Capital</h3>
-            <p>Strategic and institutional financing. Production funds, co-production partners, and milestone-backed escrow facilities.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Production Funds</span>
-              <span class="net-subnode">Co-Producers</span>
-              <span class="net-subnode">Milestone Escrow</span>
-              <span class="net-subnode">Private Capital</span>
-              <span class="net-subnode">Brand Backers</span>
+          <!-- Module 05 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 05</span>
+                <span class="lab-status-badge experimental">● EXPERIMENTAL</span>
+              </div>
+              <h3>Automated Secondary Window Clearing</h3>
+              <p>Instant syndication matching for completed catalog titles seeking non-exclusive regional streaming and airline distribution windows.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (76)'"><span>▲</span> Upvote (75)</button>
           </div>
 
-          <!-- Pillar 06 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 06</span>
-            <h3>Audience &amp; Radar</h3>
-            <p>The reception environment. Fan communities, creator networks, ticketing velocity signals, and reputation radar.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Cinema Radar</span>
-              <span class="net-subnode">Creator Hubs</span>
-              <span class="net-subnode">Fan Communities</span>
-              <span class="net-subnode">Advance Bookings</span>
-              <span class="net-subnode">Sentiment Feeds</span>
+          <!-- Module 06 -->
+          <div class="lab-card">
+            <div>
+              <div class="lab-badge-row">
+                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 06</span>
+                <span class="lab-status-badge experimental">● EXPERIMENTAL</span>
+              </div>
+              <h3>Cross-Industry Brand Integration Desk</h3>
+              <p>Direct-to-script organic product integration without extractive agency markups, secured through production milestone escrow.</p>
             </div>
+            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (63)'"><span>▲</span> Upvote (62)</button>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- RELATIONSHIPS & CONNECTIVITY -->
-    <section class="ins-section white" id="connectivity">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Network Dynamics</div>
-        <h2 class="ins-h2-dark">The Network Is the Asset</h2>
-        <p class="ins-desc-dark">Rather than individual silos, DIGISYNQ maps the relationship graph between every node.</p>
-
-        <div class="net-conn-box">
-          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#09090b;font-weight:800;margin-bottom:1rem;">INTERCONNECTED RELATIONAL GRAPH</div>
-          <p style="font-size:1rem;color:#52525b;max-width:720px;margin:0 auto 2rem;line-height:1.65;">
-            When a producer lists a project, DIGISYNQ routes it to compatible soundstages with dark calendar days, matches available cinematography pods, and aligns distribution interest before a single day of shooting begins.
+    <!-- PROPOSE INTEGRATION -->
+    <section class="ins-section white" id="propose">
+      <div style="max-width:900px;margin:0 auto;">
+        <div class="proposal-box">
+          <div class="sec-eyebrow-light" style="justify-content:center;">Governance &amp; Proposals</div>
+          <h2 class="ins-h2-dark" style="margin-bottom:0.6rem;">Propose a Tool or Protocol Feature</h2>
+          <p class="ins-desc-dark" style="margin:0 auto 2rem;max-width:540px;">
+            Are you a studio owner, technical head, or producer with a specific operational bottleneck? Help us shape upcoming DIGISYNQ infrastructure.
           </p>
-          <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-            <a href="how-it-works.html" class="btn-pill-solid" style="padding:0.9rem 2.4rem;">See How It Operates &rarr;</a>
-            <a href="contact.html?type=join" class="btn-pill-outline" style="padding:0.9rem 2.4rem;">Apply for Network Access &rarr;</a>
-          </div>
+          <a href="contact.html?type=discuss" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Submit Protocol Proposal &rarr;</a>
         </div>
       </div>
     </section>
