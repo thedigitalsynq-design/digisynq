@@ -1,295 +1,899 @@
 /**
- * DIGISYNQ — Master Interactive Engine
- * Liquid Glass UI · Scroll-driven Reveal Animations · Sticky Nav · Performance-First
+ * DIGISYNQ — Entertainment Ecosystem Orchestration OS
+ * Master Client-Side Engine & Interactive Canvas Network
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initStickyHeader();
-  initScrollReveal();
-  initSmoothScroll();
-  initCopyButtons();
-  initContactForm();
-  initPageTransitionLinks();
+  initNavbarScroll();
+  initMobileMenu();
+  initHeroNetworkCanvas();
+  initLeakageSimulator();
+  initLoopConsole();
+  initEngineModules();
+  initEcosystemTabs();
+  initMissionControl();
+  initModals();
+  checkUrlParams();
 });
 
-/* ===========================================================
-   STICKY LIQUID GLASS NAVIGATION
-   =========================================================== */
-function initStickyHeader() {
-  const header = document.querySelector('.top-nav');
-  if (!header) return;
+/* ==========================================================================
+   01. NAVBAR SCROLL & MOBILE MENU
+   ========================================================================== */
+function initNavbarScroll() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}
 
-  let ticking = false;
-  const onScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        header.classList.toggle('scrolled', window.scrollY > 24);
-        ticking = false;
+function initMobileMenu() {
+  const toggleBtn = document.querySelector('.nav-mobile-toggle');
+  const mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (!toggleBtn || !mobileMenu) return;
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  });
+}
+
+/* ==========================================================================
+   02. HERO PROPRIETARY REAL-WORLD ECOSYSTEM GRAPH (CANVAS)
+   ========================================================================== */
+let setGraphMode = null;
+let currentGraphMode = 'synchronized';
+
+function initHeroNetworkCanvas() {
+  const canvas = document.getElementById('heroNetworkCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  let nodes = [];
+  let packets = [];
+  let mouse = { x: null, y: null, maxDistance: 160 };
+
+  const assetNodes = [
+    { label: 'Acoustic stage 04', category: 'Production', color: '#10b981', status: '88% booked' },
+    { label: 'Alexa 35 prime package', category: 'Gear', color: '#06b6d4', status: 'QC verified' },
+    { label: 'DIT raw checksum lab', category: 'Technology', color: '#38bdf8', status: 'Hash verified' },
+    { label: 'Neutral milestone escrow', category: 'Capital', color: '#f59e0b', status: '100% locked' },
+    { label: 'ACES proxy conform desk', category: 'Post', color: '#8b5cf6', status: 'Conform ready' },
+    { label: 'Guild cinematographer pod', category: 'Talent', color: '#ec4899', status: 'Schedule lock' },
+    { label: 'OTT regional buyer desk', category: 'Distribution', color: '#6366f1', status: 'Acquisition live' },
+    { label: 'Cinema Radar 72h shield', category: 'Security', color: '#06b6d4', status: 'Threat scan' }
+  ];
+
+  function resize() {
+    if (!canvas.parentElement) return;
+    const rect = canvas.parentElement.getBoundingClientRect();
+    width = canvas.width = rect.width;
+    height = canvas.height = rect.height;
+    createNodes();
+  }
+
+  function createNodes() {
+    nodes = [];
+    packets = [];
+    
+    // Create dedicated real-world asset nodes with elliptical orbit distribution
+    const rx = Math.min(width * 0.38, 420);
+    const ry = Math.min(height * 0.36, 175);
+
+    assetNodes.forEach((asset, idx) => {
+      const angle = (idx / assetNodes.length) * Math.PI * 2 - Math.PI / 2;
+      nodes.push({
+        x: width / 2 + Math.cos(angle) * rx,
+        y: height / 2 + Math.sin(angle) * ry,
+        origAngle: angle,
+        vx: (Math.random() - 0.5) * 1.2,
+        vy: (Math.random() - 0.5) * 1.2,
+        radius: 5,
+        color: asset.color,
+        label: asset.label,
+        category: asset.category,
+        status: asset.status,
+        pulse: Math.random() * Math.PI
       });
-      ticking = true;
+    });
+
+    // Ambient background nodes
+    const ambientCount = Math.min(Math.floor(width / 24), 28);
+    for (let i = 0; i < ambientCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1,
+        color: 'rgba(255, 255, 255, 0.25)',
+        label: null,
+        pulse: Math.random() * Math.PI
+      });
+    }
+
+    // Add Central DigiSynq Core Node
+    nodes.push({
+      x: width / 2,
+      y: height / 2,
+      vx: 0,
+      vy: 0,
+      radius: 9,
+      color: '#06b6d4',
+      isCore: true,
+      label: 'DigiSynq Core Hub',
+      pulse: 0
+    });
+  }
+
+  setGraphMode = function(mode) {
+    currentGraphMode = mode;
+    const buttons = document.querySelectorAll('.sim-mode-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-mode') === mode) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    const statusBadge = document.getElementById('graphStatusBadge');
+    if (statusBadge) {
+      if (mode === 'fragmented') {
+        statusBadge.innerHTML = '<span class="telemetry-status-dot red"></span><span>Fragmented model: Siloed assets &amp; 42% leakage</span>';
+      } else if (mode === 'active-slate') {
+        statusBadge.innerHTML = '<span class="telemetry-status-dot blue"></span><span>Active production: Live telemetry packets streaming</span>';
+      } else {
+        statusBadge.innerHTML = '<span class="telemetry-status-dot green"></span><span>Synchronized model: 88% yield &amp; escrow locked</span>';
+      }
     }
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
 
-/* ===========================================================
-   SCROLL-DRIVEN REVEAL ANIMATIONS (IntersectionObserver)
-   =========================================================== */
-function initScrollReveal() {
-  const SELECTOR = [
-    '.tlc-prob-sol-card', '.tlc-node-card', '.solution-deep-card', '.pillar-plain-card',
-    '.protocol-step-box', '.radar-timeline-box', '.revenue-stream-card', '.paper-deep-card',
-    '.workshop-card', '.tlc-partner-card', '.tlc-compare-card', '.tlc-stat-card',
-    '.tlc-pedestal-section', '.ins-card', '.subpage-card', '[data-reveal]'
-  ].join(', ');
+  function spawnPacket() {
+    if (currentGraphMode !== 'active-slate') return;
+    const realNodes = nodes.filter(n => n.label && !n.isCore);
+    if (realNodes.length < 2) return;
+    const n1 = realNodes[Math.floor(Math.random() * realNodes.length)];
+    const coreNode = nodes.find(n => n.isCore);
+    if (!coreNode) return;
 
-  const targets = document.querySelectorAll(SELECTOR);
-
-  // Add class BEFORE paint with staggered delay
-  targets.forEach((el, i) => {
-    el.classList.add('reveal-hidden');
-    el.style.transitionDelay = `${(i % 4) * 60}ms`;
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        el.classList.remove('reveal-hidden');
-        el.classList.add('reveal-visible');
-        el.addEventListener('transitionend', () => {
-          el.style.transitionDelay = '';
-          el.style.willChange = 'auto';
-        }, { once: true });
-        observer.unobserve(el);
-      }
+    packets.push({
+      startX: n1.x,
+      startY: n1.y,
+      endX: coreNode.x,
+      endY: coreNode.y,
+      x: n1.x,
+      y: n1.y,
+      progress: 0,
+      speed: 0.035 + Math.random() * 0.02,
+      color: n1.color
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  }
 
-  targets.forEach(el => observer.observe(el));
-}
+  setInterval(spawnPacket, 220);
 
-/* ===========================================================
-   SUBTLE HERO PARALLAX (RAF-throttled, GPU-only)
-   =========================================================== */
-function initParallaxHero() {
-  const hero = document.querySelector('.ins-hero, .hero-section, .tlc-hero-stage');
-  if (!hero) return;
+  let angleOffset = 0;
+  let radarRadius = 0;
 
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (y < 600) {
-          hero.style.transform = `translate3d(0, ${y * 0.08}px, 0)`;
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    angleOffset += (currentGraphMode === 'active-slate' ? 0.006 : 0.0025);
+    radarRadius = (radarRadius + 1.2) % (Math.min(width, height) * 0.45);
+
+    const coreNode = nodes.find(n => n.isCore);
+    if (coreNode) {
+      coreNode.x = width / 2;
+      coreNode.y = height / 2;
+
+      // Draw Radar Shockwave Rings around core
+      if (currentGraphMode !== 'fragmented') {
+        ctx.beginPath();
+        ctx.arc(coreNode.x, coreNode.y, radarRadius, 0, Math.PI * 2);
+        const ringAlpha = Math.max(0, 1 - radarRadius / (Math.min(width, height) * 0.45)) * 0.25;
+        ctx.strokeStyle = `rgba(6, 182, 212, ${ringAlpha})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(coreNode.x, coreNode.y, (radarRadius * 0.6) % (Math.min(width, height) * 0.45), 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(139, 92, 246, ${ringAlpha * 0.8})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    const isFragmented = currentGraphMode === 'fragmented';
+    const rx = Math.min(width * 0.38, 420);
+    const ry = Math.min(height * 0.36, 175);
+
+    // Pass 1: Update positions & draw connection lines
+    for (let i = 0; i < nodes.length; i++) {
+      const n1 = nodes[i];
+
+      if (!n1.isCore) {
+        if (isFragmented) {
+          // Chaotic drift
+          n1.x += n1.vx * 1.5;
+          n1.y += n1.vy * 1.5;
+          if (n1.x < 30 || n1.x > width - 30) n1.vx *= -1;
+          if (n1.y < 30 || n1.y > height - 30) n1.vy *= -1;
+        } else if (n1.origAngle !== undefined) {
+          // Harmonic orbit across wide ellipse
+          const curAngle = n1.origAngle + angleOffset;
+          const targetX = width / 2 + Math.cos(curAngle) * rx;
+          const targetY = height / 2 + Math.sin(curAngle) * ry;
+          n1.x += (targetX - n1.x) * 0.08;
+          n1.y += (targetY - n1.y) * 0.08;
+        } else {
+          n1.x += n1.vx;
+          n1.y += n1.vy;
+          if (n1.x < 0 || n1.x > width) n1.vx *= -1;
+          if (n1.y < 0 || n1.y > height) n1.vy *= -1;
         }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-}
-
-/* ===========================================================
-   SMOOTH SCROLL ANCHORS WITH NAV PILL OFFSET
-   =========================================================== */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const headerOffset = 95;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
       }
-    });
+
+      // Mouse repulsion & interactive beam
+      if (mouse.x !== null && mouse.y !== null) {
+        const mdx = n1.x - mouse.x;
+        const mdy = n1.y - mouse.y;
+        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < 130) {
+          const force = (1 - mdist / 130) * 6;
+          n1.x += (mdx / mdist) * force;
+          n1.y += (mdy / mdist) * force;
+
+          if (n1.label) {
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            ctx.lineTo(n1.x, n1.y);
+            ctx.strokeStyle = `rgba(6, 182, 212, ${(1 - mdist / 130) * 0.4})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      n1.pulse += 0.035;
+
+      // Draw connections
+      if (!isFragmented) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const n2 = nodes[j];
+          const dx = n1.x - n2.x;
+          const dy = n1.y - n2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = (n1.isCore || n2.isCore) ? 360 : 170;
+
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * 0.65;
+            ctx.beginPath();
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.strokeStyle = (n1.isCore || n2.isCore) ? `rgba(6, 182, 212, ${alpha * 1.8})` : `rgba(255, 255, 255, ${alpha * 0.35})`;
+            ctx.lineWidth = (n1.isCore || n2.isCore) ? 1.8 : 0.75;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    // Pass 2: Draw Nodes
+    for (let i = 0; i < nodes.length; i++) {
+      const n1 = nodes[i];
+      ctx.beginPath();
+      const currentRadius = n1.isCore ? n1.radius + Math.sin(n1.pulse) * 2 : (n1.label ? n1.radius + Math.sin(n1.pulse) * 0.6 : n1.radius);
+      ctx.arc(n1.x, n1.y, currentRadius, 0, Math.PI * 2);
+      ctx.fillStyle = isFragmented && n1.label ? '#ef4444' : n1.color;
+      ctx.fill();
+
+      // Node Glow
+      if (n1.isCore || n1.label) {
+        ctx.shadowColor = isFragmented && n1.label ? '#ef4444' : n1.color;
+        ctx.shadowBlur = n1.isCore ? 20 : 12;
+      } else {
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    // Pass 3: Draw Clean Glass Badges (Layered on top of lines so they never collide!)
+    for (let i = 0; i < nodes.length; i++) {
+      const n1 = nodes[i];
+      if (!n1.label) continue;
+
+      ctx.save();
+      ctx.shadowBlur = 0;
+      ctx.font = n1.isCore ? 'bold 11px Denton, sans-serif' : '10px Denton, sans-serif';
+      const text = n1.label;
+      const textW = ctx.measureText(text).width;
+      const padX = 8;
+      const padY = 3.5;
+      const badgeW = textW + padX * 2;
+      const badgeH = 20;
+
+      let badgeX, badgeY;
+
+      if (n1.isCore) {
+        badgeX = n1.x - badgeW / 2;
+        badgeY = n1.y + 16;
+      } else {
+        // Place badge radially outward from center
+        const angleFromCenter = Math.atan2(n1.y - height / 2, n1.x - width / 2);
+        if (Math.cos(angleFromCenter) >= 0) {
+          badgeX = n1.x + 10;
+        } else {
+          badgeX = n1.x - badgeW - 10;
+        }
+        badgeY = n1.y - badgeH / 2;
+      }
+
+      // Constrain inside canvas
+      badgeX = Math.max(10, Math.min(width - badgeW - 10, badgeX));
+      badgeY = Math.max(10, Math.min(height - badgeH - 10, badgeY));
+
+      // Draw Glass Pill Background
+      ctx.fillStyle = n1.isCore ? 'rgba(6, 24, 40, 0.92)' : 'rgba(10, 14, 22, 0.9)';
+      ctx.strokeStyle = n1.isCore ? 'rgba(6, 182, 212, 0.8)' : (isFragmented ? 'rgba(239, 68, 68, 0.5)' : 'rgba(255, 255, 255, 0.16)');
+      ctx.lineWidth = 1;
+
+      ctx.beginPath();
+      ctx.roundRect(badgeX, badgeY, badgeW, badgeH, 10);
+      ctx.fill();
+      ctx.stroke();
+
+      // Text
+      ctx.fillStyle = n1.isCore ? '#38bdf8' : (isFragmented ? '#fca5a5' : '#f8fafc');
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, badgeX + padX, badgeY + badgeH / 2);
+
+      ctx.restore();
+    }
+
+    // Render Data Packets (Active Mode)
+    for (let p = packets.length - 1; p >= 0; p--) {
+      const pkt = packets[p];
+      pkt.progress += pkt.speed;
+      pkt.x = pkt.startX + (pkt.endX - pkt.startX) * pkt.progress;
+      pkt.y = pkt.startY + (pkt.endY - pkt.startY) * pkt.progress;
+
+      ctx.beginPath();
+      ctx.arc(pkt.x, pkt.y, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowColor = pkt.color;
+      ctx.shadowBlur = 14;
+      ctx.fill();
+
+      if (pkt.progress >= 1) {
+        packets.splice(p, 1);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
   });
+
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  window.addEventListener('resize', resize);
+  resize();
+  animate();
 }
 
-/* ===========================================================
-   PAGE TRANSITION LINKS (Tactile navigation with quick fade)
-   =========================================================== */
-function initPageTransitionLinks() {
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto') ||
-        href.startsWith('tel') || href.startsWith('http') || href.startsWith('//') ||
-        link.getAttribute('target') === '_blank') return;
+/* ==========================================================================
+   03. INTERACTIVE ECONOMIC LEAKAGE & YIELD SIMULATOR
+   ========================================================================== */
+function initLeakageSimulator() {
+  const slider = document.getElementById('budgetSlider');
+  const budgetDisplay = document.getElementById('simBudgetDisplay');
+  const leakageVal = document.getElementById('simLeakageVal');
+  const recoveredVal = document.getElementById('simRecoveredVal');
+  const timeSavedVal = document.getElementById('simTimeSavedVal');
+  const darkDaysVal = document.getElementById('simDarkDaysVal');
+
+  if (!slider) return;
+
+  function updateSimulation() {
+    const budgetCr = parseFloat(slider.value);
     
-    link.addEventListener('click', (e) => {
-      // Allow user command/ctrl clicks for opening new tabs
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-      
-      e.preventDefault();
-      const appCard = document.querySelector('.app-card');
-      if (appCard) {
-        appCard.style.transition = 'opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1)';
-        appCard.style.opacity = '0';
-        appCard.style.transform = 'scale(0.995)';
-      }
-      setTimeout(() => { window.location.href = href; }, 160);
-    });
-  });
-}
+    // Format Display
+    if (budgetDisplay) {
+      budgetDisplay.textContent = budgetCr >= 1 ? `₹${budgetCr.toFixed(1)} Cr ($${(budgetCr * 120).toFixed(0)}K)` : `₹${(budgetCr * 100).toFixed(0)} Lakh ($${(budgetCr * 120).toFixed(0)}K)`;
+    }
 
-/* ===========================================================
-   COPY BUTTONS WITH GLASS TOAST
-   =========================================================== */
-function initCopyButtons() {
-  document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const text = btn.getAttribute('data-copy');
-      try {
-        await navigator.clipboard.writeText(text);
-        showToast('Copied to clipboard!');
-      } catch (err) {
-        showToast('Contact: ' + text);
-      }
-    });
-  });
-}
+    // Calculations based on empirical industry leakage rates (20% avg leakage, 85% recovered)
+    const leakageAmt = budgetCr * 0.22;
+    const recoveredAmt = leakageAmt * 0.88;
+    const timeSavedWeeks = Math.max(2, Math.round(budgetCr * 1.5 + 2));
+    const darkDaysActivated = Math.max(6, Math.round(budgetCr * 4.2 + 4));
 
-function showToast(msg) {
-  let toast = document.querySelector('.glass-toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.className = 'glass-toast';
-    document.body.appendChild(toast);
-  }
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2500);
-}
-
-/* ===========================================================
-   CONTACT FORM QUERY PARAM HANDLER
-   =========================================================== */
-function initContactForm() {
-  const select = document.getElementById('contact-type');
-  if (select) {
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get('type');
-    if (type) {
-      const map = { talent: 'join', join: 'join', capacity: 'capacity', discuss: 'discuss', content: 'content', brand: 'brand', radar: 'radar' };
-      if (map[type]) select.value = map[type];
+    if (leakageVal) {
+      leakageVal.textContent = leakageAmt >= 1 ? `₹${leakageAmt.toFixed(2)} Cr` : `₹${(leakageAmt * 100).toFixed(1)} L`;
+    }
+    if (recoveredVal) {
+      recoveredVal.textContent = recoveredAmt >= 1 ? `₹${recoveredAmt.toFixed(2)} Cr` : `₹${(recoveredAmt * 100).toFixed(1)} L`;
+    }
+    if (timeSavedVal) {
+      timeSavedVal.textContent = `${timeSavedWeeks} weeks`;
+    }
+    if (darkDaysVal) {
+      darkDaysVal.textContent = `${darkDaysActivated} dark days`;
     }
   }
 
-  const form = document.getElementById('main-contact-form');
-  if (form) {
-    form.addEventListener('submit', () => showToast('Transmitting to SYNQ Operating Desk...'));
-  }
+  slider.addEventListener('input', updateSimulation);
+  updateSimulation();
 }
 
-/* ===========================================================
-   HERO COMMAND CONSOLE INTERACTIVE FORMAT SWITCHER
-   =========================================================== */
-const HERO_FORMATS = [
-  {
-    tag: "SETUP 01 // FEATURE CINEMA & MOVIES",
-    title: "Acoustic Soundstages & Top Cinema Camera Packages",
-    desc: "Book certified soundstages and camera packages with zero middleman markups. We match you with vetted cinematographers, gaffers, and sound recordists with 100% escrow protection.",
-    specs: ["✓ ARRI ALEXA MINI LF", "✓ 12,000 SQFT SOUNDSTAGE", "✓ 100% ESCROW PROTECTED", "✓ 72H MOVIE DEFENSE"],
-    cta: "Start Your Film Brief &rarr;",
-    href: "contact.html?type=project",
-    sla: "< 48 Hours",
-    stages: "14 Stages Available",
-    payment: "100% Safe Escrow",
-    protocol: "Zero Hidden Markups"
-  },
-  {
-    tag: "SETUP 02 // OTT STREAMING SERIES",
-    title: "Long-Term Stage Schedules & Complete Crew Teams",
-    desc: "Keep your multi-episode series on track. Lock soundstage schedules, hire experienced unit directors, and guarantee smooth post-production and edit deliveries.",
-    specs: ["✓ MULTI-CAMERA RIGS", "✓ 45-DAY STAGE LOCK", "✓ DIRECT POST & EDIT PIPELINE", "✓ CLEAR COPYRIGHT GUARANTEE"],
-    cta: "Start Series Production &rarr;",
-    href: "contact.html?type=project",
-    sla: "< 72 Hours",
-    stages: "9 Stages Available",
-    payment: "Milestone Escrow",
-    protocol: "Turnkey Crew Teams"
-  },
-  {
-    tag: "SETUP 03 // YOUTUBE & DIGITAL CREATORS",
-    title: "Flexible Studio Rentals & Fast Crew Booking",
-    desc: "Level up your digital shows, sketches, podcasts, and docuseries. Rent soundstages for flexible 1-to-3 day shoots and hire camera operators who are paid the day you wrap.",
-    specs: ["✓ 1-DAY STAGE RENTALS", "✓ PRO WIRELESS AUDIO", "✓ SAME-DAY WRAP PAY", "✓ FAST EDIT DISPATCH"],
-    cta: "Book Creator Studio &rarr;",
-    href: "contact.html?type=project",
-    sla: "< 24 Hours",
-    stages: "18 Studios Ready",
-    payment: "Paid on Wrap Day",
-    protocol: "No Long Leases"
-  },
-  {
-    tag: "SETUP 04 // COMMERCIALS & AD AGENCIES",
-    title: "48-Hour Turnkey Crew & Stage Setups for Ad Agencies",
-    desc: "Ad agencies and brand teams get high-speed Phantom cameras, tabletop stages, and top cinematographers confirmed in 48 hours with single-invoice billing.",
-    specs: ["✓ 48H CREW DISPATCH", "✓ PHANTOM HIGH-SPEED", "✓ PRO TABLETOP STAGES", "✓ SINGLE INVOICE BILLING"],
-    cta: "Send Commercial Brief &rarr;",
-    href: "contact.html?type=project",
-    sla: "< 48 Hours",
-    stages: "8 Tabletop Stages",
-    payment: "Single-Invoice Escrow",
-    protocol: "Direct DP Attachment"
-  },
-  {
-    tag: "SETUP 05 // PRACTICAL WORKSHOPS",
-    title: "Hands-On Soundstage Workshops & Practical Training",
-    desc: "We host practical training on partner soundstages during empty days. Learn cinematography and lighting from industry veterans and get verified for paid shoots.",
-    specs: ["✓ REAL SOUNDSTAGE SESSIONS", "✓ ARRI & RED CAMERA RIGS", "✓ VIRTUAL LED STAGES", "✓ PAID CREW VERIFICATION"],
-    cta: "See Upcoming Workshops &rarr;",
-    href: "workshops.html",
-    sla: "Weekly Cohorts",
-    stages: "Partner Stages",
-    payment: "Transparent Pricing",
-    protocol: "On-Set Certification"
-  }
+/* ==========================================================================
+   04. INTERACTIVE 12-STEP LOOP CONSOLE
+   ========================================================================== */
+const LOOP_STEPS_DATA = [
+  { step: '01', name: 'Detect', title: 'Fragmentation & Bottleneck Detection', desc: 'Continuous intake scanner maps idle soundstages, unscheduled camera bodies, and stalled project slates.', input: 'Stage schedules, gear inventory feeds, permit logs', verification: 'Acoustic rating STC check, serial hash QC', output: 'Identified gap calendar & scope specification' },
+  { step: '02', name: 'Map', title: 'Resource & Relational Graph Mapping', desc: 'Indexes certified craftspeople, equipment bench ratings, and facility acoustics into a queryable graph.', input: 'Past theatrical credits, rate benchmarks, telemetry', verification: 'Guild roster audit & technical competency score', output: 'Ranked candidate pods with compatibility score' },
+  { step: '03', name: 'Qualify', title: 'Capability & Calibration Vetting', desc: 'Validates lens mount tolerances, camera firmware, and department head availability matrices.', input: 'Optical bench QC logs, technician schedule feeds', verification: 'Dual sign-off from DP and Master Rental House', output: 'Certified production-ready equipment package' },
+  { step: '04', name: 'Connect', title: 'Neutral Packaging & Attachment', desc: 'Pairs verified director-cinematographer-soundstage pods with zero informal broker friction.', input: 'Creative brief, budget boundaries, schedule window', verification: 'Mutual confirmation protocol & schedule lock', output: 'Locked multi-department production package' },
+  { step: '05', name: 'Secure', title: 'Milestone Escrow & Trust Lock', desc: 'Locks neutral milestone escrow vaults via SYNQVAULT™ before load-in to guarantee 100% payment security.', input: 'Production budget schedule, milestone tranche matrix', verification: 'SYNQVAULT™ banking ledger confirmation', output: 'Escrow Lock Certificate & zero default guarantee' },
+  { step: '06', name: 'Activate', title: 'Dark Capacity Unlocking', desc: 'Converts unbooked soundstage gap windows into rapid-turnaround commercial and digital shoot dates.', input: 'Lot calendar vacancy window (3-10 days)', verification: 'Dynamic rate yield contract approval', output: 'Activated stage booking at optimized yield rate' },
+  { step: '07', name: 'Coordinate', title: 'Synchronized Workflow Execution', desc: 'Harmonizes on-set daily call sheets, DIT raw checksum ingestion, and ACES proxy post delivery.', input: 'Digital call sheet, camera roll metadata, sound logs', verification: 'Automated checksum hash comparison', output: 'Same-day proxy delivery to editorial suites' },
+  { step: '08', name: 'Monitor', title: 'Real-Time Telemetry & Burn Oversight', desc: 'Monitors milestone draw burn rates, overtime hours, and verified footage upload completion.', input: 'Daily wrap report, DIT cloud checksum match', verification: 'Department Head digital signature lock', output: 'Live milestone health index (LMHI) indicator' },
+  { step: '09', name: 'Intervene', title: 'Anomaly & Threat Resolution', desc: 'Detects schedule slippage, missing optic mounts, or pre-release piracy leaks; deploys instant response pods.', input: 'Radar sentiment scan, link scraper, on-set alert', verification: 'DMCA verification & emergency swap router', output: 'Under 15-minute resolution or equipment swap' },
+  { step: '10', name: 'Settle', title: 'Milestone Verification & Automated Disbursal', desc: 'Final post-wrap audit verifies delivered master proxies, wraps crew timecards, and triggers automated escrow payouts.', input: 'Post-production ingestion receipt, line item expense ledger', verification: 'Independent escrow audit certificate', output: 'Automated wire releases with zero invoice lag' },
+  { step: '11', name: 'Learn', title: 'Predictive Graph Compounding', desc: 'Feeds project performance telemetry back into SYNQINTEL™ to refine future package recommendations.', input: 'Full project timeline & collaboration metrics', verification: 'Relational vector update in core OS', output: 'Enhanced predictive accuracy for next slate' },
+  { step: '12', name: 'Scale', title: 'Multi-Vertical Ecosystem Replication', desc: 'Deploys verified playbooks across feature cinema, OTT series, commercial TVC, gaming, and virtual production.', input: 'Standardized operational template', verification: 'Cross-vertical adapter compliance', output: 'Autonomous multi-slate ecosystem throughput' }
 ];
 
-window.switchHeroFormat = function(index) {
-  const f = HERO_FORMATS[index];
-  if (!f) return;
+function initLoopConsole() {
+  const stepButtons = document.querySelectorAll('.loop-step-btn');
+  if (!stepButtons.length) return;
 
-  // Update tabs
-  const tabs = document.querySelectorAll('.tlc-format-tab-btn');
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle('active', i === index);
-    tab.setAttribute('aria-selected', i === index ? 'true' : 'false');
+  const phaseEl = document.getElementById('loopStepPhase');
+  const titleEl = document.getElementById('loopStepTitle');
+  const descEl = document.getElementById('loopStepDesc');
+  const inputEl = document.getElementById('loopStepInput');
+  const verifyEl = document.getElementById('loopStepVerify');
+  const outputEl = document.getElementById('loopStepOutput');
+  const displayCard = document.getElementById('loopDisplayCard');
+
+  function renderStep(idx) {
+    const data = LOOP_STEPS_DATA[idx];
+    if (!data) return;
+
+    if (displayCard) {
+      displayCard.style.opacity = '0.7';
+      displayCard.style.transform = 'translateY(4px)';
+    }
+
+    setTimeout(() => {
+      if (phaseEl) phaseEl.textContent = `Phase ${data.step} // ${data.name}`;
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.textContent = data.desc;
+      if (inputEl) inputEl.textContent = data.input;
+      if (verifyEl) verifyEl.textContent = data.verification;
+      if (outputEl) outputEl.textContent = data.output;
+
+      if (displayCard) {
+        displayCard.style.opacity = '1';
+        displayCard.style.transform = 'translateY(0)';
+      }
+    }, 120);
+  }
+
+  stepButtons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      stepButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStep(idx);
+    });
   });
 
-  // Update text with soft animation
-  const tagEl = document.getElementById('heroFormatTag');
-  const titleEl = document.getElementById('heroFormatTitle');
-  const descEl = document.getElementById('heroFormatDesc');
-  const specsEl = document.getElementById('heroFormatSpecs');
-  const ctaEl = document.getElementById('heroFormatCta');
-  const hudSla = document.getElementById('hudSla');
-  const hudStages = document.getElementById('hudStages');
-  const hudPayment = document.getElementById('hudPayment');
-  const hudProtocol = document.getElementById('hudProtocol');
+  renderStep(0);
+}
 
-  if (tagEl) tagEl.textContent = f.tag;
-  if (titleEl) titleEl.textContent = f.title;
-  if (descEl) descEl.textContent = f.desc;
-  if (ctaEl) {
-    ctaEl.innerHTML = f.cta;
-    ctaEl.setAttribute('href', f.href);
+/* ==========================================================================
+   05. THE DIGISYNQ ENGINE (13 INTERACTIVE MODULES)
+   ========================================================================== */
+const ENGINE_DATA = {
+  scan: {
+    code: 'SYNQSCAN™',
+    name: 'Fragmentation & leakage detector',
+    desc: 'Continuously monitors entertainment pipelines to detect unbooked facility dates, idle camera packages, dormant IP, delayed payments, and workflow gaps.',
+    problem: 'Siloed information leads to 40%+ dark-day asset losses and project stalls.',
+    benefits: 'Studios, independent producers, guild technicians, asset owners.',
+    inputs: 'Live stage schedules, gear inventories, production permits, guild rosters.',
+    outcome: 'Real-time detection of operational bottlenecks before capital is burned.',
+    defaultRole: 'studio',
+    defaultMsg: 'I would like to run a SYNQSCAN™ audit to detect unused studio capacity / pipeline leakage.'
+  },
+  map: {
+    code: 'SYNQMAP™',
+    name: 'Dynamic resource & capability graph',
+    desc: 'Maps and indexes verified capabilities, acoustic ratings, equipment benches, and talent relationships across global entertainment ecosystems.',
+    problem: 'Informal broker networks obscure who and what is actually available.',
+    benefits: 'Production heads, showrunners, studio operations, agency execs.',
+    inputs: 'Verified credit ledgers, stage STC specs, optical bench QC records.',
+    outcome: 'A searchable, relational intelligence graph of all entertainment assets.',
+    defaultRole: 'producer',
+    defaultMsg: 'I want to query the Resource Graph for verified crew pods and acoustic soundstage availability.'
+  },
+  link: {
+    code: 'SYNQLINK™',
+    name: 'Compatibility & attachment engine',
+    desc: 'Identifies and matches complementary creative, technical, and logistical participants based on aesthetic calibration, format specs, and collaboration velocity.',
+    problem: 'Mismatched director-crew-gear packages cause costly on-set delays.',
+    benefits: 'Cinematographers, directors, producers, rental houses.',
+    inputs: 'Collaboration graph vectors, format specifications, schedule matrices.',
+    outcome: 'Precision packaging with zero downtime and guaranteed compatibility.',
+    defaultRole: 'director',
+    defaultMsg: 'I need to package a compatible DP, gaffer, and camera optics pod for an upcoming shoot.'
+  },
+  pool: {
+    code: 'SYNQPOOL™',
+    name: 'Dark capacity activation hub',
+    desc: 'Aggregates unbooked soundstage dark days, idle grip trucks, and gap technician days into immediately bookable rapid-turnaround packages.',
+    problem: 'Fixed real-estate and fleet overhead bleeds millions during slate gaps.',
+    benefits: 'Studio lots, commercial directors, YouTube creators, brand units.',
+    inputs: 'Dynamic calendar vacancy feeds, rate yield models, gap time windows.',
+    outcome: 'Recovers up to 88% facility utilization with rapid monetization.',
+    defaultRole: 'studio',
+    defaultMsg: 'I have unbooked dark days on my soundstage/facility that I want to monetize via SYNQPOOL™.'
+  },
+  flow: {
+    code: 'SYNQFLOW™',
+    name: 'Synchronized workflow orchestrator',
+    desc: 'Coordinates cross-department handoffs between production, on-set DIT raw ingestion, ACES color grading proxies, and post-production editorial.',
+    problem: 'Slippage between shooting and post burns 15+ days in re-conforming.',
+    benefits: 'Line producers, post supervisors, VFX houses, editors.',
+    inputs: 'Camera metadata checksums, sound sync logs, daily wrap milestones.',
+    outcome: 'Same-day proxy delivery and seamless post-production execution.',
+    defaultRole: 'producer',
+    defaultMsg: 'We need SYNQFLOW™ workflow coordination for daily DIT hash ingestion and ACES proxy handoffs.'
+  },
+  share: {
+    code: 'SYNQSHARE™',
+    name: 'Asset-light co-execution framework',
+    desc: 'Enables specialized agencies, studios, and financiers to pool infrastructure, mitigate single-entity downside, and share aligned upside.',
+    problem: 'High fixed CapEx traps agencies in margin erosion during slow slates.',
+    benefits: 'Advertising agencies, co-financiers, creator collaboratives.',
+    inputs: 'Milestone escrow contracts, revenue split waterfall models.',
+    outcome: 'Zero fixed debt liability with 100% flexible production throughput.',
+    defaultRole: 'agency',
+    defaultMsg: 'We are an agency looking to deploy an asset-light production backend through SYNQSHARE™.'
+  },
+  vault: {
+    code: 'SYNQVAULT™',
+    name: 'Ecosystem trust & verification ledger',
+    desc: 'Creates immutable trust through verified delivery histories, credit validation, equipment QC benchmarking, and milestone escrow security.',
+    problem: 'Payment defaults, fraudulent credits, and unverified rates paralyze transactions.',
+    benefits: 'Technicians, talent, facility owners, financial underwriters.',
+    inputs: 'Audited release credits, bench QC logs, milestone sign-offs.',
+    outcome: '100% default protection with transparent reputation scoring.',
+    defaultRole: 'financier',
+    defaultMsg: 'We want to utilize SYNQVAULT™ escrow and credit verification for our slate.'
+  },
+  track: {
+    code: 'SYNQTRACK™',
+    name: 'Live telemetry & milestone governance',
+    desc: 'Continuously monitors active shoot milestones, raw footage hashes, budget burn velocity, and department head sign-offs in real time.',
+    problem: 'Capital leakage and unreconciled voucher overages burn 15–25% of budgets.',
+    benefits: 'Film financiers, production insurers, line producers.',
+    inputs: 'DIT raw hashes, digital call sheets, live budget draw ledgers.',
+    outcome: '100% verified milestone compliance and instant wage clearances.',
+    defaultRole: 'financier',
+    defaultMsg: 'We want to deploy SYNQTRACK™ real-time telemetry monitoring for our active slate.'
+  },
+  exchange: {
+    code: 'SYNQEXCHANGE™',
+    name: 'Value & commercial exchange coordinator',
+    desc: 'Standardizes rate cards, settlement tranches, barter arrangements, and cross-party contract execution with zero broker markup.',
+    problem: 'Arbitrary price inflation and opaque middleman markups drain creative budgets.',
+    benefits: 'Producers, brand sponsors, distributors, craft guilds.',
+    inputs: 'Market-clearing rate models, multi-party contract templates, escrow triggers.',
+    outcome: 'Frictionless, transparent commercial transactions across the value chain.',
+    defaultRole: 'producer',
+    defaultMsg: 'I want to coordinate standardized contract packaging and rate clearing via SYNQEXCHANGE™.'
+  },
+  intel: {
+    code: 'SYNQINTEL™',
+    name: 'Predictive ecosystem learning OS',
+    desc: 'Synthesizes multi-year production telemetry across slates, lots, and crew pods to predict optimal attachments and forecast execution risk.',
+    problem: 'The industry continuously repeats logistical and budgeting mistakes.',
+    benefits: 'Studios, platforms, financiers, showrunners.',
+    inputs: 'Wrap variance data, equipment reliability logs, cost-to-complete models.',
+    outcome: 'Continuous machine-learned intelligence that compounds with every mission.',
+    defaultRole: 'producer',
+    defaultMsg: 'I want to access SYNQINTEL™ predictive benchmarks for our upcoming development slate.'
+  },
+  lab: {
+    code: 'SYNQLAB™',
+    name: 'Next-generation format experimenter',
+    desc: 'Incubates and stress-tests new operating models—bridging AI/GenAI pipelines, virtual production LED volumes, interactive gaming, and hybrid live formats.',
+    problem: 'Traditional productions struggle to integrate emerging technologies efficiently.',
+    benefits: 'Creator studios, VFX supervisors, game publishers, streaming labs.',
+    inputs: 'Virtual production telemetry, AI workflow nodes, real-time render benchmarks.',
+    outcome: 'De-risked, turnkey adoption of breakthrough entertainment workflows.',
+    defaultRole: 'creator',
+    defaultMsg: 'We want to test a virtual production / hybrid format workflow with SYNQLAB™.'
+  },
+  control: {
+    code: 'SYNQCONTROL™',
+    name: 'Master control & anomaly defense',
+    desc: 'Provides automated exception-handling, hot-swap gear logistics, and Cinema Radar 72h pre-release narrative and anti-piracy defense.',
+    problem: 'Last-minute equipment failures or piracy leaks destroy release value.',
+    benefits: 'Theatrical distributors, studio lots, marketing agencies.',
+    inputs: 'Social sentiment scrapers, pirate network crawlers, equipment hot-swap pods.',
+    outcome: 'Under 15-minute DMCA removals and under 45-minute on-set gear replacements.',
+    defaultRole: 'producer',
+    defaultMsg: 'We require SYNQCONTROL™ Cinema Radar threat defense for our upcoming theatrical premiere.'
+  },
+  outcome: {
+    code: 'SYNQOUTCOME™',
+    name: 'Economic value & yield auditor',
+    desc: 'Audits and certifies realized economic value—measuring dark days saved, capital leakage eliminated, speed gains, and stakeholder net margin lift.',
+    problem: 'Post-production financial audits are opaque and delayed by months.',
+    benefits: 'Financiers, lot owners, producers, investors.',
+    inputs: 'Pre-production baseline vs. post-wrap actual expense logs, escrow disbursements.',
+    outcome: 'Verified value creation certificate and transparent yield reconciliation.',
+    defaultRole: 'financier',
+    defaultMsg: 'We need an independent SYNQOUTCOME™ post-wrap economic yield audit for our production.'
   }
-  if (specsEl) {
-    specsEl.innerHTML = f.specs.map(s => `<span class="tlc-console-spec-tag">${s}</span>`).join('');
-  }
-  if (hudSla) hudSla.textContent = f.sla;
-  if (hudStages) hudStages.textContent = f.stages;
-  if (hudPayment) hudPayment.textContent = f.payment;
-  if (hudProtocol) hudProtocol.textContent = f.protocol;
 };
+
+function initEngineModules() {
+  const buttons = document.querySelectorAll('.engine-module-btn');
+  if (!buttons.length) return;
+
+  const panelCode = document.getElementById('moduleCode');
+  const panelName = document.getElementById('moduleName');
+  const panelDesc = document.getElementById('moduleDesc');
+  const panelProblem = document.getElementById('moduleProblem');
+  const panelBenefits = document.getElementById('moduleBenefits');
+  const panelInputs = document.getElementById('moduleInputs');
+  const panelOutcome = document.getElementById('moduleOutcome');
+  const deployBtn = document.getElementById('deployModuleBtn');
+
+  function renderModule(key) {
+    const data = ENGINE_DATA[key];
+    if (!data) return;
+
+    if (panelCode) panelCode.textContent = data.code;
+    if (panelName) panelName.textContent = data.name;
+    if (panelDesc) panelDesc.textContent = data.desc;
+    if (panelProblem) panelProblem.textContent = data.problem;
+    if (panelBenefits) panelBenefits.textContent = data.benefits;
+    if (panelInputs) panelInputs.textContent = data.inputs;
+    if (panelOutcome) panelOutcome.textContent = data.outcome;
+
+    if (deployBtn) {
+      deployBtn.setAttribute('data-role', data.defaultRole);
+      deployBtn.setAttribute('data-msg', data.defaultMsg);
+    }
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const key = btn.getAttribute('data-module');
+      renderModule(key);
+    });
+  });
+
+  renderModule('scan');
+}
+
+/* ==========================================================================
+   06. ECOSYSTEM CATEGORY TABS & MATRIX
+   ========================================================================== */
+const ECOSYSTEM_DATA = {
+  content: [
+    { title: 'Feature Film Spec Slates', tag: 'Cinema & OTT', region: 'Mumbai / London / LA', spec: '120-min locked scripts with attached director & budget breakdown.', avail: 'Packaging Window Active', score: '99/100' },
+    { title: 'OTT Crime Drama & Thriller IPs', tag: 'Streaming Series', region: 'Pan-Regional Hubs', spec: 'Multi-season episodic bibles with verified character rights.', avail: 'Reviewing Acquisition', score: '98/100' },
+    { title: 'YouTube & Social Creator Slates', tag: 'Creator Economy', region: 'Bangalore / Los Angeles', spec: 'High-frequency weekly 4K content slates for corporate brand sponsors.', avail: 'Active Syndication', score: '99/100' },
+    { title: 'Linear TV Tape & Daily Serials', tag: 'Broadcast TV Archive', region: 'Chennai / New Delhi', spec: '2,500+ broadcast hours prepared for FAST channel conversion.', avail: 'Instant FAST Ingest', score: '95/100' },
+    { title: 'Transmedia Novels & Audio Drama', tag: 'Transmedia IP', region: 'Global Rights Desk', spec: 'Podcasts & published fiction adapted into game & animation formats.', avail: 'Format Conversion', score: '97/100' },
+    { title: 'Regional Independent Cinema', tag: 'Indie Feature', region: 'South Asia / Europe', spec: 'Festival-awarded features looking for global streaming delivery.', avail: 'Direct OTT Bridge', score: '96/100' }
+  ],
+  talent: [
+    { title: 'Guild Cinematographers & DPs', tag: 'Camera Department', region: 'Pan-India / UK / US', spec: 'ISC / BSC / ASC accredited, Alexa 35 & Master Anamorphic calibration.', avail: 'Available Oct 12–28', score: '100/100' },
+    { title: 'Feature Film Directors Unit', tag: 'Directorial Pod', region: 'Mumbai / London', spec: 'Proven commercial & theatrical wrap track record with zero overrun log.', avail: 'Packaging Active', score: '98/100' },
+    { title: 'Sync Sound Recordist Teams', tag: 'Audio Capture', region: 'Hyderabad / Prague', spec: 'Sound Devices 32-track mobile rigs + RF spectrum scanning.', avail: 'Immediate Call', score: '96/100' },
+    { title: 'ACES Master Colorists & DITs', tag: 'Post / Finishing', region: 'Bangalore / Berlin', spec: 'DaVinci Resolve Advanced, Dolby Vision & on-set cloud checksum sync.', avail: 'Cloud Remote Sync', score: '99/100' },
+    { title: 'Stunt & Rigging Coordination Pod', tag: 'Physical Action', region: 'Chennai / Sydney', spec: 'Certified wire rigging engineers & pyrotechnic safety coordinators.', avail: 'Available 30-Day Slate', score: '97/100' },
+    { title: 'Multilingual Voice Talent Pool', tag: 'Localization AI', region: 'Global 12 Languages', spec: 'SAG-AFTRA & guild verified voice actors with AI lip-sync clearance.', avail: 'Simultaneous Release', score: '98/100' }
+  ],
+  production: [
+    { title: 'Acoustic Soundstage 04 (18,000 sq ft)', tag: 'Soundstage Lot', region: 'Studio Central Hub', spec: 'NC-20 / STC 62 acoustic rating, 35ft silent grid, 1200A silent power.', avail: '3 Dark Days Active', score: '100/100' },
+    { title: 'Virtual Production LED Volume', tag: 'In-Camera VFX', region: 'Tech City Lot', spec: '2.3mm pixel pitch, Brompton SX40, real-time Unreal 5.4 tracking.', avail: 'Dark Window (Oct 24–30)', score: '99/100' },
+    { title: 'ARRI Alexa 35 Optical Package', tag: 'Cinema Optics', region: 'Master Rental Hub', spec: 'Alexa 35 + ARRI Master Primes (18-100mm) collimated & bench QC pass.', avail: 'Immediate Dispatch', score: '100/100' },
+    { title: 'RED V-Raptor XL 8K VV Unit', tag: 'High-Speed Gear', region: 'Downtown Vault', spec: 'Cooke Anamorphic /i Full Frame Plus Set with wireless focus pods.', avail: '14-Day Slate Ready', score: '97/100' },
+    { title: 'Heavy Grip & Electric Rig Truck (10-Ton)', tag: 'Lighting & Power', region: 'Regional Hub', spec: 'Arri Skypanel X21/S360 + 120kW whisper generator fleet.', avail: 'On-Call Deployment', score: '96/100' },
+    { title: 'Technocrane 45 Telescopic Crane', tag: 'Camera Movement', region: 'Studio Central', spec: 'Gyro-stabilized Scorpio Head with computerized precision track.', avail: 'Booked per Day', score: '98/100' }
+  ],
+  commercial: [
+    { title: 'SYNQVAULT™ Multi-Sig Escrow', tag: 'Milestone Banking', region: 'Global Core', spec: 'Multi-signature neutral milestone escrow with automated DIT wire release.', avail: 'Instant Vault Lock', score: '100/100' },
+    { title: 'Institutional Film Co-Finance Desk', tag: 'Senior Debt & Equity', region: 'London / NYC / Mumbai', spec: 'Gap financing, senior loans & equity matching ($500K–$25M).', avail: 'Reviewing Slates', score: '99/100' },
+    { title: 'Tax Credit & Rebate Bridge Vault', tag: 'Rebate Lending', region: 'UK / Georgia / Eastern Europe', spec: '72h capital deployment against verified state film commission rebates.', avail: 'Active Deployment', score: '98/100' },
+    { title: 'Brand Direct Commercialization Desk', tag: 'Brand Integration', region: 'Global FMCG & Tech', spec: 'Turnkey $100K–$500K corporate briefs paired with creators & directors.', avail: '15 Active Briefs', score: '97/100' },
+    { title: 'Minimum Guarantee (MG) Financing Desk', tag: 'Pre-Sales Capital', region: 'Los Angeles / Mumbai', spec: 'Immediate advances against verified international distributor contracts.', avail: 'Open Pipeline', score: '96/100' },
+    { title: 'Creator Slate Co-Investment Fund', tag: 'Digital IP Capital', region: 'Bangalore / Singapore', spec: 'Shared-revenue backing for high-frequency YouTube & FAST series.', avail: 'Deploying Capital', score: '95/100' }
+  ],
+  distribution: [
+    { title: 'National Theatrical Multiplex Chain', tag: 'Cinema Exhibition', region: '350+ Screens Regional', spec: 'DCI 4K laser projection, Dolby Atmos audio, weekend slot allocations.', avail: 'Slot Routing Active', score: '99/100' },
+    { title: 'Global OTT Streaming Acquisition Desk', tag: 'Digital Streaming', region: 'Worldwide Multi-Territory', spec: 'Originals & direct-to-digital film acquisitions with verified credit ledgers.', avail: 'Active Acquisition', score: '98/100' },
+    { title: 'FAST Channel Syndication Network', tag: 'Ad-Supported TV', region: 'US / Europe / India', spec: '24/7 automated linear EPG broadcast feeds with ad revenue sharing.', avail: 'Catalog Ingest Open', score: '96/100' },
+    { title: 'International Theatrical Sales Agency', tag: 'Global Sales', region: 'Cannes / AFM / EFM', spec: 'Worldwide territory licensing and multi-language minimum guarantees.', avail: 'Acquiring Spec Titles', score: '97/100' },
+    { title: 'Regional Theatrical Guild Desk', tag: 'Non-Metro Theatres', region: 'South Asia / Middle East', spec: 'Day-and-date theatrical distribution across tier-2 and tier-3 circuits.', avail: 'Open Slate Booking', score: '95/100' },
+    { title: 'Direct-to-Consumer Creator Paywall', tag: 'Monetization Hub', region: 'Global Edge CDN', spec: 'Zero-middleman PPV live stream & direct fan ticketing portal.', avail: 'Instant Setup', score: '98/100' }
+  ],
+  live: [
+    { title: 'Stadium & Arena Entertainment Lot', tag: 'Stadium Venue', region: 'Metropolitan Hub', spec: '45,000 capacity, integrated 10Gbps low-latency dark fiber broadcast ring.', avail: 'Dark Dates Available', score: '99/100' },
+    { title: '4K Multi-Cam Broadcast OB Fleet', tag: 'Live Broadcast Truck', region: 'Regional Hub', spec: '16x Sony HDC-4300, Grass Valley switcher, Dante spatial audio mixer.', avail: 'Weekend Deployment', score: '98/100' },
+    { title: 'Low-Latency Global PPV Gateway', tag: 'Edge Live Streaming', region: 'Global CDN', spec: '< 800ms latency, scalable to 2,000,000 concurrent video viewers.', avail: 'Instant Gateway Setup', score: '100/100' },
+    { title: 'Revived Theatrical Heritage Lot', tag: 'Boutique Cinema', region: 'Arts District', spec: '4K Barco DP4K-32B laser projector, restored acoustic auditorium.', avail: 'Available Mon–Thu', score: '95/100' },
+    { title: 'Touring Logistics & Stage Pod', tag: 'Live Touring', region: '12-City Circuit', spec: 'Turnkey trussing, Meyer Sound arrays, stage tech & crew accommodation.', avail: 'Winter Circuit Ready', score: '97/100' },
+    { title: 'Micro-Audience Demand Aggregator', tag: 'Fandom Demand', region: 'Global Digital', spec: 'Crowd-clustered theatrical screening triggers with zero ticket risk.', avail: 'Demand Active', score: '98/100' }
+  ],
+  technology: [
+    { title: 'Cinema Radar Anti-Piracy Threat Shield', tag: 'Security & Rights', region: 'Cloud Scraper Swarm', spec: '72h pre-release threat scanning, automated DMCA link desync < 15 mins.', avail: 'Active Threat Scanners', score: '100/100' },
+    { title: 'ACES Color Cloud Conform & DIT Sync', tag: 'Post Technology', region: 'Global Cloud Node', spec: 'On-set xxHash checksum match & instant ACEScc LUT proxy conforming.', avail: 'Live Feed Connected', score: '99/100' },
+    { title: 'AI Multilingual Dubbing & Lip-Sync', tag: 'Localization AI', region: 'Global Neural Engine', spec: 'Guild-approved voice replica & automated lip-sync alignment across 12 languages.', avail: '12-Language Pipeline', score: '98/100' },
+    { title: 'Digital Call Sheet & Wrap Hash Ledger', tag: 'Production SaaS', region: 'Secure Cloud Platform', spec: 'Real-time timesheet logging, overtime calculation & milestone escrow triggers.', avail: 'Instant Pod Ingest', score: '98/100' },
+    { title: 'Unreal Engine 5.4 In-Camera VFX Hub', tag: 'Real-Time Graphics', region: 'Virtual Stage Cloud', spec: 'Pre-baked photoreal stage asset repository & real-time camera tracking.', avail: 'Instant Mocap Ingest', score: '99/100' },
+    { title: 'Dynamic Dark-Day Yield Engine', tag: 'Algorithmic Pricing', region: 'Core DigiSynq Engine', spec: 'Continuous soundstage & camera package vacancy matching algorithms.', avail: '24/7 Yield Optimization', score: '100/100' }
+  ]
+};
+
+function initEcosystemTabs() {
+  const tabs = document.querySelectorAll('.eco-tab-btn');
+  const container = document.getElementById('ecosystemGrid');
+  if (!tabs.length || !container) return;
+
+  function renderCategory(cat) {
+    const items = ECOSYSTEM_DATA[cat] || [];
+    container.innerHTML = items.map(item => `
+      <div class="eco-node-card">
+        <div>
+          <div class="eco-node-header">
+            <span class="eco-node-tag">${item.tag}</span>
+            <span class="eco-node-score">Score: ${item.score}</span>
+          </div>
+          <h4 class="eco-node-title">${item.title}</h4>
+          <div class="eco-node-region">📍 ${item.region}</div>
+          <div class="eco-node-spec">${item.spec}</div>
+        </div>
+        <div class="eco-node-footer">
+          <span class="eco-node-avail">● ${item.avail}</span>
+          <button class="btn btn-cyan btn-sm" data-open-synq-modal data-role="producer" data-msg="I want to connect with verified node: ${item.title} (${item.tag})">Connect node &rarr;</button>
+        </div>
+      </div>
+    `).join('');
+
+    // Re-bind modal triggers for newly rendered dynamic buttons
+    const newButtons = container.querySelectorAll('[data-open-synq-modal]');
+    const modal = document.getElementById('synqModal');
+    if (modal) {
+      newButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const role = btn.getAttribute('data-role');
+          const msg = btn.getAttribute('data-msg');
+          const roleSelect = modal.querySelector('select');
+          const msgTextarea = modal.querySelector('textarea');
+          if (roleSelect && role) roleSelect.value = role;
+          if (msgTextarea && msg) msgTextarea.value = msg;
+          modal.classList.add('active');
+        });
+      });
+    }
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.getAttribute('data-eco');
+      renderCategory(cat);
+    });
+  });
+
+  renderCategory('content');
+}
+
+/* ==========================================================================
+   07. SYNQTRACK™ CONTROL CENTER SIMULATOR
+   ========================================================================== */
+function initMissionControl() {
+  const timeDisplay = document.getElementById('telemetryClock');
+  if (timeDisplay) {
+    setInterval(() => {
+      const now = new Date();
+      timeDisplay.textContent = now.toTimeString().split(' ')[0] + ' UTC';
+    }, 1000);
+  }
+}
+
+/* ==========================================================================
+   08. MODALS & INTAKE FORMS WITH CONTEXT PRE-POPULATION
+   ========================================================================== */
+function initModals() {
+  const openButtons = document.querySelectorAll('[data-open-synq-modal]');
+  const modal = document.getElementById('synqModal');
+  const closeBtn = document.getElementById('closeSynqModal');
+
+  if (!modal) return;
+
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const role = btn.getAttribute('data-role');
+      const msg = btn.getAttribute('data-msg');
+      const mission = btn.getAttribute('data-mission');
+
+      const roleSelect = modal.querySelector('select');
+      const msgTextarea = modal.querySelector('textarea');
+
+      if (roleSelect && role) {
+        roleSelect.value = role;
+      }
+      if (msgTextarea && (msg || mission)) {
+        msgTextarea.value = msg || `I want to initialize ${mission} under DigiSynq orchestration.`;
+      }
+
+      modal.classList.add('active');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Esc key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+}
+
+function checkUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const modalOpen = params.get('modal');
+
+  if (type || modalOpen === 'synq') {
+    const modal = document.getElementById('synqModal');
+    if (modal) {
+      if (type) {
+        const roleSelect = modal.querySelector('select');
+        if (roleSelect) roleSelect.value = type;
+      }
+      modal.classList.add('active');
+    }
+  }
+}

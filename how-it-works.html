@@ -1,446 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="How DIGISYNQ Works — The simple 5-step process to book soundstages, assemble verified crews, and lock payments safely in escrow."/>
-  <meta property="og:title" content="How It Works — DIGISYNQ"/>
-  <meta property="og:description" content="Discover, Match, Lock Escrow, Shoot, and Settle: Plain English walkthrough of how DIGISYNQ coordinates entertainment productions."/>
-  <meta property="og:type" content="website"/>
-  <link rel="canonical" href="https://digisynq.com/how-it-works.html"/>
-  <title>How It Works — DIGISYNQ</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css"/>
-  <style>
-    .protocol-step-box {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 20px;
-      padding: 2.2rem;
-      text-align: left;
-      margin-bottom: 1.5rem;
-    }
-    .protocol-step-box h3 {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: #09090b;
-      margin: 0.3rem 0 0.8rem;
-    }
-    .protocol-step-box p {
-      font-size: 0.92rem;
-      color: #52525b;
-      line-height: 1.65;
-      margin-bottom: 1.2rem;
-    }
-    .step-deliverables-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      padding-top: 1rem;
-    }
-    .step-deliverables-list li {
-      font-size: 0.86rem;
-      color: #3f3f46;
-      padding: 0.35rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .step-deliverables-list li::before {
-      content: "✓";
-      color: #16a34a;
-      font-weight: 900;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How it works — DigiSynq</title>
+  <meta name="description" content="Discover how DigiSynq orchestrates the entertainment ecosystem through the 12-step Core Loop, the DigiSynq Engine, and SynqVault trust governance.">
+  <link rel="canonical" href="https://digisynq.com/how-it-works.html">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page-how" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
+<body>
 
-  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="ecosystem.html" class="nav-link">Ecosystem</a></li>
+        <li><a href="how-it-works.html" class="nav-link active">How it works</a></li>
+        <li><a href="missions.html" class="nav-link">Missions</a></li>
+        <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
 
-    <!-- FLOATING PILL NAVIGATION -->
-    <header class="tlc-nav-floating">
-      <nav class="tlc-nav-inner" aria-label="Main">
-        
-        <ul class="tlc-nav-links" role="list">
-          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
-          <li><a class="tlc-nav-link" href="network.html">Network</a></li>
-          <li><a class="tlc-nav-link active" href="how-it-works.html">How It Works</a></li>
-          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
-          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
-          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
-          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
-          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
-          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
-          <li><a class="tlc-nav-link" href="about.html">About</a></li>
-          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
-        </ul>
-
-        <div style="display:flex;align-items:center;gap:0.6rem;">
-          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- 01 // HERO STAGE -->
-    <section class="tlc-hero-stage" id="main-content">
-      <div class="tlc-hero-text">
-        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
-          <span>●</span> The Simple 5-Step Process
-        </div>
-        <h1 class="tlc-hero-headline">
-          <span class="tlc-quiet">Brief to wrap.</span><br>
-          <span class="tlc-accent-text"><span class="hl-arrow">Zero friction</span>.</span>
-        </h1>
-        <p class="tlc-hero-subhead">
-          Built on a simple ideology: <strong><span class="hl-ribbon">No Waste. No Silos. No Forgotten Value.</span></strong> Rather than owning heavy assets, we connect what already exists — tagging, ranking, and measuring every stage, crew pod, and piece of gear for maximum leverage.
-        </p>
-        <div class="tlc-hero-ctas">
-          <a class="tlc-btn-pill tlc-btn-dark" href="#operating-model" style="padding:0.9rem 2.2rem;font-size:0.92rem;">5-Step Process &rarr;</a>
-          <a class="tlc-btn-pill tlc-btn-ghost" href="#protocol" style="padding:0.9rem 2.2rem;font-size:0.92rem;">Payment &amp; Quality Guarantees</a>
-        </div>
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" data-open-synq-modal>Start a synq</button>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation">☰</button>
       </div>
-      <div class="tlc-grid-halo" aria-hidden="true"></div>
-    </section>
+    </div>
+  </header>
 
-    <!-- 02 // 5-STEP ENGINE -->
-    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="operating-model">
-      <div style="max-width:1150px;margin:0 auto;">
-        <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.6rem;">VISUAL PROTOCOL FLOWCHART</div>
-        <h2 class="tlc-section-heading">What happens when you <span class="tlc-quiet">start a shoot.</span></h2>
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="ecosystem.html" class="nav-link">Ecosystem</a>
+    <a href="how-it-works.html" class="nav-link active">How it works</a>
+    <a href="missions.html" class="nav-link">Missions</a>
+    <a href="intelligence.html" class="nav-link">Intelligence</a>
+    <a href="about.html" class="nav-link">About</a>
+    <button class="btn btn-cyan" data-open-synq-modal style="margin-top:0.8rem;width:100%;">Start a synq</button>
+  </div>
 
-        <!-- INFOGRAPHIC FLOW PIPELINE -->
-        <div class="infographic-flow-container" style="margin:2rem 0 3.5rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1.2rem;">
-            <span style="font-family:var(--font-mono);font-size:0.68rem;color:#fef08a;letter-spacing:0.15em;text-transform:uppercase;font-weight:800;">● ABCDEF EXECUTION PIPELINE</span>
-            <a href="flowchart.html" style="font-family:var(--font-mono);font-size:0.7rem;color:#86efac;text-decoration:none;font-weight:700;">Open Full Flowchart Canvas &rarr;</a>
+  <main style="padding-top:8rem;">
+    <!-- 01. CORE LOOP -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="tag-badge">
+            <span class="dot"></span>
+            <span>Deterministic orchestration architecture</span>
           </div>
-
-          <div class="flow-step-pipeline" style="margin-top:1.5rem;">
-            <div class="flow-node-box">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#fef08a;font-weight:800;">01 // INTAKE</span>
-              <div style="font-family:var(--font-serif);font-size:1rem;font-weight:900;color:#fff;margin:0.2rem 0;">Brief Ingestion</div>
-              <p style="font-size:0.78rem;color:#a1a1aa;margin:0;">Format, STC specs &amp; dates.</p>
-            </div>
-            <div class="flow-arrow-connector">&rarr;</div>
-            <div class="flow-node-box">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#fef08a;font-weight:800;">02 // MATCH</span>
-              <div style="font-family:var(--font-serif);font-size:1rem;font-weight:900;color:#fff;margin:0.2rem 0;">Dark-Day Index</div>
-              <p style="font-size:0.78rem;color:#a1a1aa;margin:0;">Verified lot &amp; crew pods.</p>
-            </div>
-            <div class="flow-arrow-connector">&rarr;</div>
-            <div class="flow-node-box" style="border-color:#fef08a;background:rgba(254,240,138,0.08);">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#fef08a;font-weight:800;">03 // ESCROW</span>
-              <div style="font-family:var(--font-serif);font-size:1rem;font-weight:900;color:#fff;margin:0.2rem 0;">Milestone Lock</div>
-              <p style="font-size:0.78rem;color:#a1a1aa;margin:0;">100% tranches secured.</p>
-            </div>
-            <div class="flow-arrow-connector">&rarr;</div>
-            <div class="flow-node-box">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#fef08a;font-weight:800;">04 // SHOOT</span>
-              <div style="font-family:var(--font-serif);font-size:1rem;font-weight:900;color:#fff;margin:0.2rem 0;">Telemetry Wrap</div>
-              <p style="font-size:0.78rem;color:#a1a1aa;margin:0;">DIT raw footage hashes.</p>
-            </div>
-            <div class="flow-arrow-connector">&rarr;</div>
-            <div class="flow-node-box">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#fef08a;font-weight:800;">05 // SETTLE</span>
-              <div style="font-family:var(--font-serif);font-size:1rem;font-weight:900;color:#fff;margin:0.2rem 0;">Auto-Disburse</div>
-              <p style="font-size:0.78rem;color:#a1a1aa;margin:0;">Instant bank clearing.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));gap:1.4rem;margin-top:2rem;">
-          
-          <div class="tlc-node-card">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;margin-bottom:0.8rem;display:block;">STEP 01</span>
-            <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem;">Intake &amp; Scope Packaging</div>
-            <p class="tlc-caption-desc" style="line-height:1.6;">
-              Input shoot format (Cinema, OTT, TVC, Creator), dates, line budget, facility requirements (acoustic STC, power kVA, grid height), and key crew positions.
-            </p>
-          </div>
-
-          <div class="tlc-node-card">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;margin-bottom:0.8rem;display:block;">STEP 02</span>
-            <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem;">48h Verified Matchmaking</div>
-            <p class="tlc-caption-desc" style="line-height:1.6;">
-              We match verified gap stage dates, bench-tested camera packages, and guild-accredited department heads with locked schedule availability.
-            </p>
-          </div>
-
-          <div class="tlc-node-card">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;margin-bottom:0.8rem;display:block;">STEP 03</span>
-            <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem;">Milestone Escrow Lock</div>
-            <p class="tlc-caption-desc" style="line-height:1.6;">
-              100% of production tranches and crew wages are locked in neutral escrow prior to call sheet dispatch, eliminating all payment default risks.
-            </p>
-          </div>
-
-          <div class="tlc-node-card">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;margin-bottom:0.8rem;display:block;">STEP 04</span>
-            <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem;">Shoot &amp; Wrap Sign-Off</div>
-            <p class="tlc-caption-desc" style="line-height:1.6;">
-              Principal photography executes. DIT raw footage hashes and line-producer wrap sign-offs trigger immediate escrow disbursements to crew bank accounts.
-            </p>
-          </div>
-
-          <div class="tlc-node-card">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;margin-bottom:0.8rem;display:block;">STEP 05</span>
-            <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem;">Verified Credit Standing</div>
-            <p class="tlc-caption-desc" style="line-height:1.6;">
-              Wrap logs update verified guild credits and stage utilization metrics, unlocking priority calendar locks and preferred tier pricing on subsequent shoots.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 // QUALITY & PAYMENT GUARANTEES -->
-    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);background:#f8fafc;" id="protocol">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.6rem;">OUR COMMITMENT</div>
-        <h2 class="tlc-section-heading">Our quality &amp; payment <span class="tlc-quiet">guarantees.</span></h2>
-        <p style="font-size:1.05rem;color:#52525b;max-width:760px;line-height:1.65;margin-bottom:2.5rem;">
-          The non-negotiable operational standards governing every production on the network:
-        </p>
-
-        <div>
-          
-          <!-- Stage A -->
-          <div class="protocol-step-box">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
-              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#71717a;font-weight:800;">GUARANTEE 01</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">VERIFIED PHYSICAL FACILITY &amp; TECH</span>
-            </div>
-            <h3>Certified Facility Acoustic Ratings &amp; Bench-Tested Gear</h3>
-            <p>
-              We physically verify soundproofing insulation (STC 50+), grid rigging safety load limits, 3-phase silent power generation, and cinema lens optical alignment before shoots load in.
-            </p>
-            <ul class="step-deliverables-list">
-              <li>Certified soundstages with guaranteed power redundancy and HVAC noise isolation.</li>
-              <li>Verified technician filmography credits and guild standing.</li>
-              <li>Clean chain-of-title and copyright ownership verification on all packaged IP.</li>
-            </ul>
-          </div>
-
-          <!-- Stage B -->
-          <div class="protocol-step-box">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
-              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#71717a;font-weight:800;">GUARANTEE 02</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">TRANSPARENT LINE-ITEM PRICING</span>
-            </div>
-            <h3>Zero Hidden Middleman Markups</h3>
-            <p>
-              Producers receive direct, transparent rate cards for soundstages, camera packages, and crew compensation. DIGISYNQ earns a transparent flat coordination margin with zero hidden broker markups.
-            </p>
-            <ul class="step-deliverables-list">
-              <li>Direct rate card transparency for soundstages, lenses, and lighting packages.</li>
-              <li>Confirmed calendar booking contracts with enforceable cancellation penalty protection.</li>
-              <li>Clear scope-of-work agreements with standardized daily overtime schedules.</li>
-            </ul>
-          </div>
-
-          <!-- Stage C -->
-          <div class="protocol-step-box">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
-              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#71717a;font-weight:800;">GUARANTEE 03</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">100% ESCROW WAGE PROTECTION</span>
-            </div>
-            <h3>Independent Milestone Escrow Vault</h3>
-            <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:1.5rem;align-items:center;margin-bottom:1rem;">
-              <div>
-                <p style="margin:0 0 0.8rem;">
-                  Production capital resides in neutral milestone escrow. Technicians know their wages are 100% funded before stepping on set. Producers know capital only disburses upon verified daily delivery.
-                </p>
-                <ul class="step-deliverables-list" style="margin:0;">
-                  <li>Dedicated milestone escrow account funded prior to call sheet issuance.</li>
-                  <li>Automated tranche disbursements upon daily wrap and DIT footage verification.</li>
-                  <li>Neutral industry arbitration desk for schedule or technical scope disputes.</li>
-                </ul>
-              </div>
-              <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);background:#ffffff;box-shadow:0 8px 24px rgba(0,0,0,0.04);">
-                
-                <div style="padding:0.4rem 0.8rem;font-family:var(--font-mono);font-size:0.62rem;color:#71717a;border-top:1px solid rgba(0,0,0,0.05);text-align:center;">
-                  // FIG. 02 — MILESTONE ESCROW VAULT MOTIF
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Stage D -->
-          <div class="protocol-step-box">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
-              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#71717a;font-weight:800;">GUARANTEE 04</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">SAME-DAY DISBURSEMENT</span>
-            </div>
-            <h3>Instant Payouts on Daily Wrap</h3>
-            <p>
-              Eliminates the 60-day invoice chase. When the line producer and department head sign off on the day's footage wrap, automated UPI/bank payouts release directly to technicians within hours.
-            </p>
-            <ul class="step-deliverables-list">
-              <li>Automated bank transfers upon verified daily wrap approval.</li>
-              <li>Automated GST compliance, TDS deductions, and invoice generation.</li>
-              <li>Zero payment default rate across all network-orchestrated shoots.</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div style="margin-top:3.5rem;text-align:center;">
-          <a href="contact.html?type=project" class="tlc-btn-pill tlc-btn-dark" style="padding:1rem 2.8rem;font-size:0.95rem;">
-            Start a Project with DIGISYNQ &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 // RADICAL TRANSPARENCY (WHAT WE DO VS WHAT WE DON'T DO) -->
-    <section style="padding:clamp(2.5rem, 5vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);background:#f8fafc;" id="transparency">
-      <div style="max-width:1150px;margin:0 auto;">
-        
-        <div style="text-align:center;max-width:820px;margin:0 auto 3rem;">
-          <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#27272a;margin-bottom:1rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
-            <span>●</span> Radical Transparency &bull; Asset-Light Model
-          </div>
-          <h2 class="tlc-section-heading" style="text-align:center;margin-bottom:1rem;">
-            What we do. <span class="tlc-quiet">And what we DON'T do.</span>
-          </h2>
-          <p style="font-size:1.05rem;color:#52525b;line-height:1.65;">
-            We operate with total clarity. DIGISYNQ is an asset-light coordination layer that coordinates the best specialized agencies, soundstages, and guild technicians under 100% milestone escrow.
+          <h1 class="hero-headline">How DigiSynq <span class="text-cyan-gradient"><em>orchestrates.</em></span></h1>
+          <p class="hero-subhead">
+            How DigiSynq enforces deterministic execution across heterogeneous resources without physical balance-sheet overhead:
           </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;">
-          
-          <!-- Column 01: What We DO -->
-          <div style="background:#09090b;color:#ffffff;border-radius:28px;padding:2.5rem;border:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;justify-content:space-between;">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1.5rem;">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#22c55e;"></span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:800;letter-spacing:0.18em;color:#22c55e;text-transform:uppercase;">WHAT WE DO</span>
-              </div>
-              <h3 style="font-family:var(--font-serif);font-size:1.4rem;font-weight:900;color:#fff;margin:0 0 1.2rem;">Coordinate, verify, and secure escrow.</h3>
-              
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
-                <li style="font-size:0.88rem;color:#d4d4d8;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#22c55e;font-weight:900;flex-shrink:0;">✓</span>
-                  <span>Match verified incoming briefs with certified partner soundstages and guild crews.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#d4d4d8;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#22c55e;font-weight:900;flex-shrink:0;">✓</span>
-                  <span>Lock 100% of production capital in neutral milestone escrow before call sheets dispatch.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#d4d4d8;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#22c55e;font-weight:900;flex-shrink:0;">✓</span>
-                  <span>Monetize empty soundstage dark days with commercial, YouTube, and web series shoots.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#d4d4d8;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#22c55e;font-weight:900;flex-shrink:0;">✓</span>
-                  <span>Deploy Cinema Radar 72-hour pre-release piracy takedown and sentiment defense.</span>
-                </li>
-              </ul>
-            </div>
-            <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.1);font-family:var(--font-mono);font-size:0.72rem;color:#a1a1aa;">
-              OUR GOAL: Zero payment defaults; maximum production velocity.
-            </div>
+        <!-- The Purpose Progression -->
+        <div class="value-equation-banner" style="margin:2rem auto 3rem;max-width:980px;">
+          <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.6rem;">EXECUTION DOCTRINE</span>
+          <h3 style="font-family:var(--font-headline);font-size:clamp(1.15rem, 2.4vw, 1.65rem);color:var(--text-white);margin-bottom:0.8rem;font-weight:800;">
+            "Connection is merely connectivity. Coordination is execution.<br>
+            <span class="text-cyan-gradient"><em>Coordination is not the destination. Outcome is."</em></span>
+          </h3>
+          <div class="progression-flow">
+            <span class="progression-node">Index</span>
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-node">Accredit</span>
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-node">Coordinate</span>
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-node">Telemetry</span>
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-node highlight">Economic Yield</span>
           </div>
-
-          <!-- Column 02: What We DON'T Do -->
-          <div style="background:#ffffff;color:#09090b;border-radius:28px;padding:2.5rem;border:1px solid rgba(0,0,0,0.08);display:flex;flex-direction:column;justify-content:space-between;">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1.5rem;">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ef4444;"></span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:800;letter-spacing:0.18em;color:#ef4444;text-transform:uppercase;">WHAT WE DON'T DO</span>
-              </div>
-              <h3 style="font-family:var(--font-serif);font-size:1.4rem;font-weight:900;color:#09090b;margin:0 0 1.2rem;">We are strictly asset-light.</h3>
-              
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
-                <li style="font-size:0.88rem;color:#52525b;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#ef4444;font-weight:900;flex-shrink:0;">✕</span>
-                  <span>We DO NOT own real estate, soundstages, or heavy camera rental trucks.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#52525b;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#ef4444;font-weight:900;flex-shrink:0;">✕</span>
-                  <span>We DO NOT compete with specialized creative agencies or talent managers.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#52525b;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#ef4444;font-weight:900;flex-shrink:0;">✕</span>
-                  <span>We DO NOT take IP ownership, backend rights, or creative control from creators.</span>
-                </li>
-                <li style="font-size:0.88rem;color:#52525b;line-height:1.5;display:flex;gap:0.7rem;">
-                  <span style="color:#ef4444;font-weight:900;flex-shrink:0;">✕</span>
-                  <span>We DO NOT charge upfront speculative retainers or hidden broker markups.</span>
-                </li>
-              </ul>
-            </div>
-            <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(0,0,0,0.08);font-family:var(--font-mono);font-size:0.72rem;color:#71717a;">
-              OUR PROMISE: Transparent coordination fees charged only when work delivers.
-            </div>
-          </div>
-
         </div>
 
-        <!-- The Practical Rule Banner -->
-        <div style="background:#09090b;color:#fff;border-radius:24px;padding:2.2rem 2.5rem;margin-top:3rem;border:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
-          <div>
-            <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#22c55e;text-transform:uppercase;font-weight:800;margin-bottom:0.4rem;">
-              ● THE PRACTICAL OPERATING RULE
+        <div class="loop-interactive-container">
+          <div class="loop-steps-bar" id="loopStepsBar">
+            <button class="loop-step-btn active" data-step="0">01 Detect</button>
+            <button class="loop-step-btn" data-step="1">02 Map</button>
+            <button class="loop-step-btn" data-step="2">03 Qualify</button>
+            <button class="loop-step-btn" data-step="3">04 Connect</button>
+            <button class="loop-step-btn" data-step="4">05 Secure</button>
+            <button class="loop-step-btn" data-step="5">06 Activate</button>
+            <button class="loop-step-btn" data-step="6">07 Coordinate</button>
+            <button class="loop-step-btn" data-step="7">08 Monitor</button>
+            <button class="loop-step-btn" data-step="8">09 Intervene</button>
+            <button class="loop-step-btn" data-step="9">10 Settle</button>
+            <button class="loop-step-btn" data-step="10">11 Learn</button>
+            <button class="loop-step-btn" data-step="11">12 Scale</button>
+          </div>
+
+          <!-- Dynamic Inspection Display -->
+          <div class="loop-step-display" id="loopDisplayCard">
+            <div>
+              <div class="tag-badge" style="margin-bottom:1rem;">
+                <span class="dot"></span>
+                <span id="loopStepPhase">Phase 01 // Detect</span>
+              </div>
+              <h3 id="loopStepTitle" class="loop-step-title">Fragmentation &amp; Bottleneck Detection</h3>
+              <p id="loopStepDesc" class="loop-step-desc">
+                Continuous telemetry scanner identifies idle soundstages, uncommitted optical primes, and stalled production slates.
+              </p>
             </div>
-            <div style="font-family:var(--font-serif);font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:0.4rem;">
-              Find waste &rarr; remove it. Find unused value &rarr; activate it.
-            </div>
-            <div style="font-size:0.85rem;color:#a1a1aa;">
-              No shortcuts. No fake numbers. No wasted motion. Do the work. Measure the result. Scale what works.
+
+            <div style="display:flex;flex-direction:column;gap:0.9rem;">
+              <div class="meta-box">
+                <span class="meta-box-label">Protocol input</span>
+                <div class="meta-box-val" id="loopStepInput">Facility gap calendars, optical inventory feeds, permit ledgers</div>
+              </div>
+              <div class="meta-box">
+                <span class="meta-box-label">Accreditation metric</span>
+                <div class="meta-box-val" id="loopStepVerify">Acoustic isolation STC 60+ check, serial collimation QC</div>
+              </div>
+              <div class="meta-box">
+                <span class="meta-box-label">Certified deliverable</span>
+                <div class="meta-box-val" id="loopStepOutput" style="color:var(--accent-cyan);">Validated gap window &amp; tripartite technical charter</div>
+              </div>
             </div>
           </div>
-          <a href="about.html#how-we-operate" class="tlc-btn-pill" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:0.75rem 1.6rem;font-size:0.82rem;text-decoration:none;">
-            Read All 20 Principles &rarr;
-          </a>
-        </div>
 
+          <!-- The Idle Capacity Activation Pathway -->
+          <div style="background:var(--bg-surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:2.2rem;margin-top:3rem;text-align:center;">
+            <span class="mono" style="color:var(--status-green);font-size:0.75rem;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.6rem;">LATENCY &ne; LOSS</span>
+            <h3 style="font-family:var(--font-headline);color:var(--text-white);margin-bottom:0.8rem;font-weight:800;">The idle capacity monetization pathway</h3>
+            <div class="progression-flow">
+              <span class="progression-node">Available</span>
+              <span class="progression-arrow">&rarr;</span>
+              <span class="progression-node">Discoverable</span>
+              <span class="progression-arrow">&rarr;</span>
+              <span class="progression-node">Accredited</span>
+              <span class="progression-arrow">&rarr;</span>
+              <span class="progression-node">Attached</span>
+              <span class="progression-arrow">&rarr;</span>
+              <span class="progression-node">Governed</span>
+              <span class="progression-arrow">&rarr;</span>
+              <span class="progression-node highlight">Monetized</span>
+            </div>
+            <p style="font-size:0.92rem;color:var(--text-secondary);max-width:760px;margin:0.8rem auto 0;line-height:1.6;">
+              Diminished opacity. Eradicated information asymmetry. Zero unmitigated escrow leakage. Real-time telemetry. Deterministic outcomes.
+            </p>
+          </div>
+
+          <div style="margin-top:2rem;text-align:center;">
+            <a href="runbook.html#rb-loop" class="btn btn-secondary btn-sm">Inspect complete 12-step SOPs in master runbook &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 04 // COMMAND CENTER FOOTER -->
-    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
-      <div style="max-width:1050px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
-          <div>
-            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;margin-bottom:0.8rem;">READY TO SHOOT?</div>
-            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
-              Tell us what you're <span style="color:#71717a;font-style:italic;">shooting.</span>
-            </h2>
-            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
-              Producers, studio owners, and crew: Submit your requirements for instant network dispatch within 24 hours.
-            </p>
+    <!-- 02. ENGINE MODULES (13 CONNECTED SYSTEMS) -->
+    <section id="engine" style="background:var(--bg-surface-0);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);">
+      <div class="container">
+        <div class="section-header">
+          <div class="tag-badge">
+            <span class="dot"></span>
+            <span>Proprietary system architecture</span>
           </div>
-          <div style="display:flex;flex-direction:column;gap:0.9rem;">
-            <a href="contact.html?type=project" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
-              Bring a project &rarr;
-            </a>
-            <a href="contact.html?type=join" class="tlc-btn-pill" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;">
-              Join as Crew or Studio &rarr;
-            </a>
-          </div>
+          <h2 class="section-title">The DigiSynq <span class="text-cyan-gradient"><em>engine.</em></span></h2>
+          <p class="section-subhead">
+            The 13 modular capabilities powering real-time synchronization across entertainment workflows. Select a module to inspect its mechanics:
+          </p>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
-          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
-          <div style="display:flex;gap:1.5rem;">
-            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
-            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">How It Works</a>
-            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
-            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
+
+        <div class="engine-container">
+          <div class="engine-nav-grid">
+            <button class="engine-module-btn active" data-module="scan">
+              <span class="mod-code">Module 01</span>
+              <span class="mod-name">SYNQSCAN™</span>
+            </button>
+            <button class="engine-module-btn" data-module="map">
+              <span class="mod-code">Module 02</span>
+              <span class="mod-name">SYNQMAP™</span>
+            </button>
+            <button class="engine-module-btn" data-module="link">
+              <span class="mod-code">Module 03</span>
+              <span class="mod-name">SYNQLINK™</span>
+            </button>
+            <button class="engine-module-btn" data-module="pool">
+              <span class="mod-code">Module 04</span>
+              <span class="mod-name">SYNQPOOL™</span>
+            </button>
+            <button class="engine-module-btn" data-module="flow">
+              <span class="mod-code">Module 05</span>
+              <span class="mod-name">SYNQFLOW™</span>
+            </button>
+            <button class="engine-module-btn" data-module="share">
+              <span class="mod-code">Module 06</span>
+              <span class="mod-name">SYNQSHARE™</span>
+            </button>
+            <button class="engine-module-btn" data-module="vault">
+              <span class="mod-code">Module 07</span>
+              <span class="mod-name">SYNQVAULT™</span>
+            </button>
+            <button class="engine-module-btn" data-module="track">
+              <span class="mod-code">Module 08</span>
+              <span class="mod-name">SYNQTRACK™</span>
+            </button>
+            <button class="engine-module-btn" data-module="exchange">
+              <span class="mod-code">Module 09</span>
+              <span class="mod-name">SYNQEXCHANGE™</span>
+            </button>
+            <button class="engine-module-btn" data-module="intel">
+              <span class="mod-code">Module 10</span>
+              <span class="mod-name">SYNQINTEL™</span>
+            </button>
+            <button class="engine-module-btn" data-module="lab">
+              <span class="mod-code">Module 11</span>
+              <span class="mod-name">SYNQLAB™</span>
+            </button>
+            <button class="engine-module-btn" data-module="control">
+              <span class="mod-code">Module 12</span>
+              <span class="mod-name">SYNQCONTROL™</span>
+            </button>
+            <button class="engine-module-btn" data-module="outcome">
+              <span class="mod-code">Module 13</span>
+              <span class="mod-name">SYNQOUTCOME™</span>
+            </button>
+          </div>
+
+          <div class="engine-detail-panel">
+            <div>
+              <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;" id="moduleCode">SYNQSCAN™</span>
+              <h3 style="color:#ffffff;margin:0.4rem 0 1rem;" id="moduleName">Fragmentation &amp; leakage detector</h3>
+              <p style="font-size:1.02rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;" id="moduleDesc">
+                Continuously monitors industry pipelines to detect unbooked facility dates, idle camera packages, dormant IP, delayed payments, and workflow gaps.
+              </p>
+
+              <div style="margin-top:1.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;">
+                <button class="btn btn-cyan btn-sm" id="deployModuleBtn" data-open-synq-modal data-role="studio" data-msg="I would like to deploy SYNQSCAN™ in our production workflow.">Deploy module in your workflow &rarr;</button>
+                <a href="runbook.html#rb-engine" class="btn btn-secondary btn-sm" style="font-size:0.78rem;">Technical specs in runbook &rarr;</a>
+              </div>
+            </div>
+
+            <div class="module-meta-grid">
+              <div class="meta-box">
+                <span class="meta-box-label">Problem solved</span>
+                <div class="meta-box-val" id="moduleProblem">Siloed information leads to 40%+ dark-day asset losses and project stalls.</div>
+              </div>
+              <div class="meta-box">
+                <span class="meta-box-label">Who benefits</span>
+                <div class="meta-box-val" id="moduleBenefits">Studios, Independent Producers, Guild Technicians, Asset Owners.</div>
+              </div>
+              <div class="meta-box">
+                <span class="meta-box-label">Information used</span>
+                <div class="meta-box-val" id="moduleInputs">Live stage schedules, gear inventories, production permits, guild rosters.</div>
+              </div>
+              <div class="meta-box">
+                <span class="meta-box-label">Measurable outcome</span>
+                <div class="meta-box-val" id="moduleOutcome">Real-time detection of operational bottlenecks before capital is burned.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
+    <!-- 03. INTERACTIVE LEAKAGE & YIELD SIMULATOR -->
+    <section id="simulator">
+      <div class="container">
+        <div class="section-header">
+          <div class="tag-badge">
+            <span class="dot"></span>
+            <span>Interactive economics</span>
+          </div>
+          <h2 class="section-title">Economic leakage vs. <span class="text-cyan-gradient"><em>recovered yield.</em></span></h2>
+          <p class="section-subhead">
+            Drag the production scale slider to calculate how much capital, time, and soundstage capacity DigiSynq recovers:
+          </p>
+        </div>
+
+        <div class="simulator-box" style="max-width:920px;margin:0 auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <span class="mono" style="color:var(--text-muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;">Production / Slate Budget</span>
+              <div id="simBudgetDisplay" style="font-family:var(--font-headline);font-size:clamp(1.8rem, 3.8vw, 2.6rem);color:var(--accent-cyan);font-weight:800;margin-top:0.2rem;">
+                ₹10.0 Cr ($1.2M)
+              </div>
+            </div>
+            <div class="tag-badge" style="margin:0;">
+              <span class="dot" style="background:var(--accent-emerald);box-shadow:0 0 8px var(--accent-emerald);"></span>
+              <span>Based on 22% avg industry leakage</span>
+            </div>
+          </div>
+
+          <div class="slider-container" style="margin:2.5rem 0 1.5rem;">
+            <input type="range" min="0.5" max="50" step="0.5" value="10" class="sim-slider" id="budgetSlider" aria-label="Slate budget slider">
+            <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);margin-top:0.6rem;">
+              <span>₹50 Lakh</span>
+              <span>₹10 Crore</span>
+              <span>₹25 Crore</span>
+              <span>₹50+ Crore</span>
+            </div>
+          </div>
+
+          <div class="sim-metrics-grid">
+            <div class="sim-metric-card">
+              <span class="mono" style="color:var(--accent-rose);font-size:0.75rem;font-weight:700;text-transform:uppercase;">Uncoordinated Leakage</span>
+              <div class="sim-metric-val" id="simLeakageVal" style="color:var(--accent-rose);">₹2.20 Cr</div>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Lost to idle bookings &amp; broker friction</p>
+            </div>
+            <div class="sim-metric-card" style="border-color:rgba(6,182,212,0.4);background:rgba(6,182,212,0.06);">
+              <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;text-transform:uppercase;">Capital Recovered</span>
+              <div class="sim-metric-val" id="simRecoveredVal" style="color:var(--accent-cyan);">₹1.94 Cr</div>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Reclaimed via DigiSynq engine</p>
+            </div>
+            <div class="sim-metric-card">
+              <span class="mono" style="color:var(--accent-emerald);font-size:0.75rem;font-weight:700;text-transform:uppercase;">Time To Wrap Saved</span>
+              <div class="sim-metric-val" id="simTimeSavedVal" style="color:var(--accent-emerald);">17 weeks</div>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Faster packaging &amp; post delivery</p>
+            </div>
+            <div class="sim-metric-card">
+              <span class="mono" style="color:var(--accent-purple);font-size:0.75rem;font-weight:700;text-transform:uppercase;">Dark Days Activated</span>
+              <div class="sim-metric-val" id="simDarkDaysVal" style="color:var(--accent-purple);">46 dark days</div>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Converted into high-yield shoots</p>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin-top:2.5rem;">
+            <button class="btn btn-primary btn-md" data-open-synq-modal>Deploy simulation to your slate &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 04. OPERATIONAL USE CASES -->
+    <section style="background:var(--bg-surface-0);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);">
+      <div class="container">
+        <div class="section-header">
+          <div class="tag-badge">
+            <span class="dot"></span>
+            <span>Operational scenario</span>
+          </div>
+          <h2 class="section-title">The difference in <span class="text-cyan-gradient"><em>execution.</em></span></h2>
+          <p class="section-subhead">
+            See how traditional friction compares directly with DigiSynq orchestrated workflows across real production scenarios:
+          </p>
+        </div>
+
+        <div class="bento-card" style="padding:2.5rem;">
+          <span class="mono" style="color:var(--accent-cyan);font-size:0.78rem;font-weight:800;">Scenario: Producer needs post-production capacity &amp; color conformity</span>
+          
+          <div class="comp-grid" style="margin-top:1.5rem;">
+            <!-- Traditional Workflow -->
+            <div style="background:var(--bg-surface-2);border:1px solid rgba(239, 68, 68, 0.2);padding:1.8rem;border-radius:var(--radius-md);">
+              <span class="tag-badge" style="color:var(--accent-red);background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3);margin-bottom:1rem;">Traditional workflow</span>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">1. Manual telephone outreach across 10+ edit houses</div>
+                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">2. Unstandardized rate cards and schedule ambiguity</div>
+                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">3. Raw footage metadata desync on Day 1 handoff</div>
+                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">4. 15-day editorial delay &amp; re-conforming expense</div>
+              </div>
+            </div>
+
+            <!-- DigiSynq Synchronized Workflow -->
+            <div style="background:var(--bg-surface-2);border:1px solid rgba(6, 182, 212, 0.4);padding:1.8rem;border-radius:var(--radius-md);box-shadow:0 10px 30px var(--accent-cyan-glow);">
+              <span class="tag-badge" style="color:var(--accent-cyan);background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);margin-bottom:1rem;">DigiSynq orchestration</span>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                <div style="background:rgba(6,182,212,0.08);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:#38bdf8;border:1px solid rgba(6,182,212,0.3);">&check; 1. Problem detected &amp; resource graph queried</div>
+                <div style="background:rgba(6,182,212,0.08);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:#38bdf8;border:1px solid rgba(6,182,212,0.3);">&check; 2. ACES-calibrated post suite matched in 24 hours</div>
+                <div style="background:rgba(6,182,212,0.08);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:#38bdf8;border:1px solid rgba(6,182,212,0.3);">&check; 3. DIT on-set daily proxy hashes synchronized</div>
+                <div style="background:rgba(6,182,212,0.08);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:#38bdf8;border:1px solid rgba(6,182,212,0.3);">&check; 4. Zero conformity lag; milestone escrow disbursed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo"><span>DigiSynq</span></a>
+          <p>The entertainment ecosystem, synchronized. The asset-light coordination layer for global entertainment.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul class="footer-links">
+            <li><a href="ecosystem.html">Ecosystem graph</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+            <li><a href="missions.html">Strategic missions</a></li>
+            <li><a href="intelligence.html">Predictive intelligence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About DigiSynq</a></li>
+            <li><a href="runbook.html">Master runbook</a></li>
+            <li><a href="contact.html">Contact desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Protocol</h5>
+          <ul class="footer-links">
+            <li><a href="how-it-works.html#engine">13 Engine modules</a></li>
+            <li><a href="runbook.html#rb-vault">SYNQVAULT™ escrow</a></li>
+            <li><a href="runbook.html#rb-sla">Operating SLAs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 DigiSynq Inc. All rights reserved.</div>
+        <div class="mono" style="color:var(--text-muted);font-size:0.75rem;">SYSTEM STATUS: <span style="color:var(--status-green);">OPTIMAL (0.00% ANOMALY)</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="synqModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="closeSynqModal">&times;</button>
+      <div class="tag-badge"><span class="dot"></span><span>Synq intake desk</span></div>
+      <h3>Start an orchestrated synq</h3>
+      <form onsubmit="event.preventDefault(); alert('Request submitted. DigiSynq team will contact you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">
+        <div class="form-group" style="margin-top:1rem;">
+          <label class="form-label">Project type</label>
+          <input type="text" class="form-input" placeholder="e.g. Feature Film / Web Series / TVC" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Name &amp; organization</label>
+          <input type="text" class="form-input" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contact details</label>
+          <input type="text" class="form-input" placeholder="Email or phone" required>
+        </div>
+        <button type="submit" class="btn btn-cyan" style="width:100%;margin-top:0.8rem;">Submit project &rarr;</button>
+      </form>
+    </div>
   </div>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>

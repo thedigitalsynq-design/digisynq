@@ -1,0 +1,77 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <span>DigiSynq</span>
+        </a>
+        <p>The entertainment ecosystem, synchronized. The asset-light coordination layer for global entertainment.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul class="footer-links">
+          <li><a href="ecosystem.html">Ecosystem graph</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="missions.html">Strategic missions</a></li>
+          <li><a href="intelligence.html">Predictive intelligence</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">About DigiSynq</a></li>
+          <li><a href="runbook.html">Master runbook</a></li>
+          <li><a href="contact.html">Contact desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Protocol</h5>
+        <ul class="footer-links">
+          <li><a href="how-it-works.html#engine">13 Engine modules</a></li>
+          <li><a href="runbook.html#rb-vault">SYNQVAULT™ escrow</a></li>
+          <li><a href="runbook.html#rb-sla">Operating SLAs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 DigiSynq Inc. All rights reserved. Confirmed node-to-node cryptography.</div>
+      <div class="mono" style="color:var(--text-muted);font-size:0.75rem;">
+        SYSTEM STATUS: <span style="color:var(--status-green);">OPTIMAL (0.00% ANOMALY)</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="synqModal">
+  <div class="modal-dialog">
+    <button class="modal-close-btn" id="closeSynqModal">&times;</button>
+    <div class="tag-badge"><span class="dot"></span><span>Synq intake desk</span></div>
+    <h3>Connect with the ecosystem</h3>
+    <form onsubmit="event.preventDefault(); alert('Request received. DigiSynq Orchestration Desk will connect with you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">
+      <div class="form-group" style="margin-top:1rem;">
+        <label class="form-label">Stakeholder category</label>
+        <select class="form-select" required>
+          <option value="content">Content producer / IP owner</option>
+          <option value="talent">Talent / Guild crew</option>
+          <option value="production">Studio lot / Gear rental</option>
+          <option value="commercial">Brand / Agency / Financier</option>
+          <option value="distribution">Theatrical / Streaming / Sales</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Name &amp; organization</label>
+        <input type="text" class="form-input" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contact details</label>
+        <input type="text" class="form-input" placeholder="Email or phone" required>
+      </div>
+      <button type="submit" class="btn btn-cyan" style="width:100%;margin-top:0.8rem;">Submit node intake &rarr;</button>
+    </form>
+  </div>
+</div>
