@@ -50,6 +50,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -66,11 +69,25 @@
     <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a></div>
   </header>
 
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="platform.html">Platform</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="business.html" class="active">Business</a>
+    <a href="flowchart.html">Protocol</a>
+    <a href="cinema-damage-control.html">Radar</a>
+    <a href="insights.html">Insights</a>
+    <a href="about.html">About</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+  </div>
+
   <!-- UNIFIED HERO SECTION -->
   <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">Commercial Architecture</div>
-    <h1 class="ins-hero-title">Zero Assets.<br><em>Pure Execution.</em></h1>
-    <p class="ins-hero-desc">Zero assets. Zero inventory. Zero upfront fees. DIGISYNQ earns only when verified milestones are delivered &mdash; aligning our revenue completely with your outcomes.</p>
+    <div class="ins-eyebrow">Entertainment Commercial Architecture</div>
+    <h1 class="ins-hero-title">Zero Assets.<br><em>Pure Entertainment Execution.</em></h1>
+    <p class="ins-hero-desc">Zero assets. Zero inventory. Zero upfront fees. DIGISYNQ earns only when verified production milestones are delivered &mdash; aligning our revenue completely with your film & OTT outcomes.</p>
     <div class="ins-hero-actions">
       <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
       <a href="#fee-streams" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">View Fee Streams</a>

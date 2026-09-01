@@ -101,8 +101,8 @@ body {
 
 /* Master Container App Frame (Liquid Glass Rounded Frame) */
 @keyframes pageEntry {
-  from { opacity: 0; transform: scale(0.992); }
-  to   { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .app-card {
   width: 100%;
@@ -1320,6 +1320,77 @@ body {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
+
+/* Hamburger Menu Button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 8px;
+  z-index: 300;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #09090b;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Overlay Menu */
+.nav-mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 223, 0, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 250;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+}
+.nav-mobile-overlay.open {
+  display: flex;
+}
+.nav-mobile-overlay a {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #09090b;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  transition: background 0.2s;
+  text-align: center;
+}
+.nav-mobile-overlay a:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.nav-mobile-overlay a.active {
+  background: #09090b;
+  color: #fff;
+}
+
 @media (max-width: 1200px) {
   .nav-links-center {
     gap: 0.25rem;
@@ -1327,7 +1398,7 @@ body {
   }
   .nav-links-center li a {
     font-size: 0.78rem;
-    padding: 0.25rem 0.4rem;
+    padding: 0.3rem 0.5rem;
   }
   .nav-dot-sep {
     font-size: 0.65rem;
@@ -1368,33 +1439,39 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 0.6rem;
+    padding: 0.4rem;
+    line-height: 1.5;
   }
   .app-card {
-    border-radius: 28px;
+    border-radius: 20px;
   }
   .top-nav {
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+  }
+  .nav-hamburger {
+    display: flex;
   }
   .nav-links-center {
-    order: 3;
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.4rem 0.8rem;
+    display: none;
+  }
+  .nav-actions-right {
+    margin-left: auto;
+  }
+  .btn-login {
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
   }
   .hero-box {
-    margin: 0 0.6rem 1.5rem;
-    border-radius: 24px;
-    padding: 2.2rem 1.4rem;
+    margin: 0 0.4rem 1rem;
+    border-radius: 20px;
+    padding: 1.8rem 1.2rem;
   }
   .hero-main-title {
-    font-size: clamp(3.8rem, 14vw, 5.5rem);
+    font-size: clamp(2.8rem, 10vw, 4rem);
   }
   .f-top {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .float-tag-top, .float-tag-bottom, .float-glass-stat, .float-glass-product {
     position: static;
@@ -1403,6 +1480,25 @@ body {
   }
   .hero-right-col {
     flex-direction: column;
+  }
+  /* Reduce blur on mobile for performance */
+  .top-nav.scrolled, .nav-links-center, .site-footer,
+  .liquid-glass-panel, .glass-card-elevated, .glass-toast {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  /* Increase touch targets */
+  .nav-mobile-overlay a {
+    padding: 1rem 2rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-pill-solid, .btn-pill-outline {
+    padding: 0.8rem 1.5rem;
+    min-height: 44px;
+    font-size: 0.88rem;
   }
 }
 

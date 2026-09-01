@@ -14,6 +14,9 @@
 <body>
   <div class="app-card">
     <header class="top-nav">
+      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -32,6 +35,20 @@
         <a href="index.html" class="btn-pill-outline">Back to Home</a>
       </div>
     </header>
+
+    <div class="nav-mobile-overlay">
+      <a href="index.html">Home</a>
+      <a href="network.html">Network</a>
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="business.html">Business</a>
+      <a href="flowchart.html">Protocol</a>
+      <a href="cinema-damage-control.html">Radar</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+    </div>
 
     <div class="ins-hero" id="main-content">
       <div class="ins-eyebrow">Error 404 // Unrouted Node</div>

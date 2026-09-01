@@ -556,6 +556,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <nav aria-label="Primary Navigation">
       <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -575,13 +578,27 @@
     </div>
   </header>
 
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="platform.html">Platform</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="business.html">Business</a>
+    <a href="flowchart.html">Protocol</a>
+    <a href="cinema-damage-control.html">Radar</a>
+    <a href="insights.html">Insights</a>
+    <a href="about.html" class="active">About</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════════
        HERO
        ═══════════════════════════════════════════════════════ -->
   <div class="about-hero ins-hero" id="main-content">
     <div class="ins-eyebrow">The DIGISYNQ Manifesto</div>
-    <h1 class="ins-hero-title">Different Parts.<br><em>One Connected Ecosystem.</em></h1>
-    <p class="ins-hero-desc">DIGISYNQ connects the pieces of the entertainment ecosystem. People. Talent. Technology. Businesses. Communities. Opportunities.</p>
+    <h1 class="ins-hero-title">Different Players.<br><em>One Connected Entertainment Ecosystem.</em></h1>
+    <p class="ins-hero-desc">DIGISYNQ connects Indian entertainment: producers, directors, writers, soundstages, VFX studios, OTT platforms, investors, and audiences. One network. Zero friction.</p>
     <div class="ins-hero-actions">
       <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
       <a href="network.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Network Nodes</a>
@@ -640,17 +657,17 @@
   <section class="about-section white" id="problem">
     <div class="about-container">
       <div class="about-eyebrow dark">02 &mdash; The Problem</div>
-      <h2 class="about-h2 dark">Too many pieces.<br>Too many gaps.</h2>
-      <p class="about-desc dark">Too much value left disconnected.</p>
+      <h2 class="about-h2 dark">Too many disconnected productions.<br>Too many wasted soundstages.</h2>
+      <p class="about-desc dark">Too much entertainment value left on the table.</p>
 
       <div class="problem-list">
-        <div class="problem-card" data-reveal><p>Talent gets overlooked.</p></div>
-        <div class="problem-card" data-reveal><p>Skills stay invisible.</p></div>
-        <div class="problem-card" data-reveal><p>Opportunities miss the right people.</p></div>
-        <div class="problem-card" data-reveal><p>Communities remain fragmented.</p></div>
+        <div class="problem-card" data-reveal><p>Talent gets overlooked by the wrong networks.</p></div>
+        <div class="problem-card" data-reveal><p>Dark soundstages bleed revenue every month.</p></div>
+        <div class="problem-card" data-reveal><p>IP sits dormant while capital seeks deals.</p></div>
+        <div class="problem-card" data-reveal><p>Audiences remain disconnected from production.</p></div>
       </div>
 
-      <p class="about-desc dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;font-size:1.05rem;">We believe the ecosystem can work better.</p>
+      <p class="about-desc dark" style="margin-top:2.5rem;font-weight:700;color:#09090b;font-size:1.05rem;">We believe the Indian entertainment ecosystem can work better.</p>
     </div>
   </section>
 

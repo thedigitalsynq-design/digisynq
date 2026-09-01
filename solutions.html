@@ -44,6 +44,9 @@
   
   <!-- TOP NAVIGATION -->
   <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -60,11 +63,25 @@
     <div class="nav-actions-right"><a href="contact.html" class="btn-login">Connect</a></div>
   </header>
 
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="platform.html">Platform</a>
+    <a href="solutions.html" class="active">Solutions</a>
+    <a href="business.html">Business</a>
+    <a href="flowchart.html">Protocol</a>
+    <a href="cinema-damage-control.html">Radar</a>
+    <a href="insights.html">Insights</a>
+    <a href="about.html">About</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+  </div>
+
   <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
   <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">Stakeholder Architecture</div>
-    <h1 class="ins-hero-title">Targeted Solutions.<br><em>Zero Intermediary Fees.</em></h1>
-    <p class="ins-hero-desc">Whether you produce films, own soundstage inventory, create intellectual property, or deploy institutional capital &mdash; DIGISYNQ delivers structural speed and milestone safety.</p>
+    <div class="ins-eyebrow">Entertainment Stakeholder Architecture</div>
+    <h1 class="ins-hero-title">Production Solutions.<br><em>Zero Intermediary Fees.</em></h1>
+    <p class="ins-hero-desc">Whether you produce films, own soundstage inventory, create intellectual property, or deploy institutional capital &mdash; DIGISYNQ delivers structural speed and milestone safety for Indian entertainment.</p>
     
     <div class="sol-tabs">
       <a href="#producers" class="sol-tab active">For Producers</a>

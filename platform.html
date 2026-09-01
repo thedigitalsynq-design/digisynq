@@ -21,6 +21,9 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
+      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -40,11 +43,25 @@
       </div>
     </header>
 
+    <div class="nav-mobile-overlay">
+      <a href="index.html">Home</a>
+      <a href="network.html">Network</a>
+      <a href="platform.html" class="active">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="business.html">Business</a>
+      <a href="flowchart.html">Protocol</a>
+      <a href="cinema-damage-control.html">Radar</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+    </div>
+
     <!-- UNIFIED HERO: INSIGHTS THEME FORMAT -->
     <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Operating System Infrastructure</div>
-      <h1 class="ins-hero-title">Operating Engines.<br><em>Pure Synchronization.</em></h1>
-      <p class="ins-hero-desc">Find what is disconnected. Connect it to the right opportunity. Activate it with zero balance drag &mdash; powered by 5 specialized capability engines.</p>
+      <div class="ins-eyebrow">Entertainment Production OS</div>
+      <h1 class="ins-hero-title">Production Engines.<br><em>Pure Synchronization.</em></h1>
+      <p class="ins-hero-desc">Find idle soundstages, unattached talent, and dormant IP. Connect them to funded productions. Activate with zero balance drag &mdash; powered by 5 specialized entertainment engines.</p>
       
       <div class="ins-hero-actions">
         <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>

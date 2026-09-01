@@ -55,6 +55,9 @@
 <body>
 <div class="app-card">
   <header class="top-nav">
+    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <nav aria-label="Primary Navigation">
       <ul class="nav-links-center">
         <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
@@ -73,11 +76,25 @@
     </div>
   </header>
 
+  <div class="nav-mobile-overlay">
+    <a href="index.html">Home</a>
+    <a href="network.html">Network</a>
+    <a href="platform.html">Platform</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="business.html">Business</a>
+    <a href="flowchart.html">Protocol</a>
+    <a href="cinema-damage-control.html">Radar</a>
+    <a href="insights.html" class="active">Insights</a>
+    <a href="about.html">About</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
+  </div>
+
   <!-- UNIFIED HERO SECTION -->
   <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">Telemetry & Intelligence</div>
+    <div class="ins-eyebrow">Indian Entertainment Telemetry</div>
     <h1 class="ins-hero-title">Quantified Leakage.<br><em>Recovered Value.</em></h1>
-    <p class="ins-hero-desc">DIGISYNQ telemetry quantifies the hidden economic leakage in the Indian entertainment economy &mdash; and demonstrates precisely where synchronized routing recovers it.</p>
+    <p class="ins-hero-desc">DIGISYNQ telemetry quantifies the hidden economic leakage in Indian film & OTT production &mdash; and demonstrates precisely where synchronized routing recovers it.</p>
     
     <div class="ins-hero-actions">
       <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
