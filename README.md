@@ -10,17 +10,11 @@
 
 ## 🏛️ Core Architecture & Positioning
 
-- **Core Business Model**: Asset-light Operating Network (Capacity Utilization + Talent Pipeline + Content Economy + Amplification + Project Intelligence)
-- **Primary Proposition**: "Make the Entertainment Ecosystem Work Smarter."
-- **Five Operating Engines**:
-  1. **Capacity** — Activate existing production capability without capital expenditure.
-  2. **Talent** — Practical workshops & technical development for real production environments.
-  3. **Content** — Increase the useful lifespan and reach of entertainment content.
-  4. **Amplification** — Connect productions with entertainment creators, communities, and digital media.
-  5. **Intelligence** — Every project should make the next project smarter.
-- **The ABCDEF Operating Model**: Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract Value &rarr; Feed Forward.
-- **The DIGISYNQ Continuity Model**: Transforming linear production dispersal into a closed compounding loop.
-- **DIGISYNQ Project OS**: Building toward a future technology-enabled operating layer.
+- **Category Definition**: **The Operating Network for Entertainment**
+- **Core Revenue Thesis**: **"We Earn When Value Moves."** (Zero upfront retainers, milestone-backed escrow).
+- **The Multi-Layer Revenue Engine**: 9 revenue streams (Transaction, Coordination, Capacity Activation, Talent Infrastructure, Content Activation, Distribution, Radar Intelligence, Network Data, Enterprise Membership).
+- **The ABCDEF Protocol**: Audit &rarr; Build &rarr; Connect &rarr; Deploy &rarr; Extract &rarr; Feed Forward.
+- **Master Specification**: See [MASTER_PROMPT.md](file:///c:/Users/email/Downloads/Setup/digisynq-website/MASTER_PROMPT.md) for full Category Architecture & Section 62 Staged Implementation Plan.
 
 ---
 
@@ -28,23 +22,28 @@
 
 ```
 digisynq-website/
-├── index.html           # Master Homepage (14-stage positioning flow)
-├── platform.html        # How It Works & The 5 Operating Engines
-├── network.html         # Entertainment Capacity Network & DIGISYNQ Talent Lab
-├── flowchart.html       # ABCDEF Operating Model & Continuity Flowchart
-├── business.html        # Asset-Light Operating Model & Clean Collaboration
-├── about.html           # Operating Philosophy & Non-Agency Manifesto
-├── contact.html         # "Start with your problem" Client Intake
-├── 404.html             # Node not connected 404 page
+├── index.html           # Master Homepage (What Exists -> What's Broken -> Connect/Coordinate/Activate -> Outcomes)
+├── network.html         # 10 Integrated Vertical Nodes
+├── platform.html        # 5 Capability Engines & Operating Loops
+├── flowchart.html       # ABCDEF Protocol & Lifecycle Governance
+├── solutions.html       # Tailored Stakeholder Modules
+├── business.html        # Revenue Engine, 9 Streams, Flywheel & 5 Moats
+├── cinema-damage-control.html # Radar: Pre-Release Narrative Defense
+├── insights.html        # Quantified Inefficiency & Margin Recovery
+├── about.html           # Corporate Thesis & Philosophy
+├── contact.html         # Direct Project Intake & Dispatch
+├── feedback.html        # Ecosystem Governance & Feature Voting
+├── 404.html             # Unrouted Node Recovery
+├── MASTER_PROMPT.md     # Master Specification & Section 62 Implementation Plan
 ├── assets/
 │   ├── css/
-│   │   └── style.css    # Master design system & components
+│   │   └── style.css    # Master design system & monochrome tokens
 │   ├── js/
-│   │   └── main.js      # Interactive hero network & flow engine
-│   └── img/             # Brand logos & icons
+│   │   └── main.js      # Interactive engine, sticky nav & glass toasts
+│   └── img/             # Brand & partner logos
 └── README.md
 ```
 
 ---
 
-*DIGISYNQ — We don't want to own the entertainment ecosystem. We want to make it work better.*
+*DIGISYNQ — The Operating Network for Entertainment. Turning fragmented resources into connected, compounding value.*
