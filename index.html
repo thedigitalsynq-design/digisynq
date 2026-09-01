@@ -3,18 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ &mdash; The Operating Network for Indian Film, OTT & Entertainment. Connecting soundstages, talent, IP, and capital through milestone-secured escrow." />
-  <meta property="og:title" content="DIGISYNQ &mdash; The Entertainment Operating Network" />
-  <meta property="og:description" content="The industry doesn't lack resources. It lacks synchronization. Own less. Connect more. Multiply value." />
+  <meta name="description" content="DIGISYNQ — The Operating Network for Entertainment. Turning fragmented industry resources into connected, compounding value." />
+  <meta property="og:title" content="DIGISYNQ — The Operating Network for Entertainment" />
+  <meta property="og:description" content="Entertainment has everything. It just isn't connected. We connect, coordinate, and activate fragmented resources into compounding value." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://digisynq.com/" />
-  <title>DIGISYNQ &mdash; The Operating Network for the Entertainment Industry</title>
+  <title>DIGISYNQ — The Operating Network for Entertainment</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .home-exists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .home-exist-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; text-align: left; }
+    .home-exist-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.5rem; display: block; font-weight: 700; }
+    .home-exist-card h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 900; color: #fff; margin: 0 0 0.4rem; }
+    .home-exist-card p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; margin: 0; }
+
+    .home-broken-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .home-broken-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 1.8rem; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .home-broken-num { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: #71717a; margin-bottom: 0.6rem; font-weight: 800; }
+    .home-broken-card h3 { font-family: var(--font-body); font-size: 1.2rem; font-weight: 900; color: #09090b; margin: 0 0 0.5rem; }
+    .home-broken-card p { font-size: 0.88rem; color: #52525b; line-height: 1.55; margin: 0; }
+
+    .home-tri-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; position: relative; }
+    .home-tri-card { background: #0e0e13; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.2rem 1.8rem; text-align: left; position: relative; }
+    .home-tri-step { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.8rem; font-weight: 800; display: block; }
+    .home-tri-card h3 { font-family: var(--font-body); font-size: 1.35rem; font-weight: 900; color: #fff; margin: 0 0 0.6rem; }
+    .home-tri-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+
+    .home-outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .home-outcome-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 2rem 1.8rem; text-align: left; }
+    .home-outcome-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; color: #09090b; font-weight: 800; margin-bottom: 0.5rem; display: block; }
+    .home-outcome-card h3 { font-family: var(--font-body); font-size: 1.25rem; font-weight: 900; color: #09090b; margin: 0 0 0.5rem; }
+    .home-outcome-card p { font-size: 0.88rem; color: #52525b; line-height: 1.55; margin: 0; }
+
+    @media(max-width: 860px) {
+      .home-tri-grid, .home-outcomes-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body class="page-home">
 
@@ -22,23 +51,23 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
-
       <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
         <span></span><span></span><span></span>
       </button>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links-center">
-        <li><a href="index.html" class="active">Home</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-<li><a href="feedback.html">Feedback</a></li>
-</ul></nav>
+          <li><a href="index.html" class="active">Home</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="platform.html">Platform</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="flowchart.html">Protocol</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions-right">
         <a href="contact.html" class="btn-login">Connect</a>
@@ -59,22 +88,182 @@
       <a href="contact.html" style="margin-top:1.5rem;background:#09090b;color:#fff;">Connect</a>
     </div>
 
-    <!-- UNIFIED HERO: INSIGHTS THEME FORMAT + 3D SHOWCASE -->
+    <!-- 01 // HERO: THE BIG IDEA -->
     <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Institutional Entertainment Infrastructure</div>
-      <h1 class="ins-hero-title">Abundant Assets.<br><em>Flawless Synchronization.</em></h1>
-      <p class="ins-hero-desc">Connecting soundstages, marquee talent, intellectual property, and institutional capital through milestone-secured escrow.</p>
+      <div class="ins-eyebrow">The Operating Network for Entertainment</div>
+      <h1 class="ins-hero-title">Entertainment Has Everything.<br><em>It Just Isn't Connected.</em></h1>
+      <p class="ins-hero-desc">The industry doesn't lack talent, stages, capital, or IP. It lacks synchronization. DIGISYNQ connects fragmented resources, coordinates execution, and activates compounding value.</p>
       
       <div class="ins-hero-actions">
-        <a href="network.html" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Enter the Network &rarr;</a>
+        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Bring a Project &rarr;</a>
+        <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">How Value Moves &rarr;</a>
       </div>
     </div>
 
-  <footer class="site-footer">
+    <!-- 02 // WHAT EXISTS (DARK) -->
+    <section class="ins-section dark" id="what-exists">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">The Landscape</div>
+        <h2 class="ins-h2-light">The Assets Already Exist</h2>
+        <p class="ins-desc-light">The global entertainment industry is rich in creative and physical capability. Every essential element for high-margin production is already present in the market.</p>
+
+        <div class="home-exists-grid">
+          <div class="home-exist-card">
+            <span class="home-exist-tag">RESOURCE 01</span>
+            <h3>Talent &amp; Creators</h3>
+            <p>Writers, directors, marquee cast, and world-class technical crews.</p>
+          </div>
+          <div class="home-exist-card">
+            <span class="home-exist-tag">RESOURCE 02</span>
+            <h3>Production Spaces</h3>
+            <p>Acoustic soundstages, virtual production floors, and backlots.</p>
+          </div>
+          <div class="home-exist-card">
+            <span class="home-exist-tag">RESOURCE 03</span>
+            <h3>Equipment &amp; Post</h3>
+            <p>Camera packages, lighting gear, VFX pipelines, and audio mixing suites.</p>
+          </div>
+          <div class="home-exist-card">
+            <span class="home-exist-tag">RESOURCE 04</span>
+            <h3>Stories &amp; IP</h3>
+            <p>Optioned screenplays, published literature, and dormant franchises.</p>
+          </div>
+          <div class="home-exist-card">
+            <span class="home-exist-tag">RESOURCE 05</span>
+            <h3>Capital &amp; Windows</h3>
+            <p>Production funds, brand sponsors, theatrical chains, and OTT platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 // WHAT'S BROKEN (OFFWHITE) -->
+    <section class="ins-section offwhite" id="whats-broken">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">The Friction</div>
+        <h2 class="ins-h2-dark">Why Value Leaks</h2>
+        <p class="ins-desc-dark">Because these assets exist in silos, massive amounts of value remain locked in invisible inventory and fragmented execution.</p>
+
+        <div class="home-broken-grid">
+          <div class="home-broken-card">
+            <div class="home-broken-num">PROBLEM 01</div>
+            <h3>Idle Soundstage Days</h3>
+            <p>Premium studio facilities sit dark between booked productions because demand is uncoordinated.</p>
+          </div>
+          <div class="home-broken-card">
+            <div class="home-broken-num">PROBLEM 02</div>
+            <h3>Fragmented Sourcing</h3>
+            <p>Producers spend months negotiating piecemeal contracts across scattered gatekeepers and agencies.</p>
+          </div>
+          <div class="home-broken-card">
+            <div class="home-broken-num">PROBLEM 03</div>
+            <h3>Dormant IP &amp; Content</h3>
+            <p>Valuable scripts and completed media sit unmonetized without access to structured capital and secondary windows.</p>
+          </div>
+          <div class="home-broken-card">
+            <div class="home-broken-num">PROBLEM 04</div>
+            <h3>Unprotected Releases</h3>
+            <p>Box office narratives are distorted in pre-release windows without real-time sentiment defense.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 // WHAT DIGISYNQ DOES (DARK) -->
+    <section class="ins-section dark" id="how-it-works">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="ins-eyebrow" style="justify-content:flex-start;">The Operating Layer</div>
+        <h2 class="ins-h2-light">Connect. Coordinate. Activate.</h2>
+        <p class="ins-desc-light">DIGISYNQ serves as the neutral coordination infrastructure between all entertainment stakeholders.</p>
+
+        <div class="home-tri-grid">
+          <div class="home-tri-card">
+            <span class="home-tri-step">STEP 01 // DISCOVER &amp; MATCH</span>
+            <h3>Connect</h3>
+            <p>We make invisible inventory visible — mapping verified soundstages, available technical talent, and dormant IP directly to capitalized projects.</p>
+          </div>
+          <div class="home-tri-card">
+            <span class="home-tri-step">STEP 02 // MILESTONE ESCROW</span>
+            <h3>Coordinate</h3>
+            <p>We replace informal deals with standardized contracts and milestone-backed escrow, ensuring every participant executes with verified trust.</p>
+          </div>
+          <div class="home-tri-card">
+            <span class="home-tri-step">STEP 03 // VALUE ACTIVATION</span>
+            <h3>Activate</h3>
+            <p>From production launch to multi-window distribution and real-time box office radar, we ensure value moves without friction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 // WHAT HAPPENS (WHITE) -->
+    <section class="ins-section white" id="outcomes">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="sec-eyebrow-light">The Compounding Result</div>
+        <h2 class="ins-h2-dark">The Network Effect</h2>
+        <p class="ins-desc-dark">Every completed production leaves behind data, verified relationships, and higher network density — making the next project faster, safer, and more valuable.</p>
+
+        <div class="home-outcomes-grid">
+          <div class="home-outcome-card">
+            <span class="home-outcome-label">HIGHER UTILIZATION</span>
+            <h3>Dormant Assets Monetize</h3>
+            <p>Soundstages fill dark calendar days. Equipment stays rented. Talent moves seamlessly across verified productions.</p>
+          </div>
+          <div class="home-outcome-card">
+            <span class="home-outcome-label">FASTER EXECUTION</span>
+            <h3>Turn Months into Days</h3>
+            <p>Complete cast, crew, and stage packages assemble in hours with standardized milestone governance.</p>
+          </div>
+          <div class="home-outcome-card">
+            <span class="home-outcome-label">COMPOUNDING REVENUE</span>
+            <h3>We Earn When Value Moves</h3>
+            <p>Zero upfront retainer liabilities. DIGISYNQ participates exclusively in the value successfully created and unlocked.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:3.5rem;text-align:center;">
+          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#71717a;margin-bottom:1.2rem;font-weight:700;">READY TO MOBILIZE YOUR PRODUCTION?</div>
+          <a href="contact.html?type=join" class="btn-pill-solid" style="padding:1rem 2.8rem;font-size:0.95rem;">Enter the Network &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONO TRUST STRIP -->
+    <section class="mono-trust-strip" aria-label="Trust Network">
+      <div class="mono-trust-inner">
+        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
+        <div class="mono-trust-marquee-wrapper">
+          <div class="mono-trust-marquee-track">
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
+            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+          </div>
+        </div>
+        <div class="mono-trust-tags">
+          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
+          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
+          <span class="mono-trust-pill">&#9889; 100% Direct</span>
+          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
       <div class="container">
         <div class="f-top">
           <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;"><img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" /><span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span></div>
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
+              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
+              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
+            </div>
             <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
           </div>
 
@@ -114,7 +303,6 @@
     </footer>
 
   </div>
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
