@@ -9,291 +9,544 @@
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://digisynq.com/about.html"/>
   <title>About &amp; Founders — DIGISYNQ</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
-  <style>
-    .about-lead-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
-      margin-top: 3rem;
-      align-items: start;
-    }
-    .about-phil-card {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 2.5rem 2rem;
-      text-align: left;
-    }
-    .about-phil-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #fff;
-      margin: 0 0 1rem;
-    }
-    .about-phil-card p {
-      font-size: 0.92rem;
-      color: #a1a1aa;
-      line-height: 1.65;
-      margin: 0 0 1.5rem;
-    }
-    .about-ladder-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .about-ladder-step {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      background: rgba(255,255,255,0.04);
-      border-left: 2px solid #fff;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .founder-card {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      padding: 2rem 1.8rem;
-      text-align: left;
-    }
-    .founder-role {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      color: #71717a;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .founder-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: #09090b;
-      margin: 0 0 0.5rem;
-    }
-    .founder-card p {
-      font-size: 0.88rem;
-      color: #52525b;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    @media (max-width: 860px) {
-      .about-lead-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
-<body>
-<div class="app-card">
+<body class="page-about" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <!-- TOP NAVIGATION -->
-  <header class="top-nav">
-    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <nav aria-label="Primary Navigation">
-      <ul class="nav-links-center">
-        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="about.html" class="active">About</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="lab.html">Lab</a></li>
-      </ul>
-    </nav>
-    <div class="nav-actions-right"><a href="contact.html?type=project" class="btn-login">Bring a Project</a></div>
-  </header>
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-  <div class="nav-mobile-overlay">
-    <a href="index.html">Home</a>
-    <a href="network.html">Network</a>
-    <a href="how-it-works.html">How It Works</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="business.html">Business</a>
-    <a href="cinema-damage-control.html">Radar</a>
-    <a href="insights.html">Insights</a>
-    <a href="proof.html">Proof</a>
-    <a href="about.html" class="active">About</a>
-    <a href="lab.html">Lab</a>
-    <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
-  </div>
-
-  <!-- HERO -->
-  <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">People &amp; Philosophy</div>
-    <h1 class="ins-hero-title">Every Credit Tells a Story.<br><em>Every Story Needs a Network.</em></h1>
-    <p class="ins-hero-desc">DIGISYNQ was created to replace industry fragmentation with open, milestone-secured collaboration. We do not extract value from creators — we build the infrastructure that helps everyone execute with certainty.</p>
-    <div class="ins-hero-actions">
-      <a href="#founders" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Meet the Founders &rarr;</a>
-      <a href="#philosophy" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Our Philosophy &rarr;</a>
-    </div>
-  </div>
-
-  <!-- SECTION: PHILOSOPHY -->
-  <section class="ins-section dark" id="philosophy">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="ins-eyebrow" style="justify-content:flex-start;">Core Standard</div>
-      <h2 class="ins-h2-light">We Value Contribution. Not Just Visibility.</h2>
-      <p class="ins-desc-light">The entertainment industry has too many gatekeepers and not enough infrastructure. We believe in professional merit and transparent execution.</p>
-
-      <div class="about-lead-grid">
-        <div class="about-phil-card">
-          <h3>The Contribution Ladder</h3>
-          <p>On DIGISYNQ, standing is earned through verified milestone delivery, dependable craft execution, and collaborative reputation — not artificial industry politics.</p>
-          
-          <div class="about-ladder-steps">
-            <div class="about-ladder-step">01 // YOU WORK.</div>
-            <div class="about-ladder-step">02 // YOU CONTRIBUTE.</div>
-            <div class="about-ladder-step">03 // YOU EARN YOUR PLACE.</div>
-            <div class="about-ladder-step">04 // YOU BUILD YOUR VALUE.</div>
-          </div>
-        </div>
-
-        <div class="about-phil-card">
-          <h3>Ecosystem Over Extraction</h3>
-          <p>Traditional intermediaries profit on friction and delayed payments. DIGISYNQ operates as a neutral coordinate utility.</p>
-          <p style="margin-bottom:0;">
-            When soundstages fill dark days, technicians receive guaranteed escrow releases, and producers assemble crews in hours — the entire industry becomes more liquid, resilient, and profitable.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: FOUNDING TEAM -->
-  <section class="ins-section white" id="founders">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">Founding Team</div>
-      <h2 class="ins-h2-dark">The Builders Behind DIGISYNQ</h2>
-      <p class="ins-desc-dark">A multidisciplinary team uniting film production, technology architecture, and ecosystem operations.</p>
-
-      <div class="founders-grid">
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
         
-        <div class="founder-card">
-          <span class="founder-role">CO-FOUNDER</span>
-          <h3>Yathish</h3>
-          <p>Focuses on ecosystem strategy, institutional partnerships, and studio lot integration across regional film hubs.</p>
-        </div>
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link active" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
+        </ul>
 
-        <div class="founder-card">
-          <span class="founder-role">CO-FOUNDER</span>
-          <h3>Varun</h3>
-          <p>Leads network operations, production workflow coordination, and Cinema Radar narrative monitoring deployments.</p>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
         </div>
+      </nav>
+    </header>
 
-        <div class="founder-card">
-          <span class="founder-role">CO-FOUNDER</span>
-          <h3>Rakshith</h3>
-          <p>Directs technical architecture, milestone escrow governance, and relational graph matching systems.</p>
+    <!-- 01 // HERO STAGE -->
+    <section class="tlc-hero-stage" id="main-content">
+      <div class="tlc-hero-text">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> People &amp; Philosophy
         </div>
-
-        <div class="founder-card">
-          <span class="founder-role">CO-FOUNDER</span>
-          <h3>Rubesh</h3>
-          <p>Oversees creator community engagement, talent roster verification, and post-production pipeline coordination.</p>
-        </div>
-
+        <h1 class="tlc-hero-headline">
+          <span class="tlc-quiet">No waste. No silos.</span><br>
+          <span class="tlc-accent-text">No forgotten value.</span>
+        </h1>
+        <p class="tlc-hero-subhead">
+          DIGISYNQ is an asset-light operating network. We don’t carry heavy balance sheets, own soundstages, or compete with creative agencies. Our mechanism is to orchestrate, coordinate, and collaborate with the best specialized agencies, technicians, and studio stakeholders across the industry.
+        </p>
       </div>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
 
-      <div style="margin-top:3.5rem;text-align:center;">
-        <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Connect with the Team &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST STRIP -->
-  <section class="mono-trust-strip" aria-label="Trust Network">
-    <div class="mono-trust-inner">
-      <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-      <div class="mono-trust-marquee-wrapper">
-        <div class="mono-trust-marquee-track">
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-        </div>
-      </div>
-      <div class="mono-trust-tags">
-        <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-        <span class="mono-trust-pill">&#9889; 100% Direct</span>
-        <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-            <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
+    <!-- 02 // PHILOSOPHY & FOUNDERS -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="founders">
+      <div style="max-width:1150px;margin:0 auto;">
+        
+        <!-- ================= THE BUSINESS IDEOLOGY MANIFESTO ================= -->
+        <div class="tlc-node-card" style="background:#09090b;color:#fff;padding:clamp(2.5rem, 5vw, 4rem) clamp(1.8rem, 4vw, 3.5rem);border-radius:28px;margin-bottom:3.5rem;border:1px solid rgba(255,255,255,0.12);box-shadow:0 25px 60px rgba(0,0,0,0.35);">
+          
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+            <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#a1a1aa;text-transform:uppercase;font-weight:800;">OUR BUSINESS IDEOLOGY</span>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;background:rgba(34,197,94,0.12);padding:0.25rem 0.75rem;border-radius:999px;font-weight:800;">● NO WASTE &bull; NO SILOS &bull; NO FORGOTTEN VALUE</span>
           </div>
-          <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+
+          <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#ffffff;line-height:1.15;margin:0 0 1.5rem;">
+            No Waste. No Silos. <span style="color:#71717a;font-style:italic;">No Forgotten Value.</span>
+          </h2>
+
+          <p style="font-size:1.15rem;color:#e4e4e7;line-height:1.7;max-width:860px;margin:0 0 2rem;font-weight:500;">
+            We believe every business, person, resource, relationship, and piece of data has value — if it is connected, measured, ranked, and leveraged correctly.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.8rem;margin-bottom:2.5rem;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);padding:2rem 0;">
+            
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#22c55e;font-weight:800;letter-spacing:0.15em;margin-bottom:0.6rem;">01 // ALIGNED INCENTIVES</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.6rem;">When you grow, we grow.</h3>
+              <p style="font-size:0.88rem;color:#a1a1aa;line-height:1.55;margin:0;">
+                We respect every business we work with. When you create value, we create value. Our model is built around aligned incentives, measurable outcomes, and shared upside — not parasitic brokerage tolls.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#60a5fa;font-weight:800;letter-spacing:0.15em;margin-bottom:0.6rem;">02 // MEASURE EVERYTHING</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.6rem;">Rank, structure &amp; optimize.</h3>
+              <p style="font-size:0.88rem;color:#a1a1aa;line-height:1.55;margin:0;">
+                We measure everything that matters — performance, contribution, demand, reputation, rankings, relationships, and opportunities. We tag and structure every asset so value can be discovered and leveraged intelligently.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#f59e0b;font-weight:800;letter-spacing:0.15em;margin-bottom:0.6rem;">03 // ASSET-LIGHT BY DESIGN</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.6rem;">Connect what exists.</h3>
+              <p style="font-size:0.88rem;color:#a1a1aa;line-height:1.55;margin:0;">
+                Rather than owning heavy real estate or idle equipment, we build the infrastructure that connects what already exists and makes it work harder — turning dark days and dormant IP into cash flow.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#a78bfa;font-weight:800;letter-spacing:0.15em;margin-bottom:0.6rem;">04 // FUTURE EXPANSION</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.6rem;">Expand endlessly.</h3>
+              <p style="font-size:0.88rem;color:#a1a1aa;line-height:1.55;margin:0;">
+                We don't stop at today's model. Every capability is engineered for continuous expansion — deeper verticals, new revenue streams, new regional markets, and new ecosystem opportunities.
+              </p>
+            </div>
+
+          </div>
+
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.2rem 1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <div style="font-family:var(--font-mono);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:#ffffff;font-weight:800;">
+              Connect more. Waste less. Measure everything. Leverage intelligently. Expand endlessly.
+            </div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:#22c55e;font-weight:700;">
+              THE DIGISYNQ OPERATING CREED
+            </div>
+          </div>
+
         </div>
 
-        <div class="f-col">
-          <h4>Core Architecture</h4>
-          <a href="network.html">The Network</a>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="solutions.html">Stakeholder Solutions</a>
-          <a href="business.html">Revenue Engine</a>
+        <!-- ================= STRATEGIC DEFINITION MATRIX ================= -->
+        <div style="background:#f8fafc;border-radius:24px;padding:2.5rem;border:1px solid rgba(0,0,0,0.08);margin-bottom:3.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.8rem;margin-bottom:0.8rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;font-weight:800;">STRATEGIC DEFINITION</span>
+            <span style="font-family:var(--font-mono);font-size:0.68rem;color:#09090b;background:rgba(0,0,0,0.06);padding:0.2rem 0.65rem;border-radius:4px;font-weight:700;">● THE DIGISYNQ ESSENCE</span>
+          </div>
+          <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem, 3.5vw, 2.4rem);font-weight:900;color:#09090b;margin:0 0 1.2rem;letter-spacing:-0.02em;">
+            Rethinking Entertainment Production: <span style="color:#71717a;font-style:italic;">The Operating System.</span>
+          </h2>
+          
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
+            
+            <div style="background:#ffffff;border-radius:18px;padding:1.8rem;border:1px solid rgba(0,0,0,0.08);">
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#ef4444;font-weight:800;letter-spacing:0.15em;margin-bottom:0.8rem;">✕ WHAT DIGISYNQ IS NOT</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.7rem;font-size:0.88rem;color:#52525b;line-height:1.5;">
+                <li>✕ Not a traditional production house carrying heavy CapEx.</li>
+                <li>✕ Not an opaque broker taking 15–25% siphoned markups.</li>
+                <li>✕ Not a directory of unverified profiles and superficial claims.</li>
+                <li>✕ Not a synthetic PR bot agency buying fake trending hashtags.</li>
+              </ul>
+            </div>
+
+            <div style="background:#09090b;color:#ffffff;border-radius:18px;padding:1.8rem;border:1px solid rgba(255,255,255,0.1);">
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#22c55e;font-weight:800;letter-spacing:0.15em;margin-bottom:0.8rem;">✓ WHAT DIGISYNQ TRULY IS</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.7rem;font-size:0.88rem;color:#d4d4d8;line-height:1.5;">
+                <li>✓ An Asset-Light Operating System connecting existing infrastructure.</li>
+                <li>✓ A Neutral Milestone Escrow Governance Protocol (shared upside).</li>
+                <li>✓ A Structured Telemetry Network indexing dark days &amp; DIT hashes.</li>
+                <li>✓ An Organic Cultural Seeding Engine converting craft into ticket sales.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
-        <div class="f-col">
-          <h4>Intelligence &amp; Trust</h4>
-          <a href="cinema-damage-control.html">Cinema Radar</a>
-          <a href="insights.html">Industry Research</a>
-          <a href="proof.html">Proof &amp; Pilots</a>
-          <a href="about.html">About &amp; Founders</a>
-          <a href="lab.html">Innovation Lab</a>
+        <!-- Radical Transparency: What We Do vs What We DON'T Do -->
+        <div style="margin-bottom:3.5rem;" id="transparency">
+          <div style="text-align:center;max-width:760px;margin:0 auto 2rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#27272a;font-weight:800;text-transform:uppercase;">RADICAL TRANSPARENCY</span>
+            <h3 style="font-family:var(--font-serif);font-size:clamp(1.6rem, 3vw, 2.2rem);font-weight:900;font-style:italic;color:#09090b;margin:0.4rem 0 0.6rem;">
+              What We Do. <span class="tlc-quiet">And what we DON'T do.</span>
+            </h3>
+            <p style="font-size:0.95rem;color:#52525b;line-height:1.6;">
+              We operate without smoke and mirrors. Here is the unvarnished reality of our asset-light coordination model:
+            </p>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
+            
+            <div style="background:#09090b;color:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,0.1);">
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#22c55e;font-weight:800;letter-spacing:0.15em;margin-bottom:1rem;">✓ WHAT WE DO</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;font-size:0.88rem;color:#d4d4d8;line-height:1.45;">
+                <li>✓ Orchestrate verified deal flow with certified stages and guild crew.</li>
+                <li>✓ Lock 100% of production budgets into neutral milestone escrow.</li>
+                <li>✓ Fill studio dark-day gap calendars with paid commercial shoots.</li>
+                <li>✓ Defend theatrical releases from pre-release piracy and bot attacks.</li>
+                <li>✓ Provide turnkey white-label production to partner ad agencies.</li>
+              </ul>
+            </div>
+
+            <div style="background:#f8fafc;color:#09090b;border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,0.08);">
+              <div style="font-family:var(--font-mono);font-size:0.72rem;color:#ef4444;font-weight:800;letter-spacing:0.15em;margin-bottom:1rem;">✕ WHAT WE DON'T DO</div>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem;font-size:0.88rem;color:#52525b;line-height:1.45;">
+                <li>✕ We DO NOT own real estate, soundstage lots, or heavy rental gear.</li>
+                <li>✕ We DO NOT compete with specialized creative or talent agencies.</li>
+                <li>✕ We DO NOT take IP ownership, backend rights, or creative control.</li>
+                <li>✕ We DO NOT charge upfront speculative retainers or listing fees.</li>
+                <li>✕ We DO NOT allow 60-day invoice delays for working technicians.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Reality vs. Industry Friction Table -->
+          <div style="background:#f4f4f5;border-radius:24px;padding:2.2rem;border:1px solid rgba(0,0,0,0.08);margin-top:2rem;">
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;color:#27272a;font-weight:800;text-transform:uppercase;margin-bottom:0.8rem;">SIDE-BY-SIDE MATRIX</div>
+            <h3 style="font-family:var(--font-serif);font-size:1.4rem;font-weight:900;color:#09090b;margin:0 0 1.5rem;">Industry Reality vs. DIGISYNQ Reality</h3>
+            
+            <div style="overflow-x:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.88rem;text-align:left;">
+                <thead>
+                  <tr style="border-bottom:2px solid rgba(0,0,0,0.12);font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#71717a;">
+                    <th style="padding:0.75rem 1rem;">Dimension</th>
+                    <th style="padding:0.75rem 1rem;color:#ef4444;">Old Industry Friction</th>
+                    <th style="padding:0.75rem 1rem;color:#16a34a;">DIGISYNQ Asset-Light Reality</th>
+                  </tr>
+                </thead>
+                <tbody style="color:#3f3f46;">
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
+                    <td style="padding:1rem;font-weight:800;color:#09090b;font-family:var(--font-mono);font-size:0.75rem;">Soundstage Access</td>
+                    <td style="padding:1rem;">Stages sit dark 42% of the year; producers pay inflated retail rates.</td>
+                    <td style="padding:1rem;font-weight:700;color:#09090b;">Dark-day gaps matched directly to active commercial &amp; creator shoots at fair rates.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
+                    <td style="padding:1rem;font-weight:800;color:#09090b;font-family:var(--font-mono);font-size:0.75rem;">Crew Compensation</td>
+                    <td style="padding:1rem;">Technicians wait 60 to 90 days with frequent payment defaults.</td>
+                    <td style="padding:1rem;font-weight:700;color:#09090b;">100% Milestone escrow funds locked prior to call sheet; released upon daily wrap.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
+                    <td style="padding:1rem;font-weight:800;color:#09090b;font-family:var(--font-mono);font-size:0.75rem;">Agency Production</td>
+                    <td style="padding:1rem;">Agencies carry heavy in-house payroll or struggle with vendor fragmentation.</td>
+                    <td style="padding:1rem;font-weight:700;color:#09090b;">Agencies plug into turnkey verified production units with zero fixed overhead.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
+                    <td style="padding:1rem;font-weight:800;color:#09090b;font-family:var(--font-mono);font-size:0.75rem;">Pre-Release Defense</td>
+                    <td style="padding:1rem;">Producers watch piracy leaks and bot reviews tank opening weekend box office.</td>
+                    <td style="padding:1rem;font-weight:700;color:#09090b;">Cinema Radar 72h threat shield removes leaked clips in 15 mins and neutralizes attacks.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:1rem;font-weight:800;color:#09090b;font-family:var(--font-mono);font-size:0.75rem;">Fee Structure</td>
+                    <td style="padding:1rem;">Opaque markups, hidden brokerage tolls, and speculative development retainers.</td>
+                    <td style="padding:1rem;font-weight:700;color:#09090b;">Transparent performance-only coordination fees charged strictly when shoots execute.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
 
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html?type=project">Bring a Project</a>
-          <a href="contact.html?type=join">Join Network</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+        <!-- ================= HOW WE OPERATE: 20 PRINCIPLES & THE PRACTICAL RULE ================= -->
+        <div style="margin-bottom:4rem;" id="how-we-operate">
+          
+          <div style="text-align:center;max-width:820px;margin:0 auto 2.5rem;">
+            <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.8rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+              <span>●</span> OPERATING DISCIPLINE
+            </div>
+            <h2 class="tlc-section-heading" style="margin-bottom:0.8rem;">
+              How We Operate. <span class="tlc-quiet">The 20 Operating Principles.</span>
+            </h2>
+            <p style="font-size:1.05rem;color:#52525b;line-height:1.65;margin:0;">
+              Our execution rules for building an asset-light, zero-waste operating network for the entertainment ecosystem.
+            </p>
+          </div>
+
+          <!-- The 20 Principles Grid -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.2rem;margin-bottom:2.5rem;">
+            
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">01 // INTEGRITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Verify Before We Publish</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                No unverified claims, numbers, rankings, profiles, or business information. If we cannot validate it, we label it unknown or don't use it.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">02 // INTENTION</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Every Action Must Have a Purpose</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Before spending time, money, or resources, ask: <strong>What outcome does this create?</strong> If there is no meaningful outcome, eliminate it.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">03 // EVIDENCE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Measure Before Judging</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                We don't decide based purely on opinions. We establish metrics, track performance, compare results, and make decisions from evidence.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">04 // EFFICIENCY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">No Duplicate Work</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                If something already exists, reuse or improve it before rebuilding it. One system should serve multiple needs whenever possible.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">05 // LEVERAGE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Connect Instead of Rebuild</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Before creating a new resource, look for an existing person, business, technology, capability, or infrastructure that can be connected.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">06 // UTILIZATION</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Make Every Resource Work</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                People, technology, data, partnerships, content, infrastructure, and relationships should have a clear purpose and measurable contribution.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">07 // STRUCTURE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Tag and Structure Everything</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Every relevant asset gets categorized, tagged, ranked, and tracked. Structured information makes opportunities easier to discover and activate.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">08 // MERITOCRACY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Performance Earns Position</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Rankings, visibility, opportunities, incentives, and responsibilities are based on measurable contribution — not popularity, politics, or relationships.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">09 // JUDGMENT</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Smart First. Hard When Needed.</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Automate repetitive work. Simplify processes. Use technology where it saves time. Then put human effort into judgment, creativity, and execution.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">10 // VELOCITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Time Has a Cost</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                We treat wasted time as wasted money. Reduce unnecessary approvals, meetings, communication loops, manual processes, and waiting.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">11 // VALIDATION</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Test Small Before Scaling Big</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Don't spend heavily on an assumption. Start with a small experiment, measure the result, learn, and scale what works.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">12 // RESILIENCE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">One Failure = One Lesson</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                When something fails, identify the cause, document the learning, fix the system, and move forward. Don't repeatedly pay for the same mistake.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">13 // ECONOMICS</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Follow the Value Flow</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Understand who creates value, who receives value, where money moves, where costs occur, and where value is being lost.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">14 // SCALABILITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Build for Multiple Uses</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                When creating technology, data, processes, or infrastructure, design them so they can eventually support additional customers or verticals.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">15 // AGILITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Keep the Business Asset-Light</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Avoid unnecessary fixed costs and ownership. Prefer partnerships, shared infrastructure, networks, and variable-cost models.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">16 // CLARITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Revenue Must Be Traceable</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Know exactly what generates revenue, who generates it, what it costs, and what margin remains. Every stream must have measurable economics.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">17 // ACCOUNTABILITY</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Everyone Is Accountable to Numbers</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Roles should have clear responsibilities and measurable KPIs. Good intentions matter, but outcomes matter more.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">18 // ARCHITECTURE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Fix the System, Not Just the Problem</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                If the same problem happens repeatedly, don't keep solving it manually. Change the process, technology, incentive, or structure causing it.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">19 // RIGOR</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Expand Only When the Core Works</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                Don't enter new verticals simply because they look attractive. First prove the underlying model, then replicate into adjacent opportunities.
+              </p>
+            </div>
+
+            <div class="tlc-node-card" style="background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:1.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;font-weight:800;letter-spacing:0.12em;display:block;margin-bottom:0.4rem;">20 // COMPOUNDING</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:#09090b;margin:0 0 0.5rem;">Compound What Works</h3>
+              <p style="font-size:0.85rem;color:#52525b;line-height:1.55;margin:0;">
+                When something consistently works, don't start from zero again. Document it, automate it, standardize it, and deploy it elsewhere.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- THE PRACTICAL RULE TERMINAL BLOCK -->
+          <div style="background:#09090b;color:#ffffff;border-radius:24px;padding:clamp(2rem, 4vw, 3rem);border:1px solid rgba(255,255,255,0.12);box-shadow:0 20px 45px rgba(0,0,0,0.3);">
+            
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1rem;">
+              <span style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#22c55e;text-transform:uppercase;font-weight:800;">● THE PRACTICAL RULE</span>
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:#a1a1aa;">OPERATIONAL MANIFESTO</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:0.9rem;margin-bottom:2rem;">
+              
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#ef4444;">Find waste</span> &rarr; <strong style="color:#ffffff;">remove it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#3b82f6;">Find unused value</span> &rarr; <strong style="color:#ffffff;">activate it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#a855f7;">Find disconnected value</span> &rarr; <strong style="color:#ffffff;">connect it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#22c55e;">Find measurable performance</span> &rarr; <strong style="color:#ffffff;">reward it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#eab308;">Find repeated work</span> &rarr; <strong style="color:#ffffff;">automate it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#06b6d4;">Find a working model</span> &rarr; <strong style="color:#ffffff;">scale it.</strong>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.03);padding:0.9rem 1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--font-mono);font-size:0.82rem;color:#ffffff;">
+                <span style="color:#f97316;">Find a new opportunity</span> &rarr; <strong style="color:#ffffff;">test it.</strong>
+              </div>
+
+            </div>
+
+            <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;">
+              <div style="font-family:var(--font-mono);font-size:0.85rem;color:#e4e4e7;line-height:1.6;">
+                <span style="color:#a1a1aa;">No shortcuts. No fake numbers. No wasted motion.</span><br>
+                <span style="color:#22c55e;font-weight:700;">Do the work. Measure the result. Improve the system. Scale what works.</span>
+              </div>
+              <a href="contact.html?type=discuss" class="tlc-btn-pill" style="background:#fff;color:#09090b;font-weight:800;padding:0.75rem 1.8rem;font-size:0.85rem;text-decoration:none;">
+                Partner With Us &rarr;
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2 class="tlc-section-heading">Founding <span class="tlc-quiet">team.</span></h2>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.5rem;">
+          
+          <div class="tlc-node-card">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">CO-FOUNDER</span>
+            <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:900;color:#09090b;margin:0.2rem 0 0.5rem;">Yathish</div>
+            <p class="tlc-caption-desc">Focuses on ecosystem strategy, institutional partnerships, and studio lot integration across regional film hubs.</p>
+          </div>
+
+          <div class="tlc-node-card">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">CO-FOUNDER</span>
+            <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:900;color:#09090b;margin:0.2rem 0 0.5rem;">Varun</div>
+            <p class="tlc-caption-desc">Leads network operations, production workflow coordination, and Cinema Radar narrative monitoring deployments.</p>
+          </div>
+
+          <div class="tlc-node-card">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">CO-FOUNDER</span>
+            <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:900;color:#09090b;margin:0.2rem 0 0.5rem;">Rakshith</div>
+            <p class="tlc-caption-desc">Directs technical architecture, milestone escrow governance, and relational graph matching systems.</p>
+          </div>
+
+          <div class="tlc-node-card">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">CO-FOUNDER</span>
+            <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:900;color:#09090b;margin:0.2rem 0 0.5rem;">Rubesh</div>
+            <p class="tlc-caption-desc">Oversees creator community engagement, talent roster verification, and post-production pipeline coordination.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
+      <div style="max-width:1050px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;margin-bottom:0.8rem;">JOIN THE ECOSYSTEM</div>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
+              Connect with the <span style="color:#71717a;font-style:italic;">team.</span>
+            </h2>
+            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
+              Producers, studio owners, and talent: Submit your production requirements for instant network dispatch within 24 hours.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <a href="contact.html?type=project" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
+              Bring a project &rarr;
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">Protocol</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
-</div>
-<script src="assets/js/main.js"></script>
+  </div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

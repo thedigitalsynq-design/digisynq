@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Cinema Radar by DIGISYNQ — Pre-release sentiment intelligence, narrative threat interception, and box office defense."/>
-  <meta property="og:title" content="Cinema Radar &amp; Damage Control — DIGISYNQ"/>
-  <meta property="og:description" content="See the signal before it becomes the problem: Detect, Understand, Respond, and Recover across theatrical and streaming releases."/>
+  <meta name="description" content="Cinema Radar by DIGISYNQ — Movie release defense: Stopping review bombing, taking down leaked videos, and protecting opening weekend box office."/>
+  <meta property="og:title" content="Cinema Radar — Movie Release Defense — DIGISYNQ"/>
+  <meta property="og:description" content="We protect movies in the critical 72 hours before release by stopping fake review attacks and taking down pirated clips across social media."/>
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://digisynq.com/cinema-damage-control.html"/>
-  <title>Cinema Radar &amp; Pre-Release Intelligence — DIGISYNQ</title>
+  <title>Cinema Radar — Movie Release Defense — DIGISYNQ</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -16,270 +16,173 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .radar-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+    .radar-timeline-box {
+      background: #ffffff;
       border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 18px;
-      overflow: hidden;
-      margin-top: 3rem;
-      background: #fff;
-    }
-    .radar-step {
-      padding: 2.2rem 1.6rem;
-      border-right: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 2.2rem;
       text-align: left;
-    }
-    .radar-step:last-child { border-right: 0; }
-    .radar-num {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: #71717a;
-      font-weight: 800;
-      display: block;
-      margin-bottom: 0.8rem;
-    }
-    .radar-step h3 {
-      font-family: var(--font-body);
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #09090b;
-      margin: 0 0 0.6rem;
-    }
-    .radar-step p {
-      font-size: 0.88rem;
-      color: #52525b;
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    .radar-console {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 2.5rem 2rem;
-      margin-top: 3rem;
-      text-align: left;
-    }
-    .console-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 1rem;
       margin-bottom: 1.5rem;
     }
-
-    @media (max-width: 860px) {
-      .radar-grid { grid-template-columns: 1fr; }
-      .radar-step { border-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .radar-timeline-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0.3rem 0 0.6rem;
+    }
+    .radar-timeline-box p {
+      font-size: 0.92rem;
+      color: #52525b;
+      line-height: 1.65;
+      margin: 0 0 1rem;
     }
   </style>
 </head>
-<body>
-<div class="app-card">
+<body class="page-radar" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <!-- TOP NAVIGATION -->
-  <header class="top-nav">
-    <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <nav aria-label="Primary Navigation">
-      <ul class="nav-links-center">
-        <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="cinema-damage-control.html" class="active">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-        <li><a href="lab.html">Lab</a></li>
-      </ul>
-    </nav>
-    <div class="nav-actions-right"><a href="contact.html?type=radar" class="btn-login">Request Radar Desk</a></div>
-  </header>
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-  <div class="nav-mobile-overlay">
-    <a href="index.html">Home</a>
-    <a href="network.html">Network</a>
-    <a href="how-it-works.html">How It Works</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="business.html">Business</a>
-    <a href="cinema-damage-control.html" class="active">Radar</a>
-    <a href="insights.html">Insights</a>
-    <a href="proof.html">Proof</a>
-    <a href="about.html">About</a>
-    <a href="lab.html">Lab</a>
-    <a href="contact.html?type=radar" style="margin-top:1.5rem;background:#09090b;color:#fff;">Request Radar Desk</a>
-  </div>
-
-  <!-- HERO -->
-  <div class="ins-hero" id="main-content">
-    <div class="ins-eyebrow">Cinema Radar Intelligence</div>
-    <h1 class="ins-hero-title">See the Signal.<br><em>Before It Becomes the Problem.</em></h1>
-    <p class="ins-hero-desc">71% of opening weekend narrative damage crystallizes in the final 72 hours before release. Cinema Radar intercepts sentiment risks, unauthorized leaks, and review anomalies in real time.</p>
-    <div class="ins-hero-actions">
-      <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Request Radar Brief &rarr;</a>
-      <a href="#radar-sequence" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">4-Step Protocol &rarr;</a>
-    </div>
-  </div>
-
-  <!-- SECTION: 4-STEP RADAR PROTOCOL -->
-  <section class="ins-section white" id="radar-sequence">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="sec-eyebrow-light">The Defense Protocol</div>
-      <h2 class="ins-h2-dark">Detect. Understand. Respond. Recover.</h2>
-      <p class="ins-desc-dark">A disciplined intelligence sequence designed to preserve box office momentum without artificial manipulation.</p>
-
-      <div class="radar-grid">
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
         
-        <div class="radar-step">
-          <span class="radar-num">PHASE 01</span>
-          <h3>Detect</h3>
-          <p>Continuous monitoring of advance booking velocity, social discussion clusters, unauthorized clip distribution, and narrative sentiment anomalies.</p>
-        </div>
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link active" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
+        </ul>
 
-        <div class="radar-step">
-          <span class="radar-num">PHASE 02</span>
-          <h3>Understand</h3>
-          <p>Distinguish authentic organic audience reception from coordinated bot campaigns, competitor sabotage, and isolated fringe reviews.</p>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=radar">Request Radar Desk</a>
         </div>
+      </nav>
+    </header>
 
-        <div class="radar-step">
-          <span class="radar-num">PHASE 03</span>
-          <h3>Respond</h3>
-          <p>Deploy verified official clip corrections, coordinate community moderation desks, and dispatch immediate takedown enforcement.</p>
+    <!-- 01 // HERO STAGE -->
+    <section class="tlc-hero-stage" id="main-content">
+      <div class="tlc-hero-text">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> Movie Release Defense
         </div>
-
-        <div class="radar-step">
-          <span class="radar-num">PHASE 04</span>
-          <h3>Recover</h3>
-          <p>Stabilize opening weekend word-of-mouth narrative, protect Monday hold-rate, and safeguard secondary streaming window valuation.</p>
+        <h1 class="tlc-hero-headline">
+          <span class="tlc-quiet">Opening night.</span><br>
+          <span class="tlc-accent-text">Guarded box office.</span>
+        </h1>
+        <p class="tlc-hero-subhead">
+          71% of opening weekend box office damage happens in the final 72 hours before premiere. Cinema Radar monitors audience buzz, isolates fake review attacks, and takes down leaked pirated clips in real time.
+        </p>
+        <div class="tlc-hero-ctas">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=radar" style="padding:0.9rem 2.2rem;font-size:0.92rem;">Protect Your Movie &rarr;</a>
+          <a class="tlc-btn-pill tlc-btn-ghost" href="#timeline" style="padding:0.9rem 2.2rem;font-size:0.92rem;">72-Hour Defense Timeline</a>
         </div>
-
       </div>
-    </div>
-  </section>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
 
-  <!-- SECTION: RADAR CONSOLE (DARK) -->
-  <section class="ins-section dark" id="console">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="ins-eyebrow" style="justify-content:flex-start;">Live Signal Intelligence</div>
-      <h2 class="ins-h2-light">Threat Detection Scope</h2>
-      <p class="ins-desc-light">The core signals monitored across active theatrical and streaming release windows.</p>
-
-      <div class="radar-console">
-        <div class="console-header">
-          <span style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.15em;color:#fff;font-weight:800;">MONITORED INTELLIGENCE FEEDS</span>
-          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:#71717a;border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.6rem;border-radius:4px;">ILLUSTRATIVE SPECIFICATION</span>
-        </div>
-        
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
-          <div style="border-left:2px solid #fff;padding-left:1rem;">
-            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 01</div>
-            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Advance Booking Velocity</h4>
-            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Screen-by-screen occupancy pacing against genre baseline models.</p>
+    <!-- 02 // 72-HOUR TIMELINE BREAKDOWN (PLAIN ENGLISH) -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);background:#f8fafc;" id="timeline">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="margin-bottom:2.5rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.6rem;">TACTICAL PLAYBOOK</div>
+            <h2 class="tlc-section-heading" style="margin-bottom:1rem;">How Cinema Radar protects your film <span class="tlc-quiet">step by step.</span></h2>
+            <p style="font-size:1.05rem;color:#52525b;line-height:1.65;margin:0;">
+              Our 72-hour pre-release and opening-weekend box office stabilization protocol combines telemetry tracking with sub-15-minute copyright strikes:
+            </p>
           </div>
-          <div style="border-left:2px solid #fff;padding-left:1rem;">
-            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 02</div>
-            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Coordinated Review Bombs</h4>
-            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Automated detection of inorganic negative clustering on ticketing platforms.</p>
+          
+        </div>
+
+        <div>
+          
+          <div class="radar-timeline-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#ef4444;font-weight:800;">T-72 TO T-48 HOURS // ADVANCE INTELLIGENCE</span>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">PRE-BOOKING VELOCITY</span>
+            </div>
+            <h3>Advance Ticket Velocity &amp; Early Sentiment Telemetry</h3>
+            <p>
+              We monitor advance ticket booking run-rates across metro multiplexes and single-screen territories. We track trailer sentiment vectors, community discourse, and anomalous negative spikes before opening-day buzz is compromised.
+            </p>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:#09090b;background:#f8fafc;padding:0.5rem 0.8rem;border-radius:6px;font-weight:700;">
+              Operational Deliverable: Pre-release booking trajectory report with early sentiment risk flags.
+            </div>
           </div>
-          <div style="border-left:2px solid #fff;padding-left:1rem;">
-            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 03</div>
-            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Piracy &amp; Leak Interception</h4>
-            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Rapid-response takedown notifications for unauthorized footage leaks.</p>
+
+          <div class="radar-timeline-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#ef4444;font-weight:800;">T-48 TO T-0 HOURS // OVERSEAS &amp; PIRACY SURVEILLANCE</span>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">15-MIN DMCA STRIKE DESK</span>
+            </div>
+            <h3>Overseas Premiere Leak Takedowns &amp; 1-Star Bot Neutralization</h3>
+            <p>
+              As early international screenings drop in Gulf, US, and Australian timezones, camcord leaks and coordinated 1-star review botting hit the web. Cinema Radar monitors Telegram channels, social platforms, and ticketing portals to issue sub-15-minute automated copyright strikes.
+            </p>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:#09090b;background:#f8fafc;padding:0.5rem 0.8rem;border-radius:6px;font-weight:700;">
+              Operational Deliverable: Sub-15-minute pirated rip removal and verified ticketing portal rating protection.
+            </div>
           </div>
-          <div style="border-left:2px solid #fff;padding-left:1rem;">
-            <div style="font-family:var(--font-mono);font-size:0.7rem;color:#71717a;font-weight:700;">FEED 04</div>
-            <h4 style="font-family:var(--font-body);font-size:1.1rem;font-weight:900;color:#fff;margin:0.2rem 0 0.4rem;">Community Sentiment Shift</h4>
-            <p style="font-size:0.85rem;color:#a1a1aa;margin:0;line-height:1.5;">Real-time tracking across Reddit, Threads, YouTube comments, and regional film hubs.</p>
+
+          <div class="radar-timeline-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:var(--font-mono);font-size:0.72rem;color:#ef4444;font-weight:800;">DAY 1 TO DAY 3 // OPENING WEEKEND STABILIZATION</span>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;background:#f1f5f9;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700;">MONDAY HOLD OPTIMIZATION</span>
+            </div>
+            <h3>Verified Word-of-Mouth Amplification &amp; Weekday Hold</h3>
+            <p>
+              We amplify verified theatrical audience reactions and distribute studio-authorized high-fidelity social video assets. Organic viewer enthusiasm overtakes synthetic smear campaigns, stabilizing the critical Sunday-to-Monday box office hold rate.
+            </p>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:#09090b;background:#f8fafc;padding:0.5rem 0.8rem;border-radius:6px;font-weight:700;">
+              Operational Deliverable: Sustained weekday occupancy percentages and maximized streaming rights valuation.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
+      <div style="max-width:1050px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;margin-bottom:0.8rem;">PROTECT YOUR RELEASE</div>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
+              Protect your <span style="color:#71717a;font-style:italic;">film premiere.</span>
+            </h2>
+            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
+              Deploy Cinema Radar 72 hours before release to safeguard opening day occupancy and authentic word-of-mouth.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <a href="contact.html?type=radar" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
+              Request Radar Desk &rarr;
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">How It Works</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
           </div>
         </div>
       </div>
+    </footer>
 
-      <div style="margin-top:3.5rem;text-align:center;">
-        <a href="contact.html?type=radar" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Engage Radar Pre-Release Desk &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST STRIP -->
-  <section class="mono-trust-strip" aria-label="Trust Network">
-    <div class="mono-trust-inner">
-      <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-      <div class="mono-trust-marquee-wrapper">
-        <div class="mono-trust-marquee-track">
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-          <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-          <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-        </div>
-      </div>
-      <div class="mono-trust-tags">
-        <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-        <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-        <span class="mono-trust-pill">&#9889; 100% Direct</span>
-        <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="f-top">
-        <div class="f-brand">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-            <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-            <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
-          </div>
-          <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
-        </div>
-
-        <div class="f-col">
-          <h4>Core Architecture</h4>
-          <a href="network.html">The Network</a>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="solutions.html">Stakeholder Solutions</a>
-          <a href="business.html">Revenue Engine</a>
-        </div>
-
-        <div class="f-col">
-          <h4>Intelligence &amp; Trust</h4>
-          <a href="cinema-damage-control.html">Cinema Radar</a>
-          <a href="insights.html">Industry Research</a>
-          <a href="proof.html">Proof &amp; Pilots</a>
-          <a href="about.html">About &amp; Founders</a>
-          <a href="lab.html">Innovation Lab</a>
-        </div>
-
-        <div class="f-col">
-          <h4>Connect</h4>
-          <a href="contact.html?type=project">Bring a Project</a>
-          <a href="contact.html?type=join">Join Network</a>
-          <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-          <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-        </div>
-      </div>
-
-      <div class="f-bottom">
-        <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-        <span>Own less. Connect more. Multiply value.</span>
-      </div>
-    </div>
-  </footer>
-</div>
-<script src="assets/js/main.js"></script>
+  </div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,325 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Network — Discover who is connected across People, Infrastructure, Content, Market, Capital, and Audience pillars." />
-  <meta property="og:title" content="The Network — DIGISYNQ" />
-  <meta property="og:description" content="Who is connected: Creators, Soundstages, Technicians, IP, Capital, and Distribution in one synchronized network." />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://digisynq.com/network.html" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="The DIGISYNQ Network — The 6 essentials of entertainment: Crew, Soundstages, Scripts, Gear, Escrow, and Movie Release Defense."/>
+  <meta property="og:title" content="The Network — DIGISYNQ"/>
+  <meta property="og:description" content="Connecting the 6 essentials of film and commercial production without owning physical assets."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://digisynq.com/network.html"/>
   <title>The Network — DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .net-pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .net-pillar-card {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 2.2rem 2rem;
-      text-align: left;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .net-pillar-card:hover {
-      border-color: rgba(255,255,255,0.25);
-      transform: translateY(-3px);
-    }
-    .net-pillar-num {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: #71717a;
-      font-weight: 800;
-      display: block;
-      margin-bottom: 0.8rem;
-    }
-    .net-pillar-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: #fff;
-      margin: 0 0 0.8rem;
-    }
-    .net-pillar-card p {
-      font-size: 0.9rem;
-      color: #a1a1aa;
-      line-height: 1.6;
-      margin: 0 0 1.5rem;
-    }
-    .net-subnodes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .net-subnode {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 6px;
-      padding: 0.35rem 0.75rem;
-      color: #fff;
-    }
-
-    .net-conn-box {
-      background: #fff;
+    .pillar-plain-card {
+      background: #ffffff;
       border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 18px;
-      padding: 3rem 2.2rem;
-      margin-top: 3.5rem;
-      text-align: center;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pillar-plain-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #09090b;
+      margin: 0.3rem 0 0.6rem;
+    }
+    .pillar-plain-card p {
+      font-size: 0.9rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
     }
   </style>
 </head>
-<body>
+<body class="page-network" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <div class="app-card">
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-    <!-- TOP NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
-          <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="network.html" class="active">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="lab.html">Lab</a></li>
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
+        
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link active" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
         </ul>
+
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
+        </div>
       </nav>
-      <div class="nav-actions-right">
-        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
-      </div>
     </header>
 
-    <div class="nav-mobile-overlay">
-      <a href="index.html">Home</a>
-      <a href="network.html" class="active">Network</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="business.html">Business</a>
-      <a href="cinema-damage-control.html">Radar</a>
-      <a href="insights.html">Insights</a>
-      <a href="proof.html">Proof</a>
-      <a href="about.html">About</a>
-      <a href="lab.html">Lab</a>
-      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
-    </div>
-
-    <!-- HERO -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">The Connected Ecosystem</div>
-      <h1 class="ins-hero-title">Who Is Connected.<br><em>Every Discipline in Entertainment.</em></h1>
-      <p class="ins-hero-desc">The DIGISYNQ network is organized into six interconnected pillars. We connect the creators, the spaces, the content, and the capital that make production move.</p>
-      <div class="ins-hero-actions">
-        <a href="contact.html?type=join" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Join the Network &rarr;</a>
-        <a href="how-it-works.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">How Connections Work &rarr;</a>
+    <!-- 01 // HERO STAGE -->
+    <section class="tlc-hero-stage" id="main-content">
+      <div class="tlc-hero-text">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> The 6 Essentials of Production
+        </div>
+        <h1 class="tlc-hero-headline">
+          <span class="tlc-quiet">No stage walls.</span><br>
+          <span class="tlc-accent-text">One network.</span>
+        </h1>
+        <p class="tlc-hero-subhead">
+          DIGISYNQ is an asset-light operating network. We don’t buy heavy assets or compete with agencies — we collaborate with the best specialized stakeholders, certified soundstages, and guild technicians to make production execution seamless.
+        </p>
+        <div class="tlc-hero-ctas">
+          <a class="tlc-btn-pill tlc-btn-dark" href="#pillars" style="padding:0.9rem 2.2rem;font-size:0.92rem;">Explore the 6 Essentials &rarr;</a>
+          <a class="tlc-btn-pill tlc-btn-ghost" href="how-it-works.html" style="padding:0.9rem 2.2rem;font-size:0.92rem;">See How It Works</a>
+        </div>
       </div>
-    </div>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
 
-    <!-- 6 PILLARS SECTION -->
-    <section class="ins-section dark" id="pillars">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">Ecosystem Architecture</div>
-        <h2 class="ins-h2-light">The Six Pillars of the Network</h2>
-        <p class="ins-desc-light">Every participant contributes specialized capability, liquidity, or distribution reach.</p>
-
-        <div class="net-pillar-grid">
+    <!-- 02 // 6 ESSENTIALS IN PLAIN ENGLISH -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="pillars">
+      <div style="max-width:1150px;margin:0 auto;">
+        <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.6rem;">CORE CAPABILITIES</div>
+        <h2 class="tlc-section-heading">The six production <span class="tlc-quiet">essentials.</span></h2>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;margin-top:2rem;">
           
           <!-- Pillar 01 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 01</span>
-            <h3>People</h3>
-            <p>The human engine of entertainment. Verified creative directors, writers, marquee cast, and technical department heads.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Screenwriters</span>
-              <span class="net-subnode">Directors</span>
-              <span class="net-subnode">Cinematographers</span>
-              <span class="net-subnode">Gaffers &amp; Grips</span>
-              <span class="net-subnode">Cast &amp; Talent</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">01 // GUILD CREW &amp; HEADS OF DEPT</span>
+              <h3>Verified Heads of Department &amp; Pods</h3>
+              <p>Hire accredited Directors, Cinematographers, Gaffers, Sync Sound Recordists, and DITs. We verify past theatrical &amp; OTT credits, lock calendar availability, and disburse wages instantly via milestone escrow.</p>
             </div>
+            <a href="solutions.html#roles" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">For Talent &rarr;</a>
           </div>
 
           <!-- Pillar 02 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 02</span>
-            <h3>Infrastructure</h3>
-            <p>Physical and virtual facilities. Acoustic soundstages, equipment rental packages, and high-bandwidth post suites.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Soundstages</span>
-              <span class="net-subnode">Virtual LED Floors</span>
-              <span class="net-subnode">Camera Packages</span>
-              <span class="net-subnode">VFX Pipelines</span>
-              <span class="net-subnode">Audio Mixing</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">02 // SOUNDSTAGES &amp; VIRTUAL LOTS</span>
+              <h3>Soundstage Dark-Day Dynamic Clearing</h3>
+              <p>Studios face ₹8–15L/month in fixed maintenance while sitting dark between major films. We match 3-to-10 day gap dates with active commercial TVCs, music videos, and multi-cam creators at optimized yield rates.</p>
             </div>
+            <a href="solutions.html#roles" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">For Studios &rarr;</a>
           </div>
 
           <!-- Pillar 03 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 03</span>
-            <h3>Content &amp; IP</h3>
-            <p>The underlying intellectual value. Optioned scripts, developed formats, franchise bibles, and catalog master rights.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Screenplays</span>
-              <span class="net-subnode">Original Formats</span>
-              <span class="net-subnode">Music Masters</span>
-              <span class="net-subnode">Franchise IP</span>
-              <span class="net-subnode">Dormant Rights</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">03 // PACKAGED SCREENPLAYS &amp; IP</span>
+              <h3>Screenplay Packaging &amp; OTT Pitch Decks</h3>
+              <p>We connect screenwriters with attached directors, line-budget models, and facility attachments — turning spec scripts into institution-ready pitch packages for streaming acquisition desks.</p>
             </div>
+            <a href="solutions.html#roles" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">For Writers &rarr;</a>
           </div>
 
           <!-- Pillar 04 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 04</span>
-            <h3>Market &amp; Windows</h3>
-            <p>The distribution corridors. Theatrical circuits, streaming platforms, broadcast networks, and international sales desks.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Theatrical Chains</span>
-              <span class="net-subnode">OTT Platforms</span>
-              <span class="net-subnode">Regional Distros</span>
-              <span class="net-subnode">Global Sales</span>
-              <span class="net-subnode">Sponsors</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">04 // OPTICS, CAMERAS &amp; GRIP</span>
+              <h3>Bench-Tested Equipment Packages</h3>
+              <p>We package ARRI/RED camera bodies, prime cinema glass, motorized grip rigs, and lighting trucks accompanied directly by certified technicians who operate and maintain them.</p>
             </div>
+            <a href="contact.html?type=project" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">Book Gear &rarr;</a>
           </div>
 
           <!-- Pillar 05 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 05</span>
-            <h3>Capital</h3>
-            <p>Strategic and institutional financing. Production funds, co-production partners, and milestone-backed escrow facilities.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Production Funds</span>
-              <span class="net-subnode">Co-Producers</span>
-              <span class="net-subnode">Milestone Escrow</span>
-              <span class="net-subnode">Private Capital</span>
-              <span class="net-subnode">Brand Backers</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">05 // INDEPENDENT MILESTONE ESCROW</span>
+              <h3>100% Guaranteed Wage Protection</h3>
+              <p>Production capital is deposited in neutral escrow prior to call sheets. Payouts disburse automatically upon daily wrap and DIT footage sign-off, eliminating 60-day invoice delays and default risks.</p>
             </div>
+            <a href="how-it-works.html#protocol" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">How Escrow Works &rarr;</a>
           </div>
 
           <!-- Pillar 06 -->
-          <div class="net-pillar-card">
-            <span class="net-pillar-num">PILLAR 06</span>
-            <h3>Audience &amp; Radar</h3>
-            <p>The reception environment. Fan communities, creator networks, ticketing velocity signals, and reputation radar.</p>
-            <div class="net-subnodes">
-              <span class="net-subnode">Cinema Radar</span>
-              <span class="net-subnode">Creator Hubs</span>
-              <span class="net-subnode">Fan Communities</span>
-              <span class="net-subnode">Advance Bookings</span>
-              <span class="net-subnode">Sentiment Feeds</span>
+          <div class="pillar-plain-card">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">06 // THEATRICAL PRE-RELEASE RADAR</span>
+              <h3>Cinema Radar 72h Box Office Defense</h3>
+              <p>In the final 72 hours before opening weekend, Cinema Radar monitors audience sentiment, stops coordinated 1-star bot review attacks, and takes down leaked camcord clips within 15 minutes.</p>
             </div>
+            <a href="cinema-damage-control.html" class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.78rem;width:fit-content;">Explore Radar &rarr;</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- RELATIONSHIPS & CONNECTIVITY -->
-    <section class="ins-section white" id="connectivity">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Network Dynamics</div>
-        <h2 class="ins-h2-dark">The Network Is the Asset</h2>
-        <p class="ins-desc-dark">Rather than individual silos, DIGISYNQ maps the relationship graph between every node.</p>
-
-        <div class="net-conn-box">
-          <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.2em;color:#09090b;font-weight:800;margin-bottom:1rem;">INTERCONNECTED RELATIONAL GRAPH</div>
-          <p style="font-size:1rem;color:#52525b;max-width:720px;margin:0 auto 2rem;line-height:1.65;">
-            When a producer lists a project, DIGISYNQ routes it to compatible soundstages with dark calendar days, matches available cinematography pods, and aligns distribution interest before a single day of shooting begins.
-          </p>
-          <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-            <a href="how-it-works.html" class="btn-pill-solid" style="padding:0.9rem 2.4rem;">See How It Operates &rarr;</a>
-            <a href="contact.html?type=join" class="btn-pill-outline" style="padding:0.9rem 2.4rem;">Apply for Network Access &rarr;</a>
+    <!-- 03 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
+      <div style="max-width:1050px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;margin-bottom:0.8rem;">READY TO EXECUTE?</div>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
+              Tell us what you're <span style="color:#71717a;font-style:italic;">shooting.</span>
+            </h2>
+            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
+              Producers, studio owners, and crew: Submit your requirements for instant network dispatch within 24 hours.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <a href="contact.html?type=project" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
+              Bring a project &rarr;
+            </a>
+            <a href="contact.html?type=join" class="tlc-btn-pill" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;">
+              Join as Crew or Studio &rarr;
+            </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <section class="mono-trust-strip" aria-label="Trust Network">
-      <div class="mono-trust-inner">
-        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-        <div class="mono-trust-marquee-wrapper">
-          <div class="mono-trust-marquee-track">
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">How It Works</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
           </div>
-        </div>
-        <div class="mono-trust-tags">
-          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-          <span class="mono-trust-pill">&#9889; 100% Direct</span>
-          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
-            </div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
-          </div>
-
-          <div class="f-col">
-            <h4>Core Architecture</h4>
-            <a href="network.html">The Network</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="solutions.html">Stakeholder Solutions</a>
-            <a href="business.html">Revenue Engine</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Intelligence &amp; Trust</h4>
-            <a href="cinema-damage-control.html">Cinema Radar</a>
-            <a href="insights.html">Industry Research</a>
-            <a href="proof.html">Proof &amp; Pilots</a>
-            <a href="about.html">About &amp; Founders</a>
-            <a href="lab.html">Innovation Lab</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="contact.html?type=project">Bring a Project</a>
-            <a href="contact.html?type=join">Join Network</a>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          </div>
-        </div>
-
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
         </div>
       </div>
     </footer>

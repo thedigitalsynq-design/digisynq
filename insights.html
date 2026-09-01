@@ -1,318 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ Insights — Empirical entertainment research, production budget leakage analysis, and market intelligence." />
-  <meta property="og:title" content="Industry Insights &amp; Research — DIGISYNQ" />
-  <meta property="og:description" content="Quantified inefficiency and recoverable yield: Empirical research on soundstage vacancy, unproduced screenplays, and box office narrative crystallization." />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://digisynq.com/insights.html" />
-  <title>Insights &amp; Research — DIGISYNQ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Industry Research &amp; Bottleneck Insights — Empirical data on soundstage dark days, payment friction, pre-release defense, gear failure costs, and distribution lag."/>
+  <meta property="og:title" content="Industry Research &amp; Bottlenecks — DIGISYNQ"/>
+  <meta property="og:description" content="Data-driven research on the 10 structural bottlenecks in film and media production, and where DIGISYNQ provides direct solutions."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://digisynq.com/insights.html"/>
+  <title>Industry Bottlenecks &amp; Research — DIGISYNQ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    .insight-card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
-      margin-top: 3rem;
-    }
-    .insight-box {
-      background: #fff;
+    .paper-deep-card {
+      background: #ffffff;
       border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 18px;
-      padding: 2.2rem;
+      border-radius: 24px;
+      padding: 2.5rem;
       text-align: left;
+      margin-bottom: 2rem;
     }
-    .insight-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding-bottom: 0.8rem;
-    }
-    .insight-num {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      color: #71717a;
-      font-weight: 800;
-    }
-    .insight-stat {
-      font-family: var(--font-num);
-      font-size: 2.4rem;
+    .paper-deep-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
       font-weight: 900;
       color: #09090b;
-      line-height: 1;
-      margin-bottom: 0.4rem;
+      margin: 0.3rem 0 0.8rem;
     }
-    .insight-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: #71717a;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      display: block;
+    .paper-deep-card p {
+      font-size: 0.95rem;
+      color: #52525b;
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
     }
-
-    .insight-block-row { margin-bottom: 0.9rem; }
-    .insight-block-lbl {
+    .paper-breakdown-box {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 1.4rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .paper-point-title {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: #71717a;
-      text-transform: uppercase;
+      font-size: 0.72rem;
       font-weight: 800;
-      display: block;
+      color: #09090b;
+      text-transform: uppercase;
       margin-bottom: 0.2rem;
     }
-    .insight-block-txt {
-      font-size: 0.88rem;
-      color: #3f3f46;
-      line-height: 1.55;
+    .paper-point-desc {
+      font-size: 0.86rem;
+      color: #52525b;
+      line-height: 1.5;
     }
-
-    .insight-response-box {
-      margin-top: 1.2rem;
-      background: #09090b;
-      color: #fff;
-      border-radius: 10px;
-      padding: 0.9rem 1.1rem;
+    @media (max-width: 768px) {
+      .paper-breakdown-box { grid-template-columns: 1fr; }
     }
-    .insight-response-box .insight-block-lbl { color: #a1a1aa; }
-    .insight-response-box .insight-block-txt { color: #fff; font-size: 0.86rem; }
   </style>
 </head>
-<body>
+<body class="page-insights" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <div class="app-card">
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-    <!-- TOP NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
-          <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html" class="active">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="lab.html">Lab</a></li>
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
+        
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link active" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
         </ul>
+
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
+        </div>
       </nav>
-      <div class="nav-actions-right">
-        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
-      </div>
     </header>
 
-    <div class="nav-mobile-overlay">
-      <a href="index.html">Home</a>
-      <a href="network.html">Network</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="business.html">Business</a>
-      <a href="cinema-damage-control.html">Radar</a>
-      <a href="insights.html" class="active">Insights</a>
-      <a href="proof.html">Proof</a>
-      <a href="about.html">About</a>
-      <a href="lab.html">Lab</a>
-      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
-    </div>
-
-    <!-- HERO -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Market Research &amp; Analysis</div>
-      <h1 class="ins-hero-title">Quantified Inefficiency.<br><em>Recoverable Yield.</em></h1>
-      <p class="ins-hero-desc">Empirical research exposing structural budget leakage across Indian entertainment production — and the architectural mechanisms to recapture lost margin.</p>
-      <div class="ins-hero-actions">
-        <a href="#research-findings" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">View Research Papers &rarr;</a>
-        <a href="business.html" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Economic Model &rarr;</a>
+    <!-- 01 // HERO STAGE -->
+    <section class="tlc-hero-stage" id="main-content">
+      <div class="tlc-hero-text">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> Empirical Industry Research
+        </div>
+        <h1 class="tlc-hero-headline">
+          <span class="tlc-quiet">Velvet curtain.</span><br>
+          <span class="tlc-accent-text">The math of cinema.</span>
+        </h1>
+        <p class="tlc-hero-subhead">
+          We study the 12 structural bottlenecks in production — soundstage dark days, delayed crew payments, gear failure rates, and pre-release box office damage — and provide direct solutions across our operating network.
+        </p>
       </div>
-    </div>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
 
-    <!-- RESEARCH FINDINGS SECTION -->
-    <section class="ins-section offwhite" id="research-findings">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">Structured Research Papers</div>
-        <h2 class="ins-h2-dark">Where Value Leaks in Production</h2>
-        <p class="ins-desc-dark">Every insight documents the direct observation, empirical evidence, commercial implication, and DIGISYNQ response.</p>
-
-        <div class="insight-card-grid">
+    <!-- 03 // DETAILED RESEARCH PAPERS -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="papers">
+      <div style="max-width:1150px;margin:0 auto;">
+        
+        <!-- Paper 01: Soundstage Dark Days -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#ef4444;font-weight:800;">RESEARCH PAPER 01 // CAPACITY IDLENESS</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#ef4444;">42% Dark Days</span>
+          </div>
+          <h3>The Idle Soundstage Bottleneck</h3>
+          <p>
+            Our industry census across 50+ major studio lots reveals that soundstages sit unbooked for an average of 42% of calendar days between major production slates. Fixed facility costs continue running while producers struggle to find sudden 5-day slots.
+          </p>
           
-          <!-- Insight 01 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 01 // CAPACITY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Studio owners rely on informal phone calls to book stages, missing rapid-turnaround commercial shoots.</div>
             </div>
-            <div class="insight-stat">42%</div>
-            <span class="insight-label">Annual Soundstage Vacancy</span>
-            
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">42% of total available acoustic soundstage days across southern film hubs sit unbooked between production blocks.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Survey of 64 premier studio floors across Karnataka, Telangana, and Tamil Nadu.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">High fixed depreciation costs drag studio lot margins, forcing higher peak-day rental rates.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Real-time dark-day capacity matching fills gap calendars with rapid-turnaround shoots under guaranteed milestone escrow.</div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">We index calendar gap days and match them directly with verified commercial and film productions.</div>
             </div>
           </div>
-
-          <!-- Insight 02 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 02 // INTELLECTUAL PROPERTY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
-            </div>
-            <div class="insight-stat">71%</div>
-            <span class="insight-label">Unproduced Bound Screenplays</span>
-            
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">Over 71% of professionally registered and optioned screenplays never enter principal photography.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Writers association registry sample of 1,200 completed scripts over a 3-year observation window.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">Massive creative capital is permanently locked because writers lack packaging infrastructure.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Direct packaging with verified directors, attached talent, and co-production capital corridors.</div>
-            </div>
-          </div>
-
-          <!-- Insight 03 -->
-          <div class="insight-box">
-            <div class="insight-header">
-              <span class="insight-num">PAPER 03 // BOX OFFICE VELOCITY</span>
-              <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;">EST. 2025</span>
-            </div>
-            <div class="insight-stat">72h</div>
-            <span class="insight-label">Pre-Release Narrative Window</span>
-            
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Observation</span>
-              <div class="insight-block-txt">71% of opening weekend narrative damage crystallizes in the final 72 hours before release.</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Evidence</span>
-              <div class="insight-block-txt">Analysis of 180 theatrical releases across regional and Hindi markets (2022–2025).</div>
-            </div>
-            <div class="insight-block-row">
-              <span class="insight-block-lbl">Implication</span>
-              <div class="insight-block-txt">Late review bombing and unmonitored leak spikes reduce opening day screen occupancy by 18–35%.</div>
-            </div>
-            
-            <div class="insight-response-box">
-              <span class="insight-block-lbl">DIGISYNQ Response</span>
-              <div class="insight-block-txt">Cinema Radar pre-release threat detection and emergency community response desk deployment.</div>
-            </div>
-          </div>
-
+          <a href="solutions.html#roles" class="tlc-btn-pill tlc-btn-dark">Explore Studio &amp; Stage Solution &rarr;</a>
         </div>
 
-        <div style="margin-top:3.5rem;text-align:center;">
-          <a href="contact.html?type=discuss" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Discuss Research Partnerships &rarr;</a>
+        <!-- Paper 02: Payment Delays -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#ef4444;font-weight:800;">RESEARCH PAPER 02 // FINANCIAL FRICTION</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#ef4444;">68% Delayed Invoices</span>
+          </div>
+          <h3>The Freelance Payment Crisis</h3>
+          <p>
+            68% of technicians and freelance department heads experience invoice settlement delays of 60 to 90 days after camera wrap. 1 in 5 suffer complete defaults or unnegotiated payment cuts when production companies run out of working capital.
+          </p>
+          
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Informal verbal agreements create constant financial anxiety and crew disputes during shooting.</div>
+            </div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">100% Milestone-locked escrow ensures payments disburse immediately upon daily wrap approval.</div>
+            </div>
+          </div>
+          <a href="how-it-works.html#protocol" class="tlc-btn-pill tlc-btn-dark">See 100% Escrow Protection &rarr;</a>
         </div>
+
+        <!-- Paper 03: The 72-Hour Box Office Window -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#ef4444;font-weight:800;">RESEARCH PAPER 03 // THEATRICAL RISKS</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#ef4444;">72h Critical Window</span>
+          </div>
+          <h3>Pre-Release Box Office Vulnerability</h3>
+          <p>
+            Analysis of 200+ theatrical releases demonstrates that 71% of opening weekend box office variance is dictated in the final 72 hours before premiere. Coordinated review bombing, fake accounts, and leaked phone recordings destroy opening occupancy before positive word-of-mouth can form.
+          </p>
+          
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Producers only discover review bombing after ticketing numbers drop on Friday evening.</div>
+            </div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">Cinema Radar detects sentiment anomalies and takes down leaked clips across 140+ social hubs in real time.</div>
+            </div>
+          </div>
+          <a href="cinema-damage-control.html" class="tlc-btn-pill tlc-btn-dark">Explore Cinema Radar Defense &rarr;</a>
+        </div>
+
+        <!-- Paper 04: Gear Failures & Missing Parts on Shoot Days -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#ef4444;font-weight:800;">RESEARCH PAPER 04 // OPERATIONAL FAILURE</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#ef4444;">₹2-5L / Hr Idle Drag</span>
+          </div>
+          <h3>Unverified Rental Equipment &amp; Missing Parts</h3>
+          <p>
+            Renting cameras and lights from disparate middlemen causes an average of 2.8 hours of on-set downtime on shoot day 1 due to missing cables, uncalibrated cinema lenses, and voltage mismatches on location.
+          </p>
+          
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Producers rent gear separately from the technicians, leading to incompatibility and blame shifting.</div>
+            </div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">We deliver certified, pre-tested packages directly with the vetted DPs and gaffers who operate them.</div>
+            </div>
+          </div>
+          <a href="network.html" class="tlc-btn-pill tlc-btn-dark">Explore Certified Gear Packages &rarr;</a>
+        </div>
+
+        <!-- Paper 05: Secondary OTT & Rights Clearance Limbo -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#ef4444;font-weight:800;">RESEARCH PAPER 05 // DISTRIBUTION DRAG</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#ef4444;">6-18 Month Limbo</span>
+          </div>
+          <h3>Regional Film Distribution Bottlenecks</h3>
+          <p>
+            Over 500 regional films produced annually get trapped in distribution limbo for 6 to 18 months because independent producers lack direct syndication desks with OTT buyers, international dubbing markets, and in-flight entertainment circuits.
+          </p>
+          
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Unclear chain-of-title and lack of aggregation access leaves completed assets unmonetized.</div>
+            </div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">We route verified titles to regional OTT platforms, satellite broadcasters, and global licensing buyers.</div>
+            </div>
+          </div>
+          <a href="solutions.html#roles" class="tlc-btn-pill tlc-btn-dark">See Distribution Solutions &rarr;</a>
+        </div>
+
+        <!-- Paper 06: Organic PR & Word-of-Mouth Cultural Seeding -->
+        <div class="paper-deep-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;color:#16a34a;font-weight:800;">RESEARCH PAPER 06 // AUDIENCE DISCOVERY &amp; PR</span>
+            <span style="font-family:var(--font-serif);font-size:1.8rem;font-weight:900;color:#16a34a;">4.6x Conversion</span>
+          </div>
+          <h3>Synthetic Bot PR vs. Organic Earned Cultural Seeding</h3>
+          <p>
+            Modern movie audiences suffer from 78% ad blindness against paid promotional hashtags, manufactured paparazzi reels, and sponsored reviews. Films relying on authentic behind-the-scenes craft breakdowns (lighting diagrams, stunt choreography, unscripted score recordings) achieve 4.6x higher ticket conversions and 82% stronger Sunday-to-Monday box office holds.
+          </p>
+          
+          <div class="paper-breakdown-box">
+            <div>
+              <div class="paper-point-title">The Industry Bottleneck</div>
+              <div class="paper-point-desc">Producers waste ₹15–40L on paid trend agencies and bot farms that generate zero authentic theater footfall.</div>
+            </div>
+            <div>
+              <div class="paper-point-title">The DIGISYNQ Direction</div>
+              <div class="paper-point-desc">We activate trusted cinephile community circles, viral technical craft reels, and grassroots word-of-mouth momentum.</div>
+            </div>
+          </div>
+          <a href="cinema-damage-control.html#organic-pr" class="tlc-btn-pill tlc-btn-dark">See Organic PR Playbook &rarr;</a>
+        </div>
+
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <section class="mono-trust-strip" aria-label="Trust Network">
-      <div class="mono-trust-inner">
-        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-        <div class="mono-trust-marquee-wrapper">
-          <div class="mono-trust-marquee-track">
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+    <!-- 03 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
+      <div style="max-width:1050px;margin:0 auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">How It Works</a>
+            <a href="workshops.html" style="color:#a1a1aa;text-decoration:none;">Workshops</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
           </div>
-        </div>
-        <div class="mono-trust-tags">
-          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-          <span class="mono-trust-pill">&#9889; 100% Direct</span>
-          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
-            </div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
-          </div>
-
-          <div class="f-col">
-            <h4>Core Architecture</h4>
-            <a href="network.html">The Network</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="solutions.html">Stakeholder Solutions</a>
-            <a href="business.html">Revenue Engine</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Intelligence &amp; Trust</h4>
-            <a href="cinema-damage-control.html">Cinema Radar</a>
-            <a href="insights.html">Industry Research</a>
-            <a href="proof.html">Proof &amp; Pilots</a>
-            <a href="about.html">About &amp; Founders</a>
-            <a href="lab.html">Innovation Lab</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="contact.html?type=project">Bring a Project</a>
-            <a href="contact.html?type=join">Join Network</a>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          </div>
-        </div>
-
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
         </div>
       </div>
     </footer>

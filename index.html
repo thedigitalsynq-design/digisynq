@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DIGISYNQ — The Operating Network for Entertainment. Entertainment has everything. It just isn't connected. We connect the people, places, content and opportunities behind entertainment." />
-  <meta property="og:title" content="DIGISYNQ — The Operating Network for Entertainment" />
-  <meta property="og:description" content="Entertainment has everything. It just isn't connected. DIGISYNQ connects people, spaces, content, and capital into compounding value." />
+  <meta name="description" content="DIGISYNQ — The Operating Network for All Entertainment: Theatrical Cinema, OTT Web Series, High-End YouTube Content, Commercials, and Music Videos." />
+  <meta property="og:title" content="DIGISYNQ — The Operating Network for All Entertainment" />
+  <meta property="og:description" content="From feature films and OTT web series to YouTube creator shows and commercials: DIGISYNQ connects productions with available soundstages, trusted crews, and safe escrow payments." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://digisynq.com/" />
-  <title>DIGISYNQ — The Operating Network for Entertainment</title>
+  <title>DIGISYNQ — The Operating Network for All Entertainment</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,267 +16,59 @@
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    /* ── Editorial Homepage Specific Styling ── */
-    .hp-hero {
-      padding: clamp(5rem, 10vw, 8.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(3.5rem, 6vw, 5.5rem);
-      text-align: center;
-      background: #09090b;
-      color: #fff;
-      position: relative;
+    .format-spectrum-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 1.8rem 0 0;
     }
-    .hp-eyebrow {
+    .format-pill {
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #71717a;
-      margin-bottom: 1.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .hp-eyebrow::before, .hp-eyebrow::after {
-      content: "";
-      width: 20px;
-      height: 1px;
-      background: #3f3f46;
-    }
-    .hp-hero-title {
-      font-family: var(--font-serif);
-      font-weight: 900;
-      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      max-width: 1050px;
-      margin: 0 auto 1.8rem;
-    }
-    .hp-hero-title em {
-      font-style: italic;
-      color: #a1a1aa;
-    }
-    .hp-hero-desc {
-      font-family: var(--font-body);
-      font-size: clamp(1rem, 1.6vw, 1.25rem);
-      line-height: 1.65;
-      color: #a1a1aa;
-      max-width: 680px;
-      margin: 0 auto 2.8rem;
-    }
-    .hp-hero-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── Problem Section ── */
-    .hp-problem-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .hp-problem-item {
-      padding: 2.2rem 1.8rem;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      text-align: left;
-    }
-    .hp-problem-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: #71717a;
       font-weight: 800;
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-    .hp-problem-item h3 {
-      font-family: var(--font-body);
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #09090b;
-      margin: 0 0 0.5rem;
-    }
-    .hp-problem-item p {
-      font-size: 0.9rem;
       color: #52525b;
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    /* ── Ecosystem Diagram ── */
-    .hp-eco-box {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: clamp(2.5rem, 5vw, 4rem) 2rem;
-      margin-top: 3rem;
-      text-align: center;
-    }
-    .hp-eco-nodes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.8rem;
-      margin: 2rem 0;
-    }
-    .hp-eco-pill {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 0.75rem 1.4rem;
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 0.35rem 0.8rem;
       border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: #fff;
-      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .hp-eco-center {
-      background: #fff;
+    .format-pill.active {
       color: #09090b;
-      border-color: #fff;
-      font-weight: 900;
-      padding: 0.85rem 2rem;
-      box-shadow: 0 0 30px rgba(255,255,255,0.2);
-    }
-
-    /* ── 4-Step Operational Flow ── */
-    .hp-steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-top: 3rem;
-      background: #fff;
-    }
-    .hp-step {
-      padding: 2.5rem 1.8rem;
-      border-right: 1px solid rgba(0,0,0,0.08);
-      text-align: left;
-    }
-    .hp-step:last-child { border-right: 0; }
-    .hp-step-num {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: #71717a;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-      display: block;
-    }
-    .hp-step h3 {
-      font-family: var(--font-body);
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: #09090b;
-      margin: 0 0 0.6rem;
-    }
-    .hp-step p {
-      font-size: 0.88rem;
-      color: #52525b;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* ── Solutions One-Liners ── */
-    .hp-sol-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.2rem;
-      margin-top: 3rem;
-    }
-    .hp-sol-card {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 1.8rem;
-      text-align: left;
-    }
-    .hp-sol-tag {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      color: #71717a;
-      font-weight: 800;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-    .hp-sol-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: #fff;
-      margin: 0 0 0.4rem;
-    }
-    .hp-sol-card p {
-      font-size: 0.88rem;
-      color: #a1a1aa;
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    /* ── Value Flow Diagram ── */
-    .hp-value-track {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.6rem;
-      margin: 2.5rem 0;
-    }
-    .hp-val-node {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.12);
-      padding: 0.65rem 1.2rem;
-      border-radius: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #09090b;
-      font-weight: 800;
-    }
-    .hp-val-arrow { color: #71717a; font-weight: 900; }
-
-    @media (max-width: 860px) {
-      .hp-steps-grid { grid-template-columns: 1fr; }
-      .hp-step { border-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+      background: #ffffff;
+      border-color: rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
   </style>
 </head>
-<body class="page-home">
+<body class="page-home" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <div class="app-card">
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-    <!-- PRIMARY REFINED NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
-          <li><a href="index.html" class="active">Home</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="lab.html">Lab</a></li>
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
+        
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link" href="lab.html">Lab</a></li>
         </ul>
-      </nav>
 
-      <div class="nav-actions-right">
-        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
-      </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
+        </div>
+      </nav>
     </header>
 
     <!-- MOBILE OVERLAY -->
@@ -285,6 +77,7 @@
       <a href="network.html">Network</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="solutions.html">Solutions</a>
+      <a href="workshops.html">Workshops</a>
       <a href="business.html">Business</a>
       <a href="cinema-damage-control.html">Radar</a>
       <a href="insights.html">Insights</a>
@@ -294,342 +87,671 @@
       <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
     </div>
 
-    <!-- 01 // HERO: THE BIG IDEA -->
-    <div class="hp-hero" id="main-content">
-      <div class="hp-eyebrow">The Operating Network for Entertainment</div>
-      <h1 class="hp-hero-title">Entertainment Has Everything.<br><em>It Just Isn't Connected.</em></h1>
-      <p class="hp-hero-desc">DIGISYNQ connects the people, places, content and opportunities behind entertainment.</p>
-      
-      <div class="hp-hero-actions">
-        <a href="contact.html?type=project" class="btn-pill-solid" style="padding:0.95rem 2.4rem;font-size:0.92rem;">Bring a Project &rarr;</a>
-        <a href="contact.html?type=join" class="btn-pill-outline" style="padding:0.95rem 2.4rem;font-size:0.92rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Join the Network &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 02 // THE PROBLEM -->
-    <section class="ins-section offwhite" id="problem">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">The Structural Problem</div>
-        <h2 class="ins-h2-dark">Too Much Value Is Sitting Still</h2>
-        <p class="ins-desc-dark">The entertainment industry does not lack assets. It lacks synchronization.</p>
-
-        <div class="hp-problem-grid">
-          <div class="hp-problem-item">
-            <span class="hp-problem-label">IDLE CAPACITY</span>
-            <h3>Studios Sitting Dark</h3>
-            <p>A-grade soundstages and facilities sit empty between productions because booking demand is uncoordinated.</p>
-          </div>
-          <div class="hp-problem-item">
-            <span class="hp-problem-label">FRAGMENTED TALENT</span>
-            <h3>Talent Waiting for Briefs</h3>
-            <p>Skilled directors, cinematographers, and crew navigate scattered agency gatekeepers between projects.</p>
-          </div>
-          <div class="hp-problem-item">
-            <span class="hp-problem-label">DORMANT STORIES</span>
-            <h3>Content Locked in Storage</h3>
-            <p>Completed screenplays, optioned IP, and finished media wait for structured financing and distribution access.</p>
-          </div>
-          <div class="hp-problem-item">
-            <span class="hp-problem-label">MISSED VELOCITY</span>
-            <h3>Opportunities Lost in Silos</h3>
-            <p>Productions take months to assemble because capital, facilities, and creators operate in isolation.</p>
-          </div>
+    <!-- 01 // CATEGORY-DEFINING HERO COMMAND STAGE -->
+    <section class="tlc-hero-stage" id="main-content" style="padding:clamp(4.5rem, 8.5vw, 7.5rem) clamp(1.5rem, 4vw, 3.5rem);">
+      <div class="tlc-hero-text" style="max-width:1050px;margin:0 auto;text-align:center;">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> The Entertainment Operating Network
         </div>
-      </div>
-    </section>
+        
+        <h1 class="tlc-hero-headline" style="font-size:clamp(2.8rem, 6.5vw, 5.2rem);letter-spacing:-0.035em;line-height:1.06;margin-bottom:0;">
+          <span class="tlc-quiet">Stories sleep in the dark.</span><br>
+          <span class="tlc-accent-text">We Digisynq turn on the lights.</span>
+        </h1>
 
-    <!-- 03 // THE NETWORK -->
-    <section class="ins-section dark" id="network">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">The Ecosystem</div>
-        <h2 class="ins-h2-light">The Network Unifies the Industry</h2>
-        <p class="ins-desc-light">Six essential pillars organized into one seamless, collaborative environment.</p>
-
-        <div class="hp-eco-box">
-          <div class="hp-eco-nodes">
-            <span class="hp-eco-pill">PEOPLE</span>
-            <span class="hp-eco-pill">INFRASTRUCTURE</span>
-            <span class="hp-eco-pill">CONTENT</span>
-            <span class="hp-eco-pill">MARKET</span>
-            <span class="hp-eco-pill">CAPITAL</span>
-            <span class="hp-eco-pill">AUDIENCE</span>
-          </div>
-          <div style="margin: 1.5rem 0; font-size: 1.4rem; color: #71717a;">↓</div>
-          <div style="display:inline-block;">
-            <span class="hp-eco-pill hp-eco-center">DIGISYNQ OPERATING LAYER</span>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;text-align:center;">
-          <a href="network.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore the Network &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 // HOW IT WORKS -->
-    <section class="ins-section white" id="how-it-works">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="sec-eyebrow-light">The Operating Method</div>
-        <h2 class="ins-h2-dark">Find. Connect. Activate. Learn.</h2>
-        <p class="ins-desc-dark">A disciplined operational sequence backed by milestone-governed escrow.</p>
-
-        <div class="hp-steps-grid">
-          <div class="hp-step">
-            <span class="hp-step-num">01 // FIND</span>
-            <h3>Discover</h3>
-            <p>Locate available soundstages, verified technical talent, and dormant IP in real time.</p>
-          </div>
-          <div class="hp-step">
-            <span class="hp-step-num">02 // CONNECT</span>
-            <h3>Match</h3>
-            <p>Package resources directly with funded productions under standardized milestone terms.</p>
-          </div>
-          <div class="hp-step">
-            <span class="hp-step-num">03 // ACTIVATE</span>
-            <h3>Execute</h3>
-            <p>Coordinate shoot schedules, facility locks, and distribution windows with neutral escrow governance.</p>
-          </div>
-          <div class="hp-step">
-            <span class="hp-step-num">04 // LEARN</span>
-            <h3>Compound</h3>
-            <p>Every completed production feeds performance data forward to make the next project faster and safer.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;text-align:center;">
-          <a href="how-it-works.html" class="btn-pill-solid" style="padding:0.85rem 2.2rem;">See How It Works &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 // SOLUTIONS -->
-    <section class="ins-section dark" id="solutions">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">Stakeholder Solutions</div>
-        <h2 class="ins-h2-light">Built for Every Role in Entertainment</h2>
-        <p class="ins-desc-light">Direct value creation for creators, facility operators, distributors, and capital partners.</p>
-
-        <div class="hp-sol-grid">
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">PRODUCERS</span>
-            <h3>From Brief to Camera</h3>
-            <p>Assemble cast, crew, stages, and distribution in days rather than months.</p>
-          </div>
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">TALENT</span>
-            <h3>From Availability to Opportunity</h3>
-            <p>Direct access to verified productions with milestone-guaranteed payouts.</p>
-          </div>
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">FACILITIES</span>
-            <h3>Turn Idle Capacity into Revenue</h3>
-            <p>Monetize dark soundstage days and unbooked equipment packages seamlessly.</p>
-          </div>
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">CONTENT / IP</span>
-            <h3>Give Dormant IP Another Life</h3>
-            <p>Package screenplays and catalog media into secondary licensing and streaming windows.</p>
-          </div>
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">DISTRIBUTION</span>
-            <h3>The Right Content, The Right Window</h3>
-            <p>Source vetted, completed titles directly for theatrical and OTT licensing.</p>
-          </div>
-          <div class="hp-sol-card">
-            <span class="hp-sol-tag">CAPITAL</span>
-            <h3>Visibility &amp; Escrow Security</h3>
-            <p>Deploy production capital with covenant-backed milestone protection.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;text-align:center;">
-          <a href="solutions.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Explore Solutions &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 // VALUE & BUSINESS -->
-    <section class="ins-section offwhite" id="value-model">
-      <div style="max-width:1100px;margin:0 auto;text-align:center;">
-        <div class="sec-eyebrow-light" style="justify-content:center;">Commercial Thesis</div>
-        <h2 class="ins-h2-dark">When Value Moves, DIGISYNQ Participates</h2>
-        <p class="ins-desc-dark" style="margin:0 auto 2rem;">Zero upfront retainers. Zero software subscription traps. We monetize when transactions clear.</p>
-
-        <div class="hp-value-track">
-          <span class="hp-val-node">CONNECT</span>
-          <span class="hp-val-arrow">→</span>
-          <span class="hp-val-node">COORDINATE</span>
-          <span class="hp-val-arrow">→</span>
-          <span class="hp-val-node">ACTIVATE</span>
-          <span class="hp-val-arrow">→</span>
-          <span class="hp-val-node">TRANSACT</span>
-          <span class="hp-val-arrow">→</span>
-          <span class="hp-val-node">VALUE</span>
-          <span class="hp-val-arrow">→</span>
-          <span class="hp-val-node" style="background:#09090b;color:#fff;">REVENUE</span>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a href="business.html" class="btn-pill-solid" style="padding:0.85rem 2.2rem;">See the Business Model &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07 // NETWORK EFFECT -->
-    <section class="ins-section dark" id="network-effect">
-      <div style="max-width:1100px;margin:0 auto;text-align:center;">
-        <div class="ins-eyebrow" style="justify-content:center;">Defensibility &amp; Moats</div>
-        <h2 class="ins-h2-light">Every New Connection Makes the Network More Useful</h2>
-        <p class="ins-desc-light" style="margin:0 auto 2.5rem;">The network itself becomes the asset. As density grows, matching speed increases and deal friction drops.</p>
-
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;max-width:850px;margin:0 auto;">
-          <span class="hp-eco-pill">PEOPLE</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill">ASSETS</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill">PROJECTS</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill">TRANSACTIONS</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill">DATA</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill">INTELLIGENCE</span>
-          <span style="color:#71717a;display:flex;align-items:center;">→</span>
-          <span class="hp-eco-pill" style="background:#fff;color:#09090b;font-weight:900;">MORE VALUE</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 08 // PROOF & PILOTS -->
-    <section class="ins-section white" id="proof">
-      <div style="max-width:1100px;margin:0 auto;text-align:center;">
-        <div class="sec-eyebrow-light" style="justify-content:center;">Evidence &amp; Verification</div>
-        <h2 class="ins-h2-dark">Proof Through Execution</h2>
-        <p class="ins-desc-dark" style="margin:0 auto 2rem;">We prioritize verified delivery records and live pilot initiatives over unverified marketing claims.</p>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;text-align:left;margin-top:2.5rem;">
-          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">PILOT 01</span>
-              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(34,197,94,0.15);color:#16a34a;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● COMPLETED</span>
-            </div>
-            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Studio Capacity Activation</h3>
-            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Coordinated dark soundstage calendar matching with regional indie productions in Karnataka.</p>
-          </div>
-          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">PILOT 02</span>
-              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(59,130,246,0.15);color:#2563eb;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● ONGOING</span>
-            </div>
-            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Cinema Radar Sentiment Defense</h3>
-            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Pre-release 72-hour sentiment intelligence and threat monitoring for theatrical launch campaigns.</p>
-          </div>
-          <div style="border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:1.8rem;background:#fff;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem;">
-              <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;font-weight:800;color:#71717a;">INITIATIVE 03</span>
-              <span style="font-family:var(--font-mono);font-size:0.6rem;background:rgba(234,179,8,0.15);color:#ca8a04;padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● BUILDING</span>
-            </div>
-            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:900;margin:0 0 0.5rem;">Dormant IP Syndication</h3>
-            <p style="font-size:0.88rem;color:#52525b;line-height:1.55;margin:0;">Packaging unproduced screenplays with vetted showrunners and financing partners.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a href="proof.html" class="btn-pill-outline" style="padding:0.85rem 2.2rem;">View Full Proof &amp; Case Studies &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 09 // FINAL CALL -->
-    <section class="ins-section dark" id="final-cta" style="text-align:center;padding:clamp(5rem,8vw,7rem) 1.5rem;">
-      <div style="max-width:800px;margin:0 auto;">
-        <div class="hp-eyebrow" style="justify-content:center;">The Operating Standard</div>
-        <h2 style="font-family:var(--font-serif);font-size:clamp(2.2rem,5.5vw,4.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;line-height:1.08;margin:0 0 1.5rem;">
-          Own Less.<br>Connect More.<br><em style="font-style:italic;color:#a1a1aa;">Multiply Value.</em>
-        </h2>
-        <p style="font-size:1.05rem;color:#a1a1aa;max-width:560px;margin:0 auto 2.5rem;line-height:1.6;">
-          Ready to mobilize a production, list studio capacity, or access the network?
+        <p class="tlc-hero-subhead" style="margin-top:1.5rem;max-width:780px;margin-left:auto;margin-right:auto;font-size:1.15rem;color:#52525b;line-height:1.65;font-weight:400;">
+          The Asset-Light Operating System for the Global Entertainment Economy. Connecting 18 industry stakeholders, unlocking dark-day stage capacity, and securing 100% of production capital in neutral milestone escrow.
         </p>
-        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-          <a href="contact.html?type=project" class="btn-pill-solid" style="padding:1rem 2.8rem;font-size:0.95rem;">Bring a Project &rarr;</a>
-          <a href="contact.html?type=join" class="btn-pill-outline" style="padding:1rem 2.8rem;font-size:0.95rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Join the Network &rarr;</a>
+
+      </div>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
+
+    <!-- DOWNWARD NARRATIVE BRIDGE: FROM METAPHOR TO THE REALITY OF PRODUCTION -->
+    <!-- 01.5 // NARRATIVE BRIDGE & BUSINESS IDEOLOGY -->
+    <section style="padding:clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);background:#f1f5f9;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">
+      <div style="max-width:880px;margin:0 auto;text-align:center;">
+        
+        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
+          <div style="width:1.5px;height:35px;background:linear-gradient(to bottom, #09090b, #27272a);"></div>
+          <span style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:#27272a;font-weight:800;">OUR BUSINESS IDEOLOGY</span>
         </div>
+        
+        <h2 style="font-family:var(--font-serif);font-size:clamp(1.8rem, 4vw, 3rem);font-weight:900;font-style:italic;color:#09090b;line-height:1.15;margin:0 0 1.2rem;letter-spacing:-0.03em;">
+          No Waste. No Silos.<br>
+          <span class="tlc-quiet">No Forgotten Value.</span>
+        </h2>
+        
+        <p style="font-size:1.12rem;color:#52525b;max-width:740px;margin:0 auto 1.8rem;line-height:1.7;">
+          Every business, person, stage, relationship, and piece of data has value — when it is connected, measured, and leveraged correctly. When you create value, we create value. When you grow, we grow.
+        </p>
+
+        <div style="background:#09090b;color:#fff;border-radius:16px;padding:1rem 1.6rem;display:inline-flex;align-items:center;gap:0.8rem;font-family:var(--font-mono);font-size:0.75rem;font-weight:700;margin-bottom:1.5rem;box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+          <span style="color:#22c55e;">●</span>
+          <span>Connect more &bull; Waste less &bull; Measure everything &bull; Leverage intelligently &bull; Expand endlessly</span>
+        </div>
+        
+        <div style="display:block;">
+          <a href="#problem-solutions" style="display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.72rem;color:#09090b;font-weight:800;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;">
+            <span>Explore The 12 Bottleneck Fixes</span>
+            <span>&darr;</span>
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <section class="mono-trust-strip" aria-label="Trust Network">
-      <div class="mono-trust-inner">
-        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-        <div class="mono-trust-marquee-wrapper">
-          <div class="mono-trust-marquee-track">
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-          </div>
-        </div>
-        <div class="mono-trust-tags">
-          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-          <span class="mono-trust-pill">&#9889; 100% Direct</span>
-          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-        </div>
-      </div>
-    </section>
+    <!-- 02 // DIRECT PROBLEM -> SOLUTION ROUTING BOARD -->
+    <section style="padding:clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);background:#f8fafc;" id="problem-solutions">
+      <div style="max-width:1150px;margin:0 auto;">
+        <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:0.6rem;">THE 12 PRODUCTION BOTTLENECKS // HOW WE SOLVE THEM</div>
+        <h2 class="tlc-section-heading">What's your bottleneck? <span class="tlc-quiet">Here is the exact fix.</span></h2>
+        <p style="font-size:1.05rem;color:#52525b;max-width:760px;line-height:1.6;margin-bottom:2rem;">
+          From theatrical feature films to OTT series, commercial agency shoots, and high-volume creator studios — select your operational bottleneck:
+        </p>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
+        <div class="tlc-prob-sol-grid">
+          
+          <!-- Bottleneck 01: Soundstage Dark Days -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 01 // 42% DARK-DAY LOSS</span>
+              <h3 class="tlc-prob-title">Soundstage Idle Days Between Feature Slates</h3>
+              <p class="tlc-prob-desc">
+                Acoustic floors and Chroma stages incur heavy fixed HVAC, power, and lease overhead while sitting dark for weeks between long-term set builds.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">42%</span>
+                <span class="tlc-stat-label">Unbooked Annual Dark Days &bull; ₹12.4L/mo unrecovered fixed overhead</span>
+              </div>
             </div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Dynamic calendar clearing matches 3-to-10 day gap dates with pre-funded commercial TVCs, music videos, and multi-cam creators.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">88%</span>
+                <span class="tlc-stat-label-sol">Target Facility Utilization &bull; 3–10 Day Rapid Gap Clearing Window</span>
+              </div>
+              <a href="solutions.html#soundstages" class="tlc-sol-btn">
+                <span>Book Gap Stage Dates</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
           </div>
 
-          <div class="f-col">
-            <h4>Core Architecture</h4>
-            <a href="network.html">The Network</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="solutions.html">Stakeholder Solutions</a>
-            <a href="business.html">Revenue Engine</a>
+          <!-- Bottleneck 02: Delayed Payments & Defaults -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 02 // 60+ DAY RECEIVABLES</span>
+              <h3 class="tlc-prob-title">Below-the-Line Crew Payment Delays &amp; Default</h3>
+              <p class="tlc-prob-desc">
+                Camera, grip, sound, and lighting technicians wait 60–90 days for invoice clearance, frequently facing budget haircuts and bounced cheques.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">68%</span>
+                <span class="tlc-stat-label">Technicians Waiting 60–90+ Days &bull; 22% invoice default / haircut rate</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">100% Milestone Escrow locks verified wages prior to call sheets; automated bank payouts disburse upon daily wrap sign-off.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">100%</span>
+                <span class="tlc-stat-label-sol">Escrow Wage Backing &bull; &lt; 2 Hours Automated Post-Wrap Payouts</span>
+              </div>
+              <a href="how-it-works.html#protocol" class="tlc-sol-btn">
+                <span>See Escrow Protection</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
           </div>
 
-          <div class="f-col">
-            <h4>Intelligence &amp; Trust</h4>
-            <a href="cinema-damage-control.html">Cinema Radar</a>
-            <a href="insights.html">Industry Research</a>
-            <a href="proof.html">Proof &amp; Pilots</a>
-            <a href="about.html">About &amp; Founders</a>
-            <a href="lab.html">Innovation Lab</a>
+          <!-- Bottleneck 03: 72h Pre-Release Box Office Attacks -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 03 // 72H RELEASE CRISIS</span>
+              <h3 class="tlc-prob-title">Coordinated Review Attacks &amp; Pirated Clip Leaks</h3>
+              <p class="tlc-prob-desc">
+                Over 70% of opening-weekend box office variance is decided in the final 72 hours by coordinated 1-star bot campaigns and leaked clips.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">71%</span>
+                <span class="tlc-stat-label">Box Office Variance in T-72h &bull; 140+ unauthorized rip links per premiere</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Cinema Radar scans social &amp; messaging channels, executes 15-minute DMCA takedowns, and activates verified sentiment defense.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">&lt; 15m</span>
+                <span class="tlc-stat-label-sol">DMCA Strike Velocity &bull; 82% Opening Weekend Occupancy Hold</span>
+              </div>
+              <a href="cinema-damage-control.html" class="tlc-sol-btn">
+                <span>Deploy Cinema Radar</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
           </div>
 
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="contact.html?type=project">Bring a Project</a>
-            <a href="contact.html?type=join">Join Network</a>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
+          <!-- Bottleneck 04: Unproduced Screenplays & Digital Shows -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 04 // 78% UNPRODUCED IP</span>
+              <h3 class="tlc-prob-title">Completed Screenplays &amp; Series Concepts on Shelves</h3>
+              <p class="tlc-prob-desc">
+                Writers spend years developing original IP, yet 78% remain unproduced due to lack of verified line budgets and director attachment leverage.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">78%</span>
+                <span class="tlc-stat-label">Completed IP Shelved &bull; 24+ Months spec script development inertia</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">We package original scripts with verified department-head attachments and financial modeling for direct routing to OTT buyers.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">3.8x</span>
+                <span class="tlc-stat-label-sol">Higher OTT Pitch Conversion &bull; 48h Packaging Audit &amp; Attachments</span>
+              </div>
+              <a href="solutions.html#writers" class="tlc-sol-btn">
+                <span>Package Screenplays</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 05: Fast Turnkey Crew for Commercials & YouTube -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 05 // FRAGMENTED SOURCING</span>
+              <h3 class="tlc-prob-title">Unpredictable Technician Sourcing for Fast Shoots</h3>
+              <p class="tlc-prob-desc">
+                Producers spend 3 to 6 weeks negotiating availability through informal broker channels, risking last-minute technician dropouts.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">3.6 Wks</span>
+                <span class="tlc-stat-label">Average Crew Sourcing Delay &bull; 18% last-minute technician dropouts</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Verified 48-Hour Crew Pods assemble confirmed, guild-accredited DPs, gaffers, sound mixers, and DITs calibrated to your exact format.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">48 Hours</span>
+                <span class="tlc-stat-label-sol">Calibrated Pod Assembly &bull; 100% Guild-Accredited Match Rate</span>
+              </div>
+              <a href="solutions.html#cinematographers" class="tlc-sol-btn">
+                <span>Explore Verified Pods</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 06: Budget Mismanagement -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 06 // BUDGET LEAKAGE</span>
+              <h3 class="tlc-prob-title">Production Fund Diversion &amp; Uncontrolled Overages</h3>
+              <p class="tlc-prob-desc">
+                Financiers and brands lose 15–25% in capital leakage from unverified cash vouchers, phantom rentals, and missing daily milestone oversight.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">18.4%</span>
+                <span class="tlc-stat-label">Production Capital Leakage &bull; ₹15–30L unverified overage per slate</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Milestone Escrow Governance releases production tranches strictly upon verified DIT raw footage hashes and line-producer approvals.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">100%</span>
+                <span class="tlc-stat-label-sol">Tranche Milestone Sign-off &bull; 0% Unreconciled Cash Release</span>
+              </div>
+              <a href="solutions.html#financiers" class="tlc-sol-btn">
+                <span>See Milestone Governance</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 07: Practical Training Gap -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 07 // ON-SET TECH GAP</span>
+              <h3 class="tlc-prob-title">Crew Knowledge Gap on Cinema Optics &amp; Virtual Sets</h3>
+              <p class="tlc-prob-desc">
+                Emerging digital creators and junior crew lack real hands-on experience with high-end ARRI/RED packages, motorized rigs, and Virtual Production LED volumes.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">84%</span>
+                <span class="tlc-stat-label">Crew Skills Deficit on Virtual LED / Cinema Optics &bull; ₹4.5L/day training drag</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Soundstage Dark-Day Masterclasses turn empty studio hours into practical labs led by active cinematographers, certifying crew for paid slates.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">3-Day</span>
+                <span class="tlc-stat-label-sol">Intensive Stage Labs &bull; 100% Practical Rig Competency Certification</span>
+              </div>
+              <a href="workshops.html#schedule" class="tlc-sol-btn">
+                <span>Explore Masterclasses</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 08: Missing Gear Parts & Shoot Failures -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 08 // GEAR STOPPAGE RISK</span>
+              <h3 class="tlc-prob-title">Faulty Rental Rigs &amp; Missing Optical Accessories</h3>
+              <p class="tlc-prob-desc">
+                Renting cinema camera packages from unvetted brokers results in mismatched optical mounts, bad SDI cabling, and costly on-set delays.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">2.8 Hrs</span>
+                <span class="tlc-stat-label">Shoot Day 1 Gear Downtime &bull; ₹2.5L/hr idle set burn cost</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Pre-tested, bench-calibrated camera and lighting packages dispatched directly accompanied by certified technicians who operate them.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">100%</span>
+                <span class="tlc-stat-label-sol">Pre-Tested Bench QC &bull; 0 Missing Optical Mounts / Cable Delays</span>
+              </div>
+              <a href="solutions.html#rental" class="tlc-sol-btn">
+                <span>Book Calibrated Packages</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 09: Agency Fixed-Overhead Trap -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 09 // AGENCY OVERHEAD TRAP</span>
+              <h3 class="tlc-prob-title">Agency Margin Erosion on In-House Production Units</h3>
+              <p class="tlc-prob-desc">
+                Advertising and digital agencies bleed margin maintaining full-time video crew, camera gear depreciation, and costly facility leases.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">14.6%</span>
+                <span class="tlc-stat-label">Agency Margin Bleed on Fixed Video Payroll &bull; 32% fleet depreciation</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">White-Label Turnkey Production Backend allows agencies to bid on ambitious video briefs and execute seamlessly with zero fixed CapEx.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">0 CapEx</span>
+                <span class="tlc-stat-label-sol">Fixed Overhead Liability &bull; 100% Variable Margin on Video Deals</span>
+              </div>
+              <a href="solutions.html#agencies" class="tlc-sol-btn">
+                <span>Agency Co-Execution</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 10: Post-Production Desync -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 10 // POST-PRODUCTION DESYNC</span>
+              <h3 class="tlc-prob-title">VFX, Sound &amp; ACES Color Pipeline Handoff Slippage</h3>
+              <p class="tlc-prob-desc">
+                Productions lose weeks in post-production because raw footage metadata, color charts, and audio guide tracks are improperly synced on set.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">16.8 Days</span>
+                <span class="tlc-stat-label">Post Pipeline Desync Delays &bull; ₹6.2L color &amp; audio re-conforming cost</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Standardized On-Set DIT Daily Assemblies format color proxies, sound sync, and frame-rate metadata on wrap day for instant editorial handoffs.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">Same-Day</span>
+                <span class="tlc-stat-label-sol">ACES Proxy Ingest &bull; 100% Automated Sound &amp; Frame Metadata Match</span>
+              </div>
+              <a href="solutions.html#post" class="tlc-sol-btn">
+                <span>See Post Pipeline</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 11: Regional Distribution Gatekeeping -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 11 // TERRITORY LOCK</span>
+              <h3 class="tlc-prob-title">Regional Rights Stagnation &amp; OTT Gatekeeping</h3>
+              <p class="tlc-prob-desc">
+                Independent filmmakers finish projects only to find digital distribution stalled behind opaque regional sub-distributor gatekeepers.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">6–18 Mos</span>
+                <span class="tlc-stat-label">Distribution Limbo &bull; 500+ stalled regional feature slates annually</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Direct Acquisition Desk connects completed films with verified regional theatrical buyers, international sales agents, and streaming platforms.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">Direct Desk</span>
+                <span class="tlc-stat-label-sol">Platform Syndication &bull; 45-Day Fast-Track Acquisition Review</span>
+              </div>
+              <a href="solutions.html#distributors" class="tlc-sol-btn">
+                <span>Explore Distribution Desk</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottleneck 12: Music & Sync Licensing Gridlock -->
+          <div class="tlc-prob-sol-card">
+            <div class="tlc-prob-box">
+              <span class="tlc-prob-badge">BOTTLENECK 12 // LICENSING GRIDLOCK</span>
+              <h3 class="tlc-prob-title">Music Publishing Clearances &amp; Score Delays</h3>
+              <p class="tlc-prob-desc">
+                Releases and commercial campaigns stall in legal review due to unclarified music publishing splits, master rights conflicts, and delayed sync approvals.
+              </p>
+              <div class="tlc-stat-row">
+                <span class="tlc-stat-num">21 Days</span>
+                <span class="tlc-stat-label">Legal Clearance Gridlock &bull; 35% publishing split disputes</span>
+              </div>
+            </div>
+            <div class="tlc-sol-box">
+              <span class="tlc-sol-badge">● DIGISYNQ SOLUTION</span>
+              <div class="tlc-sol-desc">Pre-Cleared Master Sync Catalog with automated composer milestone royalty escrow delivers instant legal clearance for theatrical &amp; digital use.</div>
+              <div class="tlc-stat-row-sol">
+                <span class="tlc-stat-num-sol">Instant</span>
+                <span class="tlc-stat-label-sol">Pre-Cleared Sync Rights &bull; 100% Automated Split Escrow Disbursal</span>
+              </div>
+              <a href="solutions.html#ott" class="tlc-sol-btn">
+                <span>Access Sync Catalog</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 // ASSET-LIGHT TRANSPARENCY ROUTER BANNER -->
+    <section style="padding:clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem);background:#f1f5f9;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);" id="transparency">
+      <div style="max-width:1150px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:#27272a;font-weight:800;margin-bottom:0.4rem;">
+            <span>●</span> RADICAL TRANSPARENCY &bull; ASSET-LIGHT CHARTER
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:clamp(1.3rem, 2.5vw, 1.8rem);font-weight:900;font-style:italic;color:#09090b;margin:0 0 0.4rem;">
+            What we do. <span class="tlc-quiet">And what we DON'T do.</span>
+          </h3>
+          <p style="font-size:0.92rem;color:#52525b;margin:0;max-width:620px;line-height:1.5;">
+            Zero heavy real estate debt, zero agency competition, and 100% milestone escrow. Read our complete operating rules and reality comparison.
+          </p>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="about.html#transparency" style="font-size:0.82rem;padding:0.75rem 1.6rem;">
+            Read Do's &amp; Don'ts in About &rarr;
+          </a>
+          <a class="tlc-btn-pill tlc-btn-ghost" href="business.html#economic-comparison" style="font-size:0.82rem;padding:0.75rem 1.6rem;">
+            See Economic Reality
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 // VERIFIED WORK NODES -->
+    <section style="padding:clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);" id="work">
+      <div style="max-width:1150px;margin:0 auto;">
+        <h2 class="tlc-section-heading">Verified <span class="tlc-quiet">infrastructure.</span></h2>
+        
+        <div class="tlc-nodes-grid">
+          
+          <!-- Cell 01 -->
+          <div class="tlc-node-card">
+            <div class="tlc-crt-frame">
+              <div class="tlc-crt-screen">
+                <div style="display:flex;justify-content:space-between;">
+                  <span>// LOT-04</span>
+                  <span>ACTIVE</span>
+                </div>
+                <div style="text-align:center;font-size:1.1rem;font-weight:900;">ACOUSTIC STAGE B</div>
+                <div style="display:flex;justify-content:space-between;font-size:0.65rem;">
+                  <span>AVAILABLE: 5 DAYS</span>
+                  <span>ESCROW READY</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="tlc-caption-row">
+                <span class="tlc-caption-name">
+                  Empty Soundstages
+                  <svg class="tlc-badge-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M12 1.4 L14.25 3.6 L17.3 2.82 L18.15 5.85 L21.18 6.7 L20.4 9.75 L22.6 12 L20.4 14.25 L21.18 17.3 L18.15 18.15 L17.3 21.18 L14.25 20.4 L12 22.6 L9.75 20.4 L6.7 21.18 L5.85 18.15 L2.82 17.3 L3.6 14.25 L1.4 12 L3.6 9.75 L2.82 6.7 L5.85 5.85 L6.7 2.82 L9.75 3.6 Z" fill="#0095F6"></path><path d="M7 12.5 L10.5 16 L17 8.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </div>
+              <p class="tlc-caption-desc">Rent out empty soundstage days to active shoots at guaranteed fair rates.</p>
+            </div>
+          </div>
+
+          <!-- Cell 02 -->
+          <div class="tlc-node-card">
+            <div class="tlc-crt-frame">
+              <div class="tlc-crt-screen" style="color:#60a5fa;border-color:rgba(96,165,250,0.3);background:rgba(0,10,30,0.9);box-shadow:inset 0 0 15px rgba(96,165,250,0.2);">
+                <div style="display:flex;justify-content:space-between;">
+                  <span>// POD-09</span>
+                  <span>ASSEMBLED</span>
+                </div>
+                <div style="text-align:center;font-size:1.1rem;font-weight:900;">CAMERA &amp; LIGHT CREW</div>
+                <div style="display:flex;justify-content:space-between;font-size:0.65rem;">
+                  <span>ARRI MINI LF RIG</span>
+                  <span>100% ESCROW</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="tlc-caption-row">
+                <span class="tlc-caption-name">
+                  Verified Crew &amp; Gear
+                  <svg class="tlc-badge-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M12 1.4 L14.25 3.6 L17.3 2.82 L18.15 5.85 L21.18 6.7 L20.4 9.75 L22.6 12 L20.4 14.25 L21.18 17.3 L18.15 18.15 L17.3 21.18 L14.25 20.4 L12 22.6 L9.75 20.4 L6.7 21.18 L5.85 18.15 L2.82 17.3 L3.6 14.25 L1.4 12 L3.6 9.75 L2.82 6.7 L5.85 5.85 L6.7 2.82 L9.75 3.6 Z" fill="#0095F6"></path><path d="M7 12.5 L10.5 16 L17 8.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </div>
+              <p class="tlc-caption-desc">Package vetted cinematographers, gaffers, and sound engineers with certified camera packages.</p>
+            </div>
+          </div>
+
+          <!-- Cell 03 -->
+          <div class="tlc-node-card">
+            <div class="tlc-crt-frame">
+              <div class="tlc-crt-screen" style="color:#f87171;border-color:rgba(248,113,113,0.3);background:rgba(30,0,0,0.9);box-shadow:inset 0 0 15px rgba(248,113,113,0.2);">
+                <div style="display:flex;justify-content:space-between;">
+                  <span>// RADAR-72H</span>
+                  <span>MONITORING</span>
+                </div>
+                <div style="text-align:center;font-size:1.1rem;font-weight:900;">RELEASE DEFENSE</div>
+                <div style="display:flex;justify-content:space-between;font-size:0.65rem;">
+                  <span>LEAK TAKEDOWNS</span>
+                  <span>DAY 1 SECURED</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="tlc-caption-row">
+                <span class="tlc-caption-name">
+                  Cinema Radar
+                  <svg class="tlc-badge-verified" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M12 1.4 L14.25 3.6 L17.3 2.82 L18.15 5.85 L21.18 6.7 L20.4 9.75 L22.6 12 L20.4 14.25 L21.18 17.3 L18.15 18.15 L17.3 21.18 L14.25 20.4 L12 22.6 L9.75 20.4 L6.7 21.18 L5.85 18.15 L2.82 17.3 L3.6 14.25 L1.4 12 L3.6 9.75 L2.82 6.7 L5.85 5.85 L6.7 2.82 L9.75 3.6 Z" fill="#0095F6"></path><path d="M7 12.5 L10.5 16 L17 8.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </div>
+              <p class="tlc-caption-desc">Protect opening weekend box office by stopping fake reviews and removing pirated clips.</p>
+            </div>
+          </div>
+
+          <!-- Cell 04: Plain English Numbers -->
+          <div class="tlc-kpi-tile">
+            <div class="tlc-kpi-row">
+              <div class="tlc-kpi-val">50+</div>
+              <div class="tlc-kpi-lbl">Partner Soundstages</div>
+            </div>
+            <div class="tlc-kpi-row">
+              <div class="tlc-kpi-val">500+</div>
+              <div class="tlc-kpi-lbl">Verified Crew Members</div>
+            </div>
+            <div class="tlc-kpi-row">
+              <div class="tlc-kpi-val">100%</div>
+              <div class="tlc-kpi-lbl">Safe Escrow Protected</div>
+            </div>
+            <div class="tlc-kpi-row">
+              <div class="tlc-kpi-val">0</div>
+              <div class="tlc-kpi-lbl">Payment Delays or Defaults</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Annotation Callout -->
+        <div class="tlc-annotation-box">
+          <p class="tlc-annotation-text">from films to youtube shows, we coordinate it all</p>
+          <svg width="45" height="40" viewBox="0 0 50 45" fill="none" aria-hidden="true">
+            <path d="M 40 5 C 30 8 15 18 10 35" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 10 35 L 18 28 M 10 35 L 8 24" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 // PARTNERS CAROUSEL -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);background:#f8fafc;" id="partners">
+      <div style="max-width:1150px;margin:0 auto;">
+        <h2 class="tlc-section-heading"><span class="tlc-quiet">Hear from</span> our partners.</h2>
+
+        <div class="tlc-partners-grid">
+          
+          <!-- Partner 01 -->
+          <div class="tlc-partner-card">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="font-family:var(--font-mono);font-size:0.7rem;font-weight:900;background:rgba(255,255,255,0.1);padding:0.2rem 0.4rem;border-radius:4px;">CC</span>
+                <span style="font-family:var(--font-mono);font-weight:800;font-size:0.85rem;color:#09090b;">Cinema Commons</span>
+              </div>
+              <blockquote class="tlc-partner-quote">
+                "DIGISYNQ found us an available soundstage and crew in 48 hours. Having payments locked in escrow gave our team complete peace of mind."
+              </blockquote>
+            </div>
+            <div class="tlc-partner-author">Production Lead — Cinema Commons</div>
+          </div>
+
+          <!-- Partner 02 -->
+          <div class="tlc-partner-card">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="font-family:var(--font-mono);font-size:0.7rem;font-weight:900;background:rgba(255,255,255,0.1);padding:0.2rem 0.4rem;border-radius:4px;">BM</span>
+                <span style="font-family:var(--font-mono);font-weight:800;font-size:0.85rem;color:#09090b;">Buzzing Mafia</span>
+              </div>
+              <blockquote class="tlc-partner-quote">
+                "Cinema Radar took down pirated leaked clips 72 hours before our premiere. It saved our opening weekend box office."
+              </blockquote>
+            </div>
+            <div class="tlc-partner-author">Head of Distribution — Buzzing Mafia</div>
+          </div>
+
+          <!-- Partner 03 // CTA TICKET STUB CARD -->
+          <div class="tlc-partner-card cta-card">
+            <span class="tlc-ticket-stub">Book Soundstage Slot // Ticket #042</span>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.15em;color:#09090b;font-weight:800;margin-bottom:0.6rem;">START A PROJECT</div>
+              <p class="tlc-partner-quote">
+                Tell us what you need for your upcoming film, web series, or commercial shoot.
+              </p>
+            </div>
+            <div>
+              <a class="tlc-btn-pill" href="contact.html?type=project" style="background:#fff;color:#09090b;font-weight:800;padding:0.75rem 1.6rem;">
+                Bring a project &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 // INTERACTIVE PEDESTAL SECTION -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="manifesto">
+      <div style="max-width:1150px;margin:0 auto;">
+        
+        <div class="tlc-pedestal-section">
+          <div>
+            <h2 class="tlc-pedestal-statement">
+              Hi, we're DIGISYNQ.<br>
+              We're an asset-light operating network. We collaborate with the best specialized agencies, soundstages, and technicians to make sure shoots happen on time, crews get paid without delays, and studios never sit empty.
+            </h2>
+          </div>
+
+          <div class="tlc-pedestal-container">
+            <div class="tlc-big-btn" id="launchBtn" onclick="alert('DIGISYNQ Project Desk Initialized. Redirecting to project intake...');window.location.href='contact.html?type=project';">
+              START
+            </div>
+            <div class="tlc-pedestal-base"></div>
+            
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-top:1.5rem;">
+              <p class="tlc-annotation-text" style="color:#ef4444;font-size:0.82rem;">ready when you are.</p>
+              <svg width="35" height="30" viewBox="0 0 40 35" fill="none" aria-hidden="true">
+                <path d="M 5 5 C 15 8 25 15 30 28" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M 30 28 L 22 24 M 30 28 L 28 18" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
           </div>
         </div>
 
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
+      </div>
+    </section>
+
+    <!-- 06 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;" id="contact">
+      <div style="max-width:1050px;margin:0 auto;position:relative;z-index:2;">
+        
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;">READY TO SHOOT?</div>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
+              Tell us what you're <span style="color:#71717a;font-style:italic;">shooting.</span>
+            </h2>
+            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
+              Producers, creators, and crew: Submit your shoot requirements for instant network dispatch within 24 hours.
+            </p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <a href="contact.html?type=project" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
+              Bring a project &rarr;
+            </a>
+            <a href="contact.html?type=join" class="tlc-btn-pill" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;">
+              Join as Crew or Studio &rarr;
+            </a>
+          </div>
         </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">How It Works</a>
+            <a href="workshops.html" style="color:#a1a1aa;text-decoration:none;">Workshops</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
+          </div>
+        </div>
+
       </div>
     </footer>
 
   </div>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>

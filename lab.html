@@ -15,312 +15,147 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    .lab-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .lab-card {
-      background: #0e0e13;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 2.2rem 2rem;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .lab-badge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .lab-status-badge {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-    .lab-status-badge.live { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
-    .lab-status-badge.pilot { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
-    .lab-status-badge.dev { background: rgba(234,179,8,0.15); color: #fde047; border: 1px solid rgba(234,179,8,0.3); }
-    .lab-status-badge.experimental { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
-
-    .lab-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: #fff;
-      margin: 0 0 0.6rem;
-    }
-    .lab-card p {
-      font-size: 0.88rem;
-      color: #a1a1aa;
-      line-height: 1.6;
-      margin: 0 0 1.5rem;
-    }
-    .lab-vote-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      padding: 0.45rem 0.9rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      width: fit-content;
-    }
-    .lab-vote-btn:hover {
-      background: #fff;
-      color: #09090b;
-    }
-
-    .proposal-box {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 18px;
-      padding: 3rem 2rem;
-      margin-top: 3.5rem;
-      text-align: center;
-    }
-  </style>
 </head>
-<body>
+<body class="page-lab" style="background:#09090b;padding:clamp(0.5rem, 2vw, 1.8rem);">
 
-  <div class="app-card">
+  <div class="app-card" style="background:#ffffff;border-radius:36px;box-shadow:0 30px 90px rgba(0,0,0,0.5);overflow:hidden;">
 
-    <!-- TOP NAVIGATION -->
-    <header class="top-nav">
-      <button class="nav-hamburger" aria-label="Toggle Menu" onclick="document.querySelector('.nav-mobile-overlay').classList.toggle('open');this.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links-center">
-          <li><a href="index.html">Home</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="network.html">Network</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="how-it-works.html">How It Works</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="solutions.html">Solutions</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="business.html">Business</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="cinema-damage-control.html">Radar</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="insights.html">Insights</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="proof.html">Proof</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="about.html">About</a></li><li class="nav-dot-sep">&middot;</li>
-          <li><a href="lab.html" class="active">Lab</a></li>
+    <!-- FLOATING PILL NAVIGATION -->
+    <header class="tlc-nav-floating">
+      <nav class="tlc-nav-inner" aria-label="Main">
+        
+        <ul class="tlc-nav-links" role="list">
+          <li><a class="tlc-nav-link" href="index.html">Home</a></li>
+<li><a class="tlc-nav-link" href="network.html">Network</a></li>
+          <li><a class="tlc-nav-link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="tlc-nav-link" href="solutions.html">Solutions</a></li>
+          <li><a class="tlc-nav-link" href="workshops.html">Workshops</a></li>
+          <li><a class="tlc-nav-link" href="business.html">Business</a></li>
+          <li><a class="tlc-nav-link" href="cinema-damage-control.html">Radar</a></li>
+          <li><a class="tlc-nav-link" href="insights.html">Insights</a></li>
+          <li><a class="tlc-nav-link" href="proof.html">Proof</a></li>
+          <li><a class="tlc-nav-link" href="about.html">About</a></li>
+          <li><a class="tlc-nav-link active" href="lab.html">Lab</a></li>
         </ul>
+
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a class="tlc-btn-pill tlc-btn-dark" href="contact.html?type=project">Bring a Project</a>
+        </div>
       </nav>
-      <div class="nav-actions-right">
-        <a href="contact.html?type=project" class="btn-login">Bring a Project</a>
-      </div>
     </header>
 
-    <div class="nav-mobile-overlay">
-      <a href="index.html">Home</a>
-      <a href="network.html">Network</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="business.html">Business</a>
-      <a href="cinema-damage-control.html">Radar</a>
-      <a href="insights.html">Insights</a>
-      <a href="proof.html">Proof</a>
-      <a href="about.html">About</a>
-      <a href="lab.html" class="active">Lab</a>
-      <a href="contact.html?type=project" style="margin-top:1.5rem;background:#09090b;color:#fff;">Bring a Project</a>
-    </div>
-
-    <!-- HERO -->
-    <div class="ins-hero" id="main-content">
-      <div class="ins-eyebrow">Innovation &amp; Future Architecture</div>
-      <h1 class="ins-hero-title">The DIGISYNQ Lab.<br><em>Experiments in Entertainment Infrastructure.</em></h1>
-      <p class="ins-hero-desc">Explore live tools, active pilot programs, and upcoming protocol modules. We build publicly and transparently with the entertainment ecosystem.</p>
-      <div class="ins-hero-actions">
-        <a href="#roadmap" class="btn-pill-solid" style="padding:0.9rem 2.2rem;">Explore Lab Modules &rarr;</a>
-        <a href="#propose" class="btn-pill-outline" style="padding:0.9rem 2.2rem;background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);">Propose an Integration &rarr;</a>
+    <!-- 01 // HERO STAGE -->
+    <section class="tlc-hero-stage" id="main-content">
+      <div class="tlc-hero-text">
+        <div style="display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#71717a;margin-bottom:1.5rem;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.08);padding:0.35rem 0.9rem;border-radius:999px;">
+          <span>●</span> Innovation Roadmap
+        </div>
+        <h1 class="tlc-hero-headline">
+          <span class="tlc-quiet">Future of film.</span><br>
+          <span class="tlc-accent-text">Wired for speed.</span>
+        </h1>
+        <p class="tlc-hero-subhead">
+          Explore live tools, active pilot programs, and upcoming protocol modules. We build publicly and transparently with the entertainment ecosystem.
+        </p>
       </div>
-    </div>
+      <div class="tlc-grid-halo" aria-hidden="true"></div>
+    </section>
 
-    <!-- ROADMAP GRID -->
-    <section class="ins-section dark" id="roadmap">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div class="ins-eyebrow" style="justify-content:flex-start;">Ecosystem Roadmap</div>
-        <h2 class="ins-h2-light">Active Experiments &amp; Capabilities</h2>
-        <p class="ins-desc-light">Clearly classified by development and verification maturity.</p>
-
-        <div class="lab-grid">
+    <!-- 02 // MODULES GRID -->
+    <section style="padding:clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);" id="modules">
+      <div style="max-width:1150px;margin:0 auto;">
+        <h2 class="tlc-section-heading">Active <span class="tlc-quiet">modules.</span></h2>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
           
-          <!-- Module 01 -->
-          <div class="lab-card">
+          <div class="tlc-node-card">
             <div>
-              <div class="lab-badge-row">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
                 <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 01</span>
-                <span class="lab-status-badge live">● LIVE</span>
+                <span style="font-family:var(--font-mono);font-size:0.6rem;color:#16a34a;background:rgba(34,197,94,0.12);padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● LIVE</span>
               </div>
-              <h3>Milestone Escrow Router</h3>
-              <p>Automated contract execution and conditional payment releases tied directly to verified department head deliverable sign-offs.</p>
+              <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#09090b;margin-bottom:0.5rem;">Milestone Escrow Router</div>
+              <p class="tlc-caption-desc">Automated contract execution and conditional payment releases tied directly to verified department head deliverable sign-offs.</p>
             </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='✓ Verified Active'"><span>▲</span> Active in Core Protocol</button>
+            <div style="margin-top:1rem;">
+              <span class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.75rem;cursor:default;">✓ Active in Protocol</span>
+            </div>
           </div>
 
-          <!-- Module 02 -->
-          <div class="lab-card">
+          <div class="tlc-node-card">
             <div>
-              <div class="lab-badge-row">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
                 <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 02</span>
-                <span class="lab-status-badge live">● LIVE</span>
+                <span style="font-family:var(--font-mono);font-size:0.6rem;color:#16a34a;background:rgba(34,197,94,0.12);padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● LIVE</span>
               </div>
-              <h3>Cinema Radar 72h Threat Radar</h3>
-              <p>Real-time pre-release sentiment defense, review bombing mitigation, and authorized theatrical clip verification desks.</p>
+              <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#09090b;margin-bottom:0.5rem;">Cinema Radar 72h Threat Shield</div>
+              <p class="tlc-caption-desc">Pre-release sentiment defense, review bombing mitigation, and authorized theatrical clip verification desks.</p>
             </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='✓ Verified Active'"><span>▲</span> Active on Radar Desk</button>
+            <div style="margin-top:1rem;">
+              <span class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.75rem;cursor:default;">✓ Active on Radar Desk</span>
+            </div>
           </div>
 
-          <!-- Module 03 -->
-          <div class="lab-card">
+          <div class="tlc-node-card">
             <div>
-              <div class="lab-badge-row">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
                 <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 03</span>
-                <span class="lab-status-badge pilot">● PILOT</span>
+                <span style="font-family:var(--font-mono);font-size:0.6rem;color:#2563eb;background:rgba(59,130,246,0.12);padding:0.2rem 0.5rem;border-radius:4px;font-weight:700;">● PILOT</span>
               </div>
-              <h3>Dynamic Stage Dark-Day Index</h3>
-              <p>Direct calendar feed integration across major studio lots to match unbooked vacancy with rapid-turnaround commercial and indie shoots.</p>
+              <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#09090b;margin-bottom:0.5rem;">Dynamic Stage Dark-Day Index</div>
+              <p class="tlc-caption-desc">Direct calendar feed integration across major studio lots to match unbooked vacancy with rapid-turnaround shoots.</p>
             </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (142)'"><span>▲</span> Upvote (141)</button>
+            <div style="margin-top:1rem;">
+              <button class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.75rem;cursor:pointer;" onclick="this.innerHTML='▲ Upvoted (142)'">▲ Upvote (141)</button>
+            </div>
           </div>
 
-          <!-- Module 04 -->
-          <div class="lab-card">
+          <div class="tlc-node-card">
             <div>
-              <div class="lab-badge-row">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
                 <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 04</span>
-                <span class="lab-status-badge dev">● IN DEVELOPMENT</span>
+                <span style="font-family:var(--font-mono);font-size:0.6rem;color:#09090b;background:rgba(0,0,0,0.06);padding:0.2rem 0.5rem;border-radius:4px;font-weight:800;">● IN DEV</span>
               </div>
-              <h3>Algorithmic Relational Graph</h3>
-              <p>Analyzing historical collaboration patterns to recommend director-cinematographer-soundstage packages with optimal operational fit.</p>
+              <div style="font-family:var(--font-serif);font-size:1.3rem;font-weight:900;color:#09090b;margin-bottom:0.5rem;">Algorithmic Relational Graph</div>
+              <p class="tlc-caption-desc">Analyzing historical collaboration patterns to recommend director-cinematographer-soundstage packages with optimal operational fit.</p>
             </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (98)'"><span>▲</span> Upvote (97)</button>
-          </div>
-
-          <!-- Module 05 -->
-          <div class="lab-card">
-            <div>
-              <div class="lab-badge-row">
-                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 05</span>
-                <span class="lab-status-badge experimental">● EXPERIMENTAL</span>
-              </div>
-              <h3>Automated Secondary Window Clearing</h3>
-              <p>Instant syndication matching for completed catalog titles seeking non-exclusive regional streaming and airline distribution windows.</p>
+            <div style="margin-top:1rem;">
+              <button class="tlc-btn-pill tlc-btn-ghost" style="font-size:0.75rem;cursor:pointer;" onclick="this.innerHTML='▲ Upvoted (98)'">▲ Upvote (97)</button>
             </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (76)'"><span>▲</span> Upvote (75)</button>
-          </div>
-
-          <!-- Module 06 -->
-          <div class="lab-card">
-            <div>
-              <div class="lab-badge-row">
-                <span style="font-family:var(--font-mono);font-size:0.65rem;color:#71717a;font-weight:800;">MODULE 06</span>
-                <span class="lab-status-badge experimental">● EXPERIMENTAL</span>
-              </div>
-              <h3>Cross-Industry Brand Integration Desk</h3>
-              <p>Direct-to-script organic product integration without extractive agency markups, secured through production milestone escrow.</p>
-            </div>
-            <button class="lab-vote-btn" onclick="this.innerHTML='▲ Upvoted (63)'"><span>▲</span> Upvote (62)</button>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- PROPOSE INTEGRATION -->
-    <section class="ins-section white" id="propose">
-      <div style="max-width:900px;margin:0 auto;">
-        <div class="proposal-box">
-          <div class="sec-eyebrow-light" style="justify-content:center;">Governance &amp; Proposals</div>
-          <h2 class="ins-h2-dark" style="margin-bottom:0.6rem;">Propose a Tool or Protocol Feature</h2>
-          <p class="ins-desc-dark" style="margin:0 auto 2rem;max-width:540px;">
-            Are you a studio owner, technical head, or producer with a specific operational bottleneck? Help us shape upcoming DIGISYNQ infrastructure.
-          </p>
-          <a href="contact.html?type=discuss" class="btn-pill-solid" style="padding:0.95rem 2.5rem;">Submit Protocol Proposal &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <section class="mono-trust-strip" aria-label="Trust Network">
-      <div class="mono-trust-inner">
-        <div class="mono-trust-label">Validated Across Premier Studios &amp; Production Houses</div>
-        <div class="mono-trust-marquee-wrapper">
-          <div class="mono-trust-marquee-track">
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-cinema-commons.png" alt="Cinema Commons" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-vedu-saru.png" alt="Vedu &amp; Saru Kitchen" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="Buzzing Mafia" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-2nd-take.png" alt="2nd Take" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item"><img src="assets/img/partners/partner-your-bro.png" alt="Your Bro" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-cinema-commons.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Cinema Commons</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-vedu-saru.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Vedu &amp; Saru Kitchen</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-buzzing-mafia.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Buzzing Mafia</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-2nd-take.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">2nd Take</span></div>
-            <div class="mono-trust-logo-item" aria-hidden="true"><img src="assets/img/partners/partner-your-bro.png" alt="" class="mono-trust-logo-img"/><span class="mono-trust-logo-name">Your Bro</span></div>
+    <!-- 03 // COMMAND CENTER FOOTER -->
+    <footer style="background:#09090b;color:#fff;border-radius:28px;margin:clamp(0.5rem, 1.5vw, 1.5rem);padding:clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 3.5rem);position:relative;overflow:hidden;">
+      <div style="max-width:1050px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:3rem;margin-bottom:3rem;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;color:#71717a;text-transform:uppercase;margin-bottom:0.8rem;">GOVERNANCE &amp; ROADMAP</div>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;letter-spacing:-0.03em;color:#fff;margin:0 0 1rem;line-height:1.1;">
+              Propose a <span style="color:#71717a;font-style:italic;">feature.</span>
+            </h2>
+            <p style="font-size:1rem;color:#a1a1aa;max-width:480px;line-height:1.6;margin:0;">
+              Are you a producer, studio owner, or craft head with a specific operational bottleneck? Help us shape upcoming DIGISYNQ infrastructure.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <a href="contact.html?type=discuss" class="tlc-btn-pill" style="background:#fff;color:#09090b;padding:1rem 2.2rem;font-size:0.95rem;justify-content:center;font-weight:900;">
+              Submit Proposal &rarr;
+            </a>
           </div>
         </div>
-        <div class="mono-trust-tags">
-          <span class="mono-trust-pill highlight">&#9889; High-Throughput Network</span>
-          <span class="mono-trust-pill">&#128274; Milestone Escrow</span>
-          <span class="mono-trust-pill">&#9889; 100% Direct</span>
-          <span class="mono-trust-pill">&#127760; Pan-India Scale</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="f-top">
-          <div class="f-brand">
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;">
-              <img src="assets/img/digisynq-logo.png" alt="DIGISYNQ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;" />
-              <span style="font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:#09090b;">DIGISYNQ</span>
-            </div>
-            <p>The institutional operating network for cinematic and streaming entertainment. Unifying talent, studio capacity, and capital.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-mono);font-size:0.75rem;color:#71717a;">
+          <div>&copy; DIGISYNQ. The Operating Network for Entertainment.</div>
+          <div style="display:flex;gap:1.5rem;">
+            <a href="network.html" style="color:#a1a1aa;text-decoration:none;">Network</a>
+            <a href="how-it-works.html" style="color:#a1a1aa;text-decoration:none;">Protocol</a>
+            <a href="business.html" style="color:#a1a1aa;text-decoration:none;">Business</a>
+            <a href="about.html" style="color:#a1a1aa;text-decoration:none;">About</a>
           </div>
-
-          <div class="f-col">
-            <h4>Core Architecture</h4>
-            <a href="network.html">The Network</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="solutions.html">Stakeholder Solutions</a>
-            <a href="business.html">Revenue Engine</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Intelligence &amp; Trust</h4>
-            <a href="cinema-damage-control.html">Cinema Radar</a>
-            <a href="insights.html">Industry Research</a>
-            <a href="proof.html">Proof &amp; Pilots</a>
-            <a href="about.html">About &amp; Founders</a>
-            <a href="lab.html">Innovation Lab</a>
-          </div>
-
-          <div class="f-col">
-            <h4>Connect</h4>
-            <a href="contact.html?type=project">Bring a Project</a>
-            <a href="contact.html?type=join">Join Network</a>
-            <a href="mailto:thedigitalsynq@gmail.com">thedigitalsynq@gmail.com</a>
-            <a href="https://wa.me/917996548969" target="_blank" rel="noopener">WhatsApp: +91 79965 48969</a>
-          </div>
-        </div>
-
-        <div class="f-bottom">
-          <span>&copy; DIGISYNQ. Every stakeholder. Every connection. One network.</span>
-          <span>Own less. Connect more. Multiply value.</span>
         </div>
       </div>
     </footer>
