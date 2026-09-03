@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How it works — DigiSynq</title>
   <meta name="description" content="Discover how DigiSynq orchestrates the entertainment ecosystem through the 12-step Core Loop, the DigiSynq Engine, and SynqVault trust governance.">
+  <meta property="og:title" content="How it works — DigiSynq" />
+  <meta property="og:description" content="Discover how DigiSynq orchestrates the entertainment ecosystem through the 12-step Core Loop, the DigiSynq Engine, and SynqVault trust governance." />
+  <meta property="og:image" content="assets/img/digisynq-logo.png" />
+  <meta property="og:url" content="https://digisynq.com/how-it-works.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How it works — DigiSynq" />
+  <meta name="twitter:description" content="Discover how DigiSynq orchestrates the entertainment ecosystem through the 12-step Core Loop, the DigiSynq Engine, and SynqVault trust governance." />
   <link rel="canonical" href="https://digisynq.com/how-it-works.html">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -21,6 +28,7 @@
         <li><a href="missions.html" class="nav-link">Missions</a></li>
         <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -38,6 +46,7 @@
     <a href="missions.html" class="nav-link">Missions</a>
     <a href="intelligence.html" class="nav-link">Intelligence</a>
     <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
     <button class="btn btn-cyan" data-open-synq-modal style="margin-top:0.8rem;width:100%;">Start a synq</button>
   </div>
 
@@ -237,7 +246,7 @@
             <div class="module-meta-grid">
               <div class="meta-box">
                 <span class="meta-box-label">Problem solved</span>
-                <div class="meta-box-val" id="moduleProblem">Siloed information leads to 40%+ dark-day asset losses and project stalls.</div>
+                <div class="meta-box-val" id="moduleProblem">Siloed information leads to 42% dark-day asset losses and project stalls.</div>
               </div>
               <div class="meta-box">
                 <span class="meta-box-label">Who benefits</span>
@@ -350,7 +359,7 @@
               <div style="display:flex;flex-direction:column;gap:0.6rem;">
                 <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">1. Manual telephone outreach across 10+ edit houses</div>
                 <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">2. Unstandardized rate cards and schedule ambiguity</div>
-                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">3. Raw footage metadata desync on Day 1 handoff</div>
+                <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">3. Raw footage metadata drift on Day 1 handoff</div>
                 <div style="background:var(--bg-surface-1);padding:0.65rem 1rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.8rem;color:var(--text-primary);">4. 15-day editorial delay &amp; re-conforming expense</div>
               </div>
             </div>
@@ -414,7 +423,7 @@
   <!-- Modal -->
   <div class="modal-overlay" id="synqModal">
     <div class="modal-dialog">
-      <button class="modal-close-btn" id="closeSynqModal">&times;</button>
+      <button class="modal-close-btn" id="closeSynqModal">×</button>
       <div class="tag-badge"><span class="dot"></span><span>Synq intake desk</span></div>
       <h3>Start an orchestrated synq</h3>
       <form onsubmit="event.preventDefault(); alert('Request submitted. DigiSynq team will contact you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">

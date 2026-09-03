@@ -180,7 +180,7 @@ function initHeroNetworkCanvas() {
     });
   }
 
-  setInterval(spawnPacket, 220);
+  setInterval(spawnPacket, 500);
 
   let angleOffset = 0;
   let radarRadius = 0;
@@ -299,7 +299,7 @@ function initHeroNetworkCanvas() {
       // Node Glow
       if (n1.isCore || n1.label) {
         ctx.shadowColor = isFragmented && n1.label ? '#ef4444' : n1.color;
-        ctx.shadowBlur = n1.isCore ? 20 : 12;
+        if (window.innerWidth >= 768) ctx.shadowBlur = n1.isCore ? 20 : 12; else ctx.shadowBlur = 0;
       } else {
         ctx.shadowBlur = 0;
       }
@@ -370,7 +370,7 @@ function initHeroNetworkCanvas() {
       ctx.arc(pkt.x, pkt.y, 3.5, 0, Math.PI * 2);
       ctx.fillStyle = '#ffffff';
       ctx.shadowColor = pkt.color;
-      ctx.shadowBlur = 14;
+      if (window.innerWidth >= 768) ctx.shadowBlur = 14; else ctx.shadowBlur = 0;
       ctx.fill();
 
       if (pkt.progress >= 1) {
@@ -515,7 +515,7 @@ const ENGINE_DATA = {
     code: 'SYNQSCAN™',
     name: 'Fragmentation & leakage detector',
     desc: 'Continuously monitors entertainment pipelines to detect unbooked facility dates, idle camera packages, dormant IP, delayed payments, and workflow gaps.',
-    problem: 'Siloed information leads to 40%+ dark-day asset losses and project stalls.',
+    problem: 'Siloed information leads to 42% dark-day asset losses and project stalls.',
     benefits: 'Studios, independent producers, guild technicians, asset owners.',
     inputs: 'Live stage schedules, gear inventories, production permits, guild rosters.',
     outcome: 'Real-time detection of operational bottlenecks before capital is burned.',
