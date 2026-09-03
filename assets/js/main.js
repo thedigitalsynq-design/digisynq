@@ -64,14 +64,14 @@ function initHeroNetworkCanvas() {
   let mouse = { x: null, y: null, maxDistance: 160 };
 
   const assetNodes = [
-    { label: 'Acoustic stage 04', category: 'Production', color: '#10b981', status: '88% booked' },
-    { label: 'Alexa 35 prime package', category: 'Gear', color: '#06b6d4', status: 'QC verified' },
-    { label: 'DIT raw checksum lab', category: 'Technology', color: '#38bdf8', status: 'Hash verified' },
-    { label: 'Neutral milestone escrow', category: 'Capital', color: '#f59e0b', status: '100% locked' },
-    { label: 'ACES proxy conform desk', category: 'Post', color: '#8b5cf6', status: 'Conform ready' },
-    { label: 'Guild cinematographer pod', category: 'Talent', color: '#ec4899', status: 'Schedule lock' },
-    { label: 'OTT regional buyer desk', category: 'Distribution', color: '#6366f1', status: 'Acquisition live' },
-    { label: 'Cinema Radar 72h shield', category: 'Security', color: '#06b6d4', status: 'Threat scan' }
+    { label: 'Ideas & IP', category: 'Catalog & Scripts', color: '#38bdf8', status: 'Dormant to Active' },
+    { label: 'People & Talent', category: 'Cast & Guild Artisans', color: '#ec4899', status: 'Availability Synced' },
+    { label: 'Places & Assets', category: 'Soundstages & Kits', color: '#10b981', status: 'Capacity Activated' },
+    { label: 'Production', category: 'Cinema & Daily Shows', color: '#06b6d4', status: 'In Execution' },
+    { label: 'Post & Tech', category: 'VFX, Edit & Sound', color: '#8b5cf6', status: 'Workflow Synced' },
+    { label: 'Distribution', category: 'Theatrical & OTT', color: '#6366f1', status: 'Audience Reach' },
+    { label: 'Audience & Commerce', category: 'Brands & Community', color: '#f43f5e', status: 'Value Creation' },
+    { label: 'Capital & Support', category: 'Escrow & Financing', color: '#f59e0b', status: 'Milestone Protected' }
   ];
 
   function resize() {
@@ -122,7 +122,7 @@ function initHeroNetworkCanvas() {
       });
     }
 
-    // Add Central DigiSynq Core Node
+    // Add Central DigiSynq Coordination Hub
     nodes.push({
       x: width / 2,
       y: height / 2,
@@ -131,7 +131,7 @@ function initHeroNetworkCanvas() {
       radius: 9,
       color: '#06b6d4',
       isCore: true,
-      label: 'DigiSynq Core Hub',
+      label: 'DigiSynq Coordination Hub',
       pulse: 0
     });
   }
@@ -150,11 +150,11 @@ function initHeroNetworkCanvas() {
     const statusBadge = document.getElementById('graphStatusBadge');
     if (statusBadge) {
       if (mode === 'fragmented') {
-        statusBadge.innerHTML = '<span class="telemetry-status-dot red"></span><span>Fragmented model: Siloed assets &amp; 42% leakage</span>';
+        statusBadge.innerHTML = '<span class="telemetry-status-dot red"></span><span>Fragmented state: Disconnected silos &amp; idle capacity</span>';
       } else if (mode === 'active-slate') {
-        statusBadge.innerHTML = '<span class="telemetry-status-dot blue"></span><span>Active production: Live telemetry packets streaming</span>';
+        statusBadge.innerHTML = '<span class="telemetry-status-dot blue"></span><span>Live coordination: Real-time resource routing across 8 layers</span>';
       } else {
-        statusBadge.innerHTML = '<span class="telemetry-status-dot green"></span><span>Synchronized model: 88% yield &amp; escrow locked</span>';
+        statusBadge.innerHTML = '<span class="telemetry-status-dot green"></span><span>Synchronized state: Coordinated ecosystem &amp; transparent trust</span>';
       }
     }
   };
@@ -515,7 +515,7 @@ const ENGINE_DATA = {
     code: 'SYNQSCAN™',
     name: 'Fragmentation & leakage detector',
     desc: 'Continuously monitors entertainment pipelines to detect unbooked facility dates, idle camera packages, dormant IP, delayed payments, and workflow gaps.',
-    problem: 'Siloed information leads to 42% dark-day asset losses and project stalls.',
+    problem: 'Siloed information leads to substantial dark-day asset losses and project stalls (often 35–40%+ in uncoordinated cycles).',
     benefits: 'Studios, independent producers, guild technicians, asset owners.',
     inputs: 'Live stage schedules, gear inventories, production permits, guild rosters.',
     outcome: 'Real-time detection of operational bottlenecks before capital is burned.',
@@ -551,7 +551,7 @@ const ENGINE_DATA = {
     problem: 'Fixed real-estate and fleet overhead bleeds millions during slate gaps.',
     benefits: 'Studio lots, commercial directors, YouTube creators, brand units.',
     inputs: 'Dynamic calendar vacancy feeds, rate yield models, gap time windows.',
-    outcome: 'Recovers up to 88% facility utilization with rapid monetization.',
+    outcome: 'Optimizes facility utilization and activates unbooked gap windows.',
     defaultRole: 'studio',
     defaultMsg: 'I have unbooked dark days on my soundstage/facility that I want to monetize via SYNQPOOL™.'
   },
@@ -559,7 +559,7 @@ const ENGINE_DATA = {
     code: 'SYNQFLOW™',
     name: 'Synchronized workflow orchestrator',
     desc: 'Coordinates cross-department handoffs between production, on-set DIT raw ingestion, ACES color grading proxies, and post-production editorial.',
-    problem: 'Slippage between shooting and post burns 15+ days in re-conforming.',
+    problem: 'Slippage between shooting and post burns weeks in re-conforming.',
     benefits: 'Line producers, post supervisors, VFX houses, editors.',
     inputs: 'Camera metadata checksums, sound sync logs, daily wrap milestones.',
     outcome: 'Same-day proxy delivery and seamless post-production execution.',
@@ -573,7 +573,7 @@ const ENGINE_DATA = {
     problem: 'High fixed CapEx traps agencies in margin erosion during slow slates.',
     benefits: 'Advertising agencies, co-financiers, creator collaboratives.',
     inputs: 'Milestone escrow contracts, revenue split waterfall models.',
-    outcome: 'Zero fixed debt liability with 100% flexible production throughput.',
+    outcome: 'Flexible production throughput without redundant capital expenditure.',
     defaultRole: 'agency',
     defaultMsg: 'We are an agency looking to deploy an asset-light production backend through SYNQSHARE™.'
   },
@@ -584,7 +584,7 @@ const ENGINE_DATA = {
     problem: 'Payment defaults, fraudulent credits, and unverified rates paralyze transactions.',
     benefits: 'Technicians, talent, facility owners, financial underwriters.',
     inputs: 'Audited release credits, bench QC logs, milestone sign-offs.',
-    outcome: '100% default protection with transparent reputation scoring.',
+    outcome: 'Milestone-verified escrow protection designed to eliminate non-payment risk.',
     defaultRole: 'financier',
     defaultMsg: 'We want to utilize SYNQVAULT™ escrow and credit verification for our slate.'
   },

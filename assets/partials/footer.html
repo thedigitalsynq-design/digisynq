@@ -2,76 +2,96 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="brand-logo">
+        <a href="index.html" class="nav-brand-title" style="margin-bottom:0.75rem;">
           <span>DigiSynq</span>
+          <span class="accent-dot"></span>
         </a>
-        <p>The entertainment ecosystem, synchronized. The asset-light coordination layer for global entertainment.</p>
+        <p>The entertainment ecosystem, synchronized. An intelligent coordination layer extracting more value from everything that already exists.</p>
+        <p class="mono" style="color:var(--text-muted);font-size:0.75rem;margin-top:0.75rem;">
+          Nothing is waste. Everything has value.
+        </p>
       </div>
 
       <div class="footer-col">
-        <h5>Platform</h5>
+        <h5>Ecosystem</h5>
         <ul class="footer-links">
           <li><a href="ecosystem.html">Ecosystem graph</a></li>
           <li><a href="how-it-works.html">How it works</a></li>
-          <li><a href="missions.html">Strategic missions</a></li>
-          <li><a href="intelligence.html">Predictive intelligence</a></li>
+          <li><a href="solutions.html">Stakeholder solutions</a></li>
+          <li><a href="intelligence.html">Entertainment intelligence</a></li>
+          <li><a href="insights.html">Industry insights</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Company</h5>
+        <h5>Architecture</h5>
+        <ul class="footer-links">
+          <li><a href="flowchart.html">Operating protocol</a></li>
+          <li><a href="business.html">Value &amp; business model</a></li>
+          <li><a href="missions.html">Strategic missions</a></li>
+          <li><a href="runbook.html">Master runbook</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Connect</h5>
         <ul class="footer-links">
           <li><a href="about.html">About DigiSynq</a></li>
-          <li><a href="runbook.html">Master runbook</a></li>
-          <li><a href="contact.html">Contact desk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Protocol</h5>
-        <ul class="footer-links">
-          <li><a href="how-it-works.html#engine">13 Engine modules</a></li>
-          <li><a href="runbook.html#rb-vault">SYNQVAULT™ escrow</a></li>
-          <li><a href="runbook.html#rb-sla">Operating SLAs</a></li>
+          <li><a href="feedback.html">Shape the network</a></li>
+          <li><a href="contact.html">Start a synq</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div>&copy; 2026 DigiSynq Inc. All rights reserved. Confirmed node-to-node cryptography.</div>
+      <div>&copy; 2026 DigiSynq. All rights reserved. The entertainment ecosystem, synchronized.</div>
       <div class="mono" style="color:var(--text-muted);font-size:0.75rem;">
-        SYSTEM STATUS: <span style="color:var(--status-green);">OPTIMAL (0.00% ANOMALY)</span>
+        NETWORK STATUS: <span style="color:var(--status-green);">COORDINATION LAYER ACTIVE</span>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Modal -->
+<!-- Synq Intake Modal -->
 <div class="modal-overlay" id="synqModal">
   <div class="modal-dialog">
     <button class="modal-close-btn" id="closeSynqModal">&times;</button>
-    <div class="tag-badge"><span class="dot"></span><span>Synq intake desk</span></div>
-    <h3>Connect with the ecosystem</h3>
-    <form onsubmit="event.preventDefault(); alert('Request received. DigiSynq Orchestration Desk will connect with you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">
-      <div class="form-group" style="margin-top:1rem;">
-        <label class="form-label">Stakeholder category</label>
+    <div class="tag-badge"><span class="dot"></span><span>Start a synq</span></div>
+    <h3 style="margin-top:0.5rem;margin-bottom:0.4rem;">Let's find the connection</h3>
+    <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1.2rem;">Tell us what you are working with—and what you are trying to achieve.</p>
+    <form onsubmit="event.preventDefault(); alert('Connection request received. A DigiSynq coordinator will connect with you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">
+      <div class="form-group">
+        <label class="form-label">What brings you to DigiSynq?</label>
         <select class="form-select" required>
-          <option value="content">Content producer / IP owner</option>
-          <option value="talent">Talent / Guild crew</option>
-          <option value="production">Studio lot / Gear rental</option>
-          <option value="commercial">Brand / Agency / Financier</option>
-          <option value="distribution">Theatrical / Streaming / Sales</option>
+          <option value="" disabled selected>Select an option...</option>
+          <option value="have-project">I have a project</option>
+          <option value="have-talent">I have talent</option>
+          <option value="have-facility">I have a facility</option>
+          <option value="have-equipment">I have equipment</option>
+          <option value="have-ip">I have IP/content</option>
+          <option value="need-talent">I need talent</option>
+          <option value="need-production">I need production support</option>
+          <option value="need-distribution">I need distribution</option>
+          <option value="investor">I am an investor</option>
+          <option value="brand">I represent a brand</option>
+          <option value="audience">I have an audience/community</option>
+          <option value="opportunity">I have another opportunity</option>
+          <option value="problem">I have a problem to solve</option>
         </select>
       </div>
       <div class="form-group">
         <label class="form-label">Name &amp; organization</label>
-        <input type="text" class="form-input" placeholder="Your name" required>
+        <input type="text" class="form-input" placeholder="Your name or company" required>
       </div>
       <div class="form-group">
-        <label class="form-label">Contact details</label>
-        <input type="text" class="form-input" placeholder="Email or phone" required>
+        <label class="form-label">Email or phone</label>
+        <input type="text" class="form-input" placeholder="name@domain.com or phone" required>
       </div>
-      <button type="submit" class="btn btn-cyan" style="width:100%;margin-top:0.8rem;">Submit node intake &rarr;</button>
+      <div class="form-group">
+        <label class="form-label">Tell us more</label>
+        <textarea class="form-textarea" rows="3" placeholder="Briefly describe what you have, what you need, or what can be connected..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-cyan" style="width:100%;margin-top:0.8rem;">Submit connection request &rarr;</button>
     </form>
   </div>
 </div>

@@ -7,8 +7,14 @@ for hf in sorted(html_files):
         content = f.read()
     for m in re.finditer(r'(?:src|href)="(?!http)([^"]+)"', content):
         ref = m.group(1)
+        if ref.startswith(('#', 'mailto:', 'tel:', 'javascript:')):
+            continue
+        if '#' in ref:
+            ref = ref.split('#')[0]
         if '?' in ref:
             ref = ref.split('?')[0]
+        if not ref:
+            continue
         if not os.path.exists(ref):
             missing_refs.append((hf, ref))
 
