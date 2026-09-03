@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEcosystemTabs();
   initMissionControl();
   initModals();
+  init3DEffects();
   checkUrlParams();
 });
 
@@ -895,5 +896,49 @@ function checkUrlParams() {
       }
       modal.classList.add('active');
     }
+  }
+}
+
+/* ==========================================================================
+   09. COMPLETE 3D DEPTH & TILT SYSTEM
+   ========================================================================== */
+function init3DEffects() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.innerWidth <= 768) return;
+
+  const cards = document.querySelectorAll('.ins-card, .subpage-card, .stage-detail-card, .founder-card, .mission-card-expanded');
+  cards.forEach(card => {
+    card.classList.add('tilt-3d');
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      const my = ((e.clientY - r.top) / r.height - 0.5) * -2;
+      card.style.setProperty('--mx', mx.toFixed(3));
+      card.style.setProperty('--my', my.toFixed(3));
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--mx', '0');
+      card.style.setProperty('--my', '0');
+    });
+  });
+
+  // Hero parallax on mouse
+  const hero = document.querySelector('.ins-hero, .about-hero');
+  if (hero) {
+    hero.addEventListener('mousemove', (e) => {
+      const r = hero.getBoundingClientRect();
+      const mx = (e.clientX - r.left) / r.width - 0.5;
+      const my = (e.clientY - r.top) / r.height - 0.5;
+      const title = hero.querySelector('.ins-hero-title, .hero-headline');
+      const desc = hero.querySelector('.ins-hero-desc');
+      if (title) title.style.transform = `translateZ(28px) translate(${mx*12}px, ${my*8}px)`;
+      if (desc) desc.style.transform = `translateZ(14px) translate(${mx*8}px, ${my*6}px)`;
+    });
+    hero.addEventListener('mouseleave', () => {
+      const title = hero.querySelector('.ins-hero-title, .hero-headline');
+      const desc = hero.querySelector('.ins-hero-desc');
+      if (title) title.style.transform = 'translateZ(28px)';
+      if (desc) desc.style.transform = 'translateZ(14px)';
+    });
   }
 }
