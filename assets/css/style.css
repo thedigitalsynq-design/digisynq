@@ -2540,6 +2540,139 @@ body { position: relative; }
   transform: translateZ(-30px);
 }
 
+/* ==========================================================================
+   PREMIUM DESIGN POLISH — EDITORIAL LUXURY
+   ========================================================================== */
+:root {
+  --premium-gold: #c9a96e;
+  --premium-gold-soft: rgba(201,169,110,0.14);
+  --premium-hairline: rgba(255,255,255,0.07);
+  --premium-cream: #faf8f5;
+  --premium-radius: 20px;
+  --premium-ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Typography refinement — elegant contrast */
+body {
+  letter-spacing: 0.015em;
+  font-weight: 400;
+}
+h1, .hero-headline, .ins-hero-title {
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  font-variant-ligatures: common-ligatures;
+}
+h2, .section-title {
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.ins-hero-desc, .section-desc, .about-desc, .ins-desc-dark, .ins-desc-light {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+.sec-eyebrow-light, .ins-eyebrow, .about-eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--premium-gold) !important;
+  border-bottom: 1px solid var(--premium-hairline);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.2rem;
+  display: inline-flex;
+}
+
+/* Hairline rules — premium divider */
+.ins-section, .about-section {
+  border-top: 1px solid var(--premium-hairline);
+}
+.ins-section.white, .about-section.white {
+  background: var(--premium-cream);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.ins-section.white .ins-h2-dark, .about-section.white .about-h2.dark {
+  color: #0f0f0f;
+}
+.ins-section.white .ins-desc-dark, .about-section.white .about-desc.dark {
+  color: #52525b;
+}
+
+/* Cards — premium soft bevel, gold hover */
+.ins-card, .subpage-card, .stage-detail-card, .eco-node-card,
+.founder-card, .mission-card-expanded {
+  border-radius: var(--premium-radius) !important;
+  border: 1px solid var(--glass-border) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015)), var(--bg-surface-1) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.06) inset,
+    0 24px 48px -16px rgba(0,0,0,0.42),
+    0 4px 12px rgba(0,0,0,0.18) !important;
+  transition: all 0.5s var(--premium-ease) !important;
+}
+.ins-card:hover, .subpage-card:hover, .eco-node-card:hover {
+  border-color: rgba(201,169,110,0.22) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.08) inset,
+    0 28px 56px -14px rgba(0,0,0,0.48),
+    0 0 0 1px var(--premium-gold-soft),
+    0 8px 20px rgba(201,169,110,0.08) !important;
+}
+
+/* Buttons — premium pill, tighter tracking */
+.btn-pill-solid {
+  background: #0f0f0f !important;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.32) !important;
+}
+.btn-pill-solid:hover {
+  background: #1a1a1a !important;
+  border-color: var(--premium-gold) !important;
+}
+.btn-pill-outline {
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-color: rgba(255,255,255,0.14) !important;
+}
+
+/* Nav — premium hairline, clocked typography */
+.top-nav {
+  border-bottom: 1px solid var(--premium-hairline);
+  backdrop-filter: blur(18px) saturate(160%) !important;
+}
+.nav-links-center li a {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.70rem;
+  font-weight: 600;
+}
+.nav-links-center li a.active {
+  background: var(--premium-gold) !important;
+  color: #0f0f0f !important;
+}
+
+/* Footer — editorial */
+.site-footer, .f-top, .mono-trust-strip {
+  border-top: 1px solid var(--premium-hairline);
+}
+
+/* Section spacing — more air */
+.ins-section, .about-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.5rem, 4vw, 3.5rem) !important;
+}
+
+/* Premium grain — subtle paper texture */
+body::before {
+  opacity: 0.012 !important;
+}
+
 /* Stronger depth on headings — extruded text */
 .ins-hero-title, .hero-headline {
   transform: translateZ(36px);
