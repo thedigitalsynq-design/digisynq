@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
    DIGISYNQ — THE ENTERTAINMENT ECOSYSTEM OPERATING SYSTEM
@@ -132,11 +132,13 @@
   --accent-red: #ef4444;
   --accent-rose: #f43f5e;
 
-  /* Typography — 100% Denton Family */
-  --font-sans: 'Denton', 'Denton-Bold', serif;
-  --font-headline: 'Denton-ExtraBold', 'Denton', serif;
-  --font-display: 'Denton-Bold', 'Denton', serif;
-  --font-mono: 'Denton', 'Denton-Bold', serif;
+    /* Typography — Space Grotesk Family Everywhere */
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', monospace, sans-serif;
+  --font-modern: 'Space Grotesk', sans-serif;
+  --font-chamfer: 'Space Grotesk', sans-serif;
 
   /* Text Colors */
   --text-primary: #f8fafc;
@@ -3991,4 +3993,42 @@ body::before {
   text-transform: uppercase;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+
+/* ==========================================================================
+   SPACE GROTESK UNIFIED TYPOGRAPHY SYSTEM
+   ========================================================================== */
+html, body, button, input, select, textarea {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-headline, .section-title,
+.colossal-digit, .colossal-title, .colossal-caption,
+.node-key-digit, .node-key-label, .node-key-hotkey-badge,
+.pastel-card-title, .pastel-card-desc, .pastel-card-num,
+.mono, .tag-badge, .logo-text, .edge-badge-vertical,
+.brand-logo, .btn, .form-label, .form-input, .form-select, .form-textarea,
+.dialpad-drawer-title, .dialpad-drawer-sub {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.colossal-digit {
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.colossal-title {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.node-key-digit {
+  font-weight: 700 !important;
+}
+
+.mono {
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
 }
