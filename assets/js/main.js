@@ -1024,26 +1024,22 @@ function init9870089044Controller() {
       return;
     }
 
-    // Number keys 0 to 9
-    const keyMap = {
-      '1': 'sec-node-01',
-      '2': 'sec-node-02',
-      '3': 'sec-node-03',
-      '4': 'sec-node-04',
-      '5': 'sec-node-05',
-      '6': 'sec-node-06',
-      '7': 'sec-node-07',
-      '8': 'sec-node-08',
-      '9': 'sec-node-09',
-      '0': 'sec-node-00'
+    // Number keys 0 to 9 navigate to dedicated node pages
+    const pageMap = {
+      '1': 'node-01.html',
+      '2': 'node-02.html',
+      '3': 'node-03.html',
+      '4': 'node-04.html',
+      '5': 'node-05.html',
+      '6': 'node-06.html',
+      '7': 'node-07.html',
+      '8': 'node-08.html',
+      '9': 'node-09.html',
+      '0': 'node-00.html'
     };
 
-    if (keyMap[e.key]) {
-      const targetSec = document.getElementById(keyMap[e.key]);
-      if (targetSec) {
-        targetSec.scrollIntoView({ behavior: 'smooth' });
-        if (dialpadDrawer) dialpadDrawer.classList.remove('is-open');
-      }
+    if (pageMap[e.key]) {
+      window.location.href = pageMap[e.key];
     }
   });
 
