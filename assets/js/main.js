@@ -1035,7 +1035,7 @@ function init9870089044Controller() {
       '7': 'node-07.html',
       '8': 'node-08.html',
       '9': 'node-09.html',
-      '0': 'node-00.html'
+      '0': 'node-10.html'
     };
 
     if (pageMap[e.key]) {
