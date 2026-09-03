@@ -929,15 +929,19 @@ function init3DEffects() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window.innerWidth <= 768) return;
 
-  const cards = document.querySelectorAll('.ins-card, .subpage-card, .stage-detail-card, .founder-card, .mission-card-expanded, .eco-node-card');
+  const cards = document.querySelectorAll('.ins-card, .subpage-card, .stage-detail-card, .founder-card, .mission-card-expanded, .eco-node-card, .bento-card, .waste-card, .unlock-card, .scenario-card, .eco-tier-card, .leakage-card');
   cards.forEach(card => {
     card.classList.add('tilt-3d');
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
-      const mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-      const my = ((e.clientY - r.top) / r.height - 0.5) * -2;
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      const mx = (x / r.width - 0.5) * 2;
+      const my = (y / r.height - 0.5) * -2;
       card.style.setProperty('--mx', mx.toFixed(3));
       card.style.setProperty('--my', my.toFixed(3));
+      card.style.setProperty('--glow-x', `${(x / r.width * 100).toFixed(1)}%`);
+      card.style.setProperty('--glow-y', `${(y / r.height * 100).toFixed(1)}%`);
     });
     card.addEventListener('mouseleave', () => {
       card.style.setProperty('--mx', '0');
