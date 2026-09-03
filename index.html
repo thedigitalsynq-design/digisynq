@@ -18,14 +18,29 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-brand-title">
-        <span>DigiSynq</span>
-        <span class="accent-dot"></span>
+  <!-- 9870089044 Fixed Architectural Top Chrome -->
+  <header class="site-chrome-header">
+    <a href="#hero" class="dynamic-logo-pill" id="dynamicLogo" aria-label="DigiSynq Terminal">
+      <span class="logo-text">00<span class="dynamic-logo-node-badge">.SYNQ</span></span>
+    </a>
+    <div class="chrome-controls-group">
+      <a href="#sec-node-00" class="chrome-icon-btn" title="Direct Intake / Start a Synq">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
       </a>
+      <button class="chrome-icon-btn" data-open-dialpad title="Toggle 10-Node Dial Pad (Press K)">
+        <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+      </button>
+    </div>
+  </header>
 
+  <!-- Fixed Right-Edge Vertical Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ // ENTERTAINMENT COORDINATION INFRASTRUCTURE</span>
+  </div>
+
+  <!-- Traditional Top Nav (Subtle, for direct page access) -->
+  <header class="navbar" style="background:transparent;border:none;">
+    <div class="container nav-container" style="justify-content:center;">
       <ul class="nav-links" role="list">
         <li><a href="ecosystem.html" class="nav-link">Ecosystem</a></li>
         <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
@@ -33,117 +48,157 @@
         <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
       </ul>
-
-      <div class="nav-actions">
-        <a href="contact.html" class="btn btn-primary btn-sm">Start a synq</a>
-        <button class="nav-mobile-toggle" aria-label="Toggle navigation">☰</button>
-      </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation Overlay -->
-  <div class="nav-mobile-menu">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="ecosystem.html" class="nav-link">Ecosystem</a>
-    <a href="how-it-works.html" class="nav-link">How It Works</a>
-    <a href="missions.html" class="nav-link">Missions</a>
-    <a href="intelligence.html" class="nav-link">Intelligence</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="btn btn-cyan" style="margin-top:0.8rem;width:100%;text-align:center;">Start a synq</a>
-  </div>
-
   <main>
     <!-- ==========================================================================
-         01. HERO SECTION (THE ENTERTAINMENT ECOSYSTEM, SYNCHRONIZED)
+         00. HERO SECTION // 9870089044 10-NODE DIAL PAD
          ========================================================================== -->
-    <section class="hero-section" id="hero" style="padding-top:clamp(5.5rem, 9vw, 8rem);padding-bottom:clamp(3rem, 6vw, 5rem);position:relative;overflow:hidden;">
-      <div class="volumetric-glow"></div>
-      <div class="container hero-content">
-        <div class="hero-orchestration-stage">
-          
-          <!-- Left Wing: Entertainment Verticals -->
-          <div class="hero-wing left-wing">
-            <span class="wing-badge"><span class="dot"></span> Ideas &amp; Dormant IP</span>
-            <span class="wing-badge"><span class="dot"></span> Talent &amp; Guild Artisans</span>
-            <span class="wing-badge"><span class="dot"></span> Soundstages &amp; Facilities</span>
-            <span class="wing-badge"><span class="dot"></span> Production Hardware &amp; Kits</span>
-            <span class="wing-badge"><span class="dot"></span> Daily Shows &amp; Television</span>
-            <span class="wing-badge"><span class="dot"></span> Cinema &amp; Feature Film</span>
+    <section class="viewport-palette-section palette-black" id="hero" data-node-id="00" data-node-name="SYNQ" style="padding-top:clamp(6rem, 10vw, 7.5rem);text-align:center;">
+      <div class="container" style="max-width:1120px;">
+        
+        <div style="margin-bottom:1.8rem;">
+          <div class="mono" style="color:var(--accent-cyan);font-weight:800;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.75rem;">
+            // ENTERTAINMENT COORDINATION INFRASTRUCTURE
           </div>
-
-          <!-- Center Core: Main Headline & Positioning -->
-          <div class="hero-center-core">
-            <div class="tag-badge">
-              <span class="dot"></span>
-              <span>Entertainment Coordination Infrastructure</span>
-            </div>
-
-            <h1 class="hero-headline">
-              <span class="text-gradient">The entertainment</span><br>
-              <span class="text-gradient">ecosystem,</span><br>
-              <span class="text-cyan-gradient"><em>synchronized.</em></span>
-            </h1>
-
-            <p style="font-family:var(--font-headline);font-size:clamp(1.2rem, 2.4vw, 1.6rem);font-weight:700;color:var(--text-white);margin-bottom:1rem;letter-spacing:-0.01em;">
-              More value from everything that already exists.
-            </p>
-
-            <p class="hero-subhead" style="max-width:780px;margin:0 auto 1.4rem;font-size:1.12rem;line-height:1.75;color:var(--text-secondary);">
-              DigiSynq connects people, talent, ideas, IP, places, equipment, technology, capital, distribution and audiences — so what is idle, fragmented or disconnected can become useful, productive and valuable.
-            </p>
-
-            <p style="font-family:var(--font-headline);font-size:1.25rem;font-weight:900;color:var(--accent-cyan);margin-bottom:2rem;letter-spacing:-0.01em;">
-              Nothing is waste. Everything has potential.
-            </p>
-
-            <div class="hero-ctas" style="justify-content:center;display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0;">
-              <a href="ecosystem.html" class="btn btn-primary btn-lg">Explore the Ecosystem &rarr;</a>
-              <a href="contact.html" class="btn btn-secondary btn-lg">Start a Synq</a>
-            </div>
-          </div>
-
-          <!-- Right Wing: Tech, Distribution & Capital Verticals -->
-          <div class="hero-wing right-wing">
-            <span class="wing-badge"><span class="dot"></span> Post, VFX &amp; Virtual Stages</span>
-            <span class="wing-badge"><span class="dot"></span> OTT &amp; Streaming Buyers</span>
-            <span class="wing-badge"><span class="dot"></span> Theatrical &amp; Global Windows</span>
-            <span class="wing-badge"><span class="dot"></span> Audiences &amp; Communities</span>
-            <span class="wing-badge"><span class="dot"></span> Brands &amp; Commercial Units</span>
-            <span class="wing-badge"><span class="dot"></span> Capital, Escrow &amp; Rights</span>
-          </div>
-
+          <h1 style="font-family:var(--font-chamfer);font-size:clamp(2.5rem, 5.5vw, 4.8rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;margin:0 0 0.8rem;color:#ffffff;">
+            THE ENTERTAINMENT ECOSYSTEM, SYNCHRONIZED.
+          </h1>
+          <p style="font-family:var(--font-modern);font-size:clamp(1.1rem, 2vw, 1.45rem);font-weight:600;color:rgba(255,255,255,0.9);max-width:760px;margin:0 auto 1.2rem;">
+            More value from everything that already exists.
+          </p>
+          <p style="font-family:var(--font-modern);font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:740px;margin:0 auto;">
+            DigiSynq connects people, talent, ideas, IP, places, equipment, technology, capital, distribution and audiences — so what is idle or disconnected becomes productive and valuable.
+          </p>
         </div>
+
+        <!-- The 10-Node Dial Pad Matrix -->
+        <div class="node-dialpad-container">
+          <div class="node-dialpad-grid">
+            <!-- Node 01: Ideas & IP -->
+            <a href="#sec-node-01" class="node-key-item" title="Jump to Node 01 (HotKey: 1)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">1</span>
+                <span class="node-key-digit">01</span>
+              </div>
+              <span class="node-key-label">Ideas &amp; IP</span>
+            </a>
+            <!-- Node 02: People -->
+            <a href="#sec-node-02" class="node-key-item" title="Jump to Node 02 (HotKey: 2)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">2</span>
+                <span class="node-key-digit">02</span>
+              </div>
+              <span class="node-key-label">People</span>
+            </a>
+            <!-- Node 03: Places & Assets -->
+            <a href="#sec-node-03" class="node-key-item" title="Jump to Node 03 (HotKey: 3)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">3</span>
+                <span class="node-key-digit">03</span>
+              </div>
+              <span class="node-key-label">Places &amp; Assets</span>
+            </a>
+            <!-- Node 04: Production -->
+            <a href="#sec-node-04" class="node-key-item" title="Jump to Node 04 (HotKey: 4)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">4</span>
+                <span class="node-key-digit">04</span>
+              </div>
+              <span class="node-key-label">Production</span>
+            </a>
+            <!-- Node 05: Post & Tech -->
+            <a href="#sec-node-03" class="node-key-item" title="Jump to Node 05 (HotKey: 5)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">5</span>
+                <span class="node-key-digit">05</span>
+              </div>
+              <span class="node-key-label">Post &amp; Tech</span>
+            </a>
+            <!-- Node 06: Distribution -->
+            <a href="#sec-node-03" class="node-key-item" title="Jump to Node 06 (HotKey: 6)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">6</span>
+                <span class="node-key-digit">06</span>
+              </div>
+              <span class="node-key-label">Distribution</span>
+            </a>
+            <!-- Node 07: Audience -->
+            <a href="#sec-node-02" class="node-key-item" title="Jump to Node 07 (HotKey: 7)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">7</span>
+                <span class="node-key-digit">07</span>
+              </div>
+              <span class="node-key-label">Audience</span>
+            </a>
+            <!-- Node 08: Capital -->
+            <a href="#sec-node-04" class="node-key-item" title="Jump to Node 08 (HotKey: 8)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">8</span>
+                <span class="node-key-digit">08</span>
+              </div>
+              <span class="node-key-label">Capital</span>
+            </a>
+            <!-- Node 09: Missions -->
+            <a href="missions.html" class="node-key-item" title="Jump to Missions (HotKey: 9)">
+              <div class="node-key-circle">
+                <span class="node-key-hotkey-badge">9</span>
+                <span class="node-key-digit">09</span>
+              </div>
+              <span class="node-key-label">15 Missions</span>
+            </a>
+            <!-- Node 00: Coordination Hub -->
+            <a href="#sec-node-00" class="node-key-item" title="Start a Synq (HotKey: 0)">
+              <div class="node-key-circle" style="border-color:var(--accent-cyan);">
+                <span class="node-key-hotkey-badge">0</span>
+                <span class="node-key-digit" style="color:var(--accent-cyan);">00</span>
+              </div>
+              <span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <div class="mono" style="font-size:0.75rem;letter-spacing:0.2em;color:rgba(255,255,255,0.45);text-transform:uppercase;">
+            TAP A NODE TO EXPLORE &bull; OR PRESS 0–9
+          </div>
+          <div style="margin-top:1.8rem;">
+            <a href="#sec-node-01" class="scroll-indicator-mouse">
+              <div class="mouse-glyph-box"></div>
+              <span class="scroll-indicator-label">Scroll to enter</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Real-World Ecosystem Graph Canvas -->
+        <div style="margin-top:clamp(3.5rem, 6vw, 5rem);text-align:center;">
+          <div class="hero-canvas-container">
+            <div class="canvas-overlay-hud">
+              <div class="hud-status-badge" id="graphStatusBadge">
+                <span class="telemetry-status-dot green"></span>
+                <span>Synchronized state: Coordinated ecosystem &amp; transparent trust</span>
+              </div>
+              <div class="mono" style="color:var(--text-muted);font-size:0.75rem;">Interactive ecosystem topology // 8 layers</div>
+            </div>
+
+            <canvas id="heroNetworkCanvas" role="img" aria-label="Interactive real-time entertainment ecosystem network graph"></canvas>
+
+            <div class="canvas-trigger-bar">
+              <button class="sim-mode-btn active" data-mode="synchronized" onclick="if (window.setGraphMode) window.setGraphMode('synchronized');">
+                ● Synchronized state
+              </button>
+              <button class="sim-mode-btn" data-mode="fragmented" onclick="if (window.setGraphMode) window.setGraphMode('fragmented');">
+                ▲ Fragmented baseline
+              </button>
+              <button class="sim-mode-btn" data-mode="active-slate" onclick="if (window.setGraphMode) window.setGraphMode('active-slate');">
+                ⚡ Real-time coordination
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Real-World Ecosystem Graph Canvas -->
-      <div class="container" style="margin-top:clamp(4rem, 7vw, 6rem);text-align:center;position:relative;z-index:10;">
-        <div class="hero-canvas-container">
-          <div class="canvas-overlay-hud">
-            <div class="hud-status-badge" id="graphStatusBadge">
-              <span class="telemetry-status-dot green"></span>
-              <span>Synchronized state: Coordinated ecosystem &amp; transparent trust</span>
-            </div>
-            <div class="mono" style="color:var(--text-muted);font-size:0.75rem;">Interactive ecosystem topology // 8 layers</div>
-          </div>
-
-          <canvas id="heroNetworkCanvas" role="img" aria-label="Interactive real-time entertainment ecosystem network graph"></canvas>
-
-          <div class="canvas-trigger-bar">
-            <button class="sim-mode-btn active" data-mode="synchronized" onclick="if (window.setGraphMode) window.setGraphMode('synchronized');">
-              ● Synchronized state
-            </button>
-            <button class="sim-mode-btn" data-mode="fragmented" onclick="if (window.setGraphMode) window.setGraphMode('fragmented');">
-              ▲ Fragmented baseline
-            </button>
-            <button class="sim-mode-btn" data-mode="active-slate" onclick="if (window.setGraphMode) window.setGraphMode('active-slate');">
-              ⚡ Real-time coordination
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <a href="#problem" class="scroll-down-bar">&darr; Why entertainment needs coordination</a>
-        </div>
     </section>
 
     <!-- Ambient Ecosystem Network Marquee -->
@@ -170,76 +225,164 @@
     </div>
 
     <!-- ==========================================================================
-         02. THE PROBLEM: NOT SHORT OF RESOURCES, SHORT OF COORDINATION
+         NODE 01 // SAGE GREEN: NOTHING IS WASTE (9870089044 ARCHITECTURE)
          ========================================================================== -->
-    <section id="problem" style="padding:clamp(4rem, 7vw, 6rem) 0;background:var(--bg-surface-0);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);">
-      <div class="container">
-        <div class="section-header" style="max-width:880px;margin:0 auto 3rem;text-align:center;">
-          <div class="tag-badge">
-            <span class="dot"></span>
-            <span>The Core Challenge</span>
-          </div>
-          <h2 class="section-title">
-            Entertainment isn't short of resources.<br>
-            <span class="text-cyan-gradient"><em>It's short of coordination.</em></span>
-          </h2>
-          <p class="section-subhead" style="font-size:1.15rem;max-width:760px;margin:0 auto;">
-            Every day across the industry, massive productive capacity sits frozen in silos—not because people don't want to create, but because the moving parts don't talk to each other:
-          </p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;">
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 01</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Talent waits.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Exceptional actors, directors, writers, and craftspeople waiting between projects without transparent visibility into upcoming slates.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 02</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Studios sit empty.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Premier soundstages and acoustic floors going dark between major productions, bearing fixed carrying costs while others search for space.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 03</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Equipment goes unused.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Calibrated camera packages, optical benches, grip trucks, and lights locked in rental houses waiting for phone calls.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 04</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Scripts remain shelved.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Finished screenplays, treatments, and regional concepts remaining unadapted without attaching the right team and capital.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 05</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">IP stays dormant.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Published novels, hit podcasts, regional formats, and tape archives sitting inactive in libraries without transmedia conversion.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 06</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Audiences remain disconnected.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Passionate micro-audiences, regional fandoms, and brand sponsors disconnected from creators and theatrical spaces.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 07</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Opportunities remain hidden.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Institutional capital, brand marketing budgets, and co-production rebates seeking verified, transparent production slates.</p>
-          </div>
-
-          <div class="leakage-card">
-            <span class="mono" style="color:var(--accent-cyan);font-size:0.75rem;font-weight:700;">// REALITY 08</span>
-            <h4 style="margin:0.4rem 0 0.5rem;color:#ffffff;font-size:1.15rem;font-weight:800;">Information stays fragmented.</h4>
-            <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;margin:0;">Production schedules, rate cards, and delivery specs trapped inside informal phone chains, gatekeepers, and private rolodexes.</p>
+    <section id="sec-node-01" class="viewport-palette-section palette-sage palette-light" data-node-id="01" data-node-name="IDEAS">
+      <div class="container" style="max-width:1160px;position:relative;z-index:2;">
+        <div class="colossal-numeral-layout">
+          <div class="colossal-digit">01</div>
+          <div class="colossal-title-stack">
+            <div class="mono" style="font-size:0.8rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.85;">
+              // CORE PHILOSOPHY &bull; NODE 01
+            </div>
+            <h2 class="colossal-title">
+              NOTHING IS WASTE.<br>EVERYTHING HAS POTENTIAL.
+            </h2>
+            <p class="colossal-caption">
+              What looks like waste is often just disconnected value. When resources, people, and capital are coordinated with clarity, idle capacity turns into valuable work.
+            </p>
           </div>
         </div>
 
-        <!-- Cinematic Reality Vignettes: Tangible Production Silos -->
-        <div class="editorial-vignette-grid">
+        <!-- 10 High-Contrast Transformation Cards -->
+        <div class="pastel-card-grid">
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.01</span>
+            <h3 class="pastel-card-title">Empty studio day &rarr; Another production</h3>
+            <p class="pastel-card-desc">Dark acoustic soundstages converted into active commercial, virtual shoot, or pickup spaces.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.02</span>
+            <h3 class="pastel-card-title">Available actor dates &rarr; Packaged slate</h3>
+            <p class="pastel-card-desc">Unscheduled window between principal photography turned into attached high-value sprint.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.03</span>
+            <h3 class="pastel-card-title">Unused cinema optics &rarr; Commercial unit</h3>
+            <p class="pastel-card-desc">Bench-calibrated prime packages activated for regional branded content instead of sitting on shelves.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.04</span>
+            <h3 class="pastel-card-title">Shelved screenplay &rarr; Dormant IP revival</h3>
+            <p class="pastel-card-desc">Complete unadapted scripts re-packaged with verified guild pods and regional distribution agreements.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.05</span>
+            <h3 class="pastel-card-title">Unused location &rarr; Coordinated set</h3>
+            <p class="pastel-card-desc">Heritage architecture, industrial yards, and private estates pre-cleared for municipal filming.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.06</span>
+            <h3 class="pastel-card-title">Old catalogue &rarr; FAST streaming window</h3>
+            <p class="pastel-card-desc">Archival tape libraries and regional hits remastered for global ad-supported streaming syndication.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.07</span>
+            <h3 class="pastel-card-title">Regional talent &rarr; Direct collaboration</h3>
+            <p class="pastel-card-desc">Acclaimed local creators paired directly with national OTT slates without gatekeeper latency.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.08</span>
+            <h3 class="pastel-card-title">Micro-audience &rarr; Theatrical release</h3>
+            <p class="pastel-card-desc">Passionate regional fandoms aggregated to pre-guarantee theatrical screen occupancy.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.09</span>
+            <h3 class="pastel-card-title">Production data &rarr; Predictive insights</h3>
+            <p class="pastel-card-desc">Past shooting schedules and budget variances transformed into intelligence for future slates.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">01.10</span>
+            <h3 class="pastel-card-title">Fragmented trust &rarr; Milestone escrow</h3>
+            <p class="pastel-card-desc">Subjective payment disputes eliminated by smart automated milestone verification.</p>
+          </div>
+        </div>
+
+        <div style="border-top:1.5px solid var(--c-987-hairline-dark);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+          <span class="mono" style="font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">DIGISYNQ RECOVERS VALUE FROM IDLE CAPACITY</span>
+          <a href="#sec-node-02" class="btn btn-secondary" style="background:#000000;color:#ffffff;border-color:#000000;">Explore Coordination Reality &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         NODE 02 // POWDER BLUE: THE PROBLEM & GOLDEN RATIO (9870089044 ARCHITECTURE)
+         ========================================================================== -->
+    <section id="sec-node-02" class="viewport-palette-section palette-slate palette-light" data-node-id="02" data-node-name="PEOPLE">
+      <!-- Architectural Golden Spiral Vector Schematic -->
+      <div class="golden-ratio-svg-wrap" aria-hidden="true">
+        <svg viewBox="0 0 1000 618" preserveAspectRatio="none" style="width:100%;height:100%;stroke:#000000;fill:none;stroke-width:1.2;opacity:0.25;">
+          <rect x="0" y="0" width="1000" height="618" />
+          <line x1="618" y1="0" x2="618" y2="618" />
+          <line x1="618" y1="382" x2="1000" y2="382" />
+          <line x1="764" y1="382" x2="764" y2="618" />
+          <line x1="618" y1="472" x2="764" y2="472" />
+          <path d="M 0,618 A 618,618 0 0,1 618,0 A 382,382 0 0,1 1000,382 A 236,236 0 0,1 764,618 A 146,146 0 0,1 618,472" />
+        </svg>
+      </div>
+
+      <div class="container" style="max-width:1160px;position:relative;z-index:2;">
+        <div class="colossal-numeral-layout">
+          <div class="colossal-digit">02</div>
+          <div class="colossal-title-stack">
+            <div class="mono" style="font-size:0.8rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.85;">
+              // THE CHALLENGE &bull; NODE 02
+            </div>
+            <h2 class="colossal-title">
+              THE VALUE EXISTS.<br>THE CONNECTIONS DON'T.
+            </h2>
+            <p class="colossal-caption">
+              Entertainment isn't short of resources. It's short of coordination. Every day across the industry, massive productive capacity sits frozen in silos—not because people don't want to create, but because the moving parts don't talk to each other.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8 Reality Statements -->
+        <div class="pastel-card-grid">
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 01</span>
+            <h3 class="pastel-card-title">Talent waits.</h3>
+            <p class="pastel-card-desc">Exceptional actors, directors, writers, and craftspeople waiting between projects without transparent visibility into upcoming slates.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 02</span>
+            <h3 class="pastel-card-title">Studios sit empty.</h3>
+            <p class="pastel-card-desc">Premier soundstages and acoustic floors going dark between major productions, bearing carrying costs while others search for space.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 03</span>
+            <h3 class="pastel-card-title">Equipment goes unused.</h3>
+            <p class="pastel-card-desc">Calibrated camera packages, optical benches, and grip trucks locked in rental houses waiting for phone calls.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 04</span>
+            <h3 class="pastel-card-title">Scripts remain shelved.</h3>
+            <p class="pastel-card-desc">Finished screenplays, treatments, and regional concepts remaining unadapted without attaching the right team and capital.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 05</span>
+            <h3 class="pastel-card-title">IP stays dormant.</h3>
+            <p class="pastel-card-desc">Published novels, podcasts, regional formats, and tape archives sitting inactive in libraries without transmedia conversion.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 06</span>
+            <h3 class="pastel-card-title">Audiences remain disconnected.</h3>
+            <p class="pastel-card-desc">Passionate micro-audiences and regional fandoms disconnected from creators, festivals, and theatrical spaces.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 07</span>
+            <h3 class="pastel-card-title">Opportunities remain hidden.</h3>
+            <p class="pastel-card-desc">Institutional capital, brand marketing budgets, and co-production rebates seeking verified, transparent production slates.</p>
+          </div>
+          <div class="pastel-card">
+            <span class="pastel-card-num">// REALITY 08</span>
+            <h3 class="pastel-card-title">Information stays fragmented.</h3>
+            <p class="pastel-card-desc">Production schedules, rate cards, and delivery specs trapped inside informal phone chains and private rolodexes.</p>
+          </div>
+        </div>
+
+        <!-- Cinematic Reality Vignettes -->
+        <div class="editorial-vignette-grid" style="margin-top:2.5rem;">
           <div class="editorial-vignette-card">
             <img src="assets/img/editorial/claude-stage-motif.jpg" alt="Acoustic soundstage dark window" loading="lazy">
             <div class="editorial-vignette-overlay">
@@ -247,7 +390,6 @@
               <h4 class="editorial-vignette-title">Acoustic stages dark between set builds</h4>
             </div>
           </div>
-
           <div class="editorial-vignette-card">
             <img src="assets/img/editorial/claude-camera-motif.jpg" alt="Calibrated cinema camera optics" loading="lazy">
             <div class="editorial-vignette-overlay">
@@ -255,7 +397,6 @@
               <h4 class="editorial-vignette-title">Calibrated prime packages waiting in cases</h4>
             </div>
           </div>
-
           <div class="editorial-vignette-card">
             <img src="assets/img/editorial/claude-screenplay-motif.jpg" alt="Shelved screenplay and treatment" loading="lazy">
             <div class="editorial-vignette-overlay">
@@ -265,13 +406,16 @@
           </div>
         </div>
 
-        <!-- Problem Conclusion Banner -->
-        <div style="margin-top:2.5rem;background:var(--bg-surface-1);border:1px solid var(--glass-border-bright);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;max-width:920px;margin-left:auto;margin-right:auto;">
-          <h3 style="font-family:var(--font-headline);font-size:clamp(1.5rem, 3.2vw, 2.25rem);color:#ffffff;margin-bottom:0.75rem;font-weight:900;letter-spacing:-0.02em;">
-            THE VALUE EXISTS.<br>
-            <span class="text-cyan-gradient"><em>THE CONNECTIONS DON'T.</em></span>
+        <!-- Golden Ratio Problem Resolution Banner -->
+        <div class="schematic-frame-box" style="margin-top:2.5rem;text-align:center;">
+          <div class="schematic-crosshair-tl"></div>
+          <div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div>
+          <div class="schematic-crosshair-br"></div>
+          <h3 style="font-family:var(--font-chamfer);font-size:clamp(1.5rem, 3.2vw, 2.2rem);margin:0 0 0.75rem;font-weight:800;text-transform:uppercase;">
+            BETTER CONNECTIONS CREATE BETTER OUTCOMES.
           </h3>
-          <p style="color:var(--text-secondary);font-size:1.08rem;line-height:1.65;margin:0 auto;max-width:720px;">
+          <p style="font-family:var(--font-modern);font-size:1.05rem;line-height:1.6;margin:0 auto;max-width:720px;">
             The opportunity isn't always to create something new. Sometimes it's to connect what already exists. When resources, people, and capital are coordinated with clarity, idle capacity turns into valuable work.
           </p>
         </div>
@@ -279,231 +423,26 @@
     </section>
 
     <!-- ==========================================================================
-         03. SIGNATURE SECTION: NOTHING IS WASTE
+         NODE 03 // WARM SAND: EVERYTHING CAN BE A NODE (9870089044 ARCHITECTURE)
          ========================================================================== -->
-    <section style="padding:clamp(4rem, 7vw, 6.5rem) 0;position:relative;overflow:hidden;">
-      <div class="volumetric-glow"></div>
-      <div class="container" style="position:relative;z-index:2;">
-        <div class="section-header" style="max-width:880px;margin:0 auto 2rem;text-align:center;">
-          <div class="tag-badge">
-            <span class="dot"></span>
-            <span>Core DigiSynq Philosophy</span>
-          </div>
-          <h2 class="section-title">
-            What looks like waste is often just<br>
-            <span class="text-cyan-gradient"><em>disconnected value.</em></span>
-          </h2>
-          <p class="section-subhead" style="font-size:1.15rem;max-width:760px;margin:0 auto;">
-            Nothing in entertainment is inherently useless. Every unbooked hour, shelved script, and dark camera bench represents real economic potential waiting for the right connection:
-          </p>
-        </div>
-
-        <div class="waste-grid">
-          <!-- Card 1 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Empty studio day</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
+    <section id="sec-node-03" class="viewport-palette-section palette-sand palette-light" data-node-id="03" data-node-name="PLACES">
+      <div class="container" style="max-width:1160px;position:relative;z-index:2;">
+        <div class="colossal-numeral-layout">
+          <div class="colossal-digit">03</div>
+          <div class="colossal-title-stack">
+            <div class="mono" style="font-size:0.8rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.85;">
+              // SYSTEM TOPOLOGY &bull; NODE 03
             </div>
-            <div class="waste-to">Another production opportunity</div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Available actor dates</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">A new project</div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Unused equipment</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">Productive capacity</div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Shelved script</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">Dormant IP opportunity</div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Unused location</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">Production opportunity</div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Old catalogue</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">New audience &amp; licensing opportunity</div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Regional talent</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">New productions</div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Existing audience</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">New distribution &amp; commerce opportunities</div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Production data</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">Better decisions</div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="waste-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                <div class="waste-from" style="margin-bottom:0;"><span>Existing relationships</span></div>
-                <span class="waste-status-pill"><span class="pill-dot"></span><span class="status-txt">Latent</span></span>
-              </div>
-              <span class="waste-arrow">&darr;</span>
-            </div>
-            <div class="waste-to">New collaborations</div>
+            <h2 class="colossal-title">
+              EVERYTHING CAN BE A NODE.
+            </h2>
+            <p class="colossal-caption">
+              A person can be a node. A studio can be a node. A script can be a node. A catalogue can be a node. A camera can be a node. A location can be a node. An audience can be a node. Capital can be a node. Even an unused time slot can be a node.
+            </p>
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:3rem;">
-          <p style="font-family:var(--font-headline);font-size:1.65rem;font-weight:900;color:var(--accent-cyan);letter-spacing:-0.02em;">
-            DigiSynq finds the connections.
-          </p>
-        </div>
-
-        <!-- Interactive Value Recovery Simulator Widget -->
-        <div class="simulator-panel">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.5rem;">
-            <span class="tag-badge" style="margin:0;"><span class="dot"></span><span>Interactive Recovery Model</span></span>
-            <span class="cred-badge">Illustrative Benchmark Model</span>
-          </div>
-
-          <h3 style="font-family:var(--font-headline);font-size:clamp(1.4rem, 2.5vw, 1.85rem);color:#ffffff;font-weight:800;margin:0.5rem 0 0.5rem;">
-            Estimate recovered yield on your upcoming production slate
-          </h3>
-          <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 1.5rem;max-width:700px;line-height:1.6;">
-            Slide your estimated production budget to project how much capital leakage, unbooked stage time, and procurement lag can be recovered through synchronized coordination:
-          </p>
-
-          <div class="simulator-slider-container">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.85rem;flex-wrap:wrap;gap:0.5rem;">
-              <span class="mono" style="color:var(--text-secondary);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;">Total Slate / Production Budget</span>
-              <span id="simBudgetDisplay" class="mono" style="color:var(--accent-cyan);font-weight:900;font-size:1.25rem;">₹5.0 Cr ($600K)</span>
-            </div>
-            <input type="range" id="budgetSlider" class="range-slider-custom" min="0.5" max="25" step="0.5" value="5" aria-label="Simulate production budget">
-            <div style="display:flex;justify-content:space-between;margin-top:0.6rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);">
-              <span>₹50 Lakh</span>
-              <span>₹10 Cr</span>
-              <span>₹25 Cr+</span>
-            </div>
-          </div>
-
-          <div class="simulator-metrics-grid">
-            <div class="sim-metric-card">
-              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Uncoordinated Leakage</span>
-              <div id="simLeakageVal" class="sim-metric-val" style="color:#ef4444;">₹1.10 Cr</div>
-              <span style="font-size:0.75rem;color:var(--text-secondary);">Avg 22% friction</span>
-            </div>
-
-            <div class="sim-metric-card" style="border-color:rgba(6,182,212,0.4);">
-              <span class="mono" style="font-size:0.72rem;color:var(--accent-cyan);text-transform:uppercase;">Recovered Value</span>
-              <div id="simRecoveredVal" class="sim-metric-val" style="color:var(--accent-cyan);">₹0.97 Cr</div>
-              <span style="font-size:0.75rem;color:var(--text-secondary);">Target 88% capture</span>
-            </div>
-
-            <div class="sim-metric-card">
-              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Dark Days Activated</span>
-              <div id="simDarkDaysVal" class="sim-metric-val" style="color:var(--accent-emerald);">25 dark days</div>
-              <span style="font-size:0.75rem;color:var(--text-secondary);">Lot gap clearing</span>
-            </div>
-
-            <div class="sim-metric-card">
-              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Procurement Speed</span>
-              <div id="simTimeSavedVal" class="sim-metric-val" style="color:var(--accent-purple);">10 weeks</div>
-              <span style="font-size:0.75rem;color:var(--text-secondary);">Packaging acceleration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         04. THE ECOSYSTEM MAP: BIGGER THAN ANY ONE INDUSTRY
-         ========================================================================== -->
-    <section style="padding:clamp(4rem, 7vw, 6.5rem) 0;background:var(--bg-surface-0);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);">
-      <div class="container">
-        <div class="section-header" style="max-width:880px;margin:0 auto 2.5rem;text-align:center;">
-          <div class="tag-badge">
-            <span class="dot"></span>
-            <span>Ecosystem Architecture</span>
-          </div>
-          <h2 class="section-title">
-            Everything can be <span class="text-cyan-gradient"><em>a node.</em></span>
-          </h2>
-          <p class="section-subhead" style="font-size:1.15rem;max-width:780px;margin:0 auto 1.5rem;line-height:1.7;">
-            A person can be a node. A studio can be a node. A script can be a node. A catalogue can be a node. A camera can be a node. A location can be a node. An audience can be a node. Capital can be a node. Even an unused time slot can be a node.
-          </p>
-          <p style="color:var(--text-muted);font-size:0.95rem;max-width:680px;margin:0 auto;">
-            Entertainment is an interconnected ecosystem across eight continuous layers of productive capability:
-          </p>
-        </div>
-
-        <div class="ecosystem-stack">
+        <div class="ecosystem-stack" style="margin-top:2rem;">
           
           <!-- Tier 1 -->
           <div class="eco-tier-card">
@@ -545,14 +484,14 @@
           <div class="eco-connector-bar"><div class="eco-connector-line"></div></div>
 
           <!-- The Central Hub Bridge -->
-          <div class="eco-hub-bridge">
-            <span class="tag-badge" style="background:rgba(6,182,212,0.2);border-color:var(--accent-cyan);color:#ffffff;margin-bottom:0.5rem;">
+          <div class="eco-hub-bridge" style="background:#000000;color:#ffffff;">
+            <span class="tag-badge" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#ffffff;margin-bottom:0.5rem;">
               The Coordination Layer
             </span>
-            <h3 style="font-family:var(--font-headline);color:#ffffff;font-size:1.45rem;margin:0.3rem 0;font-weight:900;">
-              DigiSynq Synchronizes Every Layer
+            <h3 style="font-family:var(--font-chamfer);color:#ffffff;font-size:1.5rem;margin:0.3rem 0;font-weight:800;text-transform:uppercase;">
+              DIGISYNQ SYNCHRONIZES EVERY LAYER
             </h3>
-            <p style="color:var(--text-secondary);font-size:0.95rem;margin:0;max-width:680px;margin:0 auto;">
+            <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;margin:0;max-width:680px;margin:0 auto;">
               Connecting what exists, aligning moving parts, and ensuring transparent execution without asset bloat.
             </p>
           </div>
@@ -625,35 +564,36 @@
         </div>
 
         <div style="text-align:center;margin-top:2.5rem;">
-          <a href="ecosystem.html" class="btn btn-secondary btn-md">Explore full node directory &rarr;</a>
+          <a href="ecosystem.html" class="btn btn-secondary btn-md" style="background:#000000;color:#ffffff;border-color:#000000;">Explore Full Node Directory &rarr;</a>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         05. HOW DIGISYNQ WORKS: THE PRIMARY MENTAL MODEL
+         NODE 04 // PITCH BLACK: OPERATING CYCLE & SIMULATOR (9870089044 ARCHITECTURE)
          ========================================================================== -->
-    <section style="padding:clamp(4rem, 7vw, 6.5rem) 0;">
-      <div class="container">
-        <div class="section-header" style="max-width:880px;margin:0 auto 3rem;text-align:center;">
-          <div class="tag-badge">
-            <span class="dot"></span>
-            <span>Operating Framework</span>
+    <section id="sec-node-04" class="viewport-palette-section palette-black" data-node-id="04" data-node-name="PRODUCTION">
+      <div class="container" style="max-width:1160px;position:relative;z-index:2;">
+        <div class="colossal-numeral-layout">
+          <div class="colossal-digit" style="color:var(--accent-cyan);">04</div>
+          <div class="colossal-title-stack">
+            <div class="mono" style="font-size:0.8rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.6rem;">
+              // OPERATING PROTOCOL &bull; NODE 04
+            </div>
+            <h2 class="colossal-title" style="color:#ffffff;">
+              SEE. CONNECT. COORDINATE.<br>CREATE. DISTRIBUTE. LEARN.
+            </h2>
+            <p class="colossal-caption" style="color:rgba(255,255,255,0.7);">
+              The primary mental model of DigiSynq: replacing guesswork and fragmented calls with an intuitive, reliable coordination cycle.
+            </p>
           </div>
-          <h2 class="section-title">
-            See. Connect. Coordinate.<br>
-            <span class="text-cyan-gradient"><em>Create. Distribute. Learn.</em></span>
-          </h2>
-          <p class="section-subhead" style="font-size:1.15rem;max-width:760px;margin:0 auto;">
-            The primary mental model of DigiSynq: replacing guesswork and fragmented calls with an intuitive, reliable coordination cycle.
-          </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin-bottom:3.5rem;">
           
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 01</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">SEE</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">SEE</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Understand what exists, what is available and what is needed. Real-time visibility into dark stage dates, gear inventory, artisan schedules, and dormant IP.
             </p>
@@ -661,7 +601,7 @@
 
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 02</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">CONNECT</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">CONNECT</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Find the people, assets, IP, opportunities and resources that fit. Neutral matching without broker markups, agency conflicts, or hidden kickbacks.
             </p>
@@ -669,7 +609,7 @@
 
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 03</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">COORDINATE</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">COORDINATE</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Bring the moving pieces together. Clear charters ensure every stakeholder knows timelines, responsibilities, resources, and commitments.
             </p>
@@ -677,7 +617,7 @@
 
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 04</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">CREATE</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">CREATE</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Turn connections into productions, collaborations and new value. Production friction drops, leaving more time and budget for creative vision.
             </p>
@@ -685,7 +625,7 @@
 
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 05</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">DISTRIBUTE</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">DISTRIBUTE</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Connect work with audiences, platforms, markets and commerce. From theatrical premieres to OTT licenses, digital FAST channels, and brand syndication.
             </p>
@@ -693,7 +633,7 @@
 
           <div class="bento-card">
             <span class="mono" style="color:var(--accent-cyan);font-size:0.8rem;font-weight:800;display:block;margin-bottom:0.5rem;">STEP 06</span>
-            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;">LEARN</h3>
+            <h3 style="margin:0 0 0.6rem;color:#ffffff;font-size:1.4rem;font-family:var(--font-chamfer);">LEARN</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0;">
               Use what happened to make the next cycle smarter. Verified delivery data refines matching precision, settlement reliability, and project speed.
             </p>
@@ -701,9 +641,65 @@
 
         </div>
 
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="how-it-works.html" class="btn btn-secondary btn-md">Dive into the Platform Architecture &rarr;</a>
+        <!-- Interactive Value Recovery Simulator Widget -->
+        <div class="simulator-panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.5rem;">
+            <span class="tag-badge" style="margin:0;"><span class="dot"></span><span>Interactive Recovery Model</span></span>
+            <span class="cred-badge">Illustrative Benchmark Model</span>
+          </div>
+
+          <h3 style="font-family:var(--font-chamfer);font-size:clamp(1.4rem, 2.5vw, 1.85rem);color:#ffffff;font-weight:800;margin:0.5rem 0 0.5rem;text-transform:uppercase;">
+            Estimate recovered yield on your upcoming production slate
+          </h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 1.5rem;max-width:700px;line-height:1.6;">
+            Slide your estimated production budget to project how much capital leakage, unbooked stage time, and procurement lag can be recovered through synchronized coordination:
+          </p>
+
+          <div class="simulator-slider-container">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.85rem;flex-wrap:wrap;gap:0.5rem;">
+              <span class="mono" style="color:var(--text-secondary);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;">Total Slate / Production Budget</span>
+              <span id="simBudgetDisplay" class="mono" style="color:var(--accent-cyan);font-weight:900;font-size:1.25rem;">₹5.0 Cr ($600K)</span>
+            </div>
+            <input type="range" id="budgetSlider" class="range-slider-custom" min="0.5" max="25" step="0.5" value="5" aria-label="Simulate production budget">
+            <div style="display:flex;justify-content:space-between;margin-top:0.6rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);">
+              <span>₹50 Lakh</span>
+              <span>₹10 Cr</span>
+              <span>₹25 Cr+</span>
+            </div>
+          </div>
+
+          <div class="simulator-metrics-grid">
+            <div class="sim-metric-card">
+              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Uncoordinated Leakage</span>
+              <div id="simLeakageVal" class="sim-metric-val" style="color:#ef4444;">₹1.10 Cr</div>
+              <span style="font-size:0.75rem;color:var(--text-secondary);">Avg 22% friction</span>
+            </div>
+
+            <div class="sim-metric-card" style="border-color:rgba(6,182,212,0.4);">
+              <span class="mono" style="font-size:0.72rem;color:var(--accent-cyan);text-transform:uppercase;">Recovered Value</span>
+              <div id="simRecoveredVal" class="sim-metric-val" style="color:var(--accent-cyan);">₹0.97 Cr</div>
+              <span style="font-size:0.75rem;color:var(--text-secondary);">Target 88% capture</span>
+            </div>
+
+            <div class="sim-metric-card">
+              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Dark Days Activated</span>
+              <div id="simDarkDaysVal" class="sim-metric-val" style="color:var(--accent-emerald);">25 dark days</div>
+              <span style="font-size:0.75rem;color:var(--text-secondary);">Lot gap clearing</span>
+            </div>
+
+            <div class="sim-metric-card">
+              <span class="mono" style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;">Procurement Speed</span>
+              <div id="simTimeSavedVal" class="sim-metric-val" style="color:var(--accent-purple);">10 weeks</div>
+              <span style="font-size:0.75rem;color:var(--text-secondary);">Packaging acceleration</span>
+            </div>
+          </div>
         </div>
+
+        <div style="text-align:center;margin-top:2.5rem;">
+          <a href="how-it-works.html" class="btn btn-secondary btn-md">Dive into Platform Architecture &rarr;</a>
+        </div>
+      </div>
+    </section>
       </div>
     </section>
 
@@ -1028,28 +1024,78 @@
     </section>
 
     <!-- ==========================================================================
-         09. FINAL HOMEPAGE CTA: WHAT CAN WE CONNECT?
+         NODE 00 // COOL GRAY: WHAT CAN WE CONNECT? DIRECT INTAKE DESK (9870089044)
          ========================================================================== -->
-    <section style="padding:clamp(5rem, 9vw, 8rem) 0;">
-      <div class="container" style="max-width:860px;text-align:center;">
-        <div class="tag-badge" style="margin-bottom:1rem;">
-          <span class="dot"></span>
-          <span>Start a Connection</span>
+    <section id="sec-node-00" class="viewport-palette-section palette-gray palette-light" data-node-id="00" data-node-name="CONNECT">
+      <div class="container" style="max-width:1160px;position:relative;z-index:2;">
+        <div class="colossal-numeral-layout">
+          <div class="colossal-digit">00</div>
+          <div class="colossal-title-stack">
+            <div class="mono" style="font-size:0.8rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.85;">
+              // MASTER INTAKE &bull; NODE 00
+            </div>
+            <h2 class="colossal-title">
+              LET'S FIND THE CONNECTION.
+            </h2>
+            <p class="colossal-caption">
+              What do you have? What do you need? What can we connect? Bring a project, talent, facility, asset, IP, audience, opportunity or problem. Tell us what you are working with—and let's synchronize it.
+            </p>
+          </div>
         </div>
-        
-        <h2 style="font-family:var(--font-headline);font-size:clamp(2rem, 4.5vw, 3.2rem);font-weight:900;color:#ffffff;line-height:1.2;margin-bottom:1.2rem;letter-spacing:-0.03em;">
-          What do you have?<br>
-          What do you need?<br>
-          <span class="text-cyan-gradient"><em>What can we connect?</em></span>
-        </h2>
 
-        <p style="font-size:1.2rem;color:var(--text-secondary);line-height:1.7;margin:0 auto 2.5rem;max-width:720px;">
-          Bring a project, talent, facility, asset, IP, audience, opportunity or problem. Tell us what you are working with—and let's find the connection.
-        </p>
+        <!-- High-Contrast Direct Intake Desk Component -->
+        <div class="schematic-frame-box" style="background:#ffffff;border:1.5px solid #000000;padding:clamp(1.5rem, 3.5vw, 2.75rem);max-width:880px;margin:0 auto;">
+          <div class="schematic-crosshair-tl"></div>
+          <div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div>
+          <div class="schematic-crosshair-br"></div>
 
-        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary btn-lg">Start a Synq &rarr;</a>
-          <a href="ecosystem.html" class="btn btn-secondary btn-lg">Explore the Network</a>
+          <form onsubmit="event.preventDefault(); alert('Connection request received. A DigiSynq coordinator will connect with you within 24 hours.');">
+            <div class="form-group" style="margin-bottom:1.25rem;">
+              <label class="form-label" style="color:#000000;font-weight:700;font-family:var(--font-chamfer);text-transform:uppercase;letter-spacing:0.05em;">1. What brings you to DigiSynq?</label>
+              <select class="form-select" style="background:#f8f9fa;color:#000000;border:1.5px solid #000000;padding:0.75rem 1rem;font-family:var(--font-modern);font-size:0.95rem;" required>
+                <option value="" disabled selected>Select your entry point...</option>
+                <option value="have-project">I have a project</option>
+                <option value="have-talent">I have talent</option>
+                <option value="have-facility">I have a facility / soundstage</option>
+                <option value="have-equipment">I have equipment</option>
+                <option value="have-ip">I have IP / content</option>
+                <option value="need-talent">I need talent</option>
+                <option value="need-production">I need production support</option>
+                <option value="need-distribution">I need distribution</option>
+                <option value="investor">I am an investor</option>
+                <option value="brand">I represent a brand</option>
+                <option value="audience">I have an audience / community</option>
+                <option value="opportunity">I have another opportunity</option>
+                <option value="problem">I have a problem to solve</option>
+              </select>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1rem;margin-bottom:1.25rem;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label class="form-label" style="color:#000000;font-weight:700;font-family:var(--font-chamfer);text-transform:uppercase;letter-spacing:0.05em;">2. Name &amp; organization</label>
+                <input type="text" class="form-input" placeholder="Your name or studio" style="background:#f8f9fa;color:#000000;border:1.5px solid #000000;padding:0.75rem 1rem;font-family:var(--font-modern);font-size:0.95rem;" required>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label class="form-label" style="color:#000000;font-weight:700;font-family:var(--font-chamfer);text-transform:uppercase;letter-spacing:0.05em;">3. Direct contact (Email or Phone)</label>
+                <input type="text" class="form-input" placeholder="email@domain.com or phone" style="background:#f8f9fa;color:#000000;border:1.5px solid #000000;padding:0.75rem 1rem;font-family:var(--font-modern);font-size:0.95rem;" required>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" style="color:#000000;font-weight:700;font-family:var(--font-chamfer);text-transform:uppercase;letter-spacing:0.05em;">4. Scope &amp; assets (Tell us what exists and what is needed)</label>
+              <textarea class="form-textarea" rows="3" placeholder="Briefly describe what you have, what you need, or what can be connected..." style="background:#f8f9fa;color:#000000;border:1.5px solid #000000;padding:0.75rem 1rem;font-family:var(--font-modern);font-size:0.95rem;" required></textarea>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+              <div class="mono" style="font-size:0.75rem;font-weight:700;color:rgba(0,0,0,0.6);text-transform:uppercase;">
+                TARGET RESPONSE: &lt;24 HOURS // STRICT CONFIDENTIALITY
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="background:#000000;color:#ffffff;border-color:#000000;font-family:var(--font-chamfer);font-weight:800;letter-spacing:0.04em;">
+                TRANSMIT CONNECTION REQUEST &rarr;
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -1110,47 +1156,87 @@
     </div>
   </footer>
 
-  <!-- Synq Intake Modal -->
-  <div class="modal-overlay" id="synqModal">
-    <div class="modal-dialog">
-      <button class="modal-close-btn" id="closeSynqModal">&times;</button>
-      <div class="tag-badge"><span class="dot"></span><span>Start a synq</span></div>
-      <h3 style="margin-top:0.5rem;margin-bottom:0.4rem;">Let's find the connection</h3>
-      <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1.2rem;">Tell us what you are working with—and what you're trying to achieve.</p>
-      <form onsubmit="event.preventDefault(); alert('Connection request received. A DigiSynq coordinator will connect with you within 24 hours.'); document.getElementById('synqModal').classList.remove('active');">
-        <div class="form-group">
-          <label class="form-label">What brings you to DigiSynq?</label>
-          <select class="form-select" required>
-            <option value="" disabled selected>Select an option...</option>
-            <option value="have-project">I have a project</option>
-            <option value="have-talent">I have talent</option>
-            <option value="have-facility">I have a facility</option>
-            <option value="have-equipment">I have equipment</option>
-            <option value="have-ip">I have IP/content</option>
-            <option value="need-talent">I need talent</option>
-            <option value="need-production">I need production support</option>
-            <option value="need-distribution">I need distribution</option>
-            <option value="investor">I am an investor</option>
-            <option value="brand">I represent a brand</option>
-            <option value="audience">I have an audience/community</option>
-            <option value="opportunity">I have another opportunity</option>
-            <option value="problem">I have a problem to solve</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Name &amp; organization</label>
-          <input type="text" class="form-input" placeholder="Your name or company" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email or phone</label>
-          <input type="text" class="form-input" placeholder="name@domain.com or phone" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Tell us more</label>
-          <textarea class="form-textarea" rows="3" placeholder="Briefly describe what you have, what you need, or what can be connected..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-cyan" style="width:100%;margin-top:0.8rem;">Submit connection request &rarr;</button>
-      </form>
+  <!-- ==========================================================================
+       9870089044 FULLSCREEN 10-NODE DIAL PAD OVERLAY DRAWER
+       ========================================================================== -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10-Node Dial Pad Drawer">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer" aria-label="Close Keypad">&times;</button>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="dialpad-drawer-sub">TAP A NODE OR PRESS 0–9 ON KEYBOARD TO NAVIGATE</div>
+
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="#sec-node-01" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">1</span>
+            <span class="node-key-digit">01</span>
+          </div>
+          <span class="node-key-label">Ideas &amp; IP</span>
+        </a>
+        <a href="#sec-node-02" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">2</span>
+            <span class="node-key-digit">02</span>
+          </div>
+          <span class="node-key-label">People</span>
+        </a>
+        <a href="#sec-node-03" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">3</span>
+            <span class="node-key-digit">03</span>
+          </div>
+          <span class="node-key-label">Places &amp; Assets</span>
+        </a>
+        <a href="#sec-node-04" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">4</span>
+            <span class="node-key-digit">04</span>
+          </div>
+          <span class="node-key-label">Production</span>
+        </a>
+        <a href="#sec-node-03" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">5</span>
+            <span class="node-key-digit">05</span>
+          </div>
+          <span class="node-key-label">Post &amp; Tech</span>
+        </a>
+        <a href="#sec-node-03" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">6</span>
+            <span class="node-key-digit">06</span>
+          </div>
+          <span class="node-key-label">Distribution</span>
+        </a>
+        <a href="#sec-node-02" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">7</span>
+            <span class="node-key-digit">07</span>
+          </div>
+          <span class="node-key-label">Audience</span>
+        </a>
+        <a href="#sec-node-04" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">8</span>
+            <span class="node-key-digit">08</span>
+          </div>
+          <span class="node-key-label">Capital</span>
+        </a>
+        <a href="missions.html" class="node-key-item">
+          <div class="node-key-circle">
+            <span class="node-key-hotkey-badge">9</span>
+            <span class="node-key-digit">09</span>
+          </div>
+          <span class="node-key-label">15 Missions</span>
+        </a>
+        <a href="#sec-node-00" class="node-key-item" onclick="document.getElementById('dialpadDrawer').classList.remove('is-open');">
+          <div class="node-key-circle" style="border-color:var(--accent-cyan);">
+            <span class="node-key-hotkey-badge">0</span>
+            <span class="node-key-digit" style="color:var(--accent-cyan);">00</span>
+          </div>
+          <span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span>
+        </a>
+      </div>
     </div>
   </div>
 

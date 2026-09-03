@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMissionControl();
   initModals();
   init3DEffects();
+  init9870089044Controller();
   checkUrlParams();
 });
 
@@ -971,5 +972,95 @@ function init3DEffects() {
       if (title) title.style.transform = 'translateZ(28px)';
       if (desc) desc.style.transform = 'translateZ(14px)';
     });
+  }
+}
+
+/* ==========================================================================
+   9870089044 CONTROLLER: KEYPAD DIAL PAD, HOTKEYS & DYNAMIC LOGO
+   ========================================================================== */
+function init9870089044Controller() {
+  const dynamicLogo = document.getElementById('dynamicLogo');
+  const dialpadDrawer = document.getElementById('dialpadDrawer');
+  const openDrawerBtns = document.querySelectorAll('[data-open-dialpad]');
+  const closeDrawerBtn = document.getElementById('closeDialpadDrawer');
+
+  // Drawer Toggle
+  if (dialpadDrawer) {
+    openDrawerBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        dialpadDrawer.classList.toggle('is-open');
+      });
+    });
+
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', () => {
+        dialpadDrawer.classList.remove('is-open');
+      });
+    }
+
+    dialpadDrawer.addEventListener('click', (e) => {
+      if (e.target === dialpadDrawer) {
+        dialpadDrawer.classList.remove('is-open');
+      }
+    });
+  }
+
+  // Keyboard Hotkeys: press 0-9 to dial or jump to node!
+  document.addEventListener('keydown', (e) => {
+    // If typing in input or textarea, ignore
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+
+    if (e.key === 'k' || e.key === 'K') {
+      e.preventDefault();
+      if (dialpadDrawer) dialpadDrawer.classList.toggle('is-open');
+      return;
+    }
+
+    if (e.key === 'Escape') {
+      if (dialpadDrawer && dialpadDrawer.classList.contains('is-open')) {
+        dialpadDrawer.classList.remove('is-open');
+      }
+      return;
+    }
+
+    // Number keys 0 to 9
+    const keyMap = {
+      '1': 'sec-node-01',
+      '2': 'sec-node-02',
+      '3': 'sec-node-03',
+      '4': 'sec-node-04',
+      '5': 'sec-node-05',
+      '6': 'sec-node-06',
+      '7': 'sec-node-07',
+      '8': 'sec-node-08',
+      '9': 'sec-node-09',
+      '0': 'sec-node-00'
+    };
+
+    if (keyMap[e.key]) {
+      const targetSec = document.getElementById(keyMap[e.key]);
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'smooth' });
+        if (dialpadDrawer) dialpadDrawer.classList.remove('is-open');
+      }
+    }
+  });
+
+  // Dynamic Logo & Node tracking via IntersectionObserver
+  const sections = document.querySelectorAll('[data-node-id]');
+  if (sections.length > 0 && dynamicLogo) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const nodeId = entry.target.getAttribute('data-node-id');
+          const nodeName = entry.target.getAttribute('data-node-name') || 'SYNQ';
+          const logoText = dynamicLogo.querySelector('.logo-text') || dynamicLogo;
+          logoText.innerHTML = `${nodeId}<span class="dynamic-logo-node-badge">.${nodeName}</span>`;
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(sec => observer.observe(sec));
   }
 }

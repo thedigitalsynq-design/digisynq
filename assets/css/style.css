@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
 /* ==========================================================================
    DIGISYNQ — THE ENTERTAINMENT ECOSYSTEM OPERATING SYSTEM
    Master Cinematic Dark Design System & Interactive Component Styles
@@ -3383,6 +3385,600 @@ body::before {
   text-transform: uppercase;
 }
 
+/* ==========================================================================
+   9870089044 DESIGN LANGUAGE & ARCHITECTURE (VIRESH PAWAR SPECIFICATION)
+   ========================================================================== */
 
+:root {
+  /* 9870089044 Core Master Palettes */
+  --c-987-black: #000000;
+  --c-987-sage: #abb8a8;
+  --c-987-slate: #a5c4cb;
+  --c-987-sand: #e8e6df;
+  --c-987-gray: #eceeed;
+  --c-987-ink: #000000;
+  --c-987-white: #ffffff;
+  --c-987-hairline-dark: rgba(0, 0, 0, 0.22);
+  --c-987-hairline-light: rgba(255, 255, 255, 0.22);
+  
+  /* 9870089044 Chamfered Geometric Typography */
+  --font-chamfer: 'Chakra Petch', 'Denton-ExtraBold', monospace, sans-serif;
+  --font-modern: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display-geo: 'Chakra Petch', 'Syne', sans-serif;
+}
 
+/* Fixed Architectural Top Chrome */
+.site-chrome-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
 
+.site-chrome-header > * {
+  pointer-events: auto;
+}
+
+.dynamic-logo-pill {
+  font-family: var(--font-chamfer);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dynamic-logo-pill:hover {
+  transform: scale(1.04);
+}
+
+.dynamic-logo-node-badge {
+  font-size: 0.75rem;
+  font-family: var(--font-modern);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-left: 0.35rem;
+  vertical-align: super;
+  opacity: 0.85;
+}
+
+.chrome-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.chrome-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.chrome-icon-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.chrome-icon-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Fixed Right-Edge Vertical Badge */
+.edge-badge-vertical {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: right center;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: none;
+  padding: 0.35rem 1.4rem;
+  font-family: var(--font-modern);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  z-index: 9000;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.edge-badge-vertical::before {
+  content: 'W.';
+  font-family: var(--font-chamfer);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-right: 0.25rem;
+}
+
+/* 9870089044 Mouse Scroll Indicator */
+.scroll-indicator-mouse {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-indicator-mouse:hover {
+  opacity: 1;
+  transform: translateY(3px);
+}
+
+.mouse-glyph-box {
+  width: 22px;
+  height: 34px;
+  border-radius: 12px;
+  border: 2px solid currentColor;
+  position: relative;
+}
+
+.mouse-glyph-box::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 2px;
+  animation: mouseWheelSlide 1.8s infinite;
+}
+
+@keyframes mouseWheelSlide {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  75% { transform: translate(-50%, 10px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 0; }
+}
+
+.scroll-indicator-label {
+  font-family: var(--font-modern);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   THE 10-NODE DIAL PAD / KEYPAD MATRIX COMPONENT
+   ========================================================================== */
+
+.node-dialpad-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.node-dialpad-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .node-dialpad-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.node-key-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.node-key-circle {
+  width: clamp(80px, 11vw, 138px);
+  height: clamp(80px, 11vw, 138px);
+  border-radius: 50%;
+  border: 1.5px solid var(--c-987-hairline-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.node-key-digit {
+  font-family: var(--font-chamfer);
+  font-size: clamp(2.4rem, 4.8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.node-key-hotkey-badge {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-family: var(--font-modern);
+  font-size: 0.6rem;
+  font-weight: 800;
+  opacity: 0.45;
+  letter-spacing: 0.05em;
+}
+
+.node-key-label {
+  font-family: var(--font-modern);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.node-key-item:hover .node-key-circle {
+  border-color: #ffffff;
+  background: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+}
+
+.node-key-item:hover .node-key-digit {
+  color: #000000;
+}
+
+.node-key-item:hover .node-key-label {
+  color: #ffffff;
+}
+
+/* Light Section Keypad Adaptation */
+.palette-light .node-key-circle {
+  border-color: var(--c-987-hairline-dark);
+}
+
+.palette-light .node-key-digit {
+  color: #000000;
+}
+
+.palette-light .node-key-label {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.palette-light .node-key-item:hover .node-key-circle {
+  border-color: #000000;
+  background: #000000;
+}
+
+.palette-light .node-key-item:hover .node-key-digit {
+  color: #ffffff;
+}
+
+.palette-light .node-key-item:hover .node-key-label {
+  color: #000000;
+}
+
+/* ==========================================================================
+   FULL-VIEWPORT COLORWAY SECTIONS (9870089044 SIGNATURE PASTEL + PITCH BLACK)
+   ========================================================================== */
+
+.viewport-palette-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(6rem, 10vw, 8.5rem) clamp(1.5rem, 5vw, 4.5rem);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Colorway 00 & Hero: Pitch Black */
+.palette-black {
+  background-color: var(--c-987-black);
+  color: var(--c-987-white);
+}
+
+/* Colorway 01: Sage Green */
+.palette-sage {
+  background-color: var(--c-987-sage);
+  color: var(--c-987-ink);
+}
+
+/* Colorway 02: Powder Blue / Muted Slate */
+.palette-slate {
+  background-color: var(--c-987-slate);
+  color: var(--c-987-ink);
+}
+
+/* Colorway 03: Warm Sand / Cream */
+.palette-sand {
+  background-color: var(--c-987-sand);
+  color: var(--c-987-ink);
+}
+
+/* Colorway 04: Cool Light Gray */
+.palette-gray {
+  background-color: var(--c-987-gray);
+  color: var(--c-987-ink);
+}
+
+/* Light section universal text colors */
+.palette-light h1,
+.palette-light h2,
+.palette-light h3,
+.palette-light h4,
+.palette-light .display-geo {
+  color: var(--c-987-ink);
+  font-family: var(--font-chamfer);
+  letter-spacing: -0.02em;
+}
+
+.palette-light p,
+.palette-light li,
+.palette-light .copy-body {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: var(--font-modern);
+}
+
+/* ==========================================================================
+   COLOSSAL NUMERAL & CHAMFERED DISPLAY HEADERS
+   ========================================================================== */
+
+.colossal-numeral-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.colossal-digit {
+  font-family: var(--font-chamfer);
+  font-size: clamp(6.5rem, 18vw, 17rem);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: currentColor;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.colossal-title-stack {
+  flex: 1;
+  min-width: min(100%, 380px);
+  padding-top: 0.5rem;
+}
+
+.colossal-title {
+  font-family: var(--font-chamfer);
+  font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.colossal-caption {
+  font-family: var(--font-modern);
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   ARCHITECTURAL SCHEMATICS & GOLDEN SPIRAL OVERLAYS
+   ========================================================================== */
+
+.schematic-frame-box {
+  border: 1.5px solid var(--c-987-hairline-dark);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.schematic-crosshair-tl,
+.schematic-crosshair-tr,
+.schematic-crosshair-bl,
+.schematic-crosshair-br {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.schematic-crosshair-tl { top: -6px; left: -6px; border-top: 2px solid currentColor; border-left: 2px solid currentColor; }
+.schematic-crosshair-tr { top: -6px; right: -6px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; }
+.schematic-crosshair-bl { bottom: -6px; left: -6px; border-bottom: 2px solid currentColor; border-left: 2px solid currentColor; }
+.schematic-crosshair-br { bottom: -6px; right: -6px; border-bottom: 2px solid currentColor; border-right: 2px solid currentColor; }
+
+.golden-ratio-svg-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.28;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   HIGH-CONTRAST INVERTED PASTEL CARDS (FOR REALITY & MISSIONS)
+   ========================================================================== */
+
+.pastel-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.pastel-card {
+  border: 1.5px solid var(--c-987-hairline-dark);
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pastel-card:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pastel-card:hover h3,
+.pastel-card:hover h4,
+.pastel-card:hover p,
+.pastel-card:hover .mono-meta {
+  color: #ffffff !important;
+}
+
+.pastel-card-num {
+  font-family: var(--font-chamfer);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.pastel-card-title {
+  font-family: var(--font-chamfer);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+}
+
+.pastel-card-desc {
+  font-family: var(--font-modern);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   FULLSCREEN DIAL PAD OVERLAY DRAWER
+   ========================================================================== */
+
+.dialpad-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(25px);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.dialpad-drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dialpad-drawer-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-chamfer);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dialpad-drawer-close:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: scale(1.1);
+}
+
+.dialpad-drawer-title {
+  font-family: var(--font-chamfer);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.dialpad-drawer-sub {
+  font-family: var(--font-modern);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
