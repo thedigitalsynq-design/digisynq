@@ -3105,5 +3105,284 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* ==========================================================================
+   CINEMATIC EDITORIAL MEDIA & TACTILE VIGNETTES
+   ========================================================================== */
+
+.editorial-vignette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.editorial-vignette-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-vignette-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.72) contrast(1.15) saturate(0.85);
+  transition: all 0.5s ease;
+}
+
+.editorial-vignette-card:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(6, 182, 212, 0.2);
+}
+
+.editorial-vignette-card:hover img {
+  filter: brightness(0.85) contrast(1.2) saturate(1);
+  transform: scale(1.04);
+}
+
+.editorial-vignette-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 1.25rem 1rem;
+  background: linear-gradient(to top, rgba(5, 6, 8, 0.95) 0%, rgba(5, 6, 8, 0.5) 60%, transparent 100%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.editorial-vignette-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.editorial-vignette-title {
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   INTERACTIVE VALUE RECOVERY SIMULATOR
+   ========================================================================== */
+
+.simulator-panel {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border-bright);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 4vw, 3.2rem);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  max-width: 960px;
+  margin: 3.5rem auto 0;
+}
+
+.simulator-slider-container {
+  margin: 2rem 0 2.5rem;
+  padding: 1.5rem;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+}
+
+.range-slider-custom {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.range-slider-custom::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 16px var(--accent-cyan);
+  border: 3px solid #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.range-slider-custom::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 24px var(--accent-cyan);
+}
+
+.simulator-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.sim-metric-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+.sim-metric-val {
+  font-family: var(--font-headline);
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0.3rem 0;
+}
+
+/* ==========================================================================
+   AMBIENT ECOSYSTEM MARQUEE (TRUST TICKER)
+   ========================================================================== */
+
+.network-marquee-strip {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(5, 6, 8, 0.85);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0.85rem 0;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+
+.marquee-inner {
+  display: inline-flex;
+  animation: marqueeRoll 32s linear infinite;
+  gap: 2.5rem;
+}
+
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeRoll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-node-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.marquee-node-item span.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+/* ==========================================================================
+   STRUCTURED PROOF CASE STUDIES (STAGE 9)
+   ========================================================================== */
+
+.proof-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.proof-case-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proof-case-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.7);
+}
+
+.proof-case-img-wrap {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-case-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75) contrast(1.1);
+  transition: transform 0.4s ease;
+}
+
+.proof-case-card:hover .proof-case-img-wrap img {
+  transform: scale(1.05);
+}
+
+.proof-case-body {
+  padding: 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.proof-step-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0 1.25rem;
+  font-size: 0.88rem;
+}
+
+.proof-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--text-secondary);
+}
+
+.proof-step-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  min-width: 75px;
+  text-transform: uppercase;
+}
+
+
 
 
