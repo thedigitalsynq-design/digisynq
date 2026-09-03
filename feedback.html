@@ -14,27 +14,36 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-brand-title">
-        <span>DigiSynq</span>
-        <span class="accent-dot"></span>
+  <!-- 9870089044 Fixed Architectural Top Chrome -->
+  <header class="site-chrome-header">
+    <a href="index.html" class="dynamic-logo-pill" id="dynamicLogo" aria-label="DigiSynq Terminal">
+      <span class="logo-text">00<span class="dynamic-logo-node-badge">.SYNQ</span></span>
+    </a>
+    <div class="chrome-controls-group">
+      <a href="node-00.html" class="chrome-icon-btn" title="Direct Intake / Start a Synq">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
       </a>
+      <button class="chrome-icon-btn" data-open-dialpad title="Toggle 10-Node Dial Pad (Press K)">
+        <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+      </button>
+    </div>
+  </header>
 
+  <!-- Fixed Right-Edge Vertical Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ // ENTERTAINMENT COORDINATION INFRASTRUCTURE</span>
+  </div>
+  <!-- Centered Minimalist Navigation -->
+  <header class="navbar" style="background:transparent;border:none;">
+    <div class="container nav-container" style="justify-content:center;">
       <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="ecosystem.html" class="nav-link">Ecosystem</a></li>
         <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-        <li><a href="missions.html" class="nav-link">Missions</a></li>
+        <li><a href="node-09.html" class="nav-link">Missions</a></li>
         <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
       </ul>
-
-      <div class="nav-actions">
-        <a href="contact.html" class="btn btn-primary btn-sm">Start a synq</a>
-        <button class="nav-mobile-toggle" aria-label="Toggle navigation">☰</button>
-      </div>
     </div>
   </header>
 
@@ -195,6 +204,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="dialpad-drawer-sub">TAP A NODE OR PRESS 0–9 ON KEYBOARD TO NAVIGATE</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Ideas &amp; IP</span></a>
+        <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">People</span></a>
+        <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">Places &amp; Assets</span></a>
+        <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Production</span></a>
+        <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Post &amp; Tech</span></a>
+        <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Distribution</span></a>
+        <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Audience</span></a>
+        <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Capital</span></a>
+        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">15 Missions</span></a>
+        <a href="node-00.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">00</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
+  </div>
+
 
   <script src="assets/js/main.js"></script>
 </body>
