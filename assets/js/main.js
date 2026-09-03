@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   init3DEffects();
   init9870089044Controller();
+  initAppleLiquidMotions();
   checkUrlParams();
 });
 
@@ -1039,7 +1040,10 @@ function init9870089044Controller() {
     };
 
     if (pageMap[e.key]) {
-      window.location.href = pageMap[e.key];
+      document.body.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = pageMap[e.key];
+      }, 190);
     }
   });
 
@@ -1060,3 +1064,64 @@ function init9870089044Controller() {
     sections.forEach(sec => observer.observe(sec));
   }
 }
+
+/* ==========================================================================
+   APPLE LIQUID MOTION: FLUID PAGE TRANSITIONS & TACTILE MAGNETIC DIALS
+   ========================================================================== */
+function initAppleLiquidMotions() {
+  // 1. Remove exit class on page load to bloom into view
+  document.body.classList.remove('page-exit');
+
+  // 2. Intercept local navigation links for seamless fluid cross-dissolve
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    // Ignore anchors, external links, mailto, tel, javascript
+    if (href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) {
+      return;
+    }
+
+    // Ignore if modified click (ctrl/meta/shift/alt or target="_blank")
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || link.target === '_blank') {
+      return;
+    }
+
+    e.preventDefault();
+    document.body.classList.add('page-exit');
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 190);
+  });
+
+  // 3. Tactile Magnetic / Parallax liquid physics for dialpad circles
+  const dialItems = document.querySelectorAll('.node-key-item');
+  dialItems.forEach(item => {
+    const circle = item.querySelector('.node-key-circle');
+    const digit = item.querySelector('.node-key-digit');
+    if (!circle) return;
+
+    item.addEventListener('mousemove', (e) => {
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      circle.style.transform = `scale(1.12) translate(${x * 0.12}px, ${y * 0.12 - 4}px)`;
+      if (digit) {
+        digit.style.transform = `scale(1.05) translate(${x * 0.08}px, ${y * 0.08}px)`;
+      }
+    });
+
+    item.addEventListener('mouseleave', () => {
+      circle.style.transform = '';
+      if (digit) {
+        digit.style.transform = '';
+      }
+    });
+  });
+}
+

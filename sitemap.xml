@@ -2,80 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://digisynq.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/ecosystem.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-01.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/how-it-works.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-02.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/solutions.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-03.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/intelligence.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-04.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/insights.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-05.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/about.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://digisynq.com/flowchart.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://digisynq.com/business.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://digisynq.com/missions.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://digisynq.com/node-06.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/feedback.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://digisynq.com/node-07.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/runbook.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://digisynq.com/node-08.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digisynq.com/contact.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://digisynq.com/node-09.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://digisynq.com/node-10.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
