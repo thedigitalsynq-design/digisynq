@@ -2433,3 +2433,119 @@ section, .ins-hero, .hero-box, .ins-section {
   html { perspective: none; }
 }
 
+/* ==========================================================================
+   MORE 3D THEME — CINEMATIC DEPTH LAYERS
+   ========================================================================== */
+/* 3D grid floor behind content */
+body::after {
+  content: '';
+  position: fixed;
+  left: -50%; right: -50%;
+  bottom: -45%;
+  height: 55%;
+  background:
+    linear-gradient(to bottom, transparent 0%, rgba(6,182,212,0.06) 100%),
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 64px 64px, 64px 64px;
+  transform: perspective(900px) rotateX(68deg);
+  transform-origin: center top;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  mask-image: linear-gradient(to bottom, transparent, black 40%);
+}
+
+/* Floating depth orbs — parallax layers */
+body { position: relative; }
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(48px);
+  opacity: 0.55;
+  z-index: 0;
+  will-change: transform;
+}
+.bg-orb--cyan {
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(6,182,212,0.18) 0%, transparent 70%);
+  top: -8%; left: -6%;
+  transform: translateZ(-80px);
+  animation: orbDrift 18s ease-in-out infinite;
+}
+.bg-orb--violet {
+  width: 720px; height: 720px;
+  background: radial-gradient(circle, rgba(139,92,246,0.13) 0%, transparent 70%);
+  top: 22%; right: -10%;
+  transform: translateZ(-120px);
+  animation: orbDrift 22s ease-in-out infinite reverse;
+}
+.bg-orb--yellow {
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(255,255,0,0.08) 0%, transparent 70%);
+  bottom: -6%; left: 35%;
+  transform: translateZ(-60px);
+  animation: orbDrift 16s ease-in-out infinite;
+}
+@keyframes orbDrift {
+  0%,100% { transform: translate3d(0,0,-80px) scale(1); }
+  50% { transform: translate3d(18px,-14px,-80px) scale(1.06); }
+}
+
+/* Extruded edge — bevel for cards */
+.ins-card, .subpage-card, .stage-detail-card {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015)),
+    var(--bg-surface-1);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.08) inset,
+    0 -1px 0 rgba(0,0,0,0.35) inset,
+    0 14px 36px rgba(0,0,0,0.28),
+    0 2px 8px rgba(0,0,0,0.22);
+}
+.ins-card::before, .subpage-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 42%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Section 3D reveal — scroll-driven */
+.ins-section, .about-section {
+  opacity: 0;
+  transform: perspective(1000px) translateY(28px) rotateX(4deg) translateZ(-12px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ins-section.in-view, .about-section.in-view {
+  opacity: 1;
+  transform: perspective(1000px) translateY(0) rotateX(0) translateZ(0);
+}
+
+/* Hero depth haze layer */
+.ins-hero::after, .about-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 400px at 18% 18%, rgba(6,182,212,0.11), transparent 60%),
+    radial-gradient(600px 360px at 82% 72%, rgba(139,92,246,0.09), transparent 60%),
+    radial-gradient(520px 300px at 50% 100%, rgba(255,255,0,0.06), transparent 70%);
+  pointer-events: none;
+  transform: translateZ(-30px);
+}
+
+/* Stronger depth on headings — extruded text */
+.ins-hero-title, .hero-headline {
+  transform: translateZ(36px);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.06),
+    0 2px 0 rgba(0,0,0,0.18),
+    0 10px 30px rgba(0,0,0,0.42);
+}
+

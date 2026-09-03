@@ -903,10 +903,33 @@ function checkUrlParams() {
    09. COMPLETE 3D DEPTH & TILT SYSTEM
    ========================================================================== */
 function init3DEffects() {
+  // Inject depth orbs once
+  if (!document.querySelector('.bg-orb')) {
+    ['bg-orb--cyan','bg-orb--violet','bg-orb--yellow'].forEach(cls => {
+      const d = document.createElement('div');
+      d.className = 'bg-orb ' + cls;
+      document.body.appendChild(d);
+    });
+  }
+
+  // Scroll 3D reveal
+  const revealEls = document.querySelectorAll('.ins-section, .about-section');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(ent => {
+      if (ent.isIntersecting) ent.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+  // first hero visible immediately
+  document.querySelectorAll('.ins-hero, .about-hero').forEach(h => {
+    const sec = h.nextElementSibling;
+    if (sec && sec.classList.contains('ins-section')) sec.classList.add('in-view');
+  });
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window.innerWidth <= 768) return;
 
-  const cards = document.querySelectorAll('.ins-card, .subpage-card, .stage-detail-card, .founder-card, .mission-card-expanded');
+  const cards = document.querySelectorAll('.ins-card, .subpage-card, .stage-detail-card, .founder-card, .mission-card-expanded, .eco-node-card');
   cards.forEach(card => {
     card.classList.add('tilt-3d');
     card.addEventListener('mousemove', (e) => {
@@ -922,7 +945,7 @@ function init3DEffects() {
     });
   });
 
-  // Hero parallax on mouse
+  // Hero parallax on mouse — stronger depth
   const hero = document.querySelector('.ins-hero, .about-hero');
   if (hero) {
     hero.addEventListener('mousemove', (e) => {
@@ -931,8 +954,12 @@ function init3DEffects() {
       const my = (e.clientY - r.top) / r.height - 0.5;
       const title = hero.querySelector('.ins-hero-title, .hero-headline');
       const desc = hero.querySelector('.ins-hero-desc');
-      if (title) title.style.transform = `translateZ(28px) translate(${mx*12}px, ${my*8}px)`;
-      if (desc) desc.style.transform = `translateZ(14px) translate(${mx*8}px, ${my*6}px)`;
+      if (title) title.style.transform = `translateZ(36px) translate(${mx*16}px, ${my*10}px)`;
+      if (desc) desc.style.transform = `translateZ(14px) translate(${mx*10}px, ${my*8}px)`;
+      // move orbs slightly
+      document.querySelectorAll('.bg-orb').forEach((orb,i) => {
+        orb.style.transform = `translate3d(${mx*(8+i*4)}px, ${my*(6+i*3)}px, -${80+i*20}px)`;
+      });
     });
     hero.addEventListener('mouseleave', () => {
       const title = hero.querySelector('.ins-hero-title, .hero-headline');
