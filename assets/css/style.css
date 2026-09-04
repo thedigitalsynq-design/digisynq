@@ -4755,3 +4755,155 @@ main {
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65) !important;
 }
 
+/* ==========================================================================
+   DESIGN EXPERIMENTATION — CRED-GRADE 3D SPECULAR & TACTILE SKEUOMORPHISM
+   ========================================================================== */
+
+/* Cursor-Tracking Specular Border Cards */
+.pastel-card, .schematic-frame-box {
+  position: relative;
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.08), transparent 45%), #0a0c10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.4s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.pastel-card::before, .schematic-frame-box::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.5), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pastel-card:hover::before, .schematic-frame-box:hover::before {
+  opacity: 1;
+}
+
+.pastel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 24px -6px rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.pastel-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.pastel-card-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pastel-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.pastel-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Tactile 3D Buttons */
+.btn-primary {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%) !important;
+  color: #030712 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 4px 14px rgba(56, 189, 248, 0.35), 0 2px 4px rgba(0,0,0,0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(2px) scale(0.98) !important;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  color: #f1f5f9 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.2) !important;
+}
+
+.btn-secondary:active {
+  transform: translateY(2px) scale(0.98) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* SVG Gooey Filter Container */
+.gooey-effect {
+  filter: url('#gooeyFilter');
+}
+
+/* Audio HUD Indicator */
+.audio-hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.audio-hud-btn:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+}
+
+/* Simulator Custom Select & Console */
+.sim-select {
+  width: 100%;
+  background: #060709;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sim-select:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+

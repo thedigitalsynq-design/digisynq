@@ -19,6 +19,10 @@
       <span class="logo-text">00<span class="dynamic-logo-node-badge">.SYNQ</span></span>
     </a>
     <div class="chrome-controls-group">
+      <button class="audio-hud-btn" id="audioHudToggle" title="Toggle Haptic Sound Engine">
+        <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+        <span class="mono" style="font-size:0.65rem;letter-spacing:0.1em;">AUDIO: OFF</span>
+      </button>
       <a href="node-10.html" class="chrome-icon-btn" title="Direct Intake / Start a Synq">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
       </a>
@@ -169,10 +173,67 @@
             <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-hotkey-badge">5</span><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
             <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-hotkey-badge">6</span><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
             <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-hotkey-badge">7</span><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-            <a href="node-08.html" class="node-key-item" aria-label="Node 08: Business (HotKey: 8)"><div class="node-key-circle"><span class="node-key-hotkey-badge">8</span><span class="node-key-digit">08</span></div><span class="node-key-label">Business</span></a>
+            <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-hotkey-badge">8</span><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
             <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-hotkey-badge">9</span><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
             <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-hotkey-badge">0</span><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIMENTAL CONSOLE — THE LIVE SYNQ SIMULATOR -->
+    <section style="padding:4rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);background:rgba(6,7,9,0.75);">
+      <div class="container" style="max-width:1180px;">
+        <div class="schematic-frame-box" style="border:1px solid rgba(56,189,248,0.3);background:radial-gradient(circle at top right, rgba(56,189,248,0.06), transparent 70%), #080a0f;padding:clamp(2rem, 4vw, 3rem);">
+          <div class="schematic-crosshair-tl"></div>
+          <div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div>
+          <div class="schematic-crosshair-br"></div>
+          
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1.25rem;">
+            <div>
+              <span class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:0.3rem;">
+                // EXPERIMENTAL CONSOLE &bull; REAL-TIME COORDINATION ENGINE
+              </span>
+              <h2 style="font-size:clamp(1.6rem, 3.2vw, 2.3rem);font-weight:800;color:#ffffff;margin:0;text-transform:uppercase;">
+                THE LIVE SYNQ SIMULATOR
+              </h2>
+            </div>
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);background:rgba(56,189,248,0.08);padding:0.4rem 0.8rem;border:1px solid rgba(56,189,248,0.25);">
+              LIVE ENGINE &bull; 6-STAGE DISPATCH
+            </div>
+          </div>
+
+          <p style="font-size:1.05rem;line-height:1.7;color:#cbd5e1;margin-bottom:2rem;max-width:850px;">
+            Test how DigiSynq coordinates fragmented assets in real-time. Select a sample entertainment asset, execute the coordination cycle, and inspect the resulting Synq Manifest.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.5rem;margin-bottom:1.75rem;">
+            <div>
+              <label class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;display:block;margin-bottom:0.5rem;">
+                STEP 01: SELECT INPUT ASSET OR CAPACITY
+              </label>
+              <select id="simAssetSelect" class="sim-select">
+                <option value="stage">Vacant Atlanta Soundstage (15,000 sq ft &bull; 3-Wk Gap)</option>
+                <option value="ip">Shelved Sci-Fi Thriller Script (Turnaround IP)</option>
+                <option value="optics">Idle Master Prime Anamorphic Lens Fleet (UK)</option>
+                <option value="community">Organic Indie Horror Fandom (120,000 Active Fans)</option>
+                <option value="distribution">Completed Festival Drama (Sovereign Rights Open)</option>
+              </select>
+            </div>
+            <div style="display:flex;align-items:flex-end;">
+              <button id="runSimulatorBtn" class="btn btn-primary" style="width:100%;padding:0.8rem 1.5rem;font-size:0.92rem;letter-spacing:0.05em;">
+                RUN COORDINATION ENGINE &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Status / Manifest Output -->
+          <div id="simStageStatus" style="display:none;background:rgba(0,0,0,0.5);border:1px dashed rgba(56,189,248,0.3);padding:1.25rem;border-radius:3px;text-align:center;">
+          </div>
+          <div id="simManifestResult" style="display:none;">
+          </div>
+
         </div>
       </div>
     </section>
@@ -273,7 +334,7 @@
         <a href="node-05.html" class="node-route-prev" style="font-size:0.82rem;">MISSIONS</a>
         <a href="node-06.html" class="node-route-prev" style="font-size:0.82rem;">INTELLIGENCE</a>
         <a href="node-07.html" class="node-route-prev" style="font-size:0.82rem;">INSIGHTS</a>
-        <a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;">BUSINESS</a>
+        <a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;">VALUE MODEL</a>
         <a href="node-09.html" class="node-route-prev" style="font-size:0.82rem;">ABOUT</a>
         <a href="node-10.html" class="node-route-prev" style="font-size:0.82rem;">START A SYNQ</a>
       </div>
@@ -297,13 +358,16 @@
         <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
         <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
         <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Business (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Business</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Business (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
         <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
         <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
       </div>
     </div>
   </div>
 
+  <script src="assets/js/telemetry-canvas.js"></script>
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/synq-simulator.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

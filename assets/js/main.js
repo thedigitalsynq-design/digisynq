@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   init3DEffects();
   init9870089044Controller();
   initAppleLiquidMotions();
+  initSpecularCursorTracking();
+  injectSvgGooeyFilter();
   checkUrlParams();
 });
 
@@ -1124,4 +1126,40 @@ function initAppleLiquidMotions() {
     });
   });
 }
+
+/* ==========================================================================
+   DESIGN EXPERIMENTATION — CURSOR SPECULAR & SVG GOOEY FILTERS
+   ========================================================================== */
+function initSpecularCursorTracking() {
+  document.addEventListener('pointermove', (e) => {
+    document.querySelectorAll('.pastel-card, .schematic-frame-box').forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  }, { passive: true });
+}
+
+function injectSvgGooeyFilter() {
+  if (document.getElementById('gooeySvgFilter')) return;
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.id = 'gooeySvgFilter';
+  svg.style.position = 'absolute';
+  svg.style.width = '0';
+  svg.style.height = '0';
+  svg.style.pointerEvents = 'none';
+  svg.innerHTML = `
+    <defs>
+      <filter id="gooeyFilter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  `;
+  document.body.appendChild(svg);
+}
+
 
