@@ -9,7 +9,7 @@
       matchedNode: 'Commercial Automotive Production (4-Day Sprint)',
       playbook: 'Mission 04: Soundstage Dark-Day Rescue',
       governance: 'Rule 06: Escrowed Milestone Payouts & Pre-cleared Load-in Terms',
-      surplusYield: '+88% Dark-Day Utilization & Overhead Recovery',
+      surplusYield: '[MODELED BENCHMARK] Dark-Day Utilization & Overhead Recovery',
       cycleTime: 'Turnaround compressed from 45 days to 72 hours'
     },
     'ip': {
@@ -17,15 +17,15 @@
       matchedNode: 'Lead Guild Artisan + Indie Producer with Regional Tax Credit',
       playbook: 'Mission 02: Shelved IP Revival',
       governance: 'Rule 04: Transparent Net Revenue Participation & Defined Credits',
-      surplusYield: '$1.4M Production Equity Unlocked via Private Co-Production',
-      cycleTime: 'Assembly shortened by 4 months'
+      surplusYield: '[MODELED BENCHMARK] Private Co-Production Assembly via Packaged Attachments',
+      cycleTime: 'Assembly shortened by estimated 4 months'
     },
     'optics': {
       label: 'Idle Master Prime Anamorphic Lens Fleet (UK)',
       matchedNode: 'Regional Streaming Mini-Series (London Unit)',
       playbook: 'Mission 05: Optical Kit Fleet Mobilization',
       governance: 'Rule 03: Verified Technical Inspection & Replacement Value Escrow',
-      surplusYield: '+64% Hardware Fleet ROI with Zero Residual Depreciation',
+      surplusYield: '[MODELED BENCHMARK] Hardware Fleet Capital Efficiency & Asset Mobilization',
       cycleTime: 'Direct equipment clearing in 24 hours'
     },
     'community': {
@@ -33,7 +33,7 @@
       matchedNode: 'Independent Regional Cinema Exhibitor Circuit (8 Cities)',
       playbook: 'Mission 10: Theatrical Micro-Circuit',
       governance: 'Rule 07: Verified Ticketing Data & Audience Privacy Boundaries',
-      surplusYield: '94% Theatrical Seat Occupancy Across 16 Screenings',
+      surplusYield: '[MODELED BENCHMARK] Synchronized Theatrical Screen Event Series',
       cycleTime: 'Eventized distribution rollout in 14 days'
     },
     'distribution': {
@@ -41,7 +41,7 @@
       matchedNode: 'FAST Channel Syndicator + Regional TVOD Platform',
       playbook: 'Mission 11: FAST Syndication Rollout',
       governance: 'Rule 01 & 04: Unbundled Windowing & Non-Exclusive Licensing',
-      surplusYield: 'Immediate Cashflow Monetization with Retained IP Ownership',
+      surplusYield: '[MODELED BENCHMARK] Multi-Window Monetization with Retained IP Sovereignty',
       cycleTime: 'Direct market release in under 3 weeks'
     }
   };
@@ -121,9 +121,12 @@
             </div>
           </div>
           <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.2);padding:1rem;border-radius:3px;margin-bottom:1.25rem;">
-            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.25rem;">SURPLUS IMPACT:</div>
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.25rem;">SURPLUS IMPACT (ESTIMATED):</div>
             <div style="font-size:1.05rem;color:#ffffff;font-weight:700;margin-bottom:0.25rem;">${data.surplusYield}</div>
-            <div style="font-size:0.85rem;color:#94a3b8;">${data.cycleTime}</div>
+            <div style="font-size:0.85rem;color:#94a3b8;margin-bottom:0.5rem;">${data.cycleTime}</div>
+            <div class="mono" style="font-size:0.7rem;color:#64748b;line-height:1.4;">
+              *Illustrative scenario modeled on representative operational parameters. Actual outcomes depend on verified asset audit, counterparty constraints, and negotiated legal terms.
+            </div>
           </div>
           <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
             <a href="node-10.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
