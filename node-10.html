@@ -81,9 +81,10 @@
           <div class="schematic-crosshair-bl"></div>
           <div class="schematic-crosshair-br"></div>
 
-          <form onsubmit="event.preventDefault(); alert('Thank you. Your signal has entered the DigiSynq system. Our coordination team will review your submission, identify relevant connections across the network, and determine what may be ready for deployment.');">
+          <form onsubmit="event.preventDefault(); alert('Thank you. Your signal has entered the DigiSynq pipeline. Our coordination team will evaluate your submission, identify relevant connections across the network, and determine what may be ready for deployment.');">
+            <!-- STEP 01 -->
             <div class="form-group" style="margin-bottom:1.5rem;">
-              <label class="form-label">WHAT DO YOU HAVE OR NEED? (ENTRY POINT)</label>
+              <label class="form-label" style="color:var(--accent-cyan);">STEP 01 &bull; WHAT DO YOU HAVE OR NEED? (ENTRY POINT)</label>
               <select class="form-select" required>
                 <option value="" disabled selected>Select your entry point...</option>
                 <option value="project">I HAVE A PROJECT &mdash; In need of coordination</option>
@@ -99,6 +100,24 @@
               </select>
             </div>
 
+            <!-- STEP 02 -->
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" style="color:var(--accent-cyan);">STEP 02 &bull; WHAT NEEDS TO MOVE?</label>
+              <textarea class="form-textarea" rows="3" placeholder="Describe the project, asset, talent, facility or opportunity you are trying to activate..." required></textarea>
+            </div>
+
+            <!-- STEP 03 -->
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" style="color:var(--accent-cyan);">STEP 03 &bull; WHAT IS BLOCKING IT?</label>
+              <textarea class="form-textarea" rows="3" placeholder="Describe what is missing, underused, disconnected or at risk (timing, talent, gear, capital, distribution)..." required></textarea>
+            </div>
+
+            <!-- STEP 04 -->
+            <div class="form-group" style="margin-bottom:1.75rem;">
+              <label class="form-label" style="color:var(--accent-cyan);">STEP 04 &bull; WHAT WOULD A SUCCESSFUL SYNQ LOOK LIKE?</label>
+              <textarea class="form-textarea" rows="3" placeholder="What would need to be true for this deployment to feel like a complete success?" required></textarea>
+            </div>
+
             <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;margin-bottom:1.5rem;">
               <div class="form-group" style="margin-bottom:0;">
                 <label class="form-label">YOUR NAME / ENTITY</label>
@@ -110,38 +129,12 @@
               </div>
             </div>
 
-            <div class="form-group" style="margin-bottom:1.5rem;">
-              <label class="form-label">WHAT IS CURRENTLY UNDERUSED, DISCONNECTED OR AT RISK?</label>
-              <textarea class="form-textarea" rows="3" placeholder="Describe what exists but is not being used, connected or protected..." required></textarea>
-            </div>
-
-            <div class="form-group" style="margin-bottom:1.5rem;">
-              <label class="form-label">WHAT ARE YOU TRYING TO ACCOMPLISH?</label>
-              <textarea class="form-textarea" rows="3" placeholder="The outcome you want to reach..." required></textarea>
-            </div>
-
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;margin-bottom:1.5rem;">
-              <div class="form-group" style="margin-bottom:0;">
-                <label class="form-label">PROJECT / ASSET / CAPABILITY DETAILS</label>
-                <input type="text" class="form-input" placeholder="Stage, catalogue, talent, equipment, project or capital details" required>
-              </div>
-              <div class="form-group" style="margin-bottom:0;">
-                <label class="form-label">TIMING / AVAILABILITY</label>
-                <input type="text" class="form-input" placeholder="Immediate, specific dates or windows">
-              </div>
-            </div>
-
-            <div class="form-group" style="margin-bottom:1.75rem;">
-              <label class="form-label">WHAT WOULD A SUCCESSFUL DEPLOYMENT LOOK LIKE?</label>
-              <textarea class="form-textarea" rows="3" placeholder="What would need to be true for this to feel like a success?" required></textarea>
-            </div>
-
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
               <div class="mono" style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;color:var(--accent-cyan);">
                 STATUS: CONFIDENTIAL INTAKE // DIRECT COORDINATOR ENGAGEMENT
               </div>
               <button type="submit" class="btn btn-primary" style="padding:0.85rem 1.75rem;font-size:1rem;cursor:pointer;">
-                TRANSMIT CONNECTION REQUEST &rarr;
+                ENTER THE PIPELINE &rarr;
               </button>
             </div>
           </form>
