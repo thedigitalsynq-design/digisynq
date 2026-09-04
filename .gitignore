@@ -25,3 +25,8 @@ build/
 .env
 .env.*
 !.env.example
+
+# Scratch & temporary tools
+.freebuff/
+verify_all_nodes.py
+

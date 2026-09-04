@@ -1,0 +1,74 @@
+{
+  "title": "DigiSynq Central System Runbook & Operational Documentation",
+  "version": "2.4.0",
+  "lastUpdated": "2026-09-05",
+  "systemLogic": "MEASURE -> CONNECT -> OPTIMIZE -> DEPLOY -> LEARN -> REPEAT",
+  "overview": "DigiSynq is an intelligent, asset-light entertainment systems business operating behind the entertainment experience. It measures what matters, connects complementary stakeholders and resources, optimizes conditions around opportunities, and deploys better solutions.",
+  "sections": [
+    {
+      "id": "overview",
+      "name": "System Architecture & Logic",
+      "content": "The DigiSynq Operating System acts as the asset-light coordination layer for the entertainment industry. Rather than owning physical studios, production equipment, distribution networks, or talent agencies, DigiSynq provides the measurement, intelligence, governance, and deployment framework that allows independent entertainment assets to operate as a unified, high-yield system."
+    },
+    {
+      "id": "node-01",
+      "name": "Node 01: Home (Pipeline Entry)",
+      "purpose": "Brand entry point and high-level ecosystem overview.",
+      "operationalDetails": "Node 01 introduces the core market friction: entertainment is not short of resources; it is short of coordination. It establishes the key entry point into the DigiSynq ecosystem keypad."
+    },
+    {
+      "id": "node-02",
+      "name": "Node 02: Ecosystem (Visibility Layer)",
+      "purpose": "Define and classify all 8 ecosystem node categories.",
+      "operationalDetails": "Categorizes resources into (01) Ideas & IP, (02) People & Artisan Guilds, (03) Places, Stages & Fleet, (04) Production Engines, (05) Post & Advanced Tech, (06) Distribution, (07) Audience & Commerce, and (08) Capital, Escrow & Governance. Tracks availability, dependencies, and potential."
+    },
+    {
+      "id": "node-03",
+      "name": "Node 03: How It Works (Operating Method)",
+      "purpose": "Document the 6-stage operational execution process.",
+      "operationalDetails": "Details the 6 stages: Measure (evaluating availability and exposure), Connect (matching complementary nodes), Optimize (refining terms and workflows), Deploy (executing solutions), Learn (capturing performance data), and Repeat (compounding intelligence). Outlines the 7 clarity rules before deployment."
+    },
+    {
+      "id": "node-04",
+      "name": "Node 04: Solutions (System Gateways)",
+      "purpose": "Define intake entry gateways for all market participants.",
+      "operationalDetails": "Specifies 9 entry gateways (Project, Talent, Facility, Equipment, IP/Content, Capital, Distribution, Audience, Bottleneck). Applies the standard formula: What You Have/Need -> What We Measure -> What We Connect -> What Can Be Deployed."
+    },
+    {
+      "id": "node-05",
+      "name": "Node 05: Missions (Deployed Applications)",
+      "purpose": "Catalog deployed system applications and playbooks.",
+      "operationalDetails": "Organizes 15 specific playbooks into Create, Activate, Connect, Distribute, and Intelligence/Extend. Tracks deployment readiness using explicit capability labels: Operational, Partner Enabled, In Development, Exploratory."
+    },
+    {
+      "id": "node-06",
+      "name": "Node 06: Intelligence (Measurement & Risk)",
+      "purpose": "Define telemetry, data signals, and risk forecasting capabilities.",
+      "operationalDetails": "Operates 7 measurement pillars (Market Telemetry, Content Velocity, Capacity Liquidity, Audience Clustering, Distribution Clearing, Operational Yield, Systemic Risk Forecasting). Highlights specialized Cinema Radar risk intelligence."
+    },
+    {
+      "id": "node-07",
+      "name": "Node 07: Insights (System Learning)",
+      "purpose": "Document learning loops and compounding performance data.",
+      "operationalDetails": "Translates measurement observations into systemic insights. Establishes the feedback loop: Measure -> Action -> Outcome -> Insight -> Better Next Deployment. Uses structured labels: Market Observation, DigiSynq View, Working Hypothesis, Research."
+    },
+    {
+      "id": "node-08",
+      "name": "Node 08: Business (Value Creation & Capture)",
+      "purpose": "Document commercial business logic and revenue streams.",
+      "operationalDetails": "Outlines 3 core revenue streams: (01) Measurement & Intelligence services, (02) Coordination & Optimization fees, and (03) Deployment & Participation (project fees, transaction fees, milestone revenue shares). Maintains asset-light capital efficiency."
+    },
+    {
+      "id": "node-09",
+      "name": "Node 09: About (Operating Philosophy & Runbook)",
+      "purpose": "Central repository for brand philosophy, core beliefs, and complete system documentation.",
+      "operationalDetails": "Establishes core operating beliefs: 'Nothing is waste. Everything has potential.' Defines positioning boundaries (DigiSynq Is vs. DigiSynq Is Not) and houses the complete Central System Runbook."
+    },
+    {
+      "id": "node-10",
+      "name": "Node 10: Start a Synq (Signal Intake)",
+      "purpose": "Confidential intake protocol for new signals and requests.",
+      "operationalDetails": "Captures entry point signals, underused asset descriptions, target outcomes, timing constraints, and deployment metrics. Dispatches signals to DigiSynq coordination teams for measurement and matching."
+    }
+  ]
+}
