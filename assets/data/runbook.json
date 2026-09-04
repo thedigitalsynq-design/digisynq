@@ -3,7 +3,7 @@
   "version": "2.4.0",
   "lastUpdated": "2026-09-05",
   "systemLogic": "MEASURE -> CONNECT -> OPTIMIZE -> DEPLOY -> LEARN -> REPEAT",
-  "overview": "DigiSynq is an intelligent, asset-light entertainment systems business operating behind the entertainment experience. It measures what matters, connects complementary stakeholders and resources, optimizes conditions around opportunities, and deploys better solutions.",
+  "overview": "DigiSynq is the operating mechanism behind the entertainment ecosystem—a connected pipeline that links and synchronizes its nodes, enabling the system to work seamlessly behind the scenes. It measures what matters, connects complementary stakeholders and resources, optimizes conditions around opportunities, and deploys better solutions.",
   "sections": [
     {
       "id": "overview",
