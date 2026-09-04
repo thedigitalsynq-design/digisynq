@@ -85,7 +85,7 @@
           <div class="schematic-crosshair-bl"></div>
           <div class="schematic-crosshair-br"></div>
 
-          <form onsubmit="event.preventDefault(); alert('Thank you. Your signal has entered the DigiSynq pipeline. Our coordination team will evaluate your submission, identify relevant connections across the network, and determine what may be ready for deployment.');">
+          <form id="intakeSignalForm" onsubmit="handleIntakeSubmit(event)">
             <!-- STEP 01 -->
             <div class="form-group" style="margin-bottom:1.5rem;">
               <label class="form-label" style="color:var(--accent-cyan);">STEP 01 &bull; WHAT DO YOU HAVE OR NEED? (ENTRY POINT)</label>
@@ -142,6 +142,30 @@
               </button>
             </div>
           </form>
+
+          <!-- Intake Confirmation Box (Revealed upon submission) -->
+          <div id="intakeConfirmationBox" style="display:none;background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.3);padding:2rem 1.75rem;border-radius:3px;text-align:left;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+              <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:#10b981;text-transform:uppercase;">
+                // INTAKE SIGNAL LOGGED &amp; SECURED
+              </span>
+              <span id="confirmationRef" class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(255,255,255,0.06);padding:0.25rem 0.6rem;">
+                REF: SYNQ-73912
+              </span>
+            </div>
+            <h3 style="font-size:clamp(1.4rem, 2.8vw, 1.8rem);font-weight:800;color:#ffffff;margin:0 0 0.8rem;text-transform:uppercase;">
+              SIGNAL TRANSMITTED TO DIGISYNQ COORDINATORS
+            </h3>
+            <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;margin:0 0 1.25rem;">
+              Thank you. Your signal has entered the DigiSynq coordination grid. Our coordination team will evaluate your operational parameters against the active ecosystem graph, identify compatible counterparties, and determine deployment readiness.
+            </p>
+            <div class="mono" style="font-size:0.8rem;color:#10b981;margin-bottom:1.5rem;line-height:1.6;">
+              ESTIMATED REVIEW WINDOW: 24–48 HOURS &bull; DIRECT COORDINATOR DISPATCH &bull; STRICT MUTUAL CONFIDENTIALITY
+            </div>
+            <button type="button" onclick="resetIntakeSignalForm()" class="btn btn-secondary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
+              TRANSMIT ANOTHER SIGNAL &rarr;
+            </button>
+          </div>
         </div>
 
         <!-- What Happens Next Protocol Box -->
@@ -224,5 +248,30 @@
     <script src="assets/js/telemetry-canvas.js"></script>
   <script src="assets/js/sound-engine.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    function handleIntakeSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('intakeSignalForm');
+      const confirmBox = document.getElementById('intakeConfirmationBox');
+      const refBadge = document.getElementById('confirmationRef');
+      if (!form || !confirmBox) return;
+
+      if (refBadge) {
+        refBadge.innerText = 'REF: SYNQ-' + Math.floor(Math.random() * 89999 + 10000);
+      }
+      form.style.display = 'none';
+      confirmBox.style.display = 'block';
+      if (window.DigiSynqSound) window.DigiSynqSound.playSynqSuccess();
+    }
+
+    function resetIntakeSignalForm() {
+      const form = document.getElementById('intakeSignalForm');
+      const confirmBox = document.getElementById('intakeConfirmationBox');
+      if (!form || !confirmBox) return;
+      form.reset();
+      confirmBox.style.display = 'none';
+      form.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
