@@ -1,74 +1,125 @@
 {
-  "title": "DigiSynq Central System Runbook & Operational Documentation",
-  "version": "2.4.0",
+  "title": "DigiSynq Central System Runbook & Comprehensive Operational Architecture",
+  "version": "3.0.0-PROD",
   "lastUpdated": "2026-09-05",
+  "classification": "CONFIDENTIAL • ARCHITECTURAL OPERATIONAL STANDARD",
   "systemLogic": "MEASURE -> CONNECT -> OPTIMIZE -> DEPLOY -> LEARN -> REPEAT",
-  "overview": "DigiSynq is the operating mechanism behind the entertainment ecosystem—a connected pipeline that links and synchronizes its nodes, enabling the system to work seamlessly behind the scenes. It measures what matters, connects complementary stakeholders and resources, optimizes conditions around opportunities, and deploys better solutions.",
+  "overview": "DigiSynq is the operating mechanism behind the entertainment ecosystem—a connected pipeline that links and synchronizes its nodes, enabling the system to work seamlessly behind the scenes. It measures what matters, connects complementary stakeholders and resources, optimizes conditions around opportunities, and deploys better solutions without owning physical assets.",
+  "operatingPrinciples": [
+    {
+      "principle": "Asset-Light Neutrality",
+      "definition": "DigiSynq never owns soundstages, cameras, IP, or talent rosters. Neutrality ensures unbiased resource routing and zero conflict of interest across ecosystem participants."
+    },
+    {
+      "principle": "Milestone-Tied Settlement",
+      "definition": "Capital and compensation flow strictly upon verified operational delivery against predefined, transparent milestones."
+    },
+    {
+      "principle": "Empirical Risk Forecasting",
+      "definition": "Early friction detection through operational telemetry (Cinema Radar) prevents schedule overruns, budget leakage, and stakeholder disputes before deployment."
+    },
+    {
+      "principle": "Continuous Knowledge Recursion",
+      "definition": "Every completed synq feeds telemetry back into the system graph, compounding matching precision and lowering transaction friction for subsequent productions."
+    }
+  ],
   "sections": [
     {
       "id": "overview",
-      "name": "System Architecture & Logic",
-      "content": "The DigiSynq Operating System acts as the asset-light coordination layer for the entertainment industry. Rather than owning physical studios, production equipment, distribution networks, or talent agencies, DigiSynq provides the measurement, intelligence, governance, and deployment framework that allows independent entertainment assets to operate as a unified, high-yield system."
+      "name": "Section 01: System Architecture & Core Stack",
+      "category": "Foundational Infrastructure",
+      "purpose": "Define the 6-layer technological and operational coordination framework.",
+      "operationalDetails": "The DigiSynq Operating Stack functions across six discrete architectural layers: (01) Ingestion Layer: Normalizing disparate market signals, asset submissions, and intake telemetry; (02) Graph & State Layer: Mapping real-time interdependencies across all 8 node categories; (03) Telemetry Engine: Calculating availability latency, capacity utilization, and risk indicators; (04) Optimization & Clarity Layer: Structuring milestone deliverables under the 7 Rules of Clarity; (05) Settlement & Escrow Layer: Automating milestone disbursements and bilateral contractual sign-offs; (06) Knowledge Recursion Layer: Synthesizing post-wrap yield data into empirical insight benchmarks.",
+      "slas": "Intake triage latency < 4 hours; Graph matchmaking latency < 24 hours; Milestone verification cycle < 48 hours."
+    },
+    {
+      "id": "lifecycle",
+      "name": "Section 02: 6-Stage Operational Lifecycle & SOP",
+      "category": "Operating Procedures",
+      "purpose": "Codify standard operating procedures from discovery to post-wrap learning.",
+      "operationalDetails": "Standard Operating Procedure (SOP) workflow:\n- STAGE 01 (MEASURE): Comprehensive 48-point capability audit, capacity availability calendar validation, and Cinema Radar risk exposure indexing.\n- STAGE 02 (CONNECT): Algorithmic bipartite graph matching, qualified counterparty verification, and mutual compatibility confirmation.\n- STAGE 03 (OPTIMIZE): Rigorous application of the 7 Rules of Operational Clarity, SLA milestone decomposition, and escrow allocation structuring.\n- STAGE 04 (DEPLOY): Physical and digital mobilization checklist, site & stage safety clearance, live telemetry tracking during shoot/post phases.\n- STAGE 05 (LEARN): Post-wrap variance auditing (budget-to-actual, schedule fidelity), root-cause analysis (RCA) on all bottlenecks encountered.\n- STAGE 06 (REPEAT): Network graph updating, priority liquidity scoring, and distribution of anonymized performance insights.",
+      "failureModes": "Unilateral scope expansion -> Trigger Stage 03 change-order circuit breaker; Milestone slippage > 72 hrs -> Trigger Level 2 coordinator intervention."
     },
     {
       "id": "node-01",
-      "name": "Node 01: Home (Pipeline Entry)",
-      "purpose": "Brand entry point and high-level ecosystem overview.",
-      "operationalDetails": "Node 01 introduces the core market friction: entertainment is not short of resources; it is short of coordination. It establishes the key entry point into the DigiSynq ecosystem keypad."
+      "name": "Node 01: Home (System Entry & Diagnosis)",
+      "category": "Ecosystem Interface",
+      "purpose": "Diagnostic portal and high-level ecosystem overview.",
+      "operationalDetails": "Establishes the foundational market diagnosis: Entertainment is not short of resources—it is short of coordination. Serves as the primary public entry conduit into the interactive dialpad, system routing matrix, and live telemetry ticker.",
+      "inputs": "Public inquiries, stakeholder search queries, ecosystem category navigation.",
+      "outputs": "Routed session states, dialpad navigation dispatches, initial intake initiation."
     },
     {
       "id": "node-02",
-      "name": "Node 02: Ecosystem (Visibility Layer)",
-      "purpose": "Define and classify all 8 ecosystem node categories.",
-      "operationalDetails": "Categorizes resources into (01) Ideas & IP, (02) People & Artisan Guilds, (03) Places, Stages & Fleet, (04) Production Engines, (05) Post & Advanced Tech, (06) Distribution, (07) Audience & Commerce, and (08) Capital, Escrow & Governance. Tracks availability, dependencies, and potential."
+      "name": "Node 02: Ecosystem (8-Category Resource Matrix)",
+      "category": "Resource Topology",
+      "purpose": "Classify, track, and synchronize all 8 resource categories.",
+      "operationalDetails": "Maintains continuous state tracking across: (01) Ideas & IP (catalogs, options, treatments, active scripts); (02) People & Artisan Guilds (directors, DPs, editors, artisan crews); (03) Places, Stages & Fleet (soundstages, LED volumes, gear kits); (04) Production Engines (cinema units, commercial slates, episodic pipelines); (05) Post & Advanced Tech (VFX pipelines, color suites, sound stages); (06) Distribution (theatrical windows, OTT platforms, regional buyers); (07) Audience & Commerce (fan communities, screening clubs, brand integrations); (08) Capital & Escrow (equity financing, mezzanine debt, milestone escrow accounts).",
+      "metrics": "Node liquidity index (0.00-1.00), resource idle time (days), dependency depth score."
     },
     {
       "id": "node-03",
-      "name": "Node 03: How It Works (Operating Method)",
-      "purpose": "Document the 6-stage operational execution process.",
-      "operationalDetails": "Details the 6 stages: Measure (evaluating availability and exposure), Connect (matching complementary nodes), Optimize (refining terms and workflows), Deploy (executing solutions), Learn (capturing performance data), and Repeat (compounding intelligence). Outlines the 7 clarity rules before deployment."
+      "name": "Node 03: How It Works (Operating Method & Governance)",
+      "category": "Governance & Methodology",
+      "purpose": "Define the 6-stage lifecycle and 7 non-negotiable rules of operational clarity.",
+      "operationalDetails": "The 7 Rules of Operational Clarity enforced prior to capital commitment:\n1. Defined Responsibilities: Exact task assignment with single-owner accountability.\n2. Concrete Milestones: Absolute delivery dates tied to verifiable physical or digital deliverables.\n3. Transparent Pre-requisites: Upstream dependency declaration before phase initiation.\n4. Fixed Commercial Terms: Total financial remuneration with zero hidden back-end deductions.\n5. Structured Variance Management: Formal change-order protocol requiring mutual sign-off.\n6. Milestone Escrow Protection: Funds held in neutral escrow, released only on validated delivery.\n7. IP Firewalls & Privacy: Non-disclosure boundaries protecting proprietary ideas and terms.",
+      "enforcement": "Pre-deployment audit checklist requires 100% compliance across all 7 criteria prior to deployment authorization."
     },
     {
       "id": "node-04",
-      "name": "Node 04: Solutions (System Gateways)",
-      "purpose": "Define intake entry gateways for all market participants.",
-      "operationalDetails": "Specifies 9 entry gateways (Project, Talent, Facility, Equipment, IP/Content, Capital, Distribution, Audience, Bottleneck). Applies the standard formula: What You Have/Need -> What We Measure -> What We Connect -> What Can Be Deployed."
+      "name": "Node 04: Solutions (Intake Gateways & Standard Formula)",
+      "category": "Stakeholder Gateways",
+      "purpose": "Provide specialized access points for every participant category.",
+      "operationalDetails": "Operates 9 distinct gateways applying the universal formula: [What You Have/Need] -> [What We Measure] -> [What We Connect] -> [What Gets Deployed].\n- Gateway 1: Producers & Production Companies (budget & schedule synchronization)\n- Gateway 2: Soundstages & Facilities (idle calendar optimization)\n- Gateway 3: Equipment Rental Houses (fleet utilization & routing)\n- Gateway 4: Talent & Representation (verified opportunity matching)\n- Gateway 5: Writers & Rights Holders (shelved script & IP activation)\n- Gateway 6: Post-Production & VFX Houses (capacity gap filling)\n- Gateway 7: Investors & Financiers (risk-indexed milestone underwriting)\n- Gateway 8: Distributors & Platforms (library activation & demand clustering)\n- Gateway 9: Community & Exhibitors (theatrical screening demand activation)",
+      "routingTime": "Automated gateway dispatch < 15 minutes; coordinator assignment < 2 hours."
     },
     {
       "id": "node-05",
-      "name": "Node 05: Missions (Deployed Applications)",
-      "purpose": "Catalog deployed system applications and playbooks.",
-      "operationalDetails": "Organizes 15 specific playbooks into Create, Activate, Connect, Distribute, and Intelligence/Extend. Tracks deployment readiness using explicit capability labels: Operational, Partner Enabled, In Development, Exploratory."
+      "name": "Node 05: Missions (15 Modular Playbooks)",
+      "category": "Playbook Execution",
+      "purpose": "Catalog deployed system applications across 5 operational families.",
+      "operationalDetails": "Exhaustive documentation of all 15 operational playbooks:\n- FAMILY 01 (CREATE): (01) Unproduced IP to Packaged Slate; (02) Screenplay Polish & Budget Calibration; (03) Fast-Track Production Unit Assembly.\n- FAMILY 02 (ACTIVATE): (04) Off-Peak Soundstage Yield Optimization; (05) Surplus Kit & Camera Fleet Routing; (06) Post-Production Capacity Liquidity.\n- FAMILY 03 (CONNECT): (07) Multi-Party Co-Production Bridge; (08) Finishing Fund & Completion Escrow; (09) Cross-Territory Tax Credit Arbitrage.\n- FAMILY 04 (DISTRIBUTE): (10) Dormant Library Catalog Monetization; (11) Demand-Backed Pop-Up Theatrical Screenings; (12) Direct-to-Community Event Roadshows.\n- FAMILY 05 (EXTEND): (13) Physical Production to Interactive Spin-Off; (14) Brand & Content Co-Development; (15) Audience Feedback Loop to Development Pipeline.",
+      "readinessLevels": "Operational (in active deployment), Partner Enabled (integrated with certified external partners), In Development (staging testing)."
     },
     {
       "id": "node-06",
-      "name": "Node 06: Intelligence (Measurement & Risk)",
-      "purpose": "Define telemetry, data signals, and risk forecasting capabilities.",
-      "operationalDetails": "Operates 7 measurement pillars (Market Telemetry, Content Velocity, Capacity Liquidity, Audience Clustering, Distribution Clearing, Operational Yield, Systemic Risk Forecasting). Highlights specialized Cinema Radar risk intelligence."
+      "name": "Node 06: Intelligence (Telemetry & Cinema Radar)",
+      "category": "Observability & Risk",
+      "purpose": "Operate systemic telemetry and specialized risk forecasting.",
+      "operationalDetails": "The 7 Measurement Pillars:\n1. Market Telemetry: Production starts, wrap dates, and territory capacity loads.\n2. Content Velocity: Time elapsed between option, script completion, greenlight, and principal photography.\n3. Capacity Liquidity: Daily available hours across soundstages, virtual volumes, and post facilities.\n4. Audience Clustering: Micro-community demographic density and regional theatrical ticket velocity.\n5. Distribution Clearing: Regional rights availability, licensing windows, and platform renewal schedules.\n6. Operational Yield: Actual dollar efficiency achieved per production shooting day.\n7. Cinema Radar: Proprietary systemic risk indicator detecting supply collisions, crew fatigue indices, and delivery deadline vulnerabilities.",
+      "alerts": "Red Alert: Overlapping principal dates on single asset; Amber Alert: Milestone latency > 5% buffer."
     },
     {
       "id": "node-07",
-      "name": "Node 07: Insights (System Learning)",
-      "purpose": "Document learning loops and compounding performance data.",
-      "operationalDetails": "Translates measurement observations into systemic insights. Establishes the feedback loop: Measure -> Action -> Outcome -> Insight -> Better Next Deployment. Uses structured labels: Market Observation, DigiSynq View, Working Hypothesis, Research."
+      "name": "Node 07: Insights (Compounding System Learning)",
+      "category": "Empirical Archive",
+      "purpose": "Codify empirical observations into compounding network intelligence.",
+      "operationalDetails": "Maintains the continuous intelligence loop: Measure -> Action -> Outcome -> Insight -> Better Deployment. Categorizes all institutional findings under four rigorous evidentiary tiers:\n- Tier 1: Market Observation (statistically verified industry facts)\n- Tier 2: DigiSynq Systemic View (architectural perspective on root cause)\n- Tier 3: Working Hypothesis (active operational experiment in field deployment)\n- Tier 4: Empirical Research Archive (validated historical benchmarks across completed synqs).",
+      "keyBenchmark": "Coordination efficiency compounds by an average of 14% with each repeated node pairing."
     },
     {
       "id": "node-08",
-      "name": "Node 08: Value Model (Value Creation & Capture)",
-      "purpose": "Document commercial value model, compensation structure, and revenue streams.",
-      "operationalDetails": "Outlines 3 core revenue streams: (01) Measurement & Intelligence services, (02) Coordination & Optimization fees, and (03) Deployment & Participation (project fees, transaction fees, milestone revenue shares). Maintains asset-light capital efficiency."
+      "name": "Node 08: Value Model (Commercial Architecture & Revenue)",
+      "category": "Commercial Economics",
+      "purpose": "Detail the asset-light compensation structure and commercial alignment.",
+      "operationalDetails": "Revenue streams and commercial alignment:\n- Stream 01 (Telemetry & Intelligence): Subscription access to Cinema Radar, capacity calendars, and market liquidity analytics.\n- Stream 02 (Coordination & Optimization): Structured project-based coordination retainers tied directly to measurable waste reduction.\n- Stream 03 (Deployment & Success Participation): Milestone transaction fees and secondary profit participation upon successful project delivery.\nAsset-Light Capital Efficiency: Zero balance sheet exposure to physical depreciating hardware, physical real estate leases, or exclusive overhead talent contracts.",
+      "alignmentGuarantee": "DigiSynq earns maximum compensation only when coordination creates net-new economic surplus for all counterparties."
     },
     {
       "id": "node-09",
-      "name": "Node 09: About (Operating Philosophy & Runbook)",
-      "purpose": "Central repository for brand philosophy, core beliefs, and complete system documentation.",
-      "operationalDetails": "Establishes core operating beliefs: 'Nothing is waste. Everything has potential.' Defines positioning boundaries (DigiSynq Is vs. DigiSynq Is Not) and houses the complete Central System Runbook."
+      "name": "Node 09: About (Operating Philosophy & Master Runbook)",
+      "category": "Organizational Core",
+      "purpose": "House brand philosophy, boundary definitions, and complete Runbook repository.",
+      "operationalDetails": "Core Philosophy: 'Nothing is waste. Everything has potential.'\nPositioning Boundaries:\n- WHAT DIGISYNQ IS: The neutral operating mechanism, resource pipeline, intelligence coordinator, and governance framework for entertainment.\n- WHAT DIGISYNQ IS NOT: A studio, production company, talent agency, equipment rental house, streaming platform, or speculative financier.\nHouses this Central System Runbook and the automated testing runbook validation suite.",
+      "governance": "Master repository updated continuously under versioned schema change controls."
     },
     {
       "id": "node-10",
-      "name": "Node 10: Start a Synq (Signal Intake)",
-      "purpose": "Confidential intake protocol for new signals and requests.",
-      "operationalDetails": "Captures entry point signals, underused asset descriptions, target outcomes, timing constraints, and deployment metrics. Dispatches signals to DigiSynq coordination teams for measurement and matching."
+      "name": "Node 10: Start a Synq (Signal Intake Protocol)",
+      "category": "Intake & Routing",
+      "purpose": "Confidential intake protocol for ecosystem participants.",
+      "operationalDetails": "Structured 4-step confidential signal submission:\n- Step 01 (Role & Gateway Selection): Producer, Facility Owner, Talent/Rep, Financier, Distributor, or Problem Solver.\n- Step 02 (Asset & Signal Description): Detail available capacity, script, capital pool, or bottleneck constraint.\n- Step 03 (Desired Outcome & Horizon): Timeframe requirements, budget range, and specific milestone goals.\n- Step 04 (Telemetry & Verification Submission): Encrypted signal dispatch directly into DigiSynq coordination triage.",
+      "security": "End-to-end encrypted intake pipeline with zero public exposure of proprietary treatments, financials, or unannounced slates."
     }
   ]
 }

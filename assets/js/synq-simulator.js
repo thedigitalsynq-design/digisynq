@@ -65,10 +65,10 @@
       stageOutput.style.display = 'block';
 
       const steps = [
-        'STAGE 01 // MEASURING REAL ASSET CAPACITY & AVAILABILITY...',
-        'STAGE 02 // ALGORITHMIC MATCHING ACROSS ECOSYSTEM NODES...',
-        'STAGE 03 // ENFORCING 7 CLARITY RULES & MILESTONE ESCROW...',
-        'STAGE 04 // READY FOR DEPLOYMENT: SYNQ MANIFEST GENERATED!'
+        'STAGE 01 &bull; MEASURING REAL ASSET CAPACITY & AVAILABILITY...',
+        'STAGE 02 &bull; ALGORITHMIC MATCHING ACROSS ECOSYSTEM NODES...',
+        'STAGE 03 &bull; ENFORCING 7 CLARITY RULES & MILESTONE ESCROW...',
+        'STAGE 04 &bull; READY FOR DEPLOYMENT: SYNQ MANIFEST GENERATED!'
       ];
 
       let stepIndex = 0;
@@ -96,7 +96,7 @@
         <div style="border-top:1px solid rgba(56,189,248,0.3);padding-top:1.25rem;">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
             <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:800;letter-spacing:0.15em;">
-              // SYNQ EXECUTION MANIFEST [VERIFIED]
+              <span class="material-symbols-outlined" style="font-size:0.95rem;vertical-align:-2px;margin-right:0.25rem;color:var(--accent-cyan);">verified</span>SYNQ EXECUTION MANIFEST [VERIFIED]
             </span>
             <span class="mono" style="font-size:0.7rem;color:#94a3b8;background:rgba(255,255,255,0.06);padding:0.2rem 0.5rem;">
               REF: SYNQ-${Math.floor(Math.random() * 89999 + 10000)}
@@ -132,7 +132,7 @@
             <a href="node-10.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
               EXECUTE THIS SYNQ IN NODE 10 &rarr;
             </a>
-            <span class="mono" style="font-size:0.75rem;color:#64748b;">// NO OBLIGATION &bull; CONFIDENTIAL INTAKE</span>
+            <span class="mono" style="font-size:0.75rem;color:#64748b;"><span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin-right:0.2rem;color:var(--accent-cyan);">lock</span>CONFIDENTIAL INTAKE &bull; NO OBLIGATION</span>
           </div>
         </div>
       `;
