@@ -1162,4 +1162,121 @@ function injectSvgGooeyFilter() {
   document.body.appendChild(svg);
 }
 
+/* 3D Tactile Card Tilt & Perspective Physics */
+function init3DEffects() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  const cards = document.querySelectorAll('.pastel-card, .schematic-frame-box');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const rotX = (y / (rect.height / 2)) * -3.5;
+      const rotY = (x / (rect.width / 2)) * 3.5;
+      
+      card.style.transform = `perspective(1200px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-2px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.1s ease-out';
+    });
+  });
+
+  initFilmGrain();
+  initHudTelemetryTicker();
+}
+
+/* 35mm Celluloid Cinematic Film Grain Texture */
+function initFilmGrain() {
+  if (document.getElementById('filmGrainCanvas')) return;
+  const grain = document.createElement('canvas');
+  grain.id = 'filmGrainCanvas';
+  grain.style.position = 'fixed';
+  grain.style.top = '0';
+  grain.style.left = '0';
+  grain.style.width = '100vw';
+  grain.style.height = '100vh';
+  grain.style.pointerEvents = 'none';
+  grain.style.zIndex = '99999';
+  grain.style.opacity = '0.032';
+  grain.style.mixBlendMode = 'overlay';
+  document.body.appendChild(grain);
+
+  const ctx = grain.getContext('2d');
+  function resizeGrain() {
+    grain.width = window.innerWidth / 2;
+    grain.height = window.innerHeight / 2;
+  }
+  resizeGrain();
+  window.addEventListener('resize', resizeGrain);
+
+  function generateNoise() {
+    const w = grain.width;
+    const h = grain.height;
+    if (w <= 0 || h <= 0) return;
+    const imgData = ctx.createImageData(w, h);
+    const buffer = new Uint32Array(imgData.data.buffer);
+    const len = buffer.length;
+    for (let i = 0; i < len; i++) {
+      if (Math.random() < 0.12) {
+        buffer[i] = (Math.random() * 255) | 0xff000000;
+      }
+    }
+    ctx.putImageData(imgData, 0, 0);
+  }
+
+  let noiseTimer = null;
+  function loopNoise() {
+    generateNoise();
+    noiseTimer = setTimeout(() => requestAnimationFrame(loopNoise), 70);
+  }
+  loopNoise();
+}
+
+/* Live System HUD Telemetry Ticker */
+function initHudTelemetryTicker() {
+  if (document.getElementById('hudTelemetryTicker')) return;
+  const ticker = document.createElement('div');
+  ticker.id = 'hudTelemetryTicker';
+  ticker.className = 'mono';
+  ticker.style.position = 'fixed';
+  ticker.style.bottom = '1rem';
+  ticker.style.right = '1.5rem';
+  ticker.style.zIndex = '9999';
+  ticker.style.fontSize = '0.65rem';
+  ticker.style.letterSpacing = '0.14em';
+  ticker.style.color = '#64748b';
+  ticker.style.background = 'rgba(6, 7, 9, 0.88)';
+  ticker.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+  ticker.style.padding = '0.35rem 0.75rem';
+  ticker.style.borderRadius = '3px';
+  ticker.style.backdropFilter = 'blur(12px)';
+  ticker.style.pointerEvents = 'none';
+  ticker.style.display = 'flex';
+  ticker.style.alignItems = 'center';
+  ticker.style.gap = '0.6rem';
+  ticker.innerHTML = `
+    <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 8px #10b981;"></span>
+    <span id="hudClock">UTC --:--:--</span> &bull; <span>10 NODES SYNCHRONIZED</span> &bull; <span style="color:var(--accent-cyan);">ACTIVE</span>
+  `;
+  document.body.appendChild(ticker);
+
+  function updateClock() {
+    const el = document.getElementById('hudClock');
+    if (el) {
+      const now = new Date();
+      el.innerText = 'UTC ' + now.toISOString().substring(11, 19);
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+}
+
+
 
