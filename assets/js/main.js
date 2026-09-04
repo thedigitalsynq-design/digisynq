@@ -1189,7 +1189,6 @@ function init3DEffects() {
   });
 
   initFilmGrain();
-  initHudTelemetryTicker();
 }
 
 /* 35mm Celluloid Cinematic Film Grain Texture */
@@ -1238,45 +1237,4 @@ function initFilmGrain() {
   }
   loopNoise();
 }
-
-/* Live System HUD Telemetry Ticker */
-function initHudTelemetryTicker() {
-  if (document.getElementById('hudTelemetryTicker')) return;
-  const ticker = document.createElement('div');
-  ticker.id = 'hudTelemetryTicker';
-  ticker.className = 'mono';
-  ticker.style.position = 'fixed';
-  ticker.style.bottom = '1rem';
-  ticker.style.right = '1.5rem';
-  ticker.style.zIndex = '9999';
-  ticker.style.fontSize = '0.65rem';
-  ticker.style.letterSpacing = '0.14em';
-  ticker.style.color = '#64748b';
-  ticker.style.background = 'rgba(6, 7, 9, 0.88)';
-  ticker.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-  ticker.style.padding = '0.35rem 0.75rem';
-  ticker.style.borderRadius = '3px';
-  ticker.style.backdropFilter = 'blur(12px)';
-  ticker.style.pointerEvents = 'none';
-  ticker.style.display = 'flex';
-  ticker.style.alignItems = 'center';
-  ticker.style.gap = '0.6rem';
-  ticker.innerHTML = `
-    <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 8px #10b981;"></span>
-    <span id="hudClock">UTC --:--:--</span> &bull; <span>10 NODES SYNCHRONIZED</span> &bull; <span style="color:var(--accent-cyan);">ACTIVE</span>
-  `;
-  document.body.appendChild(ticker);
-
-  function updateClock() {
-    const el = document.getElementById('hudClock');
-    if (el) {
-      const now = new Date();
-      el.innerText = 'UTC ' + now.toISOString().substring(11, 19);
-    }
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-}
-
-
 

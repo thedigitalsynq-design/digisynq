@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
 
 /* ==========================================================================
    DIGISYNQ — THE ENTERTAINMENT ECOSYSTEM OPERATING SYSTEM
@@ -138,13 +138,24 @@
   --accent-red: #FFFFFF;
   --accent-rose: #00FF66;
 
-    /* Typography — Space Grotesk Family Everywhere */
-  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-headline: 'Space Grotesk', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-mono: 'Space Grotesk', monospace, sans-serif;
-  --font-modern: 'Space Grotesk', sans-serif;
-  --font-chamfer: 'Space Grotesk', sans-serif;
+  /* Typography Scale & Families — Google Fonts Knowledge Typographic System */
+  --font-family-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-syne: 'Syne', 'Space Grotesk', sans-serif;
+  --font-family-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Space Grotesk', monospace;
+
+  /* Default Active System (Option A: Precision Monolith) */
+  --font-sans: var(--font-family-grotesk);
+  --font-headline: var(--font-family-grotesk);
+  --font-display: var(--font-family-grotesk);
+  --font-mono: var(--font-family-mono);
+  --font-modern: var(--font-family-grotesk);
+  --font-chamfer: var(--font-family-grotesk);
+
+  /* OpenType & Typographic Features */
+  --font-feature-display: "kern" 1, "liga" 1;
+  --font-feature-tabular: "tnum" 1, "kern" 1;
+  --font-feature-code: "tnum" 1, "zero" 1;
 
   /* Text Colors */
   --text-primary: #FFFFFF;
@@ -241,6 +252,34 @@
   padding: 0;
 }
 
+/* ==========================================================================
+   GOOGLE FONTS KNOWLEDGE EXPERIMENTAL THEMES
+   ========================================================================== */
+/* Theme A: Precision Monolith (Space Grotesk + OpenType Tabular Numerals) - Default */
+body[data-font-theme="default"],
+[data-font-theme="default"] {
+  --font-sans: var(--font-family-grotesk);
+  --font-headline: var(--font-family-grotesk);
+  --font-display: var(--font-family-grotesk);
+  --font-mono: var(--font-family-mono);
+}
+
+/* Theme B: Avant-Garde Architectural (Syne Display + Space Grotesk Body) */
+body[data-font-theme="syne"],
+[data-font-theme="syne"] {
+  --font-headline: var(--font-family-syne);
+  --font-display: var(--font-family-syne);
+  --font-sans: var(--font-family-grotesk);
+}
+
+/* Theme C: Swiss Institutional (Space Grotesk Display + Plus Jakarta Sans Body) */
+body[data-font-theme="swiss"],
+[data-font-theme="swiss"] {
+  --font-sans: var(--font-family-jakarta);
+  --font-headline: var(--font-family-grotesk);
+  --font-display: var(--font-family-grotesk);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -251,6 +290,9 @@ html {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
 }
 
 body {
@@ -285,22 +327,26 @@ body::before {
 }
 
 /* ==========================================================================
-   TYPOGRAPHY & HEADINGS (DENTON EXTRABOLD FOR HEADLINES, DENTON BOLD FOR REST)
+   TYPOGRAPHY & HEADINGS (GOOGLE FONTS KNOWLEDGE SCALED & BALANCED)
    ========================================================================== */
 h1, h2, .hero-headline, .section-title {
   font-family: var(--font-headline);
   color: var(--text-white);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.03em;
+  text-wrap: balance;
+  font-feature-settings: var(--font-feature-display);
 }
 
 h3, h4, h5, h6, .brand-logo, .comp-card h3, .bento-card h3, .bento-card h4, .mission-card h3, .mod-name {
   font-family: var(--font-display);
   color: var(--text-white);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+  font-feature-settings: var(--font-feature-display);
 }
 
 h1, .hero-headline { font-size: clamp(2.8rem, 6.5vw, 5.2rem); }
@@ -309,13 +355,13 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 1.95rem); }
 h4 { font-size: 1.25rem; }
 
 h1 em, h1 i, h2 em, h2 i, .hero-headline em, .hero-headline i, .section-title em, .section-title i {
-  font-family: 'Denton-ExtraBold', 'Denton', serif;
+  font-family: var(--font-headline);
   font-style: italic;
   font-weight: 800;
 }
 
 h3 em, h3 i, h4 em, h4 i, blockquote em, blockquote i {
-  font-family: 'Denton-Bold', 'Denton', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-weight: 700;
 }
@@ -323,11 +369,30 @@ h3 em, h3 i, h4 em, h4 i, blockquote em, blockquote i {
 p {
   color: var(--text-secondary);
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.section-header p,
+.hero-lead,
+.narrative-lead {
+  max-width: 68ch;
+}
+
+.section-header p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header.left p {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .mono {
   font-family: var(--font-mono);
+  font-feature-settings: var(--font-feature-tabular);
+  font-variant-numeric: tabular-nums;
 }
 
 .text-gradient {
@@ -349,7 +414,10 @@ p {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-feature-settings: var(--font-feature-code);
+  font-variant-numeric: tabular-nums;
   color: var(--accent-cyan);
   background: rgba(0, 255, 102, 0.08);
   border: 1px solid rgba(0, 255, 102, 0.25);
@@ -5559,4 +5627,19 @@ h1 em, h2 em, h1 [style*="accent-cyan"], h2 [style*="accent-cyan"] {
   -webkit-text-fill-color: #00FF66 !important;
   display: inline !important;
 }
+
+/* ==========================================================================
+   PERMANENT REMOVAL OF FLOATING CHROME & HUD OVERLAYS ACROSS ALL PAGES
+   ========================================================================== */
+.site-chrome-header,
+#hudTelemetryTicker,
+#typographyLab,
+.typo-lab-widget,
+.audio-hud-btn {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 
