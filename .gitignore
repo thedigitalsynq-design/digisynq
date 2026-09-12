@@ -1,0 +1,22 @@
+# Environment files containing sensitive credentials
+.env
+
+# Logs and runtime files
+*.log
+logs/
+
+# Local volume mounts or database dumps
+data/
+*.bak
+*.ldb
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.swp
+*~
