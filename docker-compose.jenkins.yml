@@ -1,0 +1,16 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    container_name: jenkins
+    restart: unless-stopped
+    ports:
+      - "8080:8080"      # Jenkins Web UI
+      - "50000:50000"    # Inbound build agent port
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=true
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+volumes:
+  jenkins_home:
+    driver: local

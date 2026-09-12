@@ -29,10 +29,15 @@ It provides complete Active Directory services compatible with Windows 10/11 and
 │   ├── create-user.ps1          # PowerShell helper to create AD users and assign groups
 │   ├── create-user.sh           # Bash helper to create AD users and assign groups
 │   ├── test-dc.ps1              # PowerShell health check (domain info, FSMO, user list)
-│   └── test-dc.sh               # Bash health check
+│   ├── test-dc.sh               # Bash health check
+│   ├── run-jenkins.ps1          # PowerShell script to start Jenkins CI/CD container
+│   ├── run-jenkins.sh           # Bash script to start Jenkins CI/CD container
+│   ├── get-jenkins-password.ps1 # PowerShell script to retrieve Jenkins initial password
+│   └── get-jenkins-password.sh  # Bash script to retrieve Jenkins initial password
 ├── .env.example                 # Configuration template for domain settings
 ├── .gitignore                   # Excludes credentials and local runtime files
-├── docker-compose.yml           # Multi-port container definition and named volumes
+├── docker-compose.yml           # Samba AD DC container definition
+├── docker-compose.jenkins.yml   # Jenkins LTS CI/CD container definition
 └── README.md                    # Documentation and usage guide
 ```
 
@@ -137,6 +142,42 @@ You can create users using the included scripts:
 docker exec -it samba-dc samba-tool user create username "Password123!"
 docker exec -it samba-dc samba-tool group addmembers "Domain Admins" username
 ```
+
+---
+
+## 🏗️ Jenkins CI/CD on Docker
+
+A dedicated Jenkins LTS container service is configured and ready to run:
+
+### Start Jenkins:
+**PowerShell:**
+```powershell
+.\scripts\run-jenkins.ps1
+```
+
+**Bash:**
+```bash
+./scripts/run-jenkins.sh
+```
+
+Or using Docker Compose directly:
+```bash
+docker compose -f docker-compose.jenkins.yml up -d
+```
+
+### Retrieve Initial Admin Password:
+**PowerShell:**
+```powershell
+.\scripts\get-jenkins-password.ps1
+```
+
+**Bash:**
+```bash
+./scripts/get-jenkins-password.sh
+```
+
+### Access Jenkins Web UI:
+Open **[http://localhost:8080](http://localhost:8080)** in your browser and paste the password to complete setup.
 
 ---
 
