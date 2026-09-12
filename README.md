@@ -38,6 +38,7 @@ It provides complete Active Directory services compatible with Windows 10/11 and
 ├── .gitignore                   # Excludes credentials and local runtime files
 ├── docker-compose.yml           # Samba AD DC container definition
 ├── docker-compose.jenkins.yml   # Jenkins LTS CI/CD container definition
+├── Jenkinsfile                  # Automated Jenkins CI/CD declarative pipeline
 └── README.md                    # Documentation and usage guide
 ```
 
@@ -178,6 +179,17 @@ docker compose -f docker-compose.jenkins.yml up -d
 
 ### Access Jenkins Web UI:
 Open **[http://localhost:8080](http://localhost:8080)** in your browser and paste the password to complete setup.
+
+### Run Automated Pipeline (`Jenkinsfile`):
+1. On the Jenkins dashboard, click **"New Item"**.
+2. Enter a name (e.g. `digisynq-pipeline`) and select **Pipeline** &rarr; click **OK**.
+3. Scroll down to the **Pipeline** section at the bottom.
+4. Under **Definition**, select **Pipeline script from SCM**.
+5. Under **SCM**, choose **Git**.
+6. Set **Repository URL** to: `https://github.com/thedigitalsynq-design/digisynq.git`.
+7. Set **Branch Specifier** to: `*/main`.
+8. Ensure **Script Path** is set to `Jenkinsfile`.
+9. Click **Save** and then click **"Build Now"** to trigger your first pipeline build!
 
 ---
 

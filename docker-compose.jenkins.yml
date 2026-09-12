@@ -6,10 +6,12 @@ services:
     ports:
       - "8080:8080"      # Jenkins Web UI
       - "50000:50000"    # Inbound build agent port
+    user: root
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=true
     volumes:
       - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
   jenkins_home:
