@@ -5,8 +5,8 @@ set -e
 # Samba 4 Active Directory Domain Controller Entrypoint
 # ==============================================================================
 
-REALM=${REALM:-CORP.LOCAL}
-DOMAIN=${DOMAIN:-CORP}
+REALM=${REALM:-DIGISYNQ.COM}
+DOMAIN=${DOMAIN:-DIGISYNQ}
 ADMIN_PASSWORD=${ADMIN_PASSWORD:-P@ssw0rd2026!}
 DNS_FORWARDER=${DNS_FORWARDER:-8.8.8.8}
 SAMBA_LOG_LEVEL=${SAMBA_LOG_LEVEL:-1}

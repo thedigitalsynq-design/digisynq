@@ -54,8 +54,8 @@ cp .env.example .env
 Edit `.env` to customize your domain parameters:
 
 ```ini
-REALM=CORP.LOCAL
-DOMAIN=CORP
+REALM=DIGISYNQ.COM
+DOMAIN=DIGISYNQ
 ADMIN_PASSWORD=YourStrongP@ssw0rd!
 DNS_FORWARDER=8.8.8.8
 SAMBA_LOG_LEVEL=1
@@ -81,7 +81,7 @@ You should see:
 ```text
 ========================================================
  [+] Domain Controller successfully provisioned!
- [+] Realm: CORP.LOCAL
+ [+] Realm: DIGISYNQ.COM
  [+] Administrator username: Administrator
 ========================================================
 ```
@@ -148,14 +148,14 @@ On your client machine (Windows or Linux):
 2. Set the **Primary DNS Server** to the **IP address of the Docker host machine**.
 3. Verify name resolution:
    ```powershell
-   nslookup corp.local
-   nslookup -type=SRV _ldap._tcp.dc._msdcs.corp.local
+   nslookup digisynq.com
+   nslookup -type=SRV _ldap._tcp.dc._msdcs.digisynq.com
    ```
 
 ### 2. Join the Windows Machine to the Domain
 1. Press `Win + R`, type `sysdm.cpl`, and press **Enter**.
 2. Click **Change...** under the Computer Name tab.
-3. Under **Member of**, select **Domain** and enter your realm (e.g., `CORP.LOCAL`).
+3. Under **Member of**, select **Domain** and enter your realm (e.g., `DIGISYNQ.COM`).
 4. When prompted, authenticate with:
    - **Username**: `Administrator`
    - **Password**: Your `ADMIN_PASSWORD` defined in `.env`
@@ -168,7 +168,7 @@ Install **Remote Server Administration Tools (RSAT)** on your Windows client:
   - **RSAT: Active Directory Domain Services and Lightweight Directory Services Tools**
   - **RSAT: Group Policy Management Tools**
   - **RSAT: DNS Server Tools**
-- Launch `dsa.msc` (**Active Directory Users and Computers**) and connect to `dc1.corp.local`!
+- Launch `dsa.msc` (**Active Directory Users and Computers**) and connect to `dc1.digisynq.com`!
 
 ---
 

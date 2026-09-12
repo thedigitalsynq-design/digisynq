@@ -6,13 +6,13 @@ services:
     image: samba-ad-dc:latest
     container_name: samba-dc
     hostname: dc1
-    domainname: ${REALM:-corp.local}
+    domainname: ${REALM:-digisynq.com}
     restart: unless-stopped
     cap_add:
       - SYS_ADMIN
     environment:
-      - REALM=${REALM:-CORP.LOCAL}
-      - DOMAIN=${DOMAIN:-CORP}
+      - REALM=${REALM:-DIGISYNQ.COM}
+      - DOMAIN=${DOMAIN:-DIGISYNQ}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-P@ssw0rd2026!}
       - DNS_FORWARDER=${DNS_FORWARDER:-8.8.8.8}
       - SAMBA_LOG_LEVEL=${SAMBA_LOG_LEVEL:-1}
