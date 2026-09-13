@@ -1,0 +1,2191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DigiSynq — The entertainment ecosystem, synchronized. An asset-light coordination, synchronization and intelligence layer connecting people, capabilities, resources, rights, platforms and audiences.">
+  <meta name="theme-color" content="#03060f">
+  <meta property="og:title" content="DigiSynq — The Entertainment Ecosystem, Synchronized">
+  <meta property="og:description" content="Connect the fragmented entertainment ecosystem to create more value from what already exists. Own less. Connect more. Coordinate better. Leverage everything.">
+  <meta property="og:type" content="website">
+
+  <title>DigiSynq — The Entertainment Ecosystem, Synchronized</title>
+
+  <!-- Typography: Google Sans Flex Only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..96,100..1000&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <!-- Subtle Grain & Ambient Background Layers -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Primary System Navigation -->
+  <header class="system-nav" id="mainHeader">
+    <div class="nav-container">
+      <a class="nav-brand" href="#top" aria-label="DigiSynq Home">
+        <img src="digisynq-logo.png" alt="DigiSynq" class="brand-logo-img">
+        <span class="system-badge"><span class="pulse-dot"></span> LIVE SYSTEM</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#the-idea" class="nav-link">Thesis</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#system" class="nav-link">Engine</a>
+        <a href="#network" class="nav-link">Domains</a>
+        <a href="#mechanism" class="nav-link">Mechanics</a>
+        <a href="#scenarios" class="nav-link">Scenarios</a>
+        <a href="#platform-suite" class="nav-link">Platform</a>
+        <a href="#business-model" class="nav-link">Business</a>
+        <a href="#position" class="nav-link">Position</a>
+        <a href="#manifesto" class="nav-link">Manifesto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="btnOpenCommandPalette" title="Search Ecosystem (Cmd+K)" aria-label="Search Ecosystem">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span class="kbd-shortcut">⌘K</span>
+        </button>
+        <button class="nav-icon-btn" id="btnAudioToggle" title="Toggle Acoustic Feedback" aria-label="Toggle Acoustic Feedback">
+          <svg class="icon-audio" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+        <a class="nav-cta-pill" href="#strategic-conversation">
+          <span>Start Conversation</span>
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="mobile-drawer-content">
+        <div class="mobile-drawer-brand">
+          <img src="digisynq-logo.png" alt="DigiSynq" class="brand-logo-img">
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="#the-idea" class="mobile-link">01 // The Strategic Premise</a>
+          <a href="#philosophy" class="mobile-link">02 // The 11 Guiding Principles</a>
+          <a href="#system" class="mobile-link">03 // The 12-Step Living Flow</a>
+          <a href="#network" class="mobile-link">04 // 20 Node Domains &amp; 10 Dimensions</a>
+          <a href="#mechanism" class="mobile-link">05 // Key Mechanisms</a>
+          <a href="#trust-monitoring" class="mobile-link">06 // Trust &amp; Live Monitoring</a>
+          <a href="#scenarios" class="mobile-link">07 // Operational Scenarios</a>
+          <a href="#platform-suite" class="mobile-link">08 // 13 Platform Modules &amp; Architecture</a>
+          <a href="#business-model" class="mobile-link">09 // Business Model &amp; 7 Moats</a>
+          <a href="#position" class="mobile-link">10 // Position &amp; Value Matrix</a>
+          <a href="#manifesto" class="mobile-link">11 // The DigiSynq Manifesto</a>
+          <a href="#strategic-conversation" class="mobile-link highlight">12 // Start a Strategic Conversation ↗</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section">
+      <div class="hero-backdrop" aria-hidden="true">
+        <canvas class="hero-network-canvas" id="heroNetworkCanvas"></canvas>
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-gradient-orb"></div>
+      </div>
+
+      <div class="section-container hero-stage-wrapper">
+        <div class="hero-content">
+          <div class="telemetry-pill" data-reveal>
+            <span class="telemetry-node">DIGISYNQ // ENTERTAINMENT OS-LAYER</span>
+            <span class="telemetry-divider">/</span>
+            <span class="telemetry-status">COORDINATION &amp; INTELLIGENCE</span>
+            <span class="telemetry-pulse"></span>
+          </div>
+
+          <h1 class="hero-title" data-reveal>
+            Make the<br>
+            <span class="text-gradient">ecosystem</span><br>
+            work together.
+          </h1>
+
+          <p class="hero-description" data-reveal>
+            DigiSynq connects the fragmented entertainment ecosystem — people, companies, capabilities, resources, rights, platforms and audiences — so more value can be created from what already exists.
+          </p>
+
+          <div class="hero-cta-group" data-reveal>
+            <a class="btn btn-primary btn-rich-gradient magnetic-btn" href="#system">
+              <span>Explore the system</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2.5V11.5M7 11.5L2.5 7M7 11.5L11.5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-secondary btn-warm magnetic-btn" href="#strategic-conversation">
+              <span>Start a strategic conversation</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5.5M11 3V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Horizontal Luminous Slit Light Divider -->
+
+          <!-- Hero Metadata Band with Corner HUD Brackets & Dual Badges -->
+          <div class="hero-telemetry-band " data-reveal>
+
+            <div class="dual-metadata-pill">
+              <div class="dual-pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div class="dual-pill-text">
+                <span class="dual-pill-sub">POSITION</span>
+                <span class="dual-pill-title">Asset-Light Infrastructure</span>
+              </div>
+            </div>
+
+            <div class="dual-metadata-pill">
+              <div class="dual-pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="dual-pill-text">
+                <span class="dual-pill-sub">FOCUS</span>
+                <span class="dual-pill-title">Connection · Coordination</span>
+              </div>
+            </div>
+
+            <div class="dual-metadata-pill">
+              <div class="dual-pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div class="dual-pill-text">
+                <span class="dual-pill-sub">PHILOSOPHY</span>
+                <span class="dual-pill-title">Own Less. Leverage More.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference 1, 3 & 4: 3D Stacked Frosted Glass Cards & Luminous Stage -->
+        <div class="hero-showcase-stage" data-reveal id="heroStackedDeckContainer">
+          <!-- Chromatic Glowing Atmospheric Orbs (Ref 3 & 4) -->
+          <div class="deck-ambient-glow-cyan" aria-hidden="true"></div>
+          <div class="deck-ambient-glow-violet" aria-hidden="true"></div>
+
+          <!-- Tilted 3D Mini Floating Token (Ref 4) -->
+          <div class="floating-tilted-token top-badge" aria-hidden="true">
+            <div class="mini-card-chip"></div>
+            <div class="mini-token-text">
+              <span class="token-code">DEAL 0842 // LOCKED</span>
+              <span class="token-val">$4.2M ESCROW</span>
+            </div>
+          </div>
+
+          <!-- 3D Stacked Frosted Glass Deck (Ref 1 & 4) -->
+          <div class="stacked-card-deck" id="stackedDeck">
+            <!-- Card 01: Autonomous Opportunity Engine -->
+            <div class="deck-card deck-card-0 active" data-deck-index="0">
+              <div class="deck-card-glow"></div>
+              <div class="deck-card-header">
+                <div class="deck-card-squircle-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <div class="deck-card-meta">
+                  <span class="deck-card-badge">ENGINE 01 // LIVE SYNQ</span>
+                  <h3 class="deck-card-title">Opportunity Engine</h3>
+                </div>
+                <span class="deck-live-indicator"><span class="deck-live-pulse"></span> 99.4%</span>
+              </div>
+
+              <p class="deck-card-desc">Algorithmic matchmaking pairing latent studio capacity, rights windows, and talent with funded slates in real-time.</p>
+
+              <!-- Ref 3: 3-Segment Sunken Metadata Stats Strip -->
+              <div class="deck-stats-strip">
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">14ms</span>
+                  <span class="stat-col-label">INGESTION</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">2,840</span>
+                  <span class="stat-col-label">NODES</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">99.4%</span>
+                  <span class="stat-col-label">PRECISION</span>
+                </div>
+              </div>
+
+              <!-- Ref 3: Popular Tags Floating Glass Chips -->
+              <div class="deck-tags-group">
+                <span class="glass-tag-pill">AI Graph Mesh</span>
+                <span class="glass-tag-pill">Rights-Aware</span>
+                <span class="glass-tag-pill">Zero Waste</span>
+              </div>
+            </div>
+
+            <!-- Card 02: Universal Rights Vault -->
+            <div class="deck-card deck-card-1" data-deck-index="1">
+              <div class="deck-card-glow warm"></div>
+              <div class="deck-card-header">
+                <div class="deck-card-squircle-icon warm">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="deck-card-meta">
+                  <span class="deck-card-badge warm">VAULT 02 // VERIFIED</span>
+                  <h3 class="deck-card-title">Universal Rights Catalog</h3>
+                </div>
+                <span class="deck-live-indicator warm"><span class="deck-live-pulse warm"></span> 84K IP</span>
+              </div>
+
+              <p class="deck-card-desc">Instant territorial clearance, format rights verification, and algorithmic derivative matching for unexploited IP.</p>
+
+              <div class="deck-stats-strip">
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">84,000+</span>
+                  <span class="stat-col-label">IP ASSETS</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">190</span>
+                  <span class="stat-col-label">TERRITORIES</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">Instant</span>
+                  <span class="stat-col-label">ESCROW LOCK</span>
+                </div>
+              </div>
+
+              <div class="deck-tags-group">
+                <span class="glass-tag-pill">Sequel Rights</span>
+                <span class="glass-tag-pill">Gaming Ports</span>
+                <span class="glass-tag-pill">FAST Windows</span>
+              </div>
+            </div>
+
+            <!-- Card 03: Virtual Stage & Production Mesh -->
+            <div class="deck-card deck-card-2" data-deck-index="2">
+              <div class="deck-card-glow"></div>
+              <div class="deck-card-header">
+                <div class="deck-card-squircle-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <div class="deck-card-meta">
+                  <span class="deck-card-badge">FACILITY 03 // LIVE</span>
+                  <h3 class="deck-card-title">Virtual Stages &amp; Rigs</h3>
+                </div>
+                <span class="deck-live-indicator"><span class="deck-live-pulse"></span> 94% LOAD</span>
+              </div>
+
+              <p class="deck-card-desc">Dynamic schedule matching for 320+ certified sound stages, LED volumes, render pipelines, and camera houses.</p>
+
+              <div class="deck-stats-strip">
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">320+</span>
+                  <span class="stat-col-label">LED VOLUMES</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">Unreal 5.4</span>
+                  <span class="stat-col-label">RENDER MESH</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">-92%</span>
+                  <span class="stat-col-label">IDLE DOWNTIME</span>
+                </div>
+              </div>
+
+              <div class="deck-tags-group">
+                <span class="glass-tag-pill">Virtual Production</span>
+                <span class="glass-tag-pill">MoCap Sync</span>
+                <span class="glass-tag-pill">Pre-Viz</span>
+              </div>
+            </div>
+
+            <!-- Card 04: Syndicated Capital Mesh -->
+            <div class="deck-card deck-card-3" data-deck-index="3">
+              <div class="deck-card-glow warm"></div>
+              <div class="deck-card-header">
+                <div class="deck-card-squircle-icon warm">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <div class="deck-card-meta">
+                  <span class="deck-card-badge warm">LIQUIDITY 04 // POOLED</span>
+                  <h3 class="deck-card-title">Syndicated Capital Mesh</h3>
+                </div>
+                <span class="deck-live-indicator warm"><span class="deck-live-pulse warm"></span> $140M</span>
+              </div>
+
+              <p class="deck-card-desc">Autonomous waterfall settlements, verified milestone escrow, and syndicated slate financing with zero intermediary drag.</p>
+
+              <div class="deck-stats-strip">
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">$140M</span>
+                  <span class="stat-col-label">ACTIVE LIQUIDITY</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">0.0%</span>
+                  <span class="stat-col-label">SLACK DRAG</span>
+                </div>
+                <div class="deck-stat-col">
+                  <span class="stat-col-val">Instant</span>
+                  <span class="stat-col-label">WATERFALL</span>
+                </div>
+              </div>
+
+              <div class="deck-tags-group">
+                <span class="glass-tag-pill">Milestone Escrow</span>
+                <span class="glass-tag-pill">Tax Incentives</span>
+                <span class="glass-tag-pill">Debt Facilities</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Deck Navigation & Shuffle Pill -->
+          <div class="deck-shuffle-bar">
+            <span class="deck-counter-label" id="deckActiveLabel">01 / 04 // OPPORTUNITY ENGINE</span>
+            <div class="deck-action-buttons">
+              <button class="deck-btn-nav" id="btnPrevDeckCard" aria-label="Previous card">←</button>
+              <button class="deck-btn-shuffle" id="btnShuffleDeck" aria-label="Shuffle card stack">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                <span>Shuffle Stack</span>
+              </button>
+              <button class="deck-btn-nav" id="btnNextDeckCard" aria-label="Next card">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ==================== SECTION 2: THE 11 GUIDING PRINCIPLES ==================== -->
+    <section id="philosophy" class="section philosophy-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">02 // THE DIGISYNQ PHILOSOPHY</div>
+          <h2 class="section-heading">
+            Own less. Connect more.<br>
+            <span class="text-gradient">The 11 guiding principles.</span>
+          </h2>
+          <p class="section-lead">
+            DigiSynq is built around an immutable philosophy: create disproportionate value from what already exists before assuming new assets must be purchased or built.
+          </p>
+        </div>
+
+        <div class="principles-grid" data-reveal>
+          <!-- Principle 01 -->
+          <div class="principle-card">
+            <span class="p-num">01</span>
+            <h4>Value Everything</h4>
+            <p>Every node, resource, relationship, capability, and opportunity can potentially carry value.</p>
+          </div>
+
+          <!-- Principle 02 -->
+          <div class="principle-card">
+            <span class="p-num">02</span>
+            <h4>Nothing Is Waste</h4>
+            <p>Something that is idle, unused, or disconnected is not waste — it is simply <strong>underutilized value</strong>.</p>
+          </div>
+
+          <!-- Principle 03 -->
+          <div class="principle-card">
+            <span class="p-num">03</span>
+            <h4>Leverage Everything</h4>
+            <p>Use what already exists across the ecosystem before assuming something new needs to be created.</p>
+          </div>
+
+          <!-- Principle 04 -->
+          <div class="principle-card">
+            <span class="p-num">04</span>
+            <h4>Connect the Fragments</h4>
+            <p>Fragmentation creates costly operational friction. <strong>Connection creates possibility.</strong></p>
+          </div>
+
+          <!-- Principle 05 -->
+          <div class="principle-card">
+            <span class="p-num">05</span>
+            <h4>Coordinate Better</h4>
+            <p>Better coordination can often produce more value without adding more capital-intensive assets.</p>
+          </div>
+
+          <!-- Principle 06 -->
+          <div class="principle-card">
+            <span class="p-num">06</span>
+            <h4>Synchronize Dependencies</h4>
+            <p>Entertainment projects are networks of dependencies; when one node moves, all dependent nodes must align.</p>
+          </div>
+
+          <!-- Principle 07 -->
+          <div class="principle-card">
+            <span class="p-num">07</span>
+            <h4>Make the Invisible Visible</h4>
+            <p>Unused capacity, hidden capabilities, available rights, and potential relationships should become discoverable.</p>
+          </div>
+
+          <!-- Principle 08 -->
+          <div class="principle-card">
+            <span class="p-num">08</span>
+            <h4>Reduce Unnecessary Leakage</h4>
+            <p>Time, money, resources, information, opportunities, and capacity can leak through fragmentation.</p>
+          </div>
+
+          <!-- Principle 09 -->
+          <div class="principle-card">
+            <span class="p-num">09</span>
+            <h4>Enable Shared Risk</h4>
+            <p>Better coordination can distribute risk among suitable ecosystem participants instead of concentrating it unnecessarily.</p>
+          </div>
+
+          <!-- Principle 10 -->
+          <div class="principle-card">
+            <span class="p-num">10</span>
+            <h4>Enable New-Style Collaboration</h4>
+            <p>Encourage new cross-domain combinations rather than simply reproducing traditional entertainment workflows.</p>
+          </div>
+
+          <!-- Principle 11 -->
+          <div class="principle-card highlight-principle">
+            <span class="p-num">11</span>
+            <h4>Remain Neutral</h4>
+            <p>DigiSynq primarily enables and empowers the ecosystem rather than competing with studios, agencies, or platform partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: THE SYSTEM (12-STEP LIVING PROCESS) ==================== -->
+    <section id="system" class="section system-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">03 // SYSTEM PIPELINE</div>
+          <h2 class="section-heading">
+            From fragmented<br>
+            <span class="text-gradient">to synchronized.</span>
+          </h2>
+          <p class="section-lead">
+            A living coordination pipeline that continuously senses what exists, matches what is needed, orchestrates alignment, and measures compounding ecosystem value.
+          </p>
+        </div>
+
+        <!-- Living Process Sequencer -->
+        <div class="system-sequencer" id="systemSequencer" data-reveal>
+          <!-- Controls & Indicator Bar -->
+          <div class="sequencer-bar">
+            <div class="sequencer-status">
+              <span class="live-dot"></span>
+              <span>LIVING PROCESS CYCLE: <strong id="currentStepName">MAP</strong></span>
+            </div>
+            <div class="sequencer-controls">
+              <button class="step-btn" id="prevStepBtn" aria-label="Previous step">←</button>
+              <button class="step-btn play-pause-btn" id="togglePlayBtn" aria-label="Toggle pipeline auto-advance">
+                <span id="playStateText">PAUSE</span>
+              </button>
+              <button class="step-btn" id="nextStepBtn" aria-label="Next step">→</button>
+            </div>
+          </div>
+
+          <!-- Step Progression Navigator (12 Steps) -->
+          <div class="steps-progress-grid" id="stepsTrack">
+            <button class="progress-step active" data-step="0"><span class="step-num">01</span><span class="step-tag">MAP</span></button>
+            <button class="progress-step" data-step="1"><span class="step-num">02</span><span class="step-tag">DISCOVER</span></button>
+            <button class="progress-step" data-step="2"><span class="step-num">03</span><span class="step-tag">CONNECT</span></button>
+            <button class="progress-step" data-step="3"><span class="step-num">04</span><span class="step-tag">MATCH</span></button>
+            <button class="progress-step" data-step="4"><span class="step-num">05</span><span class="step-tag">COORDINATE</span></button>
+            <button class="progress-step" data-step="5"><span class="step-num">06</span><span class="step-tag">SYNCHRONIZE</span></button>
+            <button class="progress-step" data-step="6"><span class="step-num">07</span><span class="step-tag">COLLABORATE</span></button>
+            <button class="progress-step" data-step="7"><span class="step-num">08</span><span class="step-tag">MONITOR</span></button>
+            <button class="progress-step" data-step="8"><span class="step-num">09</span><span class="step-tag">OPTIMIZE</span></button>
+            <button class="progress-step" data-step="9"><span class="step-num">10</span><span class="step-tag">LEVERAGE</span></button>
+            <button class="progress-step" data-step="10"><span class="step-num">11</span><span class="step-tag">MEASURE</span></button>
+            <button class="progress-step" data-step="11"><span class="step-num">12</span><span class="step-tag">LEARN</span></button>
+          </div>
+
+          <!-- Dynamic Step Display Card -->
+          <div class="step-detail-card" id="stepDetailCard">
+            <div class="step-card-left">
+              <div class="step-badge-large" id="stepIndexDisplay">STAGE 01 / 12</div>
+              <h3 class="step-title" id="stepTitleDisplay">MAP</h3>
+              <p class="step-description" id="stepDescDisplay">
+                Catalog and structure every active node across the ecosystem: facilities, talent capabilities, rights availability, distribution pipelines, and technical infrastructure.
+              </p>
+              <div class="step-telemetry" id="stepTelemetryDisplay">
+                <span class="metric-pill">Telemetry: 99.4% Graph Density</span>
+                <span class="metric-pill">Latency: Real-time Ingestion</span>
+              </div>
+            </div>
+            <div class="step-card-right">
+              <div class="step-visual-box">
+                <div class="signal-radar" id="signalRadar">
+                  <div class="radar-ring"></div>
+                  <div class="radar-ring"></div>
+                  <div class="radar-sweep"></div>
+                  <div class="radar-node r-1"></div>
+                  <div class="radar-node r-2"></div>
+                  <div class="radar-node r-3"></div>
+                  <div class="radar-core">DS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: THE NETWORK (20 NODE DOMAINS & 10 INGESTION DIMENSIONS) ==================== -->
+    <section id="network" class="section network-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">04 // ECOSYSTEM TOPOLOGY &amp; NODE ONTOLOGY</div>
+          <h2 class="section-heading">
+            Everything is a connected node.<br>
+            <span class="text-gradient">The 20 domains &amp; 10 dimensions.</span>
+          </h2>
+          <p class="section-lead">
+            Not separate corporate silos or static vendor listings. Twenty interconnected domains structured along ten deep ingestion dimensions to power real-time discovery, synchronization, and leverage.
+          </p>
+        </div>
+
+        <!-- §4: What is a Node? & §6: The Entertainment Ecosystem Graph -->
+        <div class="node-ontology-card glass-card" data-reveal>
+          <div class="ontology-grid">
+            <div class="ontology-col">
+              <span class="section-badge">§4 // WHAT IS A NODE?</span>
+              <h3 class="ontology-title">A node is anything that can carry or activate value.</h3>
+              <p class="ontology-desc">
+                Anything that can provide value, require value, create value, own value, distribute value, connect value, finance value, enable value, or measure value:
+              </p>
+              <div class="ontology-formula">
+                Person + Company + Organization + Asset + Capability + Resource + Opportunity + IP + Right + Platform + Audience + Institution + Information + Project
+              </div>
+            </div>
+            <div class="ontology-col graph-col">
+              <span class="section-badge">§6 // THE ECOSYSTEM GRAPH</span>
+              <h3 class="ontology-title">Beyond static databases: A Living Graph</h3>
+              <div class="graph-formula-track">
+                <span>NODE</span>
+                <span class="g-arr">&rarr;</span>
+                <span>RELATIONSHIP</span>
+                <span class="g-arr">&rarr;</span>
+                <span>CAPABILITY</span>
+                <span class="g-arr">&rarr;</span>
+                <span>NEED</span>
+                <span class="g-arr">&rarr;</span>
+                <span>OPPORTUNITY</span>
+                <span class="g-arr">&rarr;</span>
+                <span>ACTION</span>
+                <span class="g-arr">&rarr;</span>
+                <span class="highlight-val">OUTCOME</span>
+              </div>
+              <p class="ontology-desc">
+                DigiSynq maps multi-hop relationships (Actor &rarr; Manager &rarr; Project &rarr; Studio; Brand &rarr; Audience &rarr; Creator &rarr; Platform; IP &rarr; Rights Holder &rarr; Remake &rarr; Producer) to unlock invisible value.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 10 Ingestion Dimensions Schema Bar -->
+        <div class="dimensions-bar-wrapper" data-reveal>
+          <div class="dim-bar-title">THE 10 INGESTION DIMENSIONS MAPPED FOR EVERY NODE:</div>
+          <div class="dimensions-scroll">
+            <span class="dim-badge">01. Identity</span>
+            <span class="dim-badge">02. Capability</span>
+            <span class="dim-badge">03. Availability</span>
+            <span class="dim-badge">04. Assets</span>
+            <span class="dim-badge">05. Needs</span>
+            <span class="dim-badge">06. Relationships</span>
+            <span class="dim-badge">07. Opportunities</span>
+            <span class="dim-badge">08. Rights</span>
+            <span class="dim-badge">09. Workflow</span>
+            <span class="dim-badge highlight">10. Intelligence</span>
+          </div>
+        </div>
+
+        <!-- Node Category Filter Tabs -->
+        <div class="node-filters" data-reveal>
+          <button class="filter-btn active" data-filter="all">All 20 Domains</button>
+          <button class="filter-btn" data-filter="creation">Creation &amp; Production</button>
+          <button class="filter-btn" data-filter="distribution">Distribution &amp; Platforms</button>
+          <button class="filter-btn" data-filter="capital">Capital &amp; Rights</button>
+          <button class="filter-btn" data-filter="intelligence">Intelligence &amp; Tech</button>
+        </div>
+
+                <!-- 20 Node Interactive Grid (Aligned with Section 5 of Blueprint) -->
+        <div class="node-grid" id="nodeMatrix" data-reveal>
+          <div class="node-card" data-category="creation" data-node="01">
+            <div class="node-meta"><span class="node-idx">01</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Creative</h4>
+            <p class="node-desc">Actors, actresses, directors, screenwriters, dialogue writers, lyricists, composers, singers, animators, voice artists, choreographers, stunt performers.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 18 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="02">
+            <div class="node-meta"><span class="node-idx">02</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Production</h4>
+            <p class="node-desc">Film production houses, TV studios, web-series producers, OTT production companies, VFX studios, animation houses, creator studios.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 20 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="03">
+            <div class="node-meta"><span class="node-idx">03</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Production Management</h4>
+            <p class="node-desc">Producers, executive producers, line producers, production managers, coordinators, unit managers, production accountants, location managers.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 16 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="04">
+            <div class="node-meta"><span class="node-idx">04</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Infrastructure</h4>
+            <p class="node-desc">Sound stages, recording studios, rehearsal spaces, virtual-production facilities, editing suites, dubbing & mixing, equipment & camera rentals.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 15 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="distribution" data-node="05">
+            <div class="node-meta"><span class="node-idx">05</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Distribution</h4>
+            <p class="node-desc">Theatrical exhibitors, cinema chains, multiplexes, TV networks, satellite broadcasters, FAST channels, syndication & international distributors.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 17 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="distribution" data-node="06">
+            <div class="node-meta"><span class="node-idx">06</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Platform</h4>
+            <p class="node-desc">OTT & streaming platforms, YouTube, short-video, social media, podcasts, music-streaming, live-streaming, FAST, content marketplaces.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 19 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="distribution" data-node="07">
+            <div class="node-meta"><span class="node-idx">07</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Television</h4>
+            <p class="node-desc">TV channels, broadcast networks, daily-show producers, reality & game show producers, programming & acquisition teams, advertisers.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 14 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="08">
+            <div class="node-meta"><span class="node-idx">08</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Music</h4>
+            <p class="node-desc">Record labels, music publishers, songwriters, lyricists, composers, producers, DJs, streaming distributors, licensing & royalty societies.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 15 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="capital" data-node="09">
+            <div class="node-meta"><span class="node-idx">09</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Brand</h4>
+            <p class="node-desc">Brands, advertisers, creative & media agencies, PR firms, sponsorship partners, product-placement buyers, influencer-marketing agencies.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 16 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="intelligence" data-node="10">
+            <div class="node-meta"><span class="node-idx">10</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Audience</h4>
+            <p class="node-desc">Moviegoers, OTT subscribers, YouTube fandoms, gamers, communities, concert audiences, niche cultural demographics, active listeners.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 20 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="11">
+            <div class="node-meta"><span class="node-idx">11</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Representation</h4>
+            <p class="node-desc">Talent agencies, artist managers, casting directors, booking agents, entertainment lawyers, business managers, publicists.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 18 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="distribution" data-node="12">
+            <div class="node-meta"><span class="node-idx">12</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Growth</h4>
+            <p class="node-desc">PR agencies, digital marketing, viral campaigns, social strategy, trailer & promo teams, fan engagement, reputation management, analytics.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 13 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="intelligence" data-node="13">
+            <div class="node-meta"><span class="node-idx">13</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Technology</h4>
+            <p class="node-desc">Streaming tech, CDN, cloud, AI, generative AI, recommendation engines, CMS, DAM, DRM, cybersecurity, virtual production, spatial computing.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 19 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="capital" data-node="14">
+            <div class="node-meta"><span class="node-idx">14</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Capital</h4>
+            <p class="node-desc">Banks, NBFCs, fintech, VC, private equity, family offices, film slate financiers, co-investors, completion bonders, media insurance.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 18 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="capital" data-node="15">
+            <div class="node-meta"><span class="node-idx">15</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Rights</h4>
+            <p class="node-desc">IP owners, copyright & trademark attorneys, licensing agencies, rights aggregators, royalty administrators, anti-piracy operations.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 17 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="capital" data-node="16">
+            <div class="node-meta"><span class="node-idx">16</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Regulatory</h4>
+            <p class="node-desc">Film certification boards, broadcasting authorities, tax & incentive commissions, guilds (SAG, WGA, DGA), municipal film offices.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 12 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="creation" data-node="17">
+            <div class="node-meta"><span class="node-idx">17</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Operational</h4>
+            <p class="node-desc">Catering, specialized logistics, equipment transport, safety coordinators, cleaning, hospitality, props, set suppliers, printing.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 14 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="distribution" data-node="18">
+            <div class="node-meta"><span class="node-idx">18</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Live</h4>
+            <p class="node-desc">Concert promoters, festival producers, award shows, arenas, stadiums, convention centers, ticketing, stage production, sound & lighting.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 15 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="intelligence" data-node="19">
+            <div class="node-meta"><span class="node-idx">19</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Learning</h4>
+            <p class="node-desc">Film & media schools, acting academies, animation/VFX institutes, writing workshops, masterclasses, executive mentors, apprenticeships.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 11 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+          <div class="node-card" data-category="intelligence" data-node="20">
+            <div class="node-meta"><span class="node-idx">20</span><span class="node-type">DOMAIN</span></div>
+            <h4 class="node-title">Ecosystem Intelligence</h4>
+            <p class="node-desc">Researchers, industry analysts, trade publications, critics, festivals, guilds, associations, gaming & esports, localization, accessibility.</p>
+            <div class="node-connections"><span class="conn-count">Linked: 20 Nodes</span><span class="conn-pulse"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: THE MECHANISM (OPPORTUNITY GRAPH) ==================== -->
+    <section id="mechanism" class="section mechanism-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">05 // SYSTEM MECHANICS</div>
+          <h2 class="section-heading">
+            See the hidden<br>
+            <span class="text-gradient">possibility.</span>
+          </h2>
+          <p class="section-lead">
+            DigiSynq does not need to own the studio, the talent, the IP, or the platform. It maps the invisible lines between them to trigger high-yield coordination states.
+          </p>
+        </div>
+
+        <!-- Interactive Canvas / Graph Visualization -->
+        <div class="graph-viewport" id="graphViewport" data-reveal>
+          <div class="graph-telemetry-header">
+            <div class="telemetry-item">
+              <span class="t-label">GRAPH STATE:</span>
+              <span class="t-val active" id="graphStatusLabel">SYNCHRONIZING ACTIVE NODES</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="t-label">INTERACTION:</span>
+              <span class="t-val">HOVER NODES / DRAG FIELD</span>
+            </div>
+          </div>
+
+          <!-- Canvas Rendering Layer -->
+          <canvas id="opportunityCanvas" class="opportunity-canvas"></canvas>
+
+          <!-- Graph Overlay Scenario Badges -->
+          <div class="canvas-node-badges" id="canvasBadges">
+            <div class="c-badge" style="top:18%; left:12%;" data-node="studio">
+              <span class="badge-dot"></span>
+              <strong>AVAILABLE STUDIO</strong>
+              <small>Stage 4 Idle (45 Days)</small>
+            </div>
+            <div class="c-badge" style="top:15%; right:14%;" data-node="creator">
+              <span class="badge-dot"></span>
+              <strong>CREATOR CAPABILITY</strong>
+              <small>A-List Director Ready</small>
+            </div>
+            <div class="c-badge" style="bottom:22%; left:10%;" data-node="ip">
+              <span class="badge-dot"></span>
+              <strong>UNUSED IP</strong>
+              <small>Global Sci-Fi Franchise</small>
+            </div>
+            <div class="c-badge" style="bottom:20%; right:12%;" data-node="capital">
+              <span class="badge-dot"></span>
+              <strong>CAPITAL NODE</strong>
+              <small>$35M Facility Looking for Slate</small>
+            </div>
+            <div class="c-badge" style="top:12%; left:50%; transform:translateX(-50%);" data-node="audience">
+              <span class="badge-dot"></span>
+              <strong>AUDIENCE DEMAND</strong>
+              <small>+280% Unmet Appetite Signal</small>
+            </div>
+            <div class="c-badge" style="bottom:12%; left:50%; transform:translateX(-50%);" data-node="platform">
+              <span class="badge-dot"></span>
+              <strong>PLATFORM NEED</strong>
+              <small>Q4 Premium Window Gap</small>
+            </div>
+          </div>
+
+          <!-- Central Hub Indicator -->
+          <div class="center-intelligence-hub">
+            <div class="hub-rings"></div>
+            <div class="hub-core">
+              <span class="hub-title">DIGISYNQ</span>
+              <span class="hub-sub">INTELLIGENCE LAYER</span>
+            </div>
+            <div class="hub-status-pill">COORDINATING</div>
+          </div>
+        </div>
+
+        <!-- Master Equation Banner -->
+        <div class="equation-banner" data-reveal>
+          <div class="equation-item">
+            <span class="eq-term">Unused capacity</span>
+          </div>
+          <div class="eq-op">+</div>
+          <div class="equation-item">
+            <span class="eq-term">Unmet need</span>
+          </div>
+          <div class="eq-op">+</div>
+          <div class="equation-item">
+            <span class="eq-term">Network connection</span>
+          </div>
+          <div class="eq-op">+</div>
+          <div class="equation-item">
+            <span class="eq-term">Intelligence</span>
+          </div>
+          <div class="eq-op eq-result">=</div>
+          <div class="equation-item result">
+            <span class="eq-term highlight">Opportunity Unlocked</span>
+          </div>
+        </div>
+
+        <!-- Interactive Equation Live Simulator Sandbox -->
+        <div class="equation-simulator-card" id="equationSimulator" data-reveal>
+          <div class="sim-header">
+            <div class="sim-tag">INTERACTIVE SIMULATION</div>
+            <h3>Test the DigiSynq Coordination Formula</h3>
+            <p>Toggle node parameters below to watch how connection and intelligence transform idle friction into verified commercial yield.</p>
+          </div>
+
+          <div class="sim-controls-grid">
+            <!-- Factor 1: Unused Capacity -->
+            <div class="sim-factor-col">
+              <label class="sim-label">01 // UNUSED CAPACITY</label>
+              <div class="sim-button-group" data-factor="capacity">
+                <button type="button" class="sim-opt active" data-val="stage" data-yield="3.8" data-days="20">Stage 4 (45d Dark)</button>
+                <button type="button" class="sim-opt" data-val="render" data-yield="1.4" data-days="14">VFX Render Farm (30%)</button>
+                <button type="button" class="sim-opt" data-val="ip" data-yield="8.5" data-days="45">Dormant Cyberpunk IP</button>
+              </div>
+            </div>
+
+            <!-- Factor 2: Unmet Need -->
+            <div class="sim-factor-col">
+              <label class="sim-label">02 // UNMET NEED</label>
+              <div class="sim-button-group" data-factor="need">
+                <button type="button" class="sim-opt active" data-val="streamer" data-yield="5.2" data-days="22">Streamer Q4 Mandate</button>
+                <button type="button" class="sim-opt" data-val="indie" data-yield="2.6" data-days="18">Indie Tentpole Package</button>
+                <button type="button" class="sim-opt" data-val="brand" data-yield="4.1" data-days="12">Global Brand Synergy</button>
+              </div>
+            </div>
+
+            <!-- Factor 3: Mesh State -->
+            <div class="sim-factor-col">
+              <label class="sim-label">03 // NETWORK CONNECTION</label>
+              <div class="sim-button-group" data-factor="network">
+                <button type="button" class="sim-opt active" data-val="mesh" data-mult="1.4">Zero-Knowledge Mesh</button>
+                <button type="button" class="sim-opt" data-val="bilateral" data-mult="1.0">Bilateral Direct Link</button>
+              </div>
+            </div>
+
+            <!-- Factor 4: Intelligence Engine -->
+            <div class="sim-factor-col">
+              <label class="sim-label">04 // INTELLIGENCE LAYER</label>
+              <div class="sim-button-group" data-factor="intel">
+                <button type="button" class="sim-opt active" data-val="full" data-mult="1.35">Predictive AI + Rights Graph</button>
+                <button type="button" class="sim-opt" data-val="basic" data-mult="1.0">Basic Discovery Signal</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Metrics Console -->
+          <div class="sim-result-console">
+            <div class="sim-output-block">
+              <span class="out-label">CALCULATED VALUE ACTIVATED</span>
+              <span class="out-number text-gradient" id="simValDisplay">$17,400,000</span>
+              <span class="out-sub">Net ecosystem wealth generated</span>
+            </div>
+            <div class="sim-output-block">
+              <span class="out-label">CYCLE COMPRESSION</span>
+              <span class="out-number" id="simDaysDisplay">-42 Days</span>
+              <span class="out-sub">Accelerated speed-to-market</span>
+            </div>
+            <div class="sim-output-block">
+              <span class="out-label">ECONOMIC LEAKAGE ELIMINATED</span>
+              <span class="out-number" id="simLeakDisplay">28.4%</span>
+              <span class="out-sub">Opaque intermediary drag removed</span>
+            </div>
+            <div class="sim-output-block">
+              <span class="out-label">ASSET-LIGHT EFFICIENCY</span>
+              <span class="out-number status-green" id="simEfficiencyDisplay">0% Overheads</span>
+              <span class="out-sub">Zero heavy balance sheet debt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 6: TRUST & MONITORING (BLUEPRINT SECTIONS 18 & 19) ==================== -->
+    <section id="trust-monitoring" class="section trust-monitoring-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">06 // OPERATIONAL TELEMETRY &amp; TRUST</div>
+          <h2 class="section-heading">
+            Node trust intelligence &amp;<br>
+            <span class="text-gradient">live project health monitoring.</span>
+          </h2>
+          <p class="section-lead">
+            DigiSynq replaces subjective reviews with quantitative trust verification, and maintains continuous traffic-light telemetry across every active production dependency.
+          </p>
+        </div>
+
+        <div class="trust-monitor-layout">
+          <!-- 18. THE TRUST MECHANISM -->
+          <div class="feature-box trust-box" data-reveal>
+            <div class="f-header">
+              <span class="f-tag">BLUEPRINT SECTION 18 // THE TRUST MECHANISM</span>
+              <h3>Node Trust Intelligence</h3>
+              <p class="f-sub">Beyond simplistic 5-star ratings. A multi-vector trust profile grounded in verified telemetry.</p>
+            </div>
+
+            <div class="trust-contrast-view">
+              <div class="old-trust-badge">
+                <span class="old-label">TRADITIONAL MARKETPLACE</span>
+                <div class="fake-stars">★★★★★ <small>4.8 (Anonymous)</small></div>
+                <p>Easily manipulated, subjective, devoid of project context or guild compliance verification.</p>
+              </div>
+
+              <div class="digisynq-trust-scorecard">
+                <div class="trust-card-header">
+                  <span class="trust-status-pill">VERIFIED NODE TELEMETRY</span>
+                  <span class="trust-score">INDEX: 98.4 / 100</span>
+                </div>
+                <div class="trust-metrics-grid">
+                  <div class="t-metric">
+                    <span class="t-m-val">100%</span>
+                    <span class="t-m-lbl">Identity Verified</span>
+                  </div>
+                  <div class="t-metric">
+                    <span class="t-m-val">99.2%</span>
+                    <span class="t-m-lbl">On-Time Milestone</span>
+                  </div>
+                  <div class="t-metric">
+                    <span class="t-m-val">&lt; 15m</span>
+                    <span class="t-m-lbl">Avg Response Time</span>
+                  </div>
+                  <div class="t-metric">
+                    <span class="t-m-val">SAG/DGA</span>
+                    <span class="t-m-lbl">Guild Compliant</span>
+                  </div>
+                </div>
+                <div class="trust-signals-list">
+                  <span>✓ 24 Verified Major Credits</span>
+                  <span>✓ 0 Contractual Breaches</span>
+                  <span>✓ Verified Equipment Calibration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 19. THE MONITORING MECHANISM -->
+          <div class="feature-box monitor-box" data-reveal>
+            <div class="f-header">
+              <span class="f-tag">BLUEPRINT SECTION 19 // THE MONITORING MECHANISM</span>
+              <h3>Real-Time Project Health Monitor</h3>
+              <p class="f-sub">Continuous situational awareness. Test how the system responds to schedule variances.</p>
+            </div>
+
+            <div class="interactive-monitor-simulator">
+              <div class="status-selector-bar">
+                <span class="sim-label">SIMULATE HEALTH STATE:</span>
+                <div class="sim-buttons">
+                  <button class="health-toggle-btn active" data-state="green">🟢 GREEN (NOMINAL)</button>
+                  <button class="health-toggle-btn" data-state="yellow">🟡 YELLOW (WARNING)</button>
+                  <button class="health-toggle-btn" data-state="red">🔴 RED (CRITICAL)</button>
+                </div>
+              </div>
+
+              <div class="live-monitor-dashboard" id="monitorDashboard">
+                <div class="health-status-banner state-green" id="healthBanner">
+                  <div class="banner-pulse"></div>
+                  <div class="banner-text">
+                    <strong id="healthStateTitle">SYSTEM STATE: ALL SYSTEMS ON TRACK</strong>
+                    <span id="healthStateDesc">Milestone variance &lt; 1.2%. Critical path clear. Budget burn nominal.</span>
+                  </div>
+                </div>
+
+                <div class="telemetry-gauges">
+                  <div class="gauge-card">
+                    <span class="g-label">SCHEDULE DRIFT</span>
+                    <span class="g-value" id="driftVal">0.0 Days</span>
+                    <div class="gauge-bar"><div class="g-fill" id="driftFill" style="width: 2%;"></div></div>
+                  </div>
+                  <div class="gauge-card">
+                    <span class="g-label">DEPENDENCY HEALTH</span>
+                    <span class="g-value" id="depVal">99.8% Synchronized</span>
+                    <div class="gauge-bar"><div class="g-fill" id="depFill" style="width: 98%;"></div></div>
+                  </div>
+                  <div class="gauge-card">
+                    <span class="g-label">DOWNSTREAM RISK</span>
+                    <span class="g-value" id="riskVal">0 Actions Needed</span>
+                    <div class="gauge-bar"><div class="g-fill" id="riskFill" style="width: 5%;"></div></div>
+                  </div>
+                </div>
+
+                <div class="early-warning-log" id="earlyWarningLog">
+                  <span class="log-title">ACTIVE TELEMETRY LOG:</span>
+                  <p id="logMessage">All 14 linked dependencies operating within target tolerance. Stage 4 lock confirmed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPECIALIZED MECHANISMS ROW: RIGHTS GRAPH & AUDIENCE AS A NODE -->
+        <div class="specialized-row" data-reveal>
+          <!-- 16. THE RIGHTS GRAPH -->
+          <div class="spec-card">
+            <div class="spec-badge">SECTION 16 // RIGHTS INTELLIGENCE</div>
+            <h4>The Rights Graph</h4>
+            <p>A single IP holds dozens of distinct rights: theatrical, streaming, territorial holdbacks, gaming, and remakes. DigiSynq turns latent rights into active capital.</p>
+            <div class="rights-flow-diagram">
+              <span class="r-step">IP Right</span>
+              <span class="r-arrow">→</span>
+              <span class="r-step">Owner</span>
+              <span class="r-arrow">→</span>
+              <span class="r-step">Territory</span>
+              <span class="r-arrow">→</span>
+              <span class="r-step">Language</span>
+              <span class="r-arrow">→</span>
+              <span class="r-step highlight">Opportunity</span>
+            </div>
+          </div>
+
+          <!-- 17. AUDIENCE AS A NODE -->
+          <div class="spec-card">
+            <div class="spec-badge">SECTION 17 // AUDIENCE DYNAMICS</div>
+            <h4>Audience as an Active Node</h4>
+            <p>Audience is not merely a passive endpoint at the end of a marketing funnel. Fandoms, demographic cohorts, and taste clusters are active network nodes informing production.</p>
+            <div class="audience-network-loop">
+              <span>Content</span> ↔ <span>Creator</span> ↔ <span>Platform</span> ↔ <span>Community</span> ↔ <span>Brand</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 7: OPERATIONAL SCENARIOS (WALKTHROUGHS) ==================== -->
+    <section id="scenarios" class="section scenarios-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">07 // END-TO-END OPERATIONAL WALKTHROUGHS</div>
+          <h2 class="section-heading">
+            How it works in practice.<br>
+            <span class="text-gradient">Four real-world scenarios.</span>
+          </h2>
+          <p class="section-lead">
+            Explore how DigiSynq coordinates production, activates idle capacity, monetizes dormant IP, and orchestrates cross-domain entertainment value.
+          </p>
+        </div>
+
+        <div class="scenarios-container" data-reveal>
+          <!-- Scenario Tabs -->
+          <div class="scenario-tabs">
+            <button class="scen-tab active" data-scenario="alpha">01. Feature Film Project Alpha</button>
+            <button class="scen-tab" data-scenario="studio">02. Idle Stage Reclamation</button>
+            <button class="scen-tab" data-scenario="ip">03. Dormant Sci-Fi IP Activation</button>
+            <button class="scen-tab" data-scenario="brand">04. Brand + Creator Synthesis</button>
+          </div>
+
+          <!-- Scenario Detail Display Card -->
+          <div class="scenario-content-card" id="scenarioContentCard">
+            <div class="scen-header-bar">
+              <div class="scen-id" id="scenIdBadge">BLUEPRINT SECTION 22 // COMPLETE FILM WALKTHROUGH</div>
+              <h3 class="scen-title" id="scenTitle">Project Alpha ($25M Independent Tentpole)</h3>
+            </div>
+
+            <div class="scen-grid">
+              <div class="scen-col">
+                <h5 class="scen-subhead">THE COORDINATION CHALLENGE</h5>
+                <p id="scenChallenge">
+                  A high-concept sci-fi feature requires packaging an A-list director, 3 lead actors, a 45-day LED volume stage block, multi-state tax credit filings, and $25M slate debt financing without bloated brokerage fees.
+                </p>
+              </div>
+
+              <div class="scen-col">
+                <h5 class="scen-subhead">THE DIGISYNQ OPERATIONAL MECHANISM</h5>
+                <ul class="scen-steps" id="scenStepsList">
+                  <li><strong>01. Mapping:</strong> Scans real-time availability windows for director, talent, and LED volume stages.</li>
+                  <li><strong>02. Capacity Sync:</strong> Detects a 45-day gap at an advanced LED volume stage; secures a 25% dark-calendar discount.</li>
+                  <li><strong>03. Dependency Lock:</strong> Synchronizes tax credit milestones with guild contracts and shoot schedules.</li>
+                  <li><strong>04. Monitoring:</strong> Tracks daily VFX turnaround rates with early warnings avoiding schedule drift.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="scen-metric-footer">
+              <div class="scen-metric">
+                <span class="sm-label">CYCLE TIME SAVED</span>
+                <strong class="sm-val" id="scenMetric1">42 Days Saved</strong>
+              </div>
+              <div class="scen-metric">
+                <span class="sm-label">BUDGET LEAKAGE REDUCTION</span>
+                <strong class="sm-val" id="scenMetric2">28.4% Cost Avoided</strong>
+              </div>
+              <div class="scen-metric">
+                <span class="sm-label">DIGISYNQ ROLE</span>
+                <strong class="sm-val highlight" id="scenMetric3">Pure Coordination Layer (0% Asset Ownership)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 8: 13 PLATFORM MODULES & 5 ENGINES ==================== -->
+    <section id="platform-suite" class="section platform-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">08 // PLATFORM ARCHITECTURE &amp; MODULES</div>
+          <h2 class="section-heading">
+            The complete<br>
+            <span class="text-gradient">DigiSynq product suite.</span>
+          </h2>
+          <p class="section-lead">
+            Thirteen specialized modules built upon five intelligence engines, transforming unstructured entertainment data into coordinated commercial momentum.
+          </p>
+        </div>
+
+        <!-- 13 Product Modules Matrix -->
+        <div class="modules-matrix" data-reveal>
+          <div class="mod-card">
+            <span class="mod-code">MOD-01</span>
+            <h4>DigiSynq Network</h4>
+            <p>Overall global ecosystem graph topology and high-density node directory.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-02</span>
+            <h4>DigiSynq Node</h4>
+            <p>Cryptographically verified identity, guild compliance, and reputation index.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-03</span>
+            <h4>DigiSynq Profile</h4>
+            <p>Dynamic capability vectors, technical proficiencies, assets, and active needs.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-04</span>
+            <h4>DigiSynq Graph</h4>
+            <p>Multi-dimensional relationship mapping and verified collaborator edges.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-05</span>
+            <h4>DigiSynq Discover</h4>
+            <p>Multi-attribute query engine searching capacity, equipment, and talent.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-06</span>
+            <h4>DigiSynq Match</h4>
+            <p>High-affinity algorithmic pairing between unmet needs and verified capabilities.</p>
+          </div>
+          <div class="mod-card highlight-mod">
+            <span class="mod-code">MOD-07</span>
+            <h4>DigiSynq Opportunity</h4>
+            <p>Continuous simulation engine surfacing latent commercial combinations.</p>
+          </div>
+          <div class="mod-card highlight-mod">
+            <span class="mod-code">MOD-08</span>
+            <h4>DigiSynq Sync</h4>
+            <p>Automated dependency synchronization preventing upstream schedule drift.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-09</span>
+            <h4>DigiSynq Collab</h4>
+            <p>Secure multi-stakeholder project chambers and immutable document trees.</p>
+          </div>
+          <div class="mod-card highlight-mod">
+            <span class="mod-code">MOD-10</span>
+            <h4>DigiSynq Monitor</h4>
+            <p>Real-time traffic-light health tracking (Green/Yellow/Red) and anomaly alerts.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-11</span>
+            <h4>DigiSynq Rights</h4>
+            <p>Multi-territorial chain of title, holdbacks, and secondary licensing discovery.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-12</span>
+            <h4>DigiSynq Intel</h4>
+            <p>Predictive analytics, demand telemetry, and machine-learned project risk models.</p>
+          </div>
+          <div class="mod-card">
+            <span class="mod-code">MOD-13</span>
+            <h4>DigiSynq Value</h4>
+            <p>Quantitative EVC attribution, time compression, and leakage reduction auditing.</p>
+          </div>
+        </div>
+
+        <!-- 5 Core Engines Breakdown -->
+        <div class="engines-stack" data-reveal>
+          <div class="engine-row">
+            <div class="engine-col-id"><span class="engine-number">01</span></div>
+            <div class="engine-col-name">
+              <h3 class="engine-title">Network Engine</h3>
+              <span class="engine-question">What exists?</span>
+            </div>
+            <div class="engine-col-desc">
+              <p>Maintains dynamic maps of active nodes, verified capabilities, trust graphs, and real-time asset availability across all twenty industry domains.</p>
+            </div>
+            <div class="engine-col-tags">
+              <span class="e-tag">Nodes</span><span class="e-tag">Capabilities</span><span class="e-tag">Relationships</span><span class="e-tag">Availability</span>
+            </div>
+          </div>
+
+          <div class="engine-row">
+            <div class="engine-col-id"><span class="engine-number">02</span></div>
+            <div class="engine-col-name">
+              <h3 class="engine-title">Opportunity Engine</h3>
+              <span class="engine-question">What can happen?</span>
+            </div>
+            <div class="engine-col-desc">
+              <p>Constantly simulates cross-domain combinations, surfacing latent capacity matches, unmet buyer mandates, and untapped synergy paths.</p>
+            </div>
+            <div class="engine-col-tags">
+              <span class="e-tag">Unused Capacity</span><span class="e-tag">Unmet Needs</span><span class="e-tag">Hidden Matches</span><span class="e-tag">Synthesis</span>
+            </div>
+          </div>
+
+          <div class="engine-row">
+            <div class="engine-col-id"><span class="engine-number">03</span></div>
+            <div class="engine-col-name">
+              <h3 class="engine-title">Coordination Engine</h3>
+              <span class="engine-question">How can it work?</span>
+            </div>
+            <div class="engine-col-desc">
+              <p>Aligns multi-party execution pipelines: locking schedules, orchestrating approval chains, tracking critical dependencies, and synchronizing contributors.</p>
+            </div>
+            <div class="engine-col-tags">
+              <span class="e-tag">Workflows</span><span class="e-tag">Dependencies</span><span class="e-tag">Approvals</span><span class="e-tag">Execution</span>
+            </div>
+          </div>
+
+          <div class="engine-row">
+            <div class="engine-col-id"><span class="engine-number">04</span></div>
+            <div class="engine-col-name">
+              <h3 class="engine-title">Intelligence Engine</h3>
+              <span class="engine-question">What should happen next?</span>
+            </div>
+            <div class="engine-col-desc">
+              <p>Synthesizes early market signals, demand telemetry, contract risk variables, and predictive analytics to recommend optimal packaging moves.</p>
+            </div>
+            <div class="engine-col-tags">
+              <span class="e-tag">Predictive Signals</span><span class="e-tag">Risk Modeling</span><span class="e-tag">Recommendations</span><span class="e-tag">Optimization</span>
+            </div>
+          </div>
+
+          <div class="engine-row">
+            <div class="engine-col-id"><span class="engine-number">05</span></div>
+            <div class="engine-col-name">
+              <h3 class="engine-title">Value Engine</h3>
+              <span class="engine-question">What changed?</span>
+            </div>
+            <div class="engine-col-desc">
+              <p>Measures operational impact: tracking utilization lift, cycle time compression, reduced leakage, and compounding returns delivered across the network.</p>
+            </div>
+            <div class="engine-col-tags">
+              <span class="e-tag">Utilization Lift</span><span class="e-tag">Time Compression</span><span class="e-tag">Leakage Reduction</span><span class="e-tag">Value Alpha</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- §27: The Core Data Model & §42: Operating Architecture -->
+        <div class="platform-architecture-deepdive glass-card" data-reveal>
+          <div class="architecture-grid">
+            <div class="arch-col">
+              <span class="section-badge">§27 // THE CORE DATA MODEL</span>
+              <h3 class="arch-title">The Node Data Anatomy</h3>
+              <p class="arch-desc">At the heart of DigiSynq is a single unified data schema mapping living state vectors:</p>
+              <div class="data-model-tree">
+                <div class="tree-root">NODE</div>
+                <div class="tree-branch">├── Identity &amp; Guild Certification</div>
+                <div class="tree-branch">├── Capabilities &amp; Verified Credits</div>
+                <div class="tree-branch">├── Real-time Availability &amp; Windows</div>
+                <div class="tree-branch">├── Physical &amp; Digital Assets</div>
+                <div class="tree-branch">├── Active Needs &amp; Casting Mandates</div>
+                <div class="tree-branch">├── Rights, Territories &amp; Holdbacks</div>
+                <div class="tree-branch">├── Multi-hop Relationships &amp; Managers</div>
+                <div class="tree-branch">├── Active Projects &amp; Dependencies</div>
+                <div class="tree-branch">├── Algorithmic Opportunities</div>
+                <div class="tree-branch">├── Executed Workflows &amp; Deliverables</div>
+                <div class="tree-branch">├── Quantified Outcomes</div>
+                <div class="tree-branch">└── Multi-dimensional Trust Signals</div>
+              </div>
+              <div class="data-rel-axiom">
+                <code>NODE &varr; RELATIONSHIP &varr; NODE &varr; OPPORTUNITY &varr; PROJECT &varr; OUTCOME</code>
+              </div>
+            </div>
+
+            <div class="arch-col">
+              <span class="section-badge">§42 // ULTIMATE ARCHITECTURE</span>
+              <h3 class="arch-title">The Master Execution Pipeline</h3>
+              <p class="arch-desc">From initial network mapping to compounding ecosystem alpha:</p>
+              <div class="architecture-layers-stack">
+                <div class="arch-layer header-layer">
+                  <strong>DIGISYNQ ECOSYSTEM LAYER</strong>
+                </div>
+                <div class="arch-sublayers-row">
+                  <div class="arch-sublayer">Network Engine</div>
+                  <div class="arch-sublayer">Opportunity Engine</div>
+                  <div class="arch-sublayer">Intelligence Engine</div>
+                </div>
+                <div class="arch-arrow-down">&darr;</div>
+                <div class="arch-pipeline-seq">
+                  <span class="pipe-step">Coordination Engine</span>
+                  <span class="pipe-arr">&rarr;</span>
+                  <span class="pipe-step">Synchronization Engine</span>
+                  <span class="pipe-arr">&rarr;</span>
+                  <span class="pipe-step">Collaboration Engine</span>
+                  <span class="pipe-arr">&rarr;</span>
+                  <span class="pipe-step">Monitoring Engine</span>
+                  <span class="pipe-arr">&rarr;</span>
+                  <span class="pipe-step">Leverage Engine</span>
+                  <span class="pipe-arr">&rarr;</span>
+                  <span class="pipe-step highlight">Value Engine</span>
+                </div>
+                <div class="arch-arrow-down">&darr;</div>
+                <div class="arch-layer footer-layer">
+                  <strong>BETTER ECOSYSTEM OUTCOMES &amp; COMPOUNDING VALUE</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- ==================== SECTION 8.5: BUSINESS MODEL, MOAT & THE FLYWHEEL ==================== -->
+    <section id="business-model" class="section business-model-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">08.5 // SUSTAINABLE MONETIZATION &amp; DEFENSIBILITY</div>
+          <h2 class="section-heading">
+            Monetize coordination.<br>
+            <span class="text-gradient">Not asset ownership.</span>
+          </h2>
+          <p class="section-lead">
+            DigiSynq captures value by reducing friction, eliminating economic leakage, and orchestrating multi-party scale — never by accumulating heavy studios, equipment, or balance-sheet risk.
+          </p>
+        </div>
+
+        <!-- The 9 Revenue Streams Matrix (§29) -->
+        <div class="revenue-streams-wrapper" data-reveal>
+          <div class="rev-header-bar">
+            <span class="rev-bar-tag">THE 9 ARCHITECTURAL REVENUE LAYERS</span>
+            <span class="rev-bar-axiom">Principle: Monetize coordination, intelligence and infrastructure — not ownership</span>
+          </div>
+
+          <div class="revenue-grid">
+            <div class="rev-card">
+              <div class="rev-card-idx">01</div>
+              <h4 class="rev-card-title">Node Subscription</h4>
+              <p class="rev-card-desc">Tiered verified credentials, portfolio indexing, and priority capability discovery for individual creators, talent, and craft specialists.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">02</div>
+              <h4 class="rev-card-title">Professional SaaS</h4>
+              <p class="rev-card-desc">Advanced multi-project pipeline tools, dependency tracking, call-sheet telemetry, and roster management for production companies &amp; agencies.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">03</div>
+              <h4 class="rev-card-title">Enterprise Network</h4>
+              <p class="rev-card-desc">Private ecosystem coordination environments and sovereign tenant partitions for major studios, networks, and global streamers.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">04</div>
+              <h4 class="rev-card-title">Opportunity Fees</h4>
+              <p class="rev-card-desc">Success-contingent platform fees on successfully facilitated co-productions, idle stage bookings, and cross-domain talent matches.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">05</div>
+              <h4 class="rev-card-title">Intelligence Products</h4>
+              <p class="rev-card-desc">Premium predictive analytics, territory demand forecasting, supply-chain bottlenecks, and slate risk intelligence for capital allocators.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">06</div>
+              <h4 class="rev-card-title">Project Coordination</h4>
+              <p class="rev-card-desc">Turnkey coordination infrastructure for complex multi-party shoots, international co-productions, and distributed guild pipelines.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">07</div>
+              <h4 class="rev-card-title">API &amp; Infrastructure</h4>
+              <p class="rev-card-desc">Developer APIs allowing production ERPs, studio management software, and booking portals to query the DigiSynq Graph programmatically.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">08</div>
+              <h4 class="rev-card-title">Strategic Partnerships</h4>
+              <p class="rev-card-desc">Institutional alliances with cloud providers, completion bonders, camera manufacturers, and regional film commissions.</p>
+            </div>
+            <div class="rev-card">
+              <div class="rev-card-idx">09</div>
+              <h4 class="rev-card-title">Ethical Data Products</h4>
+              <p class="rev-card-desc">Anonymized, privacy-compliant macroeconomic industry indices and utilization benchmarks that provide macro situational awareness.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 7-Layer Moat & Compounding Flywheel (§30 & §31) -->
+        <div class="moat-flywheel-dual-grid" data-reveal>
+          <!-- Left: 7-Layer Defensibility Moat -->
+          <div class="moat-card glass-card">
+            <div class="moat-card-sheen"></div>
+            <div class="moat-header">
+              <span class="section-badge">THE 7-LAYER MOAT</span>
+              <h3 class="moat-title">Why DigiSynq Compounds</h3>
+              <p class="moat-lead">Traditional entertainment companies compete over physical buildings and IP ownership. DigiSynq builds structural ecosystem defensibility.</p>
+            </div>
+
+            <div class="moat-list">
+              <div class="moat-item">
+                <span class="moat-num">01</span>
+                <div>
+                  <strong>Network Density:</strong> Every new node exponentially expands potential multilateral matching paths across 20 domains.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">02</span>
+                <div>
+                  <strong>Relationship Graph:</strong> A living, proprietary map of verified historical collaborations that cannot be scraped or bought.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">03</span>
+                <div>
+                  <strong>Ecosystem Intelligence:</strong> Self-reinforcing machine learning trained on actual multi-party production execution data.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">04</span>
+                <div>
+                  <strong>Node Trust Intelligence:</strong> Verified capability ratings and execution track records create unprecedented counterparty safety.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">05</span>
+                <div>
+                  <strong>Workflow Integration:</strong> Deep operational embedding in daily schedules, guild milestones, and rights tracking makes switching friction high.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">06</span>
+                <div>
+                  <strong>Opportunity Intelligence:</strong> Predictive surfacing of hidden capacity and unexploited rights before market participants realize they exist.
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-num">07</span>
+                <div>
+                  <strong>Network Effects:</strong> More nodes attract more projects, which attract more infrastructure, which compounds ecosystem gravity.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: The Compounding Flywheel & Equations -->
+          <div class="flywheel-card glass-card">
+            <div class="moat-card-sheen"></div>
+            <div class="flywheel-header">
+              <span class="section-badge">THE FLYWHEEL &amp; GOVERNING EQUATIONS</span>
+              <h3 class="flywheel-title">The Self-Reinforcing Loop</h3>
+              <p class="flywheel-lead">How each completed coordination cycle feeds future matching accuracy and network momentum (§31 &amp; §40).</p>
+            </div>
+
+            <!-- Visual Flywheel Progression Steps -->
+            <div class="flywheel-steps-track">
+              <div class="flywheel-step"><span class="fw-dot"></span><span>More Nodes Ingested</span></div>
+              <div class="flywheel-arrow">↓</div>
+              <div class="flywheel-step"><span class="fw-dot"></span><span>Denser Relationship Graph</span></div>
+              <div class="flywheel-arrow">↓</div>
+              <div class="flywheel-step"><span class="fw-dot"></span><span>Better Visibility &amp; Discovery</span></div>
+              <div class="flywheel-arrow">↓</div>
+              <div class="flywheel-step"><span class="fw-dot"></span><span>High-Precision Algorithmic Matching</span></div>
+              <div class="flywheel-arrow">↓</div>
+              <div class="flywheel-step"><span class="fw-dot"></span><span>Synchronized Execution &amp; Value Created</span></div>
+              <div class="flywheel-arrow">↓</div>
+              <div class="flywheel-step highlight"><span class="fw-dot pulse"></span><span>Compounding Trust &amp; Node Retention ↺</span></div>
+            </div>
+
+            <!-- Core Governing Equations (§40) -->
+            <div class="governing-equations-box">
+              <div class="eq-item">
+                <span class="eq-label">VALUE EQUATION:</span>
+                <code>Network × Intelligence × Coordination × Utilization = Ecosystem Value</code>
+              </div>
+              <div class="eq-item">
+                <span class="eq-label">OPPORTUNITY EQUATION:</span>
+                <code>Unused Capacity + Unmet Need + Network Connection + Intelligence = Opportunity</code>
+              </div>
+              <div class="eq-item">
+                <span class="eq-label">LEARNING EQUATION:</span>
+                <code>Interaction + Outcome + Feedback = Network Intelligence</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 9: THE 4 MATURITY LEVELS & NORTH STAR METRIC ==================== -->
+    <section class="section maturity-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">09 // EVOLUTION &amp; NORTH STAR</div>
+          <h2 class="section-heading">
+            The 4 maturity levels &amp;<br>
+            <span class="text-gradient">Ecosystem Value Coordinated.</span>
+          </h2>
+          <p class="section-lead">
+            The ultimate measure of DigiSynq is not superficial user signups or static directory profiles. It is the total volume of productive entertainment momentum orchestrated.
+          </p>
+        </div>
+
+        <div class="maturity-levels-grid" data-reveal>
+          <div class="level-card">
+            <span class="lvl-tag">LEVEL 01</span>
+            <h4>Visibility</h4>
+            <p><strong>"See the ecosystem."</strong> Who exists? What equipment is available? Where does idle capacity reside right now?</p>
+          </div>
+          <div class="level-card">
+            <span class="lvl-tag">LEVEL 02</span>
+            <h4>Connectivity</h4>
+            <p><strong>"Connect the ecosystem."</strong> Who needs whom? Verified bilateral and multilateral relationships formed without gatekeepers.</p>
+          </div>
+          <div class="level-card">
+            <span class="lvl-tag">LEVEL 03</span>
+            <h4>Coordination</h4>
+            <p><strong>"Make it work together."</strong> Managing dependencies, orchestrating schedules, synchronizing milestones across multiple vendors.</p>
+          </div>
+          <div class="level-card highlight-level">
+            <span class="lvl-tag">LEVEL 04</span>
+            <h4>Intelligence</h4>
+            <p><strong>"Make it smart."</strong> Automated opportunity discovery, predictive risk hedging, and continuous machine-learned optimization.</p>
+          </div>
+        </div>
+
+        <div class="north-star-banner" data-reveal>
+          <div class="ns-left">
+            <span class="ns-eyebrow">THE ULTIMATE NORTH STAR METRIC</span>
+            <h3 class="ns-title">Ecosystem Value Coordinated (EVC)</h3>
+            <p class="ns-desc">Total dollar volume of production budgets, asset capacity, rights licensing, and economic return successfully synchronized across the network.</p>
+          </div>
+          <div class="ns-right">
+            <div class="ns-metric-box">
+              <span class="ns-stat-label">GOVERNING PRINCIPLE</span>
+              <span class="ns-stat-value">Asset-Light Leverage</span>
+              <span class="ns-stat-sub">Zero Asset Overhead · Compounding Network Effects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ==================== SECTION 10: STRATEGIC POSITION & VALUE ARCHITECTURE ==================== -->
+    <section id="position" class="section position-section">
+      <div class="section-container">
+        <div class="section-header" data-reveal>
+          <div class="section-badge">10 // STRATEGIC CATEGORY &amp; ARCHITECTURE</div>
+          <h2 class="section-heading">
+            Not another marketplace.<br>
+            <span class="text-gradient">The operating layer for entertainment.</span>
+          </h2>
+          <p class="section-lead">
+            DigiSynq is not an agency, not a production house, not a vendor directory, and not generic software. It is dedicated, asset-light coordination and intelligence infrastructure for the entire entertainment network.
+          </p>
+        </div>
+
+        <!-- §28: DigiSynq as a "Space" -->
+        <div class="space-concept-banner glass-card" data-reveal>
+          <div class="space-header">
+            <span class="section-badge">§28 // THE CONCEPTUAL SPACE</span>
+            <h3 class="space-title">DigiSynq is not merely software. It is an ecosystem space.</h3>
+            <p class="space-lead">
+              A dedicated digital arena where disparate entertainment nodes meet, understand each other, coordinate workflows, and unlock shared economic value without friction.
+            </p>
+          </div>
+          <div class="space-dimensions-pills">
+            <span class="space-pill">Visibility</span>
+            <span class="space-pill">Identity</span>
+            <span class="space-pill">Discovery</span>
+            <span class="space-pill">Relationships</span>
+            <span class="space-pill">Intelligence</span>
+            <span class="space-pill">Coordination</span>
+            <span class="space-pill">Collaboration</span>
+            <span class="space-pill">Monitoring</span>
+            <span class="space-pill">Opportunity</span>
+            <span class="space-pill highlight">Trust</span>
+          </div>
+        </div>
+
+        <!-- §32: The 10 Strategic Value Systems -->
+        <div class="strategic-systems-wrapper" data-reveal>
+          <div class="section-header-compact">
+            <span class="section-badge">§32 // THE 10 STRATEGIC VALUE SYSTEMS</span>
+            <h3 class="subsection-title">The Continuous Value Chain</h3>
+            <p class="not-lead">How DigiSynq transforms basic presence into compounding ecosystem equity.</p>
+          </div>
+
+          <div class="value-systems-grid">
+            <div class="val-sys-card">
+              <span class="sys-num">01</span>
+              <h4 class="sys-name">Identity System</h4>
+              <p class="sys-question">Who exists?</p>
+              <span class="sys-detail">Verified credentials, legal standing &amp; presence</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">02</span>
+              <h4 class="sys-name">Capability System</h4>
+              <p class="sys-question">What can they do?</p>
+              <span class="sys-detail">Granular skills, past credits &amp; artistic strengths</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">03</span>
+              <h4 class="sys-name">Resource System</h4>
+              <p class="sys-question">What do they have?</p>
+              <span class="sys-detail">Equipment, physical studios, facilities &amp; tech</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">04</span>
+              <h4 class="sys-name">Need System</h4>
+              <p class="sys-question">What do they require?</p>
+              <span class="sys-detail">Open casting calls, dates, financing &amp; distribution</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">05</span>
+              <h4 class="sys-name">Relationship System</h4>
+              <p class="sys-question">Who is connected to whom?</p>
+              <span class="sys-detail">Multi-hop graph of managers, peers &amp; collaborators</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">06</span>
+              <h4 class="sys-name">Opportunity System</h4>
+              <p class="sys-question">What could happen?</p>
+              <span class="sys-detail">Algorithmic synthesis of idle capacity &amp; unmet demand</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">07</span>
+              <h4 class="sys-name">Coordination System</h4>
+              <p class="sys-question">How can they work together?</p>
+              <span class="sys-detail">Project orchestrations, milestone assignments &amp; tasks</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">08</span>
+              <h4 class="sys-name">Synchronization System</h4>
+              <p class="sys-question">How do dependencies move?</p>
+              <span class="sys-detail">Dynamic timeline ripple adjustments &amp; early warnings</span>
+            </div>
+            <div class="val-sys-card">
+              <span class="sys-num">09</span>
+              <h4 class="sys-name">Intelligence System</h4>
+              <p class="sys-question">What should happen next?</p>
+              <span class="sys-detail">Predictive recommendations, risk alerts &amp; insights</span>
+            </div>
+            <div class="val-sys-card highlight-sys">
+              <span class="sys-num">10</span>
+              <h4 class="sys-name">Value System</h4>
+              <p class="sys-question">What value was created?</p>
+              <span class="sys-detail">Quantified hours saved, waste eliminated &amp; yield earned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- §33: The Four Levels of DigiSynq -->
+        <div class="levels-wrapper" data-reveal>
+          <div class="section-header-compact">
+            <span class="section-badge">§33 // MATURITY ARCHITECTURE</span>
+            <h3 class="subsection-title">The Four Levels of Ecosystem Evolution</h3>
+          </div>
+
+          <div class="levels-grid">
+            <div class="level-card">
+              <div class="level-badge">LEVEL 01</div>
+              <h4 class="level-title">Visibility</h4>
+              <p class="level-desc"><strong>"See the ecosystem."</strong> Who exists? What equipment is available? Where does idle capacity reside right now?</p>
+            </div>
+            <div class="level-card">
+              <div class="level-badge">LEVEL 02</div>
+              <h4 class="level-title">Connectivity</h4>
+              <p class="level-desc"><strong>"Connect the ecosystem."</strong> Who needs whom? Verified bilateral and multilateral relationships formed without gatekeepers.</p>
+            </div>
+            <div class="level-card">
+              <div class="level-badge">LEVEL 03</div>
+              <h4 class="level-title">Coordination</h4>
+              <p class="level-desc"><strong>"Make it work together."</strong> Managing dependencies, orchestrating schedules, synchronizing milestones across multiple vendors.</p>
+            </div>
+            <div class="level-card">
+              <div class="level-badge">LEVEL 04</div>
+              <h4 class="level-title">Intelligence</h4>
+              <p class="level-desc"><strong>"Make it smart."</strong> Automated opportunity discovery, predictive risk hedging, and continuous machine-learned optimization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- §34: Complete 9-Stakeholder Value Proposition Matrix -->
+        <div class="stakeholders-matrix-section" data-reveal>
+          <div class="section-header-compact">
+            <span class="section-badge">§34 // THE VALUE MATRIX</span>
+            <h3 class="subsection-title">What DigiSynq delivers to every ecosystem node</h3>
+          </div>
+
+          <div class="stakeholders-grid">
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR TALENT</div>
+              <h4 class="sh-headline">Discoverable &amp; Autonomous</h4>
+              <p class="sh-desc">Become visible to verified producers and platforms globally without relying exclusively on gatekeepers, discovering high-affinity mandates matched to your exact creative capabilities.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR PRODUCTION</div>
+              <h4 class="sh-headline">Rapid Assembly &amp; Velocity</h4>
+              <p class="sh-desc">Assemble world-class crews, sound stages, specialized gear, and location permits in days instead of months, synchronizing complex dependencies to eliminate schedule leakage.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR INFRASTRUCTURE</div>
+              <h4 class="sh-headline">Monetize Idle Capacity</h4>
+              <p class="sh-desc">Transform vacant sound stage calendar blocks, downtime camera packages, and idle post suites into active booked revenue via automated algorithmic demand routing.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR CAPITAL &amp; FINANCE</div>
+              <h4 class="sh-headline">De-risked Deployments</h4>
+              <p class="sh-desc">Deploy slate capital with real-time milestone telemetry, verified counterparty track records, transparent completion progress, and automated downstream revenue split enforcement.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR BRANDS &amp; SPONSORS</div>
+              <h4 class="sh-headline">Native Ecosystem Synergy</h4>
+              <p class="sh-desc">Integrate directly into emerging cultural IP, creator pipelines, and live experiences during early pre-production when genuine brand affinity and maximum leverage are unlocked.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR PLATFORMS &amp; OTT</div>
+              <h4 class="sh-headline">Packaged High-Affinity Slates</h4>
+              <p class="sh-desc">Source pre-cleared, pre-packaged projects with attached talent and verified rights, eliminating protracted development purgatory and matching territorial subscriber demand.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR RIGHTS HOLDERS &amp; IP</div>
+              <h4 class="sh-headline">Secondary Monetization</h4>
+              <p class="sh-desc">Transform dormant story libraries, book options, and regional remake rights into active licensing pipelines across territories, languages, and gaming/digital spinoffs.</p>
+            </div>
+            <div class="stakeholder-card">
+              <div class="sh-role">FOR AUDIENCES &amp; FANDOM</div>
+              <h4 class="sh-headline">The Audience as a Node</h4>
+              <p class="sh-desc">Treated not merely as passive consumer endpoints, but as vital nodes whose grassroots sentiment, engagement signals, and community momentum shape production greenlights.</p>
+            </div>
+            <div class="stakeholder-card highlight-sh">
+              <div class="sh-role">FOR THE ENTIRE ECOSYSTEM</div>
+              <h4 class="sh-headline">Shared Risk &amp; Compounding Value</h4>
+              <p class="sh-desc">Radically compresses economic leakage, prevents redundant asset duplication, democratizes cross-border access, and turns a fragmented industry into a synchronized network.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- §35: What DigiSynq Is NOT -->
+        <div class="not-digisynq-wrapper" data-reveal>
+          <div class="not-header">
+            <span class="section-badge">§35 // CATEGORY DISTINCTION</span>
+            <h3 class="subsection-title">What DigiSynq is NOT</h3>
+            <p class="not-lead">To understand DigiSynq, understand what we explicitly chose not to be.</p>
+          </div>
+
+          <div class="not-grid">
+            <div class="not-card">
+              <div class="not-tag">NOT AN AGENCY</div>
+              <p>We do not represent a closed roster or take agency commissions from talent. We are an open, neutral protocol connecting all representatives.</p>
+            </div>
+            <div class="not-card">
+              <div class="not-tag">NOT A PRODUCTION HOUSE</div>
+              <p>We do not produce movies or own cameras. We orchestrate the operational pipelines so existing production houses execute with greater yield.</p>
+            </div>
+            <div class="not-card">
+              <div class="not-tag">NOT A GENERIC MARKETPLACE</div>
+              <p>Marketplaces facilitate isolated one-off transactions (Supply ↔ Demand). DigiSynq coordinates living multi-party dependency graphs over time.</p>
+            </div>
+            <div class="not-card">
+              <div class="not-tag">NOT A DIRECTORY OR CRM</div>
+              <p>Directories contain dead, unverified static contact sheets. DigiSynq is a live telemetry layer tracking verified availability, trust, and rights.</p>
+            </div>
+            <div class="not-card">
+              <div class="not-tag">NOT AN OTT OR STREAMER</div>
+              <p>We do not broadcast content or compete with streamers. We coordinate the upstream creative, financing, and production network that supplies them.</p>
+            </div>
+            <div class="not-card">
+              <div class="not-tag">NOT A CONGLOMERATE</div>
+              <p>We do not own studios, sound stages, or IP catalogs. We make what already exists 10x more visible, productive, and interconnected.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- §36-§39: Strategic Wedges, Expansion Roadmap & North Star Metric -->
+        <div class="roadmap-northstar-dual-grid" data-reveal>
+          <!-- §37 & §38: Expansion Strategy -->
+          <div class="expansion-card">
+            <span class="section-badge">§37–§38 // EXPANSION TRAJECTORY</span>
+            <h4 class="expansion-title">From Platform to Ecosystem Infrastructure</h4>
+            <div class="wedges-pill-row">
+              <span class="wedge-pill">Wedge A: Production Network</span>
+              <span class="wedge-pill">Wedge B: Creator Network</span>
+              <span class="wedge-pill">Wedge C: Resource Utilization</span>
+              <span class="wedge-pill">Wedge D: Project Coordination</span>
+              <span class="wedge-pill">Wedge E: Rights Intelligence</span>
+            </div>
+            <div class="expansion-phases-list">
+              <div class="phase-row">
+                <span class="phase-id">Phase 1–2</span>
+                <span class="phase-name">High-Value Node Network &amp; Intelligent Matching Engine</span>
+              </div>
+              <div class="phase-row">
+                <span class="phase-id">Phase 3–4</span>
+                <span class="phase-name">Multi-Party Project Space, Timeline Sync &amp; Monitoring</span>
+              </div>
+              <div class="phase-row">
+                <span class="phase-id">Phase 5–6</span>
+                <span class="phase-name">Rights Graph, Slate Finance &amp; Full 20 Domains Connected</span>
+              </div>
+              <div class="phase-row highlight">
+                <span class="phase-id">Phase 7–8</span>
+                <span class="phase-name">Global Intelligence Layer &amp; Open Enterprise API Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- §39: North Star Metric -->
+          <div class="northstar-card">
+            <span class="section-badge">§39 // THE NORTH STAR</span>
+            <div class="northstar-hero-val">ECOSYSTEM VALUE COORDINATED</div>
+            <p class="northstar-lead">
+              We do not measure vanity clicks, profiles created, or closed transaction counts. Our governing indicator is the aggregate economic value, utilization velocity, and waste compressed across the entertainment network.
+            </p>
+            <div class="northstar-signals-grid">
+              <div class="ns-signal">
+                <span class="ns-sig-val">100%</span>
+                <span class="ns-sig-lbl">Verified Trust Telemetry</span>
+              </div>
+              <div class="ns-signal">
+                <span class="ns-sig-val">&gt;35%</span>
+                <span class="ns-sig-lbl">Idle Capacity Activated</span>
+              </div>
+              <div class="ns-signal">
+                <span class="ns-sig-val">10x</span>
+                <span class="ns-sig-lbl">Assembly Speed Multiplier</span>
+              </div>
+              <div class="ns-signal">
+                <span class="ns-sig-val">0</span>
+                <span class="ns-sig-lbl">Underlying Asset Ownership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparative Category Matrix -->
+        <div class="position-matrix" data-reveal>
+          <div class="matrix-header">
+            <div class="matrix-col label-col">ATTRIBUTES</div>
+            <div class="matrix-col comp-col">Traditional Agency</div>
+            <div class="matrix-col comp-col">SaaS / Marketplace</div>
+            <div class="matrix-col comp-col">Consultancy</div>
+            <div class="matrix-col hero-col">DIGISYNQ LAYER</div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-col label-col">Model</div>
+            <div class="matrix-col comp-col">Walled-garden representation</div>
+            <div class="matrix-col comp-col">Static listing directory</div>
+            <div class="matrix-col comp-col">Advisory reports &amp; billable hours</div>
+            <div class="matrix-col hero-col">Asset-light coordination network</div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-col label-col">Asset Ownership</div>
+            <div class="matrix-col comp-col">Exclusive roster control</div>
+            <div class="matrix-col comp-col">Self-serve vendor uploads</div>
+            <div class="matrix-col comp-col">None (advisory only)</div>
+            <div class="matrix-col hero-col">Zero ownership — pure ecosystem leverage</div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-col label-col">Scope</div>
+            <div class="matrix-col comp-col">Siloed talent or IP deals</div>
+            <div class="matrix-col comp-col">Point-to-point transactions</div>
+            <div class="matrix-col comp-col">Isolated organizational reviews</div>
+            <div class="matrix-col hero-col">20 interconnected entertainment domains</div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-col label-col">Mechanism</div>
+            <div class="matrix-col comp-col">Manual gatekeeping</div>
+            <div class="matrix-col comp-col">Passive search filters</div>
+            <div class="matrix-col comp-col">Static slide decks</div>
+            <div class="matrix-col hero-col">Living intelligence &amp; synchronization engines</div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-col label-col">Outcome</div>
+            <div class="matrix-col comp-col">Individual commission</div>
+            <div class="matrix-col comp-col">Ad-hoc listing fees</div>
+            <div class="matrix-col comp-col">Theoretical strategy</div>
+            <div class="matrix-col hero-col">Measurable utilization &amp; ecosystem velocity</div>
+          </div>
+        </div>
+
+        <div class="positioning-badges" data-reveal>
+          <span class="pos-badge">✓ Not an ownership play</span>
+          <span class="pos-badge">✓ Not another walled silo</span>
+          <span class="pos-badge">✓ Not a traditional agency</span>
+          <span class="pos-badge">✓ Not a passive directory</span>
+          <span class="pos-badge">✓ Not generic software</span>
+          <span class="pos-badge highlight">★ Pure Coordination Infrastructure</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 11: THE DIGISYNQ MANIFESTO ==================== -->
+    <section id="manifesto" class="section manifesto-section">
+      <div class="section-container">
+        <div class="manifesto-card " data-reveal>
+
+          <!-- Warm Luminous Slit Light Bar -->
+
+          <div class="section-badge" style="margin: 0 auto 20px auto;">§46 // THE DIGISYNQ MANIFESTO</div>
+
+          <blockquote class="manifesto-quote">
+            Entertainment is not a collection of isolated businesses.<br>
+            <em class="text-gradient">It is an ecosystem.</em>
+          </blockquote>
+
+          <div class="manifesto-full-body">
+            <p class="manifesto-para">
+              An ecosystem of people, companies, assets, capabilities, opportunities, rights, resources, technology, platforms and audiences. Today, much of that ecosystem is fragmented. DigiSynq exists to connect the fragments.
+            </p>
+
+            <div class="manifesto-pillars-grid">
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every node has value.</div>
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every capability can create possibility.</div>
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every relationship can create opportunity.</div>
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every unused resource can be leveraged.</div>
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every disconnected node can become a connection.</div>
+              <div class="manifesto-pillar"><span class="manifesto-pillar-dot"></span>Every connection can become collaboration.</div>
+            </div>
+
+            <p class="manifesto-para emphasis">
+              We don't need to own the ecosystem. We need to understand it. We need to connect it. We need to coordinate it. We need to synchronize it. We need to monitor it. We need to make its opportunities visible. We need to help its resources work harder. We need to reduce unnecessary friction and leakage. We need to enable new forms of collaboration.
+            </p>
+
+            <div class="manifesto-identity-climax">
+              <h3 class="climax-title">DigiSynq is the space between the nodes.</h3>
+              <p class="climax-sub">
+                The mechanism that connects them &bull; The intelligence that understands them &bull; The coordination layer that synchronizes them &bull; The network that helps them collaborate &bull; The system that helps them leverage what already exists &bull; <strong>Without owning the ecosystem.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- §47-§51: Final Master Definitions & Axioms -->
+          <div class="manifesto-axioms-wrap">
+            <div class="axiom-card">
+              <div class="axiom-title">§48 // THE ONE-LINE PHILOSOPHY</div>
+              <div class="axiom-statement">Own Less. Connect More. Coordinate Better. Leverage Everything.</div>
+            </div>
+
+            <div class="axiom-card">
+              <div class="axiom-title">§49 // THE ONE-LINE VALUE PROPOSITION</div>
+              <div class="axiom-statement">Connect the fragmented entertainment ecosystem to create more value from what already exists.</div>
+            </div>
+
+            <div class="axiom-card">
+              <div class="axiom-title">§50 // THE ONE-LINE VISION</div>
+              <div class="axiom-statement">Make the entertainment ecosystem more connected, coordinated, synchronized and intelligent.</div>
+            </div>
+
+            <div class="axiom-card brand-climax">
+              <div class="axiom-title">§51 // THE BRAND</div>
+              <div class="brand-climax-text">DIGISYNQ</div>
+              <div class="brand-climax-tagline">The Entertainment Ecosystem, Synchronized.</div>
+            </div>
+          </div>
+
+          <!-- Warm Luminous Slit Light Bar (bottom edge) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 12: STRATEGIC CONVERSATION (CTA & CHALLENGE INTAKE) ==================== -->
+    <section id="strategic-conversation" class="section conversation-section">
+      <div class="section-container">
+        <div class="conversation-box" data-reveal>
+          <div class="conversation-badge">11 // ENGAGE THE NETWORK</div>
+          <h2 class="conversation-title">
+            What could become<br>
+            <span class="text-gradient">possible?</span>
+          </h2>
+          <p class="conversation-subtitle">
+            Tell us where your corner of the ecosystem is fragmented, underutilized, or difficult to coordinate. Start with a challenge — not a pitch.
+          </p>
+
+          <!-- Interactive Strategic Challenge Intake Generator -->
+          <form class="challenge-form" id="challengeForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="userDomain" class="form-label">YOUR PRIMARY DOMAIN NODE</label>
+                <select id="userDomain" class="form-select" required>
+                  <option value="" disabled selected>Select your domain...</option>
+                  <option value="Creative / IP &amp; Story">Creative / IP &amp; Story</option>
+                  <option value="Production &amp; Physical Facilities">Production &amp; Physical Facilities</option>
+                  <option value="Distribution &amp; Streaming Platforms">Distribution &amp; Streaming Platforms</option>
+                  <option value="Capital &amp; Media Financing">Capital &amp; Media Financing</option>
+                  <option value="Rights, Legal &amp; Licensing">Rights, Legal &amp; Licensing</option>
+                  <option value="Technology, AI &amp; Virtual Production">Technology, AI &amp; Virtual Production</option>
+                  <option value="Brands &amp; Co-Financing">Brands &amp; Co-Financing</option>
+                  <option value="Live &amp; Experiential Entertainment">Live &amp; Experiential Entertainment</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="frictionType" class="form-label">SYSTEM FRICTION POINT</label>
+                <select id="frictionType" class="form-select" required>
+                  <option value="" disabled selected>Identify the coordination friction...</option>
+                  <option value="Unutilized capacity / Dark stage &amp; crew days">Unutilized capacity / Dark stage &amp; crew days</option>
+                  <option value="Dormant or unexploited IP rights">Dormant or unexploited IP rights</option>
+                  <option value="Capital ready but lacking vetted project pipelines">Capital ready but lacking vetted project pipelines</option>
+                  <option value="Complex multi-party schedule &amp; approval drag">Complex multi-party schedule &amp; approval drag</option>
+                  <option value="Platform content need with tight delivery window">Platform content need with tight delivery window</option>
+                  <option value="Ecosystem information leakage &amp; opaque middleman costs">Ecosystem information leakage &amp; opaque middleman costs</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="challengeDescription" class="form-label">THE STRATEGIC CHALLENGE</label>
+              <textarea id="challengeDescription" class="form-textarea" rows="3" placeholder="Describe the specific coordination barrier, idle resource, or untapped combination you want to unlock..." required></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">DIRECT CONTACT / CREDENTIAL</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="name@organization.com" required>
+              </div>
+
+              <div class="form-group form-action-group">
+                <button type="submit" class="btn btn-primary btn-large magnetic-btn" id="submitChallengeBtn">
+                  <span>Start a strategic conversation</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 12.5L12.5 3.5M12.5 3.5H6M12.5 3.5V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+          </form>
+
+          <div class="conversation-direct">
+            <span>Prefer direct strategic dialogue?</span>
+            <a href="mailto:hello@digisynq.com?subject=Strategic%20Ecosystem%20Conversation" class="direct-email-link">hello@digisynq.com ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="system-footer">
+    <div class="section-container footer-content">
+      <div class="footer-primary">
+        <div class="footer-brand">
+          <img src="digisynq-logo.png" alt="DigiSynq" class="footer-logo-img">
+        </div>
+        <p class="footer-tagline">
+          The entertainment ecosystem, synchronized.
+        </p>
+        <p class="footer-philosophy">
+          Own less. Connect more. Coordinate better. Leverage everything.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-nav-col">
+          <span class="col-title">SYSTEM</span>
+          <a href="#the-idea">The Premise</a>
+          <a href="#philosophy">The 11 Principles</a>
+          <a href="#system">12-Step Pipeline</a>
+          <a href="#network">20 Domains &amp; 10 Dimensions</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="col-title">ARCHITECTURE</span>
+          <a href="#trust-monitoring">Trust &amp; Live Monitoring</a>
+          <a href="#scenarios">4 Real Scenarios</a>
+          <a href="#platform-suite">13 Product Modules</a>
+          <a href="#position">Category Position</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="col-title">TELEMETRY</span>
+          <span class="telemetry-stat">Protocol: v3.0.0-Enterprise</span>
+          <span class="telemetry-stat">Topology: Dynamic Mesh</span>
+          <span class="telemetry-stat">Metric: EVC Grounded</span>
+          <a href="#strategic-conversation" class="footer-cta-link">Initiate Dialogue ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="section-container bottom-bar">
+        <span>&copy; 2026 DigiSynq Inc. All rights reserved. Asset-light entertainment infrastructure.</span>
+        <div class="bottom-links">
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== COMMAND PALETTE (CMD+K / CTRL+K) ==================== -->
+  <div class="cmd-palette-overlay" id="cmdPaletteModal" aria-hidden="true" role="dialog" aria-label="Ecosystem Command Palette">
+    <div class="cmd-palette-card">
+      <div class="cmd-input-bar">
+        <svg class="cmd-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="cmd-input" id="cmdInput" placeholder="Search domains, pipeline steps, engines, or scenarios (e.g. 'IP', 'Stage 4', 'Monitor')..." autocomplete="off" spellcheck="false">
+        <span class="cmd-badge-esc">ESC</span>
+      </div>
+      <div class="cmd-results" id="cmdResultsList">
+        <!-- Dynamically populated or standard list -->
+      </div>
+      <div class="cmd-footer-bar">
+        <span class="cmd-hint"><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+        <span class="cmd-hint"><kbd>↵</kbd> Select</span>
+        <span class="cmd-hint"><kbd>ESC</kbd> Dismiss</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 20-NODE DOMAIN INSPECTOR DRAWER ==================== -->
+  <div class="domain-inspector-overlay" id="domainInspectorModal" aria-hidden="true" role="dialog" aria-label="Domain Telemetry Inspector">
+    <div class="domain-inspector-drawer">
+      <div class="inspector-header">
+        <div class="inspector-meta">
+          <span class="inspector-id" id="inspDomainId">DOMAIN 01</span>
+          <span class="inspector-status-dot"></span>
+          <span class="inspector-category" id="inspDomainCategory">CREATION &amp; PRODUCTION</span>
+        </div>
+        <button type="button" class="btn-close-drawer" id="btnCloseInspector" aria-label="Close Domain Inspector">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="inspector-body">
+        <h2 class="inspector-title" id="inspDomainTitle">Creative</h2>
+        <p class="inspector-desc" id="inspDomainDesc">Writers, showrunners, directors, IP creators, narrative architects, composers, performers.</p>
+
+        <!-- 10 Dimensions Ingestion Diagnostic for this Node -->
+        <div class="inspector-section">
+          <h4 class="inspector-subheading">10-DIMENSION INGESTION SCHEMA</h4>
+          <div class="dimensions-inspector-grid" id="inspDimensionsGrid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Telemetry & Affinity Graph -->
+        <div class="inspector-section">
+          <h4 class="inspector-subheading">ACTIVE NETWORK AFFINITY</h4>
+          <div class="affinity-chips" id="inspAffinityList">
+            <!-- Linked nodes -->
+          </div>
+        </div>
+
+        <!-- Direct Action Link -->
+        <div class="inspector-cta-row">
+          <a href="#strategic-conversation" class="btn btn-primary btn-full-width" id="btnInspConnect">
+            <span>Initiate Node Coordination</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio State Toast -->
+  <div class="audio-toast" id="audioToast">Acoustic Feedback: ON</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
