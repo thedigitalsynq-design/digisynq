@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DigiSynq Trust & Slate Telemetry — Quantitative node trust verification and continuous real-time project health monitoring.">
+  <meta name="theme-color" content="#06131c">
+  <meta property="og:title" content="DigiSynq — Trust & Slate Telemetry">
+  <meta property="og:description" content="Quantitative node trust verification and continuous real-time project health monitoring.">
+  <meta property="og:type" content="website">
+
+  <title>Trust & Slate Telemetry — DigiSynq</title>
+  <link rel="icon" type="image/png" href="digisynq-logo.png">
+
+  <!-- Typography: Complete Swear Display Family Only -->
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Specific styles for Trust & Telemetry page */
+    .trust-hero {
+      padding-top: calc(var(--section-pad-y) + 40px);
+      padding-bottom: 60px;
+      text-align: center;
+    }
+    .trust-calculator-card {
+      background: var(--canvas-glass);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 5vw, 56px);
+      backdrop-filter: blur(24px);
+      box-shadow: var(--shadow-card), var(--specular-rim);
+      margin-bottom: 64px;
+    }
+    @media (max-width: 900px) {
+      .trust-calc-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+    }
+    .trust-calc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .trust-sliders {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+    .slider-weight {
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      color: var(--signal-sky);
+    }
+    .trust-range-input {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(16, 50, 65, 0.8);
+      border-radius: 4px;
+      outline: none;
+    }
+    .trust-range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--signal-azure);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--signal-azure);
+    }
+    .trust-score-display {
+      background: rgba(8, 26, 36, 0.9);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.12), var(--specular-top);
+    }
+    .score-number {
+      font-family: var(--font-mono);
+      font-size: clamp(4.5rem, 8vw, 6.5rem);
+      font-weight: 800;
+      color: var(--signal-azure);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .score-tier-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--signal-azure);
+      color: var(--signal-sky);
+      margin-bottom: 16px;
+    }
+    .score-status-desc {
+      font-size: var(--text-sm);
+      color: #f1f7fa;
+      font-weight: 700;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .telemetry-state-btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .telemetry-btn {
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      background: rgba(16, 50, 65, 0.5);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-primary);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .telemetry-btn.active.state-nominal {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: var(--signal-azure);
+      color: var(--signal-sky);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+    }
+    .telemetry-btn.active.state-warning {
+      background: rgba(251, 191, 36, 0.25);
+      border-color: #fbbf24;
+      color: #fde68a;
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.3);
+    }
+    .telemetry-btn.active.state-critical {
+      background: rgba(248, 113, 113, 0.25);
+      border-color: #f87171;
+      color: #fca5a5;
+      box-shadow: 0 0 16px rgba(248, 113, 113, 0.3);
+    }
+    .telemetry-banner {
+      padding: 24px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-medium);
+      background: rgba(8, 26, 36, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .trust-calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Subtle Grain & Ambient Background Overlays -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Primary System Navigation (Grouped Enterprise Architecture) -->
+  <header class="system-nav" id="mainHeader">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html#top" aria-label="DigiSynq Home">
+        <img src="digisynq-logo.png" alt="DigiSynq" class="brand-logo-img">
+        <span class="system-badge"><span class="pulse-dot"></span> SYSTEM LIVE</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <!-- Group 1: Architecture -->
+        <div class="nav-item-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <span>Architecture</span>
+            <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="index.html#thesis" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">01</span>
+                <span class="nav-dropdown-item-title">Fundamental Thesis</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Siloed latency vs. synchronized network model & 8 bottlenecks.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#principles" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">02</span>
+                <span class="nav-dropdown-item-title">11 Guiding Principles</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Operating philosophy: Own less, connect more, leverage everything.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#dimensions" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">03</span>
+                <span class="nav-dropdown-item-title">Node Ontology</span>
+              </div>
+              <span class="nav-dropdown-item-desc">What is a Node? The 10 mapping and gating dimensions.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#mechanism" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">04</span>
+                <span class="nav-dropdown-item-title">12-Step Coordination Loop</span>
+              </div>
+              <span class="nav-dropdown-item-desc">From MAP to LEARN: continuous operational execution cycle.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Group 2: Platform & Domains -->
+        <div class="nav-item-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <span>Platform</span>
+            <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="index.html#domains" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">05</span>
+                <span class="nav-dropdown-item-title">20 Node Domains</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Full industry taxonomy with capability filter tabs and instant search.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#engines" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">06</span>
+                <span class="nav-dropdown-item-title">5 Intelligence Engines</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Network, Opportunity, Coordination, Intelligence, and Value engines.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#platform" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">07</span>
+                <span class="nav-dropdown-item-title">12 Platform Modules</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Complete software suite: MOD-01 to MOD-12 product capabilities.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Group 3: Execution & Models -->
+        <div class="nav-item-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <span>Execution</span>
+            <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="index.html#walkthroughs" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">08</span>
+                <span class="nav-dropdown-item-title">Equations & Walkthroughs</span>
+              </div>
+              <span class="nav-dropdown-item-desc">4 Governing Equations + 4 interactive project archetypes.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#maturity" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">09</span>
+                <span class="nav-dropdown-item-title">Maturity & 7-Layer Moat</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Visibility to Intelligence roadmap & defensible network flywheel.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Group 4: Economics & Vision -->
+        <div class="nav-item-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <span>Economics</span>
+            <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="index.html#economics" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">10</span>
+                <span class="nav-dropdown-item-title">Asset-Light Economics</span>
+              </div>
+              <span class="nav-dropdown-item-desc">Monetizing coordination & intelligence across 6 revenue streams.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#positioning" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">11</span>
+                <span class="nav-dropdown-item-title">Strategic Category</span>
+              </div>
+              <span class="nav-dropdown-item-desc">What DigiSynq is NOT & the core operating axiom.</span>
+            </a>
+            <a class="nav-dropdown-item" href="index.html#manifesto" role="menuitem">
+              <div class="nav-dropdown-item-header">
+                <span class="nav-dropdown-item-num">12</span>
+                <span class="nav-dropdown-item-title">Manifesto & North Star EVC</span>
+              </div>
+              <span class="nav-dropdown-item-desc">The governing standard: Ecosystem Value Coordinated.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Standalone: Trust Engine (ACTIVE) -->
+        <a class="nav-link-direct active" href="trust.html">
+          <span>Trust Engine</span>
+          <span class="nav-direct-badge">INDEX</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta-btn" href="index.html#strategic-conversation">
+          <span>Start Conversation</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--signal-azure); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;">// ARCHITECTURE</div>
+    <a class="mobile-nav-link" href="index.html#thesis">01. Fundamental Thesis & 8 Bottlenecks</a>
+    <a class="mobile-nav-link" href="index.html#principles">02. 11 Guiding Principles</a>
+    <a class="mobile-nav-link" href="index.html#dimensions">03. What is a Node? (10 Dimensions)</a>
+    <a class="mobile-nav-link" href="index.html#mechanism">04. 12-Step Coordination Loop</a>
+
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--signal-azure); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 12px; margin-bottom: 4px;">// PLATFORM & DOMAINS</div>
+    <a class="mobile-nav-link" href="index.html#domains">05. 20 Node Domains (Directory & Search)</a>
+    <a class="mobile-nav-link" href="index.html#engines">06. 5 Core Intelligence Engines</a>
+    <a class="mobile-nav-link" href="index.html#platform">07. 12 Platform Modules (MOD-01 to MOD-12)</a>
+
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--signal-azure); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 12px; margin-bottom: 4px;">// EXECUTION & ECONOMICS</div>
+    <a class="mobile-nav-link" href="index.html#walkthroughs">08. Equations & 4 Project Walkthroughs</a>
+    <a class="mobile-nav-link" href="index.html#maturity">09. Maturity Levels & 7-Layer Moat</a>
+    <a class="mobile-nav-link" href="index.html#economics">10. Asset-Light Economics (6 Streams)</a>
+    <a class="mobile-nav-link" href="index.html#positioning">11. Strategic Category Positioning</a>
+    <a class="mobile-nav-link" href="index.html#manifesto">12. Master Manifesto & North Star EVC</a>
+    <a class="mobile-nav-link" href="trust.html" style="color: var(--signal-sky);">Live Trust & Telemetry Dashboard (Current)</a>
+
+    <a class="nav-cta-btn mobile-nav-cta" href="index.html#strategic-conversation" style="justify-content: center; margin-top: 12px;">Start Strategic Conversation</a>
+  </div>
+
+  <main>
+    <!-- TRUST HERO -->
+    <section class="trust-hero">
+      <div class="container">
+        <span class="section-eyebrow">NODE INTEGRITY & TELEMETRY</span>
+        <h1 class="section-title">Quantitative Trust &amp; <span class="editorial-serif-italic">Slate Telemetry</span></h1>
+        <p class="section-lead" style="margin: 0 auto;">
+          In a synchronized ecosystem, trust is not an informal impression. It is a mathematical index computed from verified identity, historical execution, financial escrow standing, and guild compliance.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE TRUST CALCULATOR -->
+    <section class="section" style="padding-top: 20px;">
+      <div class="container">
+        <div class="trust-calculator-card">
+          <div class="trust-calc-grid">
+            <div class="trust-sliders">
+              <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Node Verification Parameters</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                Adjust criteria weightings to observe how DigiSynq evaluates node readiness and admission gates.
+              </p>
+
+              <!-- Slider 1 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Verified Identity & Chain of Title</span>
+                  <span class="slider-weight" id="valIdentity">98%</span>
+                </div>
+                <input type="range" class="trust-range-input" id="rangeIdentity" min="50" max="100" value="98">
+              </div>
+
+              <!-- Slider 2 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Track Record & Delivery Reliability</span>
+                  <span class="slider-weight" id="valTrack">94%</span>
+                </div>
+                <input type="range" class="trust-range-input" id="rangeTrack" min="50" max="100" value="94">
+              </div>
+
+              <!-- Slider 3 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Financial & Escrow Standing</span>
+                  <span class="slider-weight" id="valFinance">92%</span>
+                </div>
+                <input type="range" class="trust-range-input" id="rangeFinance" min="50" max="100" value="92">
+              </div>
+
+              <!-- Slider 4 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Guild & Compliance Standing</span>
+                  <span class="slider-weight" id="valGuild">96%</span>
+                </div>
+                <input type="range" class="trust-range-input" id="rangeGuild" min="50" max="100" value="96">
+              </div>
+            </div>
+
+            <div class="trust-score-display">
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.1em;">
+                COMPOSITE TRUST INDEX
+              </div>
+              <div class="score-number" id="trustScoreValue">95.2</div>
+              <div class="score-tier-pill" id="trustScoreTier">TIER-1 VERIFIED</div>
+              <p class="score-status-desc" id="trustScoreDesc">
+                Eligible for autonomous escrow release, unallocated sound stage access, and multi-party packaging orchestration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION: REAL-TIME SLATE TELEMETRY -->
+        <div class="section-header text-center" style="margin-top: 40px;">
+          <span class="section-eyebrow">CONTINUOUS HEALTH TELEMETRY</span>
+          <h2 class="section-title">Live Production Slate Telemetry</h2>
+          <p class="section-lead">
+            Simulate operational state transitions across a synchronized live feature film production.
+          </p>
+        </div>
+
+        <div class="telemetry-state-btn-group">
+          <button class="telemetry-btn active state-nominal" data-state="nominal">NOMINAL (OPTIMAL)</button>
+          <button class="telemetry-btn state-warning" data-state="warning">DEGRADED (ATTENTION)</button>
+          <button class="telemetry-btn state-critical" data-state="critical">COMPROMISED (CRITICAL)</button>
+        </div>
+
+        <div class="telemetry-banner" id="telemetryBanner">
+          <div class="pulse-dot" id="telemetryPulse" style="width: 14px; height: 14px;"></div>
+          <div>
+            <h4 id="telemetryHeadline" style="font-size: 1.1rem; color: #fff; margin-bottom: 4px;">
+              ALL CLEAR: Ecosystem Operational Cadence at 100%
+            </h4>
+            <p id="telemetryDetails" style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+              14 synchronized nodes reporting zero latency. Critical path milestones on target. Escrow releases verified.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="system-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <p class="footer-tagline">
+            The Entertainment Ecosystem, Synchronized. An asset-light coordination and intelligence layer connecting capabilities, resources, rights, and audiences.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">ARCHITECTURE</div>
+          <ul class="footer-links">
+            <li><a href="index.html#thesis">Fundamental Thesis</a></li>
+            <li><a href="index.html#principles">11 Principles</a></li>
+            <li><a href="index.html#dimensions">10 Node Dimensions</a></li>
+            <li><a href="index.html#mechanism">12-Step Mechanism</a></li>
+            <li><a href="index.html#domains">20 Node Domains</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">PLATFORM</div>
+          <ul class="footer-links">
+            <li><a href="index.html#engines">5 Core Engines</a></li>
+            <li><a href="index.html#platform">12 Product Modules</a></li>
+            <li><a href="index.html#walkthroughs">Project Walkthroughs</a></li>
+            <li><a href="index.html#maturity">Maturity & Moat</a></li>
+            <li><a href="trust.html">Trust Calculator & Telemetry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">ECONOMICS & CONTACT</div>
+          <ul class="footer-links">
+            <li><a href="index.html#economics">Business Model</a></li>
+            <li><a href="index.html#positioning">Strategic Positioning</a></li>
+            <li><a href="index.html#manifesto">Master Manifesto</a></li>
+            <li><a href="index.html#strategic-conversation">Strategic Conversation</a></li>
+            <li><a href="mailto:executive@digisynq.io">executive@digisynq.io</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 DigiSynq Infrastructure Layer. All architectural rights reserved. Zero italic typography enforced.</div>
+        <div class="footer-links-inline">
+          <a href="#top">Back to Top ↑</a>
+          <a href="trust.html">Telemetry & Trust</a>
+          <a href="index.html#strategic-conversation">Partner Briefing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script>
+    // Trust Calculator Logic
+    const rIdentity = document.getElementById('rangeIdentity');
+    const rTrack = document.getElementById('rangeTrack');
+    const rFinance = document.getElementById('rangeFinance');
+    const rGuild = document.getElementById('rangeGuild');
+
+    const vIdentity = document.getElementById('valIdentity');
+    const vTrack = document.getElementById('valTrack');
+    const vFinance = document.getElementById('valFinance');
+    const vGuild = document.getElementById('valGuild');
+
+    const scoreVal = document.getElementById('trustScoreValue');
+    const scoreTier = document.getElementById('trustScoreTier');
+    const scoreDesc = document.getElementById('trustScoreDesc');
+
+    function updateScore() {
+      const id = parseFloat(rIdentity.value);
+      const tr = parseFloat(rTrack.value);
+      const fi = parseFloat(rFinance.value);
+      const gu = parseFloat(rGuild.value);
+
+      vIdentity.textContent = id + '%';
+      vTrack.textContent = tr + '%';
+      vFinance.textContent = fi + '%';
+      vGuild.textContent = gu + '%';
+
+      const composite = (id * 0.3) + (tr * 0.25) + (fi * 0.25) + (gu * 0.2);
+      scoreVal.textContent = composite.toFixed(1);
+
+      if (composite >= 95) {
+        scoreTier.textContent = 'TIER-1 VERIFIED';
+        scoreTier.style.color = '#7dd3fc';
+        scoreTier.style.borderColor = '#38bdf8';
+        scoreDesc.textContent = 'Eligible for autonomous escrow release, unallocated sound stage access, and multi-party packaging orchestration.';
+      } else if (composite >= 80) {
+        scoreTier.textContent = 'TIER-2 STANDARD';
+        scoreTier.style.color = '#fbbf24';
+        scoreTier.style.borderColor = '#fbbf24';
+        scoreDesc.textContent = 'Standard verified node status. Requires secondary sign-off for cross-border escrow commitments.';
+      } else {
+        scoreTier.textContent = 'PROVISIONAL / CONDITIONAL';
+        scoreTier.style.color = '#f87171';
+        scoreTier.style.borderColor = '#f87171';
+        scoreDesc.textContent = 'Node requires credential audit or updated guild bonding compliance verification.';
+      }
+    }
+
+    [rIdentity, rTrack, rFinance, rGuild].forEach(input => {
+      input.addEventListener('input', updateScore);
+    });
+
+    // Telemetry State Switcher
+    const telemetryBtns = document.querySelectorAll('.telemetry-btn');
+    const pulse = document.getElementById('telemetryPulse');
+    const headline = document.getElementById('telemetryHeadline');
+    const details = document.getElementById('telemetryDetails');
+
+    telemetryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        telemetryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const state = btn.getAttribute('data-state');
+        if (state === 'nominal') {
+          pulse.style.backgroundColor = '#38bdf8';
+          pulse.style.boxShadow = '0 0 12px #38bdf8';
+          headline.textContent = 'ALL CLEAR: Ecosystem Operational Cadence at 100%';
+          details.textContent = '14 synchronized nodes reporting zero latency. Critical path milestones on target. Escrow releases verified.';
+        } else if (state === 'warning') {
+          pulse.style.backgroundColor = '#fbbf24';
+          pulse.style.boxShadow = '0 0 12px #fbbf24';
+          headline.textContent = 'ATTENTION: Variance Detected in London Stage Turnaround';
+          details.textContent = 'Soundstage booking variance detected in London. DigiSynq automatic rescheduling mitigation triggered.';
+        } else if (state === 'critical') {
+          pulse.style.backgroundColor = '#f87171';
+          pulse.style.boxShadow = '0 0 14px #f87171';
+          headline.textContent = 'CRITICAL ALERT: Bond Escrow Contingency Pending';
+          details.textContent = 'Escrow release held due to pending counter-party signature. Upstream node dependencies placed on safety hold.';
+        }
+      });
+    });
+
+    // Mobile Menu & Back to Top
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileNavDrawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = drawer.classList.contains('open');
+        if (isOpen) {
+          drawer.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          drawer.classList.add('open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      const drawerLinks = drawer.querySelectorAll('a');
+      drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          drawer.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    const backToTop = document.getElementById('backToTopBtn');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

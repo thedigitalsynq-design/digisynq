@@ -2,5 +2,6 @@
 _archive/
 scratch/
 *.log
+*.bak
 .DS_Store
 Thumbs.db
